@@ -1,0 +1,26 @@
+{
+  "name": "kuroco",
+  "version": "1.0.1",
+  "description": "auto-generated Kuroco API handlers.",
+  "main": "dist/index.js",
+  "private": true,
+  "keywords": [],
+  "scripts": {
+    "prestart": "npm i && npx tsc",
+    "start": "ts-node mv.ts"
+  },
+  "author": "",
+  "license": "none",
+  "devDependencies": {
+    "@flowjs/flow.js": "^2.14.0",
+    "@types/flowjs": "^2.13.2",
+    "@types/fs-extra": "^8.0.1",
+    "@types/inquirer": "^6.5.0",
+    "fs-extra": "^8.1.0",
+    "inquirer": "^7.0.1",
+    "inquirer-confirm": "^2.0.7",
+    "rimraf": "^3.0.0",
+    "ts-node": "^8.5.4",
+    "typescript": "3.6.4"
+  }
+}
