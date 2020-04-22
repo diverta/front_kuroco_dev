@@ -1,9 +1,13 @@
 <template>
   <div>
+    <p>
+      filter:
+      <input type="text" v-model="query" />
+    </p>
     <ul id="apilist">
       <li
         class="info-method"
-        v-for="(info, idx) in apiInfos"
+        v-for="(info, idx) in filteredApiInfos"
         :key="idx"
         @click="() => handleClickSelectMethod(info)"
       >
@@ -13,8 +17,8 @@
       </li>
     </ul>
     <div v-if="selectedApiInfo" id="description-panel">
-      <span class="info-classname">{{ selectedApiInfo.className }}</span
-      >.<span class="info-methodname">{{ selectedApiInfo.methodName }}</span>
+      <span class="info-classname">{{ selectedApiInfo.className }}</span>.
+      <span class="info-methodname">{{ selectedApiInfo.methodName }}</span>
       <div>
         <codemirror v-model="selectedApiCode" :options="cmOptions" />
         <button @click="handleRequestSelectedApi">request</button>
@@ -48,7 +52,18 @@ export default Vue.extend({
       selectedApiInfo: {} as any,
       selectedApiCode: '',
       selectedExecutableRequest: null as any,
+      query: '',
     };
+  },
+  computed: {
+    filteredApiInfos() {
+      return this.apiInfos.filter((info: any) => {
+        const regExp = new RegExp((this as any).query, 'ig');
+        return (
+          regExp.test(info.apiRequestInfo.url) || regExp.test(info.className)
+        );
+      });
+    },
   },
   methods: {
     getHttpMethodByRequestMethodName(requestMethodName: string) {

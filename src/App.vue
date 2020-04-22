@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Login />
     <ApiList :apiInfos="apiInfos" />
     <!-- <Editor /> -->
   </div>
@@ -7,6 +8,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import Login from './components/Login.vue';
 import ApiList from './components/ApiList.vue';
 import Editor from './components/Editor.vue';
 import { API_METHOD_LIST } from './apilist';
@@ -16,6 +18,7 @@ import { ApiInfo } from './type';
 export default Vue.extend({
   name: 'App',
   components: {
+    Login,
     ApiList,
     Editor,
   },
