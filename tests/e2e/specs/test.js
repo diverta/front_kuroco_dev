@@ -1,8 +1,21 @@
 // https://docs.cypress.io/api/introduction/api.html
 
-describe('My First Test', () => {
-  it('Visits the app root url', () => {
-    cy.visit('/')
-    cy.contains('h1', 'Welcome to Your Vue.js + TypeScript App')
-  })
-})
+import { executeRequest } from '../base';
+
+describe('Inquiry', () => {
+  it('rcmsApi1InquiryFormsGet', () => {
+    const methodName = 'rcmsApi1InquiryFormsGet';
+    const requestData = {};
+
+    executeRequest(cy, methodName, requestData);
+  });
+
+  it('rcmsApi1InquiryFormsInquiryIdGet', () => {
+    const methodName = 'rcmsApi1InquiryFormsInquiryIdGet';
+    const requestData = {
+      inquiryId: 1,
+    };
+
+    executeRequest(cy, methodName, requestData);
+  });
+});

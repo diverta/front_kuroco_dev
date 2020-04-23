@@ -12,4 +12,8 @@ module.exports = {
     config.output.filename(`js/[name].js`);
     config.optimization.splitChunks(false);
   },
+  devServer: {
+    host: 'localhost',
+    port: 9000,
+  },
 };

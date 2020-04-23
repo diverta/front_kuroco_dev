@@ -14,7 +14,24 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
+import './commands';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+import { queries } from '../base';
+
+before(() => {
+  function login(email, password) {
+    cy.contains('p', 'STATUS:');
+
+    cy.get(queries.logginForm.email).type(email);
+    cy.get(queries.logginForm.password).type(password);
+    cy.get(queries.logginForm.submit).click();
+
+    cy.contains('p', 'STATUS: LOGGEDIN');
+  }
+
+  cy.visit('/');
+  login('yabe@diverta.co.jp', 'panda9337_');
+});

@@ -2,26 +2,41 @@
   <div>
     <p>
       filter:
-      <input type="text" v-model="query" />
+      <input type="text" v-model="query" class="js-apilist-filter" />
     </p>
     <ul id="apilist">
       <li
-        class="info-method"
+        :class="`info-method js-info-method-methodname-${info.methodName}`"
         v-for="(info, idx) in filteredApiInfos"
         :key="idx"
         @click="() => handleClickSelectMethod(info)"
       >
-        <span>{{ getHttpMethodByRequestMethodName(info.methodName) }}</span> :
-        <span>{{ info.apiRequestInfo.url }}</span> :
+        <span>{{ getHttpMethodByRequestMethodName(info.methodName) }}</span>
+        <span>{{ info.apiRequestInfo.url }}</span>
         <span class="info-classname">{{ info.className }}</span>
+        <span>{{ info.methodName }}</span>
       </li>
     </ul>
     <div v-if="selectedApiInfo" id="description-panel">
-      <span class="info-classname">{{ selectedApiInfo.className }}</span>.
+      <span class="info-classname">{{ selectedApiInfo.className }}</span
+      >.
       <span class="info-methodname">{{ selectedApiInfo.methodName }}</span>
       <div>
         <codemirror v-model="selectedApiCode" :options="cmOptions" />
-        <button @click="handleRequestSelectedApi">request</button>
+        <button @click="handleRequestSelectedApi" class="js-apilist-request">
+          request
+        </button>
+      </div>
+    </div>
+    <div v-if="!!response" class="response">
+      <div class="response-header"><h3>response</h3></div>
+      <div>
+        <h3 class="js-response-isError">
+          isError? : {{ isResponseErrorOccured }}
+        </h3>
+      </div>
+      <div>
+        <span class="rersponse-body js-apilist-response">{{ response }}</span>
       </div>
     </div>
   </div>
@@ -53,6 +68,8 @@ export default Vue.extend({
       selectedApiCode: '',
       selectedExecutableRequest: null as any,
       query: '',
+      response: '',
+      isResponseErrorOccured: '',
     };
   },
   computed: {
@@ -60,7 +77,9 @@ export default Vue.extend({
       return this.apiInfos.filter((info: any) => {
         const regExp = new RegExp((this as any).query, 'ig');
         return (
-          regExp.test(info.apiRequestInfo.url) || regExp.test(info.className)
+          regExp.test(info.apiRequestInfo.url) ||
+          regExp.test(info.className) ||
+          regExp.test(info.methodName)
         );
       });
     },
@@ -82,6 +101,7 @@ export default Vue.extend({
       return 'UNKNOWN';
     },
     handleClickSelectMethod(apiInfo: ApiInfo) {
+      this.response = '';
       this.selectedApiInfo = apiInfo;
       this.selectedApiCode = this.selectedApiInfoToExecutableCode(apiInfo);
     },
@@ -157,7 +177,20 @@ export default Vue.extend({
 
       new this.selectedApiInfo.apiRequestInfo.class()
         [this.selectedApiInfo.apiRequestInfo.requestMethodName](prm)
-        .then((prms: any) => prms.value());
+        .then((prms: any) => prms.value())
+        .then((value: any) => {
+          this.isResponseErrorOccured = 'false';
+          this.response = JSON.stringify(value, null, '\t');
+        })
+        .catch((err: any) => {
+          this.isResponseErrorOccured = 'true';
+          this.response = `ERROR!:\n${JSON.stringify(err, null, '\t')}`;
+        })
+        .finally(() => {
+          console.info(
+            `${this.selectedApiInfo.apiRequestInfo.requestMethodName}\n${this.response}`
+          );
+        });
     },
   },
 });
@@ -165,20 +198,40 @@ export default Vue.extend({
 
 <style scoped>
 #apilist {
-  height: 240px;
+  height: 30vh;
   overflow-y: scroll;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.5em;
 }
+#apilist > li {
+  display: contents;
+  cursor: pointer;
+}
+#apilist > li :hover {
+  background: paleturquoise;
+}
+
 #description-panel {
   height: 240px;
 }
 
-.info-method {
-  cursor: pointer;
-}
-.info-method:hover {
-  background: paleturquoise;
-}
 .info-classname {
   color: green;
+}
+
+.response {
+  position: absolute;
+  z-index: 1;
+  right: 1em;
+  bottom: 1em;
+  width: 50vw;
+  background: azure;
+}
+.rersponse-header {
+  font-weight: bold;
+}
+.rersponse-body {
+  overflow-wrap: anywhere;
 }
 </style>
