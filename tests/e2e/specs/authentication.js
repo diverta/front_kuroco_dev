@@ -5,69 +5,51 @@
 
 import { executeRequest } from '../base';
 
+const login = () => {
+  /** @type {import('kuroco').AuthenticationApiRcmsApi1AuthLoginPostRequest} */
+  const requestData = {
+    inlineObject: {
+      email: 'test',
+      password: 'qwer1234',
+    },
+  };
+  return executeRequest({
+    cy,
+    query: 'login',
+    requestData,
+  });
+};
+const logout = () => {
+  /** @type {import('kuroco').AuthenticationApiRcmsApi1AuthLogoutPostRequest} */
+  const requestData = {};
+  return executeRequest({
+    cy,
+    query: 'logout',
+    requestData,
+  });
+};
+const token = ({ grant_token }) => {
+  /** @type {import('kuroco').AuthenticationApiRcmsApi1AuthTokenPostRequest} */
+  const requestData = {
+    inlineObject1: {
+      grant_token,
+    },
+  };
+  return executeRequest({
+    cy,
+    query: 'token',
+    requestData,
+  });
+};
+
 describe('Authentication', () => {
   it('Login -> Logout', async () => {
-    /** @type {import('kuroco').AuthenticationApiRcmsApi1AuthLoginPostRequest} */
-    const loginRequestData = {
-      inlineObject: {
-        email: 'test',
-        password: 'qwer1234',
-      },
-    };
-
-    executeRequest({
-      cy,
-      query: 'login',
-      requestData: loginRequestData,
-    });
-
-    /** @type {import('kuroco').AuthenticationApiRcmsApi1AuthLogoutPostRequest} */
-    const logoutRequestData = {};
-    const logoutRes = await executeRequest({
-      cy,
-      query: 'logout',
-      requestData: logoutRequestData,
-    });
-    const res = JSON.parse(logoutRes);
-    if (/errored/.test(res)) {
-      throw Error('requested API throws error.');
-    }
+    await login();
+    await logout();
   });
-
   it('Login -> Token -> Logout', async () => {
-    /** @type {import('kuroco').AuthenticationApiRcmsApi1AuthLoginPostRequest} */
-    const loginRequestData = {
-      inlineObject: {
-        email: 'test',
-        password: 'qwer1234',
-      },
-    };
-
-    const loginRes = await executeRequest({
-      cy,
-      query: 'login',
-      requestData: loginRequestData,
-    });
-
-    /** @type {import('kuroco').AuthenticationApiRcmsApi1AuthTokenPostRequest} */
-    const tokenRequestData = {
-      inlineObject1: {
-        grantToken: JSON.parse(loginRes).grant_token,
-      },
-    };
-
-    const tokenRes = await executeRequest({
-      cy,
-      query: 'token',
-      requestData: tokenRequestData,
-    });
-
-    /** @type {import('kuroco').AuthenticationApiRcmsApi1AuthLogoutPostRequest} */
-    const logoutRequestData = {};
-    const logoutRes = await executeRequest({
-      cy,
-      query: 'logout',
-      requestData: logoutRequestData,
-    });
+    const loginRes = await login();
+    await token(JSON.parse(loginRes));
+    await logout();
   });
 });

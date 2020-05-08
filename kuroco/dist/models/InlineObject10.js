@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import { exists } from '../runtime';
-export var InlineObject10Description = "{\n    /**\n     * Email\n     * @type {string}\n     */\n    email?: string;\n    /**\n     * Password\n     * @type {string}\n     */\n    login_pwd?: string;\n    /**\n     * Nickname\n     * @type {string}\n     */\n    nickname?: string;\n    /**\n     * Family name\n     * @type {string}\n     */\n    name1?: string;\n    /**\n     * Given name\n     * @type {string}\n     */\n    name2?: string;\n    /**\n     * Text\n     * @type {string}\n     */\n    text?: string;\n    /**\n     * Textarea\n     * @type {string}\n     */\n    textarea?: string;\n    /**\n     * Selectbox * 1 => selectBoxOption1 * 2 => selectBoxOption2 * 3 => selectBoxOption3\n     * @type {object | string}\n     */\n    selectbox?: object | string;\n    /**\n     * Radio * 1 => radioOption1 * 2 => radioOption2 * 3 => radioOption3\n     * @type {object | string}\n     */\n    radio?: object | string;\n    /**\n     * Checkbox * 1 => checkboxOption1 * 2 => checkboxOption2 * 3 => checkboxOption3\n     * @type {Array<object | string>}\n     */\n    checkbox?: Array<object | string>;\n    /**\n     * Date\n     * @type {Date}\n     */\n    date?: Date;\n    /**\n     * \n     * @type {number}\n     */\n    relation?: number;\n    /**\n     * File\n     * @type {object}\n     */\n    file?: object;\n    /**\n     * /label/group_id\n     * @type {Array<number>}\n     */\n    group_id?: Array<InlineObject10GroupIdEnum>;\n    /**\n     * /label/open_flg\n     * @type {number}\n     */\n    open_flg?: InlineObject10OpenFlgEnum;\n    /**\n     * /label/login_ok_flg\n     * @type {number}\n     */\n    login_ok_flg?: InlineObject10LoginOkFlgEnum;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validate_only?: boolean;\n}";
+export var InlineObject10Description = "{\n    /**\n     * Email\n     * @type {string}\n     */\n    email?: string;\n    /**\n     * Login ID\n     * @type {string}\n     */\n    login_id?: string;\n    /**\n     * Password\n     * @type {string}\n     */\n    login_pwd?: string;\n    /**\n     * Nickname\n     * @type {string}\n     */\n    nickname?: string;\n    /**\n     * Family name\n     * @type {string}\n     */\n    name1?: string;\n    /**\n     * Given name\n     * @type {string}\n     */\n    name2?: string;\n    /**\n     * Sex\n     * @type {string}\n     */\n    sex?: InlineObject10SexEnum;\n    /**\n     * Date of birth\n     * @type {Date}\n     */\n    birth?: Date;\n    /**\n     * Image1\n     * @type {object}\n     */\n    member_photo?: object;\n    /**\n     * Text\n     * @type {string}\n     */\n    text?: string;\n    /**\n     * Textarea\n     * @type {string}\n     */\n    textarea?: string;\n    /**\n     * Radio * 1 => radioOption1 * 2 => radioOption2 * 3 => radioOption3\n     * @type {object | string}\n     */\n    radio?: object | string;\n    /**\n     * Selectbox * 1 => selectBoxOption1 * 2 => selectBoxOption2 * 3 => selectBoxOption3\n     * @type {object | string}\n     */\n    selectbox?: object | string;\n    /**\n     * Checkbox * 1 => checkboxOption1 * 2 => checkboxOption2 * 3 => checkboxOption3\n     * @type {Array<object | string>}\n     */\n    checkbox?: Array<object | string>;\n    /**\n     * Date\n     * @type {Date}\n     */\n    date?: Date;\n    /**\n     * \n     * @type {number}\n     */\n    relation?: number;\n    /**\n     * File\n     * @type {object}\n     */\n    file?: object;\n    /**\n     * /label/group_id\n     * @type {Array<number>}\n     */\n    group_id?: Array<InlineObject10GroupIdEnum>;\n    /**\n     * /label/open_flg\n     * @type {number}\n     */\n    open_flg?: InlineObject10OpenFlgEnum;\n    /**\n     * /label/login_ok_flg\n     * @type {number}\n     */\n    login_ok_flg?: InlineObject10LoginOkFlgEnum;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validate_only?: boolean;\n}";
 export function InlineObject10FromJSON(json) {
     return InlineObject10FromJSONTyped(json, false);
 }
@@ -22,14 +22,18 @@ export function InlineObject10FromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         'email': !exists(json, 'email') ? undefined : json['email'],
+        'login_id': !exists(json, 'login_id') ? undefined : json['login_id'],
         'login_pwd': !exists(json, 'login_pwd') ? undefined : json['login_pwd'],
         'nickname': !exists(json, 'nickname') ? undefined : json['nickname'],
         'name1': !exists(json, 'name1') ? undefined : json['name1'],
         'name2': !exists(json, 'name2') ? undefined : json['name2'],
+        'sex': !exists(json, 'sex') ? undefined : json['sex'],
+        'birth': !exists(json, 'birth') ? undefined : (new Date(json['birth'])),
+        'member_photo': !exists(json, 'member_photo') ? undefined : json['member_photo'],
         'text': !exists(json, 'text') ? undefined : json['text'],
         'textarea': !exists(json, 'textarea') ? undefined : json['textarea'],
-        'selectbox': !exists(json, 'selectbox') ? undefined : json['selectbox'],
         'radio': !exists(json, 'radio') ? undefined : json['radio'],
+        'selectbox': !exists(json, 'selectbox') ? undefined : json['selectbox'],
         'checkbox': !exists(json, 'checkbox') ? undefined : json['checkbox'],
         'date': !exists(json, 'date') ? undefined : json['date'],
         'relation': !exists(json, 'relation') ? undefined : json['relation'],
@@ -49,14 +53,18 @@ export function InlineObject10ToJSON(value) {
     }
     return {
         'email': value.email,
+        'login_id': value.login_id,
         'login_pwd': value.login_pwd,
         'nickname': value.nickname,
         'name1': value.name1,
         'name2': value.name2,
+        'sex': value.sex,
+        'birth': value.birth === undefined ? undefined : (value.birth.toISOString().substr(0, 10)),
+        'member_photo': value.member_photo,
         'text': value.text,
         'textarea': value.textarea,
-        'selectbox': value.selectbox === undefined ? undefined : (value.selectbox),
         'radio': value.radio === undefined ? undefined : (value.radio),
+        'selectbox': value.selectbox === undefined ? undefined : (value.selectbox),
         'checkbox': value.checkbox === undefined ? undefined : value.checkbox,
         'date': value.date,
         'relation': value.relation,
@@ -67,6 +75,16 @@ export function InlineObject10ToJSON(value) {
         'validate_only': value.validate_only,
     };
 }
+/**
+* @export
+* @enum {string}
+*/
+export var InlineObject10SexEnum;
+(function (InlineObject10SexEnum) {
+    InlineObject10SexEnum["_m"] = "m";
+    InlineObject10SexEnum["_f"] = "f";
+    InlineObject10SexEnum["_e"] = "e";
+})(InlineObject10SexEnum || (InlineObject10SexEnum = {}));
 /**
 * @export
 * @enum {string}

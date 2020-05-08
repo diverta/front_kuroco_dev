@@ -22,6 +22,12 @@ export interface InlineObject7 {
      */
     email: string;
     /**
+     * Login ID
+     * @type {string}
+     * @memberof InlineObject7
+     */
+    login_id?: string;
+    /**
      * Password
      * @type {string}
      * @memberof InlineObject7
@@ -46,6 +52,24 @@ export interface InlineObject7 {
      */
     name2?: string;
     /**
+     * Sex
+     * @type {string}
+     * @memberof InlineObject7
+     */
+    sex?: InlineObject7SexEnum;
+    /**
+     * Date of birth
+     * @type {Date}
+     * @memberof InlineObject7
+     */
+    birth?: Date;
+    /**
+     * Image1
+     * @type {object}
+     * @memberof InlineObject7
+     */
+    member_photo?: object;
+    /**
      * Text
      * @type {string}
      * @memberof InlineObject7
@@ -58,17 +82,17 @@ export interface InlineObject7 {
      */
     textarea?: string;
     /**
-     * Selectbox * 1 => selectBoxOption1 * 2 => selectBoxOption2 * 3 => selectBoxOption3
-     * @type {object | string}
-     * @memberof InlineObject7
-     */
-    selectbox?: object | string;
-    /**
      * Radio * 1 => radioOption1 * 2 => radioOption2 * 3 => radioOption3
      * @type {object | string}
      * @memberof InlineObject7
      */
     radio?: object | string;
+    /**
+     * Selectbox * 1 => selectBoxOption1 * 2 => selectBoxOption2 * 3 => selectBoxOption3
+     * @type {object | string}
+     * @memberof InlineObject7
+     */
+    selectbox?: object | string;
     /**
      * Checkbox * 1 => checkboxOption1 * 2 => checkboxOption2 * 3 => checkboxOption3
      * @type {Array<object | string>}
@@ -112,10 +136,19 @@ export interface InlineObject7 {
      */
     validate_only?: boolean;
 }
-export declare const InlineObject7Description = "{\n    /**\n     * Email\n     * @type {string}\n     */\n    email: string;\n    /**\n     * Password\n     * @type {string}\n     */\n    login_pwd: string;\n    /**\n     * Nickname\n     * @type {string}\n     */\n    nickname: string;\n    /**\n     * Family name\n     * @type {string}\n     */\n    name1?: string;\n    /**\n     * Given name\n     * @type {string}\n     */\n    name2?: string;\n    /**\n     * Text\n     * @type {string}\n     */\n    text: string;\n    /**\n     * Textarea\n     * @type {string}\n     */\n    textarea?: string;\n    /**\n     * Selectbox * 1 => selectBoxOption1 * 2 => selectBoxOption2 * 3 => selectBoxOption3\n     * @type {object | string}\n     */\n    selectbox?: object | string;\n    /**\n     * Radio * 1 => radioOption1 * 2 => radioOption2 * 3 => radioOption3\n     * @type {object | string}\n     */\n    radio?: object | string;\n    /**\n     * Checkbox * 1 => checkboxOption1 * 2 => checkboxOption2 * 3 => checkboxOption3\n     * @type {Array<object | string>}\n     */\n    checkbox?: Array<object | string>;\n    /**\n     * Date\n     * @type {Date}\n     */\n    date?: Date;\n    /**\n     * \n     * @type {number}\n     */\n    relation?: number;\n    /**\n     * File\n     * @type {object}\n     */\n    file?: object;\n    /**\n     * /label/open_flg\n     * @type {number}\n     */\n    open_flg?: InlineObject7OpenFlgEnum;\n    /**\n     * /label/login_ok_flg\n     * @type {number}\n     */\n    login_ok_flg?: InlineObject7LoginOkFlgEnum;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validate_only?: boolean;\n}";
+export declare const InlineObject7Description = "{\n    /**\n     * Email\n     * @type {string}\n     */\n    email: string;\n    /**\n     * Login ID\n     * @type {string}\n     */\n    login_id?: string;\n    /**\n     * Password\n     * @type {string}\n     */\n    login_pwd: string;\n    /**\n     * Nickname\n     * @type {string}\n     */\n    nickname: string;\n    /**\n     * Family name\n     * @type {string}\n     */\n    name1?: string;\n    /**\n     * Given name\n     * @type {string}\n     */\n    name2?: string;\n    /**\n     * Sex\n     * @type {string}\n     */\n    sex?: InlineObject7SexEnum;\n    /**\n     * Date of birth\n     * @type {Date}\n     */\n    birth?: Date;\n    /**\n     * Image1\n     * @type {object}\n     */\n    member_photo?: object;\n    /**\n     * Text\n     * @type {string}\n     */\n    text: string;\n    /**\n     * Textarea\n     * @type {string}\n     */\n    textarea?: string;\n    /**\n     * Radio * 1 => radioOption1 * 2 => radioOption2 * 3 => radioOption3\n     * @type {object | string}\n     */\n    radio?: object | string;\n    /**\n     * Selectbox * 1 => selectBoxOption1 * 2 => selectBoxOption2 * 3 => selectBoxOption3\n     * @type {object | string}\n     */\n    selectbox?: object | string;\n    /**\n     * Checkbox * 1 => checkboxOption1 * 2 => checkboxOption2 * 3 => checkboxOption3\n     * @type {Array<object | string>}\n     */\n    checkbox?: Array<object | string>;\n    /**\n     * Date\n     * @type {Date}\n     */\n    date?: Date;\n    /**\n     * \n     * @type {number}\n     */\n    relation?: number;\n    /**\n     * File\n     * @type {object}\n     */\n    file?: object;\n    /**\n     * /label/open_flg\n     * @type {number}\n     */\n    open_flg?: InlineObject7OpenFlgEnum;\n    /**\n     * /label/login_ok_flg\n     * @type {number}\n     */\n    login_ok_flg?: InlineObject7LoginOkFlgEnum;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validate_only?: boolean;\n}";
 export declare function InlineObject7FromJSON(json: any): InlineObject7;
 export declare function InlineObject7FromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject7;
 export declare function InlineObject7ToJSON(value?: InlineObject7 | null): any;
+/**
+* @export
+* @enum {string}
+*/
+export declare enum InlineObject7SexEnum {
+    _m = "m",
+    _f = "f",
+    _e = "e"
+}
 /**
 * @export
 * @enum {string}

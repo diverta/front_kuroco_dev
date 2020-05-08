@@ -34,13 +34,13 @@ export const queries = {
  */
 export function executeRequest({ cy, query, requestData, screenshot = false }) {
   const requestBody = JSON.stringify(requestData, undefined, '\t');
+  const toSaveFileName = query.replace(/ /g, '_');
 
   cy.get(queries.apiInfos.filter)
     .clear()
     .type(query);
   cy.get(queries.apiInfos.apiList).within(() => {
     cy.get('li')
-      .should('have.length', 1)
       .children()
       .first()
       .trigger('mouseover')
@@ -61,7 +61,12 @@ export function executeRequest({ cy, query, requestData, screenshot = false }) {
           .invoke('text')
           .then(txt => {
             cy.writeFile(
-              path.join('tests', 'e2e', 'requestBody', `${query}.json`),
+              path.join(
+                'tests',
+                'e2e',
+                'requestBody',
+                `${toSaveFileName}.json`
+              ),
               requestBody
             );
             throw new Error(txt);
@@ -79,11 +84,11 @@ export function executeRequest({ cy, query, requestData, screenshot = false }) {
       .invoke('text')
       .then(txt => {
         cy.writeFile(
-          path.join('tests', 'e2e', 'requestBody', `${query}.json`),
+          path.join('tests', 'e2e', 'requestBody', `${toSaveFileName}.json`),
           requestBody
         );
         cy.writeFile(
-          path.join('tests', 'e2e', 'response', `${query}.json`),
+          path.join('tests', 'e2e', 'response', `${toSaveFileName}.json`),
           txt
         );
         return Promise.resolve(txt);

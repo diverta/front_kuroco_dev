@@ -12,7 +12,7 @@ import Login from './components/Login.vue';
 import ApiList from './components/ApiList.vue';
 import Editor from './components/Editor.vue';
 import { API_METHOD_LIST } from './apilist';
-import { getApiRequestInfoByrequestMethodName } from 'kuroco';
+import { getApiRequestInfoByrequestMethodName, Auth } from 'kuroco';
 import { ApiInfo } from './type';
 
 export default Vue.extend({
@@ -42,6 +42,7 @@ export default Vue.extend({
     },
   },
   mounted() {
+    Auth.setupAuthHookOnFetchForKurocoRequestings(undefined, console.error);
     this.apiInfos = this.getApiInfos();
   },
 });

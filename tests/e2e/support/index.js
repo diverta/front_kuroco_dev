@@ -21,8 +21,12 @@ import './commands';
 
 import { queries } from '../base';
 
+Cypress.config({
+  defaultCommandTimeout: 5000,
+});
+
 before(() => {
-  function login(email, password) {
+  function login({ email, password }) {
     cy.contains('p', 'STATUS:');
 
     cy.get(queries.logginForm.email).type(email);
@@ -33,5 +37,9 @@ before(() => {
   }
 
   cy.visit('/');
-  login('yabe@diverta.co.jp', 'panda9337_');
+  const q = {
+    email: 'test',
+    password: 'qwer1234',
+  };
+  login(q);
 });

@@ -1138,7 +1138,7 @@
                         "additionalProperties": false
                       }
                     ],
-                    "example": "2020-05-07"
+                    "example": "2020-05-08"
                   },
                   "ext_col_08": {
                     "description": "DateTime",
@@ -1170,7 +1170,7 @@
                         "additionalProperties": false
                       }
                     ],
-                    "example": "2020-05-07 17:45 +0900"
+                    "example": "2020-05-08 15:32 +0900"
                   },
                   "ext_col_05": {
                     "description": "Tdfk",
@@ -5623,7 +5623,7 @@
                         "additionalProperties": false
                       }
                     ],
-                    "example": "2020-05-07"
+                    "example": "2020-05-08"
                   },
                   "ext_col_08": {
                     "description": "DateTime",
@@ -5655,7 +5655,7 @@
                         "additionalProperties": false
                       }
                     ],
-                    "example": "2020-05-07 17:45 +0900"
+                    "example": "2020-05-08 15:32 +0900"
                   },
                   "ext_col_05": {
                     "description": "Tdfk",
@@ -10646,7 +10646,7 @@
                               "additionalProperties": false
                             }
                           ],
-                          "example": "2020-05-07"
+                          "example": "2020-05-08"
                         },
                         {
                           "type": "object",
@@ -10693,7 +10693,7 @@
                               "additionalProperties": false
                             }
                           ],
-                          "example": "2020-05-07 17:45 +0900"
+                          "example": "2020-05-08 15:32 +0900"
                         },
                         {
                           "type": "object",
@@ -15341,7 +15341,7 @@
                               "additionalProperties": false
                             }
                           ],
-                          "example": "2020-05-07"
+                          "example": "2020-05-08"
                         },
                         {
                           "type": "object",
@@ -15388,7 +15388,7 @@
                               "additionalProperties": false
                             }
                           ],
-                          "example": "2020-05-07 17:45 +0900"
+                          "example": "2020-05-08 15:32 +0900"
                         },
                         {
                           "type": "object",
@@ -20052,6 +20052,12 @@
                     "pattern": "^[a-zA-Z0-9\\-_\\.]+([a-zA-Z0-9\\-_\\.\\/\\+]+)?@[a-zA-Z0-9\\-_\\.]+\\.[a-zA-Z0-9\\-_\\.]+$",
                     "minLength": 1
                   },
+                  "login_id": {
+                    "type": "string",
+                    "format": "",
+                    "description": "Login ID",
+                    "example": ""
+                  },
                   "login_pwd": {
                     "type": "string",
                     "format": "password",
@@ -20077,6 +20083,89 @@
                     "description": "Given name",
                     "example": ""
                   },
+                  "sex": {
+                    "type": "string",
+                    "format": "",
+                    "description": "Sex",
+                    "example": "m",
+                    "enum": ["m", "f", "e"]
+                  },
+                  "birth": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "Date of birth"
+                  },
+                  "member_photo": {
+                    "description": "Image1",
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[a-zA-Z0-9-_]+$",
+                        "default": "",
+                        "example": "",
+                        "description": "File ID returned by File Upload API"
+                      },
+                      "file_id": {
+                        "type": "string",
+                        "default": "",
+                        "example": "",
+                        "description": ""
+                      },
+                      "file_nm": {
+                        "type": "string",
+                        "default": "",
+                        "example": "",
+                        "description": "File name"
+                      },
+                      "desc": {
+                        "type": "string",
+                        "default": "",
+                        "example": "",
+                        "description": "Description"
+                      },
+                      "extension": {
+                        "enum": ["jpg", "gif", "png"]
+                      }
+                    },
+                    "anyOf": [
+                      {
+                        "required": ["desc"],
+                        "example": {
+                          "desc": ""
+                        }
+                      },
+                      {
+                        "required": [],
+                        "example": {}
+                      },
+                      {
+                        "required": ["id", "desc"],
+                        "example": {
+                          "id": "",
+                          "desc": ""
+                        }
+                      },
+                      {
+                        "required": ["file_id", "file_nm"],
+                        "example": {
+                          "file_id": "",
+                          "file_nm": "",
+                          "desc": ""
+                        }
+                      },
+                      {
+                        "required": ["id"],
+                        "example": {
+                          "id": "",
+                          "file_id": "",
+                          "file_nm": "",
+                          "desc": ""
+                        }
+                      }
+                    ],
+                    "additionalProperties": false
+                  },
                   "text": {
                     "type": "string",
                     "format": "",
@@ -20089,37 +20178,6 @@
                     "format": "",
                     "description": "Textarea",
                     "example": ""
-                  },
-                  "selectbox": {
-                    "description": "Selectbox\n* 1 => selectBoxOption1\n* 2 => selectBoxOption2\n* 3 => selectBoxOption3",
-                    "anyOf": [
-                      {
-                        "type": "object",
-                        "properties": {
-                          "key": {
-                            "type": "string",
-                            "format": "",
-                            "enum": ["1", "2", "3"]
-                          },
-                          "label": {
-                            "type": "string",
-                            "format": "",
-                            "enum": [
-                              "selectBoxOption1",
-                              "selectBoxOption2",
-                              "selectBoxOption3"
-                            ]
-                          }
-                        },
-                        "additionalProperties": false
-                      },
-                      {
-                        "type": "string",
-                        "enum": ["", "1", "2", "3"]
-                      }
-                    ],
-                    "example": {},
-                    "default": ""
                   },
                   "radio": {
                     "description": "Radio\n* 1 => radioOption1\n* 2 => radioOption2\n* 3 => radioOption3",
@@ -20139,6 +20197,37 @@
                               "radioOption1",
                               "radioOption2",
                               "radioOption3"
+                            ]
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "string",
+                        "enum": ["", "1", "2", "3"]
+                      }
+                    ],
+                    "example": {},
+                    "default": ""
+                  },
+                  "selectbox": {
+                    "description": "Selectbox\n* 1 => selectBoxOption1\n* 2 => selectBoxOption2\n* 3 => selectBoxOption3",
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "key": {
+                            "type": "string",
+                            "format": "",
+                            "enum": ["1", "2", "3"]
+                          },
+                          "label": {
+                            "type": "string",
+                            "format": "",
+                            "enum": [
+                              "selectBoxOption1",
+                              "selectBoxOption2",
+                              "selectBoxOption3"
                             ]
                           }
                         },
@@ -20195,7 +20284,7 @@
                         "format": "date"
                       }
                     ],
-                    "example": "2020-05-07"
+                    "example": "2020-05-08"
                   },
                   "relation": {
                     "type": "integer",
@@ -20379,6 +20468,12 @@
                     "pattern": "^[a-zA-Z0-9\\-_\\.]+([a-zA-Z0-9\\-_\\.\\/\\+]+)?@[a-zA-Z0-9\\-_\\.]+\\.[a-zA-Z0-9\\-_\\.]+$",
                     "minLength": 1
                   },
+                  "login_id": {
+                    "type": "string",
+                    "format": "",
+                    "description": "Login ID",
+                    "example": ""
+                  },
                   "login_pwd": {
                     "type": "string",
                     "format": "password",
@@ -20404,6 +20499,89 @@
                     "description": "Given name",
                     "example": ""
                   },
+                  "sex": {
+                    "type": "string",
+                    "format": "",
+                    "description": "Sex",
+                    "example": "m",
+                    "enum": ["m", "f", "e"]
+                  },
+                  "birth": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "Date of birth"
+                  },
+                  "member_photo": {
+                    "description": "Image1",
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[a-zA-Z0-9-_]+$",
+                        "default": "",
+                        "example": "",
+                        "description": "File ID returned by File Upload API"
+                      },
+                      "file_id": {
+                        "type": "string",
+                        "default": "",
+                        "example": "",
+                        "description": ""
+                      },
+                      "file_nm": {
+                        "type": "string",
+                        "default": "",
+                        "example": "",
+                        "description": "File name"
+                      },
+                      "desc": {
+                        "type": "string",
+                        "default": "",
+                        "example": "",
+                        "description": "Description"
+                      },
+                      "extension": {
+                        "enum": ["jpg", "gif", "png"]
+                      }
+                    },
+                    "anyOf": [
+                      {
+                        "required": ["desc"],
+                        "example": {
+                          "desc": ""
+                        }
+                      },
+                      {
+                        "required": [],
+                        "example": {}
+                      },
+                      {
+                        "required": ["id", "desc"],
+                        "example": {
+                          "id": "",
+                          "desc": ""
+                        }
+                      },
+                      {
+                        "required": ["file_id", "file_nm"],
+                        "example": {
+                          "file_id": "",
+                          "file_nm": "",
+                          "desc": ""
+                        }
+                      },
+                      {
+                        "required": ["id"],
+                        "example": {
+                          "id": "",
+                          "file_id": "",
+                          "file_nm": "",
+                          "desc": ""
+                        }
+                      }
+                    ],
+                    "additionalProperties": false
+                  },
                   "text": {
                     "type": "string",
                     "format": "",
@@ -20416,37 +20594,6 @@
                     "format": "",
                     "description": "Textarea",
                     "example": ""
-                  },
-                  "selectbox": {
-                    "description": "Selectbox\n* 1 => selectBoxOption1\n* 2 => selectBoxOption2\n* 3 => selectBoxOption3",
-                    "anyOf": [
-                      {
-                        "type": "object",
-                        "properties": {
-                          "key": {
-                            "type": "string",
-                            "format": "",
-                            "enum": ["1", "2", "3"]
-                          },
-                          "label": {
-                            "type": "string",
-                            "format": "",
-                            "enum": [
-                              "selectBoxOption1",
-                              "selectBoxOption2",
-                              "selectBoxOption3"
-                            ]
-                          }
-                        },
-                        "additionalProperties": false
-                      },
-                      {
-                        "type": "string",
-                        "enum": ["", "1", "2", "3"]
-                      }
-                    ],
-                    "example": {},
-                    "default": ""
                   },
                   "radio": {
                     "description": "Radio\n* 1 => radioOption1\n* 2 => radioOption2\n* 3 => radioOption3",
@@ -20466,6 +20613,37 @@
                               "radioOption1",
                               "radioOption2",
                               "radioOption3"
+                            ]
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "string",
+                        "enum": ["", "1", "2", "3"]
+                      }
+                    ],
+                    "example": {},
+                    "default": ""
+                  },
+                  "selectbox": {
+                    "description": "Selectbox\n* 1 => selectBoxOption1\n* 2 => selectBoxOption2\n* 3 => selectBoxOption3",
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "key": {
+                            "type": "string",
+                            "format": "",
+                            "enum": ["1", "2", "3"]
+                          },
+                          "label": {
+                            "type": "string",
+                            "format": "",
+                            "enum": [
+                              "selectBoxOption1",
+                              "selectBoxOption2",
+                              "selectBoxOption3"
                             ]
                           }
                         },
@@ -20522,7 +20700,7 @@
                         "format": "date"
                       }
                     ],
-                    "example": "2020-05-07"
+                    "example": "2020-05-08"
                   },
                   "relation": {
                     "type": "integer",
@@ -20791,6 +20969,12 @@
                     "pattern": "^[a-zA-Z0-9\\-_\\.]+([a-zA-Z0-9\\-_\\.\\/\\+]+)?@[a-zA-Z0-9\\-_\\.]+\\.[a-zA-Z0-9\\-_\\.]+$",
                     "minLength": 1
                   },
+                  "login_id": {
+                    "type": "string",
+                    "format": "",
+                    "description": "Login ID",
+                    "example": ""
+                  },
                   "login_pwd": {
                     "type": "string",
                     "format": "password",
@@ -20816,6 +21000,89 @@
                     "description": "Given name",
                     "example": ""
                   },
+                  "sex": {
+                    "type": "string",
+                    "format": "",
+                    "description": "Sex",
+                    "example": "m",
+                    "enum": ["m", "f", "e"]
+                  },
+                  "birth": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "Date of birth"
+                  },
+                  "member_photo": {
+                    "description": "Image1",
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[a-zA-Z0-9-_]+$",
+                        "default": "",
+                        "example": "",
+                        "description": "File ID returned by File Upload API"
+                      },
+                      "file_id": {
+                        "type": "string",
+                        "default": "",
+                        "example": "",
+                        "description": ""
+                      },
+                      "file_nm": {
+                        "type": "string",
+                        "default": "",
+                        "example": "",
+                        "description": "File name"
+                      },
+                      "desc": {
+                        "type": "string",
+                        "default": "",
+                        "example": "",
+                        "description": "Description"
+                      },
+                      "extension": {
+                        "enum": ["jpg", "gif", "png"]
+                      }
+                    },
+                    "anyOf": [
+                      {
+                        "required": ["desc"],
+                        "example": {
+                          "desc": ""
+                        }
+                      },
+                      {
+                        "required": [],
+                        "example": {}
+                      },
+                      {
+                        "required": ["id", "desc"],
+                        "example": {
+                          "id": "",
+                          "desc": ""
+                        }
+                      },
+                      {
+                        "required": ["file_id", "file_nm"],
+                        "example": {
+                          "file_id": "",
+                          "file_nm": "",
+                          "desc": ""
+                        }
+                      },
+                      {
+                        "required": ["id"],
+                        "example": {
+                          "id": "",
+                          "file_id": "",
+                          "file_nm": "",
+                          "desc": ""
+                        }
+                      }
+                    ],
+                    "additionalProperties": false
+                  },
                   "text": {
                     "type": "string",
                     "format": "",
@@ -20828,37 +21095,6 @@
                     "format": "",
                     "description": "Textarea",
                     "example": ""
-                  },
-                  "selectbox": {
-                    "description": "Selectbox\n* 1 => selectBoxOption1\n* 2 => selectBoxOption2\n* 3 => selectBoxOption3",
-                    "anyOf": [
-                      {
-                        "type": "object",
-                        "properties": {
-                          "key": {
-                            "type": "string",
-                            "format": "",
-                            "enum": ["1", "2", "3"]
-                          },
-                          "label": {
-                            "type": "string",
-                            "format": "",
-                            "enum": [
-                              "selectBoxOption1",
-                              "selectBoxOption2",
-                              "selectBoxOption3"
-                            ]
-                          }
-                        },
-                        "additionalProperties": false
-                      },
-                      {
-                        "type": "string",
-                        "enum": ["", "1", "2", "3"]
-                      }
-                    ],
-                    "example": {},
-                    "default": ""
                   },
                   "radio": {
                     "description": "Radio\n* 1 => radioOption1\n* 2 => radioOption2\n* 3 => radioOption3",
@@ -20878,6 +21114,37 @@
                               "radioOption1",
                               "radioOption2",
                               "radioOption3"
+                            ]
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "string",
+                        "enum": ["", "1", "2", "3"]
+                      }
+                    ],
+                    "example": {},
+                    "default": ""
+                  },
+                  "selectbox": {
+                    "description": "Selectbox\n* 1 => selectBoxOption1\n* 2 => selectBoxOption2\n* 3 => selectBoxOption3",
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "key": {
+                            "type": "string",
+                            "format": "",
+                            "enum": ["1", "2", "3"]
+                          },
+                          "label": {
+                            "type": "string",
+                            "format": "",
+                            "enum": [
+                              "selectBoxOption1",
+                              "selectBoxOption2",
+                              "selectBoxOption3"
                             ]
                           }
                         },
@@ -20934,7 +21201,7 @@
                         "format": "date"
                       }
                     ],
-                    "example": "2020-05-07"
+                    "example": "2020-05-08"
                   },
                   "relation": {
                     "type": "integer",
@@ -22377,7 +22644,7 @@
                         }
                       }
                     ],
-                    "example": "2020-05-07 17:45 +0900",
+                    "example": "2020-05-08 15:32 +0900",
                     "description": "DateTime"
                   },
                   "ext_07": {
@@ -22584,7 +22851,7 @@
                   "ext_10": {
                     "type": "string",
                     "format": "date",
-                    "example": "2020-05-07",
+                    "example": "2020-05-08",
                     "description": "Date"
                   },
                   "validate_only": {
@@ -22864,7 +23131,7 @@
                         }
                       }
                     ],
-                    "example": "2020-05-07 17:45 +0900",
+                    "example": "2020-05-08 15:32 +0900",
                     "description": "DateTime"
                   },
                   "ext_07": {
@@ -23069,37 +23336,9 @@
                     "additionalProperties": false
                   },
                   "ext_10": {
-                    "anyOf": [
-                      {
-                        "type": "string",
-                        "format": "date"
-                      },
-                      {
-                        "type": "object",
-                        "properties": {
-                          "y": {
-                            "type": "integer",
-                            "format": "int64",
-                            "example": 2020
-                          },
-                          "m": {
-                            "type": "integer",
-                            "format": "int64",
-                            "minimum": 1,
-                            "maximum": 12,
-                            "example": 12
-                          },
-                          "d": {
-                            "type": "integer",
-                            "format": "int64",
-                            "minimum": 1,
-                            "maximum": 31,
-                            "example": 31
-                          }
-                        }
-                      }
-                    ],
-                    "example": "2020-05-07",
+                    "type": "string",
+                    "format": "date",
+                    "example": "2020-05-08",
                     "description": "Date"
                   },
                   "validate_only": {

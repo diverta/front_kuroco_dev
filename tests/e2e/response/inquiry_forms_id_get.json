@@ -9,10 +9,10 @@
 		"mailserver": "",
 		"mailbox": "",
 		"mail_user_name": "",
-		"mail_password": "",
+		"mail_password": "@hum1sumD",
 		"inquiry_signature": "",
 		"inst_ymdhi": "2006-04-19 05:18:51+09",
-		"update_ymdhi": "2020-04-13 13:55:20.626433+09",
+		"update_ymdhi": "2020-05-08 14:31:13.696463+09",
 		"admin_nm": "Diverta Sakaguchi",
 		"dflg": 0,
 		"user_profile": {
@@ -791,7 +791,7 @@
 			"ext_title_79": "",
 			"ext_title_80": ""
 		},
-		"can_edit_inquiry_mail_content": "0",
+		"can_edit_inquiry_mail_content": "1",
 		"use_dl_link": 0,
 		"file_expire_days": 0,
 		"dl_link_text": "",
