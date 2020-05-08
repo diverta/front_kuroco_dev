@@ -59,7 +59,7 @@ cyprerss のダッシュボードが表示されます。
 chrome が立ち上がり、テストが実行されます。  
 ![img](./docs/img/cypress_testing.png)
 
-- test ファイルの作り方
+### test ファイルの作り方
 
 test は本アプリの画面をコードから操作することで実施されます(e2e)。  
 `executeRequest({ cy, query, requestData })`メソッドを通して実行してください。
