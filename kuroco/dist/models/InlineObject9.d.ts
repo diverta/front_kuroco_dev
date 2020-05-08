@@ -16,49 +16,13 @@
  */
 export interface InlineObject9 {
     /**
-     * モジュールID
+     * /label/member_id
      * @type {number}
      * @memberof InlineObject9
      */
-    moduleId: number;
-    /**
-     * Name
-     * @type {string}
-     * @memberof InlineObject9
-     */
-    name: string;
-    /**
-     * Mail
-     * @type {string}
-     * @memberof InlineObject9
-     */
-    mail?: string;
-    /**
-     * URL
-     * @type {string}
-     * @memberof InlineObject9
-     */
-    url?: string;
-    /**
-     * Comments
-     * @type {string}
-     * @memberof InlineObject9
-     */
-    note: string;
-    /**
-     * Rating
-     * @type {number}
-     * @memberof InlineObject9
-     */
-    rating?: number;
-    /**
-     * 削除キー
-     * @type {string}
-     * @memberof InlineObject9
-     */
-    delkey?: string;
+    memberId: number;
 }
-export declare const InlineObject9Description = "{\n    /**\n     * \u30E2\u30B8\u30E5\u30FC\u30EBID\n     * @type {number}\n     */\n    moduleId: number;\n    /**\n     * Name\n     * @type {string}\n     */\n    name: string;\n    /**\n     * Mail\n     * @type {string}\n     */\n    mail?: string;\n    /**\n     * URL\n     * @type {string}\n     */\n    url?: string;\n    /**\n     * Comments\n     * @type {string}\n     */\n    note: string;\n    /**\n     * Rating\n     * @type {number}\n     */\n    rating?: number;\n    /**\n     * \u524A\u9664\u30AD\u30FC\n     * @type {string}\n     */\n    delkey?: string;\n}";
+export declare const InlineObject9Description = "{\n    /**\n     * /label/member_id\n     * @type {number}\n     */\n    memberId: number;\n}";
 export declare function InlineObject9FromJSON(json: any): InlineObject9;
 export declare function InlineObject9FromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject9;
 export declare function InlineObject9ToJSON(value?: InlineObject9 | null): any;

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import { exists } from '../runtime';
-export var InlineObject11Description = "{\n    /**\n     * \u30B3\u30E1\u30F3\u30C8ID\n     * @type {number}\n     */\n    commentId: number;\n    /**\n     * \u524A\u9664\u30AD\u30FC\n     * @type {string}\n     */\n    delkey?: string;\n}";
+export var InlineObject11Description = "{\n    /**\n     * \u30E2\u30B8\u30E5\u30FC\u30EBID\n     * @type {number}\n     */\n    moduleId: number;\n    /**\n     * Name\n     * @type {string}\n     */\n    name: string;\n    /**\n     * Mail\n     * @type {string}\n     */\n    mail?: string;\n    /**\n     * URL\n     * @type {string}\n     */\n    url?: string;\n    /**\n     * Comments\n     * @type {string}\n     */\n    note: string;\n    /**\n     * Rating\n     * @type {number}\n     */\n    rating?: number;\n    /**\n     * \u524A\u9664\u30AD\u30FC\n     * @type {string}\n     */\n    delkey?: string;\n}";
 export function InlineObject11FromJSON(json) {
     return InlineObject11FromJSONTyped(json, false);
 }
@@ -21,7 +21,12 @@ export function InlineObject11FromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'commentId': json['comment_id'],
+        'moduleId': json['module_id'],
+        'name': json['name'],
+        'mail': !exists(json, 'mail') ? undefined : json['mail'],
+        'url': !exists(json, 'url') ? undefined : json['url'],
+        'note': json['note'],
+        'rating': !exists(json, 'rating') ? undefined : json['rating'],
         'delkey': !exists(json, 'delkey') ? undefined : json['delkey'],
     };
 }
@@ -33,7 +38,12 @@ export function InlineObject11ToJSON(value) {
         return null;
     }
     return {
-        'comment_id': value.commentId,
+        'module_id': value.moduleId,
+        'name': value.name,
+        'mail': value.mail,
+        'url': value.url,
+        'note': value.note,
+        'rating': value.rating,
         'delkey': value.delkey,
     };
 }

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { InlineObject3, InlineObject4 } from '../models';
+import { InlineObject3, InlineObject4, InlineObject5, InlineObject6 } from '../models';
 export interface TopicsApiRcmsApi1Topics1DeleteTopicsIdPostRequest {
     topicsId: number;
     outputFormat?: string;
@@ -64,6 +64,53 @@ export interface TopicsApiRcmsApi1Topics1UpdateTopicsIdPostRequest {
     lang?: string;
     charset?: string;
 }
+export interface TopicsApiRcmsApi1TopicsMultipleGetRequest {
+    outputFormat?: string;
+    lang?: string;
+    charset?: string;
+    cnt?: number;
+    pageID?: number;
+    customSearchId?: string;
+    topicsKeyword?: string;
+    topicsKeywordCond?: string;
+    contentsType?: Array<number>;
+    contentsTypeCond?: string;
+    date?: string;
+    usingSeason?: string;
+    season?: number;
+    extColumnCond?: string;
+    excludeTopicsId?: string;
+    tagCategoryId?: number;
+    tagSearch?: string;
+    tagId?: Array<number>;
+    tagCond?: string;
+    excludeTagId?: string;
+    myFavoriteList?: number;
+    myCommentList?: number;
+    myOwnList?: string;
+    order?: string;
+    orderById?: string;
+    id?: Array<number>;
+}
+export interface TopicsApiRcmsApi1TopicsMultipleInsertPostRequest {
+    inlineObject5: InlineObject5;
+    outputFormat?: string;
+    lang?: string;
+    charset?: string;
+}
+export interface TopicsApiRcmsApi1TopicsMultipleTopicsIdGetRequest {
+    topicsId: number;
+    outputFormat?: string;
+    lang?: string;
+    charset?: string;
+}
+export interface TopicsApiRcmsApi1TopicsMultipleUpdateTopicsIdPostRequest {
+    topicsId: number;
+    inlineObject6: InlineObject6;
+    outputFormat?: string;
+    lang?: string;
+    charset?: string;
+}
 /**
  * no description
  */
@@ -77,6 +124,8 @@ export declare class TopicsApi extends runtime.BaseAPI {
             topicsId: any;
             inlineObject3?: undefined;
             inlineObject4?: undefined;
+            inlineObject5?: undefined;
+            inlineObject6?: undefined;
         };
         requestParamInterfaceDescription: string;
     } | {
@@ -87,6 +136,8 @@ export declare class TopicsApi extends runtime.BaseAPI {
             topicsId?: undefined;
             inlineObject3?: undefined;
             inlineObject4?: undefined;
+            inlineObject5?: undefined;
+            inlineObject6?: undefined;
         };
         requestParamInterfaceDescription: string;
     } | {
@@ -97,6 +148,8 @@ export declare class TopicsApi extends runtime.BaseAPI {
             inlineObject3: any;
             topicsId?: undefined;
             inlineObject4?: undefined;
+            inlineObject5?: undefined;
+            inlineObject6?: undefined;
         };
         requestParamInterfaceDescription: string;
     } | {
@@ -107,6 +160,32 @@ export declare class TopicsApi extends runtime.BaseAPI {
             topicsId: any;
             inlineObject4: any;
             inlineObject3?: undefined;
+            inlineObject5?: undefined;
+            inlineObject6?: undefined;
+        };
+        requestParamInterfaceDescription: string;
+    } | {
+        class: typeof TopicsApi;
+        url: string;
+        requestMethodName: string;
+        requestRequiredParamSample: {
+            inlineObject5: any;
+            topicsId?: undefined;
+            inlineObject3?: undefined;
+            inlineObject4?: undefined;
+            inlineObject6?: undefined;
+        };
+        requestParamInterfaceDescription: string;
+    } | {
+        class: typeof TopicsApi;
+        url: string;
+        requestMethodName: string;
+        requestRequiredParamSample: {
+            topicsId: any;
+            inlineObject6: any;
+            inlineObject3?: undefined;
+            inlineObject4?: undefined;
+            inlineObject5?: undefined;
         };
         requestParamInterfaceDescription: string;
     })[];
@@ -130,5 +209,21 @@ export declare class TopicsApi extends runtime.BaseAPI {
      *  ### **Topics::update (v1)**   ## Controller parameters  > **topics_group_id** `1`
      */
     rcmsApi1Topics1UpdateTopicsIdPost(requestParameters: TopicsApiRcmsApi1Topics1UpdateTopicsIdPostRequest): Promise<runtime.JSONApiResponse<any>>;
+    /**
+     *  ### **Topics::list (v1)**   ## Controller parameters  > **topics_group_id** `2`
+     */
+    rcmsApi1TopicsMultipleGet(requestParameters: TopicsApiRcmsApi1TopicsMultipleGetRequest): Promise<runtime.JSONApiResponse<any>>;
+    /**
+     *  ### **Topics::insert (v1)**   ## Controller parameters  > **topics_group_id** `2`
+     */
+    rcmsApi1TopicsMultipleInsertPost(requestParameters: TopicsApiRcmsApi1TopicsMultipleInsertPostRequest): Promise<runtime.JSONApiResponse<any>>;
+    /**
+     *  ### **Topics::details (v1)**   ## Controller parameters  > **topics_group_id** `2`
+     */
+    rcmsApi1TopicsMultipleTopicsIdGet(requestParameters: TopicsApiRcmsApi1TopicsMultipleTopicsIdGetRequest): Promise<runtime.JSONApiResponse<any>>;
+    /**
+     *  ### **Topics::update (v1)**   ## Controller parameters  > **topics_group_id** `2`
+     */
+    rcmsApi1TopicsMultipleUpdateTopicsIdPost(requestParameters: TopicsApiRcmsApi1TopicsMultipleUpdateTopicsIdPostRequest): Promise<runtime.JSONApiResponse<any>>;
 }
 //# sourceMappingURL=TopicsApi.d.ts.map

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import { exists } from '../runtime';
-export var InlineObject10Description = "{\n    /**\n     * \u30B3\u30E1\u30F3\u30C8ID\n     * @type {number}\n     */\n    commentId: number;\n    /**\n     * \u30E2\u30B8\u30E5\u30FC\u30EBID\n     * @type {number}\n     */\n    moduleId: number;\n    /**\n     * Name\n     * @type {string}\n     */\n    name: string;\n    /**\n     * Mail\n     * @type {string}\n     */\n    mail?: string;\n    /**\n     * URL\n     * @type {string}\n     */\n    url?: string;\n    /**\n     * Comments\n     * @type {string}\n     */\n    note: string;\n    /**\n     * Rating\n     * @type {number}\n     */\n    rating?: number;\n    /**\n     * \u524A\u9664\u30AD\u30FC\n     * @type {string}\n     */\n    delkey?: string;\n}";
+export var InlineObject10Description = "{\n    /**\n     * Email\n     * @type {string}\n     */\n    email?: string;\n    /**\n     * Password\n     * @type {string}\n     */\n    loginPwd?: string;\n    /**\n     * Nickname\n     * @type {string}\n     */\n    nickname?: string;\n    /**\n     * Family name\n     * @type {string}\n     */\n    name1?: string;\n    /**\n     * Given name\n     * @type {string}\n     */\n    name2?: string;\n    /**\n     * Text\n     * @type {string}\n     */\n    text?: string;\n    /**\n     * Textarea\n     * @type {string}\n     */\n    textarea?: string;\n    /**\n     * Selectbox * 1 => selectBoxOption1 * 2 => selectBoxOption2 * 3 => selectBoxOption3\n     * @type {object | string}\n     */\n    selectbox?: object | string;\n    /**\n     * Radio * 1 => radioOption1 * 2 => radioOption2 * 3 => radioOption3\n     * @type {object | string}\n     */\n    radio?: object | string;\n    /**\n     * Checkbox * 1 => checkboxOption1 * 2 => checkboxOption2 * 3 => checkboxOption3\n     * @type {Array<object | string>}\n     */\n    checkbox?: Array<object | string>;\n    /**\n     * Date\n     * @type {Date}\n     */\n    date?: Date;\n    /**\n     * \n     * @type {number}\n     */\n    relation?: number;\n    /**\n     * File\n     * @type {object}\n     */\n    file?: object;\n    /**\n     * /label/group_id\n     * @type {Array<number>}\n     */\n    groupId?: Array<InlineObject10GroupIdEnum>;\n    /**\n     * /label/open_flg\n     * @type {number}\n     */\n    openFlg?: InlineObject10OpenFlgEnum;\n    /**\n     * /label/login_ok_flg\n     * @type {number}\n     */\n    loginOkFlg?: InlineObject10LoginOkFlgEnum;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validateOnly?: boolean;\n}";
 export function InlineObject10FromJSON(json) {
     return InlineObject10FromJSONTyped(json, false);
 }
@@ -21,14 +21,23 @@ export function InlineObject10FromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'commentId': json['comment_id'],
-        'moduleId': json['module_id'],
-        'name': json['name'],
-        'mail': !exists(json, 'mail') ? undefined : json['mail'],
-        'url': !exists(json, 'url') ? undefined : json['url'],
-        'note': json['note'],
-        'rating': !exists(json, 'rating') ? undefined : json['rating'],
-        'delkey': !exists(json, 'delkey') ? undefined : json['delkey'],
+        'email': !exists(json, 'email') ? undefined : json['email'],
+        'loginPwd': !exists(json, 'login_pwd') ? undefined : json['login_pwd'],
+        'nickname': !exists(json, 'nickname') ? undefined : json['nickname'],
+        'name1': !exists(json, 'name1') ? undefined : json['name1'],
+        'name2': !exists(json, 'name2') ? undefined : json['name2'],
+        'text': !exists(json, 'text') ? undefined : json['text'],
+        'textarea': !exists(json, 'textarea') ? undefined : json['textarea'],
+        'selectbox': !exists(json, 'selectbox') ? undefined : json['selectbox'],
+        'radio': !exists(json, 'radio') ? undefined : json['radio'],
+        'checkbox': !exists(json, 'checkbox') ? undefined : json['checkbox'],
+        'date': !exists(json, 'date') ? undefined : json['date'],
+        'relation': !exists(json, 'relation') ? undefined : json['relation'],
+        'file': !exists(json, 'file') ? undefined : json['file'],
+        'groupId': !exists(json, 'group_id') ? undefined : json['group_id'],
+        'openFlg': !exists(json, 'open_flg') ? undefined : json['open_flg'],
+        'loginOkFlg': !exists(json, 'login_ok_flg') ? undefined : json['login_ok_flg'],
+        'validateOnly': !exists(json, 'validate_only') ? undefined : json['validate_only'],
     };
 }
 export function InlineObject10ToJSON(value) {
@@ -39,13 +48,49 @@ export function InlineObject10ToJSON(value) {
         return null;
     }
     return {
-        'comment_id': value.commentId,
-        'module_id': value.moduleId,
-        'name': value.name,
-        'mail': value.mail,
-        'url': value.url,
-        'note': value.note,
-        'rating': value.rating,
-        'delkey': value.delkey,
+        'email': value.email,
+        'login_pwd': value.loginPwd,
+        'nickname': value.nickname,
+        'name1': value.name1,
+        'name2': value.name2,
+        'text': value.text,
+        'textarea': value.textarea,
+        'selectbox': value.selectbox === undefined ? undefined : (value.selectbox),
+        'radio': value.radio === undefined ? undefined : (value.radio),
+        'checkbox': value.checkbox === undefined ? undefined : value.checkbox,
+        'date': value.date,
+        'relation': value.relation,
+        'file': value.file,
+        'group_id': value.groupId,
+        'open_flg': value.openFlg,
+        'login_ok_flg': value.loginOkFlg,
+        'validate_only': value.validateOnly,
     };
 }
+/**
+* @export
+* @enum {string}
+*/
+export var InlineObject10GroupIdEnum;
+(function (InlineObject10GroupIdEnum) {
+    InlineObject10GroupIdEnum[InlineObject10GroupIdEnum["_1"] = 1] = "_1";
+    InlineObject10GroupIdEnum[InlineObject10GroupIdEnum["_2"] = 2] = "_2";
+})(InlineObject10GroupIdEnum || (InlineObject10GroupIdEnum = {}));
+/**
+* @export
+* @enum {string}
+*/
+export var InlineObject10OpenFlgEnum;
+(function (InlineObject10OpenFlgEnum) {
+    InlineObject10OpenFlgEnum[InlineObject10OpenFlgEnum["_0"] = 0] = "_0";
+    InlineObject10OpenFlgEnum[InlineObject10OpenFlgEnum["_1"] = 1] = "_1";
+})(InlineObject10OpenFlgEnum || (InlineObject10OpenFlgEnum = {}));
+/**
+* @export
+* @enum {string}
+*/
+export var InlineObject10LoginOkFlgEnum;
+(function (InlineObject10LoginOkFlgEnum) {
+    InlineObject10LoginOkFlgEnum[InlineObject10LoginOkFlgEnum["_0"] = 0] = "_0";
+    InlineObject10LoginOkFlgEnum[InlineObject10LoginOkFlgEnum["_1"] = 1] = "_1";
+})(InlineObject10LoginOkFlgEnum || (InlineObject10LoginOkFlgEnum = {}));

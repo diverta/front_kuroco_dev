@@ -13,13 +13,13 @@ import { __awaiter, __extends, __generator } from "tslib";
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { InlineObject17Description, InlineObject17ToJSON, } from '../models';
+import { InlineObject19Description, InlineObject19ToJSON, } from '../models';
 var usingModelsDescription = {
-    InlineObject17: InlineObject17Description.split('\n').map(function (str) { return "  " + str; }).join('\n'),
+    InlineObject19: InlineObject19Description.split('\n').map(function (str) { return "  " + str; }).join('\n'),
 };
 var TagsApiRcmsApi1TagsDeleteTagIdPostRequestDescription = (function (usingModelsDescription) { return "{\n    tagId: number;\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
 var TagsApiRcmsApi1TagsGetRequestDescription = (function (usingModelsDescription) { return "{\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n    order?: Array<string>;\n    pageID?: number;\n    id?: Array<number>;\n    categoryId?: Array<number>;\n    groupBy?: string;\n    groupAs?: string;\n}"; })(usingModelsDescription);
-var TagsApiRcmsApi1TagsInsertPostRequestDescription = (function (usingModelsDescription) { return "{\n    inlineObject17: " + usingModelsDescription.InlineObject17 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
+var TagsApiRcmsApi1TagsInsertPostRequestDescription = (function (usingModelsDescription) { return "{\n    inlineObject19: " + usingModelsDescription.InlineObject19 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
 /**
  * no description
  */
@@ -59,7 +59,7 @@ var TagsApi = /** @class */ (function (_super) {
                     url: "/rcms-api/1/tags/insert",
                     requestMethodName: 'rcmsApi1TagsInsertPost',
                     requestRequiredParamSample: {
-                        inlineObject17: {},
+                        inlineObject19: {},
                     },
                     requestParamInterfaceDescription: TagsApiRcmsApi1TagsInsertPostRequestDescription,
                 },
@@ -222,8 +222,8 @@ var TagsApi = /** @class */ (function (_super) {
                                                 'e.g. rcmsApi1TagsInsertPost({})'
                                             ].join('\n'));
                                         }
-                                        if (requestParameters.inlineObject17 === null || requestParameters.inlineObject17 === undefined) {
-                                            throw new runtime.RequiredError('inlineObject17', 'Required parameter requestParameters.inlineObject17 was null or undefined when calling rcmsApi1TagsInsertPost.');
+                                        if (requestParameters.inlineObject19 === null || requestParameters.inlineObject19 === undefined) {
+                                            throw new runtime.RequiredError('inlineObject19', 'Required parameter requestParameters.inlineObject19 was null or undefined when calling rcmsApi1TagsInsertPost.');
                                         }
                                         queryParameters = {};
                                         if (requestParameters.outputFormat !== undefined) {
@@ -245,7 +245,7 @@ var TagsApi = /** @class */ (function (_super) {
                                                 method: 'POST',
                                                 headers: headerParameters,
                                                 query: queryParameters,
-                                                body: InlineObject17ToJSON(requestParameters.inlineObject17),
+                                                body: InlineObject19ToJSON(requestParameters.inlineObject19),
                                             })];
                                     case 1:
                                         response = _a.sent();

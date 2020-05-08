@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { InlineObject17 } from '../models';
+import { InlineObject19 } from '../models';
 export interface TagsApiRcmsApi1TagsDeleteTagIdPostRequest {
     tagId: number;
     outputFormat?: string;
@@ -29,7 +29,7 @@ export interface TagsApiRcmsApi1TagsGetRequest {
     groupAs?: string;
 }
 export interface TagsApiRcmsApi1TagsInsertPostRequest {
-    inlineObject17: InlineObject17;
+    inlineObject19: InlineObject19;
     outputFormat?: string;
     lang?: string;
     charset?: string;
@@ -45,7 +45,7 @@ export declare class TagsApi extends runtime.BaseAPI {
         requestMethodName: string;
         requestRequiredParamSample: {
             tagId: any;
-            inlineObject17?: undefined;
+            inlineObject19?: undefined;
         };
         requestParamInterfaceDescription: string;
     } | {
@@ -54,7 +54,7 @@ export declare class TagsApi extends runtime.BaseAPI {
         requestMethodName: string;
         requestRequiredParamSample: {
             tagId?: undefined;
-            inlineObject17?: undefined;
+            inlineObject19?: undefined;
         };
         requestParamInterfaceDescription: string;
     } | {
@@ -62,7 +62,7 @@ export declare class TagsApi extends runtime.BaseAPI {
         url: string;
         requestMethodName: string;
         requestRequiredParamSample: {
-            inlineObject17: any;
+            inlineObject19: any;
             tagId?: undefined;
         };
         requestParamInterfaceDescription: string;

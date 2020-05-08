@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import { exists } from '../runtime';
-export var InlineObject8Description = "{\n    /**\n     * Email\n     * @type {string}\n     */\n    email?: string;\n    /**\n     * Password\n     * @type {string}\n     */\n    loginPwd?: string;\n    /**\n     * Nickname\n     * @type {string}\n     */\n    nickname?: string;\n    /**\n     * Family name\n     * @type {string}\n     */\n    name1?: string;\n    /**\n     * Given name\n     * @type {string}\n     */\n    name2?: string;\n    /**\n     * Text\n     * @type {string}\n     */\n    text?: string;\n    /**\n     * Textarea\n     * @type {string}\n     */\n    textarea?: string;\n    /**\n     * Selectbox * 1 => selectBoxOption1 * 2 => selectBoxOption2 * 3 => selectBoxOption3\n     * @type {string}\n     */\n    selectbox?: InlineObject8SelectboxEnum;\n    /**\n     * Radio * 1 => radioOption1 * 2 => radioOption2 * 3 => radioOption3\n     * @type {string}\n     */\n    radio?: InlineObject8RadioEnum;\n    /**\n     * Checkbox * 1 => checkboxOption1 * 2 => checkboxOption2 * 3 => checkboxOption3\n     * @type {Array<string>}\n     */\n    checkbox?: Array<InlineObject8CheckboxEnum>;\n    /**\n     * Date\n     * @type {Date}\n     */\n    date?: Date;\n    /**\n     * Relation\n     * @type {number}\n     */\n    relation?: number;\n    /**\n     * File\n     * @type {object}\n     */\n    file?: object;\n    /**\n     * /label/group_id\n     * @type {Array<number>}\n     */\n    groupId?: Array<InlineObject8GroupIdEnum>;\n    /**\n     * /label/open_flg\n     * @type {number}\n     */\n    openFlg?: InlineObject8OpenFlgEnum;\n    /**\n     * /label/login_ok_flg\n     * @type {number}\n     */\n    loginOkFlg?: InlineObject8LoginOkFlgEnum;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validateOnly?: boolean;\n}";
+export var InlineObject8Description = "{\n    /**\n     * /label/member_id\n     * @type {number}\n     */\n    memberId: number;\n    /**\n     * Email\n     * @type {string}\n     */\n    email?: string;\n    /**\n     * Password\n     * @type {string}\n     */\n    loginPwd?: string;\n    /**\n     * Nickname\n     * @type {string}\n     */\n    nickname?: string;\n    /**\n     * Family name\n     * @type {string}\n     */\n    name1?: string;\n    /**\n     * Given name\n     * @type {string}\n     */\n    name2?: string;\n    /**\n     * Text\n     * @type {string}\n     */\n    text?: string;\n    /**\n     * Textarea\n     * @type {string}\n     */\n    textarea?: string;\n    /**\n     * Selectbox * 1 => selectBoxOption1 * 2 => selectBoxOption2 * 3 => selectBoxOption3\n     * @type {object | string}\n     */\n    selectbox?: object | string;\n    /**\n     * Radio * 1 => radioOption1 * 2 => radioOption2 * 3 => radioOption3\n     * @type {object | string}\n     */\n    radio?: object | string;\n    /**\n     * Checkbox * 1 => checkboxOption1 * 2 => checkboxOption2 * 3 => checkboxOption3\n     * @type {Array<object | string>}\n     */\n    checkbox?: Array<object | string>;\n    /**\n     * Date\n     * @type {Date}\n     */\n    date?: Date;\n    /**\n     * \n     * @type {number}\n     */\n    relation?: number;\n    /**\n     * File\n     * @type {object}\n     */\n    file?: object;\n    /**\n     * /label/group_id\n     * @type {Array<number>}\n     */\n    groupId?: InlineObject8GroupIdEnum;\n    /**\n     * /label/open_flg\n     * @type {number}\n     */\n    openFlg?: InlineObject8OpenFlgEnum;\n    /**\n     * /label/login_ok_flg\n     * @type {number}\n     */\n    loginOkFlg?: InlineObject8LoginOkFlgEnum;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validateOnly?: boolean;\n}";
 export function InlineObject8FromJSON(json) {
     return InlineObject8FromJSONTyped(json, false);
 }
@@ -21,6 +21,7 @@ export function InlineObject8FromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        'memberId': json['member_id'],
         'email': !exists(json, 'email') ? undefined : json['email'],
         'loginPwd': !exists(json, 'login_pwd') ? undefined : json['login_pwd'],
         'nickname': !exists(json, 'nickname') ? undefined : json['nickname'],
@@ -31,7 +32,7 @@ export function InlineObject8FromJSONTyped(json, ignoreDiscriminator) {
         'selectbox': !exists(json, 'selectbox') ? undefined : json['selectbox'],
         'radio': !exists(json, 'radio') ? undefined : json['radio'],
         'checkbox': !exists(json, 'checkbox') ? undefined : json['checkbox'],
-        'date': !exists(json, 'date') ? undefined : (new Date(json['date'])),
+        'date': !exists(json, 'date') ? undefined : json['date'],
         'relation': !exists(json, 'relation') ? undefined : json['relation'],
         'file': !exists(json, 'file') ? undefined : json['file'],
         'groupId': !exists(json, 'group_id') ? undefined : json['group_id'],
@@ -48,6 +49,7 @@ export function InlineObject8ToJSON(value) {
         return null;
     }
     return {
+        'member_id': value.memberId,
         'email': value.email,
         'login_pwd': value.loginPwd,
         'nickname': value.nickname,
@@ -55,10 +57,10 @@ export function InlineObject8ToJSON(value) {
         'name2': value.name2,
         'text': value.text,
         'textarea': value.textarea,
-        'selectbox': value.selectbox,
-        'radio': value.radio,
-        'checkbox': value.checkbox,
-        'date': value.date === undefined ? undefined : (value.date.toISOString().substr(0, 10)),
+        'selectbox': value.selectbox === undefined ? undefined : (value.selectbox),
+        'radio': value.radio === undefined ? undefined : (value.radio),
+        'checkbox': value.checkbox === undefined ? undefined : value.checkbox,
+        'date': value.date,
         'relation': value.relation,
         'file': value.file,
         'group_id': value.groupId,
@@ -67,36 +69,6 @@ export function InlineObject8ToJSON(value) {
         'validate_only': value.validateOnly,
     };
 }
-/**
-* @export
-* @enum {string}
-*/
-export var InlineObject8SelectboxEnum;
-(function (InlineObject8SelectboxEnum) {
-    InlineObject8SelectboxEnum["_1"] = "1";
-    InlineObject8SelectboxEnum["_2"] = "2";
-    InlineObject8SelectboxEnum["_3"] = "3";
-})(InlineObject8SelectboxEnum || (InlineObject8SelectboxEnum = {}));
-/**
-* @export
-* @enum {string}
-*/
-export var InlineObject8RadioEnum;
-(function (InlineObject8RadioEnum) {
-    InlineObject8RadioEnum["_1"] = "1";
-    InlineObject8RadioEnum["_2"] = "2";
-    InlineObject8RadioEnum["_3"] = "3";
-})(InlineObject8RadioEnum || (InlineObject8RadioEnum = {}));
-/**
-* @export
-* @enum {string}
-*/
-export var InlineObject8CheckboxEnum;
-(function (InlineObject8CheckboxEnum) {
-    InlineObject8CheckboxEnum["_1"] = "1";
-    InlineObject8CheckboxEnum["_2"] = "2";
-    InlineObject8CheckboxEnum["_3"] = "3";
-})(InlineObject8CheckboxEnum || (InlineObject8CheckboxEnum = {}));
 /**
 * @export
 * @enum {string}

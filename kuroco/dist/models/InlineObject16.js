@@ -11,7 +11,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export var InlineObject16Description = "{\n    /**\n     * Upload file\n     * @type {Blob}\n     */\n    file: Blob;\n}";
+import { exists } from '../runtime';
+export var InlineObject16Description = "{\n    /**\n     * Name\n     * @type {string}\n     */\n    name?: string;\n    /**\n     * E-mail\n     * @type {string}\n     */\n    fromMail?: string;\n    /**\n     * Message\n     * @type {string}\n     */\n    body?: string;\n    /**\n     * * 1 => Category1 * 3 => Category2 * 4 => Category3\n     * @type {number}\n     */\n    inquiryCategoryId: InlineObject16InquiryCategoryIdEnum;\n    /**\n     * RequiredText\n     * @type {string}\n     */\n    ext01: string;\n    /**\n     * LongText\n     * @type {string}\n     */\n    ext02?: string;\n    /**\n     * Radio * 1 => radio1 * 2 => radio2 * 3 => radio3\n     * @type {object | string}\n     */\n    ext03?: object | string;\n    /**\n     * RequiredSelect * 1 => select1 * 2 => select2 * 3 => select3\n     * @type {object | string}\n     */\n    ext04: object | string;\n    /**\n     * Checkbox * 1 => check1 * 2 => check2 * 3 => check3\n     * @type {Array<object | string>}\n     */\n    ext05?: Array<object | string>;\n    /**\n     * DateTime\n     * @type {string | object}\n     */\n    ext06?: string | object;\n    /**\n     * \n     * @type {object}\n     */\n    ext07?: object;\n    /**\n     * \n     * @type {RcmsApi1Topics1InsertExtCol05}\n     */\n    ext08?: RcmsApi1Topics1InsertExtCol05;\n    /**\n     * \n     * @type {RcmsApi1Topics1InsertExtJsn12}\n     */\n    ext09?: RcmsApi1Topics1InsertExtJsn12;\n    /**\n     * Date\n     * @type {Date | object}\n     */\n    ext10?: Date | object;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validateOnly?: boolean;\n}";
 export function InlineObject16FromJSON(json) {
     return InlineObject16FromJSONTyped(json, false);
 }
@@ -20,7 +21,21 @@ export function InlineObject16FromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'file': json['file'],
+        'name': !exists(json, 'name') ? undefined : json['name'],
+        'fromMail': !exists(json, 'from_mail') ? undefined : json['from_mail'],
+        'body': !exists(json, 'body') ? undefined : json['body'],
+        'inquiryCategoryId': json['inquiry_category_id'],
+        'ext01': json['ext_01'],
+        'ext02': !exists(json, 'ext_02') ? undefined : json['ext_02'],
+        'ext03': !exists(json, 'ext_03') ? undefined : json['ext_03'],
+        'ext04': json['ext_04'],
+        'ext05': !exists(json, 'ext_05') ? undefined : json['ext_05'],
+        'ext06': !exists(json, 'ext_06') ? undefined : json['ext_06'],
+        'ext07': !exists(json, 'ext_07') ? undefined : json['ext_07'],
+        'ext08': !exists(json, 'ext_08') ? undefined : json['ext_08'],
+        'ext09': !exists(json, 'ext_09') ? undefined : json['ext_09'],
+        'ext10': !exists(json, 'ext_10') ? undefined : json['ext_10'],
+        'validateOnly': !exists(json, 'validate_only') ? undefined : json['validate_only'],
     };
 }
 export function InlineObject16ToJSON(value) {
@@ -31,6 +46,30 @@ export function InlineObject16ToJSON(value) {
         return null;
     }
     return {
-        'file': value.file,
+        'name': value.name,
+        'from_mail': value.fromMail,
+        'body': value.body,
+        'inquiry_category_id': value.inquiryCategoryId,
+        'ext_01': value.ext01,
+        'ext_02': value.ext02,
+        'ext_03': value.ext03 === undefined ? undefined : (value.ext03),
+        'ext_04': (value.ext04),
+        'ext_05': value.ext05 === undefined ? undefined : value.ext05,
+        'ext_06': value.ext06 === undefined ? undefined : (value.ext06),
+        'ext_07': value.ext07,
+        'ext_08': value.ext08 === undefined ? undefined : (value.ext08),
+        'ext_09': value.ext09 === undefined ? undefined : (value.ext09),
+        'ext_10': value.ext10 === undefined ? undefined : (value.ext10),
+        'validate_only': value.validateOnly,
     };
 }
+/**
+* @export
+* @enum {string}
+*/
+export var InlineObject16InquiryCategoryIdEnum;
+(function (InlineObject16InquiryCategoryIdEnum) {
+    InlineObject16InquiryCategoryIdEnum[InlineObject16InquiryCategoryIdEnum["_1"] = 1] = "_1";
+    InlineObject16InquiryCategoryIdEnum[InlineObject16InquiryCategoryIdEnum["_3"] = 3] = "_3";
+    InlineObject16InquiryCategoryIdEnum[InlineObject16InquiryCategoryIdEnum["_4"] = 4] = "_4";
+})(InlineObject16InquiryCategoryIdEnum || (InlineObject16InquiryCategoryIdEnum = {}));

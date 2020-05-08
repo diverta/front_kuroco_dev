@@ -13,16 +13,16 @@ import { __awaiter, __extends, __generator } from "tslib";
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { InlineObject10Description, InlineObject10ToJSON, InlineObject11Description, InlineObject11ToJSON, InlineObject9Description, InlineObject9ToJSON, } from '../models';
+import { InlineObject11Description, InlineObject11ToJSON, InlineObject12Description, InlineObject12ToJSON, InlineObject13Description, InlineObject13ToJSON, } from '../models';
 var usingModelsDescription = {
-    InlineObject10: InlineObject10Description.split('\n').map(function (str) { return "  " + str; }).join('\n'),
     InlineObject11: InlineObject11Description.split('\n').map(function (str) { return "  " + str; }).join('\n'),
-    InlineObject9: InlineObject9Description.split('\n').map(function (str) { return "  " + str; }).join('\n'),
+    InlineObject12: InlineObject12Description.split('\n').map(function (str) { return "  " + str; }).join('\n'),
+    InlineObject13: InlineObject13Description.split('\n').map(function (str) { return "  " + str; }).join('\n'),
 };
-var CommentsApiRcmsApi1TopicsCommentsDeletePostRequestDescription = (function (usingModelsDescription) { return "{\n    inlineObject11: " + usingModelsDescription.InlineObject11 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
+var CommentsApiRcmsApi1TopicsCommentsDeletePostRequestDescription = (function (usingModelsDescription) { return "{\n    inlineObject13: " + usingModelsDescription.InlineObject13 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
 var CommentsApiRcmsApi1TopicsCommentsGetRequestDescription = (function (usingModelsDescription) { return "{\n    moduleId: Array<number>;\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n    newOrderFlg?: number;\n    cnt?: number;\n    pageID?: number;\n    fromDate?: string;\n    toDate?: string;\n    groupBy?: string;\n    groupAs?: string;\n}"; })(usingModelsDescription);
-var CommentsApiRcmsApi1TopicsCommentsInsertPostRequestDescription = (function (usingModelsDescription) { return "{\n    inlineObject9: " + usingModelsDescription.InlineObject9 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
-var CommentsApiRcmsApi1TopicsCommentsUpdatePostRequestDescription = (function (usingModelsDescription) { return "{\n    inlineObject10: " + usingModelsDescription.InlineObject10 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
+var CommentsApiRcmsApi1TopicsCommentsInsertPostRequestDescription = (function (usingModelsDescription) { return "{\n    inlineObject11: " + usingModelsDescription.InlineObject11 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
+var CommentsApiRcmsApi1TopicsCommentsUpdatePostRequestDescription = (function (usingModelsDescription) { return "{\n    inlineObject12: " + usingModelsDescription.InlineObject12 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
 /**
  * no description
  */
@@ -46,7 +46,7 @@ var CommentsApi = /** @class */ (function (_super) {
                     url: "/rcms-api/1/topics/comments/delete",
                     requestMethodName: 'rcmsApi1TopicsCommentsDeletePost',
                     requestRequiredParamSample: {
-                        inlineObject11: {},
+                        inlineObject13: {},
                     },
                     requestParamInterfaceDescription: CommentsApiRcmsApi1TopicsCommentsDeletePostRequestDescription,
                 },
@@ -64,7 +64,7 @@ var CommentsApi = /** @class */ (function (_super) {
                     url: "/rcms-api/1/topics/comments/insert",
                     requestMethodName: 'rcmsApi1TopicsCommentsInsertPost',
                     requestRequiredParamSample: {
-                        inlineObject9: {},
+                        inlineObject11: {},
                     },
                     requestParamInterfaceDescription: CommentsApiRcmsApi1TopicsCommentsInsertPostRequestDescription,
                 },
@@ -73,7 +73,7 @@ var CommentsApi = /** @class */ (function (_super) {
                     url: "/rcms-api/1/topics/comments/update",
                     requestMethodName: 'rcmsApi1TopicsCommentsUpdatePost',
                     requestRequiredParamSample: {
-                        inlineObject10: {},
+                        inlineObject12: {},
                     },
                     requestParamInterfaceDescription: CommentsApiRcmsApi1TopicsCommentsUpdatePostRequestDescription,
                 },
@@ -105,8 +105,8 @@ var CommentsApi = /** @class */ (function (_super) {
                                                 'e.g. rcmsApi1TopicsCommentsDeletePost({})'
                                             ].join('\n'));
                                         }
-                                        if (requestParameters.inlineObject11 === null || requestParameters.inlineObject11 === undefined) {
-                                            throw new runtime.RequiredError('inlineObject11', 'Required parameter requestParameters.inlineObject11 was null or undefined when calling rcmsApi1TopicsCommentsDeletePost.');
+                                        if (requestParameters.inlineObject13 === null || requestParameters.inlineObject13 === undefined) {
+                                            throw new runtime.RequiredError('inlineObject13', 'Required parameter requestParameters.inlineObject13 was null or undefined when calling rcmsApi1TopicsCommentsDeletePost.');
                                         }
                                         queryParameters = {};
                                         if (requestParameters.outputFormat !== undefined) {
@@ -128,7 +128,7 @@ var CommentsApi = /** @class */ (function (_super) {
                                                 method: 'POST',
                                                 headers: headerParameters,
                                                 query: queryParameters,
-                                                body: InlineObject11ToJSON(requestParameters.inlineObject11),
+                                                body: InlineObject13ToJSON(requestParameters.inlineObject13),
                                             })];
                                     case 1:
                                         response = _a.sent();
@@ -247,8 +247,8 @@ var CommentsApi = /** @class */ (function (_super) {
                                                 'e.g. rcmsApi1TopicsCommentsInsertPost({})'
                                             ].join('\n'));
                                         }
-                                        if (requestParameters.inlineObject9 === null || requestParameters.inlineObject9 === undefined) {
-                                            throw new runtime.RequiredError('inlineObject9', 'Required parameter requestParameters.inlineObject9 was null or undefined when calling rcmsApi1TopicsCommentsInsertPost.');
+                                        if (requestParameters.inlineObject11 === null || requestParameters.inlineObject11 === undefined) {
+                                            throw new runtime.RequiredError('inlineObject11', 'Required parameter requestParameters.inlineObject11 was null or undefined when calling rcmsApi1TopicsCommentsInsertPost.');
                                         }
                                         queryParameters = {};
                                         if (requestParameters.outputFormat !== undefined) {
@@ -270,7 +270,7 @@ var CommentsApi = /** @class */ (function (_super) {
                                                 method: 'POST',
                                                 headers: headerParameters,
                                                 query: queryParameters,
-                                                body: InlineObject9ToJSON(requestParameters.inlineObject9),
+                                                body: InlineObject11ToJSON(requestParameters.inlineObject11),
                                             })];
                                     case 1:
                                         response = _a.sent();
@@ -307,8 +307,8 @@ var CommentsApi = /** @class */ (function (_super) {
                                                 'e.g. rcmsApi1TopicsCommentsUpdatePost({})'
                                             ].join('\n'));
                                         }
-                                        if (requestParameters.inlineObject10 === null || requestParameters.inlineObject10 === undefined) {
-                                            throw new runtime.RequiredError('inlineObject10', 'Required parameter requestParameters.inlineObject10 was null or undefined when calling rcmsApi1TopicsCommentsUpdatePost.');
+                                        if (requestParameters.inlineObject12 === null || requestParameters.inlineObject12 === undefined) {
+                                            throw new runtime.RequiredError('inlineObject12', 'Required parameter requestParameters.inlineObject12 was null or undefined when calling rcmsApi1TopicsCommentsUpdatePost.');
                                         }
                                         queryParameters = {};
                                         if (requestParameters.outputFormat !== undefined) {
@@ -330,7 +330,7 @@ var CommentsApi = /** @class */ (function (_super) {
                                                 method: 'POST',
                                                 headers: headerParameters,
                                                 query: queryParameters,
-                                                body: InlineObject10ToJSON(requestParameters.inlineObject10),
+                                                body: InlineObject12ToJSON(requestParameters.inlineObject12),
                                             })];
                                     case 1:
                                         response = _a.sent();

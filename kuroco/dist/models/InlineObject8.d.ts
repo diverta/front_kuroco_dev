@@ -16,6 +16,12 @@
  */
 export interface InlineObject8 {
     /**
+     * /label/member_id
+     * @type {number}
+     * @memberof InlineObject8
+     */
+    memberId: number;
+    /**
      * Email
      * @type {string}
      * @memberof InlineObject8
@@ -59,22 +65,22 @@ export interface InlineObject8 {
     textarea?: string;
     /**
      * Selectbox * 1 => selectBoxOption1 * 2 => selectBoxOption2 * 3 => selectBoxOption3
-     * @type {string}
+     * @type {object | string}
      * @memberof InlineObject8
      */
-    selectbox?: InlineObject8SelectboxEnum;
+    selectbox?: object | string;
     /**
      * Radio * 1 => radioOption1 * 2 => radioOption2 * 3 => radioOption3
-     * @type {string}
+     * @type {object | string}
      * @memberof InlineObject8
      */
-    radio?: InlineObject8RadioEnum;
+    radio?: object | string;
     /**
      * Checkbox * 1 => checkboxOption1 * 2 => checkboxOption2 * 3 => checkboxOption3
-     * @type {Array<string>}
+     * @type {Array<object | string>}
      * @memberof InlineObject8
      */
-    checkbox?: Array<InlineObject8CheckboxEnum>;
+    checkbox?: Array<object | string>;
     /**
      * Date
      * @type {Date}
@@ -82,7 +88,7 @@ export interface InlineObject8 {
      */
     date?: Date;
     /**
-     * Relation
+     *
      * @type {number}
      * @memberof InlineObject8
      */
@@ -98,7 +104,7 @@ export interface InlineObject8 {
      * @type {Array<number>}
      * @memberof InlineObject8
      */
-    groupId?: Array<InlineObject8GroupIdEnum>;
+    groupId?: InlineObject8GroupIdEnum;
     /**
      * /label/open_flg
      * @type {number}
@@ -118,37 +124,10 @@ export interface InlineObject8 {
      */
     validateOnly?: boolean;
 }
-export declare const InlineObject8Description = "{\n    /**\n     * Email\n     * @type {string}\n     */\n    email?: string;\n    /**\n     * Password\n     * @type {string}\n     */\n    loginPwd?: string;\n    /**\n     * Nickname\n     * @type {string}\n     */\n    nickname?: string;\n    /**\n     * Family name\n     * @type {string}\n     */\n    name1?: string;\n    /**\n     * Given name\n     * @type {string}\n     */\n    name2?: string;\n    /**\n     * Text\n     * @type {string}\n     */\n    text?: string;\n    /**\n     * Textarea\n     * @type {string}\n     */\n    textarea?: string;\n    /**\n     * Selectbox * 1 => selectBoxOption1 * 2 => selectBoxOption2 * 3 => selectBoxOption3\n     * @type {string}\n     */\n    selectbox?: InlineObject8SelectboxEnum;\n    /**\n     * Radio * 1 => radioOption1 * 2 => radioOption2 * 3 => radioOption3\n     * @type {string}\n     */\n    radio?: InlineObject8RadioEnum;\n    /**\n     * Checkbox * 1 => checkboxOption1 * 2 => checkboxOption2 * 3 => checkboxOption3\n     * @type {Array<string>}\n     */\n    checkbox?: Array<InlineObject8CheckboxEnum>;\n    /**\n     * Date\n     * @type {Date}\n     */\n    date?: Date;\n    /**\n     * Relation\n     * @type {number}\n     */\n    relation?: number;\n    /**\n     * File\n     * @type {object}\n     */\n    file?: object;\n    /**\n     * /label/group_id\n     * @type {Array<number>}\n     */\n    groupId?: Array<InlineObject8GroupIdEnum>;\n    /**\n     * /label/open_flg\n     * @type {number}\n     */\n    openFlg?: InlineObject8OpenFlgEnum;\n    /**\n     * /label/login_ok_flg\n     * @type {number}\n     */\n    loginOkFlg?: InlineObject8LoginOkFlgEnum;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validateOnly?: boolean;\n}";
+export declare const InlineObject8Description = "{\n    /**\n     * /label/member_id\n     * @type {number}\n     */\n    memberId: number;\n    /**\n     * Email\n     * @type {string}\n     */\n    email?: string;\n    /**\n     * Password\n     * @type {string}\n     */\n    loginPwd?: string;\n    /**\n     * Nickname\n     * @type {string}\n     */\n    nickname?: string;\n    /**\n     * Family name\n     * @type {string}\n     */\n    name1?: string;\n    /**\n     * Given name\n     * @type {string}\n     */\n    name2?: string;\n    /**\n     * Text\n     * @type {string}\n     */\n    text?: string;\n    /**\n     * Textarea\n     * @type {string}\n     */\n    textarea?: string;\n    /**\n     * Selectbox * 1 => selectBoxOption1 * 2 => selectBoxOption2 * 3 => selectBoxOption3\n     * @type {object | string}\n     */\n    selectbox?: object | string;\n    /**\n     * Radio * 1 => radioOption1 * 2 => radioOption2 * 3 => radioOption3\n     * @type {object | string}\n     */\n    radio?: object | string;\n    /**\n     * Checkbox * 1 => checkboxOption1 * 2 => checkboxOption2 * 3 => checkboxOption3\n     * @type {Array<object | string>}\n     */\n    checkbox?: Array<object | string>;\n    /**\n     * Date\n     * @type {Date}\n     */\n    date?: Date;\n    /**\n     * \n     * @type {number}\n     */\n    relation?: number;\n    /**\n     * File\n     * @type {object}\n     */\n    file?: object;\n    /**\n     * /label/group_id\n     * @type {Array<number>}\n     */\n    groupId?: InlineObject8GroupIdEnum;\n    /**\n     * /label/open_flg\n     * @type {number}\n     */\n    openFlg?: InlineObject8OpenFlgEnum;\n    /**\n     * /label/login_ok_flg\n     * @type {number}\n     */\n    loginOkFlg?: InlineObject8LoginOkFlgEnum;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validateOnly?: boolean;\n}";
 export declare function InlineObject8FromJSON(json: any): InlineObject8;
 export declare function InlineObject8FromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject8;
 export declare function InlineObject8ToJSON(value?: InlineObject8 | null): any;
-/**
-* @export
-* @enum {string}
-*/
-export declare enum InlineObject8SelectboxEnum {
-    _1 = "1",
-    _2 = "2",
-    _3 = "3"
-}
-/**
-* @export
-* @enum {string}
-*/
-export declare enum InlineObject8RadioEnum {
-    _1 = "1",
-    _2 = "2",
-    _3 = "3"
-}
-/**
-* @export
-* @enum {string}
-*/
-export declare enum InlineObject8CheckboxEnum {
-    _1 = "1",
-    _2 = "2",
-    _3 = "3"
-}
 /**
 * @export
 * @enum {string}

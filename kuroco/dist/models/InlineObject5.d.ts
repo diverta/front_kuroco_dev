@@ -16,95 +16,149 @@
  */
 export interface InlineObject5 {
     /**
-     * Email
+     * Topic title
      * @type {string}
      * @memberof InlineObject5
      */
-    email: string;
+    subject: string;
     /**
-     * Password
-     * @type {string}
+     * Category ID * 2 => CategoryForMultiple1 * 9 => CategoryForMultiple2
+     * @type {number}
      * @memberof InlineObject5
      */
-    loginPwd: string;
-    /**
-     * Nickname
-     * @type {string}
-     * @memberof InlineObject5
-     */
-    nickname: string;
-    /**
-     * Family name
-     * @type {string}
-     * @memberof InlineObject5
-     */
-    name1?: string;
-    /**
-     * Given name
-     * @type {string}
-     * @memberof InlineObject5
-     */
-    name2?: string;
-    /**
-     * Text
-     * @type {string}
-     * @memberof InlineObject5
-     */
-    text: string;
-    /**
-     * Textarea
-     * @type {string}
-     * @memberof InlineObject5
-     */
-    textarea?: string;
-    /**
-     * Selectbox * 1 => selectBoxOption1 * 2 => selectBoxOption2 * 3 => selectBoxOption3
-     * @type {string}
-     * @memberof InlineObject5
-     */
-    selectbox?: InlineObject5SelectboxEnum;
-    /**
-     * Radio * 1 => radioOption1 * 2 => radioOption2 * 3 => radioOption3
-     * @type {string}
-     * @memberof InlineObject5
-     */
-    radio?: InlineObject5RadioEnum;
-    /**
-     * Checkbox * 1 => checkboxOption1 * 2 => checkboxOption2 * 3 => checkboxOption3
-     * @type {Array<string>}
-     * @memberof InlineObject5
-     */
-    checkbox?: Array<InlineObject5CheckboxEnum>;
+    contentsType?: InlineObject5ContentsTypeEnum;
     /**
      * Date
      * @type {Date}
      * @memberof InlineObject5
      */
-    date?: Date;
+    ymd?: Date;
+    /**
+     * Published / Not published
+     * @type {string}
+     * @memberof InlineObject5
+     */
+    openType?: InlineObject5OpenTypeEnum;
+    /**
+     * Display all topics to logged in members, regardless ther public/hidden status
+     * @type {number}
+     * @memberof InlineObject5
+     */
+    topicsFlg?: InlineObject5TopicsFlgEnum;
+    /**
+     * Season
+     * @type {number}
+     * @memberof InlineObject5
+     */
+    season?: number;
+    /**
+     * Contents
+     * @type {string}
+     * @memberof InlineObject5
+     */
+    contents?: string;
+    /**
+     * display up
+     * @type {number}
+     * @memberof InlineObject5
+     */
+    regularFlg?: number;
+    /**
+     * Display method
+     * @type {number}
+     * @memberof InlineObject5
+     */
+    linkFlg?: number;
+    /**
+     * Link
+     * @type {string}
+     * @memberof InlineObject5
+     */
+    linkUrl?: string;
+    /**
+     * Text
+     * @type {Array<string | object>}
+     * @memberof InlineObject5
+     */
+    extCol01?: Array<string | object>;
+    /**
+     * TextArea
+     * @type {Array<string | object>}
+     * @memberof InlineObject5
+     */
+    extCol02?: Array<string | object>;
+    /**
+     * Select
+     * @type {Array<object | string | object>}
+     * @memberof InlineObject5
+     */
+    extCol03?: Array<object | string | object>;
+    /**
+     * Checkbox
+     * @type {Array<Array<object | string> | object>}
+     * @memberof InlineObject5
+     */
+    extCol04?: Array<Array<object | string> | object>;
+    /**
+     * Date
+     * @type {Array<Date | object | object>}
+     * @memberof InlineObject5
+     */
+    extCol07?: Array<Date | object | object>;
+    /**
+     * DateTime
+     * @type {Array<string | object | object>}
+     * @memberof InlineObject5
+     */
+    extCol08?: Array<string | object | object>;
+    /**
+     * Tdfk
+     * @type {Array<object>}
+     * @memberof InlineObject5
+     */
+    extCol05?: Array<object>;
+    /**
+     * TdfkAndCity
+     * @type {Array<object>}
+     * @memberof InlineObject5
+     */
+    extCol15?: Array<object>;
+    /**
+     * Table
+     * @type {Array<object | string | object>}
+     * @memberof InlineObject5
+     */
+    extCol06?: Array<object | string | object>;
     /**
      * Relation
-     * @type {number}
+     * @type {Array<number | object>}
      * @memberof InlineObject5
      */
-    relation?: number;
+    extCol09?: Array<number | object>;
     /**
-     * File
-     * @type {object}
+     * Private File
+     * @type {Array<object>}
      * @memberof InlineObject5
      */
-    file?: object;
+    extCol11?: Array<object>;
     /**
-     * /label/open_flg
-     * @type {number}
+     * JSON
+     * @type {Array<object>}
      * @memberof InlineObject5
      */
-    openFlg?: InlineObject5OpenFlgEnum;
+    extJsn12?: Array<object>;
     /**
-     * /label/login_ok_flg
-     * @type {number}
+     * HTML
+     * @type {Array<string | object>}
      * @memberof InlineObject5
      */
-    loginOkFlg?: InlineObject5LoginOkFlgEnum;
+    extCol13?: Array<string | object>;
+    /**
+     * Wysiwyg
+     * @type {Array<string | object>}
+     * @memberof InlineObject5
+     */
+    extCol14?: Array<string | object>;
     /**
      * /label/send_validate
      * @type {boolean}
@@ -112,7 +166,7 @@ export interface InlineObject5 {
      */
     validateOnly?: boolean;
 }
-export declare const InlineObject5Description = "{\n    /**\n     * Email\n     * @type {string}\n     */\n    email: string;\n    /**\n     * Password\n     * @type {string}\n     */\n    loginPwd: string;\n    /**\n     * Nickname\n     * @type {string}\n     */\n    nickname: string;\n    /**\n     * Family name\n     * @type {string}\n     */\n    name1?: string;\n    /**\n     * Given name\n     * @type {string}\n     */\n    name2?: string;\n    /**\n     * Text\n     * @type {string}\n     */\n    text: string;\n    /**\n     * Textarea\n     * @type {string}\n     */\n    textarea?: string;\n    /**\n     * Selectbox * 1 => selectBoxOption1 * 2 => selectBoxOption2 * 3 => selectBoxOption3\n     * @type {string}\n     */\n    selectbox?: InlineObject5SelectboxEnum;\n    /**\n     * Radio * 1 => radioOption1 * 2 => radioOption2 * 3 => radioOption3\n     * @type {string}\n     */\n    radio?: InlineObject5RadioEnum;\n    /**\n     * Checkbox * 1 => checkboxOption1 * 2 => checkboxOption2 * 3 => checkboxOption3\n     * @type {Array<string>}\n     */\n    checkbox?: Array<InlineObject5CheckboxEnum>;\n    /**\n     * Date\n     * @type {Date}\n     */\n    date?: Date;\n    /**\n     * Relation\n     * @type {number}\n     */\n    relation?: number;\n    /**\n     * File\n     * @type {object}\n     */\n    file?: object;\n    /**\n     * /label/open_flg\n     * @type {number}\n     */\n    openFlg?: InlineObject5OpenFlgEnum;\n    /**\n     * /label/login_ok_flg\n     * @type {number}\n     */\n    loginOkFlg?: InlineObject5LoginOkFlgEnum;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validateOnly?: boolean;\n}";
+export declare const InlineObject5Description = "{\n    /**\n     * Topic title\n     * @type {string}\n     */\n    subject: string;\n    /**\n     * Category ID * 2 => CategoryForMultiple1 * 9 => CategoryForMultiple2\n     * @type {number}\n     */\n    contentsType?: InlineObject5ContentsTypeEnum;\n    /**\n     * Date\n     * @type {Date}\n     */\n    ymd?: Date;\n    /**\n     * Published / Not published\n     * @type {string}\n     */\n    openType?: InlineObject5OpenTypeEnum;\n    /**\n     * Display all topics to logged in members, regardless ther public/hidden status\n     * @type {number}\n     */\n    topicsFlg?: InlineObject5TopicsFlgEnum;\n    /**\n     * Season\n     * @type {number}\n     */\n    season?: number;\n    /**\n     * Contents\n     * @type {string}\n     */\n    contents?: string;\n    /**\n     * display up\n     * @type {number}\n     */\n    regularFlg?: number;\n    /**\n     * Display method\n     * @type {number}\n     */\n    linkFlg?: number;\n    /**\n     * Link\n     * @type {string}\n     */\n    linkUrl?: string;\n    /**\n     * Text\n     * @type {Array<string | object>}\n     */\n    extCol01?: Array<string | object>;\n    /**\n     * TextArea\n     * @type {Array<string | object>}\n     */\n    extCol02?: Array<string | object>;\n    /**\n     * Select\n     * @type {Array<object | string | object>}\n     */\n    extCol03?: Array<object | string | object>;\n    /**\n     * Checkbox\n     * @type {Array<Array<object | string> | object>}\n     */\n    extCol04?: Array<Array<object | string> | object>;\n    /**\n     * Date\n     * @type {Array<Date | object | object>}\n     */\n    extCol07?: Array<Date | object | object>;\n    /**\n     * DateTime\n     * @type {Array<string | object | object>}\n     */\n    extCol08?: Array<string | object | object>;\n    /**\n     * Tdfk\n     * @type {Array<object>}\n     */\n    extCol05?: Array<object>;\n    /**\n     * TdfkAndCity\n     * @type {Array<object>}\n     */\n    extCol15?: Array<object>;\n    /**\n     * Table\n     * @type {Array<object | string | object>}\n     */\n    extCol06?: Array<object | string | object>;\n    /**\n     * Relation\n     * @type {Array<number | object>}\n     */\n    extCol09?: Array<number | object>;\n    /**\n     * Private File\n     * @type {Array<object>}\n     */\n    extCol11?: Array<object>;\n    /**\n     * JSON\n     * @type {Array<object>}\n     */\n    extJsn12?: Array<object>;\n    /**\n     * HTML\n     * @type {Array<string | object>}\n     */\n    extCol13?: Array<string | object>;\n    /**\n     * Wysiwyg\n     * @type {Array<string | object>}\n     */\n    extCol14?: Array<string | object>;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validateOnly?: boolean;\n}";
 export declare function InlineObject5FromJSON(json: any): InlineObject5;
 export declare function InlineObject5FromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject5;
 export declare function InlineObject5ToJSON(value?: InlineObject5 | null): any;
@@ -120,42 +174,24 @@ export declare function InlineObject5ToJSON(value?: InlineObject5 | null): any;
 * @export
 * @enum {string}
 */
-export declare enum InlineObject5SelectboxEnum {
-    _1 = "1",
-    _2 = "2",
-    _3 = "3"
+export declare enum InlineObject5ContentsTypeEnum {
+    _2 = 2,
+    _9 = 9
 }
 /**
 * @export
 * @enum {string}
 */
-export declare enum InlineObject5RadioEnum {
-    _1 = "1",
-    _2 = "2",
-    _3 = "3"
+export declare enum InlineObject5OpenTypeEnum {
+    _open = "open",
+    _close = "close",
+    _default = "default"
 }
 /**
 * @export
 * @enum {string}
 */
-export declare enum InlineObject5CheckboxEnum {
-    _1 = "1",
-    _2 = "2",
-    _3 = "3"
-}
-/**
-* @export
-* @enum {string}
-*/
-export declare enum InlineObject5OpenFlgEnum {
-    _0 = 0,
-    _1 = 1
-}
-/**
-* @export
-* @enum {string}
-*/
-export declare enum InlineObject5LoginOkFlgEnum {
+export declare enum InlineObject5TopicsFlgEnum {
     _0 = 0,
     _1 = 1
 }

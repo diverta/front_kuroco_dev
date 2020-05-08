@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { InlineObject5, InlineObject6, InlineObject7, InlineObject8 } from '../models';
+import { InlineObject10, InlineObject7, InlineObject8, InlineObject9 } from '../models';
 export interface MembersApiRcmsApi1MeDeletePostRequest {
     body: object;
     outputFormat?: string;
@@ -18,13 +18,13 @@ export interface MembersApiRcmsApi1MeDeletePostRequest {
     charset?: string;
 }
 export interface MembersApiRcmsApi1MeUpdatePostRequest {
-    inlineObject8: InlineObject8;
+    inlineObject10: InlineObject10;
     outputFormat?: string;
     lang?: string;
     charset?: string;
 }
 export interface MembersApiRcmsApi1MembersDeletePostRequest {
-    inlineObject7: InlineObject7;
+    inlineObject9: InlineObject9;
     outputFormat?: string;
     lang?: string;
     charset?: string;
@@ -44,7 +44,7 @@ export interface MembersApiRcmsApi1MembersGetRequest {
     groupId?: number;
 }
 export interface MembersApiRcmsApi1MembersInsertPostRequest {
-    inlineObject5: InlineObject5;
+    inlineObject7: InlineObject7;
     outputFormat?: string;
     lang?: string;
     charset?: string;
@@ -56,7 +56,7 @@ export interface MembersApiRcmsApi1MembersMemberIdGetRequest {
     charset?: string;
 }
 export interface MembersApiRcmsApi1MembersUpdatePostRequest {
-    inlineObject6: InlineObject6;
+    inlineObject8: InlineObject8;
     outputFormat?: string;
     lang?: string;
     charset?: string;
@@ -72,11 +72,11 @@ export declare class MembersApi extends runtime.BaseAPI {
         requestMethodName: string;
         requestRequiredParamSample: {
             body: any;
-            inlineObject8?: undefined;
+            inlineObject10?: undefined;
+            inlineObject9?: undefined;
             inlineObject7?: undefined;
-            inlineObject5?: undefined;
             memberId?: undefined;
-            inlineObject6?: undefined;
+            inlineObject8?: undefined;
         };
         requestParamInterfaceDescription: string;
     } | {
@@ -84,12 +84,38 @@ export declare class MembersApi extends runtime.BaseAPI {
         url: string;
         requestMethodName: string;
         requestRequiredParamSample: {
-            inlineObject8: any;
+            inlineObject10: any;
             body?: undefined;
+            inlineObject9?: undefined;
             inlineObject7?: undefined;
-            inlineObject5?: undefined;
             memberId?: undefined;
-            inlineObject6?: undefined;
+            inlineObject8?: undefined;
+        };
+        requestParamInterfaceDescription: string;
+    } | {
+        class: typeof MembersApi;
+        url: string;
+        requestMethodName: string;
+        requestRequiredParamSample: {
+            inlineObject9: any;
+            body?: undefined;
+            inlineObject10?: undefined;
+            inlineObject7?: undefined;
+            memberId?: undefined;
+            inlineObject8?: undefined;
+        };
+        requestParamInterfaceDescription: string;
+    } | {
+        class: typeof MembersApi;
+        url: string;
+        requestMethodName: string;
+        requestRequiredParamSample: {
+            body?: undefined;
+            inlineObject10?: undefined;
+            inlineObject9?: undefined;
+            inlineObject7?: undefined;
+            memberId?: undefined;
+            inlineObject8?: undefined;
         };
         requestParamInterfaceDescription: string;
     } | {
@@ -99,36 +125,10 @@ export declare class MembersApi extends runtime.BaseAPI {
         requestRequiredParamSample: {
             inlineObject7: any;
             body?: undefined;
-            inlineObject8?: undefined;
-            inlineObject5?: undefined;
+            inlineObject10?: undefined;
+            inlineObject9?: undefined;
             memberId?: undefined;
-            inlineObject6?: undefined;
-        };
-        requestParamInterfaceDescription: string;
-    } | {
-        class: typeof MembersApi;
-        url: string;
-        requestMethodName: string;
-        requestRequiredParamSample: {
-            body?: undefined;
             inlineObject8?: undefined;
-            inlineObject7?: undefined;
-            inlineObject5?: undefined;
-            memberId?: undefined;
-            inlineObject6?: undefined;
-        };
-        requestParamInterfaceDescription: string;
-    } | {
-        class: typeof MembersApi;
-        url: string;
-        requestMethodName: string;
-        requestRequiredParamSample: {
-            inlineObject5: any;
-            body?: undefined;
-            inlineObject8?: undefined;
-            inlineObject7?: undefined;
-            memberId?: undefined;
-            inlineObject6?: undefined;
         };
         requestParamInterfaceDescription: string;
     } | {
@@ -138,10 +138,10 @@ export declare class MembersApi extends runtime.BaseAPI {
         requestRequiredParamSample: {
             memberId: any;
             body?: undefined;
-            inlineObject8?: undefined;
+            inlineObject10?: undefined;
+            inlineObject9?: undefined;
             inlineObject7?: undefined;
-            inlineObject5?: undefined;
-            inlineObject6?: undefined;
+            inlineObject8?: undefined;
         };
         requestParamInterfaceDescription: string;
     } | {
@@ -149,11 +149,11 @@ export declare class MembersApi extends runtime.BaseAPI {
         url: string;
         requestMethodName: string;
         requestRequiredParamSample: {
-            inlineObject6: any;
+            inlineObject8: any;
             body?: undefined;
-            inlineObject8?: undefined;
+            inlineObject10?: undefined;
+            inlineObject9?: undefined;
             inlineObject7?: undefined;
-            inlineObject5?: undefined;
             memberId?: undefined;
         };
         requestParamInterfaceDescription: string;

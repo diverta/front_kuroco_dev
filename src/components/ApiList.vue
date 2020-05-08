@@ -4,7 +4,7 @@
       filter:
       <input type="text" v-model="query" class="js-apilist-filter" />
     </p>
-    <ul id="apilist">
+    <ul id="apilist" class="js-apilist">
       <li
         :class="`info-method js-info-method-methodname-${info.methodName}`"
         v-for="(info, idx) in filteredApiInfos"
@@ -29,7 +29,9 @@
       </div>
     </div>
     <div v-if="!!response" class="response">
-      <div class="response-header"><h3>response</h3></div>
+      <div class="response-header">
+        <h3>response</h3>
+      </div>
       <div>
         <h3 class="js-response-isError">
           isError? : {{ isResponseErrorOccured }}
@@ -75,11 +77,19 @@ export default Vue.extend({
   computed: {
     filteredApiInfos() {
       return this.apiInfos.filter((info: any) => {
-        const regExp = new RegExp((this as any).query, 'ig');
+        const qs = ((this as any).query as string)
+          .trim()
+          .split(' ')
+          .map(q => q.trim())
+          .filter(q => q !== undefined && q !== '');
+
+        const test = (testee: string = '') =>
+          qs.every(q => testee.toUpperCase().includes(q.toUpperCase()));
+
         return (
-          regExp.test(info.apiRequestInfo.url) ||
-          regExp.test(info.className) ||
-          regExp.test(info.methodName)
+          test(info.apiRequestInfo.url) ||
+          test(info.className) ||
+          test(info.methodName)
         );
       });
     },
@@ -182,15 +192,15 @@ export default Vue.extend({
           this.isResponseErrorOccured = 'false';
           this.response = JSON.stringify(value, null, '\t');
         })
-        .catch((err: any) => {
+        .catch(async (err: any) => {
           this.isResponseErrorOccured = 'true';
-          this.response = `ERROR!:\n${JSON.stringify(err, null, '\t')}`;
+          this.response = `${JSON.stringify(await err.json(), null, '\t')}`;
         })
-        .finally(() => {
+        .finally(() =>
           console.info(
             `${this.selectedApiInfo.apiRequestInfo.requestMethodName}\n${this.response}`
-          );
-        });
+          )
+        );
     },
   },
 });

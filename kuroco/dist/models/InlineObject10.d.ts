@@ -16,56 +16,134 @@
  */
 export interface InlineObject10 {
     /**
-     * コメントID
+     * Email
+     * @type {string}
+     * @memberof InlineObject10
+     */
+    email?: string;
+    /**
+     * Password
+     * @type {string}
+     * @memberof InlineObject10
+     */
+    loginPwd?: string;
+    /**
+     * Nickname
+     * @type {string}
+     * @memberof InlineObject10
+     */
+    nickname?: string;
+    /**
+     * Family name
+     * @type {string}
+     * @memberof InlineObject10
+     */
+    name1?: string;
+    /**
+     * Given name
+     * @type {string}
+     * @memberof InlineObject10
+     */
+    name2?: string;
+    /**
+     * Text
+     * @type {string}
+     * @memberof InlineObject10
+     */
+    text?: string;
+    /**
+     * Textarea
+     * @type {string}
+     * @memberof InlineObject10
+     */
+    textarea?: string;
+    /**
+     * Selectbox * 1 => selectBoxOption1 * 2 => selectBoxOption2 * 3 => selectBoxOption3
+     * @type {object | string}
+     * @memberof InlineObject10
+     */
+    selectbox?: object | string;
+    /**
+     * Radio * 1 => radioOption1 * 2 => radioOption2 * 3 => radioOption3
+     * @type {object | string}
+     * @memberof InlineObject10
+     */
+    radio?: object | string;
+    /**
+     * Checkbox * 1 => checkboxOption1 * 2 => checkboxOption2 * 3 => checkboxOption3
+     * @type {Array<object | string>}
+     * @memberof InlineObject10
+     */
+    checkbox?: Array<object | string>;
+    /**
+     * Date
+     * @type {Date}
+     * @memberof InlineObject10
+     */
+    date?: Date;
+    /**
+     *
      * @type {number}
      * @memberof InlineObject10
      */
-    commentId: number;
+    relation?: number;
     /**
-     * モジュールID
+     * File
+     * @type {object}
+     * @memberof InlineObject10
+     */
+    file?: object;
+    /**
+     * /label/group_id
+     * @type {Array<number>}
+     * @memberof InlineObject10
+     */
+    groupId?: Array<InlineObject10GroupIdEnum>;
+    /**
+     * /label/open_flg
      * @type {number}
      * @memberof InlineObject10
      */
-    moduleId: number;
+    openFlg?: InlineObject10OpenFlgEnum;
     /**
-     * Name
-     * @type {string}
-     * @memberof InlineObject10
-     */
-    name: string;
-    /**
-     * Mail
-     * @type {string}
-     * @memberof InlineObject10
-     */
-    mail?: string;
-    /**
-     * URL
-     * @type {string}
-     * @memberof InlineObject10
-     */
-    url?: string;
-    /**
-     * Comments
-     * @type {string}
-     * @memberof InlineObject10
-     */
-    note: string;
-    /**
-     * Rating
+     * /label/login_ok_flg
      * @type {number}
      * @memberof InlineObject10
      */
-    rating?: number;
+    loginOkFlg?: InlineObject10LoginOkFlgEnum;
     /**
-     * 削除キー
-     * @type {string}
+     * /label/send_validate
+     * @type {boolean}
      * @memberof InlineObject10
      */
-    delkey?: string;
+    validateOnly?: boolean;
 }
-export declare const InlineObject10Description = "{\n    /**\n     * \u30B3\u30E1\u30F3\u30C8ID\n     * @type {number}\n     */\n    commentId: number;\n    /**\n     * \u30E2\u30B8\u30E5\u30FC\u30EBID\n     * @type {number}\n     */\n    moduleId: number;\n    /**\n     * Name\n     * @type {string}\n     */\n    name: string;\n    /**\n     * Mail\n     * @type {string}\n     */\n    mail?: string;\n    /**\n     * URL\n     * @type {string}\n     */\n    url?: string;\n    /**\n     * Comments\n     * @type {string}\n     */\n    note: string;\n    /**\n     * Rating\n     * @type {number}\n     */\n    rating?: number;\n    /**\n     * \u524A\u9664\u30AD\u30FC\n     * @type {string}\n     */\n    delkey?: string;\n}";
+export declare const InlineObject10Description = "{\n    /**\n     * Email\n     * @type {string}\n     */\n    email?: string;\n    /**\n     * Password\n     * @type {string}\n     */\n    loginPwd?: string;\n    /**\n     * Nickname\n     * @type {string}\n     */\n    nickname?: string;\n    /**\n     * Family name\n     * @type {string}\n     */\n    name1?: string;\n    /**\n     * Given name\n     * @type {string}\n     */\n    name2?: string;\n    /**\n     * Text\n     * @type {string}\n     */\n    text?: string;\n    /**\n     * Textarea\n     * @type {string}\n     */\n    textarea?: string;\n    /**\n     * Selectbox * 1 => selectBoxOption1 * 2 => selectBoxOption2 * 3 => selectBoxOption3\n     * @type {object | string}\n     */\n    selectbox?: object | string;\n    /**\n     * Radio * 1 => radioOption1 * 2 => radioOption2 * 3 => radioOption3\n     * @type {object | string}\n     */\n    radio?: object | string;\n    /**\n     * Checkbox * 1 => checkboxOption1 * 2 => checkboxOption2 * 3 => checkboxOption3\n     * @type {Array<object | string>}\n     */\n    checkbox?: Array<object | string>;\n    /**\n     * Date\n     * @type {Date}\n     */\n    date?: Date;\n    /**\n     * \n     * @type {number}\n     */\n    relation?: number;\n    /**\n     * File\n     * @type {object}\n     */\n    file?: object;\n    /**\n     * /label/group_id\n     * @type {Array<number>}\n     */\n    groupId?: Array<InlineObject10GroupIdEnum>;\n    /**\n     * /label/open_flg\n     * @type {number}\n     */\n    openFlg?: InlineObject10OpenFlgEnum;\n    /**\n     * /label/login_ok_flg\n     * @type {number}\n     */\n    loginOkFlg?: InlineObject10LoginOkFlgEnum;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validateOnly?: boolean;\n}";
 export declare function InlineObject10FromJSON(json: any): InlineObject10;
 export declare function InlineObject10FromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject10;
 export declare function InlineObject10ToJSON(value?: InlineObject10 | null): any;
+/**
+* @export
+* @enum {string}
+*/
+export declare enum InlineObject10GroupIdEnum {
+    _1 = 1,
+    _2 = 2
+}
+/**
+* @export
+* @enum {string}
+*/
+export declare enum InlineObject10OpenFlgEnum {
+    _0 = 0,
+    _1 = 1
+}
+/**
+* @export
+* @enum {string}
+*/
+export declare enum InlineObject10LoginOkFlgEnum {
+    _0 = 0,
+    _1 = 1
+}
 //# sourceMappingURL=InlineObject10.d.ts.map

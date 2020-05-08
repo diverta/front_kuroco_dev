@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import { exists } from '../runtime';
-export var InlineObject14Description = "{\n    /**\n     * Name\n     * @type {string}\n     */\n    name?: string;\n    /**\n     * E-mail\n     * @type {string}\n     */\n    fromMail?: string;\n    /**\n     * Message\n     * @type {string}\n     */\n    body?: string;\n    /**\n     * * 1 => Category1 * 3 => Category2 * 4 => Category3\n     * @type {number}\n     */\n    inquiryCategoryId: InlineObject14InquiryCategoryIdEnum;\n    /**\n     * RequiredText\n     * @type {string}\n     */\n    ext01: string;\n    /**\n     * LongText\n     * @type {string}\n     */\n    ext02?: string;\n    /**\n     * Radio * 1 => radio1 * 2 => radio2 * 3 => radio3\n     * @type {object | string}\n     */\n    ext03?: object | string;\n    /**\n     * RequiredSelect * 1 => select1 * 2 => select2 * 3 => select3\n     * @type {object | string}\n     */\n    ext04: object | string;\n    /**\n     * Checkbox * 1 => check1 * 2 => check2 * 3 => check3\n     * @type {Array<object | string>}\n     */\n    ext05?: Array<object | string>;\n    /**\n     * DateTime\n     * @type {string | object}\n     */\n    ext06?: string | object;\n    /**\n     * \n     * @type {object}\n     */\n    ext07?: object;\n    /**\n     * \n     * @type {RcmsApi1Inquiry1MessagesSendExt08}\n     */\n    ext08?: RcmsApi1Inquiry1MessagesSendExt08;\n    /**\n     * \n     * @type {RcmsApi1Inquiry1MessagesSendExt09}\n     */\n    ext09?: RcmsApi1Inquiry1MessagesSendExt09;\n    /**\n     * Date\n     * @type {string | object}\n     */\n    ext10?: string | object;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validateOnly?: boolean;\n}";
+export var InlineObject14Description = "{\n    /**\n     * Module type\n     * @type {string}\n     */\n    moduleType: string;\n    /**\n     * module_id\n     * @type {number}\n     */\n    moduleId: number;\n    /**\n     * \u30DA\u30FC\u30B8\u30B7\u30B9\u30C6\u30E0\u540D\n     * @type {string}\n     */\n    pageSysnm?: string;\n}";
 export function InlineObject14FromJSON(json) {
     return InlineObject14FromJSONTyped(json, false);
 }
@@ -21,21 +21,9 @@ export function InlineObject14FromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'name': !exists(json, 'name') ? undefined : json['name'],
-        'fromMail': !exists(json, 'from_mail') ? undefined : json['from_mail'],
-        'body': !exists(json, 'body') ? undefined : json['body'],
-        'inquiryCategoryId': json['inquiry_category_id'],
-        'ext01': json['ext_01'],
-        'ext02': !exists(json, 'ext_02') ? undefined : json['ext_02'],
-        'ext03': !exists(json, 'ext_03') ? undefined : json['ext_03'],
-        'ext04': json['ext_04'],
-        'ext05': !exists(json, 'ext_05') ? undefined : json['ext_05'],
-        'ext06': !exists(json, 'ext_06') ? undefined : json['ext_06'],
-        'ext07': !exists(json, 'ext_07') ? undefined : json['ext_07'],
-        'ext08': !exists(json, 'ext_08') ? undefined : json['ext_08'],
-        'ext09': !exists(json, 'ext_09') ? undefined : json['ext_09'],
-        'ext10': !exists(json, 'ext_10') ? undefined : json['ext_10'],
-        'validateOnly': !exists(json, 'validate_only') ? undefined : json['validate_only'],
+        'moduleType': json['module_type'],
+        'moduleId': json['module_id'],
+        'pageSysnm': !exists(json, 'page_sysnm') ? undefined : json['page_sysnm'],
     };
 }
 export function InlineObject14ToJSON(value) {
@@ -46,30 +34,8 @@ export function InlineObject14ToJSON(value) {
         return null;
     }
     return {
-        'name': value.name,
-        'from_mail': value.fromMail,
-        'body': value.body,
-        'inquiry_category_id': value.inquiryCategoryId,
-        'ext_01': value.ext01,
-        'ext_02': value.ext02,
-        'ext_03': value.ext03 === undefined ? undefined : (value.ext03),
-        'ext_04': (value.ext04),
-        'ext_05': value.ext05 === undefined ? undefined : value.ext05,
-        'ext_06': value.ext06 === undefined ? undefined : (value.ext06),
-        'ext_07': value.ext07,
-        'ext_08': value.ext08 === undefined ? undefined : (value.ext08),
-        'ext_09': value.ext09 === undefined ? undefined : (value.ext09),
-        'ext_10': value.ext10 === undefined ? undefined : (value.ext10),
-        'validate_only': value.validateOnly,
+        'module_type': value.moduleType,
+        'module_id': value.moduleId,
+        'page_sysnm': value.pageSysnm,
     };
 }
-/**
-* @export
-* @enum {string}
-*/
-export var InlineObject14InquiryCategoryIdEnum;
-(function (InlineObject14InquiryCategoryIdEnum) {
-    InlineObject14InquiryCategoryIdEnum[InlineObject14InquiryCategoryIdEnum["_1"] = 1] = "_1";
-    InlineObject14InquiryCategoryIdEnum[InlineObject14InquiryCategoryIdEnum["_3"] = 3] = "_3";
-    InlineObject14InquiryCategoryIdEnum[InlineObject14InquiryCategoryIdEnum["_4"] = 4] = "_4";
-})(InlineObject14InquiryCategoryIdEnum || (InlineObject14InquiryCategoryIdEnum = {}));

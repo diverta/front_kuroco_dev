@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { RcmsApi1Topics1InsertExtCol05, RcmsApi1Topics1InsertExtCol07, RcmsApi1Topics1InsertExtCol08 } from './';
+import { RcmsApi1Topics1InsertExtCol05, RcmsApi1Topics1InsertExtCol15, RcmsApi1Topics1InsertExtJsn12 } from './';
 /**
  *
  * @export
@@ -22,6 +22,12 @@ export interface InlineObject4 {
      * @memberof InlineObject4
      */
     subject?: string;
+    /**
+     * Category ID * 1 => CategoryForSingle1 * 4 => CategoryForSingle2
+     * @type {number}
+     * @memberof InlineObject4
+     */
+    contentsType?: InlineObject4ContentsTypeEnum;
     /**
      * Date
      * @type {Date}
@@ -71,12 +77,6 @@ export interface InlineObject4 {
      */
     linkUrl?: string;
     /**
-     * Category ID * 1 => CategoryForSingle1 * 4 => CategoryForSingle2
-     * @type {number}
-     * @memberof InlineObject4
-     */
-    contentsType?: InlineObject4ContentsTypeEnum;
-    /**
      * Text
      * @type {string}
      * @memberof InlineObject4
@@ -89,29 +89,29 @@ export interface InlineObject4 {
      */
     extCol02?: string;
     /**
-     * * 1 => Option1 * 2 => Option2 * 3 => Option3
-     * @type {string}
+     * Select * 1 => Option1 * 2 => Option2 * 3 => Option3
+     * @type {object | string}
      * @memberof InlineObject4
      */
-    extCol03?: InlineObject4ExtCol03Enum;
+    extCol03?: object | string;
     /**
-     * * 1 => Option1 * 2 => Option2 * 3 => Option3
-     * @type {Array<string>}
+     * Checkbox * 1 => Option1 * 2 => Option2 * 3 => Option3
+     * @type {Array<object | string>}
      * @memberof InlineObject4
      */
-    extCol04?: Array<InlineObject4ExtCol04Enum>;
+    extCol04?: Array<object | string>;
     /**
-     *
-     * @type {RcmsApi1Topics1InsertExtCol07}
+     * Date
+     * @type {Date | object}
      * @memberof InlineObject4
      */
-    extCol07?: RcmsApi1Topics1InsertExtCol07;
+    extCol07?: Date | object;
     /**
-     *
-     * @type {RcmsApi1Topics1InsertExtCol08}
+     * DateTime
+     * @type {string | object}
      * @memberof InlineObject4
      */
-    extCol08?: RcmsApi1Topics1InsertExtCol08;
+    extCol08?: string | object;
     /**
      *
      * @type {RcmsApi1Topics1InsertExtCol05}
@@ -120,16 +120,16 @@ export interface InlineObject4 {
     extCol05?: RcmsApi1Topics1InsertExtCol05;
     /**
      *
-     * @type {RcmsApi1Topics1InsertExtCol05}
+     * @type {RcmsApi1Topics1InsertExtCol15}
      * @memberof InlineObject4
      */
-    extCol15?: RcmsApi1Topics1InsertExtCol05;
+    extCol15?: RcmsApi1Topics1InsertExtCol15;
     /**
-     * * 1 => Parent1 * 2 => Parent2 * 3 => Parent3 * 4 => Parent4 * 5 => Parent5
-     * @type {string}
+     * Table * 1 => Parent1 * 2 => Parent2 * 3 => Parent3 * 4 => Parent4 * 5 => Parent5
+     * @type {object | string}
      * @memberof InlineObject4
      */
-    extCol06?: InlineObject4ExtCol06Enum;
+    extCol06?: object | string;
     /**
      * Relation
      * @type {number}
@@ -143,11 +143,11 @@ export interface InlineObject4 {
      */
     extCol11?: object;
     /**
-     * JSON
-     * @type {object}
+     *
+     * @type {RcmsApi1Topics1InsertExtJsn12}
      * @memberof InlineObject4
      */
-    extJsn12?: object;
+    extJsn12?: RcmsApi1Topics1InsertExtJsn12;
     /**
      * HTML
      * @type {string}
@@ -167,10 +167,18 @@ export interface InlineObject4 {
      */
     validateOnly?: boolean;
 }
-export declare const InlineObject4Description = "{\n    /**\n     * Topic title\n     * @type {string}\n     */\n    subject?: string;\n    /**\n     * Date\n     * @type {Date}\n     */\n    ymd?: Date;\n    /**\n     * Published / Not published\n     * @type {string}\n     */\n    openType?: InlineObject4OpenTypeEnum;\n    /**\n     * Display all topics to logged in members, regardless ther public/hidden status\n     * @type {number}\n     */\n    topicsFlg?: InlineObject4TopicsFlgEnum;\n    /**\n     * Season\n     * @type {number}\n     */\n    season?: number;\n    /**\n     * Contents\n     * @type {string}\n     */\n    contents?: string;\n    /**\n     * display up\n     * @type {number}\n     */\n    regularFlg?: number;\n    /**\n     * Display method\n     * @type {number}\n     */\n    linkFlg?: number;\n    /**\n     * Link\n     * @type {string}\n     */\n    linkUrl?: string;\n    /**\n     * Category ID * 1 => CategoryForSingle1 * 4 => CategoryForSingle2\n     * @type {number}\n     */\n    contentsType?: InlineObject4ContentsTypeEnum;\n    /**\n     * Text\n     * @type {string}\n     */\n    extCol01?: string;\n    /**\n     * TextArea\n     * @type {string}\n     */\n    extCol02?: string;\n    /**\n     * * 1 => Option1 * 2 => Option2 * 3 => Option3\n     * @type {string}\n     */\n    extCol03?: InlineObject4ExtCol03Enum;\n    /**\n     * * 1 => Option1 * 2 => Option2 * 3 => Option3\n     * @type {Array<string>}\n     */\n    extCol04?: Array<InlineObject4ExtCol04Enum>;\n    /**\n     * \n     * @type {RcmsApi1Topics1InsertExtCol07}\n     */\n    extCol07?: RcmsApi1Topics1InsertExtCol07;\n    /**\n     * \n     * @type {RcmsApi1Topics1InsertExtCol08}\n     */\n    extCol08?: RcmsApi1Topics1InsertExtCol08;\n    /**\n     * \n     * @type {RcmsApi1Topics1InsertExtCol05}\n     */\n    extCol05?: RcmsApi1Topics1InsertExtCol05;\n    /**\n     * \n     * @type {RcmsApi1Topics1InsertExtCol05}\n     */\n    extCol15?: RcmsApi1Topics1InsertExtCol05;\n    /**\n     * * 1 => Parent1 * 2 => Parent2 * 3 => Parent3 * 4 => Parent4 * 5 => Parent5\n     * @type {string}\n     */\n    extCol06?: InlineObject4ExtCol06Enum;\n    /**\n     * Relation\n     * @type {number}\n     */\n    extCol09?: number;\n    /**\n     * Private File\n     * @type {object}\n     */\n    extCol11?: object;\n    /**\n     * JSON\n     * @type {object}\n     */\n    extJsn12?: object;\n    /**\n     * HTML\n     * @type {string}\n     */\n    extCol13?: string;\n    /**\n     * Wysiwyg\n     * @type {string}\n     */\n    extCol14?: string;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validateOnly?: boolean;\n}";
+export declare const InlineObject4Description = "{\n    /**\n     * Topic title\n     * @type {string}\n     */\n    subject?: string;\n    /**\n     * Category ID * 1 => CategoryForSingle1 * 4 => CategoryForSingle2\n     * @type {number}\n     */\n    contentsType?: InlineObject4ContentsTypeEnum;\n    /**\n     * Date\n     * @type {Date}\n     */\n    ymd?: Date;\n    /**\n     * Published / Not published\n     * @type {string}\n     */\n    openType?: InlineObject4OpenTypeEnum;\n    /**\n     * Display all topics to logged in members, regardless ther public/hidden status\n     * @type {number}\n     */\n    topicsFlg?: InlineObject4TopicsFlgEnum;\n    /**\n     * Season\n     * @type {number}\n     */\n    season?: number;\n    /**\n     * Contents\n     * @type {string}\n     */\n    contents?: string;\n    /**\n     * display up\n     * @type {number}\n     */\n    regularFlg?: number;\n    /**\n     * Display method\n     * @type {number}\n     */\n    linkFlg?: number;\n    /**\n     * Link\n     * @type {string}\n     */\n    linkUrl?: string;\n    /**\n     * Text\n     * @type {string}\n     */\n    extCol01?: string;\n    /**\n     * TextArea\n     * @type {string}\n     */\n    extCol02?: string;\n    /**\n     * Select * 1 => Option1 * 2 => Option2 * 3 => Option3\n     * @type {object | string}\n     */\n    extCol03?: object | string;\n    /**\n     * Checkbox * 1 => Option1 * 2 => Option2 * 3 => Option3\n     * @type {Array<object | string>}\n     */\n    extCol04?: Array<object | string>;\n    /**\n     * Date\n     * @type {Date | object}\n     */\n    extCol07?: Date | object;\n    /**\n     * DateTime\n     * @type {string | object}\n     */\n    extCol08?: string | object;\n    /**\n     * \n     * @type {RcmsApi1Topics1InsertExtCol05}\n     */\n    extCol05?: RcmsApi1Topics1InsertExtCol05;\n    /**\n     * \n     * @type {RcmsApi1Topics1InsertExtCol15}\n     */\n    extCol15?: RcmsApi1Topics1InsertExtCol15;\n    /**\n     * Table * 1 => Parent1 * 2 => Parent2 * 3 => Parent3 * 4 => Parent4 * 5 => Parent5\n     * @type {object | string}\n     */\n    extCol06?: object | string;\n    /**\n     * Relation\n     * @type {number}\n     */\n    extCol09?: number;\n    /**\n     * Private File\n     * @type {object}\n     */\n    extCol11?: object;\n    /**\n     * \n     * @type {RcmsApi1Topics1InsertExtJsn12}\n     */\n    extJsn12?: RcmsApi1Topics1InsertExtJsn12;\n    /**\n     * HTML\n     * @type {string}\n     */\n    extCol13?: string;\n    /**\n     * Wysiwyg\n     * @type {string}\n     */\n    extCol14?: string;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validateOnly?: boolean;\n}";
 export declare function InlineObject4FromJSON(json: any): InlineObject4;
 export declare function InlineObject4FromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject4;
 export declare function InlineObject4ToJSON(value?: InlineObject4 | null): any;
+/**
+* @export
+* @enum {string}
+*/
+export declare enum InlineObject4ContentsTypeEnum {
+    _1 = 1,
+    _4 = 4
+}
 /**
 * @export
 * @enum {string}
@@ -187,42 +195,5 @@ export declare enum InlineObject4OpenTypeEnum {
 export declare enum InlineObject4TopicsFlgEnum {
     _0 = 0,
     _1 = 1
-}
-/**
-* @export
-* @enum {string}
-*/
-export declare enum InlineObject4ContentsTypeEnum {
-    _1 = 1,
-    _4 = 4
-}
-/**
-* @export
-* @enum {string}
-*/
-export declare enum InlineObject4ExtCol03Enum {
-    _1 = "1",
-    _2 = "2",
-    _3 = "3"
-}
-/**
-* @export
-* @enum {string}
-*/
-export declare enum InlineObject4ExtCol04Enum {
-    _1 = "1",
-    _2 = "2",
-    _3 = "3"
-}
-/**
-* @export
-* @enum {string}
-*/
-export declare enum InlineObject4ExtCol06Enum {
-    _1 = "1",
-    _2 = "2",
-    _3 = "3",
-    _4 = "4",
-    _5 = "5"
 }
 //# sourceMappingURL=InlineObject4.d.ts.map

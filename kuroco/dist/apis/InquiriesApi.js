@@ -13,14 +13,14 @@ import { __awaiter, __extends, __generator } from "tslib";
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { InlineObject14Description, InlineObject14ToJSON, InlineObject15Description, InlineObject15ToJSON, } from '../models';
+import { InlineObject16Description, InlineObject16ToJSON, InlineObject17Description, InlineObject17ToJSON, } from '../models';
 var usingModelsDescription = {
-    InlineObject14: InlineObject14Description.split('\n').map(function (str) { return "  " + str; }).join('\n'),
-    InlineObject15: InlineObject15Description.split('\n').map(function (str) { return "  " + str; }).join('\n'),
+    InlineObject16: InlineObject16Description.split('\n').map(function (str) { return "  " + str; }).join('\n'),
+    InlineObject17: InlineObject17Description.split('\n').map(function (str) { return "  " + str; }).join('\n'),
 };
 var InquiriesApiRcmsApi1Inquiry1MessagesGetRequestDescription = (function (usingModelsDescription) { return "{\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n    order?: string;\n}"; })(usingModelsDescription);
-var InquiriesApiRcmsApi1Inquiry1MessagesSendPostRequestDescription = (function (usingModelsDescription) { return "{\n    inlineObject14: " + usingModelsDescription.InlineObject14 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
-var InquiriesApiRcmsApi1Inquiry1MessagesUpdatePostRequestDescription = (function (usingModelsDescription) { return "{\n    inquiryBnId: string;\n    inlineObject15: " + usingModelsDescription.InlineObject15 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
+var InquiriesApiRcmsApi1Inquiry1MessagesSendPostRequestDescription = (function (usingModelsDescription) { return "{\n    inlineObject16: " + usingModelsDescription.InlineObject16 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
+var InquiriesApiRcmsApi1Inquiry1MessagesUpdatePostRequestDescription = (function (usingModelsDescription) { return "{\n    inquiryBnId: string;\n    inlineObject17: " + usingModelsDescription.InlineObject17 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
 var InquiriesApiRcmsApi1InquiryFormsGetRequestDescription = (function (usingModelsDescription) { return "{\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
 var InquiriesApiRcmsApi1InquiryFormsInquiryIdGetRequestDescription = (function (usingModelsDescription) { return "{\n    inquiryId: number;\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
 /**
@@ -53,7 +53,7 @@ var InquiriesApi = /** @class */ (function (_super) {
                     url: "/rcms-api/1/inquiry1/messages/send",
                     requestMethodName: 'rcmsApi1Inquiry1MessagesSendPost',
                     requestRequiredParamSample: {
-                        inlineObject14: {},
+                        inlineObject16: {},
                     },
                     requestParamInterfaceDescription: InquiriesApiRcmsApi1Inquiry1MessagesSendPostRequestDescription,
                 },
@@ -62,7 +62,7 @@ var InquiriesApi = /** @class */ (function (_super) {
                     url: "/rcms-api/1/inquiry1/messages/update",
                     requestMethodName: 'rcmsApi1Inquiry1MessagesUpdatePost',
                     requestRequiredParamSample: {
-                        inquiryBnId: {}, inlineObject15: {},
+                        inquiryBnId: {}, inlineObject17: {},
                     },
                     requestParamInterfaceDescription: InquiriesApiRcmsApi1Inquiry1MessagesUpdatePostRequestDescription,
                 },
@@ -168,8 +168,8 @@ var InquiriesApi = /** @class */ (function (_super) {
                                                 'e.g. rcmsApi1Inquiry1MessagesSendPost({})'
                                             ].join('\n'));
                                         }
-                                        if (requestParameters.inlineObject14 === null || requestParameters.inlineObject14 === undefined) {
-                                            throw new runtime.RequiredError('inlineObject14', 'Required parameter requestParameters.inlineObject14 was null or undefined when calling rcmsApi1Inquiry1MessagesSendPost.');
+                                        if (requestParameters.inlineObject16 === null || requestParameters.inlineObject16 === undefined) {
+                                            throw new runtime.RequiredError('inlineObject16', 'Required parameter requestParameters.inlineObject16 was null or undefined when calling rcmsApi1Inquiry1MessagesSendPost.');
                                         }
                                         queryParameters = {};
                                         if (requestParameters.outputFormat !== undefined) {
@@ -191,7 +191,7 @@ var InquiriesApi = /** @class */ (function (_super) {
                                                 method: 'POST',
                                                 headers: headerParameters,
                                                 query: queryParameters,
-                                                body: InlineObject14ToJSON(requestParameters.inlineObject14),
+                                                body: InlineObject16ToJSON(requestParameters.inlineObject16),
                                             })];
                                     case 1:
                                         response = _a.sent();
@@ -231,8 +231,8 @@ var InquiriesApi = /** @class */ (function (_super) {
                                         if (requestParameters.inquiryBnId === null || requestParameters.inquiryBnId === undefined) {
                                             throw new runtime.RequiredError('inquiryBnId', 'Required parameter requestParameters.inquiryBnId was null or undefined when calling rcmsApi1Inquiry1MessagesUpdatePost.');
                                         }
-                                        if (requestParameters.inlineObject15 === null || requestParameters.inlineObject15 === undefined) {
-                                            throw new runtime.RequiredError('inlineObject15', 'Required parameter requestParameters.inlineObject15 was null or undefined when calling rcmsApi1Inquiry1MessagesUpdatePost.');
+                                        if (requestParameters.inlineObject17 === null || requestParameters.inlineObject17 === undefined) {
+                                            throw new runtime.RequiredError('inlineObject17', 'Required parameter requestParameters.inlineObject17 was null or undefined when calling rcmsApi1Inquiry1MessagesUpdatePost.');
                                         }
                                         queryParameters = {};
                                         if (requestParameters.outputFormat !== undefined) {
@@ -257,7 +257,7 @@ var InquiriesApi = /** @class */ (function (_super) {
                                                 method: 'POST',
                                                 headers: headerParameters,
                                                 query: queryParameters,
-                                                body: InlineObject15ToJSON(requestParameters.inlineObject15),
+                                                body: InlineObject17ToJSON(requestParameters.inlineObject17),
                                             })];
                                     case 1:
                                         response = _a.sent();

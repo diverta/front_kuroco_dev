@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import { exists } from '../runtime';
-export var InlineObject6Description = "{\n    /**\n     * /label/member_id\n     * @type {number}\n     */\n    memberId: number;\n    /**\n     * Email\n     * @type {string}\n     */\n    email?: string;\n    /**\n     * Password\n     * @type {string}\n     */\n    loginPwd?: string;\n    /**\n     * Nickname\n     * @type {string}\n     */\n    nickname?: string;\n    /**\n     * Family name\n     * @type {string}\n     */\n    name1?: string;\n    /**\n     * Given name\n     * @type {string}\n     */\n    name2?: string;\n    /**\n     * Text\n     * @type {string}\n     */\n    text?: string;\n    /**\n     * Textarea\n     * @type {string}\n     */\n    textarea?: string;\n    /**\n     * Selectbox * 1 => selectBoxOption1 * 2 => selectBoxOption2 * 3 => selectBoxOption3\n     * @type {string}\n     */\n    selectbox?: InlineObject6SelectboxEnum;\n    /**\n     * Radio * 1 => radioOption1 * 2 => radioOption2 * 3 => radioOption3\n     * @type {string}\n     */\n    radio?: InlineObject6RadioEnum;\n    /**\n     * Checkbox * 1 => checkboxOption1 * 2 => checkboxOption2 * 3 => checkboxOption3\n     * @type {Array<string>}\n     */\n    checkbox?: Array<InlineObject6CheckboxEnum>;\n    /**\n     * Date\n     * @type {Date}\n     */\n    date?: Date;\n    /**\n     * Relation\n     * @type {number}\n     */\n    relation?: number;\n    /**\n     * File\n     * @type {object}\n     */\n    file?: object;\n    /**\n     * /label/group_id\n     * @type {Array<number>}\n     */\n    groupId?: InlineObject6GroupIdEnum;\n    /**\n     * /label/open_flg\n     * @type {number}\n     */\n    openFlg?: InlineObject6OpenFlgEnum;\n    /**\n     * /label/login_ok_flg\n     * @type {number}\n     */\n    loginOkFlg?: InlineObject6LoginOkFlgEnum;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validateOnly?: boolean;\n}";
+export var InlineObject6Description = "{\n    /**\n     * Topic title\n     * @type {string}\n     */\n    subject?: string;\n    /**\n     * Category ID * 2 => CategoryForMultiple1 * 9 => CategoryForMultiple2\n     * @type {number}\n     */\n    contentsType?: InlineObject6ContentsTypeEnum;\n    /**\n     * Date\n     * @type {Date}\n     */\n    ymd?: Date;\n    /**\n     * Published / Not published\n     * @type {string}\n     */\n    openType?: InlineObject6OpenTypeEnum;\n    /**\n     * Display all topics to logged in members, regardless ther public/hidden status\n     * @type {number}\n     */\n    topicsFlg?: InlineObject6TopicsFlgEnum;\n    /**\n     * Season\n     * @type {number}\n     */\n    season?: number;\n    /**\n     * Contents\n     * @type {string}\n     */\n    contents?: string;\n    /**\n     * display up\n     * @type {number}\n     */\n    regularFlg?: number;\n    /**\n     * Display method\n     * @type {number}\n     */\n    linkFlg?: number;\n    /**\n     * Link\n     * @type {string}\n     */\n    linkUrl?: string;\n    /**\n     * Text\n     * @type {Array<string | object>}\n     */\n    extCol01?: Array<string | object>;\n    /**\n     * TextArea\n     * @type {Array<string | object>}\n     */\n    extCol02?: Array<string | object>;\n    /**\n     * Select\n     * @type {Array<object | string | object>}\n     */\n    extCol03?: Array<object | string | object>;\n    /**\n     * Checkbox\n     * @type {Array<Array<object | string> | object>}\n     */\n    extCol04?: Array<Array<object | string> | object>;\n    /**\n     * Date\n     * @type {Array<Date | object | object>}\n     */\n    extCol07?: Array<Date | object | object>;\n    /**\n     * DateTime\n     * @type {Array<string | object | object>}\n     */\n    extCol08?: Array<string | object | object>;\n    /**\n     * Tdfk\n     * @type {Array<object>}\n     */\n    extCol05?: Array<object>;\n    /**\n     * TdfkAndCity\n     * @type {Array<object>}\n     */\n    extCol15?: Array<object>;\n    /**\n     * Table\n     * @type {Array<object | string | object>}\n     */\n    extCol06?: Array<object | string | object>;\n    /**\n     * Relation\n     * @type {Array<number | object>}\n     */\n    extCol09?: Array<number | object>;\n    /**\n     * Private File\n     * @type {Array<object>}\n     */\n    extCol11?: Array<object>;\n    /**\n     * JSON\n     * @type {Array<object>}\n     */\n    extJsn12?: Array<object>;\n    /**\n     * HTML\n     * @type {Array<string | object>}\n     */\n    extCol13?: Array<string | object>;\n    /**\n     * Wysiwyg\n     * @type {Array<string | object>}\n     */\n    extCol14?: Array<string | object>;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validateOnly?: boolean;\n}";
 export function InlineObject6FromJSON(json) {
     return InlineObject6FromJSONTyped(json, false);
 }
@@ -21,23 +21,30 @@ export function InlineObject6FromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'memberId': json['member_id'],
-        'email': !exists(json, 'email') ? undefined : json['email'],
-        'loginPwd': !exists(json, 'login_pwd') ? undefined : json['login_pwd'],
-        'nickname': !exists(json, 'nickname') ? undefined : json['nickname'],
-        'name1': !exists(json, 'name1') ? undefined : json['name1'],
-        'name2': !exists(json, 'name2') ? undefined : json['name2'],
-        'text': !exists(json, 'text') ? undefined : json['text'],
-        'textarea': !exists(json, 'textarea') ? undefined : json['textarea'],
-        'selectbox': !exists(json, 'selectbox') ? undefined : json['selectbox'],
-        'radio': !exists(json, 'radio') ? undefined : json['radio'],
-        'checkbox': !exists(json, 'checkbox') ? undefined : json['checkbox'],
-        'date': !exists(json, 'date') ? undefined : (new Date(json['date'])),
-        'relation': !exists(json, 'relation') ? undefined : json['relation'],
-        'file': !exists(json, 'file') ? undefined : json['file'],
-        'groupId': !exists(json, 'group_id') ? undefined : json['group_id'],
-        'openFlg': !exists(json, 'open_flg') ? undefined : json['open_flg'],
-        'loginOkFlg': !exists(json, 'login_ok_flg') ? undefined : json['login_ok_flg'],
+        'subject': !exists(json, 'subject') ? undefined : json['subject'],
+        'contentsType': !exists(json, 'contents_type') ? undefined : json['contents_type'],
+        'ymd': !exists(json, 'ymd') ? undefined : (new Date(json['ymd'])),
+        'openType': !exists(json, 'open_type') ? undefined : json['open_type'],
+        'topicsFlg': !exists(json, 'topics_flg') ? undefined : json['topics_flg'],
+        'season': !exists(json, 'season') ? undefined : json['season'],
+        'contents': !exists(json, 'contents') ? undefined : json['contents'],
+        'regularFlg': !exists(json, 'regular_flg') ? undefined : json['regular_flg'],
+        'linkFlg': !exists(json, 'link_flg') ? undefined : json['link_flg'],
+        'linkUrl': !exists(json, 'link_url') ? undefined : json['link_url'],
+        'extCol01': !exists(json, 'ext_col_01') ? undefined : json['ext_col_01'],
+        'extCol02': !exists(json, 'ext_col_02') ? undefined : json['ext_col_02'],
+        'extCol03': !exists(json, 'ext_col_03') ? undefined : json['ext_col_03'],
+        'extCol04': !exists(json, 'ext_col_04') ? undefined : json['ext_col_04'],
+        'extCol07': !exists(json, 'ext_col_07') ? undefined : json['ext_col_07'],
+        'extCol08': !exists(json, 'ext_col_08') ? undefined : json['ext_col_08'],
+        'extCol05': !exists(json, 'ext_col_05') ? undefined : json['ext_col_05'],
+        'extCol15': !exists(json, 'ext_col_15') ? undefined : json['ext_col_15'],
+        'extCol06': !exists(json, 'ext_col_06') ? undefined : json['ext_col_06'],
+        'extCol09': !exists(json, 'ext_col_09') ? undefined : json['ext_col_09'],
+        'extCol11': !exists(json, 'ext_col_11') ? undefined : json['ext_col_11'],
+        'extJsn12': !exists(json, 'ext_jsn_12') ? undefined : json['ext_jsn_12'],
+        'extCol13': !exists(json, 'ext_col_13') ? undefined : json['ext_col_13'],
+        'extCol14': !exists(json, 'ext_col_14') ? undefined : json['ext_col_14'],
         'validateOnly': !exists(json, 'validate_only') ? undefined : json['validate_only'],
     };
 }
@@ -49,23 +56,30 @@ export function InlineObject6ToJSON(value) {
         return null;
     }
     return {
-        'member_id': value.memberId,
-        'email': value.email,
-        'login_pwd': value.loginPwd,
-        'nickname': value.nickname,
-        'name1': value.name1,
-        'name2': value.name2,
-        'text': value.text,
-        'textarea': value.textarea,
-        'selectbox': value.selectbox,
-        'radio': value.radio,
-        'checkbox': value.checkbox,
-        'date': value.date === undefined ? undefined : (value.date.toISOString().substr(0, 10)),
-        'relation': value.relation,
-        'file': value.file,
-        'group_id': value.groupId,
-        'open_flg': value.openFlg,
-        'login_ok_flg': value.loginOkFlg,
+        'subject': value.subject,
+        'contents_type': value.contentsType,
+        'ymd': value.ymd === undefined ? undefined : (value.ymd.toISOString().substr(0, 10)),
+        'open_type': value.openType,
+        'topics_flg': value.topicsFlg,
+        'season': value.season,
+        'contents': value.contents,
+        'regular_flg': value.regularFlg,
+        'link_flg': value.linkFlg,
+        'link_url': value.linkUrl,
+        'ext_col_01': value.extCol01 === undefined ? undefined : value.extCol01,
+        'ext_col_02': value.extCol02 === undefined ? undefined : value.extCol02,
+        'ext_col_03': value.extCol03 === undefined ? undefined : value.extCol03,
+        'ext_col_04': value.extCol04 === undefined ? undefined : value.extCol04,
+        'ext_col_07': value.extCol07 === undefined ? undefined : value.extCol07,
+        'ext_col_08': value.extCol08 === undefined ? undefined : value.extCol08,
+        'ext_col_05': value.extCol05,
+        'ext_col_15': value.extCol15,
+        'ext_col_06': value.extCol06 === undefined ? undefined : value.extCol06,
+        'ext_col_09': value.extCol09 === undefined ? undefined : value.extCol09,
+        'ext_col_11': value.extCol11,
+        'ext_jsn_12': value.extJsn12,
+        'ext_col_13': value.extCol13 === undefined ? undefined : value.extCol13,
+        'ext_col_14': value.extCol14 === undefined ? undefined : value.extCol14,
         'validate_only': value.validateOnly,
     };
 }
@@ -73,56 +87,27 @@ export function InlineObject6ToJSON(value) {
 * @export
 * @enum {string}
 */
-export var InlineObject6SelectboxEnum;
-(function (InlineObject6SelectboxEnum) {
-    InlineObject6SelectboxEnum["_1"] = "1";
-    InlineObject6SelectboxEnum["_2"] = "2";
-    InlineObject6SelectboxEnum["_3"] = "3";
-})(InlineObject6SelectboxEnum || (InlineObject6SelectboxEnum = {}));
+export var InlineObject6ContentsTypeEnum;
+(function (InlineObject6ContentsTypeEnum) {
+    InlineObject6ContentsTypeEnum[InlineObject6ContentsTypeEnum["_2"] = 2] = "_2";
+    InlineObject6ContentsTypeEnum[InlineObject6ContentsTypeEnum["_9"] = 9] = "_9";
+})(InlineObject6ContentsTypeEnum || (InlineObject6ContentsTypeEnum = {}));
 /**
 * @export
 * @enum {string}
 */
-export var InlineObject6RadioEnum;
-(function (InlineObject6RadioEnum) {
-    InlineObject6RadioEnum["_1"] = "1";
-    InlineObject6RadioEnum["_2"] = "2";
-    InlineObject6RadioEnum["_3"] = "3";
-})(InlineObject6RadioEnum || (InlineObject6RadioEnum = {}));
+export var InlineObject6OpenTypeEnum;
+(function (InlineObject6OpenTypeEnum) {
+    InlineObject6OpenTypeEnum["_open"] = "open";
+    InlineObject6OpenTypeEnum["_close"] = "close";
+    InlineObject6OpenTypeEnum["_default"] = "default";
+})(InlineObject6OpenTypeEnum || (InlineObject6OpenTypeEnum = {}));
 /**
 * @export
 * @enum {string}
 */
-export var InlineObject6CheckboxEnum;
-(function (InlineObject6CheckboxEnum) {
-    InlineObject6CheckboxEnum["_1"] = "1";
-    InlineObject6CheckboxEnum["_2"] = "2";
-    InlineObject6CheckboxEnum["_3"] = "3";
-})(InlineObject6CheckboxEnum || (InlineObject6CheckboxEnum = {}));
-/**
-* @export
-* @enum {string}
-*/
-export var InlineObject6GroupIdEnum;
-(function (InlineObject6GroupIdEnum) {
-    InlineObject6GroupIdEnum[InlineObject6GroupIdEnum["_1"] = 1] = "_1";
-    InlineObject6GroupIdEnum[InlineObject6GroupIdEnum["_2"] = 2] = "_2";
-})(InlineObject6GroupIdEnum || (InlineObject6GroupIdEnum = {}));
-/**
-* @export
-* @enum {string}
-*/
-export var InlineObject6OpenFlgEnum;
-(function (InlineObject6OpenFlgEnum) {
-    InlineObject6OpenFlgEnum[InlineObject6OpenFlgEnum["_0"] = 0] = "_0";
-    InlineObject6OpenFlgEnum[InlineObject6OpenFlgEnum["_1"] = 1] = "_1";
-})(InlineObject6OpenFlgEnum || (InlineObject6OpenFlgEnum = {}));
-/**
-* @export
-* @enum {string}
-*/
-export var InlineObject6LoginOkFlgEnum;
-(function (InlineObject6LoginOkFlgEnum) {
-    InlineObject6LoginOkFlgEnum[InlineObject6LoginOkFlgEnum["_0"] = 0] = "_0";
-    InlineObject6LoginOkFlgEnum[InlineObject6LoginOkFlgEnum["_1"] = 1] = "_1";
-})(InlineObject6LoginOkFlgEnum || (InlineObject6LoginOkFlgEnum = {}));
+export var InlineObject6TopicsFlgEnum;
+(function (InlineObject6TopicsFlgEnum) {
+    InlineObject6TopicsFlgEnum[InlineObject6TopicsFlgEnum["_0"] = 0] = "_0";
+    InlineObject6TopicsFlgEnum[InlineObject6TopicsFlgEnum["_1"] = 1] = "_1";
+})(InlineObject6TopicsFlgEnum || (InlineObject6TopicsFlgEnum = {}));

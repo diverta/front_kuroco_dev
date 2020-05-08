@@ -10,9 +10,9 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { InlineObject10, InlineObject11, InlineObject9 } from '../models';
+import { InlineObject11, InlineObject12, InlineObject13 } from '../models';
 export interface CommentsApiRcmsApi1TopicsCommentsDeletePostRequest {
-    inlineObject11: InlineObject11;
+    inlineObject13: InlineObject13;
     outputFormat?: string;
     lang?: string;
     charset?: string;
@@ -31,13 +31,13 @@ export interface CommentsApiRcmsApi1TopicsCommentsGetRequest {
     groupAs?: string;
 }
 export interface CommentsApiRcmsApi1TopicsCommentsInsertPostRequest {
-    inlineObject9: InlineObject9;
+    inlineObject11: InlineObject11;
     outputFormat?: string;
     lang?: string;
     charset?: string;
 }
 export interface CommentsApiRcmsApi1TopicsCommentsUpdatePostRequest {
-    inlineObject10: InlineObject10;
+    inlineObject12: InlineObject12;
     outputFormat?: string;
     lang?: string;
     charset?: string;
@@ -52,10 +52,10 @@ export declare class CommentsApi extends runtime.BaseAPI {
         url: string;
         requestMethodName: string;
         requestRequiredParamSample: {
-            inlineObject11: any;
+            inlineObject13: any;
             moduleId?: undefined;
-            inlineObject9?: undefined;
-            inlineObject10?: undefined;
+            inlineObject11?: undefined;
+            inlineObject12?: undefined;
         };
         requestParamInterfaceDescription: string;
     } | {
@@ -64,9 +64,9 @@ export declare class CommentsApi extends runtime.BaseAPI {
         requestMethodName: string;
         requestRequiredParamSample: {
             moduleId: any;
+            inlineObject13?: undefined;
             inlineObject11?: undefined;
-            inlineObject9?: undefined;
-            inlineObject10?: undefined;
+            inlineObject12?: undefined;
         };
         requestParamInterfaceDescription: string;
     } | {
@@ -74,10 +74,10 @@ export declare class CommentsApi extends runtime.BaseAPI {
         url: string;
         requestMethodName: string;
         requestRequiredParamSample: {
-            inlineObject9: any;
-            inlineObject11?: undefined;
+            inlineObject11: any;
+            inlineObject13?: undefined;
             moduleId?: undefined;
-            inlineObject10?: undefined;
+            inlineObject12?: undefined;
         };
         requestParamInterfaceDescription: string;
     } | {
@@ -85,10 +85,10 @@ export declare class CommentsApi extends runtime.BaseAPI {
         url: string;
         requestMethodName: string;
         requestRequiredParamSample: {
-            inlineObject10: any;
-            inlineObject11?: undefined;
+            inlineObject12: any;
+            inlineObject13?: undefined;
             moduleId?: undefined;
-            inlineObject9?: undefined;
+            inlineObject11?: undefined;
         };
         requestParamInterfaceDescription: string;
     })[];

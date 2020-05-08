@@ -16,14 +16,120 @@
  */
 export interface InlineObject7 {
     /**
-     * /label/member_id
+     * Email
+     * @type {string}
+     * @memberof InlineObject7
+     */
+    email: string;
+    /**
+     * Password
+     * @type {string}
+     * @memberof InlineObject7
+     */
+    loginPwd: string;
+    /**
+     * Nickname
+     * @type {string}
+     * @memberof InlineObject7
+     */
+    nickname: string;
+    /**
+     * Family name
+     * @type {string}
+     * @memberof InlineObject7
+     */
+    name1?: string;
+    /**
+     * Given name
+     * @type {string}
+     * @memberof InlineObject7
+     */
+    name2?: string;
+    /**
+     * Text
+     * @type {string}
+     * @memberof InlineObject7
+     */
+    text: string;
+    /**
+     * Textarea
+     * @type {string}
+     * @memberof InlineObject7
+     */
+    textarea?: string;
+    /**
+     * Selectbox * 1 => selectBoxOption1 * 2 => selectBoxOption2 * 3 => selectBoxOption3
+     * @type {object | string}
+     * @memberof InlineObject7
+     */
+    selectbox?: object | string;
+    /**
+     * Radio * 1 => radioOption1 * 2 => radioOption2 * 3 => radioOption3
+     * @type {object | string}
+     * @memberof InlineObject7
+     */
+    radio?: object | string;
+    /**
+     * Checkbox * 1 => checkboxOption1 * 2 => checkboxOption2 * 3 => checkboxOption3
+     * @type {Array<object | string>}
+     * @memberof InlineObject7
+     */
+    checkbox?: Array<object | string>;
+    /**
+     * Date
+     * @type {Date}
+     * @memberof InlineObject7
+     */
+    date?: Date;
+    /**
+     *
      * @type {number}
      * @memberof InlineObject7
      */
-    memberId: number;
+    relation?: number;
+    /**
+     * File
+     * @type {object}
+     * @memberof InlineObject7
+     */
+    file?: object;
+    /**
+     * /label/open_flg
+     * @type {number}
+     * @memberof InlineObject7
+     */
+    openFlg?: InlineObject7OpenFlgEnum;
+    /**
+     * /label/login_ok_flg
+     * @type {number}
+     * @memberof InlineObject7
+     */
+    loginOkFlg?: InlineObject7LoginOkFlgEnum;
+    /**
+     * /label/send_validate
+     * @type {boolean}
+     * @memberof InlineObject7
+     */
+    validateOnly?: boolean;
 }
-export declare const InlineObject7Description = "{\n    /**\n     * /label/member_id\n     * @type {number}\n     */\n    memberId: number;\n}";
+export declare const InlineObject7Description = "{\n    /**\n     * Email\n     * @type {string}\n     */\n    email: string;\n    /**\n     * Password\n     * @type {string}\n     */\n    loginPwd: string;\n    /**\n     * Nickname\n     * @type {string}\n     */\n    nickname: string;\n    /**\n     * Family name\n     * @type {string}\n     */\n    name1?: string;\n    /**\n     * Given name\n     * @type {string}\n     */\n    name2?: string;\n    /**\n     * Text\n     * @type {string}\n     */\n    text: string;\n    /**\n     * Textarea\n     * @type {string}\n     */\n    textarea?: string;\n    /**\n     * Selectbox * 1 => selectBoxOption1 * 2 => selectBoxOption2 * 3 => selectBoxOption3\n     * @type {object | string}\n     */\n    selectbox?: object | string;\n    /**\n     * Radio * 1 => radioOption1 * 2 => radioOption2 * 3 => radioOption3\n     * @type {object | string}\n     */\n    radio?: object | string;\n    /**\n     * Checkbox * 1 => checkboxOption1 * 2 => checkboxOption2 * 3 => checkboxOption3\n     * @type {Array<object | string>}\n     */\n    checkbox?: Array<object | string>;\n    /**\n     * Date\n     * @type {Date}\n     */\n    date?: Date;\n    /**\n     * \n     * @type {number}\n     */\n    relation?: number;\n    /**\n     * File\n     * @type {object}\n     */\n    file?: object;\n    /**\n     * /label/open_flg\n     * @type {number}\n     */\n    openFlg?: InlineObject7OpenFlgEnum;\n    /**\n     * /label/login_ok_flg\n     * @type {number}\n     */\n    loginOkFlg?: InlineObject7LoginOkFlgEnum;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validateOnly?: boolean;\n}";
 export declare function InlineObject7FromJSON(json: any): InlineObject7;
 export declare function InlineObject7FromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject7;
 export declare function InlineObject7ToJSON(value?: InlineObject7 | null): any;
+/**
+* @export
+* @enum {string}
+*/
+export declare enum InlineObject7OpenFlgEnum {
+    _0 = 0,
+    _1 = 1
+}
+/**
+* @export
+* @enum {string}
+*/
+export declare enum InlineObject7LoginOkFlgEnum {
+    _0 = 0,
+    _1 = 1
+}
 //# sourceMappingURL=InlineObject7.d.ts.map

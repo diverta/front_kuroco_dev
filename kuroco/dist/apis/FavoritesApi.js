@@ -13,14 +13,14 @@ import { __awaiter, __extends, __generator } from "tslib";
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { InlineObject12Description, InlineObject12ToJSON, InlineObject13Description, InlineObject13ToJSON, } from '../models';
+import { InlineObject14Description, InlineObject14ToJSON, InlineObject15Description, InlineObject15ToJSON, } from '../models';
 var usingModelsDescription = {
-    InlineObject12: InlineObject12Description.split('\n').map(function (str) { return "  " + str; }).join('\n'),
-    InlineObject13: InlineObject13Description.split('\n').map(function (str) { return "  " + str; }).join('\n'),
+    InlineObject14: InlineObject14Description.split('\n').map(function (str) { return "  " + str; }).join('\n'),
+    InlineObject15: InlineObject15Description.split('\n').map(function (str) { return "  " + str; }).join('\n'),
 };
-var FavoritesApiRcmsApi1FavoritesDeletePostRequestDescription = (function (usingModelsDescription) { return "{\n    inlineObject13: " + usingModelsDescription.InlineObject13 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
+var FavoritesApiRcmsApi1FavoritesDeletePostRequestDescription = (function (usingModelsDescription) { return "{\n    inlineObject15: " + usingModelsDescription.InlineObject15 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
 var FavoritesApiRcmsApi1FavoritesGetRequestDescription = (function (usingModelsDescription) { return "{\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n    cnt?: number;\n    pageID?: number;\n    moduleId?: Array<number>;\n    memberId?: Array<number>;\n    rcmsid?: Array<string>;\n    groupBy?: string;\n    groupAs?: string;\n}"; })(usingModelsDescription);
-var FavoritesApiRcmsApi1FavoritesInsertPostRequestDescription = (function (usingModelsDescription) { return "{\n    inlineObject12: " + usingModelsDescription.InlineObject12 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
+var FavoritesApiRcmsApi1FavoritesInsertPostRequestDescription = (function (usingModelsDescription) { return "{\n    inlineObject14: " + usingModelsDescription.InlineObject14 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
 /**
  * no description
  */
@@ -44,7 +44,7 @@ var FavoritesApi = /** @class */ (function (_super) {
                     url: "/rcms-api/1/favorites/delete",
                     requestMethodName: 'rcmsApi1FavoritesDeletePost',
                     requestRequiredParamSample: {
-                        inlineObject13: {},
+                        inlineObject15: {},
                     },
                     requestParamInterfaceDescription: FavoritesApiRcmsApi1FavoritesDeletePostRequestDescription,
                 },
@@ -60,7 +60,7 @@ var FavoritesApi = /** @class */ (function (_super) {
                     url: "/rcms-api/1/favorites/insert",
                     requestMethodName: 'rcmsApi1FavoritesInsertPost',
                     requestRequiredParamSample: {
-                        inlineObject12: {},
+                        inlineObject14: {},
                     },
                     requestParamInterfaceDescription: FavoritesApiRcmsApi1FavoritesInsertPostRequestDescription,
                 },
@@ -92,8 +92,8 @@ var FavoritesApi = /** @class */ (function (_super) {
                                                 'e.g. rcmsApi1FavoritesDeletePost({})'
                                             ].join('\n'));
                                         }
-                                        if (requestParameters.inlineObject13 === null || requestParameters.inlineObject13 === undefined) {
-                                            throw new runtime.RequiredError('inlineObject13', 'Required parameter requestParameters.inlineObject13 was null or undefined when calling rcmsApi1FavoritesDeletePost.');
+                                        if (requestParameters.inlineObject15 === null || requestParameters.inlineObject15 === undefined) {
+                                            throw new runtime.RequiredError('inlineObject15', 'Required parameter requestParameters.inlineObject15 was null or undefined when calling rcmsApi1FavoritesDeletePost.');
                                         }
                                         queryParameters = {};
                                         if (requestParameters.outputFormat !== undefined) {
@@ -115,7 +115,7 @@ var FavoritesApi = /** @class */ (function (_super) {
                                                 method: 'POST',
                                                 headers: headerParameters,
                                                 query: queryParameters,
-                                                body: InlineObject13ToJSON(requestParameters.inlineObject13),
+                                                body: InlineObject15ToJSON(requestParameters.inlineObject15),
                                             })];
                                     case 1:
                                         response = _a.sent();
@@ -228,8 +228,8 @@ var FavoritesApi = /** @class */ (function (_super) {
                                                 'e.g. rcmsApi1FavoritesInsertPost({})'
                                             ].join('\n'));
                                         }
-                                        if (requestParameters.inlineObject12 === null || requestParameters.inlineObject12 === undefined) {
-                                            throw new runtime.RequiredError('inlineObject12', 'Required parameter requestParameters.inlineObject12 was null or undefined when calling rcmsApi1FavoritesInsertPost.');
+                                        if (requestParameters.inlineObject14 === null || requestParameters.inlineObject14 === undefined) {
+                                            throw new runtime.RequiredError('inlineObject14', 'Required parameter requestParameters.inlineObject14 was null or undefined when calling rcmsApi1FavoritesInsertPost.');
                                         }
                                         queryParameters = {};
                                         if (requestParameters.outputFormat !== undefined) {
@@ -251,7 +251,7 @@ var FavoritesApi = /** @class */ (function (_super) {
                                                 method: 'POST',
                                                 headers: headerParameters,
                                                 query: queryParameters,
-                                                body: InlineObject12ToJSON(requestParameters.inlineObject12),
+                                                body: InlineObject14ToJSON(requestParameters.inlineObject14),
                                             })];
                                     case 1:
                                         response = _a.sent();

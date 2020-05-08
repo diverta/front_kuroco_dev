@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import { exists } from '../runtime';
-export var RcmsApi1Topics1InsertExtCol05Description = "{\n    /**\n     * \n     * @type {string}\n     */\n    tdfkCd?: RcmsApi1Topics1InsertExtCol05TdfkCdEnum;\n}";
+export var RcmsApi1Topics1InsertExtCol05Description = "{\n    /**\n     * \n     * @type {string}\n     */\n    tdfkCd?: RcmsApi1Topics1InsertExtCol05TdfkCdEnum;\n    /**\n     * \n     * @type {string}\n     */\n    tdfkNm?: RcmsApi1Topics1InsertExtCol05TdfkNmEnum;\n}";
 export function RcmsApi1Topics1InsertExtCol05FromJSON(json) {
     return RcmsApi1Topics1InsertExtCol05FromJSONTyped(json, false);
 }
@@ -22,6 +22,7 @@ export function RcmsApi1Topics1InsertExtCol05FromJSONTyped(json, ignoreDiscrimin
     }
     return {
         'tdfkCd': !exists(json, 'tdfk_cd') ? undefined : json['tdfk_cd'],
+        'tdfkNm': !exists(json, 'tdfk_nm') ? undefined : json['tdfk_nm'],
     };
 }
 export function RcmsApi1Topics1InsertExtCol05ToJSON(value) {
@@ -33,6 +34,7 @@ export function RcmsApi1Topics1InsertExtCol05ToJSON(value) {
     }
     return {
         'tdfk_cd': value.tdfkCd,
+        'tdfk_nm': value.tdfkNm,
     };
 }
 /**
@@ -90,3 +92,58 @@ export var RcmsApi1Topics1InsertExtCol05TdfkCdEnum;
     RcmsApi1Topics1InsertExtCol05TdfkCdEnum["_47"] = "47";
     RcmsApi1Topics1InsertExtCol05TdfkCdEnum["_99"] = "99";
 })(RcmsApi1Topics1InsertExtCol05TdfkCdEnum || (RcmsApi1Topics1InsertExtCol05TdfkCdEnum = {}));
+/**
+* @export
+* @enum {string}
+*/
+export var RcmsApi1Topics1InsertExtCol05TdfkNmEnum;
+(function (RcmsApi1Topics1InsertExtCol05TdfkNmEnum) {
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u5317\u6D77\u9053"] = "\u5317\u6D77\u9053";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u9752\u68EE\u770C"] = "\u9752\u68EE\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u5CA9\u624B\u770C"] = "\u5CA9\u624B\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u5BAE\u57CE\u770C"] = "\u5BAE\u57CE\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u79CB\u7530\u770C"] = "\u79CB\u7530\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u5C71\u5F62\u770C"] = "\u5C71\u5F62\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u798F\u5CF6\u770C"] = "\u798F\u5CF6\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u8328\u57CE\u770C"] = "\u8328\u57CE\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u6803\u6728\u770C"] = "\u6803\u6728\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u7FA4\u99AC\u770C"] = "\u7FA4\u99AC\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u57FC\u7389\u770C"] = "\u57FC\u7389\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u5343\u8449\u770C"] = "\u5343\u8449\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u6771\u4EAC\u90FD"] = "\u6771\u4EAC\u90FD";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u795E\u5948\u5DDD\u770C"] = "\u795E\u5948\u5DDD\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u65B0\u6F5F\u770C"] = "\u65B0\u6F5F\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u5BCC\u5C71\u770C"] = "\u5BCC\u5C71\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u77F3\u5DDD\u770C"] = "\u77F3\u5DDD\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u798F\u4E95\u770C"] = "\u798F\u4E95\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u5C71\u68A8\u770C"] = "\u5C71\u68A8\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u9577\u91CE\u770C"] = "\u9577\u91CE\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u5C90\u961C\u770C"] = "\u5C90\u961C\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u9759\u5CA1\u770C"] = "\u9759\u5CA1\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u611B\u77E5\u770C"] = "\u611B\u77E5\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u4E09\u91CD\u770C"] = "\u4E09\u91CD\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u6ECB\u8CC0\u770C"] = "\u6ECB\u8CC0\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u4EAC\u90FD\u5E9C"] = "\u4EAC\u90FD\u5E9C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u5927\u962A\u5E9C"] = "\u5927\u962A\u5E9C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u5175\u5EAB\u770C"] = "\u5175\u5EAB\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u5948\u826F\u770C"] = "\u5948\u826F\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u548C\u6B4C\u5C71\u770C"] = "\u548C\u6B4C\u5C71\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u9CE5\u53D6\u770C"] = "\u9CE5\u53D6\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u5CF6\u6839\u770C"] = "\u5CF6\u6839\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u5CA1\u5C71\u770C"] = "\u5CA1\u5C71\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u5E83\u5CF6\u770C"] = "\u5E83\u5CF6\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u5C71\u53E3\u770C"] = "\u5C71\u53E3\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u5FB3\u5CF6\u770C"] = "\u5FB3\u5CF6\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u9999\u5DDD\u770C"] = "\u9999\u5DDD\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u611B\u5A9B\u770C"] = "\u611B\u5A9B\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u9AD8\u77E5\u770C"] = "\u9AD8\u77E5\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u798F\u5CA1\u770C"] = "\u798F\u5CA1\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u4F50\u8CC0\u770C"] = "\u4F50\u8CC0\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u9577\u5D0E\u770C"] = "\u9577\u5D0E\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u718A\u672C\u770C"] = "\u718A\u672C\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u5927\u5206\u770C"] = "\u5927\u5206\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u5BAE\u5D0E\u770C"] = "\u5BAE\u5D0E\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u9E7F\u5150\u5CF6\u770C"] = "\u9E7F\u5150\u5CF6\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u6C96\u7E04\u770C"] = "\u6C96\u7E04\u770C";
+    RcmsApi1Topics1InsertExtCol05TdfkNmEnum["_\u6D77\u5916"] = "\u6D77\u5916";
+})(RcmsApi1Topics1InsertExtCol05TdfkNmEnum || (RcmsApi1Topics1InsertExtCol05TdfkNmEnum = {}));

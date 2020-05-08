@@ -13,20 +13,20 @@ import { __awaiter, __extends, __generator } from "tslib";
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { InlineObject5Description, InlineObject5ToJSON, InlineObject6Description, InlineObject6ToJSON, InlineObject7Description, InlineObject7ToJSON, InlineObject8Description, InlineObject8ToJSON, } from '../models';
+import { InlineObject10Description, InlineObject10ToJSON, InlineObject7Description, InlineObject7ToJSON, InlineObject8Description, InlineObject8ToJSON, InlineObject9Description, InlineObject9ToJSON, } from '../models';
 var usingModelsDescription = {
-    InlineObject5: InlineObject5Description.split('\n').map(function (str) { return "  " + str; }).join('\n'),
-    InlineObject6: InlineObject6Description.split('\n').map(function (str) { return "  " + str; }).join('\n'),
+    InlineObject10: InlineObject10Description.split('\n').map(function (str) { return "  " + str; }).join('\n'),
     InlineObject7: InlineObject7Description.split('\n').map(function (str) { return "  " + str; }).join('\n'),
     InlineObject8: InlineObject8Description.split('\n').map(function (str) { return "  " + str; }).join('\n'),
+    InlineObject9: InlineObject9Description.split('\n').map(function (str) { return "  " + str; }).join('\n'),
 };
 var MembersApiRcmsApi1MeDeletePostRequestDescription = (function (usingModelsDescription) { return "{\n    body: object;\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
-var MembersApiRcmsApi1MeUpdatePostRequestDescription = (function (usingModelsDescription) { return "{\n    inlineObject8: " + usingModelsDescription.InlineObject8 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
-var MembersApiRcmsApi1MembersDeletePostRequestDescription = (function (usingModelsDescription) { return "{\n    inlineObject7: " + usingModelsDescription.InlineObject7 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
+var MembersApiRcmsApi1MeUpdatePostRequestDescription = (function (usingModelsDescription) { return "{\n    inlineObject10: " + usingModelsDescription.InlineObject10 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
+var MembersApiRcmsApi1MembersDeletePostRequestDescription = (function (usingModelsDescription) { return "{\n    inlineObject9: " + usingModelsDescription.InlineObject9 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
 var MembersApiRcmsApi1MembersGetRequestDescription = (function (usingModelsDescription) { return "{\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n    id?: Array<number>;\n    cnt?: number;\n    pageID?: number;\n    sName?: string;\n    sEmail?: string;\n    sTel?: string;\n    sAddress?: string;\n    sTdfkCd?: string;\n    groupId?: number;\n}"; })(usingModelsDescription);
-var MembersApiRcmsApi1MembersInsertPostRequestDescription = (function (usingModelsDescription) { return "{\n    inlineObject5: " + usingModelsDescription.InlineObject5 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
+var MembersApiRcmsApi1MembersInsertPostRequestDescription = (function (usingModelsDescription) { return "{\n    inlineObject7: " + usingModelsDescription.InlineObject7 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
 var MembersApiRcmsApi1MembersMemberIdGetRequestDescription = (function (usingModelsDescription) { return "{\n    memberId: number;\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
-var MembersApiRcmsApi1MembersUpdatePostRequestDescription = (function (usingModelsDescription) { return "{\n    inlineObject6: " + usingModelsDescription.InlineObject6 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
+var MembersApiRcmsApi1MembersUpdatePostRequestDescription = (function (usingModelsDescription) { return "{\n    inlineObject8: " + usingModelsDescription.InlineObject8 + ";\n    outputFormat?: string;\n    lang?: string;\n    charset?: string;\n}"; })(usingModelsDescription);
 /**
  * no description
  */
@@ -59,7 +59,7 @@ var MembersApi = /** @class */ (function (_super) {
                     url: "/rcms-api/1/me/update",
                     requestMethodName: 'rcmsApi1MeUpdatePost',
                     requestRequiredParamSample: {
-                        inlineObject8: {},
+                        inlineObject10: {},
                     },
                     requestParamInterfaceDescription: MembersApiRcmsApi1MeUpdatePostRequestDescription,
                 },
@@ -68,7 +68,7 @@ var MembersApi = /** @class */ (function (_super) {
                     url: "/rcms-api/1/members/delete",
                     requestMethodName: 'rcmsApi1MembersDeletePost',
                     requestRequiredParamSample: {
-                        inlineObject7: {},
+                        inlineObject9: {},
                     },
                     requestParamInterfaceDescription: MembersApiRcmsApi1MembersDeletePostRequestDescription,
                 },
@@ -84,7 +84,7 @@ var MembersApi = /** @class */ (function (_super) {
                     url: "/rcms-api/1/members/insert",
                     requestMethodName: 'rcmsApi1MembersInsertPost',
                     requestRequiredParamSample: {
-                        inlineObject5: {},
+                        inlineObject7: {},
                     },
                     requestParamInterfaceDescription: MembersApiRcmsApi1MembersInsertPostRequestDescription,
                 },
@@ -102,7 +102,7 @@ var MembersApi = /** @class */ (function (_super) {
                     url: "/rcms-api/1/members/update",
                     requestMethodName: 'rcmsApi1MembersUpdatePost',
                     requestRequiredParamSample: {
-                        inlineObject6: {},
+                        inlineObject8: {},
                     },
                     requestParamInterfaceDescription: MembersApiRcmsApi1MembersUpdatePostRequestDescription,
                 },
@@ -194,8 +194,8 @@ var MembersApi = /** @class */ (function (_super) {
                                                 'e.g. rcmsApi1MeUpdatePost({})'
                                             ].join('\n'));
                                         }
-                                        if (requestParameters.inlineObject8 === null || requestParameters.inlineObject8 === undefined) {
-                                            throw new runtime.RequiredError('inlineObject8', 'Required parameter requestParameters.inlineObject8 was null or undefined when calling rcmsApi1MeUpdatePost.');
+                                        if (requestParameters.inlineObject10 === null || requestParameters.inlineObject10 === undefined) {
+                                            throw new runtime.RequiredError('inlineObject10', 'Required parameter requestParameters.inlineObject10 was null or undefined when calling rcmsApi1MeUpdatePost.');
                                         }
                                         queryParameters = {};
                                         if (requestParameters.outputFormat !== undefined) {
@@ -217,7 +217,7 @@ var MembersApi = /** @class */ (function (_super) {
                                                 method: 'POST',
                                                 headers: headerParameters,
                                                 query: queryParameters,
-                                                body: InlineObject8ToJSON(requestParameters.inlineObject8),
+                                                body: InlineObject10ToJSON(requestParameters.inlineObject10),
                                             })];
                                     case 1:
                                         response = _a.sent();
@@ -254,8 +254,8 @@ var MembersApi = /** @class */ (function (_super) {
                                                 'e.g. rcmsApi1MembersDeletePost({})'
                                             ].join('\n'));
                                         }
-                                        if (requestParameters.inlineObject7 === null || requestParameters.inlineObject7 === undefined) {
-                                            throw new runtime.RequiredError('inlineObject7', 'Required parameter requestParameters.inlineObject7 was null or undefined when calling rcmsApi1MembersDeletePost.');
+                                        if (requestParameters.inlineObject9 === null || requestParameters.inlineObject9 === undefined) {
+                                            throw new runtime.RequiredError('inlineObject9', 'Required parameter requestParameters.inlineObject9 was null or undefined when calling rcmsApi1MembersDeletePost.');
                                         }
                                         queryParameters = {};
                                         if (requestParameters.outputFormat !== undefined) {
@@ -277,7 +277,7 @@ var MembersApi = /** @class */ (function (_super) {
                                                 method: 'POST',
                                                 headers: headerParameters,
                                                 query: queryParameters,
-                                                body: InlineObject7ToJSON(requestParameters.inlineObject7),
+                                                body: InlineObject9ToJSON(requestParameters.inlineObject9),
                                             })];
                                     case 1:
                                         response = _a.sent();
@@ -396,8 +396,8 @@ var MembersApi = /** @class */ (function (_super) {
                                                 'e.g. rcmsApi1MembersInsertPost({})'
                                             ].join('\n'));
                                         }
-                                        if (requestParameters.inlineObject5 === null || requestParameters.inlineObject5 === undefined) {
-                                            throw new runtime.RequiredError('inlineObject5', 'Required parameter requestParameters.inlineObject5 was null or undefined when calling rcmsApi1MembersInsertPost.');
+                                        if (requestParameters.inlineObject7 === null || requestParameters.inlineObject7 === undefined) {
+                                            throw new runtime.RequiredError('inlineObject7', 'Required parameter requestParameters.inlineObject7 was null or undefined when calling rcmsApi1MembersInsertPost.');
                                         }
                                         queryParameters = {};
                                         if (requestParameters.outputFormat !== undefined) {
@@ -419,7 +419,7 @@ var MembersApi = /** @class */ (function (_super) {
                                                 method: 'POST',
                                                 headers: headerParameters,
                                                 query: queryParameters,
-                                                body: InlineObject5ToJSON(requestParameters.inlineObject5),
+                                                body: InlineObject7ToJSON(requestParameters.inlineObject7),
                                             })];
                                     case 1:
                                         response = _a.sent();
@@ -514,8 +514,8 @@ var MembersApi = /** @class */ (function (_super) {
                                                 'e.g. rcmsApi1MembersUpdatePost({})'
                                             ].join('\n'));
                                         }
-                                        if (requestParameters.inlineObject6 === null || requestParameters.inlineObject6 === undefined) {
-                                            throw new runtime.RequiredError('inlineObject6', 'Required parameter requestParameters.inlineObject6 was null or undefined when calling rcmsApi1MembersUpdatePost.');
+                                        if (requestParameters.inlineObject8 === null || requestParameters.inlineObject8 === undefined) {
+                                            throw new runtime.RequiredError('inlineObject8', 'Required parameter requestParameters.inlineObject8 was null or undefined when calling rcmsApi1MembersUpdatePost.');
                                         }
                                         queryParameters = {};
                                         if (requestParameters.outputFormat !== undefined) {
@@ -537,7 +537,7 @@ var MembersApi = /** @class */ (function (_super) {
                                                 method: 'POST',
                                                 headers: headerParameters,
                                                 query: queryParameters,
-                                                body: InlineObject6ToJSON(requestParameters.inlineObject6),
+                                                body: InlineObject8ToJSON(requestParameters.inlineObject8),
                                             })];
                                     case 1:
                                         response = _a.sent();

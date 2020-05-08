@@ -10,9 +10,9 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { InlineObject12, InlineObject13 } from '../models';
+import { InlineObject14, InlineObject15 } from '../models';
 export interface FavoritesApiRcmsApi1FavoritesDeletePostRequest {
-    inlineObject13: InlineObject13;
+    inlineObject15: InlineObject15;
     outputFormat?: string;
     lang?: string;
     charset?: string;
@@ -30,7 +30,7 @@ export interface FavoritesApiRcmsApi1FavoritesGetRequest {
     groupAs?: string;
 }
 export interface FavoritesApiRcmsApi1FavoritesInsertPostRequest {
-    inlineObject12: InlineObject12;
+    inlineObject14: InlineObject14;
     outputFormat?: string;
     lang?: string;
     charset?: string;
@@ -45,8 +45,8 @@ export declare class FavoritesApi extends runtime.BaseAPI {
         url: string;
         requestMethodName: string;
         requestRequiredParamSample: {
-            inlineObject13: any;
-            inlineObject12?: undefined;
+            inlineObject15: any;
+            inlineObject14?: undefined;
         };
         requestParamInterfaceDescription: string;
     } | {
@@ -54,8 +54,8 @@ export declare class FavoritesApi extends runtime.BaseAPI {
         url: string;
         requestMethodName: string;
         requestRequiredParamSample: {
-            inlineObject13?: undefined;
-            inlineObject12?: undefined;
+            inlineObject15?: undefined;
+            inlineObject14?: undefined;
         };
         requestParamInterfaceDescription: string;
     } | {
@@ -63,8 +63,8 @@ export declare class FavoritesApi extends runtime.BaseAPI {
         url: string;
         requestMethodName: string;
         requestRequiredParamSample: {
-            inlineObject12: any;
-            inlineObject13?: undefined;
+            inlineObject14: any;
+            inlineObject15?: undefined;
         };
         requestParamInterfaceDescription: string;
     })[];

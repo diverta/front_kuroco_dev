@@ -16,25 +16,19 @@
  */
 export interface InlineObject13 {
     /**
-     * Module type
-     * @type {string}
-     * @memberof InlineObject13
-     */
-    moduleType: string;
-    /**
-     * module_id
+     * コメントID
      * @type {number}
      * @memberof InlineObject13
      */
-    moduleId: number;
+    commentId: number;
     /**
-     * ページシステム名
+     * 削除キー
      * @type {string}
      * @memberof InlineObject13
      */
-    pageSysnm?: string;
+    delkey?: string;
 }
-export declare const InlineObject13Description = "{\n    /**\n     * Module type\n     * @type {string}\n     */\n    moduleType: string;\n    /**\n     * module_id\n     * @type {number}\n     */\n    moduleId: number;\n    /**\n     * \u30DA\u30FC\u30B8\u30B7\u30B9\u30C6\u30E0\u540D\n     * @type {string}\n     */\n    pageSysnm?: string;\n}";
+export declare const InlineObject13Description = "{\n    /**\n     * \u30B3\u30E1\u30F3\u30C8ID\n     * @type {number}\n     */\n    commentId: number;\n    /**\n     * \u524A\u9664\u30AD\u30FC\n     * @type {string}\n     */\n    delkey?: string;\n}";
 export declare function InlineObject13FromJSON(json: any): InlineObject13;
 export declare function InlineObject13FromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject13;
 export declare function InlineObject13ToJSON(value?: InlineObject13 | null): any;

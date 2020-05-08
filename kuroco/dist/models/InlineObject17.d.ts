@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { RcmsApi1Topics1InsertExtCol05, RcmsApi1Topics1InsertExtJsn12 } from './';
 /**
  *
  * @export
@@ -16,91 +17,97 @@
  */
 export interface InlineObject17 {
     /**
-     * Title
+     * Name
      * @type {string}
      * @memberof InlineObject17
      */
-    tagNm: string;
+    name?: string;
     /**
-     * Category ID
+     * E-mail
+     * @type {string}
+     * @memberof InlineObject17
+     */
+    fromMail?: string;
+    /**
+     * Message
+     * @type {string}
+     * @memberof InlineObject17
+     */
+    body?: string;
+    /**
+     * * 1 => Category1 * 3 => Category2 * 4 => Category3
      * @type {number}
      * @memberof InlineObject17
      */
-    tagCategoryId?: number;
+    inquiryCategoryId?: InlineObject17InquiryCategoryIdEnum;
     /**
-     * Published / Not published
+     * RequiredText
      * @type {string}
      * @memberof InlineObject17
      */
-    openType?: InlineObject17OpenTypeEnum;
+    ext01?: string;
     /**
-     * Sort
-     * @type {number}
-     * @memberof InlineObject17
-     */
-    weight?: number;
-    /**
-     * ext_col_01
+     * LongText
      * @type {string}
      * @memberof InlineObject17
      */
-    extCol01?: string;
+    ext02?: string;
     /**
-     * ext_col_02
-     * @type {string}
+     * Radio * 1 => radio1 * 2 => radio2 * 3 => radio3
+     * @type {object | string}
      * @memberof InlineObject17
      */
-    extCol02?: string;
+    ext03?: object | string;
     /**
-     * ext_col_03
-     * @type {string}
+     * RequiredSelect * 1 => select1 * 2 => select2 * 3 => select3
+     * @type {object | string}
      * @memberof InlineObject17
      */
-    extCol03?: string;
+    ext04?: object | string;
     /**
-     * ext_col_04
-     * @type {string}
+     * Checkbox * 1 => check1 * 2 => check2 * 3 => check3
+     * @type {Array<object | string>}
      * @memberof InlineObject17
      */
-    extCol04?: string;
+    ext05?: Array<object | string>;
     /**
-     * ext_col_05
-     * @type {string}
+     * DateTime
+     * @type {string | object}
      * @memberof InlineObject17
      */
-    extCol05?: string;
+    ext06?: string | object;
     /**
-     * ext_col_06
-     * @type {string}
+     *
+     * @type {object}
      * @memberof InlineObject17
      */
-    extCol06?: string;
+    ext07?: object;
     /**
-     * ext_col_07
-     * @type {string}
+     *
+     * @type {RcmsApi1Topics1InsertExtCol05}
      * @memberof InlineObject17
      */
-    extCol07?: string;
+    ext08?: RcmsApi1Topics1InsertExtCol05;
     /**
-     * ext_col_08
-     * @type {string}
+     *
+     * @type {RcmsApi1Topics1InsertExtJsn12}
      * @memberof InlineObject17
      */
-    extCol08?: string;
+    ext09?: RcmsApi1Topics1InsertExtJsn12;
     /**
-     * ext_col_09
-     * @type {string}
+     * Date
+     * @type {Date | object}
      * @memberof InlineObject17
      */
-    extCol09?: string;
+    ext10?: Date | object;
     /**
-     * ext_col_10
-     * @type {string}
+     * /label/send_validate
+     * @type {boolean}
      * @memberof InlineObject17
      */
-    extCol10?: string;
+    validateOnly?: boolean;
 }
-export declare const InlineObject17Description = "{\n    /**\n     * Title\n     * @type {string}\n     */\n    tagNm: string;\n    /**\n     * Category ID\n     * @type {number}\n     */\n    tagCategoryId?: number;\n    /**\n     * Published / Not published\n     * @type {string}\n     */\n    openType?: InlineObject17OpenTypeEnum;\n    /**\n     * Sort\n     * @type {number}\n     */\n    weight?: number;\n    /**\n     * ext_col_01\n     * @type {string}\n     */\n    extCol01?: string;\n    /**\n     * ext_col_02\n     * @type {string}\n     */\n    extCol02?: string;\n    /**\n     * ext_col_03\n     * @type {string}\n     */\n    extCol03?: string;\n    /**\n     * ext_col_04\n     * @type {string}\n     */\n    extCol04?: string;\n    /**\n     * ext_col_05\n     * @type {string}\n     */\n    extCol05?: string;\n    /**\n     * ext_col_06\n     * @type {string}\n     */\n    extCol06?: string;\n    /**\n     * ext_col_07\n     * @type {string}\n     */\n    extCol07?: string;\n    /**\n     * ext_col_08\n     * @type {string}\n     */\n    extCol08?: string;\n    /**\n     * ext_col_09\n     * @type {string}\n     */\n    extCol09?: string;\n    /**\n     * ext_col_10\n     * @type {string}\n     */\n    extCol10?: string;\n}";
+export declare const InlineObject17Description = "{\n    /**\n     * Name\n     * @type {string}\n     */\n    name?: string;\n    /**\n     * E-mail\n     * @type {string}\n     */\n    fromMail?: string;\n    /**\n     * Message\n     * @type {string}\n     */\n    body?: string;\n    /**\n     * * 1 => Category1 * 3 => Category2 * 4 => Category3\n     * @type {number}\n     */\n    inquiryCategoryId?: InlineObject17InquiryCategoryIdEnum;\n    /**\n     * RequiredText\n     * @type {string}\n     */\n    ext01?: string;\n    /**\n     * LongText\n     * @type {string}\n     */\n    ext02?: string;\n    /**\n     * Radio * 1 => radio1 * 2 => radio2 * 3 => radio3\n     * @type {object | string}\n     */\n    ext03?: object | string;\n    /**\n     * RequiredSelect * 1 => select1 * 2 => select2 * 3 => select3\n     * @type {object | string}\n     */\n    ext04?: object | string;\n    /**\n     * Checkbox * 1 => check1 * 2 => check2 * 3 => check3\n     * @type {Array<object | string>}\n     */\n    ext05?: Array<object | string>;\n    /**\n     * DateTime\n     * @type {string | object}\n     */\n    ext06?: string | object;\n    /**\n     * \n     * @type {object}\n     */\n    ext07?: object;\n    /**\n     * \n     * @type {RcmsApi1Topics1InsertExtCol05}\n     */\n    ext08?: RcmsApi1Topics1InsertExtCol05;\n    /**\n     * \n     * @type {RcmsApi1Topics1InsertExtJsn12}\n     */\n    ext09?: RcmsApi1Topics1InsertExtJsn12;\n    /**\n     * Date\n     * @type {Date | object}\n     */\n    ext10?: Date | object;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validateOnly?: boolean;\n}";
 export declare function InlineObject17FromJSON(json: any): InlineObject17;
 export declare function InlineObject17FromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject17;
 export declare function InlineObject17ToJSON(value?: InlineObject17 | null): any;
@@ -108,9 +115,9 @@ export declare function InlineObject17ToJSON(value?: InlineObject17 | null): any
 * @export
 * @enum {string}
 */
-export declare enum InlineObject17OpenTypeEnum {
-    _open = "open",
-    _close = "close",
-    _default = "default"
+export declare enum InlineObject17InquiryCategoryIdEnum {
+    _1 = 1,
+    _3 = 3,
+    _4 = 4
 }
 //# sourceMappingURL=InlineObject17.d.ts.map

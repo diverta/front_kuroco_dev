@@ -16,11 +16,41 @@
  */
 export interface InlineObject11 {
     /**
-     * コメントID
+     * モジュールID
      * @type {number}
      * @memberof InlineObject11
      */
-    commentId: number;
+    moduleId: number;
+    /**
+     * Name
+     * @type {string}
+     * @memberof InlineObject11
+     */
+    name: string;
+    /**
+     * Mail
+     * @type {string}
+     * @memberof InlineObject11
+     */
+    mail?: string;
+    /**
+     * URL
+     * @type {string}
+     * @memberof InlineObject11
+     */
+    url?: string;
+    /**
+     * Comments
+     * @type {string}
+     * @memberof InlineObject11
+     */
+    note: string;
+    /**
+     * Rating
+     * @type {number}
+     * @memberof InlineObject11
+     */
+    rating?: number;
     /**
      * 削除キー
      * @type {string}
@@ -28,7 +58,7 @@ export interface InlineObject11 {
      */
     delkey?: string;
 }
-export declare const InlineObject11Description = "{\n    /**\n     * \u30B3\u30E1\u30F3\u30C8ID\n     * @type {number}\n     */\n    commentId: number;\n    /**\n     * \u524A\u9664\u30AD\u30FC\n     * @type {string}\n     */\n    delkey?: string;\n}";
+export declare const InlineObject11Description = "{\n    /**\n     * \u30E2\u30B8\u30E5\u30FC\u30EBID\n     * @type {number}\n     */\n    moduleId: number;\n    /**\n     * Name\n     * @type {string}\n     */\n    name: string;\n    /**\n     * Mail\n     * @type {string}\n     */\n    mail?: string;\n    /**\n     * URL\n     * @type {string}\n     */\n    url?: string;\n    /**\n     * Comments\n     * @type {string}\n     */\n    note: string;\n    /**\n     * Rating\n     * @type {number}\n     */\n    rating?: number;\n    /**\n     * \u524A\u9664\u30AD\u30FC\n     * @type {string}\n     */\n    delkey?: string;\n}";
 export declare function InlineObject11FromJSON(json: any): InlineObject11;
 export declare function InlineObject11FromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject11;
 export declare function InlineObject11ToJSON(value?: InlineObject11 | null): any;

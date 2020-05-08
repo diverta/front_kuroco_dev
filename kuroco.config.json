@@ -1,6 +1,6 @@
 {
-  "api_token": "85f25e1cb0622d3fe68d5b68a41ef039",
+  "api_token": "09a3fa5afa66ec863001bde62aa5b3c9",
   "api_host": "https://kuroco-dev.r-cms.jp",
   "api_name": "rcms-api",
-  "configure_root": "/Users/yabe/workspace/kuroco-checks/apiconfig"
+  "configure_root": "/Users/yabe/workspace/front_kuroco_dev/apiconfig"
 }

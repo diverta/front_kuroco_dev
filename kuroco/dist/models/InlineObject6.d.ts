@@ -16,107 +16,149 @@
  */
 export interface InlineObject6 {
     /**
-     * /label/member_id
+     * Topic title
+     * @type {string}
+     * @memberof InlineObject6
+     */
+    subject?: string;
+    /**
+     * Category ID * 2 => CategoryForMultiple1 * 9 => CategoryForMultiple2
      * @type {number}
      * @memberof InlineObject6
      */
-    memberId: number;
-    /**
-     * Email
-     * @type {string}
-     * @memberof InlineObject6
-     */
-    email?: string;
-    /**
-     * Password
-     * @type {string}
-     * @memberof InlineObject6
-     */
-    loginPwd?: string;
-    /**
-     * Nickname
-     * @type {string}
-     * @memberof InlineObject6
-     */
-    nickname?: string;
-    /**
-     * Family name
-     * @type {string}
-     * @memberof InlineObject6
-     */
-    name1?: string;
-    /**
-     * Given name
-     * @type {string}
-     * @memberof InlineObject6
-     */
-    name2?: string;
-    /**
-     * Text
-     * @type {string}
-     * @memberof InlineObject6
-     */
-    text?: string;
-    /**
-     * Textarea
-     * @type {string}
-     * @memberof InlineObject6
-     */
-    textarea?: string;
-    /**
-     * Selectbox * 1 => selectBoxOption1 * 2 => selectBoxOption2 * 3 => selectBoxOption3
-     * @type {string}
-     * @memberof InlineObject6
-     */
-    selectbox?: InlineObject6SelectboxEnum;
-    /**
-     * Radio * 1 => radioOption1 * 2 => radioOption2 * 3 => radioOption3
-     * @type {string}
-     * @memberof InlineObject6
-     */
-    radio?: InlineObject6RadioEnum;
-    /**
-     * Checkbox * 1 => checkboxOption1 * 2 => checkboxOption2 * 3 => checkboxOption3
-     * @type {Array<string>}
-     * @memberof InlineObject6
-     */
-    checkbox?: Array<InlineObject6CheckboxEnum>;
+    contentsType?: InlineObject6ContentsTypeEnum;
     /**
      * Date
      * @type {Date}
      * @memberof InlineObject6
      */
-    date?: Date;
+    ymd?: Date;
+    /**
+     * Published / Not published
+     * @type {string}
+     * @memberof InlineObject6
+     */
+    openType?: InlineObject6OpenTypeEnum;
+    /**
+     * Display all topics to logged in members, regardless ther public/hidden status
+     * @type {number}
+     * @memberof InlineObject6
+     */
+    topicsFlg?: InlineObject6TopicsFlgEnum;
+    /**
+     * Season
+     * @type {number}
+     * @memberof InlineObject6
+     */
+    season?: number;
+    /**
+     * Contents
+     * @type {string}
+     * @memberof InlineObject6
+     */
+    contents?: string;
+    /**
+     * display up
+     * @type {number}
+     * @memberof InlineObject6
+     */
+    regularFlg?: number;
+    /**
+     * Display method
+     * @type {number}
+     * @memberof InlineObject6
+     */
+    linkFlg?: number;
+    /**
+     * Link
+     * @type {string}
+     * @memberof InlineObject6
+     */
+    linkUrl?: string;
+    /**
+     * Text
+     * @type {Array<string | object>}
+     * @memberof InlineObject6
+     */
+    extCol01?: Array<string | object>;
+    /**
+     * TextArea
+     * @type {Array<string | object>}
+     * @memberof InlineObject6
+     */
+    extCol02?: Array<string | object>;
+    /**
+     * Select
+     * @type {Array<object | string | object>}
+     * @memberof InlineObject6
+     */
+    extCol03?: Array<object | string | object>;
+    /**
+     * Checkbox
+     * @type {Array<Array<object | string> | object>}
+     * @memberof InlineObject6
+     */
+    extCol04?: Array<Array<object | string> | object>;
+    /**
+     * Date
+     * @type {Array<Date | object | object>}
+     * @memberof InlineObject6
+     */
+    extCol07?: Array<Date | object | object>;
+    /**
+     * DateTime
+     * @type {Array<string | object | object>}
+     * @memberof InlineObject6
+     */
+    extCol08?: Array<string | object | object>;
+    /**
+     * Tdfk
+     * @type {Array<object>}
+     * @memberof InlineObject6
+     */
+    extCol05?: Array<object>;
+    /**
+     * TdfkAndCity
+     * @type {Array<object>}
+     * @memberof InlineObject6
+     */
+    extCol15?: Array<object>;
+    /**
+     * Table
+     * @type {Array<object | string | object>}
+     * @memberof InlineObject6
+     */
+    extCol06?: Array<object | string | object>;
     /**
      * Relation
-     * @type {number}
+     * @type {Array<number | object>}
      * @memberof InlineObject6
      */
-    relation?: number;
+    extCol09?: Array<number | object>;
     /**
-     * File
-     * @type {object}
+     * Private File
+     * @type {Array<object>}
      * @memberof InlineObject6
      */
-    file?: object;
+    extCol11?: Array<object>;
     /**
-     * /label/group_id
-     * @type {Array<number>}
+     * JSON
+     * @type {Array<object>}
      * @memberof InlineObject6
      */
-    groupId?: InlineObject6GroupIdEnum;
+    extJsn12?: Array<object>;
     /**
-     * /label/open_flg
-     * @type {number}
+     * HTML
+     * @type {Array<string | object>}
      * @memberof InlineObject6
      */
-    openFlg?: InlineObject6OpenFlgEnum;
+    extCol13?: Array<string | object>;
     /**
-     * /label/login_ok_flg
-     * @type {number}
+     * Wysiwyg
+     * @type {Array<string | object>}
      * @memberof InlineObject6
      */
-    loginOkFlg?: InlineObject6LoginOkFlgEnum;
+    extCol14?: Array<string | object>;
     /**
      * /label/send_validate
      * @type {boolean}
@@ -124,7 +166,7 @@ export interface InlineObject6 {
      */
     validateOnly?: boolean;
 }
-export declare const InlineObject6Description = "{\n    /**\n     * /label/member_id\n     * @type {number}\n     */\n    memberId: number;\n    /**\n     * Email\n     * @type {string}\n     */\n    email?: string;\n    /**\n     * Password\n     * @type {string}\n     */\n    loginPwd?: string;\n    /**\n     * Nickname\n     * @type {string}\n     */\n    nickname?: string;\n    /**\n     * Family name\n     * @type {string}\n     */\n    name1?: string;\n    /**\n     * Given name\n     * @type {string}\n     */\n    name2?: string;\n    /**\n     * Text\n     * @type {string}\n     */\n    text?: string;\n    /**\n     * Textarea\n     * @type {string}\n     */\n    textarea?: string;\n    /**\n     * Selectbox * 1 => selectBoxOption1 * 2 => selectBoxOption2 * 3 => selectBoxOption3\n     * @type {string}\n     */\n    selectbox?: InlineObject6SelectboxEnum;\n    /**\n     * Radio * 1 => radioOption1 * 2 => radioOption2 * 3 => radioOption3\n     * @type {string}\n     */\n    radio?: InlineObject6RadioEnum;\n    /**\n     * Checkbox * 1 => checkboxOption1 * 2 => checkboxOption2 * 3 => checkboxOption3\n     * @type {Array<string>}\n     */\n    checkbox?: Array<InlineObject6CheckboxEnum>;\n    /**\n     * Date\n     * @type {Date}\n     */\n    date?: Date;\n    /**\n     * Relation\n     * @type {number}\n     */\n    relation?: number;\n    /**\n     * File\n     * @type {object}\n     */\n    file?: object;\n    /**\n     * /label/group_id\n     * @type {Array<number>}\n     */\n    groupId?: InlineObject6GroupIdEnum;\n    /**\n     * /label/open_flg\n     * @type {number}\n     */\n    openFlg?: InlineObject6OpenFlgEnum;\n    /**\n     * /label/login_ok_flg\n     * @type {number}\n     */\n    loginOkFlg?: InlineObject6LoginOkFlgEnum;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validateOnly?: boolean;\n}";
+export declare const InlineObject6Description = "{\n    /**\n     * Topic title\n     * @type {string}\n     */\n    subject?: string;\n    /**\n     * Category ID * 2 => CategoryForMultiple1 * 9 => CategoryForMultiple2\n     * @type {number}\n     */\n    contentsType?: InlineObject6ContentsTypeEnum;\n    /**\n     * Date\n     * @type {Date}\n     */\n    ymd?: Date;\n    /**\n     * Published / Not published\n     * @type {string}\n     */\n    openType?: InlineObject6OpenTypeEnum;\n    /**\n     * Display all topics to logged in members, regardless ther public/hidden status\n     * @type {number}\n     */\n    topicsFlg?: InlineObject6TopicsFlgEnum;\n    /**\n     * Season\n     * @type {number}\n     */\n    season?: number;\n    /**\n     * Contents\n     * @type {string}\n     */\n    contents?: string;\n    /**\n     * display up\n     * @type {number}\n     */\n    regularFlg?: number;\n    /**\n     * Display method\n     * @type {number}\n     */\n    linkFlg?: number;\n    /**\n     * Link\n     * @type {string}\n     */\n    linkUrl?: string;\n    /**\n     * Text\n     * @type {Array<string | object>}\n     */\n    extCol01?: Array<string | object>;\n    /**\n     * TextArea\n     * @type {Array<string | object>}\n     */\n    extCol02?: Array<string | object>;\n    /**\n     * Select\n     * @type {Array<object | string | object>}\n     */\n    extCol03?: Array<object | string | object>;\n    /**\n     * Checkbox\n     * @type {Array<Array<object | string> | object>}\n     */\n    extCol04?: Array<Array<object | string> | object>;\n    /**\n     * Date\n     * @type {Array<Date | object | object>}\n     */\n    extCol07?: Array<Date | object | object>;\n    /**\n     * DateTime\n     * @type {Array<string | object | object>}\n     */\n    extCol08?: Array<string | object | object>;\n    /**\n     * Tdfk\n     * @type {Array<object>}\n     */\n    extCol05?: Array<object>;\n    /**\n     * TdfkAndCity\n     * @type {Array<object>}\n     */\n    extCol15?: Array<object>;\n    /**\n     * Table\n     * @type {Array<object | string | object>}\n     */\n    extCol06?: Array<object | string | object>;\n    /**\n     * Relation\n     * @type {Array<number | object>}\n     */\n    extCol09?: Array<number | object>;\n    /**\n     * Private File\n     * @type {Array<object>}\n     */\n    extCol11?: Array<object>;\n    /**\n     * JSON\n     * @type {Array<object>}\n     */\n    extJsn12?: Array<object>;\n    /**\n     * HTML\n     * @type {Array<string | object>}\n     */\n    extCol13?: Array<string | object>;\n    /**\n     * Wysiwyg\n     * @type {Array<string | object>}\n     */\n    extCol14?: Array<string | object>;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validateOnly?: boolean;\n}";
 export declare function InlineObject6FromJSON(json: any): InlineObject6;
 export declare function InlineObject6FromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject6;
 export declare function InlineObject6ToJSON(value?: InlineObject6 | null): any;
@@ -132,50 +174,24 @@ export declare function InlineObject6ToJSON(value?: InlineObject6 | null): any;
 * @export
 * @enum {string}
 */
-export declare enum InlineObject6SelectboxEnum {
-    _1 = "1",
-    _2 = "2",
-    _3 = "3"
+export declare enum InlineObject6ContentsTypeEnum {
+    _2 = 2,
+    _9 = 9
 }
 /**
 * @export
 * @enum {string}
 */
-export declare enum InlineObject6RadioEnum {
-    _1 = "1",
-    _2 = "2",
-    _3 = "3"
+export declare enum InlineObject6OpenTypeEnum {
+    _open = "open",
+    _close = "close",
+    _default = "default"
 }
 /**
 * @export
 * @enum {string}
 */
-export declare enum InlineObject6CheckboxEnum {
-    _1 = "1",
-    _2 = "2",
-    _3 = "3"
-}
-/**
-* @export
-* @enum {string}
-*/
-export declare enum InlineObject6GroupIdEnum {
-    _1 = 1,
-    _2 = 2
-}
-/**
-* @export
-* @enum {string}
-*/
-export declare enum InlineObject6OpenFlgEnum {
-    _0 = 0,
-    _1 = 1
-}
-/**
-* @export
-* @enum {string}
-*/
-export declare enum InlineObject6LoginOkFlgEnum {
+export declare enum InlineObject6TopicsFlgEnum {
     _0 = 0,
     _1 = 1
 }

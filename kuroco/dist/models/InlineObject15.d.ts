@@ -9,7 +9,6 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { RcmsApi1Inquiry1MessagesSendExt08, RcmsApi1Inquiry1MessagesSendExt09 } from './';
 /**
  *
  * @export
@@ -17,107 +16,26 @@ import { RcmsApi1Inquiry1MessagesSendExt08, RcmsApi1Inquiry1MessagesSendExt09 } 
  */
 export interface InlineObject15 {
     /**
-     * Name
+     * Module type
      * @type {string}
      * @memberof InlineObject15
      */
-    name?: string;
+    moduleType: string;
     /**
-     * E-mail
-     * @type {string}
-     * @memberof InlineObject15
-     */
-    fromMail?: string;
-    /**
-     * Message
-     * @type {string}
-     * @memberof InlineObject15
-     */
-    body?: string;
-    /**
-     * * 1 => Category1 * 3 => Category2 * 4 => Category3
+     * module_id
      * @type {number}
      * @memberof InlineObject15
      */
-    inquiryCategoryId: InlineObject15InquiryCategoryIdEnum;
+    moduleId: number;
     /**
-     * RequiredText
+     * ページシステム名
      * @type {string}
      * @memberof InlineObject15
      */
-    ext01: string;
-    /**
-     * LongText
-     * @type {string}
-     * @memberof InlineObject15
-     */
-    ext02?: string;
-    /**
-     * Radio * 1 => radio1 * 2 => radio2 * 3 => radio3
-     * @type {object | string}
-     * @memberof InlineObject15
-     */
-    ext03?: object | string;
-    /**
-     * RequiredSelect * 1 => select1 * 2 => select2 * 3 => select3
-     * @type {object | string}
-     * @memberof InlineObject15
-     */
-    ext04: object | string;
-    /**
-     * Checkbox * 1 => check1 * 2 => check2 * 3 => check3
-     * @type {Array<object | string>}
-     * @memberof InlineObject15
-     */
-    ext05?: Array<object | string>;
-    /**
-     * DateTime
-     * @type {string | object}
-     * @memberof InlineObject15
-     */
-    ext06?: string | object;
-    /**
-     *
-     * @type {object}
-     * @memberof InlineObject15
-     */
-    ext07?: object;
-    /**
-     *
-     * @type {RcmsApi1Inquiry1MessagesSendExt08}
-     * @memberof InlineObject15
-     */
-    ext08?: RcmsApi1Inquiry1MessagesSendExt08;
-    /**
-     *
-     * @type {RcmsApi1Inquiry1MessagesSendExt09}
-     * @memberof InlineObject15
-     */
-    ext09?: RcmsApi1Inquiry1MessagesSendExt09;
-    /**
-     * Date
-     * @type {string | object}
-     * @memberof InlineObject15
-     */
-    ext10?: string | object;
-    /**
-     * /label/send_validate
-     * @type {boolean}
-     * @memberof InlineObject15
-     */
-    validateOnly?: boolean;
+    pageSysnm?: string;
 }
-export declare const InlineObject15Description = "{\n    /**\n     * Name\n     * @type {string}\n     */\n    name?: string;\n    /**\n     * E-mail\n     * @type {string}\n     */\n    fromMail?: string;\n    /**\n     * Message\n     * @type {string}\n     */\n    body?: string;\n    /**\n     * * 1 => Category1 * 3 => Category2 * 4 => Category3\n     * @type {number}\n     */\n    inquiryCategoryId: InlineObject15InquiryCategoryIdEnum;\n    /**\n     * RequiredText\n     * @type {string}\n     */\n    ext01: string;\n    /**\n     * LongText\n     * @type {string}\n     */\n    ext02?: string;\n    /**\n     * Radio * 1 => radio1 * 2 => radio2 * 3 => radio3\n     * @type {object | string}\n     */\n    ext03?: object | string;\n    /**\n     * RequiredSelect * 1 => select1 * 2 => select2 * 3 => select3\n     * @type {object | string}\n     */\n    ext04: object | string;\n    /**\n     * Checkbox * 1 => check1 * 2 => check2 * 3 => check3\n     * @type {Array<object | string>}\n     */\n    ext05?: Array<object | string>;\n    /**\n     * DateTime\n     * @type {string | object}\n     */\n    ext06?: string | object;\n    /**\n     * \n     * @type {object}\n     */\n    ext07?: object;\n    /**\n     * \n     * @type {RcmsApi1Inquiry1MessagesSendExt08}\n     */\n    ext08?: RcmsApi1Inquiry1MessagesSendExt08;\n    /**\n     * \n     * @type {RcmsApi1Inquiry1MessagesSendExt09}\n     */\n    ext09?: RcmsApi1Inquiry1MessagesSendExt09;\n    /**\n     * Date\n     * @type {string | object}\n     */\n    ext10?: string | object;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validateOnly?: boolean;\n}";
+export declare const InlineObject15Description = "{\n    /**\n     * Module type\n     * @type {string}\n     */\n    moduleType: string;\n    /**\n     * module_id\n     * @type {number}\n     */\n    moduleId: number;\n    /**\n     * \u30DA\u30FC\u30B8\u30B7\u30B9\u30C6\u30E0\u540D\n     * @type {string}\n     */\n    pageSysnm?: string;\n}";
 export declare function InlineObject15FromJSON(json: any): InlineObject15;
 export declare function InlineObject15FromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject15;
 export declare function InlineObject15ToJSON(value?: InlineObject15 | null): any;
-/**
-* @export
-* @enum {string}
-*/
-export declare enum InlineObject15InquiryCategoryIdEnum {
-    _1 = 1,
-    _3 = 3,
-    _4 = 4
-}
 //# sourceMappingURL=InlineObject15.d.ts.map

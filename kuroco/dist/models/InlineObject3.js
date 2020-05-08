@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import { exists } from '../runtime';
-export var InlineObject3Description = "{\n    /**\n     * Topic title\n     * @type {string}\n     */\n    subject: string;\n    /**\n     * Date\n     * @type {Date}\n     */\n    ymd?: Date;\n    /**\n     * Published / Not published\n     * @type {string}\n     */\n    openType?: InlineObject3OpenTypeEnum;\n    /**\n     * Display all topics to logged in members, regardless ther public/hidden status\n     * @type {number}\n     */\n    topicsFlg?: InlineObject3TopicsFlgEnum;\n    /**\n     * Season\n     * @type {number}\n     */\n    season?: number;\n    /**\n     * Contents\n     * @type {string}\n     */\n    contents?: string;\n    /**\n     * display up\n     * @type {number}\n     */\n    regularFlg?: number;\n    /**\n     * Display method\n     * @type {number}\n     */\n    linkFlg?: number;\n    /**\n     * Link\n     * @type {string}\n     */\n    linkUrl?: string;\n    /**\n     * Category ID * 1 => CategoryForSingle1 * 4 => CategoryForSingle2\n     * @type {number}\n     */\n    contentsType?: InlineObject3ContentsTypeEnum;\n    /**\n     * Text\n     * @type {string}\n     */\n    extCol01?: string;\n    /**\n     * TextArea\n     * @type {string}\n     */\n    extCol02?: string;\n    /**\n     * * 1 => Option1 * 2 => Option2 * 3 => Option3\n     * @type {string}\n     */\n    extCol03?: InlineObject3ExtCol03Enum;\n    /**\n     * * 1 => Option1 * 2 => Option2 * 3 => Option3\n     * @type {Array<string>}\n     */\n    extCol04?: Array<InlineObject3ExtCol04Enum>;\n    /**\n     * \n     * @type {RcmsApi1Topics1InsertExtCol07}\n     */\n    extCol07?: RcmsApi1Topics1InsertExtCol07;\n    /**\n     * \n     * @type {RcmsApi1Topics1InsertExtCol08}\n     */\n    extCol08?: RcmsApi1Topics1InsertExtCol08;\n    /**\n     * \n     * @type {RcmsApi1Topics1InsertExtCol05}\n     */\n    extCol05?: RcmsApi1Topics1InsertExtCol05;\n    /**\n     * \n     * @type {RcmsApi1Topics1InsertExtCol05}\n     */\n    extCol15?: RcmsApi1Topics1InsertExtCol05;\n    /**\n     * * 1 => Parent1 * 2 => Parent2 * 3 => Parent3 * 4 => Parent4 * 5 => Parent5\n     * @type {string}\n     */\n    extCol06?: InlineObject3ExtCol06Enum;\n    /**\n     * Relation\n     * @type {number}\n     */\n    extCol09?: number;\n    /**\n     * Private File\n     * @type {object}\n     */\n    extCol11?: object;\n    /**\n     * JSON\n     * @type {object}\n     */\n    extJsn12?: object;\n    /**\n     * HTML\n     * @type {string}\n     */\n    extCol13?: string;\n    /**\n     * Wysiwyg\n     * @type {string}\n     */\n    extCol14?: string;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validateOnly?: boolean;\n}";
+export var InlineObject3Description = "{\n    /**\n     * Topic title\n     * @type {string}\n     */\n    subject: string;\n    /**\n     * Category ID * 1 => CategoryForSingle1 * 4 => CategoryForSingle2\n     * @type {number}\n     */\n    contentsType?: InlineObject3ContentsTypeEnum;\n    /**\n     * Date\n     * @type {Date}\n     */\n    ymd?: Date;\n    /**\n     * Published / Not published\n     * @type {string}\n     */\n    openType?: InlineObject3OpenTypeEnum;\n    /**\n     * Display all topics to logged in members, regardless ther public/hidden status\n     * @type {number}\n     */\n    topicsFlg?: InlineObject3TopicsFlgEnum;\n    /**\n     * Season\n     * @type {number}\n     */\n    season?: number;\n    /**\n     * Contents\n     * @type {string}\n     */\n    contents?: string;\n    /**\n     * display up\n     * @type {number}\n     */\n    regularFlg?: number;\n    /**\n     * Display method\n     * @type {number}\n     */\n    linkFlg?: number;\n    /**\n     * Link\n     * @type {string}\n     */\n    linkUrl?: string;\n    /**\n     * Text\n     * @type {string}\n     */\n    extCol01?: string;\n    /**\n     * TextArea\n     * @type {string}\n     */\n    extCol02?: string;\n    /**\n     * Select * 1 => Option1 * 2 => Option2 * 3 => Option3\n     * @type {object | string}\n     */\n    extCol03?: object | string;\n    /**\n     * Checkbox * 1 => Option1 * 2 => Option2 * 3 => Option3\n     * @type {Array<object | string>}\n     */\n    extCol04?: Array<object | string>;\n    /**\n     * Date\n     * @type {Date | object}\n     */\n    extCol07?: Date | object;\n    /**\n     * DateTime\n     * @type {string | object}\n     */\n    extCol08?: string | object;\n    /**\n     * \n     * @type {RcmsApi1Topics1InsertExtCol05}\n     */\n    extCol05?: RcmsApi1Topics1InsertExtCol05;\n    /**\n     * \n     * @type {RcmsApi1Topics1InsertExtCol15}\n     */\n    extCol15?: RcmsApi1Topics1InsertExtCol15;\n    /**\n     * Table * 1 => Parent1 * 2 => Parent2 * 3 => Parent3 * 4 => Parent4 * 5 => Parent5\n     * @type {object | string}\n     */\n    extCol06?: object | string;\n    /**\n     * Relation\n     * @type {number}\n     */\n    extCol09?: number;\n    /**\n     * Private File\n     * @type {object}\n     */\n    extCol11?: object;\n    /**\n     * \n     * @type {RcmsApi1Topics1InsertExtJsn12}\n     */\n    extJsn12?: RcmsApi1Topics1InsertExtJsn12;\n    /**\n     * HTML\n     * @type {string}\n     */\n    extCol13?: string;\n    /**\n     * Wysiwyg\n     * @type {string}\n     */\n    extCol14?: string;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validateOnly?: boolean;\n}";
 export function InlineObject3FromJSON(json) {
     return InlineObject3FromJSONTyped(json, false);
 }
@@ -22,6 +22,7 @@ export function InlineObject3FromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         'subject': json['subject'],
+        'contentsType': !exists(json, 'contents_type') ? undefined : json['contents_type'],
         'ymd': !exists(json, 'ymd') ? undefined : (new Date(json['ymd'])),
         'openType': !exists(json, 'open_type') ? undefined : json['open_type'],
         'topicsFlg': !exists(json, 'topics_flg') ? undefined : json['topics_flg'],
@@ -30,7 +31,6 @@ export function InlineObject3FromJSONTyped(json, ignoreDiscriminator) {
         'regularFlg': !exists(json, 'regular_flg') ? undefined : json['regular_flg'],
         'linkFlg': !exists(json, 'link_flg') ? undefined : json['link_flg'],
         'linkUrl': !exists(json, 'link_url') ? undefined : json['link_url'],
-        'contentsType': !exists(json, 'contents_type') ? undefined : json['contents_type'],
         'extCol01': !exists(json, 'ext_col_01') ? undefined : json['ext_col_01'],
         'extCol02': !exists(json, 'ext_col_02') ? undefined : json['ext_col_02'],
         'extCol03': !exists(json, 'ext_col_03') ? undefined : json['ext_col_03'],
@@ -57,6 +57,7 @@ export function InlineObject3ToJSON(value) {
     }
     return {
         'subject': value.subject,
+        'contents_type': value.contentsType,
         'ymd': value.ymd === undefined ? undefined : (value.ymd.toISOString().substr(0, 10)),
         'open_type': value.openType,
         'topics_flg': value.topicsFlg,
@@ -65,16 +66,15 @@ export function InlineObject3ToJSON(value) {
         'regular_flg': value.regularFlg,
         'link_flg': value.linkFlg,
         'link_url': value.linkUrl,
-        'contents_type': value.contentsType,
         'ext_col_01': value.extCol01,
         'ext_col_02': value.extCol02,
-        'ext_col_03': value.extCol03,
-        'ext_col_04': value.extCol04,
+        'ext_col_03': value.extCol03 === undefined ? undefined : (value.extCol03),
+        'ext_col_04': value.extCol04 === undefined ? undefined : value.extCol04,
         'ext_col_07': value.extCol07 === undefined ? undefined : (value.extCol07),
         'ext_col_08': value.extCol08 === undefined ? undefined : (value.extCol08),
         'ext_col_05': value.extCol05 === undefined ? undefined : (value.extCol05),
         'ext_col_15': value.extCol15 === undefined ? undefined : (value.extCol15),
-        'ext_col_06': value.extCol06,
+        'ext_col_06': value.extCol06 === undefined ? undefined : (value.extCol06),
         'ext_col_09': value.extCol09,
         'ext_col_11': value.extCol11,
         'ext_jsn_12': value.extJsn12 === undefined ? undefined : (value.extJsn12),
@@ -83,6 +83,15 @@ export function InlineObject3ToJSON(value) {
         'validate_only': value.validateOnly,
     };
 }
+/**
+* @export
+* @enum {string}
+*/
+export var InlineObject3ContentsTypeEnum;
+(function (InlineObject3ContentsTypeEnum) {
+    InlineObject3ContentsTypeEnum[InlineObject3ContentsTypeEnum["_1"] = 1] = "_1";
+    InlineObject3ContentsTypeEnum[InlineObject3ContentsTypeEnum["_4"] = 4] = "_4";
+})(InlineObject3ContentsTypeEnum || (InlineObject3ContentsTypeEnum = {}));
 /**
 * @export
 * @enum {string}
@@ -102,44 +111,3 @@ export var InlineObject3TopicsFlgEnum;
     InlineObject3TopicsFlgEnum[InlineObject3TopicsFlgEnum["_0"] = 0] = "_0";
     InlineObject3TopicsFlgEnum[InlineObject3TopicsFlgEnum["_1"] = 1] = "_1";
 })(InlineObject3TopicsFlgEnum || (InlineObject3TopicsFlgEnum = {}));
-/**
-* @export
-* @enum {string}
-*/
-export var InlineObject3ContentsTypeEnum;
-(function (InlineObject3ContentsTypeEnum) {
-    InlineObject3ContentsTypeEnum[InlineObject3ContentsTypeEnum["_1"] = 1] = "_1";
-    InlineObject3ContentsTypeEnum[InlineObject3ContentsTypeEnum["_4"] = 4] = "_4";
-})(InlineObject3ContentsTypeEnum || (InlineObject3ContentsTypeEnum = {}));
-/**
-* @export
-* @enum {string}
-*/
-export var InlineObject3ExtCol03Enum;
-(function (InlineObject3ExtCol03Enum) {
-    InlineObject3ExtCol03Enum["_1"] = "1";
-    InlineObject3ExtCol03Enum["_2"] = "2";
-    InlineObject3ExtCol03Enum["_3"] = "3";
-})(InlineObject3ExtCol03Enum || (InlineObject3ExtCol03Enum = {}));
-/**
-* @export
-* @enum {string}
-*/
-export var InlineObject3ExtCol04Enum;
-(function (InlineObject3ExtCol04Enum) {
-    InlineObject3ExtCol04Enum["_1"] = "1";
-    InlineObject3ExtCol04Enum["_2"] = "2";
-    InlineObject3ExtCol04Enum["_3"] = "3";
-})(InlineObject3ExtCol04Enum || (InlineObject3ExtCol04Enum = {}));
-/**
-* @export
-* @enum {string}
-*/
-export var InlineObject3ExtCol06Enum;
-(function (InlineObject3ExtCol06Enum) {
-    InlineObject3ExtCol06Enum["_1"] = "1";
-    InlineObject3ExtCol06Enum["_2"] = "2";
-    InlineObject3ExtCol06Enum["_3"] = "3";
-    InlineObject3ExtCol06Enum["_4"] = "4";
-    InlineObject3ExtCol06Enum["_5"] = "5";
-})(InlineObject3ExtCol06Enum || (InlineObject3ExtCol06Enum = {}));

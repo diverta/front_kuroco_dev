@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { InlineObject14, InlineObject15 } from '../models';
+import { InlineObject16, InlineObject17 } from '../models';
 export interface InquiriesApiRcmsApi1Inquiry1MessagesGetRequest {
     outputFormat?: string;
     lang?: string;
@@ -18,14 +18,14 @@ export interface InquiriesApiRcmsApi1Inquiry1MessagesGetRequest {
     order?: string;
 }
 export interface InquiriesApiRcmsApi1Inquiry1MessagesSendPostRequest {
-    inlineObject14: InlineObject14;
+    inlineObject16: InlineObject16;
     outputFormat?: string;
     lang?: string;
     charset?: string;
 }
 export interface InquiriesApiRcmsApi1Inquiry1MessagesUpdatePostRequest {
     inquiryBnId: string;
-    inlineObject15: InlineObject15;
+    inlineObject17: InlineObject17;
     outputFormat?: string;
     lang?: string;
     charset?: string;
@@ -51,9 +51,9 @@ export declare class InquiriesApi extends runtime.BaseAPI {
         url: string;
         requestMethodName: string;
         requestRequiredParamSample: {
-            inlineObject14?: undefined;
+            inlineObject16?: undefined;
             inquiryBnId?: undefined;
-            inlineObject15?: undefined;
+            inlineObject17?: undefined;
             inquiryId?: undefined;
         };
         requestParamInterfaceDescription: string;
@@ -62,9 +62,9 @@ export declare class InquiriesApi extends runtime.BaseAPI {
         url: string;
         requestMethodName: string;
         requestRequiredParamSample: {
-            inlineObject14: any;
+            inlineObject16: any;
             inquiryBnId?: undefined;
-            inlineObject15?: undefined;
+            inlineObject17?: undefined;
             inquiryId?: undefined;
         };
         requestParamInterfaceDescription: string;
@@ -74,8 +74,8 @@ export declare class InquiriesApi extends runtime.BaseAPI {
         requestMethodName: string;
         requestRequiredParamSample: {
             inquiryBnId: any;
-            inlineObject15: any;
-            inlineObject14?: undefined;
+            inlineObject17: any;
+            inlineObject16?: undefined;
             inquiryId?: undefined;
         };
         requestParamInterfaceDescription: string;
@@ -85,9 +85,9 @@ export declare class InquiriesApi extends runtime.BaseAPI {
         requestMethodName: string;
         requestRequiredParamSample: {
             inquiryId: any;
-            inlineObject14?: undefined;
+            inlineObject16?: undefined;
             inquiryBnId?: undefined;
-            inlineObject15?: undefined;
+            inlineObject17?: undefined;
         };
         requestParamInterfaceDescription: string;
     })[];
