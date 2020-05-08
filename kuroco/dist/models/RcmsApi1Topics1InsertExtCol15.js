@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import { exists } from '../runtime';
-export var RcmsApi1Topics1InsertExtCol15Description = "{\n    /**\n     * \n     * @type {string}\n     */\n    tdfkCd?: RcmsApi1Topics1InsertExtCol15TdfkCdEnum;\n    /**\n     * \n     * @type {string}\n     */\n    tdfkNm?: RcmsApi1Topics1InsertExtCol15TdfkNmEnum;\n    /**\n     * \n     * @type {string}\n     */\n    subAreaCd?: RcmsApi1Topics1InsertExtCol15SubAreaCdEnum;\n    /**\n     * \n     * @type {string}\n     */\n    subAreaNm?: RcmsApi1Topics1InsertExtCol15SubAreaNmEnum;\n}";
+export var RcmsApi1Topics1InsertExtCol15Description = "{\n    /**\n     * \n     * @type {string}\n     */\n    tdfk_cd?: RcmsApi1Topics1InsertExtCol15TdfkCdEnum;\n    /**\n     * \n     * @type {string}\n     */\n    tdfk_nm?: RcmsApi1Topics1InsertExtCol15TdfkNmEnum;\n    /**\n     * \n     * @type {string}\n     */\n    sub_area_cd?: RcmsApi1Topics1InsertExtCol15SubAreaCdEnum;\n    /**\n     * \n     * @type {string}\n     */\n    sub_area_nm?: RcmsApi1Topics1InsertExtCol15SubAreaNmEnum;\n}";
 export function RcmsApi1Topics1InsertExtCol15FromJSON(json) {
     return RcmsApi1Topics1InsertExtCol15FromJSONTyped(json, false);
 }
@@ -21,10 +21,10 @@ export function RcmsApi1Topics1InsertExtCol15FromJSONTyped(json, ignoreDiscrimin
         return json;
     }
     return {
-        'tdfkCd': !exists(json, 'tdfk_cd') ? undefined : json['tdfk_cd'],
-        'tdfkNm': !exists(json, 'tdfk_nm') ? undefined : json['tdfk_nm'],
-        'subAreaCd': !exists(json, 'sub_area_cd') ? undefined : json['sub_area_cd'],
-        'subAreaNm': !exists(json, 'sub_area_nm') ? undefined : json['sub_area_nm'],
+        'tdfk_cd': !exists(json, 'tdfk_cd') ? undefined : json['tdfk_cd'],
+        'tdfk_nm': !exists(json, 'tdfk_nm') ? undefined : json['tdfk_nm'],
+        'sub_area_cd': !exists(json, 'sub_area_cd') ? undefined : json['sub_area_cd'],
+        'sub_area_nm': !exists(json, 'sub_area_nm') ? undefined : json['sub_area_nm'],
     };
 }
 export function RcmsApi1Topics1InsertExtCol15ToJSON(value) {
@@ -35,10 +35,10 @@ export function RcmsApi1Topics1InsertExtCol15ToJSON(value) {
         return null;
     }
     return {
-        'tdfk_cd': value.tdfkCd,
-        'tdfk_nm': value.tdfkNm,
-        'sub_area_cd': value.subAreaCd,
-        'sub_area_nm': value.subAreaNm,
+        'tdfk_cd': value.tdfk_cd,
+        'tdfk_nm': value.tdfk_nm,
+        'sub_area_cd': value.sub_area_cd,
+        'sub_area_nm': value.sub_area_nm,
     };
 }
 /**

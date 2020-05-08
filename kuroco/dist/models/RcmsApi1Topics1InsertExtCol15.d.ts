@@ -20,27 +20,27 @@ export interface RcmsApi1Topics1InsertExtCol15 {
      * @type {string}
      * @memberof RcmsApi1Topics1InsertExtCol15
      */
-    tdfkCd?: RcmsApi1Topics1InsertExtCol15TdfkCdEnum;
+    tdfk_cd?: RcmsApi1Topics1InsertExtCol15TdfkCdEnum;
     /**
      *
      * @type {string}
      * @memberof RcmsApi1Topics1InsertExtCol15
      */
-    tdfkNm?: RcmsApi1Topics1InsertExtCol15TdfkNmEnum;
+    tdfk_nm?: RcmsApi1Topics1InsertExtCol15TdfkNmEnum;
     /**
      *
      * @type {string}
      * @memberof RcmsApi1Topics1InsertExtCol15
      */
-    subAreaCd?: RcmsApi1Topics1InsertExtCol15SubAreaCdEnum;
+    sub_area_cd?: RcmsApi1Topics1InsertExtCol15SubAreaCdEnum;
     /**
      *
      * @type {string}
      * @memberof RcmsApi1Topics1InsertExtCol15
      */
-    subAreaNm?: RcmsApi1Topics1InsertExtCol15SubAreaNmEnum;
+    sub_area_nm?: RcmsApi1Topics1InsertExtCol15SubAreaNmEnum;
 }
-export declare const RcmsApi1Topics1InsertExtCol15Description = "{\n    /**\n     * \n     * @type {string}\n     */\n    tdfkCd?: RcmsApi1Topics1InsertExtCol15TdfkCdEnum;\n    /**\n     * \n     * @type {string}\n     */\n    tdfkNm?: RcmsApi1Topics1InsertExtCol15TdfkNmEnum;\n    /**\n     * \n     * @type {string}\n     */\n    subAreaCd?: RcmsApi1Topics1InsertExtCol15SubAreaCdEnum;\n    /**\n     * \n     * @type {string}\n     */\n    subAreaNm?: RcmsApi1Topics1InsertExtCol15SubAreaNmEnum;\n}";
+export declare const RcmsApi1Topics1InsertExtCol15Description = "{\n    /**\n     * \n     * @type {string}\n     */\n    tdfk_cd?: RcmsApi1Topics1InsertExtCol15TdfkCdEnum;\n    /**\n     * \n     * @type {string}\n     */\n    tdfk_nm?: RcmsApi1Topics1InsertExtCol15TdfkNmEnum;\n    /**\n     * \n     * @type {string}\n     */\n    sub_area_cd?: RcmsApi1Topics1InsertExtCol15SubAreaCdEnum;\n    /**\n     * \n     * @type {string}\n     */\n    sub_area_nm?: RcmsApi1Topics1InsertExtCol15SubAreaNmEnum;\n}";
 export declare function RcmsApi1Topics1InsertExtCol15FromJSON(json: any): RcmsApi1Topics1InsertExtCol15;
 export declare function RcmsApi1Topics1InsertExtCol15FromJSONTyped(json: any, ignoreDiscriminator: boolean): RcmsApi1Topics1InsertExtCol15;
 export declare function RcmsApi1Topics1InsertExtCol15ToJSON(value?: RcmsApi1Topics1InsertExtCol15 | null): any;

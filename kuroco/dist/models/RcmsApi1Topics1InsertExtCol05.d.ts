@@ -20,15 +20,15 @@ export interface RcmsApi1Topics1InsertExtCol05 {
      * @type {string}
      * @memberof RcmsApi1Topics1InsertExtCol05
      */
-    tdfkCd?: RcmsApi1Topics1InsertExtCol05TdfkCdEnum;
+    tdfk_cd?: RcmsApi1Topics1InsertExtCol05TdfkCdEnum;
     /**
      *
      * @type {string}
      * @memberof RcmsApi1Topics1InsertExtCol05
      */
-    tdfkNm?: RcmsApi1Topics1InsertExtCol05TdfkNmEnum;
+    tdfk_nm?: RcmsApi1Topics1InsertExtCol05TdfkNmEnum;
 }
-export declare const RcmsApi1Topics1InsertExtCol05Description = "{\n    /**\n     * \n     * @type {string}\n     */\n    tdfkCd?: RcmsApi1Topics1InsertExtCol05TdfkCdEnum;\n    /**\n     * \n     * @type {string}\n     */\n    tdfkNm?: RcmsApi1Topics1InsertExtCol05TdfkNmEnum;\n}";
+export declare const RcmsApi1Topics1InsertExtCol05Description = "{\n    /**\n     * \n     * @type {string}\n     */\n    tdfk_cd?: RcmsApi1Topics1InsertExtCol05TdfkCdEnum;\n    /**\n     * \n     * @type {string}\n     */\n    tdfk_nm?: RcmsApi1Topics1InsertExtCol05TdfkNmEnum;\n}";
 export declare function RcmsApi1Topics1InsertExtCol05FromJSON(json: any): RcmsApi1Topics1InsertExtCol05;
 export declare function RcmsApi1Topics1InsertExtCol05FromJSONTyped(json: any, ignoreDiscriminator: boolean): RcmsApi1Topics1InsertExtCol05;
 export declare function RcmsApi1Topics1InsertExtCol05ToJSON(value?: RcmsApi1Topics1InsertExtCol05 | null): any;

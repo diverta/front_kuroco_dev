@@ -20,9 +20,9 @@ export interface InlineObject9 {
      * @type {number}
      * @memberof InlineObject9
      */
-    memberId: number;
+    member_id: number;
 }
-export declare const InlineObject9Description = "{\n    /**\n     * /label/member_id\n     * @type {number}\n     */\n    memberId: number;\n}";
+export declare const InlineObject9Description = "{\n    /**\n     * /label/member_id\n     * @type {number}\n     */\n    member_id: number;\n}";
 export declare function InlineObject9FromJSON(json: any): InlineObject9;
 export declare function InlineObject9FromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject9;
 export declare function InlineObject9ToJSON(value?: InlineObject9 | null): any;

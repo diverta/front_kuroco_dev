@@ -20,7 +20,7 @@ export interface InlineObject13 {
      * @type {number}
      * @memberof InlineObject13
      */
-    commentId: number;
+    comment_id: number;
     /**
      * 削除キー
      * @type {string}
@@ -28,7 +28,7 @@ export interface InlineObject13 {
      */
     delkey?: string;
 }
-export declare const InlineObject13Description = "{\n    /**\n     * \u30B3\u30E1\u30F3\u30C8ID\n     * @type {number}\n     */\n    commentId: number;\n    /**\n     * \u524A\u9664\u30AD\u30FC\n     * @type {string}\n     */\n    delkey?: string;\n}";
+export declare const InlineObject13Description = "{\n    /**\n     * \u30B3\u30E1\u30F3\u30C8ID\n     * @type {number}\n     */\n    comment_id: number;\n    /**\n     * \u524A\u9664\u30AD\u30FC\n     * @type {string}\n     */\n    delkey?: string;\n}";
 export declare function InlineObject13FromJSON(json: any): InlineObject13;
 export declare function InlineObject13FromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject13;
 export declare function InlineObject13ToJSON(value?: InlineObject13 | null): any;

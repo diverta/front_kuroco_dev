@@ -18,14 +18,11 @@
       </li>
     </ul>
     <div v-if="selectedApiInfo" id="description-panel">
-      <span class="info-classname">{{ selectedApiInfo.className }}</span
-      >.
+      <span class="info-classname">{{ selectedApiInfo.className }}</span>.
       <span class="info-methodname">{{ selectedApiInfo.methodName }}</span>
       <div>
         <codemirror v-model="selectedApiCode" :options="cmOptions" />
-        <button @click="handleRequestSelectedApi" class="js-apilist-request">
-          request
-        </button>
+        <button @click="handleRequestSelectedApi" class="js-apilist-request">request</button>
       </div>
     </div>
     <div v-if="!!response" class="response">
@@ -33,9 +30,7 @@
         <h3>response</h3>
       </div>
       <div>
-        <h3 class="js-response-isError">
-          isError? : {{ isResponseErrorOccured }}
-        </h3>
+        <h3 class="js-response-isError">isError? : {{ isResponseErrorOccured }}</h3>
       </div>
       <div>
         <span class="rersponse-body js-apilist-response">{{ response }}</span>
@@ -183,7 +178,10 @@ export default Vue.extend({
         requestParam: ${requestParam}
       })`;
       let result = transpile(code);
-      const prm = eval(result).requestParam;
+      let prm = eval(result).requestParam;
+
+      // extract Date Object from string type date value ('YYYY-MM-DD') in prm
+      prm = (JSON as any).parseWithDate(JSON.stringify(prm));
 
       new this.selectedApiInfo.apiRequestInfo.class()
         [this.selectedApiInfo.apiRequestInfo.requestMethodName](prm)

@@ -20,21 +20,21 @@ export interface InlineObject2 {
      * @type {string}
      * @memberof InlineObject2
      */
-    loginId: string;
+    login_id: string;
     /**
      * Current Login Password
      * @type {string}
      * @memberof InlineObject2
      */
-    currentPassword: string;
+    current_password: string;
     /**
      * New Password
      * @type {string}
      * @memberof InlineObject2
      */
-    newPassword: string;
+    new_password: string;
 }
-export declare const InlineObject2Description = "{\n    /**\n     * Token\n     * @type {string}\n     */\n    loginId: string;\n    /**\n     * Current Login Password\n     * @type {string}\n     */\n    currentPassword: string;\n    /**\n     * New Password\n     * @type {string}\n     */\n    newPassword: string;\n}";
+export declare const InlineObject2Description = "{\n    /**\n     * Token\n     * @type {string}\n     */\n    login_id: string;\n    /**\n     * Current Login Password\n     * @type {string}\n     */\n    current_password: string;\n    /**\n     * New Password\n     * @type {string}\n     */\n    new_password: string;\n}";
 export declare function InlineObject2FromJSON(json: any): InlineObject2;
 export declare function InlineObject2FromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject2;
 export declare function InlineObject2ToJSON(value?: InlineObject2 | null): any;

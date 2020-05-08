@@ -27,7 +27,7 @@ export interface InlineObject16 {
      * @type {string}
      * @memberof InlineObject16
      */
-    fromMail?: string;
+    from_mail?: string;
     /**
      * Message
      * @type {string}
@@ -39,75 +39,75 @@ export interface InlineObject16 {
      * @type {number}
      * @memberof InlineObject16
      */
-    inquiryCategoryId: InlineObject16InquiryCategoryIdEnum;
+    inquiry_category_id: InlineObject16InquiryCategoryIdEnum;
     /**
      * RequiredText
      * @type {string}
      * @memberof InlineObject16
      */
-    ext01: string;
+    ext_01: string;
     /**
      * LongText
      * @type {string}
      * @memberof InlineObject16
      */
-    ext02?: string;
+    ext_02?: string;
     /**
      * Radio * 1 => radio1 * 2 => radio2 * 3 => radio3
      * @type {object | string}
      * @memberof InlineObject16
      */
-    ext03?: object | string;
+    ext_03?: object | string;
     /**
      * RequiredSelect * 1 => select1 * 2 => select2 * 3 => select3
      * @type {object | string}
      * @memberof InlineObject16
      */
-    ext04: object | string;
+    ext_04: object | string;
     /**
      * Checkbox * 1 => check1 * 2 => check2 * 3 => check3
      * @type {Array<object | string>}
      * @memberof InlineObject16
      */
-    ext05?: Array<object | string>;
+    ext_05?: Array<object | string>;
     /**
      * DateTime
      * @type {string | object}
      * @memberof InlineObject16
      */
-    ext06?: string | object;
+    ext_06?: string | object;
     /**
      *
      * @type {object}
      * @memberof InlineObject16
      */
-    ext07?: object;
+    ext_07?: object;
     /**
      *
      * @type {RcmsApi1Topics1InsertExtCol05}
      * @memberof InlineObject16
      */
-    ext08?: RcmsApi1Topics1InsertExtCol05;
+    ext_08?: RcmsApi1Topics1InsertExtCol05;
     /**
      *
      * @type {RcmsApi1Topics1InsertExtJsn12}
      * @memberof InlineObject16
      */
-    ext09?: RcmsApi1Topics1InsertExtJsn12;
+    ext_09?: RcmsApi1Topics1InsertExtJsn12;
     /**
      * Date
-     * @type {Date | object}
+     * @type {Date}
      * @memberof InlineObject16
      */
-    ext10?: Date | object;
+    ext_10?: Date;
     /**
      * /label/send_validate
      * @type {boolean}
      * @memberof InlineObject16
      */
-    validateOnly?: boolean;
+    validate_only?: boolean;
 }
-export declare const InlineObject16Description = "{\n    /**\n     * Name\n     * @type {string}\n     */\n    name?: string;\n    /**\n     * E-mail\n     * @type {string}\n     */\n    fromMail?: string;\n    /**\n     * Message\n     * @type {string}\n     */\n    body?: string;\n    /**\n     * * 1 => Category1 * 3 => Category2 * 4 => Category3\n     * @type {number}\n     */\n    inquiryCategoryId: InlineObject16InquiryCategoryIdEnum;\n    /**\n     * RequiredText\n     * @type {string}\n     */\n    ext01: string;\n    /**\n     * LongText\n     * @type {string}\n     */\n    ext02?: string;\n    /**\n     * Radio * 1 => radio1 * 2 => radio2 * 3 => radio3\n     * @type {object | string}\n     */\n    ext03?: object | string;\n    /**\n     * RequiredSelect * 1 => select1 * 2 => select2 * 3 => select3\n     * @type {object | string}\n     */\n    ext04: object | string;\n    /**\n     * Checkbox * 1 => check1 * 2 => check2 * 3 => check3\n     * @type {Array<object | string>}\n     */\n    ext05?: Array<object | string>;\n    /**\n     * DateTime\n     * @type {string | object}\n     */\n    ext06?: string | object;\n    /**\n     * \n     * @type {object}\n     */\n    ext07?: object;\n    /**\n     * \n     * @type {RcmsApi1Topics1InsertExtCol05}\n     */\n    ext08?: RcmsApi1Topics1InsertExtCol05;\n    /**\n     * \n     * @type {RcmsApi1Topics1InsertExtJsn12}\n     */\n    ext09?: RcmsApi1Topics1InsertExtJsn12;\n    /**\n     * Date\n     * @type {Date | object}\n     */\n    ext10?: Date | object;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validateOnly?: boolean;\n}";
+export declare const InlineObject16Description = "{\n    /**\n     * Name\n     * @type {string}\n     */\n    name?: string;\n    /**\n     * E-mail\n     * @type {string}\n     */\n    from_mail?: string;\n    /**\n     * Message\n     * @type {string}\n     */\n    body?: string;\n    /**\n     * * 1 => Category1 * 3 => Category2 * 4 => Category3\n     * @type {number}\n     */\n    inquiry_category_id: InlineObject16InquiryCategoryIdEnum;\n    /**\n     * RequiredText\n     * @type {string}\n     */\n    ext_01: string;\n    /**\n     * LongText\n     * @type {string}\n     */\n    ext_02?: string;\n    /**\n     * Radio * 1 => radio1 * 2 => radio2 * 3 => radio3\n     * @type {object | string}\n     */\n    ext_03?: object | string;\n    /**\n     * RequiredSelect * 1 => select1 * 2 => select2 * 3 => select3\n     * @type {object | string}\n     */\n    ext_04: object | string;\n    /**\n     * Checkbox * 1 => check1 * 2 => check2 * 3 => check3\n     * @type {Array<object | string>}\n     */\n    ext_05?: Array<object | string>;\n    /**\n     * DateTime\n     * @type {string | object}\n     */\n    ext_06?: string | object;\n    /**\n     * \n     * @type {object}\n     */\n    ext_07?: object;\n    /**\n     * \n     * @type {RcmsApi1Topics1InsertExtCol05}\n     */\n    ext_08?: RcmsApi1Topics1InsertExtCol05;\n    /**\n     * \n     * @type {RcmsApi1Topics1InsertExtJsn12}\n     */\n    ext_09?: RcmsApi1Topics1InsertExtJsn12;\n    /**\n     * Date\n     * @type {Date}\n     */\n    ext_10?: Date;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validate_only?: boolean;\n}";
 export declare function InlineObject16FromJSON(json: any): InlineObject16;
 export declare function InlineObject16FromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject16;
 export declare function InlineObject16ToJSON(value?: InlineObject16 | null): any;

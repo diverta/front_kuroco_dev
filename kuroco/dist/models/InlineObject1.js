@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import { exists } from '../runtime';
-export var InlineObject1Description = "{\n    /**\n     * Resource grant token\n     * @type {string}\n     */\n    grantToken?: string;\n}";
+export var InlineObject1Description = "{\n    /**\n     * Resource grant token\n     * @type {string}\n     */\n    grant_token?: string;\n}";
 export function InlineObject1FromJSON(json) {
     return InlineObject1FromJSONTyped(json, false);
 }
@@ -21,7 +21,7 @@ export function InlineObject1FromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'grantToken': !exists(json, 'grant_token') ? undefined : json['grant_token'],
+        'grant_token': !exists(json, 'grant_token') ? undefined : json['grant_token'],
     };
 }
 export function InlineObject1ToJSON(value) {
@@ -32,6 +32,6 @@ export function InlineObject1ToJSON(value) {
         return null;
     }
     return {
-        'grant_token': value.grantToken,
+        'grant_token': value.grant_token,
     };
 }

@@ -11,7 +11,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export var InlineObject2Description = "{\n    /**\n     * Token\n     * @type {string}\n     */\n    loginId: string;\n    /**\n     * Current Login Password\n     * @type {string}\n     */\n    currentPassword: string;\n    /**\n     * New Password\n     * @type {string}\n     */\n    newPassword: string;\n}";
+export var InlineObject2Description = "{\n    /**\n     * Token\n     * @type {string}\n     */\n    login_id: string;\n    /**\n     * Current Login Password\n     * @type {string}\n     */\n    current_password: string;\n    /**\n     * New Password\n     * @type {string}\n     */\n    new_password: string;\n}";
 export function InlineObject2FromJSON(json) {
     return InlineObject2FromJSONTyped(json, false);
 }
@@ -20,9 +20,9 @@ export function InlineObject2FromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'loginId': json['login_id'],
-        'currentPassword': json['current_password'],
-        'newPassword': json['new_password'],
+        'login_id': json['login_id'],
+        'current_password': json['current_password'],
+        'new_password': json['new_password'],
     };
 }
 export function InlineObject2ToJSON(value) {
@@ -33,8 +33,8 @@ export function InlineObject2ToJSON(value) {
         return null;
     }
     return {
-        'login_id': value.loginId,
-        'current_password': value.currentPassword,
-        'new_password': value.newPassword,
+        'login_id': value.login_id,
+        'current_password': value.current_password,
+        'new_password': value.new_password,
     };
 }

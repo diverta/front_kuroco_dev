@@ -26,7 +26,7 @@ export interface InlineObject7 {
      * @type {string}
      * @memberof InlineObject7
      */
-    loginPwd: string;
+    login_pwd: string;
     /**
      * Nickname
      * @type {string}
@@ -98,21 +98,21 @@ export interface InlineObject7 {
      * @type {number}
      * @memberof InlineObject7
      */
-    openFlg?: InlineObject7OpenFlgEnum;
+    open_flg?: InlineObject7OpenFlgEnum;
     /**
      * /label/login_ok_flg
      * @type {number}
      * @memberof InlineObject7
      */
-    loginOkFlg?: InlineObject7LoginOkFlgEnum;
+    login_ok_flg?: InlineObject7LoginOkFlgEnum;
     /**
      * /label/send_validate
      * @type {boolean}
      * @memberof InlineObject7
      */
-    validateOnly?: boolean;
+    validate_only?: boolean;
 }
-export declare const InlineObject7Description = "{\n    /**\n     * Email\n     * @type {string}\n     */\n    email: string;\n    /**\n     * Password\n     * @type {string}\n     */\n    loginPwd: string;\n    /**\n     * Nickname\n     * @type {string}\n     */\n    nickname: string;\n    /**\n     * Family name\n     * @type {string}\n     */\n    name1?: string;\n    /**\n     * Given name\n     * @type {string}\n     */\n    name2?: string;\n    /**\n     * Text\n     * @type {string}\n     */\n    text: string;\n    /**\n     * Textarea\n     * @type {string}\n     */\n    textarea?: string;\n    /**\n     * Selectbox * 1 => selectBoxOption1 * 2 => selectBoxOption2 * 3 => selectBoxOption3\n     * @type {object | string}\n     */\n    selectbox?: object | string;\n    /**\n     * Radio * 1 => radioOption1 * 2 => radioOption2 * 3 => radioOption3\n     * @type {object | string}\n     */\n    radio?: object | string;\n    /**\n     * Checkbox * 1 => checkboxOption1 * 2 => checkboxOption2 * 3 => checkboxOption3\n     * @type {Array<object | string>}\n     */\n    checkbox?: Array<object | string>;\n    /**\n     * Date\n     * @type {Date}\n     */\n    date?: Date;\n    /**\n     * \n     * @type {number}\n     */\n    relation?: number;\n    /**\n     * File\n     * @type {object}\n     */\n    file?: object;\n    /**\n     * /label/open_flg\n     * @type {number}\n     */\n    openFlg?: InlineObject7OpenFlgEnum;\n    /**\n     * /label/login_ok_flg\n     * @type {number}\n     */\n    loginOkFlg?: InlineObject7LoginOkFlgEnum;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validateOnly?: boolean;\n}";
+export declare const InlineObject7Description = "{\n    /**\n     * Email\n     * @type {string}\n     */\n    email: string;\n    /**\n     * Password\n     * @type {string}\n     */\n    login_pwd: string;\n    /**\n     * Nickname\n     * @type {string}\n     */\n    nickname: string;\n    /**\n     * Family name\n     * @type {string}\n     */\n    name1?: string;\n    /**\n     * Given name\n     * @type {string}\n     */\n    name2?: string;\n    /**\n     * Text\n     * @type {string}\n     */\n    text: string;\n    /**\n     * Textarea\n     * @type {string}\n     */\n    textarea?: string;\n    /**\n     * Selectbox * 1 => selectBoxOption1 * 2 => selectBoxOption2 * 3 => selectBoxOption3\n     * @type {object | string}\n     */\n    selectbox?: object | string;\n    /**\n     * Radio * 1 => radioOption1 * 2 => radioOption2 * 3 => radioOption3\n     * @type {object | string}\n     */\n    radio?: object | string;\n    /**\n     * Checkbox * 1 => checkboxOption1 * 2 => checkboxOption2 * 3 => checkboxOption3\n     * @type {Array<object | string>}\n     */\n    checkbox?: Array<object | string>;\n    /**\n     * Date\n     * @type {Date}\n     */\n    date?: Date;\n    /**\n     * \n     * @type {number}\n     */\n    relation?: number;\n    /**\n     * File\n     * @type {object}\n     */\n    file?: object;\n    /**\n     * /label/open_flg\n     * @type {number}\n     */\n    open_flg?: InlineObject7OpenFlgEnum;\n    /**\n     * /label/login_ok_flg\n     * @type {number}\n     */\n    login_ok_flg?: InlineObject7LoginOkFlgEnum;\n    /**\n     * /label/send_validate\n     * @type {boolean}\n     */\n    validate_only?: boolean;\n}";
 export declare function InlineObject7FromJSON(json: any): InlineObject7;
 export declare function InlineObject7FromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject7;
 export declare function InlineObject7ToJSON(value?: InlineObject7 | null): any;

@@ -20,21 +20,21 @@ export interface InlineObject15 {
      * @type {string}
      * @memberof InlineObject15
      */
-    moduleType: string;
+    module_type: string;
     /**
      * module_id
      * @type {number}
      * @memberof InlineObject15
      */
-    moduleId: number;
+    module_id: number;
     /**
      * ページシステム名
      * @type {string}
      * @memberof InlineObject15
      */
-    pageSysnm?: string;
+    page_sysnm?: string;
 }
-export declare const InlineObject15Description = "{\n    /**\n     * Module type\n     * @type {string}\n     */\n    moduleType: string;\n    /**\n     * module_id\n     * @type {number}\n     */\n    moduleId: number;\n    /**\n     * \u30DA\u30FC\u30B8\u30B7\u30B9\u30C6\u30E0\u540D\n     * @type {string}\n     */\n    pageSysnm?: string;\n}";
+export declare const InlineObject15Description = "{\n    /**\n     * Module type\n     * @type {string}\n     */\n    module_type: string;\n    /**\n     * module_id\n     * @type {number}\n     */\n    module_id: number;\n    /**\n     * \u30DA\u30FC\u30B8\u30B7\u30B9\u30C6\u30E0\u540D\n     * @type {string}\n     */\n    page_sysnm?: string;\n}";
 export declare function InlineObject15FromJSON(json: any): InlineObject15;
 export declare function InlineObject15FromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject15;
 export declare function InlineObject15ToJSON(value?: InlineObject15 | null): any;

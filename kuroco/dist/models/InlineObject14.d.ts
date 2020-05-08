@@ -20,21 +20,21 @@ export interface InlineObject14 {
      * @type {string}
      * @memberof InlineObject14
      */
-    moduleType: string;
+    module_type: string;
     /**
      * module_id
      * @type {number}
      * @memberof InlineObject14
      */
-    moduleId: number;
+    module_id: number;
     /**
      * ページシステム名
      * @type {string}
      * @memberof InlineObject14
      */
-    pageSysnm?: string;
+    page_sysnm?: string;
 }
-export declare const InlineObject14Description = "{\n    /**\n     * Module type\n     * @type {string}\n     */\n    moduleType: string;\n    /**\n     * module_id\n     * @type {number}\n     */\n    moduleId: number;\n    /**\n     * \u30DA\u30FC\u30B8\u30B7\u30B9\u30C6\u30E0\u540D\n     * @type {string}\n     */\n    pageSysnm?: string;\n}";
+export declare const InlineObject14Description = "{\n    /**\n     * Module type\n     * @type {string}\n     */\n    module_type: string;\n    /**\n     * module_id\n     * @type {number}\n     */\n    module_id: number;\n    /**\n     * \u30DA\u30FC\u30B8\u30B7\u30B9\u30C6\u30E0\u540D\n     * @type {string}\n     */\n    page_sysnm?: string;\n}";
 export declare function InlineObject14FromJSON(json: any): InlineObject14;
 export declare function InlineObject14FromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject14;
 export declare function InlineObject14ToJSON(value?: InlineObject14 | null): any;

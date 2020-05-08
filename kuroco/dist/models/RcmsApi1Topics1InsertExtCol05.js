@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import { exists } from '../runtime';
-export var RcmsApi1Topics1InsertExtCol05Description = "{\n    /**\n     * \n     * @type {string}\n     */\n    tdfkCd?: RcmsApi1Topics1InsertExtCol05TdfkCdEnum;\n    /**\n     * \n     * @type {string}\n     */\n    tdfkNm?: RcmsApi1Topics1InsertExtCol05TdfkNmEnum;\n}";
+export var RcmsApi1Topics1InsertExtCol05Description = "{\n    /**\n     * \n     * @type {string}\n     */\n    tdfk_cd?: RcmsApi1Topics1InsertExtCol05TdfkCdEnum;\n    /**\n     * \n     * @type {string}\n     */\n    tdfk_nm?: RcmsApi1Topics1InsertExtCol05TdfkNmEnum;\n}";
 export function RcmsApi1Topics1InsertExtCol05FromJSON(json) {
     return RcmsApi1Topics1InsertExtCol05FromJSONTyped(json, false);
 }
@@ -21,8 +21,8 @@ export function RcmsApi1Topics1InsertExtCol05FromJSONTyped(json, ignoreDiscrimin
         return json;
     }
     return {
-        'tdfkCd': !exists(json, 'tdfk_cd') ? undefined : json['tdfk_cd'],
-        'tdfkNm': !exists(json, 'tdfk_nm') ? undefined : json['tdfk_nm'],
+        'tdfk_cd': !exists(json, 'tdfk_cd') ? undefined : json['tdfk_cd'],
+        'tdfk_nm': !exists(json, 'tdfk_nm') ? undefined : json['tdfk_nm'],
     };
 }
 export function RcmsApi1Topics1InsertExtCol05ToJSON(value) {
@@ -33,8 +33,8 @@ export function RcmsApi1Topics1InsertExtCol05ToJSON(value) {
         return null;
     }
     return {
-        'tdfk_cd': value.tdfkCd,
-        'tdfk_nm': value.tdfkNm,
+        'tdfk_cd': value.tdfk_cd,
+        'tdfk_nm': value.tdfk_nm,
     };
 }
 /**

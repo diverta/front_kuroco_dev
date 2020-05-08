@@ -32,9 +32,9 @@ export interface InlineObject {
      * @type {number}
      * @memberof InlineObject
      */
-    loginSave?: InlineObjectLoginSaveEnum;
+    login_save?: InlineObjectLoginSaveEnum;
 }
-export declare const InlineObjectDescription = "{\n    /**\n     * Login ID\n     * @type {string}\n     */\n    email?: string;\n    /**\n     * Password\n     * @type {string}\n     */\n    password?: string;\n    /**\n     * Log in automatically next time\n     * @type {number}\n     */\n    loginSave?: InlineObjectLoginSaveEnum;\n}";
+export declare const InlineObjectDescription = "{\n    /**\n     * Login ID\n     * @type {string}\n     */\n    email?: string;\n    /**\n     * Password\n     * @type {string}\n     */\n    password?: string;\n    /**\n     * Log in automatically next time\n     * @type {number}\n     */\n    login_save?: InlineObjectLoginSaveEnum;\n}";
 export declare function InlineObjectFromJSON(json: any): InlineObject;
 export declare function InlineObjectFromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject;
 export declare function InlineObjectToJSON(value?: InlineObject | null): any;

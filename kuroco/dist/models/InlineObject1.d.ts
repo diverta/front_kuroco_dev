@@ -20,9 +20,9 @@ export interface InlineObject1 {
      * @type {string}
      * @memberof InlineObject1
      */
-    grantToken?: string;
+    grant_token?: string;
 }
-export declare const InlineObject1Description = "{\n    /**\n     * Resource grant token\n     * @type {string}\n     */\n    grantToken?: string;\n}";
+export declare const InlineObject1Description = "{\n    /**\n     * Resource grant token\n     * @type {string}\n     */\n    grant_token?: string;\n}";
 export declare function InlineObject1FromJSON(json: any): InlineObject1;
 export declare function InlineObject1FromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject1;
 export declare function InlineObject1ToJSON(value?: InlineObject1 | null): any;

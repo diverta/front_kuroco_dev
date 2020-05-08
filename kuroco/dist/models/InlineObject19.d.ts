@@ -20,19 +20,19 @@ export interface InlineObject19 {
      * @type {string}
      * @memberof InlineObject19
      */
-    tagNm: string;
+    tag_nm: string;
     /**
      * Category ID
      * @type {number}
      * @memberof InlineObject19
      */
-    tagCategoryId?: number;
+    tag_category_id?: number;
     /**
      * Published / Not published
      * @type {string}
      * @memberof InlineObject19
      */
-    openType?: InlineObject19OpenTypeEnum;
+    open_type?: InlineObject19OpenTypeEnum;
     /**
      * Sort
      * @type {number}
@@ -44,63 +44,63 @@ export interface InlineObject19 {
      * @type {string}
      * @memberof InlineObject19
      */
-    extCol01?: string;
+    ext_col_01?: string;
     /**
      * ext_col_02
      * @type {string}
      * @memberof InlineObject19
      */
-    extCol02?: string;
+    ext_col_02?: string;
     /**
      * ext_col_03
      * @type {string}
      * @memberof InlineObject19
      */
-    extCol03?: string;
+    ext_col_03?: string;
     /**
      * ext_col_04
      * @type {string}
      * @memberof InlineObject19
      */
-    extCol04?: string;
+    ext_col_04?: string;
     /**
      * ext_col_05
      * @type {string}
      * @memberof InlineObject19
      */
-    extCol05?: string;
+    ext_col_05?: string;
     /**
      * ext_col_06
      * @type {string}
      * @memberof InlineObject19
      */
-    extCol06?: string;
+    ext_col_06?: string;
     /**
      * ext_col_07
      * @type {string}
      * @memberof InlineObject19
      */
-    extCol07?: string;
+    ext_col_07?: string;
     /**
      * ext_col_08
      * @type {string}
      * @memberof InlineObject19
      */
-    extCol08?: string;
+    ext_col_08?: string;
     /**
      * ext_col_09
      * @type {string}
      * @memberof InlineObject19
      */
-    extCol09?: string;
+    ext_col_09?: string;
     /**
      * ext_col_10
      * @type {string}
      * @memberof InlineObject19
      */
-    extCol10?: string;
+    ext_col_10?: string;
 }
-export declare const InlineObject19Description = "{\n    /**\n     * Title\n     * @type {string}\n     */\n    tagNm: string;\n    /**\n     * Category ID\n     * @type {number}\n     */\n    tagCategoryId?: number;\n    /**\n     * Published / Not published\n     * @type {string}\n     */\n    openType?: InlineObject19OpenTypeEnum;\n    /**\n     * Sort\n     * @type {number}\n     */\n    weight?: number;\n    /**\n     * ext_col_01\n     * @type {string}\n     */\n    extCol01?: string;\n    /**\n     * ext_col_02\n     * @type {string}\n     */\n    extCol02?: string;\n    /**\n     * ext_col_03\n     * @type {string}\n     */\n    extCol03?: string;\n    /**\n     * ext_col_04\n     * @type {string}\n     */\n    extCol04?: string;\n    /**\n     * ext_col_05\n     * @type {string}\n     */\n    extCol05?: string;\n    /**\n     * ext_col_06\n     * @type {string}\n     */\n    extCol06?: string;\n    /**\n     * ext_col_07\n     * @type {string}\n     */\n    extCol07?: string;\n    /**\n     * ext_col_08\n     * @type {string}\n     */\n    extCol08?: string;\n    /**\n     * ext_col_09\n     * @type {string}\n     */\n    extCol09?: string;\n    /**\n     * ext_col_10\n     * @type {string}\n     */\n    extCol10?: string;\n}";
+export declare const InlineObject19Description = "{\n    /**\n     * Title\n     * @type {string}\n     */\n    tag_nm: string;\n    /**\n     * Category ID\n     * @type {number}\n     */\n    tag_category_id?: number;\n    /**\n     * Published / Not published\n     * @type {string}\n     */\n    open_type?: InlineObject19OpenTypeEnum;\n    /**\n     * Sort\n     * @type {number}\n     */\n    weight?: number;\n    /**\n     * ext_col_01\n     * @type {string}\n     */\n    ext_col_01?: string;\n    /**\n     * ext_col_02\n     * @type {string}\n     */\n    ext_col_02?: string;\n    /**\n     * ext_col_03\n     * @type {string}\n     */\n    ext_col_03?: string;\n    /**\n     * ext_col_04\n     * @type {string}\n     */\n    ext_col_04?: string;\n    /**\n     * ext_col_05\n     * @type {string}\n     */\n    ext_col_05?: string;\n    /**\n     * ext_col_06\n     * @type {string}\n     */\n    ext_col_06?: string;\n    /**\n     * ext_col_07\n     * @type {string}\n     */\n    ext_col_07?: string;\n    /**\n     * ext_col_08\n     * @type {string}\n     */\n    ext_col_08?: string;\n    /**\n     * ext_col_09\n     * @type {string}\n     */\n    ext_col_09?: string;\n    /**\n     * ext_col_10\n     * @type {string}\n     */\n    ext_col_10?: string;\n}";
 export declare function InlineObject19FromJSON(json: any): InlineObject19;
 export declare function InlineObject19FromJSONTyped(json: any, ignoreDiscriminator: boolean): InlineObject19;
 export declare function InlineObject19ToJSON(value?: InlineObject19 | null): any;

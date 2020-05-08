@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import { exists } from '../runtime';
-export var InlineObject13Description = "{\n    /**\n     * \u30B3\u30E1\u30F3\u30C8ID\n     * @type {number}\n     */\n    commentId: number;\n    /**\n     * \u524A\u9664\u30AD\u30FC\n     * @type {string}\n     */\n    delkey?: string;\n}";
+export var InlineObject13Description = "{\n    /**\n     * \u30B3\u30E1\u30F3\u30C8ID\n     * @type {number}\n     */\n    comment_id: number;\n    /**\n     * \u524A\u9664\u30AD\u30FC\n     * @type {string}\n     */\n    delkey?: string;\n}";
 export function InlineObject13FromJSON(json) {
     return InlineObject13FromJSONTyped(json, false);
 }
@@ -21,7 +21,7 @@ export function InlineObject13FromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'commentId': json['comment_id'],
+        'comment_id': json['comment_id'],
         'delkey': !exists(json, 'delkey') ? undefined : json['delkey'],
     };
 }
@@ -33,7 +33,7 @@ export function InlineObject13ToJSON(value) {
         return null;
     }
     return {
-        'comment_id': value.commentId,
+        'comment_id': value.comment_id,
         'delkey': value.delkey,
     };
 }

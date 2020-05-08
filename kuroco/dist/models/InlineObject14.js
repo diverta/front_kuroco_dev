@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import { exists } from '../runtime';
-export var InlineObject14Description = "{\n    /**\n     * Module type\n     * @type {string}\n     */\n    moduleType: string;\n    /**\n     * module_id\n     * @type {number}\n     */\n    moduleId: number;\n    /**\n     * \u30DA\u30FC\u30B8\u30B7\u30B9\u30C6\u30E0\u540D\n     * @type {string}\n     */\n    pageSysnm?: string;\n}";
+export var InlineObject14Description = "{\n    /**\n     * Module type\n     * @type {string}\n     */\n    module_type: string;\n    /**\n     * module_id\n     * @type {number}\n     */\n    module_id: number;\n    /**\n     * \u30DA\u30FC\u30B8\u30B7\u30B9\u30C6\u30E0\u540D\n     * @type {string}\n     */\n    page_sysnm?: string;\n}";
 export function InlineObject14FromJSON(json) {
     return InlineObject14FromJSONTyped(json, false);
 }
@@ -21,9 +21,9 @@ export function InlineObject14FromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'moduleType': json['module_type'],
-        'moduleId': json['module_id'],
-        'pageSysnm': !exists(json, 'page_sysnm') ? undefined : json['page_sysnm'],
+        'module_type': json['module_type'],
+        'module_id': json['module_id'],
+        'page_sysnm': !exists(json, 'page_sysnm') ? undefined : json['page_sysnm'],
     };
 }
 export function InlineObject14ToJSON(value) {
@@ -34,8 +34,8 @@ export function InlineObject14ToJSON(value) {
         return null;
     }
     return {
-        'module_type': value.moduleType,
-        'module_id': value.moduleId,
-        'page_sysnm': value.pageSysnm,
+        'module_type': value.module_type,
+        'module_id': value.module_id,
+        'page_sysnm': value.page_sysnm,
     };
 }

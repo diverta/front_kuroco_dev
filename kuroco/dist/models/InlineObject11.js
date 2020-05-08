@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import { exists } from '../runtime';
-export var InlineObject11Description = "{\n    /**\n     * \u30E2\u30B8\u30E5\u30FC\u30EBID\n     * @type {number}\n     */\n    moduleId: number;\n    /**\n     * Name\n     * @type {string}\n     */\n    name: string;\n    /**\n     * Mail\n     * @type {string}\n     */\n    mail?: string;\n    /**\n     * URL\n     * @type {string}\n     */\n    url?: string;\n    /**\n     * Comments\n     * @type {string}\n     */\n    note: string;\n    /**\n     * Rating\n     * @type {number}\n     */\n    rating?: number;\n    /**\n     * \u524A\u9664\u30AD\u30FC\n     * @type {string}\n     */\n    delkey?: string;\n}";
+export var InlineObject11Description = "{\n    /**\n     * \u30E2\u30B8\u30E5\u30FC\u30EBID\n     * @type {number}\n     */\n    module_id: number;\n    /**\n     * Name\n     * @type {string}\n     */\n    name: string;\n    /**\n     * Mail\n     * @type {string}\n     */\n    mail?: string;\n    /**\n     * URL\n     * @type {string}\n     */\n    url?: string;\n    /**\n     * Comments\n     * @type {string}\n     */\n    note: string;\n    /**\n     * Rating\n     * @type {number}\n     */\n    rating?: number;\n    /**\n     * \u524A\u9664\u30AD\u30FC\n     * @type {string}\n     */\n    delkey?: string;\n}";
 export function InlineObject11FromJSON(json) {
     return InlineObject11FromJSONTyped(json, false);
 }
@@ -21,7 +21,7 @@ export function InlineObject11FromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'moduleId': json['module_id'],
+        'module_id': json['module_id'],
         'name': json['name'],
         'mail': !exists(json, 'mail') ? undefined : json['mail'],
         'url': !exists(json, 'url') ? undefined : json['url'],
@@ -38,7 +38,7 @@ export function InlineObject11ToJSON(value) {
         return null;
     }
     return {
-        'module_id': value.moduleId,
+        'module_id': value.module_id,
         'name': value.name,
         'mail': value.mail,
         'url': value.url,

@@ -15,7 +15,7 @@ import {
 } from 'kuroco';
 
 describe('Inquiry', () => {
-  it('rcmsApi1InquiryFormsGet', () => {
+  xit('rcmsApi1InquiryFormsGet', () => {
     const methodName = 'rcmsApi1InquiryFormsGet';
     /** @type {InquiriesApiRcmsApi1InquiryFormsGetRequest} */
     const requestData = {};
@@ -30,20 +30,20 @@ describe('Inquiry', () => {
     const requestData = {
       inlineObject16: {
         name: 'My Name',
-        fromMail: 'email@example.com',
+        from_mail: 'email@example.com',
         body: 'Example Message',
-        inquiryCategoryId: 1,
-        ext01: 'string',
-        ext02: 'string',
-        ext03: {
+        inquiry_category_id: 1,
+        ext_01: 'string',
+        ext_02: 'string',
+        ext_03: {
           key: '1',
           label: 'radio1',
         },
-        ext04: {
+        ext_04: {
           key: '1',
           label: 'select1',
         },
-        ext05: [
+        ext_05: [
           {
             key: '2',
             label: 'check2',
@@ -53,30 +53,30 @@ describe('Inquiry', () => {
             label: 'check3',
           },
         ],
-        ext06: '2020-04-23 10:28 +0900',
-        ext07: {
-          id: 'string',
-          fileId: 'string',
-          fileNm: 'string',
-          desc: 'string',
+        ext_06: '2020-04-23 10:28 +0900',
+        ext_07: {
+          id: 'test',
+          file_id: '',
+          file_nm: '',
+          desc: '',
         },
-        ext08: {
-          tdfkCd: RcmsApi1Topics1InsertExtCol05TdfkCdEnum._01,
-          tdfkNm: RcmsApi1Topics1InsertExtCol05TdfkNmEnum._北海道,
+        ext_08: {
+          tdfk_cd: RcmsApi1Topics1InsertExtCol05TdfkCdEnum._01,
+          tdfk_nm: RcmsApi1Topics1InsertExtCol05TdfkNmEnum._北海道,
         },
-        ext09: {
+        ext_09: {
           options: RcmsApi1Topics1InsertExtJsn12OptionsEnum._1,
           text: 'Text',
         },
-        ext10: new Date(),
-        validateOnly: false,
+        ext_10: new Date(),
+        validate_only: false,
       },
     };
 
     executeRequest({ cy, query: methodName, requestData });
   });
 
-  it('rcmsApi1InquiryFormsInquiryIdGet', () => {
+  xit('rcmsApi1InquiryFormsInquiryIdGet', () => {
     const methodName = 'rcmsApi1InquiryFormsInquiryIdGet';
     /** @type {InquiriesApiRcmsApi1InquiryFormsInquiryIdGetRequest} */
     const requestData = {

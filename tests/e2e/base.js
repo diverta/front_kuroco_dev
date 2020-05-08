@@ -56,10 +56,15 @@ export function executeRequest({ cy, query, requestData, screenshot = false }) {
     .invoke('text')
     .then(txt => {
       if (/true/.test(txt)) {
-        cy.get(queries.responseBlock.response)
+        return cy
+          .get(queries.responseBlock.response)
           .invoke('text')
           .then(txt => {
-            throw Error(txt);
+            cy.writeFile(
+              path.join('tests', 'e2e', 'requestBody', `${query}.json`),
+              requestBody
+            );
+            throw new Error(txt);
           });
       }
     });

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import { exists } from '../runtime';
-export var InlineObject12Description = "{\n    /**\n     * \u30B3\u30E1\u30F3\u30C8ID\n     * @type {number}\n     */\n    commentId: number;\n    /**\n     * \u30E2\u30B8\u30E5\u30FC\u30EBID\n     * @type {number}\n     */\n    moduleId: number;\n    /**\n     * Name\n     * @type {string}\n     */\n    name: string;\n    /**\n     * Mail\n     * @type {string}\n     */\n    mail?: string;\n    /**\n     * URL\n     * @type {string}\n     */\n    url?: string;\n    /**\n     * Comments\n     * @type {string}\n     */\n    note: string;\n    /**\n     * Rating\n     * @type {number}\n     */\n    rating?: number;\n    /**\n     * \u524A\u9664\u30AD\u30FC\n     * @type {string}\n     */\n    delkey?: string;\n}";
+export var InlineObject12Description = "{\n    /**\n     * \u30B3\u30E1\u30F3\u30C8ID\n     * @type {number}\n     */\n    comment_id: number;\n    /**\n     * \u30E2\u30B8\u30E5\u30FC\u30EBID\n     * @type {number}\n     */\n    module_id: number;\n    /**\n     * Name\n     * @type {string}\n     */\n    name: string;\n    /**\n     * Mail\n     * @type {string}\n     */\n    mail?: string;\n    /**\n     * URL\n     * @type {string}\n     */\n    url?: string;\n    /**\n     * Comments\n     * @type {string}\n     */\n    note: string;\n    /**\n     * Rating\n     * @type {number}\n     */\n    rating?: number;\n    /**\n     * \u524A\u9664\u30AD\u30FC\n     * @type {string}\n     */\n    delkey?: string;\n}";
 export function InlineObject12FromJSON(json) {
     return InlineObject12FromJSONTyped(json, false);
 }
@@ -21,8 +21,8 @@ export function InlineObject12FromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'commentId': json['comment_id'],
-        'moduleId': json['module_id'],
+        'comment_id': json['comment_id'],
+        'module_id': json['module_id'],
         'name': json['name'],
         'mail': !exists(json, 'mail') ? undefined : json['mail'],
         'url': !exists(json, 'url') ? undefined : json['url'],
@@ -39,8 +39,8 @@ export function InlineObject12ToJSON(value) {
         return null;
     }
     return {
-        'comment_id': value.commentId,
-        'module_id': value.moduleId,
+        'comment_id': value.comment_id,
+        'module_id': value.module_id,
         'name': value.name,
         'mail': value.mail,
         'url': value.url,

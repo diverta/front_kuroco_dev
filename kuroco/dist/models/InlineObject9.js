@@ -11,7 +11,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export var InlineObject9Description = "{\n    /**\n     * /label/member_id\n     * @type {number}\n     */\n    memberId: number;\n}";
+export var InlineObject9Description = "{\n    /**\n     * /label/member_id\n     * @type {number}\n     */\n    member_id: number;\n}";
 export function InlineObject9FromJSON(json) {
     return InlineObject9FromJSONTyped(json, false);
 }
@@ -20,7 +20,7 @@ export function InlineObject9FromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'memberId': json['member_id'],
+        'member_id': json['member_id'],
     };
 }
 export function InlineObject9ToJSON(value) {
@@ -31,6 +31,6 @@ export function InlineObject9ToJSON(value) {
         return null;
     }
     return {
-        'member_id': value.memberId,
+        'member_id': value.member_id,
     };
 }

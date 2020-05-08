@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import { exists } from '../runtime';
-export var InlineObjectDescription = "{\n    /**\n     * Login ID\n     * @type {string}\n     */\n    email?: string;\n    /**\n     * Password\n     * @type {string}\n     */\n    password?: string;\n    /**\n     * Log in automatically next time\n     * @type {number}\n     */\n    loginSave?: InlineObjectLoginSaveEnum;\n}";
+export var InlineObjectDescription = "{\n    /**\n     * Login ID\n     * @type {string}\n     */\n    email?: string;\n    /**\n     * Password\n     * @type {string}\n     */\n    password?: string;\n    /**\n     * Log in automatically next time\n     * @type {number}\n     */\n    login_save?: InlineObjectLoginSaveEnum;\n}";
 export function InlineObjectFromJSON(json) {
     return InlineObjectFromJSONTyped(json, false);
 }
@@ -23,7 +23,7 @@ export function InlineObjectFromJSONTyped(json, ignoreDiscriminator) {
     return {
         'email': !exists(json, 'email') ? undefined : json['email'],
         'password': !exists(json, 'password') ? undefined : json['password'],
-        'loginSave': !exists(json, 'login_save') ? undefined : json['login_save'],
+        'login_save': !exists(json, 'login_save') ? undefined : json['login_save'],
     };
 }
 export function InlineObjectToJSON(value) {
@@ -36,7 +36,7 @@ export function InlineObjectToJSON(value) {
     return {
         'email': value.email,
         'password': value.password,
-        'login_save': value.loginSave,
+        'login_save': value.login_save,
     };
 }
 /**
