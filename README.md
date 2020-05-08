@@ -1,4 +1,4 @@
-# fron_kuroco_dev
+# front_kuroco_dev
 
 ## App
 
