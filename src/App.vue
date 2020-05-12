@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <Login />
-    <ApiList :apiInfos="apiInfos" />
-    <!-- <Editor /> -->
+    <FilterInput :query.sync="query" />
+    <ApiList :apiInfos="apiInfos" :query="query" @clickOnApi="(v) => apiInfo = v" />
+    <Editor :apiInfo="apiInfo" @onSubmit="executeRequest" />
+    <Response :response="response" :isResponseErrorOccured="isResponseErrorOccured" />
   </div>
 </template>
 
@@ -11,9 +13,9 @@ import Vue from 'vue';
 import Login from './components/Login.vue';
 import ApiList from './components/ApiList.vue';
 import Editor from './components/Editor.vue';
-import { API_METHOD_LIST } from './apilist';
-import { getApiRequestInfoByrequestMethodName, Auth } from 'kuroco';
-import { ApiInfo } from './type';
+import Response from './components/Response.vue';
+import FilterInput from './components/FilterInput.vue';
+import { ApiInfos } from '../generated/core/ApiInfo';
 
 export default Vue.extend({
   name: 'App',
@@ -21,29 +23,36 @@ export default Vue.extend({
     Login,
     ApiList,
     Editor,
+    Response,
+    FilterInput,
   },
   data() {
     return {
-      apiInfos: [] as any,
+      apiInfos: ApiInfos,
+      apiInfo: null as any,
+      query: '' as string,
+
+      response: null as any,
+      isResponseErrorOccured: null as any,
     };
   },
   methods: {
-    getApiInfos(): ApiInfo[] {
-      return Object.entries(API_METHOD_LIST).map(([infoKey, method]) => {
-        const [className, methodName] = infoKey.split('_');
-        const apiRequestInfo = getApiRequestInfoByrequestMethodName(methodName);
-        return {
-          className,
-          methodName,
-          method,
-          apiRequestInfo,
-        };
-      });
+    executeRequest({ apiInfo, requestParam }: any) {
+      console.log(apiInfo);
+      this.response = null;
+      this.isResponseErrorOccured = null;
+
+      apiInfo
+        .method(requestParam)
+        .then((res: any) => {
+          this.response = res;
+          this.isResponseErrorOccured = false;
+        })
+        .catch((err: any) => {
+          this.response = err;
+          this.isResponseErrorOccured = true;
+        });
     },
-  },
-  mounted() {
-    Auth.setupAuthHookOnFetchForKurocoRequestings(undefined, console.error);
-    this.apiInfos = this.getApiInfos();
   },
 });
 </script>

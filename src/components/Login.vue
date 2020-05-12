@@ -17,7 +17,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { Auth } from 'kuroco';
+import { Auth } from '../../generated/core/Auth';
 
 export default Vue.extend({
   name: 'Login',
@@ -31,9 +31,9 @@ export default Vue.extend({
   },
   methods: {
     handleClickLogin(): void {
-      Auth.login({ email: this.email, password: this.password }).then(
-        () => (this.loginStatus = 'LOGGEDIN')
-      );
+      Auth.login({
+        requestBody: { email: this.email, password: this.password },
+      }).then(() => (this.loginStatus = 'LOGGEDIN'));
     },
   },
 });
