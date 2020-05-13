@@ -74,15 +74,18 @@ requestData については、
 このコメントを設定すると、SDK による型チェックが自動で動作します。  
 型エラーが表示されている場合には適宜修正してください。
 
+** エディタは VisualStudioCode で編集してください **  
+** `@type`アノテータには,DynamicImport を使用してください(JS 内で TS を読み込むために RuntimeError となるのを防ぐ) **
+
 ```javascript
-/** @type {import('kuroco').AuthenticationApiRcmsApi1AuthLoginPostRequest} */
+/** @type {import('../../../generated/services/AuthenticationService').AuthenticationService.postAuthenticationServiceRcmsApi1AuthLoginRequest} */
 const requestData = {
-  inlineObject: {
+  requestBody: {
     email: 'test',
     password: 'qwer1234',
   },
 };
-executeRequest({
+return executeRequest({
   cy,
   query: 'login',
   requestData,
