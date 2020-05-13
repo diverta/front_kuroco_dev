@@ -1,0 +1,45 @@
+{
+	"requestBody": {
+		"name": "John Doe",
+		"from_mail": "email@example.com",
+		"body": "テストメッセージ1",
+		"inquiry_category_id": 1,
+		"ext_01": "string1",
+		"ext_02": "string1",
+		"ext_03": {
+			"key": "1",
+			"label": "radio1"
+		},
+		"ext_04": {
+			"key": "1",
+			"label": "select1"
+		},
+		"ext_05": [
+			{
+				"key": "2",
+				"label": "check2"
+			},
+			{
+				"key": "3",
+				"label": "check3"
+			}
+		],
+		"ext_06": "2020-04-23 10:28 +0900",
+		"ext_07": {
+			"id": "test1",
+			"file_id": "",
+			"file_nm": "",
+			"desc": ""
+		},
+		"ext_08": {
+			"tdfk_cd": "01",
+			"tdfk_nm": "北海道"
+		},
+		"ext_09": {
+			"options": "1",
+			"text": "Text"
+		},
+		"ext_10": "2020-05-13",
+		"validate_only": false
+	}
+}

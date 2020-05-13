@@ -22,6 +22,22 @@ export const queries = {
   },
 };
 
+export function login() {
+  function __login({ email, password }) {
+    cy.contains('p', 'STATUS:');
+    cy.get(queries.logginForm.email).type(email);
+    cy.get(queries.logginForm.password).type(password);
+    cy.get(queries.logginForm.submit).click();
+    cy.contains('p', 'STATUS: LOGGEDIN');
+  }
+  cy.visit('/');
+  const q = {
+    email: 'test',
+    password: 'qwer1234',
+  };
+  __login(q);
+}
+
 /**
  * executes request to endpoint finded by query, writes results into disk as json files.
  *

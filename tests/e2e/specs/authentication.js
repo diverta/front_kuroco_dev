@@ -3,12 +3,12 @@
 
 // https://docs.cypress.io/api/introduction/api.html
 
-import { executeRequest } from '../base';
+import { executeRequest, login } from '../base';
 
-const login = () => {
-  /** @type {import('kuroco').AuthenticationApiRcmsApi1AuthLoginPostRequest} */
+const execLogin = () => {
+  /** @type {import('../../../generated/services/AuthenticationService').AuthenticationService.postAuthenticationServiceRcmsApi1AuthLoginRequest} */
   const requestData = {
-    inlineObject: {
+    requestBody: {
       email: 'test',
       password: 'qwer1234',
     },
@@ -19,8 +19,8 @@ const login = () => {
     requestData,
   });
 };
-const logout = () => {
-  /** @type {import('kuroco').AuthenticationApiRcmsApi1AuthLogoutPostRequest} */
+const execLogout = () => {
+  /** @type {import('../../../generated/services/AuthenticationService').AuthenticationService.postAuthenticationServiceRcmsApi1AuthLogoutRequest} */
   const requestData = {};
   return executeRequest({
     cy,
@@ -29,9 +29,9 @@ const logout = () => {
   });
 };
 const token = ({ grant_token }) => {
-  /** @type {import('kuroco').AuthenticationApiRcmsApi1AuthTokenPostRequest} */
+  /** @type {import('../../../generated/services/AuthenticationService').AuthenticationService.postAuthenticationServiceRcmsApi1AuthTokenRequest} */
   const requestData = {
-    inlineObject1: {
+    requestBody: {
       grant_token,
     },
   };
@@ -44,12 +44,14 @@ const token = ({ grant_token }) => {
 
 describe('Authentication', () => {
   it('Login -> Logout', async () => {
-    await login();
-    await logout();
+    login();
+    await execLogin();
+    await execLogout();
   });
   it('Login -> Token -> Logout', async () => {
-    const loginRes = await login();
+    login();
+    const loginRes = await execLogin();
     await token(JSON.parse(loginRes));
-    await logout();
+    await execLogout();
   });
 });

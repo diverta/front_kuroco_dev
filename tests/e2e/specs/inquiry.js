@@ -3,16 +3,10 @@
 
 // https://docs.cypress.io/api/introduction/api.html
 
-import { executeRequest } from '../base';
-
-import {
-  RcmsApi1Topics1InsertExtCol05TdfkCdEnum,
-  RcmsApi1Topics1InsertExtCol05TdfkNmEnum,
-  RcmsApi1Topics1InsertExtJsn12OptionsEnum,
-} from 'kuroco';
+import { executeRequest, login } from '../base';
 
 const getMessages = () => {
-  /** @type {import('kuroco').InquiriesApiRcmsApi1Inquiry1MessagesGetRequest} */
+  /** @type {import('../../../generated/services/InquiriesService').InquiriesService.getInquiriesServiceRcmsApi1Inquiry1MessagesRequest} */
   const requestData = {};
   return executeRequest({
     cy,
@@ -21,7 +15,7 @@ const getMessages = () => {
   });
 };
 const getForms = () => {
-  /** @type {import('kuroco').InquiriesApiRcmsApi1InquiryFormsGetRequest} */
+  /** @type {import('../../../generated/services/InquiriesService').InquiriesService.getInquiriesServiceRcmsApi1InquiryFormsRequest} */
   const requestData = {};
   return executeRequest({
     cy,
@@ -30,7 +24,7 @@ const getForms = () => {
   });
 };
 const getFormById = ({ inquiryId }) => {
-  /** @type {import('kuroco').InquiriesApiRcmsApi1InquiryFormsInquiryIdGetRequest} */
+  /** @type {import('../../../generated/services/InquiriesService').InquiriesService.getInquiriesServiceRcmsApi1InquiryFormsInquiryIdRequest} */
   const requestData = {
     inquiryId,
   };
@@ -41,9 +35,9 @@ const getFormById = ({ inquiryId }) => {
   });
 };
 const sendMessage = () => {
-  /** @type {import('kuroco').InquiriesApiRcmsApi1Inquiry1MessagesSendPostRequest} */
+  /** @type {import('../../../generated/services/InquiriesService').InquiriesService.postInquiriesServiceRcmsApi1Inquiry1MessagesSendRequest} */
   const requestData = {
-    inlineObject16: {
+    requestBody: {
       name: 'John Doe',
       from_mail: 'email@example.com',
       body: 'テストメッセージ1',
@@ -76,14 +70,14 @@ const sendMessage = () => {
         desc: '',
       },
       ext_08: {
-        tdfk_cd: RcmsApi1Topics1InsertExtCol05TdfkCdEnum._01,
-        tdfk_nm: RcmsApi1Topics1InsertExtCol05TdfkNmEnum._北海道,
+        tdfk_cd: '01',
+        tdfk_nm: '北海道',
       },
       ext_09: {
-        options: RcmsApi1Topics1InsertExtJsn12OptionsEnum._1,
+        options: '1',
         text: 'Text',
       },
-      ext_10: new Date(),
+      ext_10: new Date().toISOString().substr(0, 10),
       validate_only: false,
     },
   };
@@ -94,13 +88,13 @@ const sendMessage = () => {
   });
 };
 const updateMessage = ({ inquiryBnId }) => {
-  /** @type {import('kuroco').InquiriesApiRcmsApi1Inquiry1MessagesUpdatePostRequest} */
+  /** @type {import('../../../generated/services/InquiriesService').InquiriesService.postInquiriesServiceRcmsApi1Inquiry1MessagesUpdateRequest} */
   const requestData = {
     inquiryBnId,
-    inlineObject17: {
+    requestBody: {
       name: 'My Name',
       from_mail: 'email@example.com',
-      body: 'Example Message',
+      body: 'テストメッセージ2',
       inquiry_category_id: 1,
       ext_01: 'string2',
       ext_02: 'string2',
@@ -130,14 +124,14 @@ const updateMessage = ({ inquiryBnId }) => {
         desc: '',
       },
       ext_08: {
-        tdfk_cd: RcmsApi1Topics1InsertExtCol05TdfkCdEnum._01,
-        tdfk_nm: RcmsApi1Topics1InsertExtCol05TdfkNmEnum._北海道,
+        tdfk_cd: '01',
+        tdfk_nm: '北海道',
       },
       ext_09: {
-        options: RcmsApi1Topics1InsertExtJsn12OptionsEnum._1,
+        options: '1',
         text: 'Text',
       },
-      ext_10: new Date(),
+      ext_10: new Date().toISOString().substr(0, 10),
       validate_only: false,
     },
   };
@@ -149,24 +143,26 @@ const updateMessage = ({ inquiryBnId }) => {
 };
 
 describe('Inquiry', () => {
-  it(`
-    get messages ->
-    get forms ->
-    get form by id ->
-    send message ->
-    get messages ->
-    update message ->
-    get messages
-  `, async () => {
+  it(`a`, async () => {
+    login();
     await getMessages();
     const formsGetResTxt = await getForms();
-    const id1Form = JSON.parse(formsGetResTxt).list.find(
+    const inquiryId = JSON.parse(formsGetResTxt).list.find(
       ({ inquiry_id }) => inquiry_id === 1
-    );
-    await getFormById({ inquiryId: id1Form.inquiry_id });
-    await sendMessage();
-    // getMessages();
-    // updateMessage({ inquiryBnId: '1' });
-    // getMessages();
+    ).inquiry_id;
+    await getFormById({ inquiryId });
+
+    let messageGetRes = await sendMessage();
+    const addedId = JSON.parse(messageGetRes).id;
+
+    const getMessageBy = async addedId => {
+      return JSON.parse(await getMessages()).list.find(
+        msg => msg.inquiry_bn_id === addedId
+      ).body;
+    };
+    expect(await getMessageBy(addedId)).to.equal('テストメッセージ1');
+
+    updateMessage({ inquiryBnId: addedId });
+    expect(await getMessageBy(addedId)).to.equal('テストメッセージ2');
   });
 });

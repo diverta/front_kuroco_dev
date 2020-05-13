@@ -2,7 +2,11 @@
   <div id="app">
     <Login />
     <FilterInput :query.sync="query" />
-    <ApiList :apiInfos="apiInfos" :query="query" @clickOnApi="(v) => apiInfo = v" />
+    <ApiList
+      :apiInfos="apiInfos"
+      :query="query"
+      @clickOnApi="(v) => {apiInfo = v; response = null;}"
+    />
     <Editor :apiInfo="apiInfo" @onSubmit="executeRequest" />
     <Response :response="response" :isResponseErrorOccured="isResponseErrorOccured" />
   </div>

@@ -1,5 +1,5 @@
 {
-	"inlineObject": {
+	"requestBody": {
 		"email": "test",
 		"password": "qwer1234"
 	}

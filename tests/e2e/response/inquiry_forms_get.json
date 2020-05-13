@@ -1,22 +1,22 @@
 {
-	"errors": [],
-	"messages": [],
-	"list": [
-		{
-			"inquiry_id": 3,
-			"inquiry_name": "Inquiry2",
-			"inquiry_info": "",
-			"header_text": "",
-			"footer_text": "",
-			"page_url": "/inquiry_detail/id=3"
-		},
-		{
-			"inquiry_id": 1,
-			"inquiry_name": "Inquiry1",
-			"inquiry_info": "",
-			"header_text": "",
-			"footer_text": "",
-			"page_url": "/inquiry_detail/id=1"
-		}
-	]
+  "errors": [],
+  "messages": [],
+  "list": [
+    {
+      "inquiry_id": 3,
+      "inquiry_name": "Inquiry2",
+      "inquiry_info": "",
+      "header_text": "",
+      "footer_text": "",
+      "page_url": "/inquiry_detail/id=3"
+    },
+    {
+      "inquiry_id": 1,
+      "inquiry_name": "Inquiry1",
+      "inquiry_info": "",
+      "header_text": "",
+      "footer_text": "",
+      "page_url": "/inquiry_detail/id=1"
+    }
+  ]
 }

@@ -24,22 +24,3 @@ import { queries } from '../base';
 Cypress.config({
   defaultCommandTimeout: 5000,
 });
-
-before(() => {
-  function login({ email, password }) {
-    cy.contains('p', 'STATUS:');
-
-    cy.get(queries.logginForm.email).type(email);
-    cy.get(queries.logginForm.password).type(password);
-    cy.get(queries.logginForm.submit).click();
-
-    cy.contains('p', 'STATUS: LOGGEDIN');
-  }
-
-  cy.visit('/');
-  const q = {
-    email: 'test',
-    password: 'qwer1234',
-  };
-  login(q);
-});
