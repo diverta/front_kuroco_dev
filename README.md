@@ -118,12 +118,22 @@ return executeRequest({
 - シナリオテスト
   - API のモジュール単位で javascript ファイルを用意し,ユーザーの操作想定シナリオ通りにテストコードを書きます。  
     javascript のファイル名はモジュールの名前と同じにして,`scenario`フォルダ内に保存してください。  
-    例: `tests/e2e/specs/scenario/Authentication.js: login -> token -> logout`
+    例: `tests/e2e/specs/scenario/Authentication.js:`  
+    `login -> token -> logout,`  
+    `...`
 - パターンテスト
   - API のモジュール単位で javascript ファイルを用意し,想定されうるリクエストのパターンを用意して,それぞれテストコードを書きます。  
     javascript のファイル名はモジュールの名前と同じにして,`pattern`フォルダ内に保存してください。  
-    例: `tests/e2e/specs/pattern/Authentication.js: login(email: "xxx"), login(email: "test@example.com"), login(email: "test@example.com", password: ""), login (email: "test@example.com", password: "pw"), ...`
+    例: `tests/e2e/specs/pattern/Authentication.js:`  
+    `login(email: "xxx"),`  
+    `login(email: "test@example.com"),`  
+    `login(email: "test@example.com", password: ""),`  
+    `login(email: "test@example.com", password: "pw"),`  
+    `...`
 - その他のテスト
   - その他上記に当てはまらないテストです。  
     javascript のファイル名は自由,`etc`フォルダ内に保存してください。  
-    例: `tests/e2e/specs/etc/Authentication.js: loginButFailedByNoMatchedUser(email: "no-mathing-user", password: "pw"), tokenButFiledByInvalidToken(auth_token: "invalidtoken"), ...`
+    例: `tests/e2e/specs/etc/Authentication.js:`  
+    `loginButFailedByNoMatchedUser(email: "no-mathing-user", password: "pw"),`  
+    `tokenButFiledByInvalidToken(auth_token: "invalidtoken"),`  
+    `...`
