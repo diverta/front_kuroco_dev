@@ -3,10 +3,10 @@
 
 // https://docs.cypress.io/api/introduction/api.html
 
-import { executeRequest, login } from '../base';
+import { executeRequest, login } from '../../base';
 
 const getMessages = () => {
-  /** @type {import('../../../generated/services/InquiriesService').InquiriesService.getInquiriesServiceRcmsApi1Inquiry1MessagesRequest} */
+  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.getInquiriesServiceRcmsApi1Inquiry1MessagesRequest} */
   const requestData = {};
   return executeRequest({
     cy,
@@ -15,7 +15,7 @@ const getMessages = () => {
   });
 };
 const getForms = () => {
-  /** @type {import('../../../generated/services/InquiriesService').InquiriesService.getInquiriesServiceRcmsApi1InquiryFormsRequest} */
+  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.getInquiriesServiceRcmsApi1InquiryFormsRequest} */
   const requestData = {};
   return executeRequest({
     cy,
@@ -24,7 +24,7 @@ const getForms = () => {
   });
 };
 const getFormById = ({ inquiryId }) => {
-  /** @type {import('../../../generated/services/InquiriesService').InquiriesService.getInquiriesServiceRcmsApi1InquiryFormsInquiryIdRequest} */
+  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.getInquiriesServiceRcmsApi1InquiryFormsInquiryIdRequest} */
   const requestData = {
     inquiryId,
   };
@@ -35,7 +35,7 @@ const getFormById = ({ inquiryId }) => {
   });
 };
 const sendMessage = () => {
-  /** @type {import('../../../generated/services/InquiriesService').InquiriesService.postInquiriesServiceRcmsApi1Inquiry1MessagesSendRequest} */
+  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.postInquiriesServiceRcmsApi1Inquiry1MessagesSendRequest} */
   const requestData = {
     requestBody: {
       name: 'John Doe',
@@ -88,7 +88,7 @@ const sendMessage = () => {
   });
 };
 const updateMessage = ({ inquiryBnId }) => {
-  /** @type {import('../../../generated/services/InquiriesService').InquiriesService.postInquiriesServiceRcmsApi1Inquiry1MessagesUpdateRequest} */
+  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.postInquiriesServiceRcmsApi1Inquiry1MessagesUpdateRequest} */
   const requestData = {
     inquiryBnId,
     requestBody: {

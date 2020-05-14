@@ -1,8 +1,25 @@
 # front_kuroco_dev
 
-## App
+> 本アプリは、Kuroco サーバまで直接リクエストし、結果を画面表示するものです。
 
-本アプリは、Kuroco サーバまで直接リクエストし、結果を画面表示するものです。
+## 概要
+
+本アプリは、Kuroco サーバまで直接リクエストし、結果を画面表示するものです (<a href="#操作説明">操作説明</a>)。  
+加えて,e2e のテストコードをこのアプリ上で動作させてテストを実行できます (<a href="#e2e-testing">e2e testing</a>)。
+
+アプリを立ち上げるには `npm run serve`,  
+e2e テストを立ち上げるには `npm run test:e2e`  
+を実行してください。
+
+## インストール
+
+本アプリを動作させるには git と node が必要です。  
+事前にインストールしてください。
+
+本リポジトリを clone した後,下記のコードを実行してください。  
+`npm install && npm run serve`
+
+## 操作説明
 
 ![img](./docs/img/app.png)
 
@@ -48,9 +65,6 @@ JS がエラーをスローする場合がありますので注意してくだ�
 
 ## e2e testing
 
-ローカルにリポジトリをクローンし、  
-`npm i`を実行してください。
-
 `npm run test:e2e`を実行してください。  
 cyprerss のダッシュボードが表示されます。  
 ![img](./docs/img/cypress_dashboard.png)
@@ -59,7 +73,7 @@ cyprerss のダッシュボードが表示されます。
 chrome が立ち上がり、テストが実行されます。  
 ![img](./docs/img/cypress_testing.png)
 
-### test ファイルの作り方
+### テストファイルの作り方
 
 test は本アプリの画面をコードから操作することで実施されます(e2e)。  
 `executeRequest({ cy, query, requestData })`メソッドを通して実行してください。
@@ -78,6 +92,8 @@ requestData については、
 ** `@type`アノテータには,DynamicImport を使用してください(JS 内で TS を読み込むために RuntimeError となるのを防ぐ) **
 
 ```javascript
+// DO NOT USE import *** from '../../../generated/***' SYNTAX.
+// TS CHECKS IN A JS FILE DOES NOT SUPPORT IMPORTS, USE DYNAMIC IMPORTS ALONG WITH COMMENT SECTION INSTEAD.
 /** @type {import('../../../generated/services/AuthenticationService').AuthenticationService.postAuthenticationServiceRcmsApi1AuthLoginRequest} */
 const requestData = {
   requestBody: {
@@ -94,3 +110,20 @@ return executeRequest({
 
 その他具体的なソースコードについては、  
 `tests/e2e/specs/*.js`を参考にしてください。
+
+### テスト観点について
+
+下記のパターンでテスト用 javascript ファイルを作成し、e2e でテストを実施してください。
+
+- シナリオテスト
+  - API のモジュール単位で javascript ファイルを用意し,ユーザーの操作想定シナリオ通りにテストコードを書きます。  
+    javascript のファイル名はモジュールの名前と同じにして,`scenario`フォルダ内に保存してください。  
+    例: `tests/e2e/specs/scenario/Authentication.js: login -> token -> logout`
+- パターンテスト
+  - API のモジュール単位で javascript ファイルを用意し,想定されうるリクエストのパターンを用意して,それぞれテストコードを書きます。  
+    javascript のファイル名はモジュールの名前と同じにして,`pattern`フォルダ内に保存してください。  
+    例: `tests/e2e/specs/pattern/Authentication.js: login(email: "xxx"), login(email: "test@example.com"), login(email: "test@example.com", password: ""), login (email: "test@example.com", password: "pw"), ...`
+- その他のテスト
+  - その他上記に当てはまらないテストです。  
+    javascript のファイル名は自由,`etc`フォルダ内に保存してください。  
+    例: `tests/e2e/specs/etc/Authentication.js: loginButFailedByNoMatchedUser(email: "no-mathing-user", password: "pw"), tokenButFiledByInvalidToken(auth_token: "invalidtoken"), ...`

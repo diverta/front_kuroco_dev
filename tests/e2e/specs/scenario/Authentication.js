@@ -3,10 +3,10 @@
 
 // https://docs.cypress.io/api/introduction/api.html
 
-import { executeRequest, login } from '../base';
+import { executeRequest, login } from '../../base';
 
 const execLogin = () => {
-  /** @type {import('../../../generated/services/AuthenticationService').AuthenticationService.postAuthenticationServiceRcmsApi1AuthLoginRequest} */
+  /** @type {import('../../../../generated/services/AuthenticationService').AuthenticationService.postAuthenticationServiceRcmsApi1AuthLoginRequest} */
   const requestData = {
     requestBody: {
       email: 'test',
@@ -20,7 +20,7 @@ const execLogin = () => {
   });
 };
 const execLogout = () => {
-  /** @type {import('../../../generated/services/AuthenticationService').AuthenticationService.postAuthenticationServiceRcmsApi1AuthLogoutRequest} */
+  /** @type {import('../../../../generated/services/AuthenticationService').AuthenticationService.postAuthenticationServiceRcmsApi1AuthLogoutRequest} */
   const requestData = {};
   return executeRequest({
     cy,
@@ -29,7 +29,7 @@ const execLogout = () => {
   });
 };
 const token = ({ grant_token }) => {
-  /** @type {import('../../../generated/services/AuthenticationService').AuthenticationService.postAuthenticationServiceRcmsApi1AuthTokenRequest} */
+  /** @type {import('../../../../generated/services/AuthenticationService').AuthenticationService.postAuthenticationServiceRcmsApi1AuthTokenRequest} */
   const requestData = {
     requestBody: {
       grant_token,
