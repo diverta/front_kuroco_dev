@@ -22,7 +22,13 @@ export const queries = {
   },
 };
 
-export function login() {
+/**
+ * login to Kuroco.
+ *
+ * @param {*} options.email for customized login info as email user expected.
+ * @param {*} options.password for customized login info as password user expected.
+ */
+export function login({ email, password }) {
   function __login({ email, password }) {
     cy.contains('p', 'STATUS:');
     cy.get(queries.logginForm.email).type(email);
@@ -32,9 +38,16 @@ export function login() {
   }
   cy.visit('/');
   const q = {
-    email: 'test',
-    password: 'qwer1234',
+    email: email ? email : 'test',
+    password: password ? password : 'qwer1234',
   };
+
+  if (!email || !passowrd) {
+    throw Error(
+      `please make sure to pass email & password properly when you want to login with your own login info: email: ${email}, password: ${password}`
+    );
+  }
+
   __login(q);
 }
 
