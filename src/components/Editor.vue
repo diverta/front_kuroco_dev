@@ -27,6 +27,38 @@
         </v-btn>
       </div>
     </div>
+    <div class="button-panel-tools">
+      <v-btn
+        class="my-2 mr-2"
+        small
+        icon
+        color="white"
+        :disabled="codeDescription === ''"
+        @click="handleOnClickMagicWand"
+      >
+        <v-icon>mdi-auto-fix</v-icon>
+      </v-btn>
+      <v-btn
+        class="my-2 mr-2"
+        small
+        icon
+        color="white"
+        :disabled="codeDescription === ''"
+        @click="handleOnClickDeleteComment"
+      >
+        <v-icon>mdi-comment-remove-outline</v-icon>
+      </v-btn>
+      <v-btn
+        class="my-2 mr-2"
+        small
+        icon
+        color="white"
+        :disabled="codeDescription === '' || editHistory.length === 0"
+        @click="handleOnClickUndo"
+      >
+        <v-icon>mdi-undo</v-icon>
+      </v-btn>
+    </div>
 
     <codemirror
       class="codemirror"
@@ -76,8 +108,9 @@ export default Vue.extend({
         lineNumbers: true,
         line: true,
       },
-      codeDescription: '',
 
+      codeDescription: '',
+      editHistory: [] as string[],
       error: '' as any,
       evaluatedObject: null,
     };
@@ -109,6 +142,32 @@ export default Vue.extend({
         this.error = `${e}`;
       }
     },
+    handleOnClickMagicWand() {
+      this.editHistory.push(this.codeDescription);
+      this.codeDescription = this.codeDescription
+        .split('\n')
+        .filter(str => !/\/\*\*/.test(str))
+        .filter(str => !/ \* /.test(str))
+        .filter(str => !/\*\//.test(str))
+        .map(str => str.replace(/^.*export type.*/, ''))
+        .map(str => str.replace(/(^.*)export interface.*/, '$1{'))
+        .filter(str => !!str && str !== '')
+        .join('\n');
+    },
+    handleOnClickDeleteComment() {
+      this.editHistory.push(this.codeDescription);
+      this.codeDescription = this.codeDescription
+        .split('\n')
+        .filter(str => !/\/\*\*/.test(str))
+        .filter(str => !/ \* /.test(str))
+        .filter(str => !/\*\//.test(str))
+        .map(str => str.replace(/^\/\/ +/, ''))
+        .filter(str => !!str && str !== '')
+        .join('\n');
+    },
+    handleOnClickUndo() {
+      this.codeDescription = this.editHistory.pop() || '';
+    },
   },
 });
 </script>
@@ -126,6 +185,12 @@ export default Vue.extend({
   background: white;
   left: 0;
   top: 0;
+  z-index: 5;
+}
+.button-panel-tools {
+  position: fixed;
+  right: 0;
+  background-color: rgba(255, 0, 0, 0);
   z-index: 5;
 }
 .parse-error-message {
