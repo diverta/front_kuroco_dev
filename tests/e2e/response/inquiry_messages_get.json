@@ -3,6 +3,71 @@
   "messages": [],
   "list": [
     {
+      "inquiry_bn_id": 33,
+      "from_mail": "email@example.com",
+      "subject": null,
+      "body": "テストメッセージ2",
+      "status": "0",
+      "comment": null,
+      "name": "My Name",
+      "sex": null,
+      "age": null,
+      "inquiry_id": 1,
+      "receive_date": "2020-05-14 16:26:07 +0900",
+      "send_date": "",
+      "reply_status": null,
+      "inst_ymdhi": "2020-05-14 16:25:49 +0900",
+      "update_ymdhi": "2020-05-14 16:26:07 +0900",
+      "admin_nm": null,
+      "dflg": 0,
+      "parent_inquiry_bn_id": 0,
+      "reply_inquiry_bn_id": 0,
+      "inquiry_category_id": 1,
+      "member_id": 9,
+      "ext_01": "string2",
+      "ext_02": "string2",
+      "ext_03": {
+        "key": "1",
+        "label": "radio1"
+      },
+      "ext_04": {
+        "key": "1",
+        "label": "select1"
+      },
+      "ext_05": [
+        {
+          "key": "2",
+          "label": "check2"
+        },
+        {
+          "key": "3",
+          "label": "check3"
+        }
+      ],
+      "from_id": 1,
+      "from_module": "",
+      "from_uri": "",
+      "ext_06": "2020-04-23 00:00:00 +0900",
+      "ext_07": {},
+      "ext_08": {
+        "tdfk_cd": "01",
+        "tdfk_nm": "北海道"
+      },
+      "ext_09": {
+        "options": "1",
+        "text": "Text"
+      },
+      "ext_10": "2020-05-14 +0900",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36",
+      "from_text": null,
+      "ip_address": "59.166.113.41",
+      "file_name": null,
+      "file_expire_date": "",
+      "identity_id": null,
+      "rcmsid": "c8093900-f0e1-450d-800c-47a2f3e2ba19",
+      "response_date": ""
+    },
+    {
       "inquiry_bn_id": 31,
       "from_mail": "email@example.com",
       "subject": null,

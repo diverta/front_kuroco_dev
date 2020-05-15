@@ -56,12 +56,24 @@ export class MembersService {
         };
         const shouldHookToken = Object.values(security).find((v: any) => v.type === 'apiKey');
 
-        const result = await request().then(result => {
-            if (shouldHookToken && result.status === 401) {
-                return Auth.loginWithStoredToken({ requestBody: {} }).then(async () => await request());
+        let result = await request();
+
+        if (shouldHookToken && !result.ok && result.status === 401) {
+            // no token stored
+            if (Auth.getRefreshToken() === '') {
+                console.info('no refresh token in your local storage');
+                Auth.onErrorHandler(result);
+                throw new ApiError(result, ApiError.Message.UNAUTHORIZED);
             }
-            return result;
-        });
+            // handle on error to get refreshed token
+            await Auth.createToken({ requestBody: {} }).catch(() => {
+                console.info('it failed that retrying to get token from stored refresh token');
+                Auth.onErrorHandler(result);
+                throw new ApiError(result, ApiError.Message.UNAUTHORIZED);
+            });
+            // retry with refreshed token
+            result = await request();
+        }
 
         catchGenericError(result);
         return result.body;
@@ -96,12 +108,24 @@ export class MembersService {
         };
         const shouldHookToken = Object.values(security).find((v: any) => v.type === 'apiKey');
 
-        const result = await request().then(result => {
-            if (shouldHookToken && result.status === 401) {
-                return Auth.loginWithStoredToken({ requestBody: {} }).then(async () => await request());
+        let result = await request();
+
+        if (shouldHookToken && !result.ok && result.status === 401) {
+            // no token stored
+            if (Auth.getRefreshToken() === '') {
+                console.info('no refresh token in your local storage');
+                Auth.onErrorHandler(result);
+                throw new ApiError(result, ApiError.Message.UNAUTHORIZED);
             }
-            return result;
-        });
+            // handle on error to get refreshed token
+            await Auth.createToken({ requestBody: {} }).catch(() => {
+                console.info('it failed that retrying to get token from stored refresh token');
+                Auth.onErrorHandler(result);
+                throw new ApiError(result, ApiError.Message.UNAUTHORIZED);
+            });
+            // retry with refreshed token
+            result = await request();
+        }
 
         catchGenericError(result);
         return result.body;
@@ -141,12 +165,24 @@ export class MembersService {
         };
         const shouldHookToken = Object.values(security).find((v: any) => v.type === 'apiKey');
 
-        const result = await request().then(result => {
-            if (shouldHookToken && result.status === 401) {
-                return Auth.loginWithStoredToken({ requestBody: {} }).then(async () => await request());
+        let result = await request();
+
+        if (shouldHookToken && !result.ok && result.status === 401) {
+            // no token stored
+            if (Auth.getRefreshToken() === '') {
+                console.info('no refresh token in your local storage');
+                Auth.onErrorHandler(result);
+                throw new ApiError(result, ApiError.Message.UNAUTHORIZED);
             }
-            return result;
-        });
+            // handle on error to get refreshed token
+            await Auth.createToken({ requestBody: {} }).catch(() => {
+                console.info('it failed that retrying to get token from stored refresh token');
+                Auth.onErrorHandler(result);
+                throw new ApiError(result, ApiError.Message.UNAUTHORIZED);
+            });
+            // retry with refreshed token
+            result = await request();
+        }
 
         catchGenericError(result);
         return result.body;
@@ -186,12 +222,24 @@ export class MembersService {
         };
         const shouldHookToken = Object.values(security).find((v: any) => v.type === 'apiKey');
 
-        const result = await request().then(result => {
-            if (shouldHookToken && result.status === 401) {
-                return Auth.loginWithStoredToken({ requestBody: {} }).then(async () => await request());
+        let result = await request();
+
+        if (shouldHookToken && !result.ok && result.status === 401) {
+            // no token stored
+            if (Auth.getRefreshToken() === '') {
+                console.info('no refresh token in your local storage');
+                Auth.onErrorHandler(result);
+                throw new ApiError(result, ApiError.Message.UNAUTHORIZED);
             }
-            return result;
-        });
+            // handle on error to get refreshed token
+            await Auth.createToken({ requestBody: {} }).catch(() => {
+                console.info('it failed that retrying to get token from stored refresh token');
+                Auth.onErrorHandler(result);
+                throw new ApiError(result, ApiError.Message.UNAUTHORIZED);
+            });
+            // retry with refreshed token
+            result = await request();
+        }
 
         catchGenericError(result);
         return result.body;
@@ -231,12 +279,24 @@ export class MembersService {
         };
         const shouldHookToken = Object.values(security).find((v: any) => v.type === 'apiKey');
 
-        const result = await request().then(result => {
-            if (shouldHookToken && result.status === 401) {
-                return Auth.loginWithStoredToken({ requestBody: {} }).then(async () => await request());
+        let result = await request();
+
+        if (shouldHookToken && !result.ok && result.status === 401) {
+            // no token stored
+            if (Auth.getRefreshToken() === '') {
+                console.info('no refresh token in your local storage');
+                Auth.onErrorHandler(result);
+                throw new ApiError(result, ApiError.Message.UNAUTHORIZED);
             }
-            return result;
-        });
+            // handle on error to get refreshed token
+            await Auth.createToken({ requestBody: {} }).catch(() => {
+                console.info('it failed that retrying to get token from stored refresh token');
+                Auth.onErrorHandler(result);
+                throw new ApiError(result, ApiError.Message.UNAUTHORIZED);
+            });
+            // retry with refreshed token
+            result = await request();
+        }
 
         catchGenericError(result);
         return result.body;
@@ -276,12 +336,24 @@ export class MembersService {
         };
         const shouldHookToken = Object.values(security).find((v: any) => v.type === 'apiKey');
 
-        const result = await request().then(result => {
-            if (shouldHookToken && result.status === 401) {
-                return Auth.loginWithStoredToken({ requestBody: {} }).then(async () => await request());
+        let result = await request();
+
+        if (shouldHookToken && !result.ok && result.status === 401) {
+            // no token stored
+            if (Auth.getRefreshToken() === '') {
+                console.info('no refresh token in your local storage');
+                Auth.onErrorHandler(result);
+                throw new ApiError(result, ApiError.Message.UNAUTHORIZED);
             }
-            return result;
-        });
+            // handle on error to get refreshed token
+            await Auth.createToken({ requestBody: {} }).catch(() => {
+                console.info('it failed that retrying to get token from stored refresh token');
+                Auth.onErrorHandler(result);
+                throw new ApiError(result, ApiError.Message.UNAUTHORIZED);
+            });
+            // retry with refreshed token
+            result = await request();
+        }
 
         catchGenericError(result);
         return result.body;
@@ -321,12 +393,24 @@ export class MembersService {
         };
         const shouldHookToken = Object.values(security).find((v: any) => v.type === 'apiKey');
 
-        const result = await request().then(result => {
-            if (shouldHookToken && result.status === 401) {
-                return Auth.loginWithStoredToken({ requestBody: {} }).then(async () => await request());
+        let result = await request();
+
+        if (shouldHookToken && !result.ok && result.status === 401) {
+            // no token stored
+            if (Auth.getRefreshToken() === '') {
+                console.info('no refresh token in your local storage');
+                Auth.onErrorHandler(result);
+                throw new ApiError(result, ApiError.Message.UNAUTHORIZED);
             }
-            return result;
-        });
+            // handle on error to get refreshed token
+            await Auth.createToken({ requestBody: {} }).catch(() => {
+                console.info('it failed that retrying to get token from stored refresh token');
+                Auth.onErrorHandler(result);
+                throw new ApiError(result, ApiError.Message.UNAUTHORIZED);
+            });
+            // retry with refreshed token
+            result = await request();
+        }
 
         catchGenericError(result);
         return result.body;

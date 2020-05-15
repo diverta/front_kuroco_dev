@@ -10,11 +10,14 @@
         :options="option"
       />
       <p>{{ error }}</p>
-      <button
+      <v-btn
         :disabled="error !== null || evaluatedObject === null"
-        @click="() => $emit('onSubmit', { apiInfo, requestParam: evaluatedObject })"
+        @click="
+          () => $emit('onSubmit', { apiInfo, requestParam: evaluatedObject })
+        "
         class="js-apilist-request"
-      >request</button>
+        primary
+      >request</v-btn>
     </div>
   </div>
 </template>
@@ -79,3 +82,13 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style scoped>
+#description-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: white;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+</style>

@@ -1,15 +1,11 @@
 <template>
-  <div>
-    <p>
-      filter:
-      <input
-        type="text"
-        :value="query"
-        @input="$emit('update:query', $event.target.value)"
-        class="js-apilist-filter"
-      />
-    </p>
-  </div>
+  <v-text-field
+    :value="query"
+    @input="q => $emit('update:query', q)"
+    label="Search API"
+    class="js-apilist-filter"
+    hide-details
+  ></v-text-field>
 </template>
 
 <script lang="ts">

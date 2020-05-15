@@ -143,7 +143,16 @@ const updateMessage = ({ inquiryBnId }) => {
 };
 
 describe('Inquiry', () => {
-  it(`a`, async () => {
+  it(`
+      get messages ->
+      get forms ->
+      get form by ID 1 ->
+      send message ->
+      get messages including sended one ->
+      get message of created message ->
+      update created message ->
+      get message of updated message
+    `, async () => {
     login();
     await getMessages();
     const formsGetResTxt = await getForms();

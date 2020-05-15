@@ -2,11 +2,19 @@ const path = require('path');
 import promisify from 'cypress-promise';
 
 export const queries = {
-  logginForm: {
-    status: '.js-loggin-form-status',
-    email: '.js-loggin-form-email',
-    password: '.js-loggin-form-password',
-    submit: '.js-loggin-form-submit-button',
+  login: {
+    status: '.js-login-status',
+    button: '.js-login-button',
+    form: {
+      _: '.js-login-form',
+      status: '.js-loggin-form-status',
+      email: '.js-loggin-form-email',
+      password: '.js-loggin-form-password',
+
+      close: '.js-loggin-form-close-button',
+      logout: '.js-loggin-form-logout-button',
+      login: '.js-loggin-form-login-button',
+    },
   },
   apiInfos: {
     filter: '.js-apilist-filter',
@@ -28,27 +36,20 @@ export const queries = {
  * @param {*} options.email for customized login info as email user expected.
  * @param {*} options.password for customized login info as password user expected.
  */
-export function login({ email, password }) {
+export function login(options = { email: 'test', password: 'qwer1234' }) {
   function __login({ email, password }) {
-    cy.contains('p', 'STATUS:');
-    cy.get(queries.logginForm.email).type(email);
-    cy.get(queries.logginForm.password).type(password);
-    cy.get(queries.logginForm.submit).click();
-    cy.contains('p', 'STATUS: LOGGEDIN');
+    cy.contains(queries.login.status, 'ANONYMOUS');
+    cy.get(queries.login.button).click();
+    cy.get(queries.login.form._);
+    cy.get(queries.login.form.email).type(email);
+    cy.get(queries.login.form.password).type(password);
+    cy.get(queries.login.form.login).click();
+    cy.get(queries.login.form.close).click();
+    cy.contains(queries.login.status, 'LOGGEDIN');
   }
+
   cy.visit('/');
-  const q = {
-    email: email ? email : 'test',
-    password: password ? password : 'qwer1234',
-  };
-
-  if (!email || !passowrd) {
-    throw Error(
-      `please make sure to pass email & password properly when you want to login with your own login info: email: ${email}, password: ${password}`
-    );
-  }
-
-  __login(q);
+  __login(options);
 }
 
 /**
@@ -66,15 +67,17 @@ export function executeRequest({ cy, query, requestData, screenshot = false }) {
   const toSaveFileName = query.replace(/ /g, '_');
 
   cy.get(queries.apiInfos.filter)
-    .clear()
+    .click()
+    .type(`{selectall}{del}`, {
+      parseSpecialCharSequences: true,
+      release: false,
+    })
     .type(query);
-  cy.get(queries.apiInfos.apiList).within(() => {
-    cy.get('li')
-      .children()
-      .first()
-      .trigger('mouseover')
-      .click();
-  });
+  cy.get('tbody')
+    .children()
+    .first()
+    .trigger('mouseover')
+    .click();
   cy.get(queries.codeBlock)
     .click()
     .type(`{cmd}A{del}`) // clears textarea
@@ -84,6 +87,7 @@ export function executeRequest({ cy, query, requestData, screenshot = false }) {
   cy.get(queries.responseBlock.isError)
     .invoke('text')
     .then(txt => {
+      console.log(txt);
       if (/true/.test(txt)) {
         return cy
           .get(queries.responseBlock.response)
