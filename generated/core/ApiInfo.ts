@@ -14,6 +14,7 @@ import { TagsService } from '../services/TagsService';
 import { TablesService } from '../services/TablesService';
 import { AsynchronousProcessingService } from '../services/AsynchronousProcessingService';
 import { ApiService } from '../services/ApiService';
+import { Service } from '../services/Service';
 
 import { infos as AuthenticationServiceInfo } from '../services/AuthenticationService';
 import { infos as TopicsServiceInfo } from '../services/TopicsService';
@@ -26,6 +27,7 @@ import { infos as TagsServiceInfo } from '../services/TagsService';
 import { infos as TablesServiceInfo } from '../services/TablesService';
 import { infos as AsynchronousProcessingServiceInfo } from '../services/AsynchronousProcessingService';
 import { infos as ApiServiceInfo } from '../services/ApiService';
+import { infos as ServiceInfo } from '../services/Service';
 
 export const ApiInfos = [
     ...AuthenticationServiceInfo,
@@ -39,6 +41,7 @@ export const ApiInfos = [
     ...TablesServiceInfo,
     ...AsynchronousProcessingServiceInfo,
     ...ApiServiceInfo,
+    ...ServiceInfo,
 ];
 
 export const SpecialOperationInfo = {

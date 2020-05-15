@@ -88,8 +88,8 @@ requestData については、
 このコメントを設定すると、SDK による型チェックが自動で動作します。  
 型エラーが表示されている場合には適宜修正してください。
 
-** エディタは VisualStudioCode で編集してください **  
-** `@type`アノテータには,DynamicImport を使用してください(JS 内で TS を読み込むために RuntimeError となるのを防ぐ) **
+**:warning: エディタは VisualStudioCode で編集してください**  
+**:warning: `@type`アノテータには,DynamicImport を使用してください(JS 内で TS を読み込むために RuntimeError となるのを防ぐ)**
 
 ```javascript
 // DO NOT USE import *** from '../../../generated/***' SYNTAX.
@@ -137,3 +137,11 @@ return executeRequest({
     `loginButFailedByNoMatchedUser(email: "no-mathing-user", password: "pw"),`  
     `tokenButFiledByInvalidToken(auth_token: "invalidtoken"),`  
     `...`
+
+### その他
+
+- Kuroco が更新された時はどうすれば良い？
+  - `npm run update:kuroco` を実行してください。  
+    自動で Kuroco 用のソースコードが更新されます。  
+    Kuroco 用のコードが更新されていることで、それを利用するテスト内の javascript ファイルも更新が必要かもしれません。  
+    そちらも確認いただき、特にエディタ上で SyntaxError が発生していないかをチェックしてください。

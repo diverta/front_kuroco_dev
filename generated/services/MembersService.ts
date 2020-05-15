@@ -393,7 +393,25 @@ export namespace MembersService {
             /**
              * Image1
              */
-            member_photo?: any,
+            member_photo?: {
+                /**
+                 * File ID returned by File Upload API
+                 */
+                file_id?: string,
+                /**
+                 * File name
+                 */
+                file_nm?: string,
+                /**
+                 * Description
+                 */
+                desc?: string,
+                /**
+                 * delete flg
+                 */
+                del_flg?: boolean,
+                extension?: ('jpg' | 'gif' | 'png'),
+            },
             /**
              * Text
              */
@@ -431,7 +449,24 @@ export namespace MembersService {
             /**
              * File
              */
-            file?: any,
+            file?: {
+                /**
+                 * File ID returned by File Upload API
+                 */
+                file_id?: string,
+                /**
+                 * File name
+                 */
+                file_nm?: string,
+                /**
+                 * Description
+                 */
+                desc?: string,
+                /**
+                 * delete flg
+                 */
+                del_flg?: boolean,
+            },
             /**
              * /label/open_flg
              */
@@ -441,7 +476,7 @@ export namespace MembersService {
              */
             login_ok_flg?: (0 | 1),
             /**
-             * /label/send_validate
+             * Validate
              */
             validate_only?: boolean,
         },
@@ -491,7 +526,25 @@ export namespace MembersService {
             /**
              * Image1
              */
-            member_photo?: any,
+            member_photo?: {
+                /**
+                 * File ID returned by File Upload API
+                 */
+                file_id?: string,
+                /**
+                 * File name
+                 */
+                file_nm?: string,
+                /**
+                 * Description
+                 */
+                desc?: string,
+                /**
+                 * delete flg
+                 */
+                del_flg?: boolean,
+                extension?: ('jpg' | 'gif' | 'png'),
+            },
             /**
              * Text
              */
@@ -529,7 +582,24 @@ export namespace MembersService {
             /**
              * File
              */
-            file?: any,
+            file?: {
+                /**
+                 * File ID returned by File Upload API
+                 */
+                file_id?: string,
+                /**
+                 * File name
+                 */
+                file_nm?: string,
+                /**
+                 * Description
+                 */
+                desc?: string,
+                /**
+                 * delete flg
+                 */
+                del_flg?: boolean,
+            },
             /**
              * /label/group_id
              */
@@ -543,7 +613,7 @@ export namespace MembersService {
              */
             login_ok_flg?: (0 | 1),
             /**
-             * /label/send_validate
+             * Validate
              */
             validate_only?: boolean,
         },
@@ -601,7 +671,25 @@ export namespace MembersService {
             /**
              * Image1
              */
-            member_photo?: any,
+            member_photo?: {
+                /**
+                 * File ID returned by File Upload API
+                 */
+                file_id?: string,
+                /**
+                 * File name
+                 */
+                file_nm?: string,
+                /**
+                 * Description
+                 */
+                desc?: string,
+                /**
+                 * delete flg
+                 */
+                del_flg?: boolean,
+                extension?: ('jpg' | 'gif' | 'png'),
+            },
             /**
              * Text
              */
@@ -639,7 +727,24 @@ export namespace MembersService {
             /**
              * File
              */
-            file?: any,
+            file?: {
+                /**
+                 * File ID returned by File Upload API
+                 */
+                file_id?: string,
+                /**
+                 * File name
+                 */
+                file_nm?: string,
+                /**
+                 * Description
+                 */
+                desc?: string,
+                /**
+                 * delete flg
+                 */
+                del_flg?: boolean,
+            },
             /**
              * /label/group_id
              */
@@ -653,7 +758,7 @@ export namespace MembersService {
              */
             login_ok_flg?: (0 | 1),
             /**
-             * /label/send_validate
+             * Validate
              */
             validate_only?: boolean,
         },
@@ -762,7 +867,25 @@ export const infos = [
                 /**
                  * Image1
                  */
-                member_photo?: any,
+                member_photo?: {
+                    /**
+                     * File ID returned by File Upload API
+                     */
+                    file_id?: string,
+                    /**
+                     * File name
+                     */
+                    file_nm?: string,
+                    /**
+                     * Description
+                     */
+                    desc?: string,
+                    /**
+                     * delete flg
+                     */
+                    del_flg?: boolean,
+                    extension?: ('jpg' | 'gif' | 'png'),
+                },
                 /**
                  * Text
                  */
@@ -800,7 +923,24 @@ export const infos = [
                 /**
                  * File
                  */
-                file?: any,
+                file?: {
+                    /**
+                     * File ID returned by File Upload API
+                     */
+                    file_id?: string,
+                    /**
+                     * File name
+                     */
+                    file_nm?: string,
+                    /**
+                     * Description
+                     */
+                    desc?: string,
+                    /**
+                     * delete flg
+                     */
+                    del_flg?: boolean,
+                },
                 /**
                  * /label/open_flg
                  */
@@ -810,7 +950,7 @@ export const infos = [
                  */
                 login_ok_flg?: (0 | 1),
                 /**
-                 * /label/send_validate
+                 * Validate
                  */
                 validate_only?: boolean,
             },
@@ -871,7 +1011,25 @@ export const infos = [
                 /**
                  * Image1
                  */
-                member_photo?: any,
+                member_photo?: {
+                    /**
+                     * File ID returned by File Upload API
+                     */
+                    file_id?: string,
+                    /**
+                     * File name
+                     */
+                    file_nm?: string,
+                    /**
+                     * Description
+                     */
+                    desc?: string,
+                    /**
+                     * delete flg
+                     */
+                    del_flg?: boolean,
+                    extension?: ('jpg' | 'gif' | 'png'),
+                },
                 /**
                  * Text
                  */
@@ -909,7 +1067,24 @@ export const infos = [
                 /**
                  * File
                  */
-                file?: any,
+                file?: {
+                    /**
+                     * File ID returned by File Upload API
+                     */
+                    file_id?: string,
+                    /**
+                     * File name
+                     */
+                    file_nm?: string,
+                    /**
+                     * Description
+                     */
+                    desc?: string,
+                    /**
+                     * delete flg
+                     */
+                    del_flg?: boolean,
+                },
                 /**
                  * /label/group_id
                  */
@@ -923,7 +1098,7 @@ export const infos = [
                  */
                 login_ok_flg?: (0 | 1),
                 /**
-                 * /label/send_validate
+                 * Validate
                  */
                 validate_only?: boolean,
             },
@@ -1003,7 +1178,25 @@ export const infos = [
                 /**
                  * Image1
                  */
-                member_photo?: any,
+                member_photo?: {
+                    /**
+                     * File ID returned by File Upload API
+                     */
+                    file_id?: string,
+                    /**
+                     * File name
+                     */
+                    file_nm?: string,
+                    /**
+                     * Description
+                     */
+                    desc?: string,
+                    /**
+                     * delete flg
+                     */
+                    del_flg?: boolean,
+                    extension?: ('jpg' | 'gif' | 'png'),
+                },
                 /**
                  * Text
                  */
@@ -1041,7 +1234,24 @@ export const infos = [
                 /**
                  * File
                  */
-                file?: any,
+                file?: {
+                    /**
+                     * File ID returned by File Upload API
+                     */
+                    file_id?: string,
+                    /**
+                     * File name
+                     */
+                    file_nm?: string,
+                    /**
+                     * Description
+                     */
+                    desc?: string,
+                    /**
+                     * delete flg
+                     */
+                    del_flg?: boolean,
+                },
                 /**
                  * /label/group_id
                  */
@@ -1055,7 +1265,7 @@ export const infos = [
                  */
                 login_ok_flg?: (0 | 1),
                 /**
-                 * /label/send_validate
+                 * Validate
                  */
                 validate_only?: boolean,
             },

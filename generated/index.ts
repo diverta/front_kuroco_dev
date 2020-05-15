@@ -17,6 +17,7 @@ export { FavoritesService } from './services/FavoritesService';
 export { FilesService } from './services/FilesService';
 export { InquiriesService } from './services/InquiriesService';
 export { MembersService } from './services/MembersService';
+export { Service } from './services/Service';
 export { TablesService } from './services/TablesService';
 export { TagsService } from './services/TagsService';
 export { TopicsService } from './services/TopicsService';

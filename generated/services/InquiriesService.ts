@@ -303,7 +303,24 @@ export namespace InquiriesService {
              * DateTime
              */
             ext_06?: any,
-            ext_07?: any,
+            ext_07?: {
+                /**
+                 * File ID returned by File Upload API
+                 */
+                file_id?: string,
+                /**
+                 * File name
+                 */
+                file_nm?: string,
+                /**
+                 * Description
+                 */
+                desc?: string,
+                /**
+                 * delete flg
+                 */
+                del_flg?: boolean,
+            },
             /**
              * Tdfk
              */
@@ -325,9 +342,9 @@ export namespace InquiriesService {
             /**
              * Date
              */
-            ext_10?: string,
+            ext_10?: any,
             /**
-             * /label/send_validate
+             * Validate
              */
             validate_only?: boolean,
         },
@@ -390,7 +407,24 @@ export namespace InquiriesService {
              * DateTime
              */
             ext_06?: any,
-            ext_07?: any,
+            ext_07?: {
+                /**
+                 * File ID returned by File Upload API
+                 */
+                file_id?: string,
+                /**
+                 * File name
+                 */
+                file_nm?: string,
+                /**
+                 * Description
+                 */
+                desc?: string,
+                /**
+                 * delete flg
+                 */
+                del_flg?: boolean,
+            },
             /**
              * Tdfk
              */
@@ -414,7 +448,7 @@ export namespace InquiriesService {
              */
             ext_10?: any,
             /**
-             * /label/send_validate
+             * Validate
              */
             validate_only?: boolean,
         },
@@ -541,7 +575,24 @@ export const infos = [
                  * DateTime
                  */
                 ext_06?: any,
-                ext_07?: any,
+                ext_07?: {
+                    /**
+                     * File ID returned by File Upload API
+                     */
+                    file_id?: string,
+                    /**
+                     * File name
+                     */
+                    file_nm?: string,
+                    /**
+                     * Description
+                     */
+                    desc?: string,
+                    /**
+                     * delete flg
+                     */
+                    del_flg?: boolean,
+                },
                 /**
                  * Tdfk
                  */
@@ -563,9 +614,9 @@ export const infos = [
                 /**
                  * Date
                  */
-                ext_10?: string,
+                ext_10?: any,
                 /**
-                 * /label/send_validate
+                 * Validate
                  */
                 validate_only?: boolean,
             },
@@ -639,7 +690,24 @@ export const infos = [
                  * DateTime
                  */
                 ext_06?: any,
-                ext_07?: any,
+                ext_07?: {
+                    /**
+                     * File ID returned by File Upload API
+                     */
+                    file_id?: string,
+                    /**
+                     * File name
+                     */
+                    file_nm?: string,
+                    /**
+                     * Description
+                     */
+                    desc?: string,
+                    /**
+                     * delete flg
+                     */
+                    del_flg?: boolean,
+                },
                 /**
                  * Tdfk
                  */
@@ -663,7 +731,7 @@ export const infos = [
                  */
                 ext_10?: any,
                 /**
-                 * /label/send_validate
+                 * Validate
                  */
                 validate_only?: boolean,
             },
