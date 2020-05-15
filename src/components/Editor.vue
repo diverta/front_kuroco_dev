@@ -53,6 +53,16 @@
         small
         icon
         color="white"
+        :disabled="codeDescription === ''"
+        @click="handleOnClickNeedle"
+      >
+        <v-icon>mdi-needle</v-icon>
+      </v-btn>
+      <v-btn
+        class="my-2 mr-2"
+        small
+        icon
+        color="white"
         :disabled="codeDescription === '' || editHistory.length === 0"
         @click="handleOnClickUndo"
       >
@@ -93,6 +103,7 @@ export default Vue.extend({
     apiInfo: {
       handler(val) {
         this.codeDescription = this.convertComments(val.description, 'apply');
+        this.editHistory = [];
       },
       deep: true,
     },
@@ -162,6 +173,47 @@ export default Vue.extend({
         .filter(str => !/ \* /.test(str))
         .filter(str => !/\*\//.test(str))
         .map(str => str.replace(/^\/\/ +/, ''))
+        .filter(str => !!str && str !== '')
+        .join('\n');
+    },
+    handleOnClickNeedle() {
+      this.editHistory.push(this.codeDescription);
+      this.codeDescription = this.codeDescription
+        .split('\n')
+        .map(str => {
+          // checks this line is either a definiton for minimum value or not.
+          // e.g. `test_key?: string,` shuold be matched (and then replace value to a dummy value)
+          const match = /^.*\w+(\?:|:) +(.*)/.exec(str);
+          if (match === null || match.length < 2) {
+            return str;
+          }
+
+          const type = match[2].replace(',', '');
+          console.log(type);
+          let replacedLine: string = str;
+          switch (type) {
+            case 'string':
+              return str.replace('?:', ':').replace(type, '"SampleValue"');
+              break;
+            case 'number':
+              return str.replace('?:', ':').replace(type, '1');
+              break;
+            case 'boolean':
+              return str.replace('?:', ':').replace(type, 'true');
+              break;
+            case 'Array<string>':
+              return str.replace('?:', ':').replace(type, '["SampleValue"]');
+              break;
+            case 'Array<number>':
+              return str.replace('?:', ':').replace(type, '[1]');
+              break;
+            case 'Array<boolean>':
+              return str.replace('?:', ':').replace(type, '[true]');
+              break;
+            default:
+              return str;
+          }
+        })
         .filter(str => !!str && str !== '')
         .join('\n');
     },
