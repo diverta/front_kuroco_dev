@@ -260,8 +260,9 @@ export default Vue.extend({
   bottom: 16px;
   z-index: 5;
 }
+
 .CodeMirror {
-  height: calc(50vh - 40px) !important;
+  min-height: calc(100vh) !important;
   font-size: 14px;
 }
 
