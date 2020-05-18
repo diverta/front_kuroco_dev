@@ -28,46 +28,71 @@
       </div>
     </div>
     <div class="button-panel-tools">
-      <v-btn
-        class="my-2 mr-2"
-        small
-        icon
-        color="white"
-        :disabled="codeDescription === ''"
-        @click="handleOnClickMagicWand"
-      >
-        <v-icon>mdi-auto-fix</v-icon>
-      </v-btn>
-      <v-btn
-        class="my-2 mr-2"
-        small
-        icon
-        color="white"
-        :disabled="codeDescription === ''"
-        @click="handleOnClickDeleteComment"
-      >
-        <v-icon>mdi-comment-remove-outline</v-icon>
-      </v-btn>
-      <v-btn
-        class="my-2 mr-2"
-        small
-        icon
-        color="white"
-        :disabled="codeDescription === ''"
-        @click="handleOnClickNeedle"
-      >
-        <v-icon>mdi-needle</v-icon>
-      </v-btn>
-      <v-btn
-        class="my-2 mr-2"
-        small
-        icon
-        color="white"
-        :disabled="codeDescription === '' || editHistory.length === 0"
-        @click="handleOnClickUndo"
-      >
-        <v-icon>mdi-undo</v-icon>
-      </v-btn>
+      <div class="d-flex justify-end">
+        <v-btn
+          class="my-2 mr-2"
+          small
+          icon
+          color="white"
+          :disabled="codeDescription === ''"
+          @click="handleOnClickMagicWand"
+        >
+          <v-icon>mdi-auto-fix</v-icon>
+        </v-btn>
+        <v-btn
+          class="my-2 mr-2"
+          small
+          icon
+          color="white"
+          :disabled="codeDescription === ''"
+          @click="handleOnClickDeleteComment"
+        >
+          <v-icon>mdi-comment-remove-outline</v-icon>
+        </v-btn>
+        <v-btn
+          class="my-2 mr-2"
+          small
+          icon
+          color="white"
+          :disabled="codeDescription === ''"
+          @click="handleOnClickNeedle"
+        >
+          <v-icon>mdi-needle</v-icon>
+        </v-btn>
+        <v-btn
+          class="my-2 mr-2"
+          small
+          icon
+          color="white"
+          :disabled="codeDescription === '' || editHistory.length === 0"
+          @click="handleOnClickUndo"
+        >
+          <v-icon>mdi-undo</v-icon>
+        </v-btn>
+      </div>
+      <div class="d-flex justify-end">
+        <v-btn
+          class="my-2 mr-2"
+          small
+          icon
+          color="white"
+          :disabled="codeDescription === '' "
+          @click="handleOnClickDownload"
+        >
+          <v-icon>mdi-download</v-icon>
+        </v-btn>
+        <v-btn
+          class="my-2 mr-2"
+          small
+          icon
+          color="white"
+          :disabled="codeDescription === '' "
+          @click="() => $refs.file.click()"
+        >
+          <input type="file" ref="file" v-on:change="handleOnClickUpload" hidden />
+          <v-icon>mdi-upload</v-icon>
+        </v-btn>
+      </div>
     </div>
 
     <codemirror
@@ -219,6 +244,25 @@ export default Vue.extend({
     },
     handleOnClickUndo() {
       this.codeDescription = this.editHistory.pop() || '';
+    },
+    handleOnClickDownload() {
+      let anchor = document.createElement('a');
+      anchor.href =
+        'data:text;charset=utf-8,' + encodeURI(this.codeDescription);
+      anchor.target = '_blank';
+      anchor.download = `${this.apiInfo.className}_${this.apiInfo.methodName}.js`;
+      anchor.click();
+    },
+    handleOnClickUpload(e: Event) {
+      const input = e.target as any;
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = (e: ProgressEvent) =>
+          (this.codeDescription = reader.result as string);
+        reader.onerror = (e: ProgressEvent) =>
+          window.alert('failed to upload.');
+        reader.readAsText(input.files[0]);
+      }
     },
   },
 });

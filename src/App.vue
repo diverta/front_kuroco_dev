@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <!-- <Result :width.sync="width" /> -->
+    <Result :response.sync="response" :isResponseErrorOccured="isResponseErrorOccured" />
     <Header>
       <Login />
       <FilterInput :query.sync="query" />
@@ -34,7 +34,6 @@ import Header from './components/Header.vue';
 import Login from './components/Login.vue';
 import ApiListTable from './components/ApiListTable.vue';
 import Editor from './components/Editor.vue';
-import Response from './components/Response.vue';
 import FilterInput from './components/FilterInput.vue';
 import Result from './components/Result.vue';
 import { ApiInfos } from '../generated/core/ApiInfo';
@@ -47,13 +46,11 @@ export default Vue.extend({
     Login,
     ApiListTable,
     Editor,
-    Response,
     FilterInput,
     Result,
   },
   data() {
     return {
-      width: 0,
       expandsEditor: false,
 
       apiInfos: ApiInfos,
@@ -80,8 +77,7 @@ export default Vue.extend({
           console.log('NG', err);
           this.response = err;
           this.isResponseErrorOccured = true;
-        })
-        .finally(() => (this.width = 250));
+        });
     },
   },
   mounted() {
