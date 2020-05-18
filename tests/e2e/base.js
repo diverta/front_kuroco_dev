@@ -22,9 +22,9 @@ export const queries = {
     getApiInfoQuery: methodname => `.js-info-method-methodname-${methodname}`,
     request: '.js-apilist-request',
   },
-  codeBlock: '.CodeMirror',
+  codeBlock: '.CodeMirror textarea',
   responseBlock: {
-    _: '.response',
+    _: '.response-panel',
     isError: '.js-response-isError',
     response: '.js-apilist-response',
   },
@@ -78,53 +78,41 @@ export function executeRequest({ cy, query, requestData, screenshot = false }) {
     .first()
     .trigger('mouseover')
     .click();
+  cy.wait(500);
   cy.get(queries.codeBlock)
-    .click()
+    .click({ force: true })
     .type(`{cmd}A{del}`) // clears textarea
     .type(requestBody, { parseSpecialCharSequences: false });
   cy.get(queries.apiInfos.request).click();
 
-  cy.get(queries.responseBlock.isError)
-    .invoke('text')
-    .then(txt => {
-      console.log(txt);
-      if (/true/.test(txt)) {
-        return cy
-          .get(queries.responseBlock.response)
-          .invoke('text')
-          .then(txt => {
-            cy.writeFile(
-              path.join(
-                'tests',
-                'e2e',
-                'requestBody',
-                `${toSaveFileName}.json`
-              ),
-              requestBody
-            );
-            throw new Error(txt);
-          });
-      }
-    });
+  cy.get(queries.responseBlock);
+  cy.get(queries.responseBlock.isError).then(elms => {
+    if (/true/.test(elms[0].innerText)) {
+      return cy.get(queries.responseBlock.response).then(elms => {
+        cy.writeFile(
+          path.join('tests', 'e2e', 'requestBody', `${toSaveFileName}.json`),
+          requestBody
+        );
+        throw new Error(elms[0].innerText);
+      });
+    }
+  });
 
   if (screenshot) {
     cy.screenshot();
   }
 
   return promisify(
-    cy
-      .get(queries.responseBlock.response)
-      .invoke('text')
-      .then(txt => {
-        cy.writeFile(
-          path.join('tests', 'e2e', 'requestBody', `${toSaveFileName}.json`),
-          requestBody
-        );
-        cy.writeFile(
-          path.join('tests', 'e2e', 'response', `${toSaveFileName}.json`),
-          txt
-        );
-        return Promise.resolve(txt);
-      })
+    cy.get(queries.responseBlock.response).then(elms => {
+      cy.writeFile(
+        path.join('tests', 'e2e', 'requestBody', `${toSaveFileName}.json`),
+        requestBody
+      );
+      cy.writeFile(
+        path.join('tests', 'e2e', 'response', `${toSaveFileName}.json`),
+        elms[0].innerText
+      );
+      return Promise.resolve(elms[0].innerText);
+    })
   );
 }

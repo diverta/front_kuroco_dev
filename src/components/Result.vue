@@ -11,7 +11,7 @@
       <v-icon>mdi-close-circle</v-icon>
     </v-btn>
 
-    <v-container class="ma-4">
+    <v-container class="ma-4" v-if="!!response">
       <v-row>
         <span class="font-weight-bold js-response-isError">isError? : {{ isResponseErrorOccured }}</span>
       </v-row>

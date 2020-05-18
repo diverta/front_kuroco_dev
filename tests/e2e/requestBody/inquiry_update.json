@@ -1,5 +1,5 @@
 {
-	"inquiryBnId": 31,
+	"inquiryBnId": 34,
 	"requestBody": {
 		"name": "My Name",
 		"from_mail": "email@example.com",
@@ -27,7 +27,6 @@
 		],
 		"ext_06": "2020-04-23 10:28 +0900",
 		"ext_07": {
-			"id": "test2",
 			"file_id": "",
 			"file_nm": "",
 			"desc": ""
@@ -40,7 +39,7 @@
 			"options": "1",
 			"text": "Text"
 		},
-		"ext_10": "2020-05-13",
+		"ext_10": "2020-05-18",
 		"validate_only": false
 	}
 }

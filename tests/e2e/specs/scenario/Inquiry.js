@@ -64,7 +64,6 @@ const sendMessage = () => {
       ],
       ext_06: '2020-04-23 10:28 +0900',
       ext_07: {
-        id: 'test1',
         file_id: '',
         file_nm: '',
         desc: '',
@@ -118,7 +117,6 @@ const updateMessage = ({ inquiryBnId }) => {
       ],
       ext_06: '2020-04-23 10:28 +0900',
       ext_07: {
-        id: 'test2',
         file_id: '',
         file_nm: '',
         desc: '',
