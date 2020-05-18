@@ -704,22 +704,22 @@ export namespace TopicsService {
              * * 2 => Option2
              * * 3 => Option3
              */
-            ext_col_03?: any,
+            ext_col_03?: { key: string ,label: string  } | '' | '1' | '2' | '3',
             /**
              * Checkbox
              * * 1 => Option1
              * * 2 => Option2
              * * 3 => Option3
              */
-            ext_col_04?: Array<any>,
+            ext_col_04?: Array<{ key: string ,label: string  } | '1' | '2' | '3'>,
             /**
              * Date
              */
-            ext_col_07?: any,
+            ext_col_07?: string | { ymd: string },
             /**
              * DateTime
              */
-            ext_col_08?: any,
+            ext_col_08?: string | { ymd: string ,h: number ,i: number  },
             /**
              * Tdfk
              */
@@ -744,7 +744,7 @@ export namespace TopicsService {
              * * 4 => Parent4
              * * 5 => Parent5
              */
-            ext_col_06?: any,
+            ext_col_06?: { key: string ,label: string  } | '' | '1' | '2' | '3' | '4' | '5',
             /**
              * Relation
              */
@@ -765,10 +765,6 @@ export namespace TopicsService {
                  * Description
                  */
                 desc?: string,
-                /**
-                 * delete flg
-                 */
-                del_flg?: boolean,
             },
             /**
              * JSON
@@ -858,22 +854,22 @@ export namespace TopicsService {
              * * 2 => Option2
              * * 3 => Option3
              */
-            ext_col_03?: any,
+            ext_col_03?: { key: string ,label: string  } | '' | '1' | '2' | '3',
             /**
              * Checkbox
              * * 1 => Option1
              * * 2 => Option2
              * * 3 => Option3
              */
-            ext_col_04?: Array<any>,
+            ext_col_04?: Array<{ key: string ,label: string  } | '1' | '2' | '3'>,
             /**
              * Date
              */
-            ext_col_07?: any,
+            ext_col_07?: string | { ymd: string },
             /**
              * DateTime
              */
-            ext_col_08?: any,
+            ext_col_08?: string | { ymd: string ,h: number ,i: number  },
             /**
              * Tdfk
              */
@@ -898,7 +894,7 @@ export namespace TopicsService {
              * * 4 => Parent4
              * * 5 => Parent5
              */
-            ext_col_06?: any,
+            ext_col_06?: { key: string ,label: string  } | '' | '1' | '2' | '3' | '4' | '5',
             /**
              * Relation
              */
@@ -919,10 +915,6 @@ export namespace TopicsService {
                  * Description
                  */
                 desc?: string,
-                /**
-                 * delete flg
-                 */
-                del_flg?: boolean,
             },
             /**
              * JSON
@@ -1051,19 +1043,19 @@ export namespace TopicsService {
             /**
              * Select
              */
-            ext_col_03?: Array<any>,
+            ext_col_03?: Array<{ key: string ,label: string  } | '' | '1' | '2' | '3'>,
             /**
              * Checkbox
              */
-            ext_col_04?: Array<Array<any>>,
+            ext_col_04?: Array<Array<{ key: string ,label: string  } | '1' | '2' | '3'>>,
             /**
              * Date
              */
-            ext_col_07?: Array<any>,
+            ext_col_07?: Array<string | { ymd: string }>,
             /**
              * DateTime
              */
-            ext_col_08?: Array<any>,
+            ext_col_08?: Array<string | { ymd: string ,h: number ,i: number  }>,
             /**
              * Tdfk
              */
@@ -1083,7 +1075,7 @@ export namespace TopicsService {
             /**
              * Table
              */
-            ext_col_06?: Array<any>,
+            ext_col_06?: Array<{ key: string ,label: string  } | '' | '1' | '2' | '3' | '4' | '5'>,
             /**
              * Relation
              */
@@ -1104,6 +1096,9 @@ export namespace TopicsService {
                  * Description
                  */
                 desc?: string,
+                /**
+                 * File ID. Whether the item should be updated or inserted depends on this ID being set or not.
+                 */
                 id?: string,
             }>,
             /**
@@ -1191,19 +1186,19 @@ export namespace TopicsService {
             /**
              * Select
              */
-            ext_col_03?: Array<any>,
+            ext_col_03?: Array<{ key: string ,label: string  } | '' | '1' | '2' | '3'>,
             /**
              * Checkbox
              */
-            ext_col_04?: Array<Array<any>>,
+            ext_col_04?: Array<Array<{ key: string ,label: string  } | '1' | '2' | '3'>>,
             /**
              * Date
              */
-            ext_col_07?: Array<any>,
+            ext_col_07?: Array<string | { ymd: string }>,
             /**
              * DateTime
              */
-            ext_col_08?: Array<any>,
+            ext_col_08?: Array<string | { ymd: string ,h: number ,i: number  }>,
             /**
              * Tdfk
              */
@@ -1223,7 +1218,7 @@ export namespace TopicsService {
             /**
              * Table
              */
-            ext_col_06?: Array<any>,
+            ext_col_06?: Array<{ key: string ,label: string  } | '' | '1' | '2' | '3' | '4' | '5'>,
             /**
              * Relation
              */
@@ -1244,6 +1239,9 @@ export namespace TopicsService {
                  * Description
                  */
                 desc?: string,
+                /**
+                 * File ID. Whether the item should be updated or inserted depends on this ID being set or not.
+                 */
                 id?: string,
             }>,
             /**
@@ -1403,22 +1401,22 @@ export const infos = [
                  * * 2 => Option2
                  * * 3 => Option3
                  */
-                ext_col_03?: any,
+                ext_col_03?: { key: string ,label: string  } | '' | '1' | '2' | '3',
                 /**
                  * Checkbox
                  * * 1 => Option1
                  * * 2 => Option2
                  * * 3 => Option3
                  */
-                ext_col_04?: Array<any>,
+                ext_col_04?: Array<{ key: string ,label: string  } | '1' | '2' | '3'>,
                 /**
                  * Date
                  */
-                ext_col_07?: any,
+                ext_col_07?: string | { ymd: string },
                 /**
                  * DateTime
                  */
-                ext_col_08?: any,
+                ext_col_08?: string | { ymd: string ,h: number ,i: number  },
                 /**
                  * Tdfk
                  */
@@ -1443,7 +1441,7 @@ export const infos = [
                  * * 4 => Parent4
                  * * 5 => Parent5
                  */
-                ext_col_06?: any,
+                ext_col_06?: { key: string ,label: string  } | '' | '1' | '2' | '3' | '4' | '5',
                 /**
                  * Relation
                  */
@@ -1464,10 +1462,6 @@ export const infos = [
                      * Description
                      */
                     desc?: string,
-                    /**
-                     * delete flg
-                     */
-                    del_flg?: boolean,
                 },
                 /**
                  * JSON
@@ -1568,22 +1562,22 @@ export const infos = [
                  * * 2 => Option2
                  * * 3 => Option3
                  */
-                ext_col_03?: any,
+                ext_col_03?: { key: string ,label: string  } | '' | '1' | '2' | '3',
                 /**
                  * Checkbox
                  * * 1 => Option1
                  * * 2 => Option2
                  * * 3 => Option3
                  */
-                ext_col_04?: Array<any>,
+                ext_col_04?: Array<{ key: string ,label: string  } | '1' | '2' | '3'>,
                 /**
                  * Date
                  */
-                ext_col_07?: any,
+                ext_col_07?: string | { ymd: string },
                 /**
                  * DateTime
                  */
-                ext_col_08?: any,
+                ext_col_08?: string | { ymd: string ,h: number ,i: number  },
                 /**
                  * Tdfk
                  */
@@ -1608,7 +1602,7 @@ export const infos = [
                  * * 4 => Parent4
                  * * 5 => Parent5
                  */
-                ext_col_06?: any,
+                ext_col_06?: { key: string ,label: string  } | '' | '1' | '2' | '3' | '4' | '5',
                 /**
                  * Relation
                  */
@@ -1629,10 +1623,6 @@ export const infos = [
                      * Description
                      */
                     desc?: string,
-                    /**
-                     * delete flg
-                     */
-                    del_flg?: boolean,
                 },
                 /**
                  * JSON
@@ -1805,19 +1795,19 @@ export const infos = [
                 /**
                  * Select
                  */
-                ext_col_03?: Array<any>,
+                ext_col_03?: Array<{ key: string ,label: string  } | '' | '1' | '2' | '3'>,
                 /**
                  * Checkbox
                  */
-                ext_col_04?: Array<Array<any>>,
+                ext_col_04?: Array<Array<{ key: string ,label: string  } | '1' | '2' | '3'>>,
                 /**
                  * Date
                  */
-                ext_col_07?: Array<any>,
+                ext_col_07?: Array<string | { ymd: string }>,
                 /**
                  * DateTime
                  */
-                ext_col_08?: Array<any>,
+                ext_col_08?: Array<string | { ymd: string ,h: number ,i: number  }>,
                 /**
                  * Tdfk
                  */
@@ -1837,7 +1827,7 @@ export const infos = [
                 /**
                  * Table
                  */
-                ext_col_06?: Array<any>,
+                ext_col_06?: Array<{ key: string ,label: string  } | '' | '1' | '2' | '3' | '4' | '5'>,
                 /**
                  * Relation
                  */
@@ -1858,6 +1848,9 @@ export const infos = [
                      * Description
                      */
                     desc?: string,
+                    /**
+                     * File ID. Whether the item should be updated or inserted depends on this ID being set or not.
+                     */
                     id?: string,
                 }>,
                 /**
@@ -1956,19 +1949,19 @@ export const infos = [
                 /**
                  * Select
                  */
-                ext_col_03?: Array<any>,
+                ext_col_03?: Array<{ key: string ,label: string  } | '' | '1' | '2' | '3'>,
                 /**
                  * Checkbox
                  */
-                ext_col_04?: Array<Array<any>>,
+                ext_col_04?: Array<Array<{ key: string ,label: string  } | '1' | '2' | '3'>>,
                 /**
                  * Date
                  */
-                ext_col_07?: Array<any>,
+                ext_col_07?: Array<string | { ymd: string }>,
                 /**
                  * DateTime
                  */
-                ext_col_08?: Array<any>,
+                ext_col_08?: Array<string | { ymd: string ,h: number ,i: number  }>,
                 /**
                  * Tdfk
                  */
@@ -1988,7 +1981,7 @@ export const infos = [
                 /**
                  * Table
                  */
-                ext_col_06?: Array<any>,
+                ext_col_06?: Array<{ key: string ,label: string  } | '' | '1' | '2' | '3' | '4' | '5'>,
                 /**
                  * Relation
                  */
@@ -2009,6 +2002,9 @@ export const infos = [
                      * Description
                      */
                     desc?: string,
+                    /**
+                     * File ID. Whether the item should be updated or inserted depends on this ID being set or not.
+                     */
                     id?: string,
                 }>,
                 /**

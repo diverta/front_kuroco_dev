@@ -363,7 +363,7 @@ export namespace AuthenticationService {
     };
     export type postAuthenticationServiceRcmsApi1AuthTokenResponse = any;
     export interface postAuthenticationServiceRcmsApi1MePwReminderRequest {
-        requestBody: any,
+        requestBody: { email: string } | { token: string ,temp_pwd: string ,password: string  },
         outputFormat?: string,
         lang?: string,
         charset?: string,
@@ -479,7 +479,7 @@ export const infos = [
         auth: null,
         description: `
         export interface postAuthenticationServiceRcmsApi1MePwReminderRequest {
-            requestBody: any,
+            requestBody: { email: string } | { token: string ,temp_pwd: string ,password: string  },
             outputFormat?: string,
             lang?: string,
             charset?: string,

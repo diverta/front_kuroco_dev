@@ -344,25 +344,25 @@ export namespace InquiriesService {
              * * 2 => radio2
              * * 3 => radio3
              */
-            ext_03?: any,
+            ext_03?: { key: string ,label: string  } | '' | '1' | '2' | '3',
             /**
              * RequiredSelect
              * * 1 => select1
              * * 2 => select2
              * * 3 => select3
              */
-            ext_04: any,
+            ext_04: { key: string ,label: string  } | '' | '1' | '2' | '3',
             /**
              * Checkbox
              * * 1 => check1
              * * 2 => check2
              * * 3 => check3
              */
-            ext_05?: Array<any>,
+            ext_05?: Array<{ key: string ,label: string  } | '1' | '2' | '3'>,
             /**
              * DateTime
              */
-            ext_06?: any,
+            ext_06?: string | { y: number ,m: number ,d: number ,h: number ,mm: number  },
             ext_07?: {
                 /**
                  * File ID returned by File Upload API
@@ -376,10 +376,6 @@ export namespace InquiriesService {
                  * Description
                  */
                 desc?: string,
-                /**
-                 * delete flg
-                 */
-                del_flg?: boolean,
             },
             /**
              * Tdfk
@@ -402,7 +398,7 @@ export namespace InquiriesService {
             /**
              * Date
              */
-            ext_10?: any,
+            ext_10?: string | { y: number ,m: number ,d: number  },
             /**
              * Validate
              */
@@ -448,25 +444,25 @@ export namespace InquiriesService {
              * * 2 => radio2
              * * 3 => radio3
              */
-            ext_03?: any,
+            ext_03?: { key: string ,label: string  } | '' | '1' | '2' | '3',
             /**
              * RequiredSelect
              * * 1 => select1
              * * 2 => select2
              * * 3 => select3
              */
-            ext_04?: any,
+            ext_04?: { key: string ,label: string  } | '' | '1' | '2' | '3',
             /**
              * Checkbox
              * * 1 => check1
              * * 2 => check2
              * * 3 => check3
              */
-            ext_05?: Array<any>,
+            ext_05?: Array<{ key: string ,label: string  } | '1' | '2' | '3'>,
             /**
              * DateTime
              */
-            ext_06?: any,
+            ext_06?: string | { y: number ,m: number ,d: number ,h: number ,mm: number  },
             ext_07?: {
                 /**
                  * File ID returned by File Upload API
@@ -480,10 +476,6 @@ export namespace InquiriesService {
                  * Description
                  */
                 desc?: string,
-                /**
-                 * delete flg
-                 */
-                del_flg?: boolean,
             },
             /**
              * Tdfk
@@ -506,7 +498,7 @@ export namespace InquiriesService {
             /**
              * Date
              */
-            ext_10?: any,
+            ext_10?: string | { y: number ,m: number ,d: number  },
             /**
              * Validate
              */
@@ -616,25 +608,25 @@ export const infos = [
                  * * 2 => radio2
                  * * 3 => radio3
                  */
-                ext_03?: any,
+                ext_03?: { key: string ,label: string  } | '' | '1' | '2' | '3',
                 /**
                  * RequiredSelect
                  * * 1 => select1
                  * * 2 => select2
                  * * 3 => select3
                  */
-                ext_04: any,
+                ext_04: { key: string ,label: string  } | '' | '1' | '2' | '3',
                 /**
                  * Checkbox
                  * * 1 => check1
                  * * 2 => check2
                  * * 3 => check3
                  */
-                ext_05?: Array<any>,
+                ext_05?: Array<{ key: string ,label: string  } | '1' | '2' | '3'>,
                 /**
                  * DateTime
                  */
-                ext_06?: any,
+                ext_06?: string | { y: number ,m: number ,d: number ,h: number ,mm: number  },
                 ext_07?: {
                     /**
                      * File ID returned by File Upload API
@@ -648,10 +640,6 @@ export const infos = [
                      * Description
                      */
                     desc?: string,
-                    /**
-                     * delete flg
-                     */
-                    del_flg?: boolean,
                 },
                 /**
                  * Tdfk
@@ -674,7 +662,7 @@ export const infos = [
                 /**
                  * Date
                  */
-                ext_10?: any,
+                ext_10?: string | { y: number ,m: number ,d: number  },
                 /**
                  * Validate
                  */
@@ -731,25 +719,25 @@ export const infos = [
                  * * 2 => radio2
                  * * 3 => radio3
                  */
-                ext_03?: any,
+                ext_03?: { key: string ,label: string  } | '' | '1' | '2' | '3',
                 /**
                  * RequiredSelect
                  * * 1 => select1
                  * * 2 => select2
                  * * 3 => select3
                  */
-                ext_04?: any,
+                ext_04?: { key: string ,label: string  } | '' | '1' | '2' | '3',
                 /**
                  * Checkbox
                  * * 1 => check1
                  * * 2 => check2
                  * * 3 => check3
                  */
-                ext_05?: Array<any>,
+                ext_05?: Array<{ key: string ,label: string  } | '1' | '2' | '3'>,
                 /**
                  * DateTime
                  */
-                ext_06?: any,
+                ext_06?: string | { y: number ,m: number ,d: number ,h: number ,mm: number  },
                 ext_07?: {
                     /**
                      * File ID returned by File Upload API
@@ -763,10 +751,6 @@ export const infos = [
                      * Description
                      */
                     desc?: string,
-                    /**
-                     * delete flg
-                     */
-                    del_flg?: boolean,
                 },
                 /**
                  * Tdfk
@@ -789,7 +773,7 @@ export const infos = [
                 /**
                  * Date
                  */
-                ext_10?: any,
+                ext_10?: string | { y: number ,m: number ,d: number  },
                 /**
                  * Validate
                  */

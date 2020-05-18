@@ -490,10 +490,6 @@ export namespace MembersService {
                  * Description
                  */
                 desc?: string,
-                /**
-                 * delete flg
-                 */
-                del_flg?: boolean,
                 extension?: ('jpg' | 'gif' | 'png'),
             },
             /**
@@ -510,25 +506,25 @@ export namespace MembersService {
              * * 2 => radioOption2
              * * 3 => radioOption3
              */
-            radio?: any,
+            radio?: { key: string ,label: string  } | '' | '1' | '2' | '3',
             /**
              * Selectbox
              * * 1 => selectBoxOption1
              * * 2 => selectBoxOption2
              * * 3 => selectBoxOption3
              */
-            selectbox?: any,
+            selectbox?: { key: string ,label: string  } | '' | '1' | '2' | '3',
             /**
              * Checkbox
              * * 1 => checkboxOption1
              * * 2 => checkboxOption2
              * * 3 => checkboxOption3
              */
-            checkbox?: Array<any>,
+            checkbox?: Array<{ key: string ,label: string  } | '1' | '2' | '3'>,
             /**
              * Date
              */
-            date?: any,
+            date?: string,
             relation?: number,
             /**
              * File
@@ -546,10 +542,6 @@ export namespace MembersService {
                  * Description
                  */
                 desc?: string,
-                /**
-                 * delete flg
-                 */
-                del_flg?: boolean,
             },
             /**
              * /label/open_flg
@@ -623,10 +615,6 @@ export namespace MembersService {
                  * Description
                  */
                 desc?: string,
-                /**
-                 * delete flg
-                 */
-                del_flg?: boolean,
                 extension?: ('jpg' | 'gif' | 'png'),
             },
             /**
@@ -643,25 +631,25 @@ export namespace MembersService {
              * * 2 => radioOption2
              * * 3 => radioOption3
              */
-            radio?: any,
+            radio?: { key: string ,label: string  } | '' | '1' | '2' | '3',
             /**
              * Selectbox
              * * 1 => selectBoxOption1
              * * 2 => selectBoxOption2
              * * 3 => selectBoxOption3
              */
-            selectbox?: any,
+            selectbox?: { key: string ,label: string  } | '' | '1' | '2' | '3',
             /**
              * Checkbox
              * * 1 => checkboxOption1
              * * 2 => checkboxOption2
              * * 3 => checkboxOption3
              */
-            checkbox?: Array<any>,
+            checkbox?: Array<{ key: string ,label: string  } | '1' | '2' | '3'>,
             /**
              * Date
              */
-            date?: any,
+            date?: string,
             relation?: number,
             /**
              * File
@@ -679,10 +667,6 @@ export namespace MembersService {
                  * Description
                  */
                 desc?: string,
-                /**
-                 * delete flg
-                 */
-                del_flg?: boolean,
             },
             /**
              * /label/group_id
@@ -768,10 +752,6 @@ export namespace MembersService {
                  * Description
                  */
                 desc?: string,
-                /**
-                 * delete flg
-                 */
-                del_flg?: boolean,
                 extension?: ('jpg' | 'gif' | 'png'),
             },
             /**
@@ -788,25 +768,25 @@ export namespace MembersService {
              * * 2 => radioOption2
              * * 3 => radioOption3
              */
-            radio?: any,
+            radio?: { key: string ,label: string  } | '' | '1' | '2' | '3',
             /**
              * Selectbox
              * * 1 => selectBoxOption1
              * * 2 => selectBoxOption2
              * * 3 => selectBoxOption3
              */
-            selectbox?: any,
+            selectbox?: { key: string ,label: string  } | '' | '1' | '2' | '3',
             /**
              * Checkbox
              * * 1 => checkboxOption1
              * * 2 => checkboxOption2
              * * 3 => checkboxOption3
              */
-            checkbox?: Array<any>,
+            checkbox?: Array<{ key: string ,label: string  } | '1' | '2' | '3'>,
             /**
              * Date
              */
-            date?: any,
+            date?: string,
             relation?: number,
             /**
              * File
@@ -824,10 +804,6 @@ export namespace MembersService {
                  * Description
                  */
                 desc?: string,
-                /**
-                 * delete flg
-                 */
-                del_flg?: boolean,
             },
             /**
              * /label/group_id
@@ -964,10 +940,6 @@ export const infos = [
                      * Description
                      */
                     desc?: string,
-                    /**
-                     * delete flg
-                     */
-                    del_flg?: boolean,
                     extension?: ('jpg' | 'gif' | 'png'),
                 },
                 /**
@@ -984,25 +956,25 @@ export const infos = [
                  * * 2 => radioOption2
                  * * 3 => radioOption3
                  */
-                radio?: any,
+                radio?: { key: string ,label: string  } | '' | '1' | '2' | '3',
                 /**
                  * Selectbox
                  * * 1 => selectBoxOption1
                  * * 2 => selectBoxOption2
                  * * 3 => selectBoxOption3
                  */
-                selectbox?: any,
+                selectbox?: { key: string ,label: string  } | '' | '1' | '2' | '3',
                 /**
                  * Checkbox
                  * * 1 => checkboxOption1
                  * * 2 => checkboxOption2
                  * * 3 => checkboxOption3
                  */
-                checkbox?: Array<any>,
+                checkbox?: Array<{ key: string ,label: string  } | '1' | '2' | '3'>,
                 /**
                  * Date
                  */
-                date?: any,
+                date?: string,
                 relation?: number,
                 /**
                  * File
@@ -1020,10 +992,6 @@ export const infos = [
                      * Description
                      */
                     desc?: string,
-                    /**
-                     * delete flg
-                     */
-                    del_flg?: boolean,
                 },
                 /**
                  * /label/open_flg
@@ -1108,10 +1076,6 @@ export const infos = [
                      * Description
                      */
                     desc?: string,
-                    /**
-                     * delete flg
-                     */
-                    del_flg?: boolean,
                     extension?: ('jpg' | 'gif' | 'png'),
                 },
                 /**
@@ -1128,25 +1092,25 @@ export const infos = [
                  * * 2 => radioOption2
                  * * 3 => radioOption3
                  */
-                radio?: any,
+                radio?: { key: string ,label: string  } | '' | '1' | '2' | '3',
                 /**
                  * Selectbox
                  * * 1 => selectBoxOption1
                  * * 2 => selectBoxOption2
                  * * 3 => selectBoxOption3
                  */
-                selectbox?: any,
+                selectbox?: { key: string ,label: string  } | '' | '1' | '2' | '3',
                 /**
                  * Checkbox
                  * * 1 => checkboxOption1
                  * * 2 => checkboxOption2
                  * * 3 => checkboxOption3
                  */
-                checkbox?: Array<any>,
+                checkbox?: Array<{ key: string ,label: string  } | '1' | '2' | '3'>,
                 /**
                  * Date
                  */
-                date?: any,
+                date?: string,
                 relation?: number,
                 /**
                  * File
@@ -1164,10 +1128,6 @@ export const infos = [
                      * Description
                      */
                     desc?: string,
-                    /**
-                     * delete flg
-                     */
-                    del_flg?: boolean,
                 },
                 /**
                  * /label/group_id
@@ -1275,10 +1235,6 @@ export const infos = [
                      * Description
                      */
                     desc?: string,
-                    /**
-                     * delete flg
-                     */
-                    del_flg?: boolean,
                     extension?: ('jpg' | 'gif' | 'png'),
                 },
                 /**
@@ -1295,25 +1251,25 @@ export const infos = [
                  * * 2 => radioOption2
                  * * 3 => radioOption3
                  */
-                radio?: any,
+                radio?: { key: string ,label: string  } | '' | '1' | '2' | '3',
                 /**
                  * Selectbox
                  * * 1 => selectBoxOption1
                  * * 2 => selectBoxOption2
                  * * 3 => selectBoxOption3
                  */
-                selectbox?: any,
+                selectbox?: { key: string ,label: string  } | '' | '1' | '2' | '3',
                 /**
                  * Checkbox
                  * * 1 => checkboxOption1
                  * * 2 => checkboxOption2
                  * * 3 => checkboxOption3
                  */
-                checkbox?: Array<any>,
+                checkbox?: Array<{ key: string ,label: string  } | '1' | '2' | '3'>,
                 /**
                  * Date
                  */
-                date?: any,
+                date?: string,
                 relation?: number,
                 /**
                  * File
@@ -1331,10 +1287,6 @@ export const infos = [
                      * Description
                      */
                     desc?: string,
-                    /**
-                     * delete flg
-                     */
-                    del_flg?: boolean,
                 },
                 /**
                  * /label/group_id
