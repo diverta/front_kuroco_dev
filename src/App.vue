@@ -81,9 +81,9 @@ export default Vue.extend({
     },
   },
   mounted() {
-    Auth.onErrorHandler = result => {
-      return result;
-    };
+    Auth.deleteAccessToken();
+    Auth.deleteRefreshToken();
+    Auth.onErrorHandler = result => result;
   },
 });
 </script>
