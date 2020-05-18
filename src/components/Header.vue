@@ -1,7 +1,15 @@
 <template>
   <div>
     <v-app-bar app dark fixed>
-      <p class="ma-0">Kuroco With SDK for developpers</p>
+      <v-btn
+        href="https://github.com/diverta/front_kuroco_dev/"
+        target="_blank"
+        class="text-capitalize px-2 pr-0"
+        text
+      >
+        <span class="font-weight-bold">KurocoDev</span>
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
 
       <v-spacer></v-spacer>
 
