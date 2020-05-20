@@ -1,9 +1,19 @@
 <template>
   <v-dialog v-model="dialog" persistent max-width="290">
     <template v-slot:activator="{ on }">
-      <v-row class="flex-column ma-0 pa-0 mr-4" style="max-width: 80px; min-width: 80px">
+      <v-row
+        class="flex-column ma-0 pa-0 mr-4"
+        style="max-width: 80px; min-width: 80px"
+      >
         <div class="d-flex ma-0 pa-0 justify-space-around">
-          <v-btn x-small class="ma-0 pa-0 js-login-button" color="primary mx-4" fab dark v-on="on">
+          <v-btn
+            x-small
+            class="ma-0 pa-0 js-login-button"
+            color="primary mx-4"
+            fab
+            dark
+            v-on="on"
+          >
             <v-icon dark>mdi-login</v-icon>
           </v-btn>
         </div>
@@ -20,7 +30,11 @@
             <span class="caption">STATUS: {{ loginStatus }}</span>
           </p>
           <v-container class="px-4 py-0" fluid no-gutter>
-            <v-text-field v-model="email" label="email" class="js-loggin-form-email"></v-text-field>
+            <v-text-field
+              v-model="email"
+              label="email"
+              class="js-loggin-form-email"
+            ></v-text-field>
             <v-text-field
               v-model="password"
               label="passowrd"
@@ -29,12 +43,30 @@
             ></v-text-field>
           </v-container>
         </v-form>
+
+        <div class="d-flex justify-space-around">
+          <v-btn @click="handleOnClickSamlLogin" icon>
+            <img :src="require('@/assets/img/logo_google.svg')" alt="Google" />
+          </v-btn>
+        </div>
       </v-card-text>
       <v-card-actions>
-        <v-btn class="js-loggin-form-close-button" text @click="dialog = false">CLOSE</v-btn>
+        <v-btn class="js-loggin-form-close-button" text @click="dialog = false"
+          >CLOSE</v-btn
+        >
         <v-spacer></v-spacer>
-        <v-btn class="js-loggin-form-logout-button" text @click="handleOnClickLogout">LOGOUT</v-btn>
-        <v-btn class="js-loggin-form-login-button" text @click="handleOnClickLogin">LOGIN</v-btn>
+        <v-btn
+          class="js-loggin-form-logout-button"
+          text
+          @click="handleOnClickLogout"
+          >LOGOUT</v-btn
+        >
+        <v-btn
+          class="js-loggin-form-login-button"
+          text
+          @click="handleOnClickLogin"
+          >LOGIN</v-btn
+        >
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -71,6 +103,35 @@ export default Vue.extend({
         console.log(memberId);
         this.loginStatus = 'LOGGEDIN';
       });
+    },
+    handleOnClickSamlLogin(e: Event) {
+      e.stopPropagation();
+      e.preventDefault();
+
+      function createNodeWithAttributes(
+        tagName: string,
+        attributes: { nm: string; val: string }[] = []
+      ) {
+        const node = document.createElement(tagName);
+        attributes.forEach(({ nm, val }) => node.setAttribute(nm, val));
+        return node;
+      }
+      const form = createNodeWithAttributes('form', [
+        { nm: 'id', val: 'google_login_saml' },
+        { nm: 'action', val: '/direct/login/saml_login/?spid=1' },
+        { nm: 'method', val: 'POST' },
+      ]);
+      const input = createNodeWithAttributes('input', [
+        { nm: 'type', val: 'hidden' },
+        { nm: 'name', val: 'api_id' },
+        { nm: 'value', val: '1' },
+      ]);
+      form.appendChild(input);
+
+      (document.querySelector('body') as HTMLBodyElement).appendChild(form);
+      (document.querySelector(
+        '#google_login_saml'
+      ) as HTMLFormElement).submit();
     },
   },
 });
