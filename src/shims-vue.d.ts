@@ -4,5 +4,4 @@ declare module '*.vue' {
 }
 
 declare type GlobalFetch = WindowOrWorkerGlobalScope;
-declare module 'v-jsoneditor';
 declare module 'vue-codemirror';
