@@ -1,6 +1,9 @@
 <template>
   <v-app>
-    <Result :response.sync="response" :isResponseErrorOccured="isResponseErrorOccured" />
+    <Result
+      :response.sync="response"
+      :isResponseErrorOccured="isResponseErrorOccured"
+    />
     <Header>
       <Login />
       <FilterInput :query.sync="query" />
@@ -8,17 +11,27 @@
 
     <v-content>
       <ApiListTable
-        :style="{ height: `calc(${ expandsEditor ? 10 : 50}vh - 56px)`, overflow: 'scroll', transition: 'height 0.1s ease-in' }"
+        :style="{
+          height: `calc(${expandsEditor ? 10 : 50}vh - 56px)`,
+          overflow: 'scroll',
+          transition: 'height 0.1s ease-in',
+        }"
         :apiInfos="apiInfos"
         :query="query"
-        @clickOnApi="v => {
-                  apiInfo = v;
-                  response = null;
-                }"
+        @clickOnApi="
+          v => {
+            apiInfo = v;
+            response = null;
+          }
+        "
       />
       <v-row class="d-flex align-end">
         <Editor
-          :style="{ height: `calc(${ expandsEditor ? 90 : 50}vh)`, overflow: 'scroll', transition: 'height 0.1s ease-in' }"
+          :style="{
+            height: `calc(${expandsEditor ? 90 : 50}vh)`,
+            overflow: 'scroll',
+            transition: 'height 0.1s ease-in',
+          }"
           :apiInfo="apiInfo"
           :expandsEditor.sync="expandsEditor"
           @onSubmit="executeRequest"
@@ -83,7 +96,7 @@ export default Vue.extend({
   mounted() {
     Auth.deleteAccessToken();
     Auth.deleteRefreshToken();
-    Auth.onErrorHandler = result => result;
+    Auth.onErrorHandler = async result => Promise.resolve();
   },
 });
 </script>

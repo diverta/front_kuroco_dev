@@ -99,7 +99,7 @@ export default Vue.extend({
     handleOnClickLogin(): void {
       Auth.login({
         requestBody: { email: this.email, password: this.password },
-      }).then(memberId => {
+      }).then((memberId: any) => {
         console.log(memberId);
         this.loginStatus = 'LOGGEDIN';
       });
