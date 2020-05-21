@@ -1,6 +1,19 @@
 const path = require('path');
 import promisify from 'cypress-promise';
 
+function decode(content) {
+  return content
+    .replace(/\\n/g, '\\n')
+    .replace(/\\'/g, "\\'")
+    .replace(/\\"/g, '\\"')
+    .replace(/\\&/g, '\\&')
+    .replace(/\\r/g, '\\r')
+    .replace(/\\t/g, '\\t')
+    .replace(/\\b/g, '\\b')
+    .replace(/\\f/g, '\\f')
+    .replace(/[\u0000-\u0019]+/g, '');
+}
+
 export const queries = {
   login: {
     status: '.js-login-status',
@@ -58,11 +71,18 @@ export function login(options = { email: 'test', password: 'qwer1234' }) {
  * @export
  * @param options.cy cypress instance.
  * @param options.query query string for searching unique target endpoint.
+ * @param options.indexOfApis an target index number for APIs.
  * @param options.requestData request data supposed to send as request body JSON.
  * @param options.screenshot an option either captures screenshot, default valus is false.
  * @returns Promise<result string convertible to JSON>
  */
-export function executeRequest({ cy, query, requestData, screenshot = false }) {
+export async function executeRequest({
+  cy,
+  query,
+  indexOfApis = 0,
+  requestData,
+  screenshot = false,
+}) {
   const requestBody = JSON.stringify(requestData, undefined, '\t');
   const toSaveFileName = query.replace(/ /g, '_');
 
@@ -72,20 +92,21 @@ export function executeRequest({ cy, query, requestData, screenshot = false }) {
       parseSpecialCharSequences: true,
       release: false,
     })
-    .type(query);
-  cy.get('tbody')
+    .type(query)
+    .get('tbody')
     .children()
-    .first()
+    .eq(indexOfApis)
     .trigger('mouseover')
-    .click();
-  cy.wait(500);
-  cy.get(queries.codeBlock)
+    .click()
+    .wait(500)
+    .get(queries.codeBlock)
     .click({ force: true })
     .type(`{cmd}A{del}`) // clears textarea
-    .type(requestBody, { parseSpecialCharSequences: false });
-  cy.get(queries.apiInfos.request).click();
+    .invoke('val', requestBody)
+    .trigger('change', { force: true })
+    .get(queries.apiInfos.request)
+    .click();
 
-  cy.get(queries.responseBlock);
   cy.get(queries.responseBlock.isError).then(elms => {
     if (/true/.test(elms[0].innerText)) {
       return cy.get(queries.responseBlock.response).then(elms => {
@@ -99,20 +120,28 @@ export function executeRequest({ cy, query, requestData, screenshot = false }) {
   });
 
   if (screenshot) {
-    cy.screenshot();
+    await cy.screenshot();
   }
 
-  return promisify(
-    cy.get(queries.responseBlock.response).then(elms => {
-      cy.writeFile(
+  const res = await promisify(
+    cy
+      .wrap(queries.responseBlock.response)
+      .get(queries.responseBlock.response)
+      .invoke('text')
+  );
+  const data = JSON.parse(decode(res));
+
+  await promisify(
+    cy
+      .writeFile(
         path.join('tests', 'e2e', 'requestBody', `${toSaveFileName}.json`),
         requestBody
-      );
-      cy.writeFile(
+      )
+      .writeFile(
         path.join('tests', 'e2e', 'response', `${toSaveFileName}.json`),
-        elms[0].innerText
-      );
-      return Promise.resolve(elms[0].innerText);
-    })
+        res
+      )
   );
+
+  return Promise.resolve(data);
 }
