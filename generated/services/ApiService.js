@@ -29,9 +29,7 @@ var ApiService = /** @class */ (function () {
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
-                        shouldHookToken = Object.keys({
-                            'Token-Auth': OpenAPI.SECURITY['Token-Auth'],
-                        }).length > 0;
+                        shouldHookToken = Object.keys({}).length > 0;
                         headers = shouldHookToken ? (_a = {}, _a[OpenAPI.SECURITY['Token-Auth'].name] = "" + Auth.getAccessToken(), _a) : {};
                         request = function () { return __awaiter(_this, void 0, void 0, function () {
                             return __generator(this, function (_a) {
@@ -85,9 +83,7 @@ var ApiService = /** @class */ (function () {
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
-                        shouldHookToken = Object.keys({
-                            'Token-Auth': OpenAPI.SECURITY['Token-Auth'],
-                        }).length > 0;
+                        shouldHookToken = Object.keys({}).length > 0;
                         headers = shouldHookToken ? (_a = {}, _a[OpenAPI.SECURITY['Token-Auth'].name] = "" + Auth.getAccessToken(), _a) : {};
                         request = function () { return __awaiter(_this, void 0, void 0, function () {
                             return __generator(this, function (_a) {
@@ -141,9 +137,7 @@ var ApiService = /** @class */ (function () {
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
-                        shouldHookToken = Object.keys({
-                            'Token-Auth': OpenAPI.SECURITY['Token-Auth'],
-                        }).length > 0;
+                        shouldHookToken = Object.keys({}).length > 0;
                         headers = shouldHookToken ? (_a = {}, _a[OpenAPI.SECURITY['Token-Auth'].name] = "" + Auth.getAccessToken(), _a) : {};
                         request = function () { return __awaiter(_this, void 0, void 0, function () {
                             return __generator(this, function (_a) {

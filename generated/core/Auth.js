@@ -26,12 +26,10 @@ var Auth = /** @class */ (function () {
                         if (errors && Array.isArray(errors) && errors.length > 0) {
                             return [2 /*return*/, Promise.reject(errors)];
                         }
-                        if (!OpenAPI.SECURITY['Token-Auth']) return [3 /*break*/, 3];
                         return [4 /*yield*/, Auth.createToken({ requestBody: { grant_token: grant_token } })];
                     case 2:
                         _a.sent();
-                        _a.label = 3;
-                    case 3: return [2 /*return*/, res.member_id];
+                        return [2 /*return*/, res.member_id];
                 }
             });
         });
@@ -40,14 +38,10 @@ var Auth = /** @class */ (function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0:
-                        if (!SpecialOperationInfo.logout) {
-                            return [2 /*return*/, Promise.resolve()];
-                        }
-                        return [4 /*yield*/, SpecialOperationInfo.logout.method(param).finally(function () {
-                                Auth.deleteAccessToken();
-                                Auth.deleteRefreshToken();
-                            })];
+                    case 0: return [4 /*yield*/, SpecialOperationInfo.logout.method(param).finally(function () {
+                            Auth.deleteAccessToken();
+                            Auth.deleteRefreshToken();
+                        })];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -59,9 +53,7 @@ var Auth = /** @class */ (function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (!SpecialOperationInfo.token) {
-                            return [2 /*return*/, Promise.resolve()];
-                        }
+                        if (!OpenAPI.SECURITY['Token-Auth']) return [3 /*break*/, 2];
                         return [4 /*yield*/, SpecialOperationInfo.token.method(param)];
                     case 1:
                         res = _a.sent();
@@ -69,6 +61,7 @@ var Auth = /** @class */ (function () {
                         access_token ? Auth.setAccessToken(access_token) : undefined;
                         refresh_token ? Auth.setRefreshToken(refresh_token) : undefined;
                         return [2 /*return*/, res];
+                    case 2: return [2 /*return*/, Promise.resolve()];
                 }
             });
         });
