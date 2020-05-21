@@ -4,13 +4,10 @@ import { OpenAPI } from '../../../../generated/core/OpenAPI';
 import { SpecialOperationInfo } from '../../../../generated/core/ApiInfo';
 import { AuthenticationService } from '../../../../generated/services/AuthenticationService';
 
-const dummyFn = params => Promise.resolve();
 const API = {
-  login:
-    AuthenticationService.postAuthenticationServiceRcmsApi1AuthLogin || dummyFn,
-  token:
-    AuthenticationService.postAuthenticationServiceRcmsApi1AuthToken || dummyFn,
-  apis: ApiService.getApiServiceRcmsApi1Apis || dummyFn,
+  login: AuthenticationService.postAuthenticationServiceRcmsApi1AuthLogin,
+  token: AuthenticationService.postAuthenticationServiceRcmsApi1AuthToken,
+  apis: ApiService.getApiServiceRcmsApi1Apis,
 };
 
 describe('Authentication pattern.', () => {
@@ -27,9 +24,7 @@ describe('Authentication pattern.', () => {
       Auth.setRefreshToken(refresh_token);
 
       let error;
-      await ApiService.getApiServiceRcmsApi1Apis({}).catch(
-        () => (error = true)
-      );
+      await API.apis({}).catch(() => (error = true));
       expect(error).to.not.be.true;
     });
   }
@@ -44,9 +39,7 @@ describe('Authentication pattern.', () => {
       Auth.setRefreshToken(refresh_token);
 
       let error;
-      await ApiService.getApiServiceRcmsApi1Apis({}).catch(
-        () => (error = true)
-      );
+      await API.apis({}).catch(() => (error = true));
       expect(error).to.not.be.true;
     });
   }
@@ -59,9 +52,7 @@ describe('Authentication pattern.', () => {
       });
 
       let error;
-      await ApiService.getApiServiceRcmsApi1Apis({}).catch(
-        () => (error = true)
-      );
+      await API.apis({}).catch(() => (error = true));
       expect(error).to.not.be.true;
     });
   }
@@ -70,9 +61,7 @@ describe('Authentication pattern.', () => {
   if (!OpenAPI.SECURITY['Token-Auth'] && !SpecialOperationInfo.login) {
     it('should not be 401: requests apis.', async () => {
       let error;
-      await ApiService.getApiServiceRcmsApi1Apis({}).catch(
-        () => (error = true)
-      );
+      await API.apis({}).catch(() => (error = true));
       expect(error).to.not.be.true;
     });
   }

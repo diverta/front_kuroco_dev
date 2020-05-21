@@ -1,4 +1,4 @@
-## Auth
+## Authentication
 
 | cookie / token | pattern  | scenario                                                  | to call endpoints  | configuration in management screen                            | expected |
 | -------------- | -------- | --------------------------------------------------------- | ------------------ | ------------------------------------------------------------- | -------- |
