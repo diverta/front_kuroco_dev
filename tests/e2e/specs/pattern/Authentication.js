@@ -33,7 +33,7 @@ describe('Authentication pattern.', () => {
   if (OpenAPI.SECURITY['Token-Auth'] && !SpecialOperationInfo.login) {
     it('should not be 401: requests token -> apis.', async () => {
       const { access_token, refresh_token } = await API.token({
-        requestBody: { grant_token: res.grant_token },
+        requestBody: {},
       });
       Auth.setAccessToken(access_token);
       Auth.setRefreshToken(refresh_token);
@@ -47,7 +47,7 @@ describe('Authentication pattern.', () => {
   // Cookie based system & has Login feature.
   if (!OpenAPI.SECURITY['Token-Auth'] && SpecialOperationInfo.login) {
     it('should not be 401: requests login -> apis.', async () => {
-      const res = await API.login({
+      await API.login({
         requestBody: { email: 'test', password: 'qwer1234' },
       });
 

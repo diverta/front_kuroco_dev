@@ -18,7 +18,7 @@ if (OpenAPI.SECURITY['Token-Auth'] && SpecialOperationInfo.login) {
       );
       expect(error).to.not.be.true;
     });
-    it('should recover access_token automatically and retry request when a request is 401.', async () => {
+    it.only('should recover access_token automatically and retry request when a request is 401.', async () => {
       await Auth.login({
         requestBody: { email: 'test', password: 'qwer1234' },
       });
