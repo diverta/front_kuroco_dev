@@ -6,5 +6,11 @@ export var OpenAPI = {
     BASE: 'https://kuroco-dev.r-cms.jp',
     VERSION: '1',
     TOKEN: '',
-    SECURITY: {}
+    SECURITY: {
+        'Token-Auth': {
+            'type': 'apiKey',
+            'in': 'header',
+            'name': 'X-RCMS-API-ACCESS-TOKEN',
+        },
+    }
 };
