@@ -40,6 +40,7 @@ export const queries = {
     _: '.response-panel',
     isError: '.js-response-isError',
     response: '.js-apilist-response',
+    closeButton: '.response-panel-button-close',
   },
 };
 
@@ -103,6 +104,7 @@ export async function executeRequest({
     .click({ force: true })
     .type(`{cmd}A{del}`) // clears textarea
     .invoke('val', requestBody)
+    .wait(500)
     .trigger('change', { force: true })
     .get(queries.apiInfos.request)
     .click();
@@ -141,6 +143,13 @@ export async function executeRequest({
         path.join('tests', 'e2e', 'response', `${toSaveFileName}.json`),
         res
       )
+  );
+
+  await promisify(
+    cy
+      .get(queries.responseBlock.closeButton)
+      .trigger('mouseover')
+      .click()
   );
 
   return Promise.resolve(data);

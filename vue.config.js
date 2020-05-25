@@ -13,6 +13,7 @@ module.exports = {
     config.optimization.splitChunks(false);
   },
   devServer: {
+    https: true,
     host: 'localhost',
     port: 9000,
   },

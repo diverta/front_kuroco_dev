@@ -82,12 +82,10 @@ export default Vue.extend({
       apiInfo
         .method(requestParam)
         .then((res: any) => {
-          console.log('OK', res);
           this.response = res;
           this.isResponseErrorOccured = false;
         })
         .catch((err: any) => {
-          console.log('NG', err);
           this.response = err;
           this.isResponseErrorOccured = true;
         });

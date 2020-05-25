@@ -1,0 +1,37 @@
+{
+    "list": [
+        {
+            "api_id": 3,
+            "title": "[Not Used]",
+            "version": "1",
+            "description": "test3",
+            "create_ymdhi": "2020-03-10 18:37:26.742789+09",
+            "update_ymdhi": "2020-03-25 15:06:45.40277+09",
+            "cors": null,
+            "dflg": 0,
+            "config": "{\"use_token\": true}"
+        },
+        {
+            "api_id": 2,
+            "title": "Global",
+            "version": "1",
+            "description": "test2",
+            "create_ymdhi": "2020-03-10 18:32:37.784985+09",
+            "update_ymdhi": "2020-03-25 16:47:49.472295+09",
+            "cors": null,
+            "dflg": 0,
+            "config": "{\"use_token\": true}"
+        },
+        {
+            "api_id": 1,
+            "title": "Test",
+            "version": "1",
+            "description": "test",
+            "create_ymdhi": "2020-03-10 15:47:39.048533+09",
+            "update_ymdhi": "2020-05-25 16:50:29.499052+09",
+            "cors": "{\"maxAge\": \"1\", \"headers\": [], \"methods\": [\"GET\", \"POST\", \"PUT\", \"DELETE\"], \"origins\": [\"https://kuroco-dev.r-cms.jp\", \"http://localhost:9000\", \"https://localhost:9000\", \"http://localhost\", \"https://localhost\", \"http://127.0.0.1\", \"https://127.0.0.1\", \"http://localhost:9001\", \"https://localhost:9001\"], \"allowCredentials\": true}",
+            "dflg": 0,
+            "config": "{\"use_token\": false}"
+        }
+    ]
+}

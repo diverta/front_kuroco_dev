@@ -32,7 +32,7 @@ const postInsertTopic = () => {
     requestBody: {
       subject: 'Inserted',
       contents_type: 1,
-      ymd: 'SampleValue',
+      ymd: '2020-04-23',
       open_type: 'open',
       topics_flg: 0,
       season: 1,
@@ -42,10 +42,10 @@ const postInsertTopic = () => {
       link_url: 'SampleValue',
       ext_col_01: 'SampleValue',
       ext_col_02: 'SampleValue',
-      ext_col_03: { key: '1', label: 'label1' },
-      ext_col_04: [{ key: '1', label: 'label1' }],
-      ext_col_07: new Date().toISOString(),
-      ext_col_08: new Date().toISOString(),
+      ext_col_03: { key: '1', label: 'Option1' },
+      ext_col_04: [{ key: '1', label: 'Option1' }],
+      ext_col_07: '2020-04-23',
+      ext_col_08: '2020-04-23 10:28 +0900',
       ext_col_05: {
         tdfk_cd: '01',
         tdfk_nm: '北海道',
@@ -56,7 +56,7 @@ const postInsertTopic = () => {
         sub_area_cd: '01100',
         sub_area_nm: '札幌市',
       },
-      ext_col_06: { key: '1', label: 'label1' },
+      ext_col_06: { key: '1', label: 'Parent1' },
       ext_col_09: 1,
       ext_col_11: {
         file_id: 'SampleValue',

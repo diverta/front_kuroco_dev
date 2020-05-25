@@ -64,8 +64,8 @@ const sendMessage = () => {
       ],
       ext_06: '2020-04-23 10:28 +0900',
       ext_07: {
-        file_id: '',
-        file_nm: '',
+        file_id: 'test.png',
+        file_nm: 'test',
         desc: '',
       },
       ext_08: {
@@ -152,18 +152,19 @@ describe('Inquiry', () => {
       get message of updated message
     `, async () => {
     login();
+    // cy.visit('/');
     await getMessages();
-    const formsGetResTxt = await getForms();
-    const inquiryId = JSON.parse(formsGetResTxt).list.find(
+    const formsGetRes = await getForms();
+    const inquiryId = formsGetRes.list.find(
       ({ inquiry_id }) => inquiry_id === 1
     ).inquiry_id;
     await getFormById({ inquiryId });
 
     let messageGetRes = await sendMessage();
-    const addedId = JSON.parse(messageGetRes).id;
+    const addedId = messageGetRes.id;
 
     const getMessageBy = async addedId => {
-      return JSON.parse(await getMessages()).list.find(
+      return (await getMessages()).list.find(
         msg => msg.inquiry_bn_id === addedId
       ).body;
     };

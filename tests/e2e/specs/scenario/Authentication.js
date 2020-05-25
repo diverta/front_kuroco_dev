@@ -51,7 +51,7 @@ describe('Authentication', () => {
   it('Login -> Token -> Logout', async () => {
     login();
     const loginRes = await execLogin();
-    await token(JSON.parse(loginRes));
+    await token(loginRes);
     await execLogout();
   });
 });
