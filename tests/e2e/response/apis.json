@@ -28,10 +28,10 @@
             "version": "1",
             "description": "test",
             "create_ymdhi": "2020-03-10 15:47:39.048533+09",
-            "update_ymdhi": "2020-05-25 16:50:29.499052+09",
+            "update_ymdhi": "2020-05-26 00:15:18.289401+09",
             "cors": "{\"maxAge\": \"1\", \"headers\": [], \"methods\": [\"GET\", \"POST\", \"PUT\", \"DELETE\"], \"origins\": [\"https://kuroco-dev.r-cms.jp\", \"http://localhost:9000\", \"https://localhost:9000\", \"http://localhost\", \"https://localhost\", \"http://127.0.0.1\", \"https://127.0.0.1\", \"http://localhost:9001\", \"https://localhost:9001\"], \"allowCredentials\": true}",
             "dflg": 0,
-            "config": "{\"use_token\": false}"
+            "config": "{\"use_token\": true}"
         }
     ]
 }

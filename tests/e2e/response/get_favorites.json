@@ -1,0 +1,20 @@
+{
+    "list": [],
+    "pageInfo": {
+        "totalCnt": 0,
+        "perPage": 20,
+        "totalPageCnt": 0,
+        "pageNo": 0,
+        "firstIndex": 0,
+        "lastIndex": 0,
+        "path": "/rcms-api/1/favorites",
+        "param": "",
+        "startPageNo": 1,
+        "endPageNo": 0,
+        "first_page_param": "",
+        "previous_page_param": "",
+        "next_page_param": "?pageID=1",
+        "last_page_param": "?pageID=0",
+        "other_page_param": "?pageID="
+    }
+}

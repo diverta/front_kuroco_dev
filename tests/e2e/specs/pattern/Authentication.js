@@ -2,6 +2,7 @@ import { Auth } from '../../../../generated/core/Auth';
 import { OpenAPI } from '../../../../generated/core/OpenAPI';
 import { SpecialOperationInfo } from './../../../../generated/core/ApiInfo';
 
+const promiseAllSequential = require('promise-all-sequential');
 import { executeRequest } from '../../base';
 
 const requiresAuth = !!OpenAPI.SECURITY['Token-Auth'];
@@ -23,7 +24,7 @@ const hasLoginEndpoint = !!SpecialOperationInfo.login;
       if (requiresAuth && hasLoginEndpoint) {
         return 'token + login';
       }
-      if (requiresAuth && hasLoginEndpoint) {
+      if (requiresAuth && !hasLoginEndpoint) {
         return 'token + no-login';
       }
       if (!requiresAuth && hasLoginEndpoint) {
@@ -52,7 +53,7 @@ const execLogin = () => {
     requestData,
   });
 };
-const execToken = ({ grant_token }) => {
+const execToken = ({ grant_token } = {}) => {
   const requestData = grant_token
     ? {
         requestBody: {
@@ -74,6 +75,47 @@ const execApis = () => {
     requestData,
   });
 };
+const execTopics = () => {
+  const requestData = {};
+  return executeRequest({
+    cy,
+    query: 'get topics',
+    indexOfApis: 1,
+    requestData,
+  });
+};
+const execFavorites = () => {
+  const requestData = {};
+  return executeRequest({
+    cy,
+    query: 'get favorites',
+    requestData,
+  });
+};
+const execMembers = () => {
+  const requestData = {};
+  return executeRequest({
+    cy,
+    query: 'get members',
+    requestData,
+  });
+};
+const execTags = () => {
+  const requestData = {};
+  return executeRequest({
+    cy,
+    query: 'get tags',
+    requestData,
+  });
+};
+const execConfirmingAPIs = () =>
+  promiseAllSequential([
+    execTopics,
+    execFavorites,
+    execMembers,
+    execTags,
+    execApis,
+  ]);
 
 describe('Authentication pattern.', () => {
   // Token based system & has Login feature.
@@ -88,7 +130,7 @@ describe('Authentication pattern.', () => {
       Auth.setRefreshToken(refresh_token);
 
       let error;
-      await execApis().catch(() => (error = true));
+      await execConfirmingAPIs().catch(() => (error = true));
       expect(error).to.not.be.true;
     });
   }
@@ -101,7 +143,7 @@ describe('Authentication pattern.', () => {
       Auth.setAccessToken(access_token);
 
       let error;
-      await execApis().catch(() => (error = true));
+      await execConfirmingAPIs().catch(() => (error = true));
       expect(error).to.not.be.true;
     });
   }
@@ -113,7 +155,7 @@ describe('Authentication pattern.', () => {
       await execLogin();
 
       let error;
-      await execApis().catch(() => (error = true));
+      await execConfirmingAPIs().catch(() => (error = true));
       expect(error).to.not.be.true;
     });
   }
@@ -123,7 +165,7 @@ describe('Authentication pattern.', () => {
     it('should not be 401: requests apis.', async () => {
       cy.visit('/');
       let error;
-      await execApis().catch(() => (error = true));
+      await execConfirmingAPIs().catch(() => (error = true));
       expect(error).to.not.be.true;
     });
   }
