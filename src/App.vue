@@ -1,12 +1,13 @@
 <template>
   <v-app>
     <Result
-      :response.sync="response"
+      :response="response"
       :isResponseErrorOccured="isResponseErrorOccured"
+      @hide="clearResponse"
     />
     <Header>
       <Login />
-      <FilterInput :query.sync="query" />
+      <FilterInput :query="query" @update:query="q => setQuery(q)" />
     </Header>
 
     <v-content>
@@ -16,12 +17,11 @@
           overflow: 'scroll',
           transition: 'height 0.1s ease-in',
         }"
-        :apiInfos="apiInfos"
-        :query="query"
+        :apis="filteredApis"
         @clickOnApi="
-          v => {
-            apiInfo = v;
-            response = null;
+          api => {
+            setRenderApi(api);
+            clearResponse();
           }
         "
       />
@@ -32,9 +32,9 @@
             overflow: 'scroll',
             transition: 'height 0.1s ease-in',
           }"
-          :apiInfo="apiInfo"
+          :apiInfo="renderApi"
           :expandsEditor.sync="expandsEditor"
-          @onSubmit="executeRequest"
+          @onSubmit="request"
         />
       </v-row>
     </v-content>
@@ -49,8 +49,8 @@ import ApiListTable from './components/ApiListTable.vue';
 import Editor from './components/Editor.vue';
 import FilterInput from './components/FilterInput.vue';
 import Result from './components/Result.vue';
-import { ApiInfos } from '../generated/core/ApiInfo';
 import { Auth } from '../generated/core/Auth';
+import { mapActions, mapState, mapGetters } from 'vuex';
 
 export default Vue.extend({
   name: 'App',
@@ -62,34 +62,29 @@ export default Vue.extend({
     FilterInput,
     Result,
   },
+  computed: {
+    ...mapState([
+      'query',
+      'apis',
+      'renderApi',
+      'response',
+      'isResponseErrorOccured',
+    ]),
+    ...mapGetters(['filteredApis']),
+  },
   data() {
     return {
       expandsEditor: false,
-
-      apiInfos: ApiInfos,
-      apiInfo: null as any,
-      query: '' as string,
-
-      response: null as any,
-      isResponseErrorOccured: null as any,
     };
   },
   methods: {
-    executeRequest({ apiInfo, requestParam }: any) {
-      this.response = null;
-      this.isResponseErrorOccured = null;
-
-      apiInfo
-        .method(requestParam)
-        .then((res: any) => {
-          this.response = res;
-          this.isResponseErrorOccured = false;
-        })
-        .catch((err: any) => {
-          this.response = err;
-          this.isResponseErrorOccured = true;
-        });
-    },
+    ...mapActions([
+      'setQuery',
+      'setApis',
+      'setRenderApi',
+      'request',
+      'clearResponse',
+    ]),
   },
   mounted() {
     Auth.deleteAccessToken();

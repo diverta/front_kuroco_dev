@@ -1,10 +1,13 @@
 <template>
-  <div class="response-panel js-response" :style="{ height: `${response ? 70 : 0}vh` }">
+  <div
+    class="response-panel js-response"
+    :style="{ height: `${response ? 70 : 0}vh` }"
+  >
     <v-btn
       fab
       icon
       class="response-panel-button-close ma-4"
-      @click="() => $emit('update:response', null)"
+      @click="() => $emit('hide')"
       color="primary"
       dark
     >
@@ -13,10 +16,15 @@
 
     <v-container class="ma-4" v-if="!!response">
       <v-row>
-        <span class="font-weight-bold js-response-isError">isError? : {{ isResponseErrorOccured }}</span>
+        <span class="font-weight-bold js-response-isError"
+          >isError? : {{ isResponseErrorOccured }}</span
+        >
       </v-row>
       <v-row>
-        <span class="rersponse-body response-result js-apilist-response" v-html="responseText"></span>
+        <span
+          class="rersponse-body response-result js-apilist-response"
+          v-html="responseText"
+        ></span>
       </v-row>
     </v-container>
   </div>

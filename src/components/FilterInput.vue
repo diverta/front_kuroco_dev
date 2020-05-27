@@ -1,7 +1,7 @@
 <template>
   <v-text-field
     :value="query"
-    @input="q => $emit('update:query', q)"
+    @input="q => $store.dispatch('setQuery', q)"
     label="Search API"
     class="js-apilist-filter"
     hide-details

@@ -100,7 +100,6 @@ export default Vue.extend({
       Auth.login({
         requestBody: { email: this.email, password: this.password },
       }).then((memberId: any) => {
-        console.log(memberId);
         this.loginStatus = 'LOGGEDIN';
       });
     },

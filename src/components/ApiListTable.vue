@@ -13,7 +13,7 @@
         <tbody>
           <tr
             :class="`js-info-method-methodname-${info.methodName}`"
-            v-for="(info, idx) in infos"
+            v-for="(info, idx) in apis"
             :key="idx"
             @click="() => $emit('clickOnApi', info)"
           >
@@ -30,34 +30,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { mapGetters } from 'vuex';
 
 export default Vue.extend({
   name: 'ApiList',
-  props: ['apiInfos', 'query'],
-  computed: {
-    queries() {
-      return (((this as any).query as string) || '')
-        .trim()
-        .split(' ')
-        .map(q => q.trim())
-        .filter(q => q !== undefined && q !== '');
-    },
-    infos() {
-      return this.apiInfos.filter((info: any) => {
-        return (
-          this.filter(this.queries, info.path) ||
-          this.filter(this.queries, info.className) ||
-          this.filter(this.queries, info.methodName)
-        );
-      });
-    },
-  },
-  methods: {
-    filter(queries: string[] = [], testee: string = '') {
-      return this.queries.every((q: string) =>
-        testee.toUpperCase().includes(q.toUpperCase())
-      );
-    },
-  },
+  props: ['apis'],
 });
 </script>

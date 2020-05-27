@@ -3,13 +3,13 @@
     <div class="panel-header mx-2 d-flex justify-space-between">
       <div class="mx-4 d-flex align-center">
         <span class="ml-2 info-anchor font-weight-bold">#</span>
-        <span
-          class="ml-2 info-classname pink--text text--darken-4"
-        >{{ apiInfo ? apiInfo.className : 'className' }}</span>
+        <span class="ml-2 info-classname pink--text text--darken-4">{{
+          apiInfo ? apiInfo.className : 'className'
+        }}</span>
         <span>.</span>
-        <span
-          class="ml-0 info-methodname purple--text text--darken-4"
-        >{{ apiInfo ? apiInfo.methodName : 'methodName' }}</span>
+        <span class="ml-0 info-methodname purple--text text--darken-4">{{
+          apiInfo ? apiInfo.methodName : 'methodName'
+        }}</span>
       </div>
       <div class="mx-4 d-flex align-center">
         <v-btn
@@ -19,7 +19,7 @@
           color="primary"
           :style="{
             transform: `rotate( ${expandsEditor ? '-180deg' : '0deg'} )`,
-            transition: 'transform 0.25s ease'
+            transition: 'transform 0.25s ease',
           }"
           @click="() => $emit('update:expandsEditor', !expandsEditor)"
         >
@@ -76,7 +76,7 @@
           small
           icon
           color="white"
-          :disabled="codeDescription === '' "
+          :disabled="codeDescription === ''"
           @click="handleOnClickDownload"
         >
           <v-icon>mdi-download</v-icon>
@@ -86,10 +86,15 @@
           small
           icon
           color="white"
-          :disabled="codeDescription === '' "
+          :disabled="codeDescription === ''"
           @click="() => $refs.file.click()"
         >
-          <input type="file" ref="file" v-on:change="handleOnClickUpload" hidden />
+          <input
+            type="file"
+            ref="file"
+            v-on:change="handleOnClickUpload"
+            hidden
+          />
           <v-icon>mdi-upload</v-icon>
         </v-btn>
       </div>
@@ -109,9 +114,10 @@
       :disabled="error !== null || evaluatedObject === null"
       primary
       @click="
-          () => $emit('onSubmit', { apiInfo, requestParam: evaluatedObject })
-        "
-    >request</v-btn>
+        () => $emit('onSubmit', { apiInfo, requestParam: evaluatedObject })
+      "
+      >request</v-btn
+    >
   </div>
 </template>
 
@@ -214,7 +220,6 @@ export default Vue.extend({
           }
 
           const type = match[2].replace(',', '');
-          console.log(type);
           let replacedLine: string = str;
           switch (type) {
             case 'string':

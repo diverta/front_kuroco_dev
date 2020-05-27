@@ -87,24 +87,21 @@ export async function executeRequest({
   const requestBody = JSON.stringify(requestData, undefined, '\t');
   const toSaveFileName = query.replace(/ /g, '_');
 
-  cy.get(queries.apiInfos.filter)
-    .click()
-    .type(`{selectall}{del}`, {
-      parseSpecialCharSequences: true,
-      release: false,
-    })
-    .type(query)
-    .get('tbody')
+  const getStore = () => cy.window().its('app.$store');
+
+  getStore().then(async store => {
+    store.dispatch('setQuery', query);
+  });
+
+  cy.get('tbody')
     .children()
     .eq(indexOfApis)
     .trigger('mouseover')
     .click()
-    .wait(500)
     .get(queries.codeBlock)
     .click({ force: true })
     .type(`{cmd}A{del}`) // clears textarea
     .invoke('val', requestBody)
-    .wait(500)
     .trigger('change', { force: true })
     .get(queries.apiInfos.request)
     .click();
