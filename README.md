@@ -147,13 +147,13 @@ return executeRequest({
     そちらも確認いただき、特にエディタ上で SyntaxError が発生していないかをチェックしてください。
 
 ### Firebase hosting へのアップロード
-# cd ./front_kuroco_dev  
-# firebase init  
+`cd ./front_kuroco_dev`  
+`firebase init`  
 ブラウザでログインして、  
 Firebace hostingをSpaceキーで選択して、Enter  
 プロジェクトはkuroco-dev-sakaguchi-tempを選択  
   
-# firebase deploy
+`firebase deploy`  
 アップロードするディレクトリは dist  
 index.htmlにリクエストを集約する？ YES  
 index.htmlを上書きする？ NO  
