@@ -1,6 +1,7 @@
 # front_kuroco_dev
 
 > 本アプリは、Kuroco サーバまで直接リクエストし、結果を画面表示するものです。
+> https://kuroco-dev.web.app/
 
 ## 概要
 
@@ -147,15 +148,18 @@ return executeRequest({
     そちらも確認いただき、特にエディタ上で SyntaxError が発生していないかをチェックしてください。
 
 ### Firebase hosting へのアップロード
+
+`npm run deploy` を実行してください。
+
+#### firebase hosting deploy initializing
+
+`firebase deploy`  
+アップロードするディレクトリは dist  
+index.html にリクエストを集約する？ YES  
+index.html を上書きする？ NO
+
 `cd ./front_kuroco_dev`  
 `firebase init`  
 ブラウザでログインして、  
-Firebace hostingをSpaceキーで選択して、Enter  
-プロジェクトはkuroco-devを選択  
-  
-`firebase deploy`  
-アップロードするディレクトリは dist  
-index.htmlにリクエストを集約する？ YES  
-index.htmlを上書きする？ NO  
-  
-https://kuroco-dev.web.app/
+Firebace hosting を Space キーで選択して、Enter  
+プロジェクトは kuroco-dev を選択
