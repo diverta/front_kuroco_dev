@@ -151,7 +151,7 @@ return executeRequest({
 `firebase init`  
 ブラウザでログインして、  
 Firebace hostingをSpaceキーで選択して、Enter  
-プロジェクトはkuroco-dev-sakaguchi-tempを選択  
+プロジェクトはkuroco-devを選択  
   
 `firebase deploy`  
 アップロードするディレクトリは dist  
