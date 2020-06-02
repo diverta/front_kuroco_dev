@@ -158,4 +158,4 @@ Firebace hostingをSpaceキーで選択して、Enter
 index.htmlにリクエストを集約する？ YES  
 index.htmlを上書きする？ NO  
   
-https://kuroco-dev-sakaguchi-temp.web.app/
+https://kuroco-dev.web.app/
