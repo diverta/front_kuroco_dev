@@ -3,13 +3,13 @@
     <div class="panel-header mx-2 d-flex justify-space-between">
       <div class="mx-4 d-flex align-center">
         <span class="ml-2 info-anchor font-weight-bold">#</span>
-        <span class="ml-2 info-classname pink--text text--darken-4">{{
-          apiInfo ? apiInfo.className : 'className'
-        }}</span>
+        <span class="ml-2 info-classname pink--text text--darken-4">
+          {{ apiInfo ? apiInfo.className : 'className' }}
+        </span>
         <span>.</span>
-        <span class="ml-0 info-methodname purple--text text--darken-4">{{
-          apiInfo ? apiInfo.methodName : 'methodName'
-        }}</span>
+        <span class="ml-0 info-methodname purple--text text--darken-4">
+          {{ apiInfo ? apiInfo.methodName : 'methodName' }}
+        </span>
       </div>
       <div class="mx-4 d-flex align-center">
         <v-btn
@@ -123,7 +123,6 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { transpile } from 'typescript';
 import 'codemirror/mode/css/css.js';
 import 'codemirror/theme/rubyblue.css';
 
@@ -170,10 +169,10 @@ export default Vue.extend({
         .join('\n');
     },
     evaluateOnJS(requestParam: string) {
-      let result = transpile(`({ ...${requestParam} })`);
-      let prm = eval(result);
+      const p = requestParam.replace(/;/g, '');
+      const d = eval(`(${p})`);
       // extract Date Object from string type date value ('YYYY-MM-DD') in prm
-      return (JSON as any).parseWithDate(JSON.stringify(prm));
+      return (JSON as any).parseWithDate(JSON.stringify(d));
     },
     handleOnChangeEditorInput(code: string) {
       try {
