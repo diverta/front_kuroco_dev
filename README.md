@@ -145,3 +145,16 @@ return executeRequest({
     自動で Kuroco 用のソースコードが更新されます。  
     Kuroco 用のコードが更新されていることで、それを利用するテスト内の javascript ファイルも更新が必要かもしれません。  
     そちらも確認いただき、特にエディタ上で SyntaxError が発生していないかをチェックしてください。
+
+### Firebase hosting へのアップロード
+# cd ./front_kuroco_dev
+# firebase init
+ブラウザでログインして、
+Firebace hostingをSpaceキーで選択して、Enter
+プロジェクトはkuroco-dev-sakaguchi-tempを選択
+# firebase deploy
+アップロードするディレクトリは dist
+index.htmlにリクエストを集約する？ YES
+index.htmlを上書きする？ NO
+
+https://kuroco-dev-sakaguchi-temp.web.app/
