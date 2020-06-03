@@ -209,9 +209,42 @@ class AuthenticationService {
         ApiError_1.catchGenericError(result);
         return result.body;
     }
+    /**
+     *
+     * ### **Login::firebaseToken (v1)**
+     *
+     *
+     * @param outputFormat Format (json|xml|csv)
+     * @param lang Language
+     * @param charset Charset
+     * @result any
+     * @throws ApiError
+     */
+    static async postAuthenticationServiceRcmsApi1FirebaseToken(requestParam) {
+        const shouldHookToken = Object.keys({
+            'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+        }).length > 0;
+        const request = async () => await request_1.request({
+            headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
+            method: 'post',
+            path: `/rcms-api/1/firebase_token`,
+            query: {
+                '_output_format': requestParam.outputFormat,
+                '_lang': requestParam.lang,
+                '_charset': requestParam.charset,
+            },
+        });
+        let result = await request();
+        if (shouldHookToken && !result.ok && result.status === 401) {
+            result = await Auth_1.Auth.retryRequest(request, result);
+        }
+        ApiError_1.catchGenericError(result);
+        return result.body;
+    }
 }
 exports.AuthenticationService = AuthenticationService;
 (function (AuthenticationService) {
+    ;
     ;
     ;
     ;
@@ -359,6 +392,23 @@ exports.infos = [
             charset?: string,
         };
         export type getAuthenticationServiceRcmsApi1MeProfileResponse = any;
+        `,
+    },
+    {
+        path: '/rcms-api/1/firebase_token',
+        httpMethod: 'post',
+        class: AuthenticationService,
+        className: 'AuthenticationService',
+        method: AuthenticationService.postAuthenticationServiceRcmsApi1FirebaseToken,
+        methodName: 'postAuthenticationServiceRcmsApi1FirebaseToken',
+        auth: null,
+        description: `
+        export interface postAuthenticationServiceRcmsApi1FirebaseTokenRequest {
+            outputFormat?: string,
+            lang?: string,
+            charset?: string,
+        };
+        export type postAuthenticationServiceRcmsApi1FirebaseTokenResponse = any;
         `,
     },
 ];
