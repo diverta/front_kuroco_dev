@@ -5,7 +5,7 @@
 /* prettier-ignore */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.OpenAPI = {
-    BASE: 'https://kuroco-dev.r-cms.jp',
+    BASE: 'https://kuroco-dev.a.kuroco.app',
     VERSION: '1',
     TOKEN: '',
     SECURITY: {
