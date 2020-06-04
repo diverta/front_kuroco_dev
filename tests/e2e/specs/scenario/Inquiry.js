@@ -164,9 +164,13 @@ describe('Inquiry', () => {
     const addedId = messageGetRes.id;
 
     const getMessageBy = async addedId => {
-      return (await getMessages()).list.find(
-        msg => msg.inquiry_bn_id === addedId
-      ).body;
+      try {
+        return (await getMessages()).list.find(
+          msg => msg.inquiry_bn_id === addedId
+        ).body;
+      } catch(e) {
+        throw Error(`the created message is not found.\nid: ${addedId}\n${e}`)
+      }
     };
     expect(await getMessageBy(addedId)).to.equal('テストメッセージ1');
 
