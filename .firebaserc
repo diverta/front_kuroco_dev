@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "kuroco-dev"
+  },
+  "targets": {
+    "kuroco-dev": {
+      "hosting": {
+        "kuroco-dev": [
+          "kuroco-dev"
+        ]
+      }
+    }
   }
 }
