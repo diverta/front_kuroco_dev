@@ -179,16 +179,21 @@ describe('Member', () => {
       get member by ID of deleted one (should be empty)
     `, async () => {
     login();
+    // get members
     const members = await getMembers();
+    // get member by ID
     await getMember({ memberId: members.list[0].member_id });
 
+    // post insert member
     const insertRes = await postInsertMember();
     const addedId = insertRes.id;
+    // get members including updated one
     expect(
       (await getMembersByIds({memberIds: [addedId]}))
         .list
         .find(row => row.member_id === addedId)
     ).to.exist;
+    // get member by ID of inserted one
     const insertedMember = await getMember({ memberId: addedId });
     expect(insertedMember.details).to.exist;
 
@@ -196,12 +201,15 @@ describe('Member', () => {
       expect(insertedMember.details[key]).to.deep.equal(insertExt[key]);
     });
 
+    // post update inserted member
     const updateRes = await postUpdateMember({ memberId: addedId });
+    // get members including updated one
     expect(
       (await getMembersByIds({memberIds: [addedId]}))
         .list
         .find(row => row.member_id === addedId)
     ).to.exist;
+    // get member by ID of updated one
     const updatedMember = await getMember({ memberId: addedId });
     expect(updatedMember.details).to.exist;
 
@@ -209,13 +217,15 @@ describe('Member', () => {
       expect(updatedMember.details[key]).to.deep.equal(updateExt[key]);
     });
 
+    // post delete updated member
     const deleteRes = await postDeleteMember({ memberId: addedId });
+    // get members not including deleted one
     expect(
       (await getMembersByIds({memberIds: [addedId]}))
         .list
         .find(row => row.member_id === addedId)
     ).to.not.exist;
-
+    // get member by ID of deleted one (should be empty)
     let errorResponse = {};
     await getMember({ memberId: addedId }).catch(e => {
       errorResponse = JSON.parse(e.message);

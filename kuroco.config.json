@@ -1,6 +1,6 @@
 {
-	"sdk_key": "0dc9de04c31dccc26a134bf225f5f856",
-	"api_url": "https://kuroco-dev-mng.r-cms.jp//",
+	"sdk_key": "577606e4d7d4f51fa81df5e1e81994c5",
+	"api_url": "https://kuroco-dev-mng.r-cms.jp/",
 	"gcp": {
 		"firebaseConfig": {
 			"apiKey": "AIzaSyAoOPeU11WN8_LjVI1DS1MI4Aa2kZUY_Jg",
