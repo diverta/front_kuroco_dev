@@ -32,4 +32,3 @@ export declare const infos: {
     auth: null;
     description: string;
 }[];
-//# sourceMappingURL=FilesService.d.ts.map

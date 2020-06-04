@@ -157,4 +157,3 @@ export declare const infos: ({
     auth: null;
     description: string;
 })[];
-//# sourceMappingURL=TagsService.d.ts.map

@@ -79,6 +79,18 @@ export declare class AuthenticationService {
      * @throws ApiError
      */
     static getAuthenticationServiceRcmsApi1MeProfile(requestParam: AuthenticationService.getAuthenticationServiceRcmsApi1MeProfileRequest): Promise<any>;
+    /**
+     *
+     * ### **Login::firebaseToken (v1)**
+     *
+     *
+     * @param outputFormat Format (json|xml|csv)
+     * @param lang Language
+     * @param charset Charset
+     * @result any
+     * @throws ApiError
+     */
+    static postAuthenticationServiceRcmsApi1FirebaseToken(requestParam: AuthenticationService.postAuthenticationServiceRcmsApi1FirebaseTokenRequest): Promise<any>;
 }
 export declare namespace AuthenticationService {
     interface postAuthenticationServiceRcmsApi1AuthLoginRequest {
@@ -162,6 +174,12 @@ export declare namespace AuthenticationService {
         charset?: string;
     }
     type getAuthenticationServiceRcmsApi1MeProfileResponse = any;
+    interface postAuthenticationServiceRcmsApi1FirebaseTokenRequest {
+        outputFormat?: string;
+        lang?: string;
+        charset?: string;
+    }
+    type postAuthenticationServiceRcmsApi1FirebaseTokenResponse = any;
 }
 export declare const infos: ({
     path: string;
@@ -191,4 +209,3 @@ export declare const infos: ({
     auth: null;
     description: string;
 })[];
-//# sourceMappingURL=AuthenticationService.d.ts.map

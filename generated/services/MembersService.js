@@ -3,6 +3,15 @@
 /* tslint:disable */
 /* eslint-disable */
 /* prettier-ignore */
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const ApiError_1 = require("../core/ApiError");
 const request_1 = require("../core/request");
@@ -29,35 +38,39 @@ class MembersService {
      * @result any
      * @throws ApiError
      */
-    static async getMembersServiceRcmsApi1Members(requestParam) {
-        const shouldHookToken = Object.keys({
-            'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
-        }).length > 0;
-        const request = async () => await request_1.request({
-            headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
-            method: 'get',
-            path: `/rcms-api/1/members`,
-            query: {
-                '_output_format': requestParam.outputFormat,
-                '_lang': requestParam.lang,
-                '_charset': requestParam.charset,
-                'id[]': requestParam.id,
-                'cnt': requestParam.cnt,
-                'pageID': requestParam.pageId,
-                's_name': requestParam.sName,
-                's_email': requestParam.sEmail,
-                's_tel': requestParam.sTel,
-                's_address': requestParam.sAddress,
-                's_tdfk_cd': requestParam.sTdfkCd,
-                'group_id': requestParam.groupId,
-            },
+    static getMembersServiceRcmsApi1Members(requestParam) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const shouldHookToken = Object.keys({
+                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+            }).length > 0;
+            const request = () => __awaiter(this, void 0, void 0, function* () {
+                return yield request_1.request({
+                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
+                    method: 'get',
+                    path: `/rcms-api/1/members`,
+                    query: {
+                        '_output_format': requestParam.outputFormat,
+                        '_lang': requestParam.lang,
+                        '_charset': requestParam.charset,
+                        'id[]': requestParam.id,
+                        'cnt': requestParam.cnt,
+                        'pageID': requestParam.pageId,
+                        's_name': requestParam.sName,
+                        's_email': requestParam.sEmail,
+                        's_tel': requestParam.sTel,
+                        's_address': requestParam.sAddress,
+                        's_tdfk_cd': requestParam.sTdfkCd,
+                        'group_id': requestParam.groupId,
+                    },
+                });
+            });
+            let result = yield request();
+            if (shouldHookToken && !result.ok && result.status === 401) {
+                result = yield Auth_1.Auth.retryRequest(request, result);
+            }
+            ApiError_1.catchGenericError(result);
+            return result.body;
         });
-        let result = await request();
-        if (shouldHookToken && !result.ok && result.status === 401) {
-            result = await Auth_1.Auth.retryRequest(request, result);
-        }
-        ApiError_1.catchGenericError(result);
-        return result.body;
     }
     /**
      *
@@ -71,26 +84,30 @@ class MembersService {
      * @result any
      * @throws ApiError
      */
-    static async getMembersServiceRcmsApi1MembersMemberId(requestParam) {
-        const shouldHookToken = Object.keys({
-            'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
-        }).length > 0;
-        const request = async () => await request_1.request({
-            headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
-            method: 'get',
-            path: `/rcms-api/1/members/${requestParam.memberId}`,
-            query: {
-                '_output_format': requestParam.outputFormat,
-                '_lang': requestParam.lang,
-                '_charset': requestParam.charset,
-            },
+    static getMembersServiceRcmsApi1MembersMemberId(requestParam) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const shouldHookToken = Object.keys({
+                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+            }).length > 0;
+            const request = () => __awaiter(this, void 0, void 0, function* () {
+                return yield request_1.request({
+                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
+                    method: 'get',
+                    path: `/rcms-api/1/members/${requestParam.memberId}`,
+                    query: {
+                        '_output_format': requestParam.outputFormat,
+                        '_lang': requestParam.lang,
+                        '_charset': requestParam.charset,
+                    },
+                });
+            });
+            let result = yield request();
+            if (shouldHookToken && !result.ok && result.status === 401) {
+                result = yield Auth_1.Auth.retryRequest(request, result);
+            }
+            ApiError_1.catchGenericError(result);
+            return result.body;
         });
-        let result = await request();
-        if (shouldHookToken && !result.ok && result.status === 401) {
-            result = await Auth_1.Auth.retryRequest(request, result);
-        }
-        ApiError_1.catchGenericError(result);
-        return result.body;
     }
     /**
      *
@@ -108,27 +125,31 @@ class MembersService {
      * @result any
      * @throws ApiError
      */
-    static async postMembersServiceRcmsApi1MembersInsert(requestParam) {
-        const shouldHookToken = Object.keys({
-            'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
-        }).length > 0;
-        const request = async () => await request_1.request({
-            headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
-            method: 'post',
-            path: `/rcms-api/1/members/insert`,
-            query: {
-                '_output_format': requestParam.outputFormat,
-                '_lang': requestParam.lang,
-                '_charset': requestParam.charset,
-            },
-            body: requestParam.requestBody,
+    static postMembersServiceRcmsApi1MembersInsert(requestParam) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const shouldHookToken = Object.keys({
+                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+            }).length > 0;
+            const request = () => __awaiter(this, void 0, void 0, function* () {
+                return yield request_1.request({
+                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
+                    method: 'post',
+                    path: `/rcms-api/1/members/insert`,
+                    query: {
+                        '_output_format': requestParam.outputFormat,
+                        '_lang': requestParam.lang,
+                        '_charset': requestParam.charset,
+                    },
+                    body: requestParam.requestBody,
+                });
+            });
+            let result = yield request();
+            if (shouldHookToken && !result.ok && result.status === 401) {
+                result = yield Auth_1.Auth.retryRequest(request, result);
+            }
+            ApiError_1.catchGenericError(result);
+            return result.body;
         });
-        let result = await request();
-        if (shouldHookToken && !result.ok && result.status === 401) {
-            result = await Auth_1.Auth.retryRequest(request, result);
-        }
-        ApiError_1.catchGenericError(result);
-        return result.body;
     }
     /**
      *
@@ -146,27 +167,31 @@ class MembersService {
      * @result any
      * @throws ApiError
      */
-    static async postMembersServiceRcmsApi1MembersUpdate(requestParam) {
-        const shouldHookToken = Object.keys({
-            'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
-        }).length > 0;
-        const request = async () => await request_1.request({
-            headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
-            method: 'post',
-            path: `/rcms-api/1/members/update`,
-            query: {
-                '_output_format': requestParam.outputFormat,
-                '_lang': requestParam.lang,
-                '_charset': requestParam.charset,
-            },
-            body: requestParam.requestBody,
+    static postMembersServiceRcmsApi1MembersUpdate(requestParam) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const shouldHookToken = Object.keys({
+                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+            }).length > 0;
+            const request = () => __awaiter(this, void 0, void 0, function* () {
+                return yield request_1.request({
+                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
+                    method: 'post',
+                    path: `/rcms-api/1/members/update`,
+                    query: {
+                        '_output_format': requestParam.outputFormat,
+                        '_lang': requestParam.lang,
+                        '_charset': requestParam.charset,
+                    },
+                    body: requestParam.requestBody,
+                });
+            });
+            let result = yield request();
+            if (shouldHookToken && !result.ok && result.status === 401) {
+                result = yield Auth_1.Auth.retryRequest(request, result);
+            }
+            ApiError_1.catchGenericError(result);
+            return result.body;
         });
-        let result = await request();
-        if (shouldHookToken && !result.ok && result.status === 401) {
-            result = await Auth_1.Auth.retryRequest(request, result);
-        }
-        ApiError_1.catchGenericError(result);
-        return result.body;
     }
     /**
      *
@@ -184,27 +209,31 @@ class MembersService {
      * @result any
      * @throws ApiError
      */
-    static async postMembersServiceRcmsApi1MembersDelete(requestParam) {
-        const shouldHookToken = Object.keys({
-            'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
-        }).length > 0;
-        const request = async () => await request_1.request({
-            headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
-            method: 'post',
-            path: `/rcms-api/1/members/delete`,
-            query: {
-                '_output_format': requestParam.outputFormat,
-                '_lang': requestParam.lang,
-                '_charset': requestParam.charset,
-            },
-            body: requestParam.requestBody,
+    static postMembersServiceRcmsApi1MembersDelete(requestParam) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const shouldHookToken = Object.keys({
+                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+            }).length > 0;
+            const request = () => __awaiter(this, void 0, void 0, function* () {
+                return yield request_1.request({
+                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
+                    method: 'post',
+                    path: `/rcms-api/1/members/delete`,
+                    query: {
+                        '_output_format': requestParam.outputFormat,
+                        '_lang': requestParam.lang,
+                        '_charset': requestParam.charset,
+                    },
+                    body: requestParam.requestBody,
+                });
+            });
+            let result = yield request();
+            if (shouldHookToken && !result.ok && result.status === 401) {
+                result = yield Auth_1.Auth.retryRequest(request, result);
+            }
+            ApiError_1.catchGenericError(result);
+            return result.body;
         });
-        let result = await request();
-        if (shouldHookToken && !result.ok && result.status === 401) {
-            result = await Auth_1.Auth.retryRequest(request, result);
-        }
-        ApiError_1.catchGenericError(result);
-        return result.body;
     }
     /**
      *
@@ -222,27 +251,31 @@ class MembersService {
      * @result any
      * @throws ApiError
      */
-    static async postMembersServiceRcmsApi1MeUpdate(requestParam) {
-        const shouldHookToken = Object.keys({
-            'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
-        }).length > 0;
-        const request = async () => await request_1.request({
-            headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
-            method: 'post',
-            path: `/rcms-api/1/me/update`,
-            query: {
-                '_output_format': requestParam.outputFormat,
-                '_lang': requestParam.lang,
-                '_charset': requestParam.charset,
-            },
-            body: requestParam.requestBody,
+    static postMembersServiceRcmsApi1MeUpdate(requestParam) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const shouldHookToken = Object.keys({
+                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+            }).length > 0;
+            const request = () => __awaiter(this, void 0, void 0, function* () {
+                return yield request_1.request({
+                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
+                    method: 'post',
+                    path: `/rcms-api/1/me/update`,
+                    query: {
+                        '_output_format': requestParam.outputFormat,
+                        '_lang': requestParam.lang,
+                        '_charset': requestParam.charset,
+                    },
+                    body: requestParam.requestBody,
+                });
+            });
+            let result = yield request();
+            if (shouldHookToken && !result.ok && result.status === 401) {
+                result = yield Auth_1.Auth.retryRequest(request, result);
+            }
+            ApiError_1.catchGenericError(result);
+            return result.body;
         });
-        let result = await request();
-        if (shouldHookToken && !result.ok && result.status === 401) {
-            result = await Auth_1.Auth.retryRequest(request, result);
-        }
-        ApiError_1.catchGenericError(result);
-        return result.body;
     }
     /**
      *
@@ -260,27 +293,31 @@ class MembersService {
      * @result any
      * @throws ApiError
      */
-    static async postMembersServiceRcmsApi1MeDelete(requestParam) {
-        const shouldHookToken = Object.keys({
-            'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
-        }).length > 0;
-        const request = async () => await request_1.request({
-            headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
-            method: 'post',
-            path: `/rcms-api/1/me/delete`,
-            query: {
-                '_output_format': requestParam.outputFormat,
-                '_lang': requestParam.lang,
-                '_charset': requestParam.charset,
-            },
-            body: requestParam.requestBody,
+    static postMembersServiceRcmsApi1MeDelete(requestParam) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const shouldHookToken = Object.keys({
+                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+            }).length > 0;
+            const request = () => __awaiter(this, void 0, void 0, function* () {
+                return yield request_1.request({
+                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
+                    method: 'post',
+                    path: `/rcms-api/1/me/delete`,
+                    query: {
+                        '_output_format': requestParam.outputFormat,
+                        '_lang': requestParam.lang,
+                        '_charset': requestParam.charset,
+                    },
+                    body: requestParam.requestBody,
+                });
+            });
+            let result = yield request();
+            if (shouldHookToken && !result.ok && result.status === 401) {
+                result = yield Auth_1.Auth.retryRequest(request, result);
+            }
+            ApiError_1.catchGenericError(result);
+            return result.body;
         });
-        let result = await request();
-        if (shouldHookToken && !result.ok && result.status === 401) {
-            result = await Auth_1.Auth.retryRequest(request, result);
-        }
-        ApiError_1.catchGenericError(result);
-        return result.body;
     }
 }
 exports.MembersService = MembersService;

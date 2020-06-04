@@ -68,4 +68,3 @@ export declare const infos: {
     auth: null;
     description: string;
 }[];
-//# sourceMappingURL=ApiService.d.ts.map

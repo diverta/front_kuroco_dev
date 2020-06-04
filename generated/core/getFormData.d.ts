@@ -6,4 +6,3 @@
 export declare function getFormData(params: {
     [key: string]: any;
 }): FormData;
-//# sourceMappingURL=getFormData.d.ts.map

@@ -7,7 +7,7 @@
 	},
 	"servers": [
 		{
-			"url": "https://kuroco-dev.r-cms.jp",
+			"url": "https://kuroco-dev.a.kuroco.app",
 			"description": "API Backend"
 		}
 	],
@@ -486,6 +486,65 @@
 				],
 				"summary": "",
 				"description": "\n### **Login::profile (v1)**\n\n",
+				"parameters": [
+					{
+						"name": "_output_format",
+						"schema": {
+							"type": "string",
+							"format": ""
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "Format (json|xml|csv)"
+					},
+					{
+						"name": "_lang",
+						"schema": {
+							"type": "string",
+							"format": ""
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "Language"
+					},
+					{
+						"name": "_charset",
+						"schema": {
+							"type": "string",
+							"format": ""
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "Charset"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": ""
+					}
+				},
+				"security": [
+					{
+						"Token-Auth": []
+					}
+				]
+			}
+		},
+		"/rcms-api/1/firebase_token": {
+			"summary": "login:1:Login:firebaseToken",
+			"description": "Operations Desc",
+			"post": {
+				"tags": [
+					"Authentication"
+				],
+				"summary": "",
+				"description": "\n### **Login::firebaseToken (v1)**\n\n",
 				"parameters": [
 					{
 						"name": "_output_format",
@@ -1211,7 +1270,7 @@
 												"additionalProperties": false
 											}
 										],
-										"example": "2020-06-02"
+										"example": "2020-06-04"
 									},
 									"ext_col_08": {
 										"description": "DateTime",
@@ -1243,7 +1302,7 @@
 												"additionalProperties": false
 											}
 										],
-										"example": "2020-06-02 14:19 +0900"
+										"example": "2020-06-04 12:09 +0900"
 									},
 									"ext_col_05": {
 										"description": "Tdfk",
@@ -5709,7 +5768,7 @@
 												"additionalProperties": false
 											}
 										],
-										"example": "2020-06-02"
+										"example": "2020-06-04"
 									},
 									"ext_col_08": {
 										"description": "DateTime",
@@ -5741,7 +5800,7 @@
 												"additionalProperties": false
 											}
 										],
-										"example": "2020-06-02 14:19 +0900"
+										"example": "2020-06-04 12:09 +0900"
 									},
 									"ext_col_05": {
 										"description": "Tdfk",
@@ -10715,7 +10774,7 @@
 													"additionalProperties": false
 												}
 											],
-											"example": "2020-06-02"
+											"example": "2020-06-04"
 										},
 										"description": "Date",
 										"default": [],
@@ -10754,7 +10813,7 @@
 													"additionalProperties": false
 												}
 											],
-											"example": "2020-06-02 14:19 +0900"
+											"example": "2020-06-04 12:09 +0900"
 										},
 										"description": "DateTime",
 										"default": [],
@@ -15318,7 +15377,7 @@
 													"additionalProperties": false
 												}
 											],
-											"example": "2020-06-02"
+											"example": "2020-06-04"
 										},
 										"description": "Date",
 										"default": [],
@@ -15357,7 +15416,7 @@
 													"additionalProperties": false
 												}
 											],
-											"example": "2020-06-02 14:19 +0900"
+											"example": "2020-06-04 12:09 +0900"
 										},
 										"description": "DateTime",
 										"default": [],
@@ -20162,7 +20221,7 @@
 												"format": "date"
 											}
 										],
-										"example": "2020-06-02"
+										"example": "2020-06-04"
 									},
 									"relation": {
 										"type": "integer",
@@ -20541,7 +20600,7 @@
 												"format": "date"
 											}
 										],
-										"example": "2020-06-02"
+										"example": "2020-06-04"
 									},
 									"relation": {
 										"type": "integer",
@@ -21011,7 +21070,7 @@
 												"format": "date"
 											}
 										],
-										"example": "2020-06-02"
+										"example": "2020-06-04"
 									},
 									"relation": {
 										"type": "integer",
@@ -22507,7 +22566,7 @@
 												}
 											}
 										],
-										"example": "2020-06-02 14:19 +0900",
+										"example": "2020-06-04 12:09 +0900",
 										"description": "DateTime"
 									},
 									"ext_07": {
@@ -22703,7 +22762,7 @@
 												}
 											}
 										],
-										"example": "2020-06-02",
+										"example": "2020-06-04",
 										"description": "Date"
 									},
 									"validate_only": {
@@ -23034,7 +23093,7 @@
 												}
 											}
 										],
-										"example": "2020-06-02 14:19 +0900",
+										"example": "2020-06-04 12:09 +0900",
 										"description": "DateTime"
 									},
 									"ext_07": {
@@ -23230,7 +23289,7 @@
 												}
 											}
 										],
-										"example": "2020-06-02",
+										"example": "2020-06-04",
 										"description": "Date"
 									},
 									"validate_only": {

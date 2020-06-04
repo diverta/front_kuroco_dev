@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:e2e": "vue-cli-service test:e2e --mode=dev",
+    "test:e2e:ci": "vue-cli-service test:e2e --mode=dev --headless",
     "test:unit": "vue-cli-service test:unit",
     "update:kuroco": "kuroco pull && kuroco generate -l javascript --exportApiInformations",
     "deploy": "npm run build && firebase deploy"
@@ -13,6 +14,7 @@
   "dependencies": {
     "@cypress/webpack-preprocessor": "^5.1.2",
     "core-js": "^3.6.4",
+    "firebase": "^7.14.6",
     "json.date-extensions": "^1.2.2",
     "promise-all-sequential": "^1.0.0",
     "vue": "^2.6.11",
@@ -29,7 +31,6 @@
     "@vue/cli-service": "^4.3.0",
     "@vue/test-utils": "1.0.0-beta.31",
     "cypress-promise": "^1.1.0",
-    "firebase": "^7.14.6",
     "sass": "^1.19.0",
     "sass-loader": "^8.0.0",
     "typescript": "~3.8.3",

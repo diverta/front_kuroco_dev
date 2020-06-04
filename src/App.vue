@@ -6,6 +6,7 @@
       @hide="clearResponse"
     />
     <Header>
+      <Uploader />
       <Login />
       <FilterInput :query="query" @update:query="q => setQuery(q)" />
     </Header>
@@ -49,6 +50,7 @@ import ApiListTable from './components/ApiListTable.vue';
 import Editor from './components/Editor.vue';
 import FilterInput from './components/FilterInput.vue';
 import Result from './components/Result.vue';
+import Uploader from './components/Uploader.vue';
 import { Auth } from '../generated/core/Auth';
 import { mapActions, mapState, mapGetters } from 'vuex';
 
@@ -61,6 +63,7 @@ export default Vue.extend({
     Editor,
     FilterInput,
     Result,
+    Uploader,
   },
   computed: {
     ...mapState([
@@ -86,7 +89,7 @@ export default Vue.extend({
       'clearResponse',
     ]),
   },
-  mounted() {
+  async mounted() {
     Auth.deleteAccessToken();
     Auth.deleteRefreshToken();
     Auth.onErrorHandler = async result => Promise.resolve();

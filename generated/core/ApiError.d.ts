@@ -23,4 +23,3 @@ export declare namespace ApiError {
  * @param result
  */
 export declare function catchGenericError(result: Result): void;
-//# sourceMappingURL=ApiError.d.ts.map

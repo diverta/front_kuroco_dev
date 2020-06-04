@@ -3,6 +3,15 @@
 /* tslint:disable */
 /* eslint-disable */
 /* prettier-ignore */
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const ApiError_1 = require("../core/ApiError");
 const request_1 = require("../core/request");
@@ -25,26 +34,30 @@ class TopicsService {
      * @result any
      * @throws ApiError
      */
-    static async getTopicsServiceRcmsApi1Topics1TopicsId(requestParam) {
-        const shouldHookToken = Object.keys({
-            'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
-        }).length > 0;
-        const request = async () => await request_1.request({
-            headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
-            method: 'get',
-            path: `/rcms-api/1/topics1/${requestParam.topicsId}`,
-            query: {
-                '_output_format': requestParam.outputFormat,
-                '_lang': requestParam.lang,
-                '_charset': requestParam.charset,
-            },
+    static getTopicsServiceRcmsApi1Topics1TopicsId(requestParam) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const shouldHookToken = Object.keys({
+                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+            }).length > 0;
+            const request = () => __awaiter(this, void 0, void 0, function* () {
+                return yield request_1.request({
+                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
+                    method: 'get',
+                    path: `/rcms-api/1/topics1/${requestParam.topicsId}`,
+                    query: {
+                        '_output_format': requestParam.outputFormat,
+                        '_lang': requestParam.lang,
+                        '_charset': requestParam.charset,
+                    },
+                });
+            });
+            let result = yield request();
+            if (shouldHookToken && !result.ok && result.status === 401) {
+                result = yield Auth_1.Auth.retryRequest(request, result);
+            }
+            ApiError_1.catchGenericError(result);
+            return result.body;
         });
-        let result = await request();
-        if (shouldHookToken && !result.ok && result.status === 401) {
-            result = await Auth_1.Auth.retryRequest(request, result);
-        }
-        ApiError_1.catchGenericError(result);
-        return result.body;
     }
     /**
      *
@@ -85,49 +98,53 @@ class TopicsService {
      * @result any
      * @throws ApiError
      */
-    static async getTopicsServiceRcmsApi1Topics1(requestParam) {
-        const shouldHookToken = Object.keys({
-            'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
-        }).length > 0;
-        const request = async () => await request_1.request({
-            headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
-            method: 'get',
-            path: `/rcms-api/1/topics1`,
-            query: {
-                '_output_format': requestParam.outputFormat,
-                '_lang': requestParam.lang,
-                '_charset': requestParam.charset,
-                'cnt': requestParam.cnt,
-                'pageID': requestParam.pageId,
-                'custom_search_id': requestParam.customSearchId,
-                'topics_keyword': requestParam.topicsKeyword,
-                'topics_keyword_cond': requestParam.topicsKeywordCond,
-                'contents_type[]': requestParam.contentsType,
-                'contents_type_cond': requestParam.contentsTypeCond,
-                'date': requestParam.date,
-                'using_season': requestParam.usingSeason,
-                'season': requestParam.season,
-                'ext_column_cond': requestParam.extColumnCond,
-                'exclude_topics_id': requestParam.excludeTopicsId,
-                'tag_category_id': requestParam.tagCategoryId,
-                'tag_search': requestParam.tagSearch,
-                'tag_id[]': requestParam.tagId,
-                'tag_cond': requestParam.tagCond,
-                'exclude_tag_id': requestParam.excludeTagId,
-                'my_favorite_list': requestParam.myFavoriteList,
-                'my_comment_list': requestParam.myCommentList,
-                'my_own_list': requestParam.myOwnList,
-                'order': requestParam.order,
-                'order_by_id': requestParam.orderById,
-                'id[]': requestParam.id,
-            },
+    static getTopicsServiceRcmsApi1Topics1(requestParam) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const shouldHookToken = Object.keys({
+                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+            }).length > 0;
+            const request = () => __awaiter(this, void 0, void 0, function* () {
+                return yield request_1.request({
+                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
+                    method: 'get',
+                    path: `/rcms-api/1/topics1`,
+                    query: {
+                        '_output_format': requestParam.outputFormat,
+                        '_lang': requestParam.lang,
+                        '_charset': requestParam.charset,
+                        'cnt': requestParam.cnt,
+                        'pageID': requestParam.pageId,
+                        'custom_search_id': requestParam.customSearchId,
+                        'topics_keyword': requestParam.topicsKeyword,
+                        'topics_keyword_cond': requestParam.topicsKeywordCond,
+                        'contents_type[]': requestParam.contentsType,
+                        'contents_type_cond': requestParam.contentsTypeCond,
+                        'date': requestParam.date,
+                        'using_season': requestParam.usingSeason,
+                        'season': requestParam.season,
+                        'ext_column_cond': requestParam.extColumnCond,
+                        'exclude_topics_id': requestParam.excludeTopicsId,
+                        'tag_category_id': requestParam.tagCategoryId,
+                        'tag_search': requestParam.tagSearch,
+                        'tag_id[]': requestParam.tagId,
+                        'tag_cond': requestParam.tagCond,
+                        'exclude_tag_id': requestParam.excludeTagId,
+                        'my_favorite_list': requestParam.myFavoriteList,
+                        'my_comment_list': requestParam.myCommentList,
+                        'my_own_list': requestParam.myOwnList,
+                        'order': requestParam.order,
+                        'order_by_id': requestParam.orderById,
+                        'id[]': requestParam.id,
+                    },
+                });
+            });
+            let result = yield request();
+            if (shouldHookToken && !result.ok && result.status === 401) {
+                result = yield Auth_1.Auth.retryRequest(request, result);
+            }
+            ApiError_1.catchGenericError(result);
+            return result.body;
         });
-        let result = await request();
-        if (shouldHookToken && !result.ok && result.status === 401) {
-            result = await Auth_1.Auth.retryRequest(request, result);
-        }
-        ApiError_1.catchGenericError(result);
-        return result.body;
     }
     /**
      *
@@ -145,27 +162,31 @@ class TopicsService {
      * @result any
      * @throws ApiError
      */
-    static async postTopicsServiceRcmsApi1Topics1Insert(requestParam) {
-        const shouldHookToken = Object.keys({
-            'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
-        }).length > 0;
-        const request = async () => await request_1.request({
-            headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
-            method: 'post',
-            path: `/rcms-api/1/topics1/insert`,
-            query: {
-                '_output_format': requestParam.outputFormat,
-                '_lang': requestParam.lang,
-                '_charset': requestParam.charset,
-            },
-            body: requestParam.requestBody,
+    static postTopicsServiceRcmsApi1Topics1Insert(requestParam) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const shouldHookToken = Object.keys({
+                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+            }).length > 0;
+            const request = () => __awaiter(this, void 0, void 0, function* () {
+                return yield request_1.request({
+                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
+                    method: 'post',
+                    path: `/rcms-api/1/topics1/insert`,
+                    query: {
+                        '_output_format': requestParam.outputFormat,
+                        '_lang': requestParam.lang,
+                        '_charset': requestParam.charset,
+                    },
+                    body: requestParam.requestBody,
+                });
+            });
+            let result = yield request();
+            if (shouldHookToken && !result.ok && result.status === 401) {
+                result = yield Auth_1.Auth.retryRequest(request, result);
+            }
+            ApiError_1.catchGenericError(result);
+            return result.body;
         });
-        let result = await request();
-        if (shouldHookToken && !result.ok && result.status === 401) {
-            result = await Auth_1.Auth.retryRequest(request, result);
-        }
-        ApiError_1.catchGenericError(result);
-        return result.body;
     }
     /**
      *
@@ -184,27 +205,31 @@ class TopicsService {
      * @result any
      * @throws ApiError
      */
-    static async postTopicsServiceRcmsApi1Topics1UpdateTopicsId(requestParam) {
-        const shouldHookToken = Object.keys({
-            'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
-        }).length > 0;
-        const request = async () => await request_1.request({
-            headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
-            method: 'post',
-            path: `/rcms-api/1/topics1/update/${requestParam.topicsId}`,
-            query: {
-                '_output_format': requestParam.outputFormat,
-                '_lang': requestParam.lang,
-                '_charset': requestParam.charset,
-            },
-            body: requestParam.requestBody,
+    static postTopicsServiceRcmsApi1Topics1UpdateTopicsId(requestParam) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const shouldHookToken = Object.keys({
+                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+            }).length > 0;
+            const request = () => __awaiter(this, void 0, void 0, function* () {
+                return yield request_1.request({
+                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
+                    method: 'post',
+                    path: `/rcms-api/1/topics1/update/${requestParam.topicsId}`,
+                    query: {
+                        '_output_format': requestParam.outputFormat,
+                        '_lang': requestParam.lang,
+                        '_charset': requestParam.charset,
+                    },
+                    body: requestParam.requestBody,
+                });
+            });
+            let result = yield request();
+            if (shouldHookToken && !result.ok && result.status === 401) {
+                result = yield Auth_1.Auth.retryRequest(request, result);
+            }
+            ApiError_1.catchGenericError(result);
+            return result.body;
         });
-        let result = await request();
-        if (shouldHookToken && !result.ok && result.status === 401) {
-            result = await Auth_1.Auth.retryRequest(request, result);
-        }
-        ApiError_1.catchGenericError(result);
-        return result.body;
     }
     /**
      *
@@ -218,26 +243,30 @@ class TopicsService {
      * @result any
      * @throws ApiError
      */
-    static async postTopicsServiceRcmsApi1Topics1DeleteTopicsId(requestParam) {
-        const shouldHookToken = Object.keys({
-            'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
-        }).length > 0;
-        const request = async () => await request_1.request({
-            headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
-            method: 'post',
-            path: `/rcms-api/1/topics1/delete/${requestParam.topicsId}`,
-            query: {
-                '_output_format': requestParam.outputFormat,
-                '_lang': requestParam.lang,
-                '_charset': requestParam.charset,
-            },
+    static postTopicsServiceRcmsApi1Topics1DeleteTopicsId(requestParam) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const shouldHookToken = Object.keys({
+                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+            }).length > 0;
+            const request = () => __awaiter(this, void 0, void 0, function* () {
+                return yield request_1.request({
+                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
+                    method: 'post',
+                    path: `/rcms-api/1/topics1/delete/${requestParam.topicsId}`,
+                    query: {
+                        '_output_format': requestParam.outputFormat,
+                        '_lang': requestParam.lang,
+                        '_charset': requestParam.charset,
+                    },
+                });
+            });
+            let result = yield request();
+            if (shouldHookToken && !result.ok && result.status === 401) {
+                result = yield Auth_1.Auth.retryRequest(request, result);
+            }
+            ApiError_1.catchGenericError(result);
+            return result.body;
         });
-        let result = await request();
-        if (shouldHookToken && !result.ok && result.status === 401) {
-            result = await Auth_1.Auth.retryRequest(request, result);
-        }
-        ApiError_1.catchGenericError(result);
-        return result.body;
     }
     /**
      *
@@ -278,49 +307,53 @@ class TopicsService {
      * @result any
      * @throws ApiError
      */
-    static async getTopicsServiceRcmsApi1TopicsMultiple(requestParam) {
-        const shouldHookToken = Object.keys({
-            'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
-        }).length > 0;
-        const request = async () => await request_1.request({
-            headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
-            method: 'get',
-            path: `/rcms-api/1/topics/multiple`,
-            query: {
-                '_output_format': requestParam.outputFormat,
-                '_lang': requestParam.lang,
-                '_charset': requestParam.charset,
-                'cnt': requestParam.cnt,
-                'pageID': requestParam.pageId,
-                'custom_search_id': requestParam.customSearchId,
-                'topics_keyword': requestParam.topicsKeyword,
-                'topics_keyword_cond': requestParam.topicsKeywordCond,
-                'contents_type[]': requestParam.contentsType,
-                'contents_type_cond': requestParam.contentsTypeCond,
-                'date': requestParam.date,
-                'using_season': requestParam.usingSeason,
-                'season': requestParam.season,
-                'ext_column_cond': requestParam.extColumnCond,
-                'exclude_topics_id': requestParam.excludeTopicsId,
-                'tag_category_id': requestParam.tagCategoryId,
-                'tag_search': requestParam.tagSearch,
-                'tag_id[]': requestParam.tagId,
-                'tag_cond': requestParam.tagCond,
-                'exclude_tag_id': requestParam.excludeTagId,
-                'my_favorite_list': requestParam.myFavoriteList,
-                'my_comment_list': requestParam.myCommentList,
-                'my_own_list': requestParam.myOwnList,
-                'order': requestParam.order,
-                'order_by_id': requestParam.orderById,
-                'id[]': requestParam.id,
-            },
+    static getTopicsServiceRcmsApi1TopicsMultiple(requestParam) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const shouldHookToken = Object.keys({
+                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+            }).length > 0;
+            const request = () => __awaiter(this, void 0, void 0, function* () {
+                return yield request_1.request({
+                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
+                    method: 'get',
+                    path: `/rcms-api/1/topics/multiple`,
+                    query: {
+                        '_output_format': requestParam.outputFormat,
+                        '_lang': requestParam.lang,
+                        '_charset': requestParam.charset,
+                        'cnt': requestParam.cnt,
+                        'pageID': requestParam.pageId,
+                        'custom_search_id': requestParam.customSearchId,
+                        'topics_keyword': requestParam.topicsKeyword,
+                        'topics_keyword_cond': requestParam.topicsKeywordCond,
+                        'contents_type[]': requestParam.contentsType,
+                        'contents_type_cond': requestParam.contentsTypeCond,
+                        'date': requestParam.date,
+                        'using_season': requestParam.usingSeason,
+                        'season': requestParam.season,
+                        'ext_column_cond': requestParam.extColumnCond,
+                        'exclude_topics_id': requestParam.excludeTopicsId,
+                        'tag_category_id': requestParam.tagCategoryId,
+                        'tag_search': requestParam.tagSearch,
+                        'tag_id[]': requestParam.tagId,
+                        'tag_cond': requestParam.tagCond,
+                        'exclude_tag_id': requestParam.excludeTagId,
+                        'my_favorite_list': requestParam.myFavoriteList,
+                        'my_comment_list': requestParam.myCommentList,
+                        'my_own_list': requestParam.myOwnList,
+                        'order': requestParam.order,
+                        'order_by_id': requestParam.orderById,
+                        'id[]': requestParam.id,
+                    },
+                });
+            });
+            let result = yield request();
+            if (shouldHookToken && !result.ok && result.status === 401) {
+                result = yield Auth_1.Auth.retryRequest(request, result);
+            }
+            ApiError_1.catchGenericError(result);
+            return result.body;
         });
-        let result = await request();
-        if (shouldHookToken && !result.ok && result.status === 401) {
-            result = await Auth_1.Auth.retryRequest(request, result);
-        }
-        ApiError_1.catchGenericError(result);
-        return result.body;
     }
     /**
      *
@@ -338,26 +371,30 @@ class TopicsService {
      * @result any
      * @throws ApiError
      */
-    static async getTopicsServiceRcmsApi1TopicsMultipleTopicsId(requestParam) {
-        const shouldHookToken = Object.keys({
-            'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
-        }).length > 0;
-        const request = async () => await request_1.request({
-            headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
-            method: 'get',
-            path: `/rcms-api/1/topics/multiple/${requestParam.topicsId}`,
-            query: {
-                '_output_format': requestParam.outputFormat,
-                '_lang': requestParam.lang,
-                '_charset': requestParam.charset,
-            },
+    static getTopicsServiceRcmsApi1TopicsMultipleTopicsId(requestParam) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const shouldHookToken = Object.keys({
+                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+            }).length > 0;
+            const request = () => __awaiter(this, void 0, void 0, function* () {
+                return yield request_1.request({
+                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
+                    method: 'get',
+                    path: `/rcms-api/1/topics/multiple/${requestParam.topicsId}`,
+                    query: {
+                        '_output_format': requestParam.outputFormat,
+                        '_lang': requestParam.lang,
+                        '_charset': requestParam.charset,
+                    },
+                });
+            });
+            let result = yield request();
+            if (shouldHookToken && !result.ok && result.status === 401) {
+                result = yield Auth_1.Auth.retryRequest(request, result);
+            }
+            ApiError_1.catchGenericError(result);
+            return result.body;
         });
-        let result = await request();
-        if (shouldHookToken && !result.ok && result.status === 401) {
-            result = await Auth_1.Auth.retryRequest(request, result);
-        }
-        ApiError_1.catchGenericError(result);
-        return result.body;
     }
     /**
      *
@@ -375,27 +412,31 @@ class TopicsService {
      * @result any
      * @throws ApiError
      */
-    static async postTopicsServiceRcmsApi1TopicsMultipleInsert(requestParam) {
-        const shouldHookToken = Object.keys({
-            'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
-        }).length > 0;
-        const request = async () => await request_1.request({
-            headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
-            method: 'post',
-            path: `/rcms-api/1/topics/multiple/insert`,
-            query: {
-                '_output_format': requestParam.outputFormat,
-                '_lang': requestParam.lang,
-                '_charset': requestParam.charset,
-            },
-            body: requestParam.requestBody,
+    static postTopicsServiceRcmsApi1TopicsMultipleInsert(requestParam) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const shouldHookToken = Object.keys({
+                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+            }).length > 0;
+            const request = () => __awaiter(this, void 0, void 0, function* () {
+                return yield request_1.request({
+                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
+                    method: 'post',
+                    path: `/rcms-api/1/topics/multiple/insert`,
+                    query: {
+                        '_output_format': requestParam.outputFormat,
+                        '_lang': requestParam.lang,
+                        '_charset': requestParam.charset,
+                    },
+                    body: requestParam.requestBody,
+                });
+            });
+            let result = yield request();
+            if (shouldHookToken && !result.ok && result.status === 401) {
+                result = yield Auth_1.Auth.retryRequest(request, result);
+            }
+            ApiError_1.catchGenericError(result);
+            return result.body;
         });
-        let result = await request();
-        if (shouldHookToken && !result.ok && result.status === 401) {
-            result = await Auth_1.Auth.retryRequest(request, result);
-        }
-        ApiError_1.catchGenericError(result);
-        return result.body;
     }
     /**
      *
@@ -414,27 +455,31 @@ class TopicsService {
      * @result any
      * @throws ApiError
      */
-    static async postTopicsServiceRcmsApi1TopicsMultipleUpdateTopicsId(requestParam) {
-        const shouldHookToken = Object.keys({
-            'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
-        }).length > 0;
-        const request = async () => await request_1.request({
-            headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
-            method: 'post',
-            path: `/rcms-api/1/topics/multiple/update/${requestParam.topicsId}`,
-            query: {
-                '_output_format': requestParam.outputFormat,
-                '_lang': requestParam.lang,
-                '_charset': requestParam.charset,
-            },
-            body: requestParam.requestBody,
+    static postTopicsServiceRcmsApi1TopicsMultipleUpdateTopicsId(requestParam) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const shouldHookToken = Object.keys({
+                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+            }).length > 0;
+            const request = () => __awaiter(this, void 0, void 0, function* () {
+                return yield request_1.request({
+                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${Auth_1.Auth.getAccessToken()}` } : {},
+                    method: 'post',
+                    path: `/rcms-api/1/topics/multiple/update/${requestParam.topicsId}`,
+                    query: {
+                        '_output_format': requestParam.outputFormat,
+                        '_lang': requestParam.lang,
+                        '_charset': requestParam.charset,
+                    },
+                    body: requestParam.requestBody,
+                });
+            });
+            let result = yield request();
+            if (shouldHookToken && !result.ok && result.status === 401) {
+                result = yield Auth_1.Auth.retryRequest(request, result);
+            }
+            ApiError_1.catchGenericError(result);
+            return result.body;
         });
-        let result = await request();
-        if (shouldHookToken && !result.ok && result.status === 401) {
-            result = await Auth_1.Auth.retryRequest(request, result);
-        }
-        ApiError_1.catchGenericError(result);
-        return result.body;
     }
 }
 exports.TopicsService = TopicsService;

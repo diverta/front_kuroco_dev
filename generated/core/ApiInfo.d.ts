@@ -255,4 +255,3 @@ export declare const SpecialOperationInfo: {
         auth: string;
     };
 };
-//# sourceMappingURL=ApiInfo.d.ts.map

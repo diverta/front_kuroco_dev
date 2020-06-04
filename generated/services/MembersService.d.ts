@@ -610,4 +610,3 @@ export declare const infos: ({
     auth: null;
     description: string;
 })[];
-//# sourceMappingURL=MembersService.d.ts.map
