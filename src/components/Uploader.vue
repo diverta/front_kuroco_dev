@@ -22,30 +22,43 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { mapGetters } from 'vuex';
+import { mapGetters, mapState } from 'vuex';
 import { UploaderFactory } from '../../generated/core/Uploader';
 import { Auth } from '../../generated/core/Auth';
 
 export default Vue.extend({
     name: 'Uploader',
+    watch: {
+        loggedIn(loggedIn) {
+            loggedIn ? this.mountUploader() : this.uploader = null;
+        }
+    },
     data() {
         return {
             uploader: null as any,
         };
     },
+    computed: {
+        ...mapState([
+            'loggedIn',
+        ])
+    },
     methods: {
         onChangeInputFile(e: Event) {
             const newFile = (e.target as any).files[0] as File;
-            console.log(newFile);
             const alert = (type: 'ok' | 'ng', msg = '') => window.alert(`${type.toUpperCase()}: ${msg}`)
             this.uploader
                 .upload(newFile)
                 .then((res: any) => alert('ok', res))
                 .catch((err: any) => alert('ng', err));
         },
+        async mountUploader() {
+            try {
+                this.uploader = await UploaderFactory.create({})
+            } catch(e) {
+                console.error('could not creat uploader for:', e);
+            }
+        }
     },
-    async mounted () {
-        this.uploader = await UploaderFactory.create({})
-    }
 });
 </script>

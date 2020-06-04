@@ -9,6 +9,7 @@ export interface IStore {
   query: string;
   apis: ApiInfo[];
   renderApi: any;
+  loggedIn: boolean;
 
   response: any;
   isResponseErrorOccured: boolean;
@@ -19,6 +20,7 @@ const store = new Store<IStore>({
     query: '',
     apis: ApiInfos,
     renderApi: null,
+    loggedIn: false,
 
     response: null,
     isResponseErrorOccured: false,
@@ -45,6 +47,7 @@ const store = new Store<IStore>({
         );
       });
     },
+    loggedInStatusMessage: state => (state.loggedIn ? 'LOGGEDIN' : 'ANONYMOUS'),
   },
   mutations: {
     setQuery(state, query: string = '') {
@@ -59,6 +62,9 @@ const store = new Store<IStore>({
     setResponse(state, [response, isResponseErrorOccured]) {
       state.response = response;
       state.isResponseErrorOccured = isResponseErrorOccured;
+    },
+    setLoggedInStatus(state, loggedIn) {
+      state.loggedIn = loggedIn;
     },
   },
   actions: {
@@ -79,6 +85,9 @@ const store = new Store<IStore>({
     },
     clearResponse(context) {
       context.commit('setResponse', [null, false]);
+    },
+    updateLoggedInStatus(context, loggedIn: boolean) {
+      context.commit('setLoggedInStatus', loggedIn);
     },
   },
 });

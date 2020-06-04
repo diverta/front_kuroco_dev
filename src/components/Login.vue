@@ -18,7 +18,7 @@
           </v-btn>
         </div>
         <p class="text-center my-n1">
-          <span class="caption js-login-status">{{ loginStatus }}</span>
+          <span class="caption js-login-status">{{ loggedInStatusMessage }}</span>
         </p>
       </v-row>
     </template>
@@ -27,7 +27,7 @@
       <v-card-text>
         <v-form>
           <p class="text-md-left ma-0 ml-4 mt-4 js-loggin-form-status">
-            <span class="caption">STATUS: {{ loginStatus }}</span>
+            <span class="caption">STATUS: {{ loggedInStatusMessage }}</span>
           </p>
           <v-container class="px-4 py-0" fluid no-gutter>
             <v-text-field
@@ -77,6 +77,7 @@ import Vue from 'vue';
 import { Auth } from '../../generated/core/Auth';
 import { MembersService } from '../../generated/services/MembersService';
 import { AuthenticationService } from '../../generated/services/AuthenticationService';
+import { mapActions, mapGetters } from 'vuex';
 
 export default Vue.extend({
   name: 'Login',
@@ -84,23 +85,30 @@ export default Vue.extend({
   data() {
     return {
       dialog: false,
-      loginStatus: 'ANONYMOUS',
       email: '',
       password: '',
     };
   },
+  computed: {
+    ...mapGetters([
+      'loggedInStatusMessage',
+    ]),
+  },
   methods: {
+    ...mapActions([
+      'updateLoggedInStatus',
+    ]),
     handleOnClickLogout(): void {
       AuthenticationService.postAuthenticationServiceRcmsApi1AuthLogout({});
       Auth.setAccessToken('');
       Auth.setRefreshToken('');
-      this.loginStatus = 'ANONYMOUS';
+      this.updateLoggedInStatus(false);
     },
     handleOnClickLogin(): void {
       Auth.login({
         requestBody: { email: this.email, password: this.password },
       }).then((memberId: any) => {
-        this.loginStatus = 'LOGGEDIN';
+        this.updateLoggedInStatus(true);
       });
     },
     handleOnClickSamlLogin(e: Event) {
