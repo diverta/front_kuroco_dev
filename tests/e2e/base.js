@@ -151,3 +151,50 @@ export async function executeRequest({
 
   return Promise.resolve(data);
 }
+
+/**
+ * return date as formatted string by specified format.
+ * @example `
+  console.log(formatDate())                         // '2020-01-01' (current date)
+  console.log(formatDate('date'))                   // '2020-01-01' (current date)
+  console.log(formatDate('datetime'))               // '2020-01-01 01:01 +0900' (current date)
+  console.log(formatDate(undefined, new Date(0)))   // '19070-01-01'
+  console.log(formatDate('date', new Date(0)))      // '19070-01-01'
+  console.log(formatDate('datetime', new Date(0)))  // '19070-01-01 09:00 +0900'
+ ` `
+ * @param date target Date.
+ * @param format expected format which must be either of 'date' | 'datetime'.
+ */
+export function formatDate(format = 'date', date = new Date()) {
+  const hasExpectedFormat = ['date', 'datetime'].some(fmt => format === fmt);
+  if (!hasExpectedFormat) {
+    throw new Error(`the format ${format} is unexpected value.`);
+  }
+
+  const o = ((date) => {
+    const d = new Date(date);
+
+    // 2020-01-01
+    const ymd = d.toISOString().substr(0,10)
+
+    // 01:01
+    const hm = [
+      zeroPadding(d.getHours()),
+      zeroPadding(d.getMinutes()),
+    ].join(':');
+
+    // +0900
+    const timezone = (new Date()).toTimeString().split('GMT')[1].replace(/ .*/, '')
+
+    return {
+      date: `${ymd}`,
+      datetime: `${ymd} ${hm} ${timezone}`,
+    }
+  })(date);
+
+  return o[format];
+
+  function zeroPadding(value) {
+    return ('0' + `${value}`).slice(-2)
+  }
+}

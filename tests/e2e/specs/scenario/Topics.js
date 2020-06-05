@@ -3,7 +3,7 @@
 
 // https://docs.cypress.io/api/introduction/api.html
 
-import { executeRequest, login } from '../../base';
+import { executeRequest, formatDate, login } from '../../base';
 
 const getTopics = () => {
   /** @type {import('../../../../generated/services/TopicsService').TopicsService.getTopicsServiceRcmsApi1Topics1Request} */
@@ -32,7 +32,7 @@ const postInsertTopic = () => {
     requestBody: {
       subject: 'Inserted',
       contents_type: 1,
-      ymd: '2020-04-23',
+      ymd: formatDate('date'),
       open_type: 'open',
       topics_flg: 0,
       season: 1,
@@ -44,8 +44,8 @@ const postInsertTopic = () => {
       ext_col_02: 'SampleValue',
       ext_col_03: { key: '1', label: 'Option1' },
       ext_col_04: [{ key: '1', label: 'Option1' }],
-      ext_col_07: '2020-04-23',
-      ext_col_08: '2020-04-23 10:28 +0900',
+      ext_col_07: formatDate('date'),
+      ext_col_08: formatDate('datetime'),
       ext_col_05: {
         tdfk_cd: '01',
         tdfk_nm: '北海道',
@@ -101,6 +101,7 @@ describe('Topics', () => {
       topicsId: topics.list[0].topics_id,
     });
     const res = await postInsertTopic();
-    console.log(res);
+    const newTopics = await getTopics();
+    console.log(newTopics);
   });
 });
