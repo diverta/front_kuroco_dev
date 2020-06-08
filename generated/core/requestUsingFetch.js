@@ -13,6 +13,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.requestUsingFetch = void 0;
 /**
  * Try to parse the content for any response status code.
  * We check the "Content-Type" header to see if we need to parse the

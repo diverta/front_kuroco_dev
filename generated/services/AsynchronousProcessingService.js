@@ -13,6 +13,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.infos = exports.AsynchronousProcessingService = void 0;
 const ApiError_1 = require("../core/ApiError");
 const request_1 = require("../core/request");
 const OpenAPI_1 = require("../core/OpenAPI");

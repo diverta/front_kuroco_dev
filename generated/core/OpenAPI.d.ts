@@ -1,4 +1,5 @@
 interface Config {
+    SAML_URL: string;
     BASE: string;
     VERSION: string;
     TOKEN: string;

@@ -4,6 +4,7 @@
 /* eslint-disable */
 /* prettier-ignore */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.catchGenericError = exports.ApiError = void 0;
 const isSuccess_1 = require("./isSuccess");
 class ApiError extends Error {
     constructor(result, message) {

@@ -13,6 +13,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Auth = void 0;
 // @ts-ignore-start
 const ApiInfo_1 = require("./ApiInfo");
 const OpenAPI_1 = require("./OpenAPI");

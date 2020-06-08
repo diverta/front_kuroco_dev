@@ -4,6 +4,7 @@
 /* eslint-disable */
 /* prettier-ignore */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.SpecialOperationInfo = exports.ApiInfos = void 0;
 const AuthenticationService_1 = require("../services/AuthenticationService");
 const AuthenticationService_2 = require("../services/AuthenticationService");
 const TopicsService_1 = require("../services/TopicsService");

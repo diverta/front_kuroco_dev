@@ -4,6 +4,7 @@
 /* eslint-disable */
 /* prettier-ignore */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.getFormData = void 0;
 /**
  * Get FormData from object. This method is needed to upload
  * multipart form data to the REST API.

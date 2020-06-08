@@ -4,6 +4,7 @@
 /* eslint-disable */
 /* prettier-ignore */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.getQueryString = void 0;
 /**
  * Get query string from query parameters object. This method also
  * supports multi-value items by creating a key for each item.
