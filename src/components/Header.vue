@@ -15,7 +15,7 @@
 
       <slot />
       <v-btn
-        href="https://picol.kuroco-mng.app/management/rcms_api/api_info/"
+        :href="`https://picol.kuroco-mng.app/management/rcms_api/api_info/`"
         target="_blank"
         class="text-capitalize px-2 pr-0"
         text
@@ -24,7 +24,7 @@
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
       <v-btn
-        href="https://picol.kuroco-mng.app/management/rcms_api/api_list/"
+        :href="`https://picol.kuroco-mng.app/management/rcms_api/api_list/`"
         target="_blank"
         class="text-capitalize px-2"
         text
