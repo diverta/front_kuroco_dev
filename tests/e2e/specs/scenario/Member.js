@@ -3,7 +3,7 @@
 
 // https://docs.cypress.io/api/introduction/api.html
 
-import { executeRequest, login } from '../../base';
+import { executeRequest, login, logout } from '../../base';
 
 const getMembers = () => {
   /** @type {import('../../../../generated/services/MembersService').MembersService.getMembersServiceRcmsApi1MembersRequest} */
@@ -63,7 +63,7 @@ const postInsertMember = () => {
   const requestData = {
     requestBody: {
       email: 'email+' + Date.now() + '@example.com',
-      // login_id: string,
+      login_id: Date.now() + '',
       login_pwd: 'qwer1234',
       nickname: 'TestMember',
       name1: 'Test',
@@ -81,10 +81,10 @@ const postInsertMember = () => {
       selectbox: insertExt.selectbox,
       checkbox: insertExt.checkbox,
       date: insertExt.date,
-      relation: insertExt.relation,
+      // relation: insertExt.relation,
       // file: insertExt.file,
       open_flg: 1,
-      login_ok_flg: 0,
+      login_ok_flg: 1,
       validate_only: false,
     },
   };
@@ -117,7 +117,7 @@ const postUpdateMember = ({ memberId }) => {
     requestBody: {
       member_id: memberId,
       email: 'email+' + Date.now() + '@example.com',
-      // login_id: string,
+      login_id: Date.now() + 'U',
       login_pwd: 'qwer1234',
       nickname: 'テストメンバー',
       name1: 'テスト',
@@ -160,6 +160,33 @@ const postDeleteMember = ({ memberId }) => {
     cy,
     query: 'MembersService post delete',
     indexOfApis: 0,
+    requestData,
+  });
+};
+
+const postUpdateMe = () => {
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MeUpdateRequest} */
+  const requestData = {
+    requestBody: {
+      text: 'me/update',
+      validate_only: false,
+    },
+  };
+  return executeRequest({
+    cy,
+    query: 'MembersService MeUpdate',
+    requestData,
+  });
+};
+const postDeleteMe = () => {
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MeDeleteRequest} */
+  const requestData = {
+    requestBody: {
+    },
+  };
+  return executeRequest({
+    cy,
+    query: 'MembersService MeDelete',
     requestData,
   });
 };
@@ -232,6 +259,45 @@ describe('Member', () => {
     });
     expect(errorResponse.status).to.equal(404);
 
+
+  });
+
+  it(`
+      post insert member ->
+      get member by ID of inserted one ->
+      login ->
+      post me/update ->
+      get member by ID of inserted one ->
+      post me/delete ->
+      get member by ID of deleted one (should be empty)
+  `, async () => {
+    // login with default user to add test user
+    login();
+
+    // post insert member
+    const insertRes = await postInsertMember();
+    const addedId = insertRes.id;
+
+    // get member by ID of inserted one
+    const insertedMember = await getMember({ memberId: addedId });
+    const insertedMemberEmail = insertedMember.details.email;
+
+    // login
+    logout();
+    login({ email: insertedMemberEmail, password: 'qwer1234' });
+
+    // post me/update
+    await postUpdateMe();
+    // get member by ID of inserted one
+    const updatedMe = await getMember({ memberId: addedId });
+    // post me/delete
+    await postDeleteMe();
+    // get member by ID of deleted one (should be empty)
+    let errorResponse = {};
+    await getMember({ memberId: addedId }).catch(e => {
+      errorResponse = JSON.parse(e.message);
+    });
+    expect(errorResponse.status).to.equal(404);
 
   });
 });

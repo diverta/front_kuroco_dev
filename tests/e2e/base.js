@@ -67,6 +67,22 @@ export function login(options = { email: 'test', password: 'qwer1234' }) {
 }
 
 /**
+ * logout from Kuroco.
+ */
+export function logout() {
+  function __logout() {
+    cy.get(queries.login.button).click();
+    cy.get(queries.login.form._);
+    cy.get(queries.login.form.logout).click();
+    cy.get(queries.login.form.close).click();
+    cy.contains(queries.login.status, 'ANONYMOUS');
+  }
+
+  cy.visit('/');
+  __logout();
+}
+
+/**
  * executes request to endpoint finded by query, writes results into disk as json files.
  *
  * @export
