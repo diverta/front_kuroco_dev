@@ -106,46 +106,22 @@ const sendMessageMalformed = ({ targetCol }) => {
   };
   switch(targetCol) {
     case 'name':
-      requestData.requestBody.name = ['test'];
-      break;
     case 'from_mail':
-      requestData.requestBody.from_mail = ['test'];
-      break;
     case 'body':
-      requestData.requestBody.body = ['test'];
+    case 'ext_01':
+    case 'ext_02':
+      requestData.requestBody[targetCol] = ['test'];
       break;
     case 'inquiry_category_id':
-      requestData.requestBody.inquiry_category_id = 'test';
-      break;
-    case 'ext_01':
-      requestData.requestBody.ext_01 = ['test'];
-      break;
-    case 'ext_02':
-      requestData.requestBody.ext_02 = ['test'];
-      break;
     case 'ext_03':
-      requestData.requestBody.ext_03 = 'test';
-      break;
     case 'ext_04':
-      requestData.requestBody.ext_04 = 'test';
-      break;
     case 'ext_05':
-      requestData.requestBody.ext_05 = 'test';
-      break;
     case 'ext_06':
-      requestData.requestBody.ext_06 = 'test';
-      break;
     case 'ext_07':
-      requestData.requestBody.ext_07 = 'test';
-      break;
     case 'ext_08':
-      requestData.requestBody.ext_08 = 'test';
-      break;
     case 'ext_09':
-      requestData.requestBody.ext_09 = 'test';
-      break;
     case 'ext_10':
-      requestData.requestBody.ext_10 = 'test';
+      requestData.requestBody[targetCol] = 'test';
       break;
     default:
       throw new Error();
