@@ -14,6 +14,8 @@ var Auth_1 = require("./core/Auth");
 Object.defineProperty(exports, "Auth", { enumerable: true, get: function () { return Auth_1.Auth; } });
 var LocalStorage_1 = require("./core/LocalStorage");
 Object.defineProperty(exports, "LocalStorage", { enumerable: true, get: function () { return LocalStorage_1.LocalStorage; } });
+var Uploader_1 = require("./core/Uploader");
+Object.defineProperty(exports, "UploaderFactory", { enumerable: true, get: function () { return Uploader_1.UploaderFactory; } });
 var ApiService_1 = require("./services/ApiService");
 Object.defineProperty(exports, "ApiService", { enumerable: true, get: function () { return ApiService_1.ApiService; } });
 var AsynchronousProcessingService_1 = require("./services/AsynchronousProcessingService");
