@@ -1270,7 +1270,7 @@
 												"additionalProperties": false
 											}
 										],
-										"example": "2020-06-04"
+										"example": "2020-06-11"
 									},
 									"ext_col_08": {
 										"description": "DateTime",
@@ -1302,7 +1302,7 @@
 												"additionalProperties": false
 											}
 										],
-										"example": "2020-06-04 12:09 +0900"
+										"example": "2020-06-11 10:52 +0900"
 									},
 									"ext_col_05": {
 										"description": "Tdfk",
@@ -5486,6 +5486,32 @@
 										"description": "Wysiwyg",
 										"type": "string",
 										"default": ""
+									},
+									"ext_col_16": {
+										"description": "Vimeo",
+										"type": "object",
+										"properties": {
+											"file_id": {
+												"type": "string",
+												"default": "",
+												"example": "",
+												"description": "File ID returned by File Upload API"
+											},
+											"file_nm": {
+												"type": "string",
+												"default": "",
+												"example": "",
+												"description": "File name"
+											},
+											"desc": {
+												"type": "string",
+												"default": "",
+												"example": "",
+												"description": "Description"
+											}
+										},
+										"required": [],
+										"additionalProperties": false
 									},
 									"validate_only": {
 										"type": "boolean",
@@ -5768,7 +5794,7 @@
 												"additionalProperties": false
 											}
 										],
-										"example": "2020-06-04"
+										"example": "2020-06-11"
 									},
 									"ext_col_08": {
 										"description": "DateTime",
@@ -5800,7 +5826,7 @@
 												"additionalProperties": false
 											}
 										],
-										"example": "2020-06-04 12:09 +0900"
+										"example": "2020-06-11 10:52 +0900"
 									},
 									"ext_col_05": {
 										"description": "Tdfk",
@@ -9984,6 +10010,32 @@
 										"description": "Wysiwyg",
 										"type": "string",
 										"default": ""
+									},
+									"ext_col_16": {
+										"description": "Vimeo",
+										"type": "object",
+										"properties": {
+											"file_id": {
+												"type": "string",
+												"default": "",
+												"example": "",
+												"description": "File ID returned by File Upload API"
+											},
+											"file_nm": {
+												"type": "string",
+												"default": "",
+												"example": "",
+												"description": "File name"
+											},
+											"desc": {
+												"type": "string",
+												"default": "",
+												"example": "",
+												"description": "Description"
+											}
+										},
+										"required": [],
+										"additionalProperties": false
 									},
 									"validate_only": {
 										"type": "boolean",
@@ -10774,7 +10826,7 @@
 													"additionalProperties": false
 												}
 											],
-											"example": "2020-06-04"
+											"example": "2020-06-11"
 										},
 										"description": "Date",
 										"default": [],
@@ -10813,7 +10865,7 @@
 													"additionalProperties": false
 												}
 											],
-											"example": "2020-06-04 12:09 +0900"
+											"example": "2020-06-11 10:52 +0900"
 										},
 										"description": "DateTime",
 										"default": [],
@@ -15062,6 +15114,46 @@
 											"default": ""
 										},
 										"description": "Wysiwyg",
+										"default": [],
+										"minItems": 0,
+										"maxItems": 3
+									},
+									"ext_col_16": {
+										"type": "array",
+										"items": {
+											"description": "Vimeo",
+											"type": "object",
+											"properties": {
+												"file_id": {
+													"type": "string",
+													"default": "",
+													"example": "",
+													"description": "File ID returned by File Upload API"
+												},
+												"file_nm": {
+													"type": "string",
+													"default": "",
+													"example": "",
+													"description": "File name"
+												},
+												"desc": {
+													"type": "string",
+													"default": "",
+													"example": "",
+													"description": "Description"
+												},
+												"id": {
+													"type": "string",
+													"pattern": "^[a-zA-Z0-9-_]+$",
+													"default": "",
+													"example": "",
+													"description": "File ID. Whether the item should be updated or inserted depends on this ID being set or not."
+												}
+											},
+											"required": [],
+											"additionalProperties": false
+										},
+										"description": "Vimeo",
 										"default": [],
 										"minItems": 0,
 										"maxItems": 3
@@ -15377,7 +15469,7 @@
 													"additionalProperties": false
 												}
 											],
-											"example": "2020-06-04"
+											"example": "2020-06-11"
 										},
 										"description": "Date",
 										"default": [],
@@ -15416,7 +15508,7 @@
 													"additionalProperties": false
 												}
 											],
-											"example": "2020-06-04 12:09 +0900"
+											"example": "2020-06-11 10:52 +0900"
 										},
 										"description": "DateTime",
 										"default": [],
@@ -19669,6 +19761,46 @@
 										"minItems": 0,
 										"maxItems": 3
 									},
+									"ext_col_16": {
+										"type": "array",
+										"items": {
+											"description": "Vimeo",
+											"type": "object",
+											"properties": {
+												"file_id": {
+													"type": "string",
+													"default": "",
+													"example": "",
+													"description": "File ID returned by File Upload API"
+												},
+												"file_nm": {
+													"type": "string",
+													"default": "",
+													"example": "",
+													"description": "File name"
+												},
+												"desc": {
+													"type": "string",
+													"default": "",
+													"example": "",
+													"description": "Description"
+												},
+												"id": {
+													"type": "string",
+													"pattern": "^[a-zA-Z0-9-_]+$",
+													"default": "",
+													"example": "",
+													"description": "File ID. Whether the item should be updated or inserted depends on this ID being set or not."
+												}
+											},
+											"required": [],
+											"additionalProperties": false
+										},
+										"description": "Vimeo",
+										"default": [],
+										"minItems": 0,
+										"maxItems": 3
+									},
 									"validate_only": {
 										"type": "boolean",
 										"format": "",
@@ -19682,6 +19814,428 @@
 						}
 					}
 				}
+			}
+		},
+		"/rcms-api/1/topics/static": {
+			"summary": "topics:1:Topics:list",
+			"description": "Operations Desc",
+			"get": {
+				"tags": [
+					"Topics"
+				],
+				"summary": "",
+				"description": "\n### **Topics::list (v1)**\n\n\n## Controller parameters\n\n> **topics_group_id** `3`\n",
+				"parameters": [
+					{
+						"name": "_output_format",
+						"schema": {
+							"type": "string",
+							"format": ""
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "Format (json|xml|csv)"
+					},
+					{
+						"name": "_lang",
+						"schema": {
+							"type": "string",
+							"format": ""
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "Language"
+					},
+					{
+						"name": "_charset",
+						"schema": {
+							"type": "string",
+							"format": ""
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "Charset"
+					},
+					{
+						"name": "cnt",
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "Number of topics per page"
+					},
+					{
+						"name": "pageID",
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "Page ID"
+					},
+					{
+						"name": "custom_search_id",
+						"schema": {
+							"type": "string",
+							"format": ""
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "search contdition"
+					},
+					{
+						"name": "topics_keyword",
+						"schema": {
+							"type": "string",
+							"format": ""
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "Keyword"
+					},
+					{
+						"name": "topics_keyword_cond",
+						"schema": {
+							"type": "string",
+							"format": ""
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "Change the way of narrowing down by keyword (Default: AND)"
+					},
+					{
+						"name": "contents_type[]",
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "integer",
+								"format": "int64"
+							},
+							"minItems": 0
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "The ID from the displayed category. All data will be displayed when this is not set."
+					},
+					{
+						"name": "contents_type_cond",
+						"schema": {
+							"type": "string",
+							"format": ""
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "Change the way of narrowing down by category ID (Default: OR)"
+					},
+					{
+						"name": "date",
+						"schema": {
+							"type": "string",
+							"format": ""
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "Date"
+					},
+					{
+						"name": "using_season",
+						"schema": {
+							"type": "string",
+							"format": ""
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "Use season (Yes: 1 | No: 0)"
+					},
+					{
+						"name": "season",
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "Season"
+					},
+					{
+						"name": "ext_column_cond",
+						"schema": {
+							"type": "string",
+							"format": ""
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "ext_column condition type (Default:OR)<br> \r\nTo specify an ext_col number set: 'ext_column_{no}_cond'"
+					},
+					{
+						"name": "exclude_topics_id",
+						"schema": {
+							"type": "string",
+							"format": ""
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "IDs of the excluded topics"
+					},
+					{
+						"name": "tag_category_id",
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "ID of the tag category to be displayed. (Default: All)"
+					},
+					{
+						"name": "tag_search",
+						"schema": {
+							"type": "string",
+							"format": ""
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "narrowed by the value of the tag id.  yes:1 no:0"
+					},
+					{
+						"name": "tag_id[]",
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "integer",
+								"format": "int64"
+							},
+							"minItems": 0
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "Tag IDs that you would like to display"
+					},
+					{
+						"name": "tag_cond",
+						"schema": {
+							"type": "string",
+							"format": ""
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "Change the way to narrow down tags (Default: OR)"
+					},
+					{
+						"name": "exclude_tag_id",
+						"schema": {
+							"type": "string",
+							"format": ""
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "Tag IDs that you would like to hide"
+					},
+					{
+						"name": "my_favorite_list",
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": ""
+					},
+					{
+						"name": "my_comment_list",
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": ""
+					},
+					{
+						"name": "my_own_list",
+						"schema": {
+							"type": "string",
+							"format": ""
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": ""
+					},
+					{
+						"name": "order",
+						"schema": {
+							"type": "string",
+							"format": ""
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "Set the sort order. Available param {0}"
+					},
+					{
+						"name": "order_by_id",
+						"schema": {
+							"type": "string",
+							"format": ""
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": ""
+					},
+					{
+						"name": "id[]",
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "integer",
+								"format": "int64"
+							},
+							"minItems": 0
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "IDs of the displayed topics"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": ""
+					},
+					"404": {
+						"description": ""
+					}
+				},
+				"security": [
+					{
+						"Token-Auth": []
+					}
+				]
+			}
+		},
+		"/rcms-api/1/topics/static/{topics_id}": {
+			"summary": "topics:1:Topics:details",
+			"description": "Operations Desc",
+			"get": {
+				"tags": [
+					"Topics"
+				],
+				"summary": "",
+				"description": "\n### **Topics::details (v1)**\n\n\n## Controller parameters\n\n> **topics_group_id** `3`\n",
+				"parameters": [
+					{
+						"name": "topics_id",
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						},
+						"in": "path",
+						"required": true,
+						"style": "simple"
+					},
+					{
+						"name": "_output_format",
+						"schema": {
+							"type": "string",
+							"format": ""
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "Format (json|xml|csv)"
+					},
+					{
+						"name": "_lang",
+						"schema": {
+							"type": "string",
+							"format": ""
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "Language"
+					},
+					{
+						"name": "_charset",
+						"schema": {
+							"type": "string",
+							"format": ""
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "Charset"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": ""
+					},
+					"404": {
+						"description": ""
+					}
+				},
+				"security": [
+					{
+						"Token-Auth": []
+					}
+				]
 			}
 		},
 		"/rcms-api/1/members": {
@@ -19932,7 +20486,7 @@
 					"Members"
 				],
 				"summary": "",
-				"description": "\n### **Member::insert (v1)**\n\n\n## Controller parameters\n\n> **default_group_id** `1`\n",
+				"description": "\n### **Member::insert (v1)**\n\n\n## Controller parameters\n\n> **default_group_id** `2`\n",
 				"parameters": [
 					{
 						"name": "_output_format",
@@ -20221,7 +20775,7 @@
 												"format": "date"
 											}
 										],
-										"example": "2020-06-04"
+										"example": "2020-06-11"
 									},
 									"relation": {
 										"type": "integer",
@@ -20304,7 +20858,7 @@
 					"Members"
 				],
 				"summary": "",
-				"description": "\n### **Member::update (v1)**\n\n\n## Controller parameters\n\n> **allowed_group_ids** `1`\n",
+				"description": "\n### **Member::update (v1)**\n\n\n## Controller parameters\n\n> **allowed_group_ids** `2`\n",
 				"parameters": [
 					{
 						"name": "_output_format",
@@ -20600,7 +21154,7 @@
 												"format": "date"
 											}
 										],
-										"example": "2020-06-04"
+										"example": "2020-06-11"
 									},
 									"relation": {
 										"type": "integer",
@@ -20639,7 +21193,8 @@
 											"format": "int64",
 											"enum": [
 												1,
-												2
+												2,
+												101
 											]
 										},
 										"minItems": 0,
@@ -20647,7 +21202,7 @@
 										"example": [],
 										"default": [],
 										"enum": [
-											1
+											2
 										]
 									},
 									"open_flg": {
@@ -20698,7 +21253,7 @@
 					"Members"
 				],
 				"summary": "",
-				"description": "\n### **Member::delete (v1)**\n\n\n## Controller parameters\n\n> **allowed_group_ids** `1`\n",
+				"description": "\n### **Member::delete (v1)**\n\n\n## Controller parameters\n\n> **allowed_group_ids** `2`\n",
 				"parameters": [
 					{
 						"name": "_output_format",
@@ -20781,7 +21336,7 @@
 					"Members"
 				],
 				"summary": "",
-				"description": "\n### **Member::update (v1)**\n\n\n## Controller parameters\n\n> **self_only** `true`\n",
+				"description": "\n### **Member::update (v1)**\n\n\n## Controller parameters\n\n> **self_only** `true`\n\n> **allowed_group_ids** `2`\n",
 				"parameters": [
 					{
 						"name": "_output_format",
@@ -21070,7 +21625,7 @@
 												"format": "date"
 											}
 										],
-										"example": "2020-06-04"
+										"example": "2020-06-11"
 									},
 									"relation": {
 										"type": "integer",
@@ -21109,13 +21664,17 @@
 											"format": "int64",
 											"enum": [
 												1,
-												2
+												2,
+												101
 											]
 										},
 										"minItems": 0,
 										"description": "/label/group_id",
 										"example": [],
-										"default": []
+										"default": [],
+										"enum": [
+											2
+										]
 									},
 									"open_flg": {
 										"type": "integer",
@@ -21162,7 +21721,7 @@
 					"Members"
 				],
 				"summary": "",
-				"description": "\n### **Member::delete (v1)**\n\n\n## Controller parameters\n\n> **self_only** `true`\n",
+				"description": "\n### **Member::delete (v1)**\n\n\n## Controller parameters\n\n> **self_only** `true`\n\n> **allowed_group_ids** `2`\n",
 				"parameters": [
 					{
 						"name": "_output_format",
@@ -22566,7 +23125,7 @@
 												}
 											}
 										],
-										"example": "2020-06-04 12:09 +0900",
+										"example": "2020-06-11 10:52 +0900",
 										"description": "DateTime"
 									},
 									"ext_07": {
@@ -22762,7 +23321,7 @@
 												}
 											}
 										],
-										"example": "2020-06-04",
+										"example": "2020-06-11",
 										"description": "Date"
 									},
 									"validate_only": {
@@ -23093,7 +23652,7 @@
 												}
 											}
 										],
-										"example": "2020-06-04 12:09 +0900",
+										"example": "2020-06-11 10:52 +0900",
 										"description": "DateTime"
 									},
 									"ext_07": {
@@ -23289,7 +23848,7 @@
 												}
 											}
 										],
-										"example": "2020-06-04",
+										"example": "2020-06-11",
 										"description": "Date"
 									},
 									"validate_only": {

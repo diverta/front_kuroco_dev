@@ -1,6 +1,8 @@
 export { ApiError } from './core/ApiError';
 export { isSuccess } from './core/isSuccess';
 export { OpenAPI } from './core/OpenAPI';
+export { Auth } from './core/Auth';
+export { LocalStorage } from './core/LocalStorage';
 export { ApiService } from './services/ApiService';
 export { AsynchronousProcessingService } from './services/AsynchronousProcessingService';
 export { AuthenticationService } from './services/AuthenticationService';
@@ -12,3 +14,4 @@ export { MembersService } from './services/MembersService';
 export { TablesService } from './services/TablesService';
 export { TagsService } from './services/TagsService';
 export { TopicsService } from './services/TopicsService';
+//# sourceMappingURL=index.d.ts.map

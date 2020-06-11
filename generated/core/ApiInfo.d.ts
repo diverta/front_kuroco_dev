@@ -1,257 +1,209 @@
-import { AuthenticationService } from '../services/AuthenticationService';
-import { TopicsService } from '../services/TopicsService';
-import { MembersService } from '../services/MembersService';
-import { CommentsService } from '../services/CommentsService';
-import { FavoritesService } from '../services/FavoritesService';
-import { InquiriesService } from '../services/InquiriesService';
-import { FilesService } from '../services/FilesService';
-import { TagsService } from '../services/TagsService';
-import { TablesService } from '../services/TablesService';
-import { AsynchronousProcessingService } from '../services/AsynchronousProcessingService';
-import { ApiService } from '../services/ApiService';
 export declare const ApiInfos: ({
     path: string;
     httpMethod: string;
-    class: typeof AuthenticationService;
+    class: typeof import("../services/AuthenticationService").AuthenticationService;
     className: string;
-    method: typeof AuthenticationService.postAuthenticationServiceRcmsApi1AuthLogin;
+    method: typeof import("../services/AuthenticationService").AuthenticationService.postAuthenticationServiceRcmsApi1AuthLogin;
     methodName: string;
     auth: string;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof AuthenticationService;
+    class: typeof import("../services/AuthenticationService").AuthenticationService;
     className: string;
-    method: typeof AuthenticationService.postAuthenticationServiceRcmsApi1MePwReminder;
+    method: typeof import("../services/AuthenticationService").AuthenticationService.postAuthenticationServiceRcmsApi1MePwReminder;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof AuthenticationService;
+    class: typeof import("../services/AuthenticationService").AuthenticationService;
     className: string;
-    method: typeof AuthenticationService.postAuthenticationServiceRcmsApi1MePwReset;
+    method: typeof import("../services/AuthenticationService").AuthenticationService.postAuthenticationServiceRcmsApi1MePwReset;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof TopicsService;
+    class: typeof import("../services/ApiService").ApiService;
     className: string;
-    method: typeof TopicsService.getTopicsServiceRcmsApi1Topics1TopicsId;
+    method: typeof import("../services/ApiService").ApiService.getApiServiceRcmsApi1Apis;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof TopicsService;
+    class: typeof import("../services/AsynchronousProcessingService").AsynchronousProcessingService;
     className: string;
-    method: typeof TopicsService.getTopicsServiceRcmsApi1Topics1;
+    method: typeof import("../services/AsynchronousProcessingService").AsynchronousProcessingService.postAsynchronousProcessingServiceRcmsApi1Batch;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof TopicsService;
+    class: typeof import("../services/CommentsService").CommentsService;
     className: string;
-    method: typeof TopicsService.postTopicsServiceRcmsApi1Topics1Insert;
+    method: typeof import("../services/CommentsService").CommentsService.getCommentsServiceRcmsApi1TopicsComments;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof TopicsService;
+    class: typeof import("../services/CommentsService").CommentsService;
     className: string;
-    method: typeof TopicsService.postTopicsServiceRcmsApi1TopicsMultipleInsert;
+    method: typeof import("../services/CommentsService").CommentsService.postCommentsServiceRcmsApi1TopicsCommentsInsert;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof MembersService;
+    class: typeof import("../services/FavoritesService").FavoritesService;
     className: string;
-    method: typeof MembersService.getMembersServiceRcmsApi1Members;
+    method: typeof import("../services/FavoritesService").FavoritesService.getFavoritesServiceRcmsApi1Favorites;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof MembersService;
+    class: typeof import("../services/FavoritesService").FavoritesService;
     className: string;
-    method: typeof MembersService.getMembersServiceRcmsApi1MembersMemberId;
+    method: typeof import("../services/FavoritesService").FavoritesService.postFavoritesServiceRcmsApi1FavoritesInsert;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof MembersService;
+    class: typeof import("../services/FilesService").FilesService;
     className: string;
-    method: typeof MembersService.postMembersServiceRcmsApi1MembersInsert;
+    method: typeof import("../services/FilesService").FilesService.postFilesServiceRcmsApi1FilesUpload;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof MembersService;
+    class: typeof import("../services/InquiriesService").InquiriesService;
     className: string;
-    method: typeof MembersService.postMembersServiceRcmsApi1MembersUpdate;
+    method: typeof import("../services/InquiriesService").InquiriesService.getInquiriesServiceRcmsApi1InquiryForms;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof MembersService;
+    class: typeof import("../services/MembersService").MembersService;
     className: string;
-    method: typeof MembersService.postMembersServiceRcmsApi1MeUpdate;
+    method: typeof import("../services/MembersService").MembersService.getMembersServiceRcmsApi1Members;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof CommentsService;
+    class: typeof import("../services/MembersService").MembersService;
     className: string;
-    method: typeof CommentsService.getCommentsServiceRcmsApi1TopicsComments;
+    method: typeof import("../services/MembersService").MembersService.getMembersServiceRcmsApi1MembersMemberId;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof CommentsService;
+    class: typeof import("../services/MembersService").MembersService;
     className: string;
-    method: typeof CommentsService.postCommentsServiceRcmsApi1TopicsCommentsInsert;
+    method: typeof import("../services/MembersService").MembersService.postMembersServiceRcmsApi1MembersInsert;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof FavoritesService;
+    class: typeof import("../services/MembersService").MembersService;
     className: string;
-    method: typeof FavoritesService.getFavoritesServiceRcmsApi1Favorites;
+    method: typeof import("../services/MembersService").MembersService.postMembersServiceRcmsApi1MembersUpdate;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof FavoritesService;
+    class: typeof import("../services/TablesService").TablesService;
     className: string;
-    method: typeof FavoritesService.postFavoritesServiceRcmsApi1FavoritesInsert;
+    method: typeof import("../services/TablesService").TablesService.getTablesServiceRcmsApi1TablesSimple;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof InquiriesService;
+    class: typeof import("../services/TagsService").TagsService;
     className: string;
-    method: typeof InquiriesService.getInquiriesServiceRcmsApi1InquiryForms;
+    method: typeof import("../services/TagsService").TagsService.getTagsServiceRcmsApi1Tags;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof FilesService;
+    class: typeof import("../services/TagsService").TagsService;
     className: string;
-    method: typeof FilesService.postFilesServiceRcmsApi1FilesUpload;
+    method: typeof import("../services/TagsService").TagsService.postTagsServiceRcmsApi1TagsInsert;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof TagsService;
+    class: typeof import("../services/TagsService").TagsService;
     className: string;
-    method: typeof TagsService.getTagsServiceRcmsApi1Tags;
+    method: typeof import("../services/TagsService").TagsService.postTagsServiceRcmsApi1TagsDeleteTagId;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof TagsService;
+    class: typeof import("../services/TopicsService").TopicsService;
     className: string;
-    method: typeof TagsService.postTagsServiceRcmsApi1TagsInsert;
+    method: typeof import("../services/TopicsService").TopicsService.getTopicsServiceRcmsApi1Topics1TopicsId;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof TagsService;
+    class: typeof import("../services/TopicsService").TopicsService;
     className: string;
-    method: typeof TagsService.postTagsServiceRcmsApi1TagsDeleteTagId;
+    method: typeof import("../services/TopicsService").TopicsService.getTopicsServiceRcmsApi1Topics1;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof TablesService;
+    class: typeof import("../services/TopicsService").TopicsService;
     className: string;
-    method: typeof TablesService.getTablesServiceRcmsApi1TablesSimple;
+    method: typeof import("../services/TopicsService").TopicsService.postTopicsServiceRcmsApi1Topics1Insert;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof AsynchronousProcessingService;
+    class: typeof import("../services/TopicsService").TopicsService;
     className: string;
-    method: typeof AsynchronousProcessingService.postAsynchronousProcessingServiceRcmsApi1Batch;
-    methodName: string;
-    auth: null;
-    description: string;
-} | {
-    path: string;
-    httpMethod: string;
-    class: typeof ApiService;
-    className: string;
-    method: typeof ApiService.getApiServiceRcmsApi1Apis;
+    method: typeof import("../services/TopicsService").TopicsService.postTopicsServiceRcmsApi1TopicsMultipleInsert;
     methodName: string;
     auth: null;
     description: string;
 })[];
-export declare const SpecialOperationInfo: {
-    login: {
-        path: string;
-        httpMethod: string;
-        class: typeof AuthenticationService;
-        className: string;
-        method: typeof AuthenticationService.postAuthenticationServiceRcmsApi1AuthLogin;
-        methodName: string;
-        auth: string;
-    };
-    logout: {
-        path: string;
-        httpMethod: string;
-        class: typeof AuthenticationService;
-        className: string;
-        method: typeof AuthenticationService.postAuthenticationServiceRcmsApi1AuthLogout;
-        methodName: string;
-        auth: string;
-    };
-    token: {
-        path: string;
-        httpMethod: string;
-        class: typeof AuthenticationService;
-        className: string;
-        method: typeof AuthenticationService.postAuthenticationServiceRcmsApi1AuthToken;
-        methodName: string;
-        auth: string;
-    };
-};
+//# sourceMappingURL=ApiInfo.d.ts.map

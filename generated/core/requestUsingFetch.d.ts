@@ -8,3 +8,4 @@ import { Result } from './Result';
  * @param responseHeader The header we want to parse.
  */
 export declare function requestUsingFetch(url: string, request: Readonly<RequestInit>, responseHeader?: string): Promise<Result>;
+//# sourceMappingURL=requestUsingFetch.d.ts.map

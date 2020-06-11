@@ -5,3 +5,4 @@ export interface Result {
     statusText: string;
     body: any;
 }
+//# sourceMappingURL=Result.d.ts.map

@@ -9,3 +9,4 @@ interface Config {
 }
 export declare const OpenAPI: Config;
 export {};
+//# sourceMappingURL=OpenAPI.d.ts.map

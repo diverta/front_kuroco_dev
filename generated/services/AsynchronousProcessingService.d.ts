@@ -30,3 +30,4 @@ export declare const infos: {
     auth: null;
     description: string;
 }[];
+//# sourceMappingURL=AsynchronousProcessingService.d.ts.map

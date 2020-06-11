@@ -40,7 +40,7 @@ export declare class MembersService {
      *
      * ## Controller parameters
      *
-     * > **default_group_id** `1`
+     * > **default_group_id** `2`
      *
      * @param requestBody
      * @param outputFormat Format (json|xml|csv)
@@ -57,7 +57,7 @@ export declare class MembersService {
      *
      * ## Controller parameters
      *
-     * > **allowed_group_ids** `1`
+     * > **allowed_group_ids** `2`
      *
      * @param requestBody
      * @param outputFormat Format (json|xml|csv)
@@ -74,7 +74,7 @@ export declare class MembersService {
      *
      * ## Controller parameters
      *
-     * > **allowed_group_ids** `1`
+     * > **allowed_group_ids** `2`
      *
      * @param requestBody
      * @param outputFormat Format (json|xml|csv)
@@ -93,6 +93,8 @@ export declare class MembersService {
      *
      * > **self_only** `true`
      *
+     * > **allowed_group_ids** `2`
+     *
      * @param requestBody
      * @param outputFormat Format (json|xml|csv)
      * @param lang Language
@@ -109,6 +111,8 @@ export declare class MembersService {
      * ## Controller parameters
      *
      * > **self_only** `true`
+     *
+     * > **allowed_group_ids** `2`
      *
      * @param requestBody
      * @param outputFormat Format (json|xml|csv)
@@ -391,7 +395,7 @@ export declare namespace MembersService {
             /**
              * /label/group_id
              */
-            group_id?: (1);
+            group_id?: (2);
             /**
              * /label/open_flg
              */
@@ -537,7 +541,7 @@ export declare namespace MembersService {
             /**
              * /label/group_id
              */
-            group_id?: Array<(1 | 2)>;
+            group_id?: (2);
             /**
              * /label/open_flg
              */
@@ -600,13 +604,5 @@ export declare const infos: ({
     methodName: string;
     auth: null;
     description: string;
-} | {
-    path: string;
-    httpMethod: string;
-    class: typeof MembersService;
-    className: string;
-    method: typeof MembersService.postMembersServiceRcmsApi1MeUpdate;
-    methodName: string;
-    auth: null;
-    description: string;
 })[];
+//# sourceMappingURL=MembersService.d.ts.map

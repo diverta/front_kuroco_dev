@@ -74,7 +74,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { Auth } from '../../generated/core/Auth';
+import { Auth, LocalStorage } from '../../generated';
 import { MembersService } from '../../generated/services/MembersService';
 import { AuthenticationService } from '../../generated/services/AuthenticationService';
 import { mapActions, mapGetters } from 'vuex';
@@ -100,8 +100,8 @@ export default Vue.extend({
     ]),
     handleOnClickLogout(): void {
       AuthenticationService.postAuthenticationServiceRcmsApi1AuthLogout({});
-      Auth.setAccessToken('');
-      Auth.setRefreshToken('');
+      LocalStorage.setAccessToken('');
+      LocalStorage.setRefreshToken('');
       this.updateLoggedInStatus(false);
     },
     handleOnClickLogin(): void {

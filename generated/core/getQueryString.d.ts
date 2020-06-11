@@ -6,3 +6,4 @@
 export declare function getQueryString(params: {
     [key: string]: any;
 }): string;
+//# sourceMappingURL=getQueryString.d.ts.map

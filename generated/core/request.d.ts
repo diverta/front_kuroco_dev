@@ -6,3 +6,4 @@ import { Result } from './Result';
  * @returns Result object (see above)
  */
 export declare function request(options: Readonly<RequestOptions>): Promise<Result>;
+//# sourceMappingURL=request.d.ts.map

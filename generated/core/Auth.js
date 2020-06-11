@@ -13,21 +13,26 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Auth = void 0;
-// @ts-ignore-start
-const ApiInfo_1 = require("./ApiInfo");
+exports.Auth = exports.SpecialOperations = void 0;
 const OpenAPI_1 = require("./OpenAPI");
 const ApiError_1 = require("./ApiError");
+const LocalStorage_1 = require("./LocalStorage");
 // @ts-ignore-end
+const AuthenticationService_1 = require("../services/AuthenticationService");
+exports.SpecialOperations = {
+    login: AuthenticationService_1.AuthenticationService.postAuthenticationServiceRcmsApi1AuthLogin,
+    logout: AuthenticationService_1.AuthenticationService.postAuthenticationServiceRcmsApi1AuthLogout,
+    token: AuthenticationService_1.AuthenticationService.postAuthenticationServiceRcmsApi1AuthToken,
+};
 class Auth {
     static login(param) {
         return __awaiter(this, void 0, void 0, function* () {
-            Auth.deleteAccessToken();
-            Auth.deleteRefreshToken();
-            if (!ApiInfo_1.SpecialOperationInfo.login) {
+            LocalStorage_1.LocalStorage.deleteAccessToken();
+            LocalStorage_1.LocalStorage.deleteRefreshToken();
+            if (!exports.SpecialOperations.login) {
                 return Promise.resolve();
             }
-            const res = yield ApiInfo_1.SpecialOperationInfo.login.method(param);
+            const res = yield exports.SpecialOperations.login(param);
             const { grant_token, errors } = res;
             if (errors && Array.isArray(errors) && errors.length > 0) {
                 return Promise.reject(errors);
@@ -38,22 +43,22 @@ class Auth {
     }
     static logout(param) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield ApiInfo_1.SpecialOperationInfo.logout.method(param).finally(() => {
-                Auth.deleteAccessToken();
-                Auth.deleteRefreshToken();
+            return yield exports.SpecialOperations.logout(param).finally(() => {
+                LocalStorage_1.LocalStorage.deleteAccessToken();
+                LocalStorage_1.LocalStorage.deleteRefreshToken();
             });
         });
     }
     static createToken(param) {
         return __awaiter(this, void 0, void 0, function* () {
             if (OpenAPI_1.OpenAPI.SECURITY['Token-Auth']) {
-                const res = yield ApiInfo_1.SpecialOperationInfo.token.method(param);
+                const res = yield exports.SpecialOperations.token(param);
                 const { access_token, refresh_token } = res;
                 if (access_token) {
-                    Auth.setAccessToken(access_token);
+                    LocalStorage_1.LocalStorage.setAccessToken(access_token);
                 }
                 if (refresh_token) {
-                    Auth.setRefreshToken(refresh_token);
+                    LocalStorage_1.LocalStorage.setRefreshToken(refresh_token);
                 }
                 return res;
             }
@@ -63,60 +68,28 @@ class Auth {
     static retryRequest(requestFn, result) {
         return __awaiter(this, void 0, void 0, function* () {
             // throws error when refresh_token is empty
-            if (!Auth.getRefreshToken()) {
-                Auth.deleteTokens();
+            if (!LocalStorage_1.LocalStorage.getRefreshToken()) {
+                LocalStorage_1.LocalStorage.deleteTokens();
                 yield Auth.onErrorHandler(result);
                 throw new ApiError_1.ApiError(result, ApiError_1.ApiError.Message.UNAUTHORIZED);
             }
             // handle on error to get refreshed token
-            yield Auth.createToken({ requestBody: { refresh_token: Auth.getRefreshToken() } }).catch(() => __awaiter(this, void 0, void 0, function* () {
-                Auth.deleteTokens();
+            yield Auth.createToken({ requestBody: { refresh_token: LocalStorage_1.LocalStorage.getRefreshToken() } }).catch(() => __awaiter(this, void 0, void 0, function* () {
+                LocalStorage_1.LocalStorage.deleteTokens();
                 yield Auth.onErrorHandler(result);
                 throw new ApiError_1.ApiError(result, ApiError_1.ApiError.Message.UNAUTHORIZED);
             }));
             // retry with refreshed token
             result = yield requestFn().catch(() => __awaiter(this, void 0, void 0, function* () {
-                Auth.deleteTokens();
+                LocalStorage_1.LocalStorage.deleteTokens();
                 yield Auth.onErrorHandler(result);
                 throw new ApiError_1.ApiError(result, ApiError_1.ApiError.Message.UNAUTHORIZED);
             }));
             return result;
         });
     }
-    /** get */
-    static getAccessToken() {
-        const token = localStorage.getItem(Auth.TokenKeys.accessToken);
-        return !!token ? token : '';
-    }
-    static getRefreshToken() {
-        const token = localStorage.getItem(Auth.TokenKeys.refreshToken);
-        return !!token ? token : '';
-    }
-    /** set */
-    static setAccessToken(token) {
-        localStorage.setItem(Auth.TokenKeys.accessToken, token);
-    }
-    static setRefreshToken(token) {
-        localStorage.setItem(Auth.TokenKeys.refreshToken, token);
-    }
-    /** delete */
-    static deleteAccessToken() {
-        localStorage.removeItem(Auth.TokenKeys.accessToken);
-    }
-    static deleteRefreshToken() {
-        localStorage.removeItem(Auth.TokenKeys.refreshToken);
-    }
-    static deleteTokens() {
-        localStorage.removeItem(Auth.TokenKeys.accessToken);
-        localStorage.removeItem(Auth.TokenKeys.refreshToken);
-    }
 }
 exports.Auth = Auth;
 (function (Auth) {
     Auth.onErrorHandler = result => Promise.reject();
-    let TokenKeys;
-    (function (TokenKeys) {
-        TokenKeys["accessToken"] = "accessToken";
-        TokenKeys["refreshToken"] = "refreshToken";
-    })(TokenKeys = Auth.TokenKeys || (Auth.TokenKeys = {}));
 })(Auth = exports.Auth || (exports.Auth = {}));

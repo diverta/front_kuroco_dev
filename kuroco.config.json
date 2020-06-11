@@ -1,6 +1,6 @@
 {
-	"sdk_key": "577606e4d7d4f51fa81df5e1e81994c5",
-	"api_url": "https://picol.kuroco-mng.app/",
+	"sdk_key": "27daa9c81206a08f53c030c1d7c5d86d",
+	"api_url": "https://kuroco-dev-mng.r-cms.jp/",
 	"gcp": {
 		"firebaseConfig": {
 			"apiKey": "AIzaSyAoOPeU11WN8_LjVI1DS1MI4Aa2kZUY_Jg",

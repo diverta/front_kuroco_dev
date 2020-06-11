@@ -196,6 +196,63 @@ export declare class TopicsService {
      * @throws ApiError
      */
     static postTopicsServiceRcmsApi1TopicsMultipleUpdateTopicsId(requestParam: TopicsService.postTopicsServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest): Promise<any>;
+    /**
+     *
+     * ### **Topics::list (v1)**
+     *
+     *
+     * ## Controller parameters
+     *
+     * > **topics_group_id** `3`
+     *
+     * @param outputFormat Format (json|xml|csv)
+     * @param lang Language
+     * @param charset Charset
+     * @param cnt Number of topics per page
+     * @param pageId Page ID
+     * @param customSearchId search contdition
+     * @param topicsKeyword Keyword
+     * @param topicsKeywordCond Change the way of narrowing down by keyword (Default: AND)
+     * @param contentsType The ID from the displayed category. All data will be displayed when this is not set.
+     * @param contentsTypeCond Change the way of narrowing down by category ID (Default: OR)
+     * @param date Date
+     * @param usingSeason Use season (Yes: 1 | No: 0)
+     * @param season Season
+     * @param extColumnCond ext_column condition type (Default:OR)<br>
+     * To specify an ext_col number set: 'ext_column_{no}_cond'
+     * @param excludeTopicsId IDs of the excluded topics
+     * @param tagCategoryId ID of the tag category to be displayed. (Default: All)
+     * @param tagSearch narrowed by the value of the tag id.  yes:1 no:0
+     * @param tagId Tag IDs that you would like to display
+     * @param tagCond Change the way to narrow down tags (Default: OR)
+     * @param excludeTagId Tag IDs that you would like to hide
+     * @param myFavoriteList
+     * @param myCommentList
+     * @param myOwnList
+     * @param order Set the sort order. Available param {0}
+     * @param orderById
+     * @param id IDs of the displayed topics
+     * @result any
+     * @throws ApiError
+     */
+    static getTopicsServiceRcmsApi1TopicsStatic(requestParam: TopicsService.getTopicsServiceRcmsApi1TopicsStaticRequest): Promise<any>;
+    /**
+     *
+     * ### **Topics::details (v1)**
+     *
+     *
+     * ## Controller parameters
+     *
+     * > **topics_group_id** `3`
+     *
+     * @param topicsId
+     * @param outputFormat Format (json|xml|csv)
+     * @param lang Language
+     * @param charset Charset
+     * @result any
+     * @throws ApiError
+     */
+    static getTopicsServiceRcmsApi1TopicsStaticTopicsId(requestParam: TopicsService.getTopicsServiceRcmsApi1TopicsStaticTopicsIdRequest): Promise<any>;
 }
 export declare namespace TopicsService {
     interface getTopicsServiceRcmsApi1Topics1TopicsIdRequest {
@@ -389,6 +446,23 @@ export declare namespace TopicsService {
              */
             ext_col_14?: string;
             /**
+             * Vimeo
+             */
+            ext_col_16?: {
+                /**
+                 * File ID returned by File Upload API
+                 */
+                file_id?: string;
+                /**
+                 * File name
+                 */
+                file_nm?: string;
+                /**
+                 * Description
+                 */
+                desc?: string;
+            };
+            /**
              * Validate
              */
             validate_only?: boolean;
@@ -553,6 +627,23 @@ export declare namespace TopicsService {
              * Wysiwyg
              */
             ext_col_14?: string;
+            /**
+             * Vimeo
+             */
+            ext_col_16?: {
+                /**
+                 * File ID returned by File Upload API
+                 */
+                file_id?: string;
+                /**
+                 * File name
+                 */
+                file_nm?: string;
+                /**
+                 * Description
+                 */
+                desc?: string;
+            };
             /**
              * Validate
              */
@@ -754,6 +845,27 @@ export declare namespace TopicsService {
              */
             ext_col_14?: Array<string>;
             /**
+             * Vimeo
+             */
+            ext_col_16?: Array<{
+                /**
+                 * File ID returned by File Upload API
+                 */
+                file_id?: string;
+                /**
+                 * File name
+                 */
+                file_nm?: string;
+                /**
+                 * Description
+                 */
+                desc?: string;
+                /**
+                 * File ID. Whether the item should be updated or inserted depends on this ID being set or not.
+                 */
+                id?: string;
+            }>;
+            /**
              * Validate
              */
             validate_only?: boolean;
@@ -912,6 +1024,27 @@ export declare namespace TopicsService {
              */
             ext_col_14?: Array<string>;
             /**
+             * Vimeo
+             */
+            ext_col_16?: Array<{
+                /**
+                 * File ID returned by File Upload API
+                 */
+                file_id?: string;
+                /**
+                 * File name
+                 */
+                file_nm?: string;
+                /**
+                 * Description
+                 */
+                desc?: string;
+                /**
+                 * File ID. Whether the item should be updated or inserted depends on this ID being set or not.
+                 */
+                id?: string;
+            }>;
+            /**
              * Validate
              */
             validate_only?: boolean;
@@ -921,6 +1054,42 @@ export declare namespace TopicsService {
         charset?: string;
     }
     type postTopicsServiceRcmsApi1TopicsMultipleUpdateTopicsIdResponse = any;
+    interface getTopicsServiceRcmsApi1TopicsStaticRequest {
+        outputFormat?: string;
+        lang?: string;
+        charset?: string;
+        cnt?: number;
+        pageId?: number;
+        customSearchId?: string;
+        topicsKeyword?: string;
+        topicsKeywordCond?: string;
+        contentsType?: Array<number>;
+        contentsTypeCond?: string;
+        date?: string;
+        usingSeason?: string;
+        season?: number;
+        extColumnCond?: string;
+        excludeTopicsId?: string;
+        tagCategoryId?: number;
+        tagSearch?: string;
+        tagId?: Array<number>;
+        tagCond?: string;
+        excludeTagId?: string;
+        myFavoriteList?: number;
+        myCommentList?: number;
+        myOwnList?: string;
+        order?: string;
+        orderById?: string;
+        id?: Array<number>;
+    }
+    type getTopicsServiceRcmsApi1TopicsStaticResponse = any;
+    interface getTopicsServiceRcmsApi1TopicsStaticTopicsIdRequest {
+        topicsId: number;
+        outputFormat?: string;
+        lang?: string;
+        charset?: string;
+    }
+    type getTopicsServiceRcmsApi1TopicsStaticTopicsIdResponse = any;
 }
 export declare const infos: ({
     path: string;
@@ -959,3 +1128,4 @@ export declare const infos: ({
     auth: null;
     description: string;
 })[];
+//# sourceMappingURL=TopicsService.d.ts.map

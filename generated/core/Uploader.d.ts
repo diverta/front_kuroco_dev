@@ -21,3 +21,4 @@ export interface UploaderMeta {
      */
     file_id: string;
 }
+//# sourceMappingURL=Uploader.d.ts.map

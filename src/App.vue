@@ -53,6 +53,7 @@ import Result from './components/Result.vue';
 import Uploader from './components/Uploader.vue';
 import { Auth } from '../generated/core/Auth';
 import { mapActions, mapState, mapGetters } from 'vuex';
+import { LocalStorage } from '../generated';
 
 export default Vue.extend({
   name: 'App',
@@ -90,8 +91,8 @@ export default Vue.extend({
     ]),
   },
   async mounted() {
-    Auth.deleteAccessToken();
-    Auth.deleteRefreshToken();
+    LocalStorage.deleteAccessToken();
+    LocalStorage.deleteRefreshToken();
     Auth.onErrorHandler = async result => Promise.resolve();
   },
 });

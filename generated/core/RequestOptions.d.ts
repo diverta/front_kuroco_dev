@@ -16,3 +16,4 @@ export interface RequestOptions {
     body?: any;
     responseHeader?: string;
 }
+//# sourceMappingURL=RequestOptions.d.ts.map
