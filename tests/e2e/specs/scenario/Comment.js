@@ -10,6 +10,7 @@ const getComments = ({ topicsId }) => {
   const requestData = {
     moduleId: topicsId,
     newOrderFlg: 0,
+    lang: 'en',
   };
   return executeRequest({
     cy,

@@ -9,6 +9,7 @@ const getFavorites = ({ memberId }) => {
   /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.getFavoritesServiceRcmsApi1FavoritesRequest} */
   const requestData = {
     memberId: memberId,
+    lang: 'en',
   };
   return executeRequest({
     cy,
@@ -24,6 +25,7 @@ const insertFavorite = ({ moduleType = 'topics', moduleId }) => {
       module_type: moduleType,
       module_id: moduleId,
     },
+    lang: 'en',
   };
   return executeRequest({
     cy,
@@ -39,6 +41,7 @@ const deleteFavorite = ({ moduleType = 'topics', moduleId }) => {
       module_type: moduleType,
       module_id: moduleId,
     },
+    lang: 'en',
   };
   return executeRequest({
     cy,
@@ -69,7 +72,7 @@ describe('Favorite', () => {
       if ( favorites.list.length === 0) {
         break;
       }
-      favorites.list.forEach(row => {
+      await favorites.list.forEach(row => {
         deleteFavorite({ moduleType: row.module_type, moduleId: row.module_id});
       });
     };

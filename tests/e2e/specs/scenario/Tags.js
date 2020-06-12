@@ -8,6 +8,7 @@ import { executeRequest, login } from '../../base';
 const getTags = () => {
   /** @type {import('../../../../generated/services/TagsService').TagsService.getTagsServiceRcmsApi1TagsRequest} */
   const requestData = {
+    lang: 'en',
   };
   return executeRequest({
     cy,
@@ -20,6 +21,7 @@ const getTagsByIds = ({ tagIds }) => {
   /** @type {import('../../../../generated/services/TagsService').TagsService.getTagsServiceRcmsApi1TagsRequest} */
   const requestData = {
     id: tagIds,
+    lang: 'en',
   };
   return executeRequest({
     cy,
@@ -59,6 +61,7 @@ const postInsertTag = () => {
       ext_col_09: postInsertTagData.ext_col_09,
       ext_col_10: postInsertTagData.ext_col_10,
     },
+    lang: 'en',
   };
   return executeRequest({
     cy,
@@ -102,7 +105,7 @@ describe('Tags', () => {
     const insertedTag = insertedList.list.find(row => row.tag_id === addedId);
     expect(insertedTag).to.exist;
     Object.keys(postInsertTagData).forEach(key => {
-      expect(insertedTag[key]).to.equal(postInsertTagData[key]);
+      expect(insertedTag[key], key).to.equal(postInsertTagData[key]);
     });
 
     // post delete inserted tag
