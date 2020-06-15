@@ -37,7 +37,7 @@
             ></v-text-field>
             <v-text-field
               v-model="password"
-              label="passowrd"
+              label="password"
               type="password"
               class="js-loggin-form-password"
             ></v-text-field>
