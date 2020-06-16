@@ -27,14 +27,14 @@
         <v-form>
           <v-container class="px-4 py-0" fluid no-gutter>
             <v-text-field
-              v-model="uploaded_file.file_id"
+              v-model="uploadedFile.fileId"
               label="file_id"
-              class="js-upload-form-id"
+              class="js-upload-form-file-id"
             ></v-text-field>
             <v-text-field
-              v-model="uploaded_file.file_nm"
+              v-model="uploadedFile.fileNm"
               label="file_nm"
-              class="js-upload-form-nm"
+              class="js-upload-form-file-nm"
             ></v-text-field>
           </v-container>
         </v-form>
@@ -75,7 +75,10 @@ export default Vue.extend({
     return {
       uploader: null as any,
       dialog: false,
-      uploaded_file: {},
+      uploadedFile: {
+        fileNm: '',
+        fileId: '',
+      },
     };
   },
   computed: {
@@ -91,9 +94,9 @@ export default Vue.extend({
         .upload(newFile)
         .then((res: any) => {
           // alert('ok', JSON.stringify(res))
-          this.uploaded_file = {
-            file_nm: newFile.name,
-            file_id: res.file_id
+          this.uploadedFile = {
+            fileNm: newFile.name,
+            fileId: res.file_id
           };
           this.dialog = true;
         })
