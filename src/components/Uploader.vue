@@ -90,10 +90,10 @@ export default Vue.extend({
     onChangeInputFile(e: Event) {
       const newFile = (e.target as any).files[0] as File;
       const alert = (type: 'ok' | 'ng', msg = '') => window.alert(`${type.toUpperCase()}: ${msg}`)
+      if(!newFile) return;
       this.uploader
         .upload(newFile)
         .then((res: any) => {
-          // alert('ok', JSON.stringify(res))
           this.uploadedFile = {
             fileNm: newFile.name,
             fileId: res.file_id
