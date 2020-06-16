@@ -757,6 +757,22 @@ exports.infos = [
                  */
                 link_url?: string,
                 /**
+                 * タグID
+                 * * 2 => Test Tag
+                 * * 5 => TestTag1591861768981
+                 * * 6 => TestTag1591861909598
+                 * * 7 => TestTag1591863012273
+                 * * 8 => TestTag1591865519222
+                 * * 9 => TestTag1591865750748
+                 * * 10 => TestTag1591867928030
+                 * * 11 => TestTag1591868223421
+                 * * 12 => TestTag1591869955411
+                 * * 13 => TestTag1591871407217
+                 * * 14 => TestTag1591871878143
+                 * * 15 => Ja
+                 */
+                tag_id?: Array<(2 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15)>,
+                /**
                  * Text
                  */
                 ext_col_01?: string,
@@ -934,6 +950,22 @@ exports.infos = [
                  * Link
                  */
                 link_url?: string,
+                /**
+                 * タグID
+                 * * 2 => Test Tag
+                 * * 5 => TestTag1591861768981
+                 * * 6 => TestTag1591861909598
+                 * * 7 => TestTag1591863012273
+                 * * 8 => TestTag1591865519222
+                 * * 9 => TestTag1591865750748
+                 * * 10 => TestTag1591867928030
+                 * * 11 => TestTag1591868223421
+                 * * 12 => TestTag1591869955411
+                 * * 13 => TestTag1591871407217
+                 * * 14 => TestTag1591871878143
+                 * * 15 => Ja
+                 */
+                tag_id?: Array<(2 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15)>,
                 /**
                  * Text
                  */
@@ -1188,6 +1220,22 @@ exports.infos = [
                  */
                 link_url?: string,
                 /**
+                 * タグID
+                 * * 2 => Test Tag
+                 * * 5 => TestTag1591861768981
+                 * * 6 => TestTag1591861909598
+                 * * 7 => TestTag1591863012273
+                 * * 8 => TestTag1591865519222
+                 * * 9 => TestTag1591865750748
+                 * * 10 => TestTag1591867928030
+                 * * 11 => TestTag1591868223421
+                 * * 12 => TestTag1591869955411
+                 * * 13 => TestTag1591871407217
+                 * * 14 => TestTag1591871878143
+                 * * 15 => Ja
+                 */
+                tag_id?: Array<(2 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15)>,
+                /**
                  * Text
                  */
                 ext_col_01?: Array<string>,
@@ -1362,6 +1410,22 @@ exports.infos = [
                  * Link
                  */
                 link_url?: string,
+                /**
+                 * タグID
+                 * * 2 => Test Tag
+                 * * 5 => TestTag1591861768981
+                 * * 6 => TestTag1591861909598
+                 * * 7 => TestTag1591863012273
+                 * * 8 => TestTag1591865519222
+                 * * 9 => TestTag1591865750748
+                 * * 10 => TestTag1591867928030
+                 * * 11 => TestTag1591868223421
+                 * * 12 => TestTag1591869955411
+                 * * 13 => TestTag1591871407217
+                 * * 14 => TestTag1591871878143
+                 * * 15 => Ja
+                 */
+                tag_id?: Array<(2 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15)>,
                 /**
                  * Text
                  */

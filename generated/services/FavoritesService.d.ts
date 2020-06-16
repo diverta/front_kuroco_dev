@@ -4,16 +4,13 @@ export declare class FavoritesService {
      * ### **Favorite::list (v1)**
      *
      *
-     * ## Controller parameters
-     *
-     * > **module_type** `topics`
-     *
      * @param outputFormat Format (json|xml|csv)
      * @param lang Language
      * @param charset Charset
      * @param cnt Display number per page
      * @param pageId Page ID
      * @param moduleId
+     * @param moduleType Module type
      * @param memberId Member ID
      * @param rcmsid rcmsid
      * @param groupBy Grouping List by (module_id)
@@ -57,6 +54,7 @@ export declare namespace FavoritesService {
         cnt?: number;
         pageId?: number;
         moduleId?: Array<number>;
+        moduleType?: Array<string>;
         memberId?: Array<number>;
         rcmsid?: Array<string>;
         groupBy?: string;

@@ -1159,6 +1159,31 @@
 										"example": "",
 										"description": "Link"
 									},
+									"tag_id": {
+										"type": "array",
+										"uniqueItems": true,
+										"items": {
+											"type": "integer",
+											"enum": [
+												2,
+												5,
+												6,
+												7,
+												8,
+												9,
+												10,
+												11,
+												12,
+												13,
+												14,
+												15
+											]
+										},
+										"example": [
+											0
+										],
+										"description": "タグID\n* 2 => Test Tag\n* 5 => TestTag1591861768981\n* 6 => TestTag1591861909598\n* 7 => TestTag1591863012273\n* 8 => TestTag1591865519222\n* 9 => TestTag1591865750748\n* 10 => TestTag1591867928030\n* 11 => TestTag1591868223421\n* 12 => TestTag1591869955411\n* 13 => TestTag1591871407217\n* 14 => TestTag1591871878143\n* 15 => Ja"
+									},
 									"ext_col_01": {
 										"description": "Text",
 										"type": "string",
@@ -1270,7 +1295,7 @@
 												"additionalProperties": false
 											}
 										],
-										"example": "2020-06-11"
+										"example": "2020-06-16"
 									},
 									"ext_col_08": {
 										"description": "DateTime",
@@ -1302,7 +1327,7 @@
 												"additionalProperties": false
 											}
 										],
-										"example": "2020-06-11 11:33 +0900"
+										"example": "2020-06-16 14:19 +0900"
 									},
 									"ext_col_05": {
 										"description": "Tdfk",
@@ -5683,6 +5708,31 @@
 										"example": "",
 										"description": "Link"
 									},
+									"tag_id": {
+										"type": "array",
+										"uniqueItems": true,
+										"items": {
+											"type": "integer",
+											"enum": [
+												2,
+												5,
+												6,
+												7,
+												8,
+												9,
+												10,
+												11,
+												12,
+												13,
+												14,
+												15
+											]
+										},
+										"example": [
+											0
+										],
+										"description": "タグID\n* 2 => Test Tag\n* 5 => TestTag1591861768981\n* 6 => TestTag1591861909598\n* 7 => TestTag1591863012273\n* 8 => TestTag1591865519222\n* 9 => TestTag1591865750748\n* 10 => TestTag1591867928030\n* 11 => TestTag1591868223421\n* 12 => TestTag1591869955411\n* 13 => TestTag1591871407217\n* 14 => TestTag1591871878143\n* 15 => Ja"
+									},
 									"ext_col_01": {
 										"description": "Text",
 										"type": "string",
@@ -5794,7 +5844,7 @@
 												"additionalProperties": false
 											}
 										],
-										"example": "2020-06-11"
+										"example": "2020-06-16"
 									},
 									"ext_col_08": {
 										"description": "DateTime",
@@ -5826,7 +5876,7 @@
 												"additionalProperties": false
 											}
 										],
-										"example": "2020-06-11 11:33 +0900"
+										"example": "2020-06-16 14:19 +0900"
 									},
 									"ext_col_05": {
 										"description": "Tdfk",
@@ -10685,6 +10735,31 @@
 										"example": "",
 										"description": "Link"
 									},
+									"tag_id": {
+										"type": "array",
+										"uniqueItems": true,
+										"items": {
+											"type": "integer",
+											"enum": [
+												2,
+												5,
+												6,
+												7,
+												8,
+												9,
+												10,
+												11,
+												12,
+												13,
+												14,
+												15
+											]
+										},
+										"example": [
+											0
+										],
+										"description": "タグID\n* 2 => Test Tag\n* 5 => TestTag1591861768981\n* 6 => TestTag1591861909598\n* 7 => TestTag1591863012273\n* 8 => TestTag1591865519222\n* 9 => TestTag1591865750748\n* 10 => TestTag1591867928030\n* 11 => TestTag1591868223421\n* 12 => TestTag1591869955411\n* 13 => TestTag1591871407217\n* 14 => TestTag1591871878143\n* 15 => Ja"
+									},
 									"ext_col_01": {
 										"type": "array",
 										"items": {
@@ -10826,7 +10901,7 @@
 													"additionalProperties": false
 												}
 											],
-											"example": "2020-06-11"
+											"example": "2020-06-16"
 										},
 										"description": "Date",
 										"default": [],
@@ -10865,7 +10940,7 @@
 													"additionalProperties": false
 												}
 											],
-											"example": "2020-06-11 11:33 +0900"
+											"example": "2020-06-16 14:19 +0900"
 										},
 										"description": "DateTime",
 										"default": [],
@@ -15328,6 +15403,31 @@
 										"example": "",
 										"description": "Link"
 									},
+									"tag_id": {
+										"type": "array",
+										"uniqueItems": true,
+										"items": {
+											"type": "integer",
+											"enum": [
+												2,
+												5,
+												6,
+												7,
+												8,
+												9,
+												10,
+												11,
+												12,
+												13,
+												14,
+												15
+											]
+										},
+										"example": [
+											0
+										],
+										"description": "タグID\n* 2 => Test Tag\n* 5 => TestTag1591861768981\n* 6 => TestTag1591861909598\n* 7 => TestTag1591863012273\n* 8 => TestTag1591865519222\n* 9 => TestTag1591865750748\n* 10 => TestTag1591867928030\n* 11 => TestTag1591868223421\n* 12 => TestTag1591869955411\n* 13 => TestTag1591871407217\n* 14 => TestTag1591871878143\n* 15 => Ja"
+									},
 									"ext_col_01": {
 										"type": "array",
 										"items": {
@@ -15469,7 +15569,7 @@
 													"additionalProperties": false
 												}
 											],
-											"example": "2020-06-11"
+											"example": "2020-06-16"
 										},
 										"description": "Date",
 										"default": [],
@@ -15508,7 +15608,7 @@
 													"additionalProperties": false
 												}
 											],
-											"example": "2020-06-11 11:33 +0900"
+											"example": "2020-06-16 14:19 +0900"
 										},
 										"description": "DateTime",
 										"default": [],
@@ -20775,7 +20875,7 @@
 												"format": "date"
 											}
 										],
-										"example": "2020-06-11"
+										"example": "2020-06-16"
 									},
 									"relation": {
 										"type": "integer",
@@ -21154,7 +21254,7 @@
 												"format": "date"
 											}
 										],
-										"example": "2020-06-11"
+										"example": "2020-06-16"
 									},
 									"relation": {
 										"type": "integer",
@@ -21625,7 +21725,7 @@
 												"format": "date"
 											}
 										],
-										"example": "2020-06-11"
+										"example": "2020-06-16"
 									},
 									"relation": {
 										"type": "integer",
@@ -22286,7 +22386,7 @@
 					"Favorites"
 				],
 				"summary": "",
-				"description": "\n### **Favorite::list (v1)**\n\n\n## Controller parameters\n\n> **module_type** `topics`\n",
+				"description": "\n### **Favorite::list (v1)**\n\n",
 				"parameters": [
 					{
 						"name": "_output_format",
@@ -22363,6 +22463,22 @@
 						"style": "form",
 						"explode": true,
 						"description": ""
+					},
+					{
+						"name": "module_type[]",
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string",
+								"format": ""
+							},
+							"minItems": 0
+						},
+						"in": "query",
+						"required": false,
+						"style": "form",
+						"explode": true,
+						"description": "Module type"
 					},
 					{
 						"name": "member_id[]",
@@ -23125,7 +23241,7 @@
 												}
 											}
 										],
-										"example": "2020-06-11 11:33 +0900",
+										"example": "2020-06-16 14:19 +0900",
 										"description": "DateTime"
 									},
 									"ext_07": {
@@ -23321,7 +23437,7 @@
 												}
 											}
 										],
-										"example": "2020-06-11",
+										"example": "2020-06-16",
 										"description": "Date"
 									},
 									"validate_only": {
@@ -23652,7 +23768,7 @@
 												}
 											}
 										],
-										"example": "2020-06-11 11:33 +0900",
+										"example": "2020-06-16 14:19 +0900",
 										"description": "DateTime"
 									},
 									"ext_07": {
@@ -23848,7 +23964,7 @@
 												}
 											}
 										],
-										"example": "2020-06-11",
+										"example": "2020-06-16",
 										"description": "Date"
 									},
 									"validate_only": {
@@ -24070,7 +24186,7 @@
 						"required": false,
 						"style": "form",
 						"explode": true,
-						"description": "Grouping List by (module_id / category)"
+						"description": "Grouping List by (module_id|category)"
 					},
 					{
 						"name": "groupAs",
@@ -24082,7 +24198,7 @@
 						"required": false,
 						"style": "form",
 						"explode": true,
-						"description": "Grouping List as (array or object)"
+						"description": "Grouping List as (array|object)"
 					}
 				],
 				"responses": {
@@ -24175,7 +24291,15 @@
 										"format": "int64",
 										"example": 0,
 										"default": 0,
-										"description": "Category ID"
+										"enum": [
+											0,
+											1,
+											2,
+											3,
+											4,
+											5
+										],
+										"description": "Category ID\n* 0 => Uncategorized\n* 1 => Category1\n* 2 => Category2\n* 3 => Category3\n* 4 => Category1__Child1\n* 5 => Category1__Child2"
 									},
 									"open_type": {
 										"type": "string",

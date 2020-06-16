@@ -50,8 +50,8 @@ class TagsService {
      * @param pageId Page ID
      * @param id Tag IDs that you would like to display
      * @param categoryId ID of the tag category to be displayed. (Default: All)
-     * @param groupBy Grouping List by (module_id / category)
-     * @param groupAs Grouping List as (array or object)
+     * @param groupBy Grouping List by (module_id|category)
+     * @param groupAs Grouping List as (array|object)
      * @result any
      * @throws ApiError
      */
@@ -209,8 +209,14 @@ exports.infos = [
                 tag_nm: string,
                 /**
                  * Category ID
+                 * * 0 => Uncategorized
+                 * * 1 => Category1
+                 * * 2 => Category2
+                 * * 3 => Category3
+                 * * 4 => Category1__Child1
+                 * * 5 => Category1__Child2
                  */
-                tag_category_id?: number,
+                tag_category_id?: (0 | 1 | 2 | 3 | 4 | 5),
                 /**
                  * Published / Not published
                  */

@@ -23,7 +23,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { mapGetters, mapState } from 'vuex';
-import { UploaderFactory, Auth } from 'generated';
+import { UploaderFactory } from '../../generated';
 
 export default Vue.extend({
     name: 'Uploader',
