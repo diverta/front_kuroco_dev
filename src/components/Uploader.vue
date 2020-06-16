@@ -17,7 +17,7 @@
           >
             <v-icon dark>mdi-upload</v-icon>
           </v-btn>
-          <input type="file" hidden ref="uploader" @change="(e) => onChangeInputFile(e)" />
+          <input type="file" class="js-upload-file" hidden ref="uploader" @change="(e) => onChangeInputFile(e)" />
         </div>
       </v-row>
     </template>
@@ -30,11 +30,13 @@
               v-model="uploadedFile.fileId"
               label="file_id"
               class="js-upload-form-file-id"
+              data-cy="data-upload-form-file-id"
             ></v-text-field>
             <v-text-field
               v-model="uploadedFile.fileNm"
               label="file_nm"
               class="js-upload-form-file-nm"
+              data-cy="data-upload-form-file-nm"
             ></v-text-field>
           </v-container>
         </v-form>
@@ -90,6 +92,10 @@ export default Vue.extend({
       const newFile = (e.target as any).files[0] as File;
       const alert = (type: 'ok' | 'ng', msg = '') => window.alert(`${type.toUpperCase()}: ${msg}`)
       if(!newFile) return;
+      this.uploadedFile = {
+        fileNm: '',
+        fileId: '',
+      };
       this.uploader
         .upload(newFile)
         .then((res: any) => {
