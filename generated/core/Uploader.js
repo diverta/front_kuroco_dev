@@ -37,6 +37,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UploaderFactory = void 0;
 const firebase = __importStar(require("firebase/app"));
+require("firebase/auth");
 require("firebase/storage");
 const FirebaseUtil_1 = __importDefault(require("./FirebaseUtil"));
 const AuthenticationService_1 = require("../services/AuthenticationService");

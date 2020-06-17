@@ -1,1 +1,1 @@
-{"version":3,"file":"Dictionary.d.ts","sourceRoot":"","sources":["../../../kuroco-sdk/.tmp/models/Dictionary.ts"],"names":[],"mappings":"AAKA,oBAAY,UAAU,CAAC,CAAC,IAAI;IACxB,CAAC,GAAG,EAAE,MAAM,GAAG,CAAC,CAAC;CACpB,CAAA"}
+{"version":3,"file":"Dictionary.d.ts","sourceRoot":"","sources":["../../node_modules/kuroco-sdk/.tmp/models/Dictionary.ts"],"names":[],"mappings":"AAKA,oBAAY,UAAU,CAAC,CAAC,IAAI;IACxB,CAAC,GAAG,EAAE,MAAM,GAAG,CAAC,CAAC;CACpB,CAAA"}

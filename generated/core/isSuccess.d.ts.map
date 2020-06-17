@@ -1,1 +1,1 @@
-{"version":3,"file":"isSuccess.d.ts","sourceRoot":"","sources":["../../../kuroco-sdk/.tmp/core/isSuccess.ts"],"names":[],"mappings":"AAKA;;;GAGG;AACH,wBAAgB,SAAS,CAAC,MAAM,EAAE,MAAM,GAAG,OAAO,CAEjD"}
+{"version":3,"file":"isSuccess.d.ts","sourceRoot":"","sources":["../../node_modules/kuroco-sdk/.tmp/core/isSuccess.ts"],"names":[],"mappings":"AAKA;;;GAGG;AACH,wBAAgB,SAAS,CAAC,MAAM,EAAE,MAAM,GAAG,OAAO,CAEjD"}
