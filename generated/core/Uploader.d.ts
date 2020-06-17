@@ -1,3 +1,4 @@
+import 'firebase/storage';
 import { AuthenticationService } from '../services/AuthenticationService';
 /**
  * Create Uploader.

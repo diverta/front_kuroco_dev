@@ -11,6 +11,15 @@ import store from './store';
 
 Vue.config.productionTip = false;
 
+/** apply analytics */
+import 'firebase/analytics';
+import { firebaseApp } from '../generated';
+try {
+  firebaseApp.analytics();
+} catch(e) {
+  console.info(e)
+}
+
 const app = new Vue({
   vuetify,
   store,
