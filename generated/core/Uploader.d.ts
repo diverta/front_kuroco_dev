@@ -1,3 +1,4 @@
+import 'firebase/auth';
 import 'firebase/storage';
 import { AuthenticationService } from '../services/AuthenticationService';
 /**

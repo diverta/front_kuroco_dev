@@ -1,1 +1,1 @@
-{"version":3,"file":"getQueryString.d.ts","sourceRoot":"","sources":["../../../kuroco-sdk/.tmp/core/getQueryString.ts"],"names":[],"mappings":"AAKA;;;;GAIG;AACH,wBAAgB,cAAc,CAAC,MAAM,EAAE;IAAE,CAAC,GAAG,EAAE,MAAM,GAAG,GAAG,CAAA;CAAE,GAAG,MAAM,CAoBrE"}
+{"version":3,"file":"getQueryString.d.ts","sourceRoot":"","sources":["../../node_modules/kuroco-sdk/.tmp/core/getQueryString.ts"],"names":[],"mappings":"AAKA;;;;GAIG;AACH,wBAAgB,cAAc,CAAC,MAAM,EAAE;IAAE,CAAC,GAAG,EAAE,MAAM,GAAG,GAAG,CAAA;CAAE,GAAG,MAAM,CAoBrE"}
