@@ -1,5 +1,6 @@
 const path = require('path');
 import promisify from 'cypress-promise';
+import 'cypress-file-upload';
 
 function decode(content) {
   return content
@@ -27,6 +28,18 @@ export const queries = {
       close: '.js-loggin-form-close-button',
       logout: '.js-loggin-form-logout-button',
       login: '.js-loggin-form-login-button',
+    },
+  },
+  upload: {
+    button: '.js-upload-button',
+    file: '.js-upload-file',
+    form: {
+      _: '.js-upload-form',
+      fileId: '.js-upload-form-file-id',
+      fileNm: '.js-upload-form-file-nm',
+
+      select: '.js-upload-form-select-button',
+      close: '.js-upload-form-close-button',
     },
   },
   apiInfos: {
@@ -83,6 +96,37 @@ export function logout() {
 }
 
 /**
+ * upload file
+ * 
+ * @param options.path upload file path.
+ */
+export async function upload({path}) {
+  const dataCyFileId = 'data-upload-form-file-id';
+  const dataCyFileNm = 'data-upload-form-file-nm';
+
+  cy.get(queries.upload.button).trigger('mouseover').click();
+  cy.get(queries.upload.form._);
+  // cy.get(queries.upload.form.select).click();
+  cy.get(queries.upload.file).attachFile(path);
+  cy.get(`[data-cy=${dataCyFileId}]`).should('not.have.value', '');
+
+  const fileId = await promisify(
+    cy.get(`[data-cy=${dataCyFileId}]`)
+      .invoke('val')
+  );
+  const fileNm = await promisify(
+    cy.get(`[data-cy=${dataCyFileNm}]`)
+      .invoke('val')
+  );
+  cy.get(queries.upload.form.close).trigger('mouseover').click();
+  return {
+    fileId: fileId,
+    fileNm: fileNm,
+  };
+
+}
+
+/**
  * executes request to endpoint finded by query, writes results into disk as json files.
  *
  * @export
@@ -91,6 +135,7 @@ export function logout() {
  * @param options.indexOfApis an target index number for APIs.
  * @param options.requestData request data supposed to send as request body JSON.
  * @param options.screenshot an option either captures screenshot, default valus is false.
+ * @param options.timeout time to wait for response, default value is 5000(ms).
  * @returns Promise<result string convertible to JSON>
  */
 export async function executeRequest({
@@ -99,6 +144,7 @@ export async function executeRequest({
   indexOfApis = 0,
   requestData,
   screenshot = false,
+  timeout = 5000,
 }) {
   const requestBody = JSON.stringify(requestData, undefined, '\t');
   const toSaveFileName = query.replace(/ /g, '_');
@@ -122,7 +168,7 @@ export async function executeRequest({
     .get(queries.apiInfos.request)
     .click();
 
-  cy.get(queries.responseBlock.isError).then(elms => {
+  cy.get(queries.responseBlock.isError, {timeout: timeout}).then(elms => {
     if (/true/.test(elms[0].innerText)) {
       return cy.get(queries.responseBlock.response).then(elms => {
         cy.writeFile(
