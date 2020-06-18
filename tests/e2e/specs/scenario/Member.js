@@ -3,7 +3,7 @@
 
 // https://docs.cypress.io/api/introduction/api.html
 
-import { executeRequest, login, logout } from '../../base';
+import { executeRequest, login, logout, upload } from '../../base';
 
 const getMembers = () => {
   /** @type {import('../../../../generated/services/MembersService').MembersService.getMembersServiceRcmsApi1MembersRequest} */
@@ -58,7 +58,7 @@ const insertExt = {
   //   desc: 'File',
   // },
 };
-const postInsertMember = () => {
+const postInsertMember = ({ memberPhoto, file }) => {
   /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersInsertRequest} */
   const requestData = {
     requestBody: {
@@ -70,11 +70,11 @@ const postInsertMember = () => {
       name2: 'Member',
       sex: 'm',
       birth: '1990-01-01',
-      // member_photo: {
-      //     file_id: 'test.png',
-      //     file_nm: 'test',
-      //     desc: 'desc',
-      // },
+      member_photo: {
+        file_id: memberPhoto.fileId,
+        file_nm: memberPhoto.fileNm,
+        desc: 'InsertMemberPhoto',
+      },
       text: insertExt.text,
       textarea: insertExt.textarea,
       radio: insertExt.radio,
@@ -82,7 +82,11 @@ const postInsertMember = () => {
       checkbox: insertExt.checkbox,
       date: insertExt.date,
       // relation: insertExt.relation,
-      // file: insertExt.file,
+      file: {
+        file_id: file.fileId,
+        file_nm: file.fileNm,
+        desc: 'InsertFile',
+      },
       open_flg: 1,
       login_ok_flg: 1,
       validate_only: false,
@@ -92,6 +96,7 @@ const postInsertMember = () => {
     cy,
     query: 'MembersService post insert',
     requestData,
+    timeout: 10000,
   });
 };
 const updateExt = {
@@ -111,7 +116,7 @@ const updateExt = {
   //   desc: 'File',
   // },
 };
-const postUpdateMember = ({ memberId }) => {
+const postUpdateMember = ({ memberId, memberPhoto, file }) => {
   /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersUpdateRequest} */
   const requestData = {
     requestBody: {
@@ -124,11 +129,11 @@ const postUpdateMember = ({ memberId }) => {
       name2: 'メンバー',
       sex: 'f',
       birth: '1990-01-01',
-      // member_photo: {
-      //     file_id: 'test.png',
-      //     file_nm: 'test',
-      //     desc: 'desc',
-      // },
+      member_photo: {
+        file_id: memberPhoto.fileId,
+        file_nm: memberPhoto.fileNm,
+        desc: 'UpdateMemberPhoto',
+      },
       text: updateExt.text,
       textarea: updateExt.textarea,
       radio: updateExt.radio,
@@ -136,7 +141,11 @@ const postUpdateMember = ({ memberId }) => {
       checkbox: updateExt.checkbox,
       date: updateExt.date,
       relation: updateExt.relation,
-      // file: updateExt.file,
+      file: {
+        file_id: file.fileId,
+        file_nm: file.fileNm,
+        desc: 'UpdateFile',
+      },
       open_flg: 1,
       login_ok_flg: 0,
       validate_only: false,
@@ -147,6 +156,7 @@ const postUpdateMember = ({ memberId }) => {
     query: 'MembersService post update',
     indexOfApis: 0,
     requestData,
+    timeout: 10000,
   });
 };
 const postDeleteMember = ({ memberId }) => {
@@ -191,6 +201,11 @@ const postDeleteMe = () => {
   });
 };
 
+const fixtures = {
+  rcms: 'rcms.png',
+  diverta: 'diverta.png'
+};
+
 describe('Member', () => {
   it(`
       get members ->
@@ -212,7 +227,9 @@ describe('Member', () => {
     await getMember({ memberId: members.list[0].member_id });
 
     // post insert member
-    const insertRes = await postInsertMember();
+    const insertMemberPhoto = await upload({ path: fixtures.rcms });
+    const insertFile = await upload({ path: fixtures.diverta });
+    const insertRes = await postInsertMember({ memberPhoto: insertMemberPhoto, file: insertFile });
     const addedId = insertRes.id;
     // get members including updated one
     expect(
@@ -225,11 +242,24 @@ describe('Member', () => {
     expect(insertedMember.details).to.exist;
 
     Object.keys(insertExt).forEach(key => {
+      // if (key === 'date' || key === 'relation') return;
       expect(insertedMember.details[key]).to.deep.equal(insertExt[key]);
     });
+    expect(insertedMember.details.image_exist).to.be.true;
+    expect(insertedMember.details.image_url, 'image_url').to.not.empty;
+    // expect(insertedMember.details.member_photo).to.exist;
+    // expect(insertedMember.details.member_photo.file_id).to.not.empty;
+    // expect(insertedMember.details.member_photo.file_nm).to.equal(fixtures.rcms);
+    // expect(insertedMember.details.member_photo.desc).to.equal('InsertMemberPhoto');
+    expect(insertedMember.details.file, 'file').to.exist;
+    expect(insertedMember.details.file.id, 'file.id').to.not.empty;
+    expect(insertedMember.details.file.url, 'file.url').to.not.empty;
+    expect(insertedMember.details.file.desc, 'file.desc').to.equal('InsertFile');
 
     // post update inserted member
-    const updateRes = await postUpdateMember({ memberId: addedId });
+    const updateMemberPhoto = await upload({ path: fixtures.diverta });
+    const updateFile = await upload({ path: fixtures.rcms });
+    const updateRes = await postUpdateMember({ memberId: addedId, memberPhoto: updateMemberPhoto, file: updateFile });
     // get members including updated one
     expect(
       (await getMembersByIds({memberIds: [addedId]}))
@@ -241,8 +271,19 @@ describe('Member', () => {
     expect(updatedMember.details).to.exist;
 
     Object.keys(updateExt).forEach(key => {
-      expect(updatedMember.details[key]).to.deep.equal(updateExt[key]);
+      // if (key === 'date' || key === 'relation') return;
+      expect(updatedMember.details[key], key).to.deep.equal(updateExt[key]);
     });
+    expect(updatedMember.details.image_exist).to.be.true;
+    expect(updatedMember.details.image_url, 'image_url').to.not.empty;
+    // expect(updatedMember.details.member_photo).to.exist;
+    // expect(updatedMember.details.member_photo.file_id).to.not.empty;
+    // expect(updatedMember.details.member_photo.file_nm).to.equal(fixtures.diverta);
+    // expect(updatedMember.details.member_photo.desc).to.equal('UpdateMemberPhoto');
+    expect(updatedMember.details.file, 'file').to.exist;
+    expect(updatedMember.details.file.id, 'file,id').to.not.empty;
+    expect(updatedMember.details.file.url, 'file,url').to.not.empty;
+    expect(updatedMember.details.file.desc, 'file.desc').to.equal('UpdateFile');
 
     // post delete updated member
     const deleteRes = await postDeleteMember({ memberId: addedId });
@@ -300,4 +341,5 @@ describe('Member', () => {
     expect(errorResponse.status).to.equal(404);
 
   });
+
 });

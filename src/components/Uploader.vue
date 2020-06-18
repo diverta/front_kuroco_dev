@@ -104,6 +104,7 @@ export default Vue.extend({
             fileId: res.file_id
           };
           this.dialog = true;
+          (<HTMLInputElement>this.$refs.uploader).value = '';
         })
         .catch((err: any) => {
           alert('ng', err)
