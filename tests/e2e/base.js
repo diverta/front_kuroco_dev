@@ -106,7 +106,6 @@ export async function upload({path}) {
 
   cy.get(queries.upload.button).trigger('mouseover').click();
   cy.get(queries.upload.form._);
-  // cy.get(queries.upload.form.select).click();
   cy.get(queries.upload.file).attachFile(path);
   cy.get(`[data-cy=${dataCyFileId}]`).should('not.have.value', '');
 
