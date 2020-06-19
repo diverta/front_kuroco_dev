@@ -259,3 +259,12 @@ export function formatDate(format = 'date', date = new Date()) {
     return ('0' + `${value}`).slice(-2)
   }
 }
+
+export function getFileNm(url) {
+  const path = new URL(url).pathname;
+  const idx = path.indexOf('files/');
+  if (idx === -1) {
+    throw new Error(`given url is invalid.`);
+  }
+  return path.substring(idx);
+}
