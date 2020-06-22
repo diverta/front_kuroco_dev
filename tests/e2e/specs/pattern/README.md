@@ -7,6 +7,8 @@
 | cookie         | Login    | without x-rcms-token, requests login -> preInfo(with cookie) | login, preInfo        | cancel token, the related endpoints are all existed & enabled | no 401   |
 | cookie         | No Login | without x-rcms-token, requests preInfo(with cookie)          | preInfo               | cancel token, the related endpoints are all existed & enabled | no 401   |
 
+> `preInfo` is an endpoint that configured as no-GroupAuth.
+
 originally design
 
 - Token API + Login API both exist (standard usecase when site has membership)
