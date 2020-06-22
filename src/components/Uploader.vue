@@ -43,17 +43,17 @@
       </v-card-text>
       <v-card-actions>
         <v-btn
-          class="js-upload-form-select-button"
-          text
-          @click="() => $refs.uploader.click()"
-          >SELECT FILE</v-btn
-        >
-        <v-spacer></v-spacer>
-        <v-btn
           class="js-upload-form-close-button"
           text
           @click="dialog = false"
           >CLOSE</v-btn
+        >
+        <v-spacer></v-spacer>
+        <v-btn
+          class="js-upload-form-select-button"
+          text
+          @click="() => $refs.uploader.click()"
+          ><v-icon dark>mdi-upload</v-icon>SELECT FILE</v-btn
         >
       </v-card-actions>
     </v-card>
