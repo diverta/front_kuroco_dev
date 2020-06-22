@@ -2,10 +2,10 @@
 
 | cookie / token | pattern  | scenario                                                  | to call endpoints  | configuration in management screen                            | expected |
 | -------------- | -------- | --------------------------------------------------------- | ------------------ | ------------------------------------------------------------- | -------- |
-| token          | Login    | with x-rcms-token, requests login -> token -> apis        | login, token, apis | apply token, the related endpoints are all existed & enabled  | no 401   |
-| token          | No Login | with x-rcms-token, requests token -> apis                 | token, apis        | apply token, the related endpoints are all existed & enabled  | no 401   |
-| cookie         | Login    | without x-rcms-token, requests login -> apis(with cookie) | login, apis        | cancel token, the related endpoints are all existed & enabled | no 401   |
-| cookie         | No Login | without x-rcms-token, requests apis(with cookie)          | apis               | cancel token, the related endpoints are all existed & enabled | no 401   |
+| token          | Login    | with x-rcms-token, requests login -> token -> feeds        | login, token, feeds | apply token, the related endpoints are all existed & enabled  | no 401   |
+| token          | No Login | with x-rcms-token, requests token -> feeds                 | token, feeds        | apply token, the related endpoints are all existed & enabled  | no 401   |
+| cookie         | Login    | without x-rcms-token, requests login -> feeds(with cookie) | login, feeds        | cancel token, the related endpoints are all existed & enabled | no 401   |
+| cookie         | No Login | without x-rcms-token, requests feeds(with cookie)          | feeds               | cancel token, the related endpoints are all existed & enabled | no 401   |
 
 originally design
 
