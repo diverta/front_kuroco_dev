@@ -210,7 +210,7 @@ describe('Topics pattern (File)', () => {
     // post update topic delete file
     await postUpdateTopicDeleteFile({ topicsId: addedId });
 
-    // het updated topic
+    // get updated topic
     const updatedTopicDeleteFile = await getTopic({ topicsId: addedId });
     expect(updatedTopicDeleteFile.details.ext_col_11).to.empty;
 
