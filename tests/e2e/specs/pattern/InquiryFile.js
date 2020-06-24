@@ -132,8 +132,8 @@ describe('Topics pattern (File)', () => {
     expect(insertedMsg.ext_07.desc).to.equal('inserted');
     const insertedFileUrl = insertedMsg.ext_07.url;
     expect(insertedFileUrl).to.exist;
-    // const insertedFileNm = getFileNm(insertedFileUrl);
-    // expect(path.extname(insertedFileNm)).to.equal(path.extname(insertFile));
+    const insertedFileNm = getFileNm(insertedFileUrl);
+    expect(path.extname(insertedFileNm)).to.equal(path.extname(insertFile));
 
     // update message with file
     const updateFile = fixtures.diverta;
@@ -146,8 +146,8 @@ describe('Topics pattern (File)', () => {
     expect(updatedMsg.ext_07.desc).to.equal('updated');
     const updatedFileUrl = updatedMsg.ext_07.url;
     expect(updatedFileUrl).to.exist;
-    // const updatedFileNm = getFileNm(updatedFileUrl);
-    // expect(path.extname(updatedFileNm)).to.equal(path.extname(updateFile));
+    const updatedFileNm = getFileNm(updatedFileUrl);
+    expect(path.extname(updatedFileNm)).to.equal(path.extname(updateFile));
 
     // update message with only desc
     await updateMessageDesc({ inquiryBnId: addedId });
