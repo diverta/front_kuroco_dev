@@ -71,7 +71,7 @@ describe('Topics pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
   });
 
   it(`insert topic with additional key`, async () => {
@@ -86,7 +86,7 @@ describe('Topics pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
     expect(errorResponse.body.errors[0]).to.include('Additional properties not allowed: test_key');
   });
 
@@ -100,7 +100,7 @@ describe('Topics pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
   });
 
   it(`insert topic with null values`, async () => {
@@ -113,7 +113,7 @@ describe('Topics pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
     expect(errorResponse.body.errors[0]).to.include('null');
   });
 
@@ -128,7 +128,7 @@ describe('Topics pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
   });
 
   it(`insert topic with wrong extension in file_nm`, async () => {
@@ -142,7 +142,7 @@ describe('Topics pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
   });
 
   it(`insert topic set image to not image file`, async () => {
