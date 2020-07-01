@@ -63,7 +63,7 @@ const sendMessage = ({ file }) => {
           label: 'check3',
         },
       ],
-      ext_06: '2020-04-23 10:28 +0900',
+      ext_06: '2020-04-23 10:28:00 +0900',
       ext_07: {
         file_id: file.fileId,
         file_nm: file.fileNm,
@@ -117,7 +117,7 @@ const updateMessage = ({ inquiryBnId, file }) => {
           label: 'check3',
         },
       ],
-      ext_06: '2020-04-24 10:28 +0900',
+      ext_06: '2020-04-24 10:28:00 +0900',
       ext_07: {
         file_id: file.fileId,
         file_nm: file.fileNm,
@@ -198,14 +198,14 @@ describe('Inquiry', () => {
     expect(sentMessage.ext_05.length, 'ext_05').to.equal(2);
     expect(sentMessage.ext_05, 'ext_05').to.deep.include({key: '1', label: 'check1'});
     expect(sentMessage.ext_05, 'ext_05').to.deep.include({key: '3', label: 'check3'});
-    // expect(sentMessage.ext_06, 'ext_06').to.equal('2020-04-23 10:28:42 +0900');
+    expect(sentMessage.ext_06, 'ext_06').to.equal('2020-04-23 10:28:00 +0900');
     expect(sentMessage.ext_07.desc, 'ext_07.desc').to.equal('desc1');
     expect(sentMessage.ext_07.url, 'ext_07.url').to.exist;
     expect(sentMessage.ext_08.tdfk_cd, 'ext_08.tdfk_cd').to.equal('01');
     expect(sentMessage.ext_08.tdfk_nm, 'ext_08.tdfk_nm').to.equal('北海道');
     expect(sentMessage.ext_09.options, 'ext_09.options').to.equal('1');
     expect(sentMessage.ext_09.text, 'ext_09.text').to.equal('Text1');
-    // expect(sentMessage.ext_10, 'ext_10').to.equal('2020-04-23');
+    expect(sentMessage.ext_10, 'ext_10').to.equal('2020-04-23');
 
     const updateFile = fixtures.rcms;
     const updateFileData = await upload({ path: updateFile });
@@ -225,14 +225,14 @@ describe('Inquiry', () => {
     expect(updatedMessage.ext_05.length, 'ext_05').to.equal(2);
     expect(updatedMessage.ext_05, 'ext_05').to.deep.include({key: '2', label: 'check2'});
     expect(updatedMessage.ext_05, 'ext_05').to.deep.include({key: '3', label: 'check3'});
-    // expect(updatedMessage.ext_06, 'ext_06').to.equal('2020-04-24 10:28:42 +0900');
+    expect(updatedMessage.ext_06, 'ext_06').to.equal('2020-04-24 10:28:00 +0900');
     expect(updatedMessage.ext_07.desc, 'ext_07.desc').to.equal('desc2');
     expect(updatedMessage.ext_07.url, 'ext_07.url').to.exist;
     expect(updatedMessage.ext_08.tdfk_cd, 'ext_08.tdfk_cd').to.equal('13');
     expect(updatedMessage.ext_08.tdfk_nm, 'ext_08.tdfk_nm').to.equal('東京都');
     expect(updatedMessage.ext_09.options, 'ext_09.options').to.equal('2');
     expect(updatedMessage.ext_09.text, 'ext_09.text').to.equal('Text2');
-    // expect(updatedMessage.ext_10, 'ext_10').to.equal('2020-04-24');
+    expect(updatedMessage.ext_10, 'ext_10').to.equal('2020-04-24');
 
   });
 });

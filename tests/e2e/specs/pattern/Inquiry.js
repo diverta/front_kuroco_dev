@@ -89,7 +89,7 @@ const sendMessageMalformed = ({ targetCol }) => {
           label: 'check3',
         },
       ],
-      ext_06: '2020-04-23 10:28 +0900',
+      ext_06: '2020-04-23 10:28:00 +0900',
       ext_07: {
       },
       ext_08: {
