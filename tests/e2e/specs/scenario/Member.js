@@ -81,7 +81,7 @@ const postInsertMember = ({ memberPhoto, file }) => {
       selectbox: insertExt.selectbox,
       checkbox: insertExt.checkbox,
       date: insertExt.date,
-      // relation: insertExt.relation,
+      relation: insertExt.relation,
       file: {
         file_id: file.fileId,
         file_nm: file.fileNm,
@@ -109,7 +109,10 @@ const updateExt = {
     {key: '3', label: 'checkboxOption3'},
   ],
   date: '2020-06-02',
-  relation: 15,
+  relation: {
+    'module_type': 'topics',
+    'module_id': 20
+  },
   // file: {
   //   file_id: 'file.png',
   //   file_nm: 'file',
@@ -316,7 +319,9 @@ describe('Member', () => {
     login();
 
     // post insert member
-    const insertRes = await postInsertMember();
+    const insertMemberPhoto = await upload({ path: fixtures.rcms });
+    const insertFile = await upload({ path: fixtures.diverta });
+    const insertRes = await postInsertMember({ memberPhoto: insertMemberPhoto, file: insertFile });
     const addedId = insertRes.id;
 
     // get member by ID of inserted one

@@ -82,10 +82,10 @@ const postInsertMember = () => {
         {key: '3', label: 'checkboxOption3'},
       ],
       date: '2020-06-01',
-      // relation: {
-      //   'module_type': 'topics',
-      //   'module_id': 15
-      // },
+      relation: {
+        'module_type': 'topics',
+        'module_id': 15
+      },
       // file: {
       //   file_id: 'file.png',
       //   file_nm: 'file',
@@ -132,6 +132,7 @@ const postInsertMemberMalformedTargetCols = [
   'selectbox',
   'checkbox',
   'date',
+  'relation'
 ];
 const postInsertMemberMalformed = ({ targetCol }) => {
   /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersInsertRequest} */
@@ -150,10 +151,10 @@ const postInsertMemberMalformed = ({ targetCol }) => {
         {key: '3', label: 'checkboxOption3'},
       ],
       date: '2020-06-01',
-      // relation: {
-      //   'module_type': 'topics',
-      //   'module_id': 15
-      // },
+      relation: {
+        'module_type': 'topics',
+        'module_id': 15
+      },
       // file: {
       //   file_id: 'file.png',
       //   file_nm: 'file',
@@ -178,19 +179,12 @@ const postInsertMemberMalformed = ({ targetCol }) => {
       requestData.requestBody.sex = 'x';
       break;
     case 'birth':
-      requestData.requestBody.birth = 'abcd';
-      break;
     case 'radio':
-      requestData.requestBody.radio = 'abcd';
-      break;
     case 'selectbox':
-      requestData.requestBody.selectbox = 'abcd';
-      break;
     case 'checkbox':
-      requestData.requestBody.checkbox = 'abcd';
-      break;
     case 'date':
-      requestData.requestBody.date = 'abcd';
+    case 'relation':
+      requestData.requestBody[targetCol] = 'abcd';
       break;
     default:
       throw new Error();
@@ -218,7 +212,7 @@ const postUpdateMemberEmpty = ({ memberId }) => {
       selectbox: {},// '',
       checkbox: [],
       // date: '',
-      // relation: {},
+      relation: {},
       // file: {},
       validate_only: false,
     },
@@ -375,7 +369,7 @@ describe('Member pattern', () => {
     expect(insertedMember.details.selectbox.label).to.not.be.empty;
     expect(insertedMember.details.checkbox).to.not.be.empty;
     expect(insertedMember.details.date).to.not.be.empty;
-    // expect(insertedMember.details.relation).to.not.be.empty;
+    expect(insertedMember.details.relation).to.not.be.empty;
     // expect(insertedMember.details.file).to.not.be.empty;
 
     // post update inserted member with empty values
@@ -396,7 +390,7 @@ describe('Member pattern', () => {
     // expect(updatedMember.details.selectbox).to.be.empty;
     expect(updatedMember.details.checkbox).to.be.empty;
     // expect(updatedMember.details.date).to.be.empty;
-    // expect(updatedMember.details.relation).to.be.empty;
+    expect(updatedMember.details.relation).to.be.empty;
     // expect(updatedMember.details.file).to.be.empty;
 
   });
