@@ -204,14 +204,14 @@ const postUpdateMemberEmpty = ({ memberId }) => {
       login_id: '',
       name1: '',
       name2: '',
-      // sex: '',
-      // birth: '',
+      sex: '',
+      birth: '',
       // member_photo: {},
       textarea: '',
       radio: {},// '',
       selectbox: {},// '',
       checkbox: [],
-      // date: '',
+      date: '',
       relation: {},
       // file: {},
       validate_only: false,
@@ -378,20 +378,20 @@ describe('Member pattern', () => {
     // get member by ID of updated one
     const updatedMember = await getMember({ memberId: addedId });
 
-    expect(updatedMember.details.login_id).to.be.empty;
-    expect(updatedMember.details.name1).to.be.empty;
-    expect(updatedMember.details.name2).to.be.empty;
-    // expect(updatedMember.details.sex).to.be.empty;
-    // expect(updatedMember.details.birth).to.be.empty;
-    // expect(updatedMember.details.member_photo).to.be.empty;
-    expect(updatedMember.details.textarea).to.be.empty;
+    expect(updatedMember.details.login_id, 'login_id').to.be.empty;
+    expect(updatedMember.details.name1, 'name1').to.be.empty;
+    expect(updatedMember.details.name2, 'name2').to.be.empty;
+    expect(updatedMember.details.sex, 'sex').to.be.empty;
+    expect(updatedMember.details.birth, 'birth').to.be.empty;
+    // expect(updatedMember.details.member_photo, 'member_photo').to.be.empty;
+    expect(updatedMember.details.textarea, 'textarea').to.be.empty;
     // 'radio' and 'selectbox' currently return {key: '', label: null}
-    // expect(updatedMember.details.radio).to.be.empty;
-    // expect(updatedMember.details.selectbox).to.be.empty;
-    expect(updatedMember.details.checkbox).to.be.empty;
-    // expect(updatedMember.details.date).to.be.empty;
-    expect(updatedMember.details.relation).to.be.empty;
-    // expect(updatedMember.details.file).to.be.empty;
+    // expect(updatedMember.details.radio, 'radio').to.be.empty;
+    // expect(updatedMember.details.selectbox, 'seelctbox').to.be.empty;
+    expect(updatedMember.details.checkbox, 'checkbox').to.be.empty;
+    expect(updatedMember.details.date, 'date').to.be.empty;
+    expect(updatedMember.details.relation, 'relation').to.be.empty;
+    // expect(updatedMember.details.file, 'file').to.be.empty;
 
   });
 

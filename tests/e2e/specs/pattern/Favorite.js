@@ -49,6 +49,22 @@ const insertFavoriteMailformed = ({ moduleId, targetCol }) => {
   });
 };
 
+const insertFavoriteIllegalModule = ({ moduleId }) => {
+  /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.postFavoritesServiceRcmsApi1FavoritesInsertRequest} */
+  const requestData = {
+    requestBody: {
+      module_type: 'no_such_module',
+      module_id: moduleId,
+      page_sysnm: 'api_test',
+    },
+    lang: 'en',
+  };
+  return executeRequest({
+    cy,
+    query: 'favorite insert',
+    requestData,
+  });
+};
 
 // topics for Favorite Test
 const topicsIdFavoriteTest = 44;
@@ -79,6 +95,15 @@ describe('Favorite pattern', () => {
       expect(errorResponse.status).to.equal(400);
       expect(errorResponse.body.errors[0]).to.include('properties:'+target, target);
     });
+  });
+
+  it('insert favorite with module_type not exist -> error', async () => {
+    login();
+    let errorResponse = {};
+    await insertFavoriteIllegalModule({ moduleId: topicsIdFavoriteTest }).catch(e => {
+      errorResponse = JSON.parse(e.message);
+    });
+    expect(errorResponse.status).to.equal(400);
   });
 
 });

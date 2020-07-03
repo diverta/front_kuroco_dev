@@ -129,7 +129,6 @@ const testCommentScenario = async () => {
 
   expect(updatedComment).to.exist;
   Object.keys(postUpdateCommentData).forEach(key => {
-    if(key=='name') return;
     expect(updatedComment[key], key).to.equal(postUpdateCommentData[key]);
   });
 
