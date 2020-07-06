@@ -1,16 +1,17 @@
 {
-	"sdk_key": "9b302795d2d474e243a2ec66535f0901",
-	"api_url": "https://kuroco-dev-mng.r-cms.jp/",
-	"gcp": {
-		"firebaseConfig": {
-			"apiKey": "AIzaSyAoOPeU11WN8_LjVI1DS1MI4Aa2kZUY_Jg",
-			"authDomain": "kuroco-dev.firebaseapp.com",
-			"databaseURL": "https://kuroco-dev.firebaseio.com",
-			"projectId": "kuroco-dev",
-			"storageBucket": "kuroco-dev.appspot.com",
-			"messagingSenderId": "234171414483",
-			"appId": "1:234171414483:web:71ae2d6c90c27e3963e126",
-			"measurementId": "G-KLPKJ07DD9"
-		}
-	}
+    "sdk_key": "2f3f985149fb3793369a44cf8bfe10d8",
+    "api_url": "https://kuroco-dev.a.kuroco.app",
+    "management_url": "https://kuroco-dev-mng.r-cms.jp",
+    "gcp": {
+        "firebaseConfig": {
+            "apiKey": "AIzaSyAoOPeU11WN8_LjVI1DS1MI4Aa2kZUY_Jg",
+            "authDomain": "kuroco-dev.firebaseapp.com",
+            "databaseURL": "https://kuroco-dev.firebaseio.com",
+            "projectId": "kuroco-dev",
+            "storageBucket": "kuroco-dev.appspot.com",
+            "messagingSenderId": "234171414483",
+            "appId": "1:234171414483:web:71ae2d6c90c27e3963e126",
+            "measurementId": "G-KLPKJ07DD9"
+        }
+    }
 }
