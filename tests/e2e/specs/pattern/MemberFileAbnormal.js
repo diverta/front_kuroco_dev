@@ -82,7 +82,7 @@ describe('Member pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
 
   });
 
@@ -97,7 +97,7 @@ describe('Member pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
 
   });
 
@@ -127,7 +127,7 @@ describe('Member pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
   });
 
   it(`insert member file with empty file_nm`, async () => {
@@ -141,7 +141,7 @@ describe('Member pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
   });
 
   it(`insert member file with null values`, async () => {
@@ -169,7 +169,7 @@ describe('Member pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
   });
 
   it(`insert member file with wrong extension in file_nm`, async () => {
@@ -197,7 +197,7 @@ describe('Member pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
 
   });
 
@@ -212,7 +212,7 @@ describe('Member pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
 
   });
 
@@ -242,7 +242,7 @@ describe('Member pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
   });
 
   it(`insert member photo with empty file_nm`, async () => {
@@ -256,7 +256,7 @@ describe('Member pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
   });
 
   it(`insert member photo with null values`, async () => {
@@ -284,7 +284,7 @@ describe('Member pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
   });
 
   it(`insert member photo with wrong extension in file_nm`, async () => {

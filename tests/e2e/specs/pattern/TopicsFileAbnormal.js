@@ -142,7 +142,7 @@ describe('Topics pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(400);
+    expect(errorResponse.status).to.equal(422);
   });
 
   it(`insert topic set image to not image file`, async () => {
@@ -171,8 +171,7 @@ describe('Topics pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
-    expect(errorResponse.body.errors[0]).to.include('The extension is invalid');
+    expect(errorResponse.status).to.equal(400);
   });
 
   it(`insert topic with wrong extension in image file_nm (png -> pdf)`, async () => {

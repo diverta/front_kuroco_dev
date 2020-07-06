@@ -47,7 +47,7 @@ describe('Inquiry pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
 
   });
 
@@ -62,7 +62,7 @@ describe('Inquiry pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
 
   });
 
@@ -92,7 +92,7 @@ describe('Inquiry pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
   });
 
   it(`send message with empty file_nm`, async () => {
@@ -106,7 +106,7 @@ describe('Inquiry pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
   });
 
   it(`send message with null values`, async () => {
@@ -134,7 +134,7 @@ describe('Inquiry pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
   });
 
   it(`send message with wrong extension in file_nm`, async () => {
@@ -151,5 +151,22 @@ describe('Inquiry pattern (File)', () => {
     expect(errorResponse.status).to.equal(422);
   });
 
+  it(`send message with file_id match to pattern but file not exist`, async () => {
+    login();
+    const file = await upload({ path: fixtures.rcms });
+    let errorResponse = {};
+    await sendMessage({file: {
+      file_id: 'files/temp/foo',
+      file_nm: 'bar.png',
+      desc: 'baz'
+    }}).catch(e => {
+      errorResponse = JSON.parse(e.message);
+    });
+    expect(errorResponse.status).to.equal(422);
+  
+  });
+
 });
+
+
 

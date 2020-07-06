@@ -236,7 +236,7 @@ describe('Topics pattern (Multiple File)', () => {
     ]}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(400);
+    expect(errorResponse.status).to.equal(422);
   });
 
   it(`insert topic set image to not image file`, async () => {
@@ -281,8 +281,7 @@ describe('Topics pattern (Multiple File)', () => {
     ]}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
-    expect(errorResponse.body.errors[0]).to.include('The extension is invalid');
+    expect(errorResponse.status).to.equal(400);
   });
 
   it(`insert topic with wrong extension in image file_nm (png -> pdf)`, async () => {
@@ -360,7 +359,7 @@ describe('Topics pattern (Multiple File)', () => {
     const ids = insertedTopic.ext_col_11.map(data => data.id);
     expect(ids).to.exist;
 
-    postUpdateTopicMultiple({topicsId: addedId, files: [
+    await postUpdateTopicMultiple({topicsId: addedId, files: [
       {
         id: ids[0],
       },
@@ -407,7 +406,7 @@ describe('Topics pattern (Multiple File)', () => {
     const ids = insertedTopic.ext_col_17.map(data => data.id);
     expect(ids).to.exist;
 
-    postUpdateTopicMultiple({topicsId: addedId, files: ids.map(id => {
+    await postUpdateTopicMultiple({topicsId: addedId, files: ids.map(id => {
       return {id: id};
     })}).catch(e => {
       errorResponse = JSON.parse(e.message);
@@ -448,7 +447,7 @@ describe('Topics pattern (Multiple File)', () => {
     const insertResTarget = await postInsertTopicMultiple({files: []});
     const targetId = insertResTarget.id;
 
-    postUpdateTopicMultiple({topicsId: targetId, files: ids.map(id => {
+    await postUpdateTopicMultiple({topicsId: targetId, files: ids.map(id => {
       return {id: id};
     })}).catch(e => {
       errorResponse = JSON.parse(e.message);
@@ -484,7 +483,7 @@ describe('Topics pattern (Multiple File)', () => {
     const insertedTopic = (await getTopicMultiple({ topicsId: addedId })).details;
     expect(insertedTopic).to.exist;
 
-    postUpdateTopicMultiple({topicsId: addedId, files: [
+    await postUpdateTopicMultiple({topicsId: addedId, files: [
       {
         id: 'hoge',
       },
@@ -529,7 +528,7 @@ describe('Topics pattern (Multiple File)', () => {
     const insertedTopic = (await getTopicMultiple({ topicsId: addedId })).details;
     expect(insertedTopic).to.exist;
 
-    postUpdateTopicMultiple({topicsId: addedId, files: [
+    await postUpdateTopicMultiple({topicsId: addedId, files: [
       {
         id: `${addedId}_ext_11_4`,
       },
@@ -569,7 +568,7 @@ describe('Topics pattern (Multiple File)', () => {
     expect(insertedTopic).to.exist;
     const ids = insertedTopic.ext_col_11.map(data => data.id);
 
-    postUpdateTopicMultiple({topicsId: addedId, files: [
+    await postUpdateTopicMultiple({topicsId: addedId, files: [
       {
         id: ids[1],
         desc: 'test1'
@@ -611,7 +610,7 @@ describe('Topics pattern (Multiple File)', () => {
     expect(insertedTopic).to.exist;
     const ids = insertedTopic.ext_col_11.map(data => data.id);
 
-    postUpdateTopicMultiple({topicsId: addedId, files: [
+    await postUpdateTopicMultiple({topicsId: addedId, files: [
       {
         id: ids[1],
         desc: 'hoge1',
