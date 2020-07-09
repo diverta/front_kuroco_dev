@@ -72,13 +72,14 @@ const postUpdateTopicMultiple = ({ topicsId, files = [] }) => {
   });
 };
 
-const postUpdateTopicMultipleDesc = ({ topicsId, filesCount }) => {
+const postUpdateTopicMultipleDesc = ({ topicsId, ids }) => {
   /** @type {import('../../../../generated/services/TopicsService').TopicsService.postTopicsServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
-      ext_col_11: [...new Array(filesCount)].map((_, idx) => {
+      ext_col_11: ids.map((id, idx) => {
         return {
+          id: id,
           desc: `desc:${idx}`, 
         };
       }),
@@ -94,14 +95,15 @@ const postUpdateTopicMultipleDesc = ({ topicsId, filesCount }) => {
   });
 };
 
-const postUpdateTopicMultipleDescNm = ({ topicsId, fileNms }) => {
+const postUpdateTopicMultipleDescNm = ({ topicsId, files }) => {
   /** @type {import('../../../../generated/services/TopicsService').TopicsService.postTopicsServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
-      ext_col_11: fileNms.map((fileNm, idx) => {
+      ext_col_11: files.map((file, idx) => {
         return {
-          file_nm: fileNm,
+          id: file.id,
+          file_nm: file.fileNm,
           desc: `desc&file_nm:${idx}`, 
         };
       }),
@@ -291,7 +293,8 @@ describe('Topics pattern (Multiple File)', () => {
     }
 
     // post update topic with only desc
-    await postUpdateTopicMultipleDesc({ topicsId: addedId, filesCount: updateFiles.length });
+    const updatedTopicIds = updatedTopic.details.ext_col_11.map(data => data.id);
+    await postUpdateTopicMultipleDesc({ topicsId: addedId, ids: updatedTopicIds });
 
     // get updated topic
     const updatedTopicDesc = await getTopicMultiple({ topicsId: addedId });
@@ -303,13 +306,18 @@ describe('Topics pattern (Multiple File)', () => {
     }
 
     // post update topic with desc & file_nm
-    const currentFileNms = updatedTopicDesc.details.ext_col_11.map(file => getFileNm(file.url));
-    await postUpdateTopicMultipleDescNm({ topicsId: addedId, fileNms: currentFileNms });
+    const currentFiles = updatedTopicDesc.details.ext_col_11.map(file => {
+      return {
+        id: file.id,
+        fileNm: getFileNm(file.url),
+      }
+    });
+    await postUpdateTopicMultipleDescNm({ topicsId: addedId, files: currentFiles });
 
     // get updated topic
     const updatedTopicDescNm = await getTopicMultiple({ topicsId: addedId });
     expect(updatedTopicDescNm.details.ext_col_11).to.not.empty;
-    for (let idx = 0; idx < currentFileNms.length; idx++) {
+    for (let idx = 0; idx < currentFiles.length; idx++) {
       expect(updatedTopicDescNm.details.ext_col_11[idx].desc).to.equal(`desc&file_nm:${idx}`);
       const updatedFileUrl = updatedTopicDescNm.details.ext_col_11[idx].url;
       expect(updatedFileUrl).to.exist;

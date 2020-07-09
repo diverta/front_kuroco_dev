@@ -411,7 +411,7 @@ describe('Topics pattern (Multiple File)', () => {
     })}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
 
   });
 
@@ -496,7 +496,7 @@ describe('Topics pattern (Multiple File)', () => {
     ]}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
 
   });
 
@@ -541,7 +541,7 @@ describe('Topics pattern (Multiple File)', () => {
     ]}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
 
   });
 
