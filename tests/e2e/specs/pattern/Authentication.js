@@ -1,12 +1,14 @@
+import { LocalStorage } from '../../../../generated';
 import { Auth } from '../../../../generated/core/Auth';
 import { OpenAPI } from '../../../../generated/core/OpenAPI';
-import { SpecialOperationInfo } from './../../../../generated/core/ApiInfo';
-
 const promiseAllSequential = require('promise-all-sequential');
 import { executeRequest } from '../../base';
 
+import { ApiInfos } from './../../../../generated/core/ApiInfo';
+const loginApis = ApiInfos.filter(info => info.auth === 'LOGIN')
+const hasLoginEndpoint = loginApis.length > 0;
+
 const requiresAuth = !!OpenAPI.SECURITY['Token-Auth'];
-const hasLoginEndpoint = !!SpecialOperationInfo.login;
 
 // logger
 (() => {
@@ -17,7 +19,7 @@ const hasLoginEndpoint = !!SpecialOperationInfo.login;
   );
   console.info(
     `SpecialOperationInfo.login (an object of endpoint which has login feature):`,
-    SpecialOperationInfo.login
+    loginApis
   );
   console.info(
     `the authentication pattern for the current Kuroco is: %c${(() => {
@@ -126,8 +128,8 @@ describe('Authentication pattern.', () => {
       const { access_token, refresh_token } = await execToken({
         grant_token: res.grant_token,
       });
-      Auth.setAccessToken(access_token);
-      Auth.setRefreshToken(refresh_token);
+      LocalStorage.setAccessToken(access_token);
+      LocalStorage.setRefreshToken(refresh_token);
 
       let error;
       await execConfirmingAPIs().catch(() => (error = true));

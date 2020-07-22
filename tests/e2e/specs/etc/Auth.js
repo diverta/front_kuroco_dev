@@ -1,10 +1,14 @@
 import { Auth } from '../../../../generated/core/Auth';
 import { ApiService } from '../../../../generated/services/ApiService';
 import { OpenAPI } from '../../../../generated/core/OpenAPI';
-import { SpecialOperationInfo } from '../../../../generated/core/ApiInfo';
+import { LocalStorage } from '../../../../generated';
+
+import { ApiInfos } from './../../../../generated/core/ApiInfo';
+const loginApis = ApiInfos.filter(info => info.auth === 'LOGIN')
+const hasLoginEndpoint = loginApis.length > 0;
 
 // This test is only for token based system & has Login feature.
-if (OpenAPI.SECURITY['Token-Auth'] && SpecialOperationInfo.login) {
+if (OpenAPI.SECURITY['Token-Auth'] && hasLoginEndpoint) {
   describe('using Auth module with Token based system & has Login feature.', () => {
     it('should not be 401: requests login -> token -> apis.', async () => {
       await Auth.login({
@@ -23,7 +27,7 @@ if (OpenAPI.SECURITY['Token-Auth'] && SpecialOperationInfo.login) {
         requestBody: { email: 'test', password: 'qwer1234' },
       });
       await ApiService.getApiServiceRcmsApi1Apis({});
-      Auth.setAccessToken('INVALID_VALUE');
+      LocalStorage.setAccessToken('INVALID_VALUE');
 
       let error;
       await ApiService.getApiServiceRcmsApi1Apis({}).catch(
@@ -36,7 +40,7 @@ if (OpenAPI.SECURITY['Token-Auth'] && SpecialOperationInfo.login) {
         requestBody: { email: 'test', password: 'qwer1234' },
       });
       await ApiService.getApiServiceRcmsApi1Apis({});
-      Auth.setRefreshToken('INVALID_VALUE');
+      LocalStorage.setRefreshToken('INVALID_VALUE');
 
       let error;
       await ApiService.getApiServiceRcmsApi1Apis({}).catch(
@@ -49,8 +53,8 @@ if (OpenAPI.SECURITY['Token-Auth'] && SpecialOperationInfo.login) {
         requestBody: { email: 'test', password: 'qwer1234' },
       });
       await ApiService.getApiServiceRcmsApi1Apis({});
-      Auth.setAccessToken('INVALID_VALUE');
-      Auth.setRefreshToken('INVALID_VALUE');
+      LocalStorage.setAccessToken('INVALID_VALUE');
+      LocalStorage.setRefreshToken('INVALID_VALUE');
 
       let error;
       await ApiService.getApiServiceRcmsApi1Apis({}).catch(
