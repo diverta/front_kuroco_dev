@@ -1,3 +1,4 @@
+import { Result } from '../core/Result';
 export declare class TagsService {
     /**
      *
@@ -16,7 +17,7 @@ export declare class TagsService {
      * @result any
      * @throws ApiError
      */
-    static getTagsServiceRcmsApi1Tags(requestParam: TagsService.getTagsServiceRcmsApi1TagsRequest): Promise<any>;
+    static getTagsServiceRcmsApi1Tags(requestParam: TagsService.getTagsServiceRcmsApi1TagsRequest): Promise<Result<any>>;
     /**
      *
      * ### **Tag::insert (v1)**
@@ -29,7 +30,7 @@ export declare class TagsService {
      * @result any
      * @throws ApiError
      */
-    static postTagsServiceRcmsApi1TagsInsert(requestParam: TagsService.postTagsServiceRcmsApi1TagsInsertRequest): Promise<any>;
+    static postTagsServiceRcmsApi1TagsInsert(requestParam: TagsService.postTagsServiceRcmsApi1TagsInsertRequest): Promise<Result<any>>;
     /**
      *
      * ### **Tag::delete (v1)**
@@ -42,7 +43,7 @@ export declare class TagsService {
      * @result any
      * @throws ApiError
      */
-    static postTagsServiceRcmsApi1TagsDeleteTagId(requestParam: TagsService.postTagsServiceRcmsApi1TagsDeleteTagIdRequest): Promise<any>;
+    static postTagsServiceRcmsApi1TagsDeleteTagId(requestParam: TagsService.postTagsServiceRcmsApi1TagsDeleteTagIdRequest): Promise<Result<any>>;
 }
 export declare namespace TagsService {
     interface getTagsServiceRcmsApi1TagsRequest {

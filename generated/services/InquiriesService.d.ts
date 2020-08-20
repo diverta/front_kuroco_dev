@@ -1,3 +1,4 @@
+import { Result } from '../core/Result';
 export declare class InquiriesService {
     /**
      * null
@@ -11,7 +12,7 @@ export declare class InquiriesService {
      * @result any
      * @throws ApiError
      */
-    static getInquiriesServiceRcmsApi1InquiryForms(requestParam: InquiriesService.getInquiriesServiceRcmsApi1InquiryFormsRequest): Promise<any>;
+    static getInquiriesServiceRcmsApi1InquiryForms(requestParam: InquiriesService.getInquiriesServiceRcmsApi1InquiryFormsRequest): Promise<Result<any>>;
     /**
      * null
      *
@@ -25,7 +26,7 @@ export declare class InquiriesService {
      * @result any
      * @throws ApiError
      */
-    static getInquiriesServiceRcmsApi1InquiryFormsInquiryId(requestParam: InquiriesService.getInquiriesServiceRcmsApi1InquiryFormsInquiryIdRequest): Promise<any>;
+    static getInquiriesServiceRcmsApi1InquiryFormsInquiryId(requestParam: InquiriesService.getInquiriesServiceRcmsApi1InquiryFormsInquiryIdRequest): Promise<Result<any>>;
     /**
      *
      * ### **InquiryMessage::list (v1)**
@@ -42,7 +43,7 @@ export declare class InquiriesService {
      * @result any
      * @throws ApiError
      */
-    static getInquiriesServiceRcmsApi1Inquiry1Messages(requestParam: InquiriesService.getInquiriesServiceRcmsApi1Inquiry1MessagesRequest): Promise<any>;
+    static getInquiriesServiceRcmsApi1Inquiry1Messages(requestParam: InquiriesService.getInquiriesServiceRcmsApi1Inquiry1MessagesRequest): Promise<Result<any>>;
     /**
      *
      * ### **InquiryMessage::send (v1)**
@@ -59,7 +60,7 @@ export declare class InquiriesService {
      * @result any
      * @throws ApiError
      */
-    static postInquiriesServiceRcmsApi1Inquiry1MessagesSend(requestParam: InquiriesService.postInquiriesServiceRcmsApi1Inquiry1MessagesSendRequest): Promise<any>;
+    static postInquiriesServiceRcmsApi1Inquiry1MessagesSend(requestParam: InquiriesService.postInquiriesServiceRcmsApi1Inquiry1MessagesSendRequest): Promise<Result<any>>;
     /**
      *
      * ### **InquiryMessage::update (v1)**
@@ -77,7 +78,7 @@ export declare class InquiriesService {
      * @result any
      * @throws ApiError
      */
-    static postInquiriesServiceRcmsApi1Inquiry1MessagesUpdate(requestParam: InquiriesService.postInquiriesServiceRcmsApi1Inquiry1MessagesUpdateRequest): Promise<any>;
+    static postInquiriesServiceRcmsApi1Inquiry1MessagesUpdate(requestParam: InquiriesService.postInquiriesServiceRcmsApi1Inquiry1MessagesUpdateRequest): Promise<Result<any>>;
 }
 export declare namespace InquiriesService {
     interface getInquiriesServiceRcmsApi1InquiryFormsRequest {

@@ -1,3 +1,4 @@
+import { Result } from '../core/Result';
 export declare class AsynchronousProcessingService {
     /**
      *
@@ -10,7 +11,7 @@ export declare class AsynchronousProcessingService {
      * @result any
      * @throws ApiError
      */
-    static postAsynchronousProcessingServiceRcmsApi1Batch(requestParam: AsynchronousProcessingService.postAsynchronousProcessingServiceRcmsApi1BatchRequest): Promise<any>;
+    static postAsynchronousProcessingServiceRcmsApi1Batch(requestParam: AsynchronousProcessingService.postAsynchronousProcessingServiceRcmsApi1BatchRequest): Promise<Result<any>>;
 }
 export declare namespace AsynchronousProcessingService {
     interface postAsynchronousProcessingServiceRcmsApi1BatchRequest {

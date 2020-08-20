@@ -1,3 +1,4 @@
+import { Result } from '../core/Result';
 export declare class TopicsService {
     /**
      *
@@ -15,7 +16,7 @@ export declare class TopicsService {
      * @result any
      * @throws ApiError
      */
-    static getTopicsServiceRcmsApi1Topics1TopicsId(requestParam: TopicsService.getTopicsServiceRcmsApi1Topics1TopicsIdRequest): Promise<any>;
+    static getTopicsServiceRcmsApi1Topics1TopicsId(requestParam: TopicsService.getTopicsServiceRcmsApi1Topics1TopicsIdRequest): Promise<Result<any>>;
     /**
      *
      * ### **Topics::list (v1)**
@@ -55,7 +56,7 @@ export declare class TopicsService {
      * @result any
      * @throws ApiError
      */
-    static getTopicsServiceRcmsApi1Topics1(requestParam: TopicsService.getTopicsServiceRcmsApi1Topics1Request): Promise<any>;
+    static getTopicsServiceRcmsApi1Topics1(requestParam: TopicsService.getTopicsServiceRcmsApi1Topics1Request): Promise<Result<any>>;
     /**
      *
      * ### **Topics::insert (v1)**
@@ -72,7 +73,7 @@ export declare class TopicsService {
      * @result any
      * @throws ApiError
      */
-    static postTopicsServiceRcmsApi1Topics1Insert(requestParam: TopicsService.postTopicsServiceRcmsApi1Topics1InsertRequest): Promise<any>;
+    static postTopicsServiceRcmsApi1Topics1Insert(requestParam: TopicsService.postTopicsServiceRcmsApi1Topics1InsertRequest): Promise<Result<any>>;
     /**
      *
      * ### **Topics::update (v1)**
@@ -90,7 +91,7 @@ export declare class TopicsService {
      * @result any
      * @throws ApiError
      */
-    static postTopicsServiceRcmsApi1Topics1UpdateTopicsId(requestParam: TopicsService.postTopicsServiceRcmsApi1Topics1UpdateTopicsIdRequest): Promise<any>;
+    static postTopicsServiceRcmsApi1Topics1UpdateTopicsId(requestParam: TopicsService.postTopicsServiceRcmsApi1Topics1UpdateTopicsIdRequest): Promise<Result<any>>;
     /**
      *
      * ### **Topics::delete (v1)**
@@ -103,7 +104,7 @@ export declare class TopicsService {
      * @result any
      * @throws ApiError
      */
-    static postTopicsServiceRcmsApi1Topics1DeleteTopicsId(requestParam: TopicsService.postTopicsServiceRcmsApi1Topics1DeleteTopicsIdRequest): Promise<any>;
+    static postTopicsServiceRcmsApi1Topics1DeleteTopicsId(requestParam: TopicsService.postTopicsServiceRcmsApi1Topics1DeleteTopicsIdRequest): Promise<Result<any>>;
     /**
      *
      * ### **Topics::list (v1)**
@@ -143,7 +144,7 @@ export declare class TopicsService {
      * @result any
      * @throws ApiError
      */
-    static getTopicsServiceRcmsApi1TopicsMultiple(requestParam: TopicsService.getTopicsServiceRcmsApi1TopicsMultipleRequest): Promise<any>;
+    static getTopicsServiceRcmsApi1TopicsMultiple(requestParam: TopicsService.getTopicsServiceRcmsApi1TopicsMultipleRequest): Promise<Result<any>>;
     /**
      *
      * ### **Topics::details (v1)**
@@ -160,7 +161,7 @@ export declare class TopicsService {
      * @result any
      * @throws ApiError
      */
-    static getTopicsServiceRcmsApi1TopicsMultipleTopicsId(requestParam: TopicsService.getTopicsServiceRcmsApi1TopicsMultipleTopicsIdRequest): Promise<any>;
+    static getTopicsServiceRcmsApi1TopicsMultipleTopicsId(requestParam: TopicsService.getTopicsServiceRcmsApi1TopicsMultipleTopicsIdRequest): Promise<Result<any>>;
     /**
      *
      * ### **Topics::insert (v1)**
@@ -177,7 +178,7 @@ export declare class TopicsService {
      * @result any
      * @throws ApiError
      */
-    static postTopicsServiceRcmsApi1TopicsMultipleInsert(requestParam: TopicsService.postTopicsServiceRcmsApi1TopicsMultipleInsertRequest): Promise<any>;
+    static postTopicsServiceRcmsApi1TopicsMultipleInsert(requestParam: TopicsService.postTopicsServiceRcmsApi1TopicsMultipleInsertRequest): Promise<Result<any>>;
     /**
      *
      * ### **Topics::update (v1)**
@@ -195,7 +196,7 @@ export declare class TopicsService {
      * @result any
      * @throws ApiError
      */
-    static postTopicsServiceRcmsApi1TopicsMultipleUpdateTopicsId(requestParam: TopicsService.postTopicsServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest): Promise<any>;
+    static postTopicsServiceRcmsApi1TopicsMultipleUpdateTopicsId(requestParam: TopicsService.postTopicsServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest): Promise<Result<any>>;
     /**
      *
      * ### **Topics::list (v1)**
@@ -235,7 +236,7 @@ export declare class TopicsService {
      * @result any
      * @throws ApiError
      */
-    static getTopicsServiceRcmsApi1TopicsStatic(requestParam: TopicsService.getTopicsServiceRcmsApi1TopicsStaticRequest): Promise<any>;
+    static getTopicsServiceRcmsApi1TopicsStatic(requestParam: TopicsService.getTopicsServiceRcmsApi1TopicsStaticRequest): Promise<Result<any>>;
     /**
      *
      * ### **Topics::details (v1)**
@@ -252,7 +253,7 @@ export declare class TopicsService {
      * @result any
      * @throws ApiError
      */
-    static getTopicsServiceRcmsApi1TopicsStaticTopicsId(requestParam: TopicsService.getTopicsServiceRcmsApi1TopicsStaticTopicsIdRequest): Promise<any>;
+    static getTopicsServiceRcmsApi1TopicsStaticTopicsId(requestParam: TopicsService.getTopicsServiceRcmsApi1TopicsStaticTopicsIdRequest): Promise<Result<any>>;
 }
 export declare namespace TopicsService {
     interface getTopicsServiceRcmsApi1Topics1TopicsIdRequest {

@@ -63,7 +63,7 @@ export const queries = {
  * @param {*} options.email for customized login info as email user expected.
  * @param {*} options.password for customized login info as password user expected.
  */
-export function login(options = { email: 'test', password: 'qwer1234' }) {
+export function login(options = { email: 'test@example.com', password: 'qwer1234' }) {
   function __login({ email, password }) {
     cy.contains(queries.login.status, 'ANONYMOUS');
     cy.get(queries.login.button).click();
@@ -210,7 +210,7 @@ export async function executeRequest({
       .click()
   );
 
-  return Promise.resolve(data);
+  return Promise.resolve(data.body);
 }
 
 /**

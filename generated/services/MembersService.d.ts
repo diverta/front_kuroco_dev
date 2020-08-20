@@ -1,3 +1,4 @@
+import { Result } from '../core/Result';
 export declare class MembersService {
     /**
      *
@@ -19,7 +20,7 @@ export declare class MembersService {
      * @result any
      * @throws ApiError
      */
-    static getMembersServiceRcmsApi1Members(requestParam: MembersService.getMembersServiceRcmsApi1MembersRequest): Promise<any>;
+    static getMembersServiceRcmsApi1Members(requestParam: MembersService.getMembersServiceRcmsApi1MembersRequest): Promise<Result<any>>;
     /**
      *
      * ### **Member::details (v1)**
@@ -32,7 +33,7 @@ export declare class MembersService {
      * @result any
      * @throws ApiError
      */
-    static getMembersServiceRcmsApi1MembersMemberId(requestParam: MembersService.getMembersServiceRcmsApi1MembersMemberIdRequest): Promise<any>;
+    static getMembersServiceRcmsApi1MembersMemberId(requestParam: MembersService.getMembersServiceRcmsApi1MembersMemberIdRequest): Promise<Result<any>>;
     /**
      *
      * ### **Member::insert (v1)**
@@ -49,7 +50,7 @@ export declare class MembersService {
      * @result any
      * @throws ApiError
      */
-    static postMembersServiceRcmsApi1MembersInsert(requestParam: MembersService.postMembersServiceRcmsApi1MembersInsertRequest): Promise<any>;
+    static postMembersServiceRcmsApi1MembersInsert(requestParam: MembersService.postMembersServiceRcmsApi1MembersInsertRequest): Promise<Result<any>>;
     /**
      *
      * ### **Member::update (v1)**
@@ -66,7 +67,7 @@ export declare class MembersService {
      * @result any
      * @throws ApiError
      */
-    static postMembersServiceRcmsApi1MembersUpdate(requestParam: MembersService.postMembersServiceRcmsApi1MembersUpdateRequest): Promise<any>;
+    static postMembersServiceRcmsApi1MembersUpdate(requestParam: MembersService.postMembersServiceRcmsApi1MembersUpdateRequest): Promise<Result<any>>;
     /**
      *
      * ### **Member::delete (v1)**
@@ -83,7 +84,7 @@ export declare class MembersService {
      * @result any
      * @throws ApiError
      */
-    static postMembersServiceRcmsApi1MembersDelete(requestParam: MembersService.postMembersServiceRcmsApi1MembersDeleteRequest): Promise<any>;
+    static postMembersServiceRcmsApi1MembersDelete(requestParam: MembersService.postMembersServiceRcmsApi1MembersDeleteRequest): Promise<Result<any>>;
     /**
      *
      * ### **Member::update (v1)**
@@ -102,7 +103,7 @@ export declare class MembersService {
      * @result any
      * @throws ApiError
      */
-    static postMembersServiceRcmsApi1MeUpdate(requestParam: MembersService.postMembersServiceRcmsApi1MeUpdateRequest): Promise<any>;
+    static postMembersServiceRcmsApi1MeUpdate(requestParam: MembersService.postMembersServiceRcmsApi1MeUpdateRequest): Promise<Result<any>>;
     /**
      *
      * ### **Member::delete (v1)**
@@ -121,7 +122,7 @@ export declare class MembersService {
      * @result any
      * @throws ApiError
      */
-    static postMembersServiceRcmsApi1MeDelete(requestParam: MembersService.postMembersServiceRcmsApi1MeDeleteRequest): Promise<any>;
+    static postMembersServiceRcmsApi1MeDelete(requestParam: MembersService.postMembersServiceRcmsApi1MeDeleteRequest): Promise<Result<any>>;
 }
 export declare namespace MembersService {
     interface getMembersServiceRcmsApi1MembersRequest {

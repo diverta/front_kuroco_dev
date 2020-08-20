@@ -73,7 +73,7 @@ class FilesService {
                 result = yield Promise.resolve().then(() => __importStar(require('../core/Auth'))).then(({ Auth }) => Auth.retryRequest(request, result));
             }
             ApiError_1.catchGenericError(result);
-            return result.body;
+            return result;
         });
     }
 }

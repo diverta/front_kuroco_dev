@@ -1,3 +1,4 @@
+import { Result } from '../core/Result';
 export declare class CommentsService {
     /**
      *
@@ -22,7 +23,7 @@ export declare class CommentsService {
      * @result any
      * @throws ApiError
      */
-    static getCommentsServiceRcmsApi1TopicsComments(requestParam: CommentsService.getCommentsServiceRcmsApi1TopicsCommentsRequest): Promise<any>;
+    static getCommentsServiceRcmsApi1TopicsComments(requestParam: CommentsService.getCommentsServiceRcmsApi1TopicsCommentsRequest): Promise<Result<any>>;
     /**
      *
      * ### **Comment::insert (v1)**
@@ -39,7 +40,7 @@ export declare class CommentsService {
      * @result any
      * @throws ApiError
      */
-    static postCommentsServiceRcmsApi1TopicsCommentsInsert(requestParam: CommentsService.postCommentsServiceRcmsApi1TopicsCommentsInsertRequest): Promise<any>;
+    static postCommentsServiceRcmsApi1TopicsCommentsInsert(requestParam: CommentsService.postCommentsServiceRcmsApi1TopicsCommentsInsertRequest): Promise<Result<any>>;
     /**
      *
      * ### **Comment::update (v1)**
@@ -56,7 +57,7 @@ export declare class CommentsService {
      * @result any
      * @throws ApiError
      */
-    static postCommentsServiceRcmsApi1TopicsCommentsUpdate(requestParam: CommentsService.postCommentsServiceRcmsApi1TopicsCommentsUpdateRequest): Promise<any>;
+    static postCommentsServiceRcmsApi1TopicsCommentsUpdate(requestParam: CommentsService.postCommentsServiceRcmsApi1TopicsCommentsUpdateRequest): Promise<Result<any>>;
     /**
      *
      * ### **Comment::delete (v1)**
@@ -73,7 +74,7 @@ export declare class CommentsService {
      * @result any
      * @throws ApiError
      */
-    static postCommentsServiceRcmsApi1TopicsCommentsDelete(requestParam: CommentsService.postCommentsServiceRcmsApi1TopicsCommentsDeleteRequest): Promise<any>;
+    static postCommentsServiceRcmsApi1TopicsCommentsDelete(requestParam: CommentsService.postCommentsServiceRcmsApi1TopicsCommentsDeleteRequest): Promise<Result<any>>;
 }
 export declare namespace CommentsService {
     interface getCommentsServiceRcmsApi1TopicsCommentsRequest {

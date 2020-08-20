@@ -1,3 +1,4 @@
+import { Result } from '../core/Result';
 export declare class ApiService {
     /**
      *
@@ -10,7 +11,7 @@ export declare class ApiService {
      * @result any
      * @throws ApiError
      */
-    static getApiServiceRcmsApi1Apis(requestParam: ApiService.getApiServiceRcmsApi1ApisRequest): Promise<any>;
+    static getApiServiceRcmsApi1Apis(requestParam: ApiService.getApiServiceRcmsApi1ApisRequest): Promise<Result<any>>;
     /**
      *
      * ### **Api::openapi_data (v1)**
@@ -23,7 +24,7 @@ export declare class ApiService {
      * @result any
      * @throws ApiError
      */
-    static getApiServiceRcmsApi1Openapi(requestParam: ApiService.getApiServiceRcmsApi1OpenapiRequest): Promise<any>;
+    static getApiServiceRcmsApi1Openapi(requestParam: ApiService.getApiServiceRcmsApi1OpenapiRequest): Promise<Result<any>>;
     /**
      *
      * ### **Api::request_api (v1)**
@@ -35,7 +36,7 @@ export declare class ApiService {
      * @result any
      * @throws ApiError
      */
-    static getApiServiceRcmsApi1Request(requestParam: ApiService.getApiServiceRcmsApi1RequestRequest): Promise<any>;
+    static getApiServiceRcmsApi1Request(requestParam: ApiService.getApiServiceRcmsApi1RequestRequest): Promise<Result<any>>;
 }
 export declare namespace ApiService {
     interface getApiServiceRcmsApi1ApisRequest {

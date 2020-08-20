@@ -1,3 +1,4 @@
+import { Result } from '../core/Result';
 export declare class AuthenticationService {
     /**
      *
@@ -11,7 +12,7 @@ export declare class AuthenticationService {
      * @result any
      * @throws ApiError
      */
-    static postAuthenticationServiceRcmsApi1AuthLogin(requestParam: AuthenticationService.postAuthenticationServiceRcmsApi1AuthLoginRequest): Promise<any>;
+    static postAuthenticationServiceRcmsApi1AuthLogin(requestParam: AuthenticationService.postAuthenticationServiceRcmsApi1AuthLoginRequest): Promise<Result<any>>;
     /**
      *
      * ### **Login::logout (v1)**
@@ -23,7 +24,7 @@ export declare class AuthenticationService {
      * @result any
      * @throws ApiError
      */
-    static postAuthenticationServiceRcmsApi1AuthLogout(requestParam: AuthenticationService.postAuthenticationServiceRcmsApi1AuthLogoutRequest): Promise<any>;
+    static postAuthenticationServiceRcmsApi1AuthLogout(requestParam: AuthenticationService.postAuthenticationServiceRcmsApi1AuthLogoutRequest): Promise<Result<any>>;
     /**
      *
      * ### **Login::token (v1)**
@@ -40,7 +41,7 @@ export declare class AuthenticationService {
      * @result any
      * @throws ApiError
      */
-    static postAuthenticationServiceRcmsApi1AuthToken(requestParam: AuthenticationService.postAuthenticationServiceRcmsApi1AuthTokenRequest): Promise<any>;
+    static postAuthenticationServiceRcmsApi1AuthToken(requestParam: AuthenticationService.postAuthenticationServiceRcmsApi1AuthTokenRequest): Promise<Result<any>>;
     /**
      *
      * ### **Login::reminder (v1)**
@@ -53,7 +54,7 @@ export declare class AuthenticationService {
      * @result any
      * @throws ApiError
      */
-    static postAuthenticationServiceRcmsApi1MePwReminder(requestParam: AuthenticationService.postAuthenticationServiceRcmsApi1MePwReminderRequest): Promise<any>;
+    static postAuthenticationServiceRcmsApi1MePwReminder(requestParam: AuthenticationService.postAuthenticationServiceRcmsApi1MePwReminderRequest): Promise<Result<any>>;
     /**
      *
      * ### **Login::reset_password (v1)**
@@ -66,7 +67,7 @@ export declare class AuthenticationService {
      * @result any
      * @throws ApiError
      */
-    static postAuthenticationServiceRcmsApi1MePwReset(requestParam: AuthenticationService.postAuthenticationServiceRcmsApi1MePwResetRequest): Promise<any>;
+    static postAuthenticationServiceRcmsApi1MePwReset(requestParam: AuthenticationService.postAuthenticationServiceRcmsApi1MePwResetRequest): Promise<Result<any>>;
     /**
      *
      * ### **Login::profile (v1)**
@@ -78,7 +79,7 @@ export declare class AuthenticationService {
      * @result any
      * @throws ApiError
      */
-    static getAuthenticationServiceRcmsApi1MeProfile(requestParam: AuthenticationService.getAuthenticationServiceRcmsApi1MeProfileRequest): Promise<any>;
+    static getAuthenticationServiceRcmsApi1MeProfile(requestParam: AuthenticationService.getAuthenticationServiceRcmsApi1MeProfileRequest): Promise<Result<any>>;
     /**
      *
      * ### **Login::firebaseToken (v1)**
@@ -90,7 +91,7 @@ export declare class AuthenticationService {
      * @result any
      * @throws ApiError
      */
-    static postAuthenticationServiceRcmsApi1FirebaseToken(requestParam: AuthenticationService.postAuthenticationServiceRcmsApi1FirebaseTokenRequest): Promise<any>;
+    static postAuthenticationServiceRcmsApi1FirebaseToken(requestParam: AuthenticationService.postAuthenticationServiceRcmsApi1FirebaseTokenRequest): Promise<Result<any>>;
 }
 export declare namespace AuthenticationService {
     interface postAuthenticationServiceRcmsApi1AuthLoginRequest {

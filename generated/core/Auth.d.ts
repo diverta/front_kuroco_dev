@@ -7,9 +7,9 @@ export declare const SpecialOperations: {
 };
 export declare class Auth {
     static login(param: Parameters<typeof SpecialOperations.login>[0]): Promise<number | void>;
-    static logout(param: Parameters<typeof SpecialOperations.logout>[0]): Promise<any>;
-    static createToken(param: Parameters<typeof SpecialOperations.token>[0]): Promise<any>;
-    static retryRequest(requestFn: () => Promise<Result>, result: Result): Promise<Result>;
+    static logout(param: Parameters<typeof SpecialOperations.logout>[0]): Promise<Result<any>>;
+    static createToken(param: Parameters<typeof SpecialOperations.token>[0]): Promise<void | Result<any>>;
+    static retryRequest(requestFn: () => Promise<Result>, result: Result): Promise<Result<any>>;
 }
 export declare namespace Auth {
     let onErrorHandler: (result: Result) => Promise<void>;

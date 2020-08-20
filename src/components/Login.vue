@@ -75,7 +75,6 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Auth, LocalStorage } from '../../generated';
-import { MembersService } from '../../generated/services/MembersService';
 import { AuthenticationService } from '../../generated/services/AuthenticationService';
 import { mapActions, mapGetters } from 'vuex';
 
@@ -107,7 +106,7 @@ export default Vue.extend({
     handleOnClickLogin(): void {
       Auth.login({
         requestBody: { email: this.email, password: this.password },
-      }).then((memberId: any) => {
+      }).then(() => {
         this.updateLoggedInStatus(true);
       });
     },

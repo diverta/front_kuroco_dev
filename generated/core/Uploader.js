@@ -48,7 +48,7 @@ class UploaderFactory {
     static create(params) {
         return __awaiter(this, void 0, void 0, function* () {
             if (!this.storage) {
-                const { token } = yield AuthenticationService_1.AuthenticationService.postAuthenticationServiceRcmsApi1FirebaseToken(params);
+                const { token } = (yield AuthenticationService_1.AuthenticationService.postAuthenticationServiceRcmsApi1FirebaseToken(params)).body;
                 yield FirebaseUtil_1.default.auth().signInWithCustomToken(token);
                 this.storage = firebase.storage();
             }

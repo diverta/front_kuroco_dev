@@ -33,12 +33,12 @@ class Auth {
                 return Promise.resolve();
             }
             const res = yield exports.SpecialOperations.login(param);
-            const { grant_token, errors } = res;
+            const { grant_token, errors } = res.body;
             if (errors && Array.isArray(errors) && errors.length > 0) {
                 return Promise.reject(errors);
             }
             yield Auth.createToken({ requestBody: { grant_token } });
-            return res.member_id;
+            return res.body.member_id;
         });
     }
     static logout(param) {
@@ -53,7 +53,7 @@ class Auth {
         return __awaiter(this, void 0, void 0, function* () {
             if (OpenAPI_1.OpenAPI.SECURITY['Token-Auth']) {
                 const res = yield exports.SpecialOperations.token(param);
-                const { access_token, refresh_token } = res;
+                const { access_token, refresh_token } = res.body;
                 if (access_token) {
                     LocalStorage_1.LocalStorage.setAccessToken(access_token);
                 }

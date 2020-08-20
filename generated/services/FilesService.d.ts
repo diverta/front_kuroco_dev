@@ -1,3 +1,4 @@
+import { Result } from '../core/Result';
 export declare class FilesService {
     /**
      *
@@ -11,7 +12,7 @@ export declare class FilesService {
      * @result any
      * @throws ApiError
      */
-    static postFilesServiceRcmsApi1FilesUpload(requestParam: FilesService.postFilesServiceRcmsApi1FilesUploadRequest): Promise<any>;
+    static postFilesServiceRcmsApi1FilesUpload(requestParam: FilesService.postFilesServiceRcmsApi1FilesUploadRequest): Promise<Result<any>>;
 }
 export declare namespace FilesService {
     interface postFilesServiceRcmsApi1FilesUploadRequest {

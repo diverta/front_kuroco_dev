@@ -1,8 +1,8 @@
-export interface Result {
+export interface Result<T = any> {
     url: string;
     ok: boolean;
     status: number;
     statusText: string;
-    body: any;
+    body: T;
 }
 //# sourceMappingURL=Result.d.ts.map

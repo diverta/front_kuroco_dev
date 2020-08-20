@@ -1,3 +1,4 @@
+import { Result } from '../core/Result';
 export declare class TablesService {
     /**
      *
@@ -20,7 +21,7 @@ export declare class TablesService {
      * @result any
      * @throws ApiError
      */
-    static getTablesServiceRcmsApi1TablesSimple(requestParam: TablesService.getTablesServiceRcmsApi1TablesSimpleRequest): Promise<any>;
+    static getTablesServiceRcmsApi1TablesSimple(requestParam: TablesService.getTablesServiceRcmsApi1TablesSimpleRequest): Promise<Result<any>>;
     /**
      *
      * ### **Master::list (v1)**
@@ -40,7 +41,7 @@ export declare class TablesService {
      * @result any
      * @throws ApiError
      */
-    static getTablesServiceRcmsApi1TablesMatrix(requestParam: TablesService.getTablesServiceRcmsApi1TablesMatrixRequest): Promise<any>;
+    static getTablesServiceRcmsApi1TablesMatrix(requestParam: TablesService.getTablesServiceRcmsApi1TablesMatrixRequest): Promise<Result<any>>;
     /**
      *
      * ### **Master::list (v1)**
@@ -60,7 +61,7 @@ export declare class TablesService {
      * @result any
      * @throws ApiError
      */
-    static getTablesServiceRcmsApi1TablesDate(requestParam: TablesService.getTablesServiceRcmsApi1TablesDateRequest): Promise<any>;
+    static getTablesServiceRcmsApi1TablesDate(requestParam: TablesService.getTablesServiceRcmsApi1TablesDateRequest): Promise<Result<any>>;
     /**
      *
      * ### **Master::list (v1)**
@@ -80,7 +81,7 @@ export declare class TablesService {
      * @result any
      * @throws ApiError
      */
-    static getTablesServiceRcmsApi1TablesChecksheet(requestParam: TablesService.getTablesServiceRcmsApi1TablesChecksheetRequest): Promise<any>;
+    static getTablesServiceRcmsApi1TablesChecksheet(requestParam: TablesService.getTablesServiceRcmsApi1TablesChecksheetRequest): Promise<Result<any>>;
     /**
      *
      * ### **Master::list (v1)**
@@ -100,7 +101,7 @@ export declare class TablesService {
      * @result any
      * @throws ApiError
      */
-    static getTablesServiceRcmsApi1TablesInvalid(requestParam: TablesService.getTablesServiceRcmsApi1TablesInvalidRequest): Promise<any>;
+    static getTablesServiceRcmsApi1TablesInvalid(requestParam: TablesService.getTablesServiceRcmsApi1TablesInvalidRequest): Promise<Result<any>>;
     /**
      *
      * ### **Master::list (v1)**
@@ -124,7 +125,7 @@ export declare class TablesService {
      * @result any
      * @throws ApiError
      */
-    static getTablesServiceRcmsApi1TablesSimpleKey1Value2(requestParam: TablesService.getTablesServiceRcmsApi1TablesSimpleKey1Value2Request): Promise<any>;
+    static getTablesServiceRcmsApi1TablesSimpleKey1Value2(requestParam: TablesService.getTablesServiceRcmsApi1TablesSimpleKey1Value2Request): Promise<Result<any>>;
 }
 export declare namespace TablesService {
     interface getTablesServiceRcmsApi1TablesSimpleRequest {
