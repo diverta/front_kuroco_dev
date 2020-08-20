@@ -9,7 +9,7 @@
 加えて,e2e のテストコードをこのアプリ上で動作させてテストを実行できます (<a href="#e2e-testing">e2e testing</a>)。
 
 アプリを立ち上げるには `npm run serve`,  
-e2e テストを立ち上げるには `npm run test:e2e`  
+e2e テストを立ち上げるには `npm run e2e`  
 を実行してください。
 
 ## インストール

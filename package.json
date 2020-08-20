@@ -5,9 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:e2e": "vue-cli-service test:e2e --mode=dev",
-    "test:e2e:ci": "vue-cli-service test:e2e --mode=dev --headless",
-    "test:unit": "vue-cli-service test:unit",
+    "e2e": "vue-cli-service test:e2e --mode=dev",
+    "e2e:ci": "vue-cli-service test:e2e --mode=dev --headless",
     "update:kuroco": "npx kuroco pull && npx kuroco generate -l javascript --exportApiInformations",
     "deploy": "npm run build && firebase deploy"
   },
