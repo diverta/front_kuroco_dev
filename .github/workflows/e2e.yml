@@ -18,14 +18,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      # - name: Install Dependencies
-      #   run: npm i
+      - name: Install Dependencies
+        run: npm i
 
-      # - name: Run E2E
-      #   run: npm run e2e:ci
-
-      # - name: Test
-      #   run: touch test.json && echo "[0,1,2]" >> test.json && cat test.json | jq . test.json
+      - name: Run E2E
+        run: npm run e2e:ci
 
       - name: Slack notification
         env:
@@ -35,10 +32,9 @@ jobs:
           SLACK_AVATAR: repository
         uses: Ilshidur/action-slack@master
         with:
+          status: ${{ env.WORKFLOW_CONCLUSION }}
           args: |
             *これはSlack通知の試験です!*
             E2E on Kuroco frontend-dev was all done.
-            the result is:
-            ${{ touch test.json && echo "[0,1,2]" >> test.json && cat test.json | jq . test.json }}
             please check the result at:
             https://github.com/${{ env.GITHUB_REPOSITORY }}/actions/runs/${{ env.GITHUB_RUN_ID }}
