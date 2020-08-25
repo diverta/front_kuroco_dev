@@ -18,11 +18,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      # - name: Install Dependencies
-      #   run: npm i
+      - name: Install Dependencies
+        run: npm i
 
-      # - name: Run E2E
-      #   run: npm run e2e:ci
+      - name: Run E2E
+        run: npm run e2e:ci
 
       - name: Slack notification
         env:
