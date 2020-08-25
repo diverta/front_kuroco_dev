@@ -1,5 +1,15 @@
 {
   "pluginsFile": "tests/e2e/plugins/index.js",
   "chromeWebSecurity": false,
-  "video": false
+  "video": false,
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reporterEnabled": "mochawesome",
+    "mochawesomeReporterOptions": {
+      "quite": true,
+      "overwrite": true,
+      "html": false,
+      "json": true
+    }
+  }
 }
