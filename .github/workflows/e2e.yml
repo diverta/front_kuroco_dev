@@ -1,4 +1,4 @@
-name: Deployment prod Storybook
+name: E2E
 
 on:
   schedule:
