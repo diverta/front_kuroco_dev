@@ -61,9 +61,6 @@ jobs:
         run: |
           echo ::set-env name=E2E_RESULT::$(jq -r '.stats | [ .passes, .tests ] | join("/")' mochawesome-report/mochawesome.json)
 
-      # - name: 'Extract result'
-      #     jq -r '.pull_request.comments_url' ${GITHUB_EVENT_PATH}
-
       # slack
       - name: Slack Notification on Success
         if: success()
@@ -74,7 +71,7 @@ jobs:
           SLACK_TITLE: 'Test Success :rocket:'
           SLACK_COLOR: good
           SLACK_MESSAGE: |
-            ${{ E2E_RESULT }}
+            ${{ env.E2E_RESULT }}
             please check the result at:
             https://diverta.github.io/front_kuroco_dev/mochawesome.html
       - name: Slack Notification on Failure
@@ -86,7 +83,7 @@ jobs:
           SLACK_TITLE: 'Test Failure :boom'
           SLACK_COLOR: danger
           SLACK_MESSAGE: |
-            ${{ E2E_RESULT }}
+            ${{ env.E2E_RESULT }}
             please check the result at:
             https://diverta.github.io/front_kuroco_dev/mochawesome.html
 
