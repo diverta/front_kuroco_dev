@@ -2,7 +2,7 @@ name: E2E
 
 on:
   schedule:
-    - cron: '00 00 * * *'
+    - cron: '00 15 * * *' # => equals '00 00 * * *' in JST.
   workflow_dispatch:
 
 jobs:
@@ -14,6 +14,7 @@ jobs:
         node-version: [12.x]
 
     steps:
+      - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -21,20 +22,20 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      # - name: Run E2E
-      #   run: npm run e2e:ci
+      - name: Run E2E
+        run: npm run e2e:ci
 
-      - name: Slack notification
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_USERNAME: E2E Kuroco
-          SLACK_CHANNEL: team-testcase
-          SLACK_AVATAR: repository
-        uses: Ilshidur/action-slack@master
-        with:
-          status: ${{ env.WORKFLOW_CONCLUSION }}
-          args: |
-            *これはSlack通知の試験です!*
-            E2E on Kuroco frontend-dev was all done.
-            please check the result at:
-            https://github.com/${{ env.GITHUB_REPOSITORY }}/actions/runs/${{ env.GITHUB_RUN_ID }}
+      # - name: Slack notification
+      #   env:
+      #     SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+      #     SLACK_USERNAME: E2E Kuroco
+      #     SLACK_CHANNEL: team-testcase
+      #     SLACK_AVATAR: repository
+      #   uses: Ilshidur/action-slack@master
+      #   with:
+      #     status: ${{ env.WORKFLOW_CONCLUSION }}
+      #     args: |
+      #       *これはSlack通知の試験です!*
+      #       E2E on Kuroco frontend-dev was all done.
+      #       please check the result at:
+      #       https://github.com/${{ env.GITHUB_REPOSITORY }}/actions/runs/${{ env.GITHUB_RUN_ID }}
