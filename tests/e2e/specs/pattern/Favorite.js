@@ -77,7 +77,9 @@ describe('Favorite pattern', () => {
     it('insert favorite without required ' + target + ' -> error', async () => {
       login();
       let errorResponse = {};
-      await insertFavoriteWithoutRequired({moduleId: topicsIdFavoriteTest, targetCol: target}).catch(e => {
+      await insertFavoriteWithoutRequired({moduleId: topicsIdFavoriteTest, targetCol: target})
+      .then(res => console.log('!!RES!!', res)).catch(e => {
+        console.log('!!ERR!!', e);
         errorResponse = JSON.parse(e.message);
       })
       expect(errorResponse.status).to.equal(400, target);
