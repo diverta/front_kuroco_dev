@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "e2e": "vue-cli-service test:e2e --mode=dev",
-    "e2e:ci": "vue-cli-service test:e2e --mode=dev --headless --browser chrome -s ./tests/e2e/specs/pattern/Favorite.js",
+    "e2e:ci": "vue-cli-service test:e2e --mode=dev --headless --browser chrome",
     "update:kuroco": "npx kuroco pull && npx kuroco generate -l javascript --exportApiInformations",
     "deploy": "npm run build && firebase deploy"
   },
