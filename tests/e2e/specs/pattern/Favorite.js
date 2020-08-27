@@ -93,32 +93,32 @@ describe('Favorite pattern', () => {
     });
   });
 
-  // insertFavoriteMailformedTargetCols.forEach(target => {
-  //   it('insert favorite with malformed ' + target + ' -> error', async () => {
-  //     login();
-  //     let errorResponse = {};
-  //     await insertFavoriteMailformed({
-  //       moduleId: topicsIdFavoriteTest,
-  //       targetCol: target,
-  //     }).catch(e => {
-  //       errorResponse = JSON.parse(e.message);
-  //     });
-  //     expect(errorResponse.status).to.equal(400);
-  //     expect(errorResponse.body.errors[0]).to.include(
-  //       'properties:' + target,
-  //       target
-  //     );
-  //   });
-  // });
+  insertFavoriteMailformedTargetCols.forEach(target => {
+    it('insert favorite with malformed ' + target + ' -> error', async () => {
+      login();
+      let errorResponse = {};
+      await insertFavoriteMailformed({
+        moduleId: topicsIdFavoriteTest,
+        targetCol: target,
+      }).catch(e => {
+        errorResponse = JSON.parse(e.message);
+      });
+      expect(errorResponse.status).to.equal(400);
+      expect(errorResponse.body.errors[0]).to.include(
+        'properties:' + target,
+        target
+      );
+    });
+  });
 
-  // it('insert favorite with module_type not exist -> error', async () => {
-  //   login();
-  //   let errorResponse = {};
-  //   await insertFavoriteIllegalModule({ moduleId: topicsIdFavoriteTest }).catch(
-  //     e => {
-  //       errorResponse = JSON.parse(e.message);
-  //     }
-  //   );
-  //   expect(errorResponse.status).to.equal(400);
-  // });
+  it('insert favorite with module_type not exist -> error', async () => {
+    login();
+    let errorResponse = {};
+    await insertFavoriteIllegalModule({ moduleId: topicsIdFavoriteTest }).catch(
+      e => {
+        errorResponse = JSON.parse(e.message);
+      }
+    );
+    expect(errorResponse.status).to.equal(400);
+  });
 });
