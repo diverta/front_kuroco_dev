@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2020-08-27T10:58:11.295Z",
-    "end": "2020-08-27T10:58:15.486Z",
-    "duration": 4191,
+    "start": "2020-08-27T15:05:23.046Z",
+    "end": "2020-08-27T15:05:27.327Z",
+    "duration": 4281,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "26938746-0fb0-46fd-8d5e-55a8ed72b579",
+      "uuid": "56d2c519-d025-4894-a547-e2ff1f43d8ef",
       "title": "",
       "fullFile": "tests/e2e/specs/pattern/Authentication.js",
       "file": "tests/e2e/specs/pattern/Authentication.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "c8d00b29-5ac9-47f7-899f-b3437c2ecd33",
+          "uuid": "4dddcaf0-c563-452f-82da-1493fe7e5403",
           "title": "Authentication pattern.",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "should not be 401: requests login -> token -> apis.",
               "fullTitle": "Authentication pattern. should not be 401: requests login -> token -> apis.",
               "timedOut": null,
-              "duration": 4149,
+              "duration": 4251,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -47,12 +47,12 @@
               "context": null,
               "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
               "err": {
-                "message": "Error: {\n    \"url\": \"https://kuroco-dev.a.kuroco.app/rcms-api/1/auth/login\",\n    \"status\": 401,\n    \"statusText\": \"\",\n    \"body\": {\n        \"errors\": [\n            \"API Error : [APIUnauthorizedException] APIUnauthorizedException: Invalid credentials in /home/rcms/kuroco_nfs3/lib/modules/login/api/v1/Login.php:224\\nStack trace:\\n#0 /home/rcms/kuroco_nfs3/lib/modules/login/api/v1/Login.php(50): rcms_api\\\\v1\\\\Login->doLogin('test', 'qwer1234')\\n#1 /home/rcms/kuroco_nfs3/lib/core/rcms_api_controller.php(384): rcms_api\\\\v1\\\\Login->login_challenge(false)\\n#2 /home/rcms/kuroco_nfs3/lib/core/rcms_api_controller.php(90): RCMSApiController->loadMethod(Array)\\n#3 /home/rcms/kuroco_nfs3/lib/core/rcms_api_controller.php(25): RCMSApiController->processRequest()\\n#4 /home/rcms/nfs/lib/system/api.php(44): RCMSApiController->execute()\\n#5 /home/rcms/nfs/126931/html/api.php(2): require_once('/home/rcms/nfs/...')\\n#6 {main}\"\n        ],\n        \"status\": 1\n    }\n}",
-                "estack": "Error: {\n    \"url\": \"https://kuroco-dev.a.kuroco.app/rcms-api/1/auth/login\",\n    \"status\": 401,\n    \"statusText\": \"\",\n    \"body\": {\n        \"errors\": [\n            \"API Error : [APIUnauthorizedException] APIUnauthorizedException: Invalid credentials in /home/rcms/kuroco_nfs3/lib/modules/login/api/v1/Login.php:224\\nStack trace:\\n#0 /home/rcms/kuroco_nfs3/lib/modules/login/api/v1/Login.php(50): rcms_api\\\\v1\\\\Login->doLogin('test', 'qwer1234')\\n#1 /home/rcms/kuroco_nfs3/lib/core/rcms_api_controller.php(384): rcms_api\\\\v1\\\\Login->login_challenge(false)\\n#2 /home/rcms/kuroco_nfs3/lib/core/rcms_api_controller.php(90): RCMSApiController->loadMethod(Array)\\n#3 /home/rcms/kuroco_nfs3/lib/core/rcms_api_controller.php(25): RCMSApiController->processRequest()\\n#4 /home/rcms/nfs/lib/system/api.php(44): RCMSApiController->execute()\\n#5 /home/rcms/nfs/126931/html/api.php(2): require_once('/home/rcms/nfs/...')\\n#6 {main}\"\n        ],\n        \"status\": 1\n    }\n}\n    at Context.<anonymous> (https://localhost:9000/__cypress/tests?p=tests/e2e/specs/pattern/Authentication.js-715:23611:25)",
+                "message": "Error: {\n    \"url\": \"https://kuroco-dev.a.kuroco.app/rcms-api/1/auth/login\",\n    \"status\": 401,\n    \"statusText\": \"\",\n    \"body\": {\n        \"errors\": [\n            \"API Error : [APIUnauthorizedException] APIUnauthorizedException: Invalid credentials in /home/rcms/kuroco_nfs3/lib/modules/login/api/v1/Login.php:206\\nStack trace:\\n#0 /home/rcms/kuroco_nfs3/lib/modules/login/api/v1/Login.php(42): rcms_api\\\\v1\\\\Login->doLogin('test', 'qwer1234')\\n#1 /home/rcms/kuroco_nfs3/lib/core/rcms_api_controller.php(389): rcms_api\\\\v1\\\\Login->login_challenge(false)\\n#2 /home/rcms/kuroco_nfs3/lib/core/rcms_api_controller.php(95): RCMSApiController->loadMethod(Array)\\n#3 /home/rcms/kuroco_nfs3/lib/core/rcms_api_controller.php(25): RCMSApiController->processRequest()\\n#4 /home/rcms/nfs/lib/system/api.php(44): RCMSApiController->execute()\\n#5 /home/rcms/nfs/126931/html/api.php(2): require_once('/home/rcms/nfs/...')\\n#6 {main}\"\n        ],\n        \"status\": 1\n    }\n}",
+                "estack": "Error: {\n    \"url\": \"https://kuroco-dev.a.kuroco.app/rcms-api/1/auth/login\",\n    \"status\": 401,\n    \"statusText\": \"\",\n    \"body\": {\n        \"errors\": [\n            \"API Error : [APIUnauthorizedException] APIUnauthorizedException: Invalid credentials in /home/rcms/kuroco_nfs3/lib/modules/login/api/v1/Login.php:206\\nStack trace:\\n#0 /home/rcms/kuroco_nfs3/lib/modules/login/api/v1/Login.php(42): rcms_api\\\\v1\\\\Login->doLogin('test', 'qwer1234')\\n#1 /home/rcms/kuroco_nfs3/lib/core/rcms_api_controller.php(389): rcms_api\\\\v1\\\\Login->login_challenge(false)\\n#2 /home/rcms/kuroco_nfs3/lib/core/rcms_api_controller.php(95): RCMSApiController->loadMethod(Array)\\n#3 /home/rcms/kuroco_nfs3/lib/core/rcms_api_controller.php(25): RCMSApiController->processRequest()\\n#4 /home/rcms/nfs/lib/system/api.php(44): RCMSApiController->execute()\\n#5 /home/rcms/nfs/126931/html/api.php(2): require_once('/home/rcms/nfs/...')\\n#6 {main}\"\n        ],\n        \"status\": 1\n    }\n}\n    at Context.<anonymous> (https://localhost:9000/__cypress/tests?p=tests/e2e/specs/pattern/Authentication.js-396:23611:25)",
                 "diff": null
               },
-              "uuid": "bbd46b01-8be0-4fe4-a513-fa036cd8b17a",
-              "parentUUID": "c8d00b29-5ac9-47f7-899f-b3437c2ecd33",
+              "uuid": "92e1d4bd-c6d7-4a5a-88b0-b4654b53f4e2",
+              "parentUUID": "4dddcaf0-c563-452f-82da-1493fe7e5403",
               "isHook": false,
               "skipped": false
             }
@@ -60,11 +60,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "bbd46b01-8be0-4fe4-a513-fa036cd8b17a"
+            "92e1d4bd-c6d7-4a5a-88b0-b4654b53f4e2"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 4149,
+          "duration": 4251,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

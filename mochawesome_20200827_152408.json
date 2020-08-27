@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2020-08-27T10:58:02.328Z",
-    "end": "2020-08-27T10:58:03.444Z",
-    "duration": 1116,
+    "start": "2020-08-27T15:23:56.374Z",
+    "end": "2020-08-27T15:24:08.210Z",
+    "duration": 11836,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,27 +18,27 @@
   },
   "results": [
     {
-      "uuid": "ff951f49-d9ce-48c8-8b10-38bce49b00ca",
+      "uuid": "f7cea876-9080-4a7a-9ced-3533fc49f11e",
       "title": "",
-      "fullFile": "tests/e2e/specs/etc/Auth.js",
-      "file": "tests/e2e/specs/etc/Auth.js",
+      "fullFile": "tests/e2e/specs/scenario/Topics.js",
+      "file": "tests/e2e/specs/scenario/Topics.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "1f255361-6122-41f6-884d-66a684312dd7",
-          "title": "using Auth module with Token based system & has Login feature.",
+          "uuid": "f096189c-8935-4fd3-8b8f-5673ddbd7910",
+          "title": "Topics",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "should recover access_token automatically and retry request when a request is 401.",
-              "fullTitle": "using Auth module with Token based system & has Login feature. should recover access_token automatically and retry request when a request is 401.",
+              "title": "\n      get topics ->\n      get topic by ID ->\n      post insert topic ->\n      get topics including inserted one ->\n      get topic by ID of inserted one ->\n      post update inserted topic ->\n      get topics including updated one ->\n      get topic by ID of updated one ->\n      post delete updated topic ->\n      get topics not including deleted one ->\n      get topic by ID of deleted one (should be empty)\n    ",
+              "fullTitle": "Topics \n      get topics ->\n      get topic by ID ->\n      post insert topic ->\n      get topics including inserted one ->\n      get topic by ID of inserted one ->\n      post update inserted topic ->\n      get topics including updated one ->\n      get topic by ID of updated one ->\n      post delete updated topic ->\n      get topics not including deleted one ->\n      get topic by ID of deleted one (should be empty)\n    ",
               "timedOut": null,
-              "duration": 1101,
+              "duration": 11793,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -47,12 +47,12 @@
               "context": null,
               "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
               "err": {
-                "message": "Error: Unauthorized",
-                "estack": "Error: Unauthorized\n    at Object.catchGenericError (https://localhost:9000/__cypress/tests?p=tests/e2e/specs/etc/Auth.js-911:170:13)\n    at _callee2$ (https://localhost:9000/__cypress/tests?p=tests/e2e/specs/etc/Auth.js-911:2620:28)\n    at tryCatch (https://localhost:9000/__cypress/tests?p=tests/e2e/specs/etc/Auth.js-911:18909:40)\n    at Generator.invoke [as _invoke] (https://localhost:9000/__cypress/tests?p=tests/e2e/specs/etc/Auth.js-911:19139:22)\n    at Generator.next (https://localhost:9000/__cypress/tests?p=tests/e2e/specs/etc/Auth.js-911:18964:21)\n    at fulfilled (https://localhost:9000/__cypress/tests?p=tests/e2e/specs/etc/Auth.js-911:2500:24)",
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
                 "diff": null
               },
-              "uuid": "5ad163e9-1f9c-409b-a076-a5f34efefaf5",
-              "parentUUID": "1f255361-6122-41f6-884d-66a684312dd7",
+              "uuid": "09f0d16a-f143-4187-a897-b7f3cc47daa5",
+              "parentUUID": "f096189c-8935-4fd3-8b8f-5673ddbd7910",
               "isHook": false,
               "skipped": false
             }
@@ -60,11 +60,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "5ad163e9-1f9c-409b-a076-a5f34efefaf5"
+            "09f0d16a-f143-4187-a897-b7f3cc47daa5"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 1101,
+          "duration": 11793,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

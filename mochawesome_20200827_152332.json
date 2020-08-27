@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 2,
-    "start": "2020-08-27T11:18:19.651Z",
-    "end": "2020-08-27T11:18:41.544Z",
-    "duration": 21893,
+    "start": "2020-08-27T15:23:11.887Z",
+    "end": "2020-08-27T15:23:32.227Z",
+    "duration": 20340,
     "testsRegistered": 2,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "a85554de-5b44-413e-a05b-f6f1482c55e6",
+      "uuid": "604f0464-4e00-40cf-aa09-eb43563e416f",
       "title": "",
       "fullFile": "tests/e2e/specs/scenario/Member.js",
       "file": "tests/e2e/specs/scenario/Member.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "7663f227-b8b3-4ef9-bec3-72c280656d57",
+          "uuid": "a793981c-0f67-4609-885e-5a730af37023",
           "title": "Member",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "\n      get members ->\n      get member by ID ->\n      post insert member ->\n      get members including updated one ->\n      get member by ID of inserted one ->\n      post update inserted member ->\n      get members including updated one ->\n      get member by ID of updated one ->\n      post delete updated member ->\n      get members not including deleted one ->\n      get member by ID of deleted one (should be empty)\n    ",
               "fullTitle": "Member \n      get members ->\n      get member by ID ->\n      post insert member ->\n      get members including updated one ->\n      get member by ID of inserted one ->\n      post update inserted member ->\n      get members including updated one ->\n      get member by ID of updated one ->\n      post delete updated member ->\n      get members not including deleted one ->\n      get member by ID of deleted one (should be empty)\n    ",
               "timedOut": null,
-              "duration": 11777,
+              "duration": 10872,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
                 "diff": null
               },
-              "uuid": "cdc8e3dc-8c21-4c7b-a6cc-f5f4ec6fc1fc",
-              "parentUUID": "7663f227-b8b3-4ef9-bec3-72c280656d57",
+              "uuid": "e2517714-dc32-4370-a213-5ad57028fd3e",
+              "parentUUID": "a793981c-0f67-4609-885e-5a730af37023",
               "isHook": false,
               "skipped": false
             },
@@ -60,7 +60,7 @@
               "title": "\n      post insert member ->\n      get member by ID of inserted one ->\n      login ->\n      post me/update ->\n      get member by ID of inserted one ->\n      post me/delete ->\n      get member by ID of deleted one (should be empty)\n  ",
               "fullTitle": "Member \n      post insert member ->\n      get member by ID of inserted one ->\n      login ->\n      post me/update ->\n      get member by ID of inserted one ->\n      post me/delete ->\n      get member by ID of deleted one (should be empty)\n  ",
               "timedOut": null,
-              "duration": 10017,
+              "duration": 9407,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -73,8 +73,8 @@
                 "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
                 "diff": null
               },
-              "uuid": "864753bd-b565-45b4-877a-77780a42171b",
-              "parentUUID": "7663f227-b8b3-4ef9-bec3-72c280656d57",
+              "uuid": "ca53c2e1-1805-4fde-8ca8-ff6bbad79671",
+              "parentUUID": "a793981c-0f67-4609-885e-5a730af37023",
               "isHook": false,
               "skipped": false
             }
@@ -82,12 +82,12 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "cdc8e3dc-8c21-4c7b-a6cc-f5f4ec6fc1fc",
-            "864753bd-b565-45b4-877a-77780a42171b"
+            "e2517714-dc32-4370-a213-5ad57028fd3e",
+            "ca53c2e1-1805-4fde-8ca8-ff6bbad79671"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 21794,
+          "duration": 20279,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

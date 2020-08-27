@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 2,
-    "start": "2020-08-27T11:17:18.007Z",
-    "end": "2020-08-27T11:17:37.076Z",
-    "duration": 19069,
+    "start": "2020-08-27T15:22:10.011Z",
+    "end": "2020-08-27T15:22:27.946Z",
+    "duration": 17935,
     "testsRegistered": 2,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "1f3e4352-b6da-4150-9924-b3c91793054a",
+      "uuid": "d2a5e6ae-f959-4995-b3ff-58d8a6964e80",
       "title": "",
       "fullFile": "tests/e2e/specs/scenario/Comment.js",
       "file": "tests/e2e/specs/scenario/Comment.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "94b1c369-3fb5-45bb-b63b-b6b9a22c518b",
+          "uuid": "14620973-74db-4385-83a4-88f4cb72008f",
           "title": "Comment",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "\n      login ->\n      get comments ->\n      post insert comment ->\n      get comments including inserted one ->\n      post update inserted comment ->\n      get comments including updated one ->\n      post delete updated comment ->\n      get comments not including deleted one\n\n  ",
               "fullTitle": "Comment \n      login ->\n      get comments ->\n      post insert comment ->\n      get comments including inserted one ->\n      post update inserted comment ->\n      get comments including updated one ->\n      post delete updated comment ->\n      get comments not including deleted one\n\n  ",
               "timedOut": null,
-              "duration": 11799,
+              "duration": 10900,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
                 "diff": null
               },
-              "uuid": "59151f9c-58cf-4f75-ad34-d1975548a9a7",
-              "parentUUID": "94b1c369-3fb5-45bb-b63b-b6b9a22c518b",
+              "uuid": "296a20cc-3268-4f27-a4b1-4de86ec71954",
+              "parentUUID": "14620973-74db-4385-83a4-88f4cb72008f",
               "isHook": false,
               "skipped": false
             },
@@ -60,7 +60,7 @@
               "title": "\n      no login ->\n      get comments ->\n      post insert comment ->\n      get comments including inserted one ->\n      post update inserted comment ->\n      get comments including updated one ->\n      post delete updated comment ->\n      get comments not including deleted one\n\n  ",
               "fullTitle": "Comment \n      no login ->\n      get comments ->\n      post insert comment ->\n      get comments including inserted one ->\n      post update inserted comment ->\n      get comments including updated one ->\n      post delete updated comment ->\n      get comments not including deleted one\n\n  ",
               "timedOut": null,
-              "duration": 7173,
+              "duration": 6978,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -73,8 +73,8 @@
                 "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
                 "diff": null
               },
-              "uuid": "669a3f55-cfdc-48ac-a25e-6ee7038d93ca",
-              "parentUUID": "94b1c369-3fb5-45bb-b63b-b6b9a22c518b",
+              "uuid": "4e39c97f-6ce2-4145-951f-721cee030fc5",
+              "parentUUID": "14620973-74db-4385-83a4-88f4cb72008f",
               "isHook": false,
               "skipped": false
             }
@@ -82,12 +82,12 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "59151f9c-58cf-4f75-ad34-d1975548a9a7",
-            "669a3f55-cfdc-48ac-a25e-6ee7038d93ca"
+            "296a20cc-3268-4f27-a4b1-4de86ec71954",
+            "4e39c97f-6ce2-4145-951f-721cee030fc5"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 18972,
+          "duration": 17878,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

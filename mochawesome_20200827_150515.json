@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2020-08-27T11:18:47.352Z",
-    "end": "2020-08-27T11:18:59.224Z",
-    "duration": 11872,
+    "start": "2020-08-27T15:05:14.505Z",
+    "end": "2020-08-27T15:05:15.871Z",
+    "duration": 1366,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,27 +18,27 @@
   },
   "results": [
     {
-      "uuid": "8d437842-466c-4fc1-a61f-40c9b93ebcf9",
+      "uuid": "4070682a-41d1-416f-ab1a-456d6abe7f4c",
       "title": "",
-      "fullFile": "tests/e2e/specs/scenario/Tags.js",
-      "file": "tests/e2e/specs/scenario/Tags.js",
+      "fullFile": "tests/e2e/specs/etc/Auth.js",
+      "file": "tests/e2e/specs/etc/Auth.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "e28cd75d-5df0-4ba7-ae00-82c17b3649ce",
-          "title": "Tags",
+          "uuid": "c4f4ad90-9139-447c-86fe-a64e07f43dda",
+          "title": "using Auth module with Token based system & has Login feature.",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "\n      get tags ->\n      post insert tag ->\n      get tags including inserted one ->\n      post delete inserted tag ->\n      get tags not including deleted one\n  ",
-              "fullTitle": "Tags \n      get tags ->\n      post insert tag ->\n      get tags including inserted one ->\n      post delete inserted tag ->\n      get tags not including deleted one\n  ",
+              "title": "should recover access_token automatically and retry request when a request is 401.",
+              "fullTitle": "using Auth module with Token based system & has Login feature. should recover access_token automatically and retry request when a request is 401.",
               "timedOut": null,
-              "duration": 11838,
+              "duration": 1346,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -47,12 +47,12 @@
               "context": null,
               "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
               "err": {
-                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
-                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "message": "Error: Unauthorized",
+                "estack": "Error: Unauthorized\n    at Object.catchGenericError (https://localhost:9000/__cypress/tests?p=tests/e2e/specs/etc/Auth.js-710:170:13)\n    at _callee2$ (https://localhost:9000/__cypress/tests?p=tests/e2e/specs/etc/Auth.js-710:2620:28)\n    at tryCatch (https://localhost:9000/__cypress/tests?p=tests/e2e/specs/etc/Auth.js-710:18909:40)\n    at Generator.invoke [as _invoke] (https://localhost:9000/__cypress/tests?p=tests/e2e/specs/etc/Auth.js-710:19139:22)\n    at Generator.next (https://localhost:9000/__cypress/tests?p=tests/e2e/specs/etc/Auth.js-710:18964:21)\n    at fulfilled (https://localhost:9000/__cypress/tests?p=tests/e2e/specs/etc/Auth.js-710:2500:24)",
                 "diff": null
               },
-              "uuid": "bd26714a-4f9e-4202-a08e-7a1b452818bd",
-              "parentUUID": "e28cd75d-5df0-4ba7-ae00-82c17b3649ce",
+              "uuid": "6fb36ab5-31eb-40d8-b1c2-5e22c0ef1830",
+              "parentUUID": "c4f4ad90-9139-447c-86fe-a64e07f43dda",
               "isHook": false,
               "skipped": false
             }
@@ -60,11 +60,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "bd26714a-4f9e-4202-a08e-7a1b452818bd"
+            "6fb36ab5-31eb-40d8-b1c2-5e22c0ef1830"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 11838,
+          "duration": 1346,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

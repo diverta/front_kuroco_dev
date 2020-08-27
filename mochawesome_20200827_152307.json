@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2020-08-27T11:19:24.358Z",
-    "end": "2020-08-27T11:19:36.867Z",
-    "duration": 12509,
+    "start": "2020-08-27T15:22:55.725Z",
+    "end": "2020-08-27T15:23:07.015Z",
+    "duration": 11290,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,27 +18,27 @@
   },
   "results": [
     {
-      "uuid": "cc68bc4f-b367-4d06-a179-4fe5176df1e8",
+      "uuid": "a712ee13-1103-4b40-a4c0-33ef7b8c8947",
       "title": "",
-      "fullFile": "tests/e2e/specs/scenario/TopicsMultiple.js",
-      "file": "tests/e2e/specs/scenario/TopicsMultiple.js",
+      "fullFile": "tests/e2e/specs/scenario/Inquiry.js",
+      "file": "tests/e2e/specs/scenario/Inquiry.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "3feb9c9a-511f-4d27-9557-89f03c24c7d0",
-          "title": "Topics (Multiple)",
+          "uuid": "a077ffd7-70fc-443a-a5c8-7c4aa987df93",
+          "title": "Inquiry",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "\n      get topics ->\n      get topic by ID ->\n      post insert topic ->\n      get topics including inserted one ->\n      get topic by ID of inserted one ->\n      post update inserted topic ->\n      get topics including updated one ->\n      get topic by ID of updated one ->\n      post delete updated topic ->\n      get topics not including deleted one ->\n      get topic by ID of deleted one (should be empty)\n    ",
-              "fullTitle": "Topics (Multiple) \n      get topics ->\n      get topic by ID ->\n      post insert topic ->\n      get topics including inserted one ->\n      get topic by ID of inserted one ->\n      post update inserted topic ->\n      get topics including updated one ->\n      get topic by ID of updated one ->\n      post delete updated topic ->\n      get topics not including deleted one ->\n      get topic by ID of deleted one (should be empty)\n    ",
+              "title": "\n      get messages ->\n      get forms ->\n      get form by ID 1 ->\n      send message ->\n      get messages including sended one ->\n      get message of created message ->\n      update created message ->\n      get message of updated message\n    ",
+              "fullTitle": "Inquiry \n      get messages ->\n      get forms ->\n      get form by ID 1 ->\n      send message ->\n      get messages including sended one ->\n      get message of created message ->\n      update created message ->\n      get message of updated message\n    ",
               "timedOut": null,
-              "duration": 12464,
+              "duration": 11255,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
                 "diff": null
               },
-              "uuid": "2efbbc15-0e48-4c90-8840-114a9b1a6daf",
-              "parentUUID": "3feb9c9a-511f-4d27-9557-89f03c24c7d0",
+              "uuid": "d48e8bc1-1fc3-4084-87c9-c169cb49928e",
+              "parentUUID": "a077ffd7-70fc-443a-a5c8-7c4aa987df93",
               "isHook": false,
               "skipped": false
             }
@@ -60,11 +60,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "2efbbc15-0e48-4c90-8840-114a9b1a6daf"
+            "d48e8bc1-1fc3-4084-87c9-c169cb49928e"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 12464,
+          "duration": 11255,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

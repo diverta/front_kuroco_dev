@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2020-08-27T11:11:17.743Z",
-    "end": "2020-08-27T11:11:29.370Z",
-    "duration": 11627,
+    "start": "2020-08-27T15:16:42.983Z",
+    "end": "2020-08-27T15:16:54.238Z",
+    "duration": 11255,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "2a4fcf0c-c8ad-413b-8b06-de8aaffd5ba2",
+      "uuid": "8d1c6e42-6f7e-4a65-9848-f7cf504ff390",
       "title": "",
       "fullFile": "tests/e2e/specs/pattern/TopicsFile.js",
       "file": "tests/e2e/specs/pattern/TopicsFile.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "2e256217-17df-4c16-8065-6a1f9b0e6c70",
+          "uuid": "ffe8f16d-aeeb-4605-b1c3-4c71f069c857",
           "title": "Topics pattern (File)",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "\n      post insert topic with file ->\n      get inserted topic ->\n      post update topic with file ->\n      get updated topic ->\n      post update topic with only desc ->\n      get updated topic ->\n      post update topic with desc & file_nm ->\n      get updated topic ->\n      post update topic delete file ->\n      hey updated topic ->\n      post delete topic ->\n      get deleted topic\n  ",
               "fullTitle": "Topics pattern (File) \n      post insert topic with file ->\n      get inserted topic ->\n      post update topic with file ->\n      get updated topic ->\n      post update topic with only desc ->\n      get updated topic ->\n      post update topic with desc & file_nm ->\n      get updated topic ->\n      post update topic delete file ->\n      hey updated topic ->\n      post delete topic ->\n      get deleted topic\n  ",
               "timedOut": null,
-              "duration": 11578,
+              "duration": 11206,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
                 "diff": null
               },
-              "uuid": "224ba952-5f59-4680-9dce-33e3564ef069",
-              "parentUUID": "2e256217-17df-4c16-8065-6a1f9b0e6c70",
+              "uuid": "c3b3d617-173b-4b48-84ac-8dbfa301a281",
+              "parentUUID": "ffe8f16d-aeeb-4605-b1c3-4c71f069c857",
               "isHook": false,
               "skipped": false
             }
@@ -60,11 +60,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "224ba952-5f59-4680-9dce-33e3564ef069"
+            "c3b3d617-173b-4b48-84ac-8dbfa301a281"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 11578,
+          "duration": 11206,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

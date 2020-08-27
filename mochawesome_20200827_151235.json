@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2020-08-27T11:18:03.392Z",
-    "end": "2020-08-27T11:18:15.104Z",
-    "duration": 11712,
+    "start": "2020-08-27T15:12:24.147Z",
+    "end": "2020-08-27T15:12:35.549Z",
+    "duration": 11402,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,27 +18,27 @@
   },
   "results": [
     {
-      "uuid": "c19c39f8-15ec-4ff8-8ecd-6aa3fa9f0a9a",
+      "uuid": "6f43771e-6711-41bf-8a84-bb35944a216b",
       "title": "",
-      "fullFile": "tests/e2e/specs/scenario/Inquiry.js",
-      "file": "tests/e2e/specs/scenario/Inquiry.js",
+      "fullFile": "tests/e2e/specs/pattern/MemberFile.js",
+      "file": "tests/e2e/specs/pattern/MemberFile.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "0b881ac7-1543-4ff7-b2cb-4674a90ac576",
-          "title": "Inquiry",
+          "uuid": "1a85be74-1efd-43f5-8d7b-1d5efaeef6f1",
+          "title": "Member pattern (File)",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "\n      get messages ->\n      get forms ->\n      get form by ID 1 ->\n      send message ->\n      get messages including sended one ->\n      get message of created message ->\n      update created message ->\n      get message of updated message\n    ",
-              "fullTitle": "Inquiry \n      get messages ->\n      get forms ->\n      get form by ID 1 ->\n      send message ->\n      get messages including sended one ->\n      get message of created message ->\n      update created message ->\n      get message of updated message\n    ",
+              "title": "\n      insert member with member_photo & file ->\n      get member ->\n      update member with member_photo & file ->\n      get member ->\n      update member with only desc ->\n      get member ->\n      update member delete file ->\n      get member ->\n      delete member\n  ",
+              "fullTitle": "Member pattern (File) \n      insert member with member_photo & file ->\n      get member ->\n      update member with member_photo & file ->\n      get member ->\n      update member with only desc ->\n      get member ->\n      update member delete file ->\n      get member ->\n      delete member\n  ",
               "timedOut": null,
-              "duration": 11673,
+              "duration": 11363,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
                 "diff": null
               },
-              "uuid": "1e55c6b7-f680-476c-b702-4967899a94bd",
-              "parentUUID": "0b881ac7-1543-4ff7-b2cb-4674a90ac576",
+              "uuid": "08eb3eb5-aae7-4e5f-b1cb-9528b3898f4f",
+              "parentUUID": "1a85be74-1efd-43f5-8d7b-1d5efaeef6f1",
               "isHook": false,
               "skipped": false
             }
@@ -60,11 +60,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "1e55c6b7-f680-476c-b702-4967899a94bd"
+            "08eb3eb5-aae7-4e5f-b1cb-9528b3898f4f"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 11673,
+          "duration": 11363,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

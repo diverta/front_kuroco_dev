@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2020-08-27T11:00:40.023Z",
-    "end": "2020-08-27T11:00:51.740Z",
-    "duration": 11717,
+    "start": "2020-08-27T15:23:37.813Z",
+    "end": "2020-08-27T15:23:48.885Z",
+    "duration": 11072,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,27 +18,27 @@
   },
   "results": [
     {
-      "uuid": "4ca3b41c-3616-47cd-8763-b4004a523e02",
+      "uuid": "fcb6a6a9-7815-438e-b11a-db4ed03b6695",
       "title": "",
-      "fullFile": "tests/e2e/specs/pattern/InquiryFile.js",
-      "file": "tests/e2e/specs/pattern/InquiryFile.js",
+      "fullFile": "tests/e2e/specs/scenario/Tags.js",
+      "file": "tests/e2e/specs/scenario/Tags.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "57123761-404e-49b1-9ea5-d692e5fc4db7",
-          "title": "Topics pattern (File)",
+          "uuid": "4fd66ec5-8fa9-437e-a309-63dc4e185913",
+          "title": "Tags",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "\n      send message with file ->\n      get message ->\n      update message with file ->\n      get message ->\n      update message with only desc ->\n      get message ->\n      update message delete file ->\n      get message\n  ",
-              "fullTitle": "Topics pattern (File) \n      send message with file ->\n      get message ->\n      update message with file ->\n      get message ->\n      update message with only desc ->\n      get message ->\n      update message delete file ->\n      get message\n  ",
+              "title": "\n      get tags ->\n      post insert tag ->\n      get tags including inserted one ->\n      post delete inserted tag ->\n      get tags not including deleted one\n  ",
+              "fullTitle": "Tags \n      get tags ->\n      post insert tag ->\n      get tags including inserted one ->\n      post delete inserted tag ->\n      get tags not including deleted one\n  ",
               "timedOut": null,
-              "duration": 11676,
+              "duration": 11019,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
                 "diff": null
               },
-              "uuid": "fb0d3636-ea8e-452f-a310-6b75fabe6f04",
-              "parentUUID": "57123761-404e-49b1-9ea5-d692e5fc4db7",
+              "uuid": "05fbed99-ee66-4036-9118-044c1f704ffa",
+              "parentUUID": "4fd66ec5-8fa9-437e-a309-63dc4e185913",
               "isHook": false,
               "skipped": false
             }
@@ -60,11 +60,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "fb0d3636-ea8e-452f-a310-6b75fabe6f04"
+            "05fbed99-ee66-4036-9118-044c1f704ffa"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 11676,
+          "duration": 11019,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

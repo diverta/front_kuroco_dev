@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2020-08-27T11:06:25.847Z",
-    "end": "2020-08-27T11:06:37.430Z",
-    "duration": 11583,
+    "start": "2020-08-27T15:18:42.350Z",
+    "end": "2020-08-27T15:18:53.871Z",
+    "duration": 11521,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,27 +18,27 @@
   },
   "results": [
     {
-      "uuid": "22ec871d-b9f0-4e46-bb80-cd08ee7404bf",
+      "uuid": "76ea8aad-5792-47d9-ae2e-8baf98d92cc0",
       "title": "",
-      "fullFile": "tests/e2e/specs/pattern/MemberFile.js",
-      "file": "tests/e2e/specs/pattern/MemberFile.js",
+      "fullFile": "tests/e2e/specs/pattern/TopicsFileMultiple.js",
+      "file": "tests/e2e/specs/pattern/TopicsFileMultiple.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "29619772-cd18-4a2f-9a4d-08d00993a050",
-          "title": "Member pattern (File)",
+          "uuid": "0377546d-dba9-4951-a3f9-ab43e7b719a7",
+          "title": "Topics pattern (Multiple File)",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "\n      insert member with member_photo & file ->\n      get member ->\n      update member with member_photo & file ->\n      get member ->\n      update member with only desc ->\n      get member ->\n      update member delete file ->\n      get member ->\n      delete member\n  ",
-              "fullTitle": "Member pattern (File) \n      insert member with member_photo & file ->\n      get member ->\n      update member with member_photo & file ->\n      get member ->\n      update member with only desc ->\n      get member ->\n      update member delete file ->\n      get member ->\n      delete member\n  ",
+              "title": "\n    post insert topic with file ->\n    get inserted topic ->\n    post update topic with file ->\n    get updated topic ->\n    post update topic with only desc ->\n    get updated topic ->\n    post update topic with desc & file_nm ->\n    get updated topic ->\n    post update topic with rearrangement ->\n    get updated topic ->\n    post update topic added new file ->\n    get updated topic ->\n    post update topic delete one file ->\n    get updated topic ->\n    post update topic delete all files ->\n    get updated topic ->\n    post delete topic ->\n    get deleted topic\n  ",
+              "fullTitle": "Topics pattern (Multiple File) \n    post insert topic with file ->\n    get inserted topic ->\n    post update topic with file ->\n    get updated topic ->\n    post update topic with only desc ->\n    get updated topic ->\n    post update topic with desc & file_nm ->\n    get updated topic ->\n    post update topic with rearrangement ->\n    get updated topic ->\n    post update topic added new file ->\n    get updated topic ->\n    post update topic delete one file ->\n    get updated topic ->\n    post update topic delete all files ->\n    get updated topic ->\n    post delete topic ->\n    get deleted topic\n  ",
               "timedOut": null,
-              "duration": 11528,
+              "duration": 11486,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
                 "diff": null
               },
-              "uuid": "0873a8e1-630d-4de2-93bf-5b6306e0f11c",
-              "parentUUID": "29619772-cd18-4a2f-9a4d-08d00993a050",
+              "uuid": "e2351005-2447-4eb2-a695-78438546d729",
+              "parentUUID": "0377546d-dba9-4951-a3f9-ab43e7b719a7",
               "isHook": false,
               "skipped": false
             }
@@ -60,11 +60,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "0873a8e1-630d-4de2-93bf-5b6306e0f11c"
+            "e2351005-2447-4eb2-a695-78438546d729"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 11528,
+          "duration": 11486,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

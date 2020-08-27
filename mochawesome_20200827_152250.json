@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2020-08-27T11:13:28.189Z",
-    "end": "2020-08-27T11:13:39.782Z",
-    "duration": 11593,
+    "start": "2020-08-27T15:22:39.807Z",
+    "end": "2020-08-27T15:22:50.803Z",
+    "duration": 10996,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,27 +18,27 @@
   },
   "results": [
     {
-      "uuid": "4790207e-4460-45bf-a2e2-4e40bc6fb21c",
+      "uuid": "b4574e83-63b7-471e-ab5d-fc336ed781e6",
       "title": "",
-      "fullFile": "tests/e2e/specs/pattern/TopicsFileMultiple.js",
-      "file": "tests/e2e/specs/pattern/TopicsFileMultiple.js",
+      "fullFile": "tests/e2e/specs/scenario/Favorite.js",
+      "file": "tests/e2e/specs/scenario/Favorite.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "09df2a04-9bb0-42f7-816b-46194e777ccf",
-          "title": "Topics pattern (Multiple File)",
+          "uuid": "47f9589b-b111-4f9a-ac0a-2b06e4b7d2ee",
+          "title": "Favorite",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "\n    post insert topic with file ->\n    get inserted topic ->\n    post update topic with file ->\n    get updated topic ->\n    post update topic with only desc ->\n    get updated topic ->\n    post update topic with desc & file_nm ->\n    get updated topic ->\n    post update topic with rearrangement ->\n    get updated topic ->\n    post update topic added new file ->\n    get updated topic ->\n    post update topic delete one file ->\n    get updated topic ->\n    post update topic delete all files ->\n    get updated topic ->\n    post delete topic ->\n    get deleted topic\n  ",
-              "fullTitle": "Topics pattern (Multiple File) \n    post insert topic with file ->\n    get inserted topic ->\n    post update topic with file ->\n    get updated topic ->\n    post update topic with only desc ->\n    get updated topic ->\n    post update topic with desc & file_nm ->\n    get updated topic ->\n    post update topic with rearrangement ->\n    get updated topic ->\n    post update topic added new file ->\n    get updated topic ->\n    post update topic delete one file ->\n    get updated topic ->\n    post update topic delete all files ->\n    get updated topic ->\n    post delete topic ->\n    get deleted topic\n  ",
+              "title": "\n      delete all favorites of test member ->\n      get favorites of test members ->\n      insert favorite ->\n      get favorites including inserted one ->\n      delete favorites ->\n      get favorites not including deleted one\n  ",
+              "fullTitle": "Favorite \n      delete all favorites of test member ->\n      get favorites of test members ->\n      insert favorite ->\n      get favorites including inserted one ->\n      delete favorites ->\n      get favorites not including deleted one\n  ",
               "timedOut": null,
-              "duration": 11550,
+              "duration": 10959,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
                 "diff": null
               },
-              "uuid": "97b5ed54-24c6-4ea3-a3de-ea8715f36279",
-              "parentUUID": "09df2a04-9bb0-42f7-816b-46194e777ccf",
+              "uuid": "3eb3d709-2d88-4b98-a625-bf04e36ffdc8",
+              "parentUUID": "47f9589b-b111-4f9a-ac0a-2b06e4b7d2ee",
               "isHook": false,
               "skipped": false
             }
@@ -60,11 +60,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "97b5ed54-24c6-4ea3-a3de-ea8715f36279"
+            "3eb3d709-2d88-4b98-a625-bf04e36ffdc8"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 11550,
+          "duration": 10959,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

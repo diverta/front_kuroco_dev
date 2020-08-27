@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2020-08-27T11:17:44.114Z",
-    "end": "2020-08-27T11:17:56.040Z",
-    "duration": 11926,
+    "start": "2020-08-27T15:24:12.594Z",
+    "end": "2020-08-27T15:24:24.188Z",
+    "duration": 11594,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,27 +18,27 @@
   },
   "results": [
     {
-      "uuid": "43b7a730-fdaf-44d6-ba54-490eff9471ff",
+      "uuid": "be781a2a-a941-4806-8c97-057605965484",
       "title": "",
-      "fullFile": "tests/e2e/specs/scenario/Favorite.js",
-      "file": "tests/e2e/specs/scenario/Favorite.js",
+      "fullFile": "tests/e2e/specs/scenario/TopicsMultiple.js",
+      "file": "tests/e2e/specs/scenario/TopicsMultiple.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "63e4f417-a797-4747-9a9c-a1f83af08344",
-          "title": "Favorite",
+          "uuid": "9ff5f452-2948-48d2-85d9-2e6dd5eddba9",
+          "title": "Topics (Multiple)",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "\n      delete all favorites of test member ->\n      get favorites of test members ->\n      insert favorite ->\n      get favorites including inserted one ->\n      delete favorites ->\n      get favorites not including deleted one\n  ",
-              "fullTitle": "Favorite \n      delete all favorites of test member ->\n      get favorites of test members ->\n      insert favorite ->\n      get favorites including inserted one ->\n      delete favorites ->\n      get favorites not including deleted one\n  ",
+              "title": "\n      get topics ->\n      get topic by ID ->\n      post insert topic ->\n      get topics including inserted one ->\n      get topic by ID of inserted one ->\n      post update inserted topic ->\n      get topics including updated one ->\n      get topic by ID of updated one ->\n      post delete updated topic ->\n      get topics not including deleted one ->\n      get topic by ID of deleted one (should be empty)\n    ",
+              "fullTitle": "Topics (Multiple) \n      get topics ->\n      get topic by ID ->\n      post insert topic ->\n      get topics including inserted one ->\n      get topic by ID of inserted one ->\n      post update inserted topic ->\n      get topics including updated one ->\n      get topic by ID of updated one ->\n      post delete updated topic ->\n      get topics not including deleted one ->\n      get topic by ID of deleted one (should be empty)\n    ",
               "timedOut": null,
-              "duration": 11875,
+              "duration": 11565,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
                 "diff": null
               },
-              "uuid": "78f8274b-ccfd-40f7-a908-6209400ad20b",
-              "parentUUID": "63e4f417-a797-4747-9a9c-a1f83af08344",
+              "uuid": "b1724501-28db-46b1-834c-c09626eb8563",
+              "parentUUID": "9ff5f452-2948-48d2-85d9-2e6dd5eddba9",
               "isHook": false,
               "skipped": false
             }
@@ -60,11 +60,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "78f8274b-ccfd-40f7-a908-6209400ad20b"
+            "b1724501-28db-46b1-834c-c09626eb8563"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 11875,
+          "duration": 11565,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2020-08-27T11:19:05.910Z",
-    "end": "2020-08-27T11:19:17.627Z",
-    "duration": 11717,
+    "start": "2020-08-27T15:07:32.681Z",
+    "end": "2020-08-27T15:07:44.213Z",
+    "duration": 11532,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,27 +18,27 @@
   },
   "results": [
     {
-      "uuid": "2edd38be-9f29-4266-9660-459793eac375",
+      "uuid": "acba3f7d-33b5-4f80-9d32-629611112bf9",
       "title": "",
-      "fullFile": "tests/e2e/specs/scenario/Topics.js",
-      "file": "tests/e2e/specs/scenario/Topics.js",
+      "fullFile": "tests/e2e/specs/pattern/InquiryFile.js",
+      "file": "tests/e2e/specs/pattern/InquiryFile.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "aa161b4d-a537-4d74-923e-0056c99cd2b0",
-          "title": "Topics",
+          "uuid": "d6f5375c-ccf9-4959-b63e-d1cfa9d7aa6a",
+          "title": "Topics pattern (File)",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "\n      get topics ->\n      get topic by ID ->\n      post insert topic ->\n      get topics including inserted one ->\n      get topic by ID of inserted one ->\n      post update inserted topic ->\n      get topics including updated one ->\n      get topic by ID of updated one ->\n      post delete updated topic ->\n      get topics not including deleted one ->\n      get topic by ID of deleted one (should be empty)\n    ",
-              "fullTitle": "Topics \n      get topics ->\n      get topic by ID ->\n      post insert topic ->\n      get topics including inserted one ->\n      get topic by ID of inserted one ->\n      post update inserted topic ->\n      get topics including updated one ->\n      get topic by ID of updated one ->\n      post delete updated topic ->\n      get topics not including deleted one ->\n      get topic by ID of deleted one (should be empty)\n    ",
+              "title": "\n      send message with file ->\n      get message ->\n      update message with file ->\n      get message ->\n      update message with only desc ->\n      get message ->\n      update message delete file ->\n      get message\n  ",
+              "fullTitle": "Topics pattern (File) \n      send message with file ->\n      get message ->\n      update message with file ->\n      get message ->\n      update message with only desc ->\n      get message ->\n      update message delete file ->\n      get message\n  ",
               "timedOut": null,
-              "duration": 11670,
+              "duration": 11484,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
                 "diff": null
               },
-              "uuid": "6872b770-6ea5-407d-9014-54bc93c9e9aa",
-              "parentUUID": "aa161b4d-a537-4d74-923e-0056c99cd2b0",
+              "uuid": "355076dc-bc06-4910-a2e5-33385ddc6b4e",
+              "parentUUID": "d6f5375c-ccf9-4959-b63e-d1cfa9d7aa6a",
               "isHook": false,
               "skipped": false
             }
@@ -60,11 +60,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "6872b770-6ea5-407d-9014-54bc93c9e9aa"
+            "355076dc-bc06-4910-a2e5-33385ddc6b4e"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 11670,
+          "duration": 11484,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
