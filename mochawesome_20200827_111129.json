@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-08-27T11:11:17.743Z",
+    "end": "2020-08-27T11:11:29.370Z",
+    "duration": 11627,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2a4fcf0c-c8ad-413b-8b06-de8aaffd5ba2",
+      "title": "",
+      "fullFile": "tests/e2e/specs/pattern/TopicsFile.js",
+      "file": "tests/e2e/specs/pattern/TopicsFile.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2e256217-17df-4c16-8065-6a1f9b0e6c70",
+          "title": "Topics pattern (File)",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "\n      post insert topic with file ->\n      get inserted topic ->\n      post update topic with file ->\n      get updated topic ->\n      post update topic with only desc ->\n      get updated topic ->\n      post update topic with desc & file_nm ->\n      get updated topic ->\n      post update topic delete file ->\n      hey updated topic ->\n      post delete topic ->\n      get deleted topic\n  ",
+              "fullTitle": "Topics pattern (File) \n      post insert topic with file ->\n      get inserted topic ->\n      post update topic with file ->\n      get updated topic ->\n      post update topic with only desc ->\n      get updated topic ->\n      post update topic with desc & file_nm ->\n      get updated topic ->\n      post update topic delete file ->\n      hey updated topic ->\n      post delete topic ->\n      get deleted topic\n  ",
+              "timedOut": null,
+              "duration": 11578,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "diff": null
+              },
+              "uuid": "224ba952-5f59-4680-9dce-33e3564ef069",
+              "parentUUID": "2e256217-17df-4c16-8065-6a1f9b0e6c70",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "224ba952-5f59-4680-9dce-33e3564ef069"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 11578,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.1.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "report",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "yyyymmdd_HHMMss"
+      },
+      "version": "5.1.0"
+    }
+  }
+}

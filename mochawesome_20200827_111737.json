@@ -1,0 +1,134 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 0,
+    "pending": 0,
+    "failures": 2,
+    "start": "2020-08-27T11:17:18.007Z",
+    "end": "2020-08-27T11:17:37.076Z",
+    "duration": 19069,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1f3e4352-b6da-4150-9924-b3c91793054a",
+      "title": "",
+      "fullFile": "tests/e2e/specs/scenario/Comment.js",
+      "file": "tests/e2e/specs/scenario/Comment.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "94b1c369-3fb5-45bb-b63b-b6b9a22c518b",
+          "title": "Comment",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "\n      login ->\n      get comments ->\n      post insert comment ->\n      get comments including inserted one ->\n      post update inserted comment ->\n      get comments including updated one ->\n      post delete updated comment ->\n      get comments not including deleted one\n\n  ",
+              "fullTitle": "Comment \n      login ->\n      get comments ->\n      post insert comment ->\n      get comments including inserted one ->\n      post update inserted comment ->\n      get comments including updated one ->\n      post delete updated comment ->\n      get comments not including deleted one\n\n  ",
+              "timedOut": null,
+              "duration": 11799,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "diff": null
+              },
+              "uuid": "59151f9c-58cf-4f75-ad34-d1975548a9a7",
+              "parentUUID": "94b1c369-3fb5-45bb-b63b-b6b9a22c518b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "\n      no login ->\n      get comments ->\n      post insert comment ->\n      get comments including inserted one ->\n      post update inserted comment ->\n      get comments including updated one ->\n      post delete updated comment ->\n      get comments not including deleted one\n\n  ",
+              "fullTitle": "Comment \n      no login ->\n      get comments ->\n      post insert comment ->\n      get comments including inserted one ->\n      post update inserted comment ->\n      get comments including updated one ->\n      post delete updated comment ->\n      get comments not including deleted one\n\n  ",
+              "timedOut": null,
+              "duration": 7173,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "diff": null
+              },
+              "uuid": "669a3f55-cfdc-48ac-a25e-6ee7038d93ca",
+              "parentUUID": "94b1c369-3fb5-45bb-b63b-b6b9a22c518b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "59151f9c-58cf-4f75-ad34-d1975548a9a7",
+            "669a3f55-cfdc-48ac-a25e-6ee7038d93ca"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 18972,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.1.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "report",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "yyyymmdd_HHMMss"
+      },
+      "version": "5.1.0"
+    }
+  }
+}

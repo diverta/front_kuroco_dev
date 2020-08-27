@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-08-27T11:19:24.358Z",
+    "end": "2020-08-27T11:19:36.867Z",
+    "duration": 12509,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cc68bc4f-b367-4d06-a179-4fe5176df1e8",
+      "title": "",
+      "fullFile": "tests/e2e/specs/scenario/TopicsMultiple.js",
+      "file": "tests/e2e/specs/scenario/TopicsMultiple.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3feb9c9a-511f-4d27-9557-89f03c24c7d0",
+          "title": "Topics (Multiple)",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "\n      get topics ->\n      get topic by ID ->\n      post insert topic ->\n      get topics including inserted one ->\n      get topic by ID of inserted one ->\n      post update inserted topic ->\n      get topics including updated one ->\n      get topic by ID of updated one ->\n      post delete updated topic ->\n      get topics not including deleted one ->\n      get topic by ID of deleted one (should be empty)\n    ",
+              "fullTitle": "Topics (Multiple) \n      get topics ->\n      get topic by ID ->\n      post insert topic ->\n      get topics including inserted one ->\n      get topic by ID of inserted one ->\n      post update inserted topic ->\n      get topics including updated one ->\n      get topic by ID of updated one ->\n      post delete updated topic ->\n      get topics not including deleted one ->\n      get topic by ID of deleted one (should be empty)\n    ",
+              "timedOut": null,
+              "duration": 12464,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "diff": null
+              },
+              "uuid": "2efbbc15-0e48-4c90-8840-114a9b1a6daf",
+              "parentUUID": "3feb9c9a-511f-4d27-9557-89f03c24c7d0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "2efbbc15-0e48-4c90-8840-114a9b1a6daf"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 12464,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.1.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "report",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "yyyymmdd_HHMMss"
+      },
+      "version": "5.1.0"
+    }
+  }
+}

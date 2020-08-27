@@ -1,0 +1,134 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 0,
+    "pending": 0,
+    "failures": 2,
+    "start": "2020-08-27T11:18:19.651Z",
+    "end": "2020-08-27T11:18:41.544Z",
+    "duration": 21893,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a85554de-5b44-413e-a05b-f6f1482c55e6",
+      "title": "",
+      "fullFile": "tests/e2e/specs/scenario/Member.js",
+      "file": "tests/e2e/specs/scenario/Member.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7663f227-b8b3-4ef9-bec3-72c280656d57",
+          "title": "Member",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "\n      get members ->\n      get member by ID ->\n      post insert member ->\n      get members including updated one ->\n      get member by ID of inserted one ->\n      post update inserted member ->\n      get members including updated one ->\n      get member by ID of updated one ->\n      post delete updated member ->\n      get members not including deleted one ->\n      get member by ID of deleted one (should be empty)\n    ",
+              "fullTitle": "Member \n      get members ->\n      get member by ID ->\n      post insert member ->\n      get members including updated one ->\n      get member by ID of inserted one ->\n      post update inserted member ->\n      get members including updated one ->\n      get member by ID of updated one ->\n      post delete updated member ->\n      get members not including deleted one ->\n      get member by ID of deleted one (should be empty)\n    ",
+              "timedOut": null,
+              "duration": 11777,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "diff": null
+              },
+              "uuid": "cdc8e3dc-8c21-4c7b-a6cc-f5f4ec6fc1fc",
+              "parentUUID": "7663f227-b8b3-4ef9-bec3-72c280656d57",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "\n      post insert member ->\n      get member by ID of inserted one ->\n      login ->\n      post me/update ->\n      get member by ID of inserted one ->\n      post me/delete ->\n      get member by ID of deleted one (should be empty)\n  ",
+              "fullTitle": "Member \n      post insert member ->\n      get member by ID of inserted one ->\n      login ->\n      post me/update ->\n      get member by ID of inserted one ->\n      post me/delete ->\n      get member by ID of deleted one (should be empty)\n  ",
+              "timedOut": null,
+              "duration": 10017,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "diff": null
+              },
+              "uuid": "864753bd-b565-45b4-877a-77780a42171b",
+              "parentUUID": "7663f227-b8b3-4ef9-bec3-72c280656d57",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "cdc8e3dc-8c21-4c7b-a6cc-f5f4ec6fc1fc",
+            "864753bd-b565-45b4-877a-77780a42171b"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 21794,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.1.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "report",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "yyyymmdd_HHMMss"
+      },
+      "version": "5.1.0"
+    }
+  }
+}

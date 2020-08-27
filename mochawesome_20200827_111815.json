@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-08-27T11:18:03.392Z",
+    "end": "2020-08-27T11:18:15.104Z",
+    "duration": 11712,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c19c39f8-15ec-4ff8-8ecd-6aa3fa9f0a9a",
+      "title": "",
+      "fullFile": "tests/e2e/specs/scenario/Inquiry.js",
+      "file": "tests/e2e/specs/scenario/Inquiry.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0b881ac7-1543-4ff7-b2cb-4674a90ac576",
+          "title": "Inquiry",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "\n      get messages ->\n      get forms ->\n      get form by ID 1 ->\n      send message ->\n      get messages including sended one ->\n      get message of created message ->\n      update created message ->\n      get message of updated message\n    ",
+              "fullTitle": "Inquiry \n      get messages ->\n      get forms ->\n      get form by ID 1 ->\n      send message ->\n      get messages including sended one ->\n      get message of created message ->\n      update created message ->\n      get message of updated message\n    ",
+              "timedOut": null,
+              "duration": 11673,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "diff": null
+              },
+              "uuid": "1e55c6b7-f680-476c-b702-4967899a94bd",
+              "parentUUID": "0b881ac7-1543-4ff7-b2cb-4674a90ac576",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "1e55c6b7-f680-476c-b702-4967899a94bd"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 11673,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.1.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "report",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "yyyymmdd_HHMMss"
+      },
+      "version": "5.1.0"
+    }
+  }
+}

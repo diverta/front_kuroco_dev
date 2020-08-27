@@ -1,0 +1,476 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 17,
+    "passes": 1,
+    "pending": 0,
+    "failures": 16,
+    "start": "2020-08-27T11:13:44.811Z",
+    "end": "2020-08-27T11:16:39.092Z",
+    "duration": 174281,
+    "testsRegistered": 17,
+    "passPercent": 5.88235294117647,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "94539fe2-bf3d-41cb-b22f-96e3e383e5e2",
+      "title": "",
+      "fullFile": "tests/e2e/specs/pattern/TopicsFileMultipleAbnormal.js",
+      "file": "tests/e2e/specs/pattern/TopicsFileMultipleAbnormal.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "53618191-428e-4d60-aea0-1c7f11aa54ca",
+          "title": "Topics pattern (Multiple File)",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "insert topic with inappropriate values",
+              "fullTitle": "Topics pattern (Multiple File) insert topic with inappropriate values",
+              "timedOut": null,
+              "duration": 6412,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {},
+              "uuid": "f08f0375-7052-4954-9bc2-7792615d209f",
+              "parentUUID": "53618191-428e-4d60-aea0-1c7f11aa54ca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "insert topic with additional key",
+              "fullTitle": "Topics pattern (Multiple File) insert topic with additional key",
+              "timedOut": null,
+              "duration": 9082,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "diff": null
+              },
+              "uuid": "3399da08-89f7-4bfb-a299-ee6d6d605e0a",
+              "parentUUID": "53618191-428e-4d60-aea0-1c7f11aa54ca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "insert topic with empty values",
+              "fullTitle": "Topics pattern (Multiple File) insert topic with empty values",
+              "timedOut": null,
+              "duration": 9136,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "diff": null
+              },
+              "uuid": "9875e23a-68be-43da-857e-7b6603e3b575",
+              "parentUUID": "53618191-428e-4d60-aea0-1c7f11aa54ca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "insert topic with null values",
+              "fullTitle": "Topics pattern (Multiple File) insert topic with null values",
+              "timedOut": null,
+              "duration": 9265,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "diff": null
+              },
+              "uuid": "f9adf812-1d1c-4996-9201-c3b91206b88e",
+              "parentUUID": "53618191-428e-4d60-aea0-1c7f11aa54ca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "insert topic with no extension",
+              "fullTitle": "Topics pattern (Multiple File) insert topic with no extension",
+              "timedOut": null,
+              "duration": 9827,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "diff": null
+              },
+              "uuid": "cb737678-1708-4462-a41f-6305cad6411a",
+              "parentUUID": "53618191-428e-4d60-aea0-1c7f11aa54ca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "insert topic with wrong extension in file_nm",
+              "fullTitle": "Topics pattern (Multiple File) insert topic with wrong extension in file_nm",
+              "timedOut": null,
+              "duration": 9993,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "diff": null
+              },
+              "uuid": "a0fa7b51-18d6-4719-a200-c8b49c50a5d0",
+              "parentUUID": "53618191-428e-4d60-aea0-1c7f11aa54ca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "insert topic set image to not image file",
+              "fullTitle": "Topics pattern (Multiple File) insert topic set image to not image file",
+              "timedOut": null,
+              "duration": 10311,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "diff": null
+              },
+              "uuid": "b600f41c-3ef4-445d-9357-84cf294ca457",
+              "parentUUID": "53618191-428e-4d60-aea0-1c7f11aa54ca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "insert topic with no extension image",
+              "fullTitle": "Topics pattern (Multiple File) insert topic with no extension image",
+              "timedOut": null,
+              "duration": 10172,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "diff": null
+              },
+              "uuid": "1e4161ac-e74b-42ad-a7b3-3b5960e440cb",
+              "parentUUID": "53618191-428e-4d60-aea0-1c7f11aa54ca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "insert topic with wrong extension in image file_nm (png -> pdf)",
+              "fullTitle": "Topics pattern (Multiple File) insert topic with wrong extension in image file_nm (png -> pdf)",
+              "timedOut": null,
+              "duration": 10179,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "diff": null
+              },
+              "uuid": "66b2978f-f722-4b98-94e9-19ca4e5f9d8f",
+              "parentUUID": "53618191-428e-4d60-aea0-1c7f11aa54ca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "insert topic with wrong extension in image file_nm (pdf -> png)",
+              "fullTitle": "Topics pattern (Multiple File) insert topic with wrong extension in image file_nm (pdf -> png)",
+              "timedOut": null,
+              "duration": 10550,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "diff": null
+              },
+              "uuid": "de39e1f1-8454-4a9f-9682-8e05ee61aea3",
+              "parentUUID": "53618191-428e-4d60-aea0-1c7f11aa54ca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "update topic with the same id",
+              "fullTitle": "Topics pattern (Multiple File) update topic with the same id",
+              "timedOut": null,
+              "duration": 10498,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "diff": null
+              },
+              "uuid": "bf8922c2-abb5-4820-ae32-0b546fc4c616",
+              "parentUUID": "53618191-428e-4d60-aea0-1c7f11aa54ca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "update topic ext_col_11 with the ids of ext_col_17",
+              "fullTitle": "Topics pattern (Multiple File) update topic ext_col_11 with the ids of ext_col_17",
+              "timedOut": null,
+              "duration": 10546,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "diff": null
+              },
+              "uuid": "f744dc76-ee7a-46f7-8902-cae6ffce05bc",
+              "parentUUID": "53618191-428e-4d60-aea0-1c7f11aa54ca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "update topic ext_col_11 with the ids of other topic",
+              "fullTitle": "Topics pattern (Multiple File) update topic ext_col_11 with the ids of other topic",
+              "timedOut": null,
+              "duration": 11129,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "diff": null
+              },
+              "uuid": "455eb09c-ada2-4236-b3c1-5365d0574875",
+              "parentUUID": "53618191-428e-4d60-aea0-1c7f11aa54ca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "update topic with inappropriate ids",
+              "fullTitle": "Topics pattern (Multiple File) update topic with inappropriate ids",
+              "timedOut": null,
+              "duration": 11600,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "diff": null
+              },
+              "uuid": "ee69f8fe-248f-4ed1-9b81-8289fa04c532",
+              "parentUUID": "53618191-428e-4d60-aea0-1c7f11aa54ca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "update topic with id index out of limit",
+              "fullTitle": "Topics pattern (Multiple File) update topic with id index out of limit",
+              "timedOut": null,
+              "duration": 11420,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "diff": null
+              },
+              "uuid": "b426e349-b0cf-4928-ab9b-3c0374e7e3c9",
+              "parentUUID": "53618191-428e-4d60-aea0-1c7f11aa54ca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "update topic add only desc",
+              "fullTitle": "Topics pattern (Multiple File) update topic add only desc",
+              "timedOut": null,
+              "duration": 11406,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "diff": null
+              },
+              "uuid": "7d307b5f-f511-417b-8174-beefa318ed38",
+              "parentUUID": "53618191-428e-4d60-aea0-1c7f11aa54ca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "update topic add only desc & file_nm",
+              "fullTitle": "Topics pattern (Multiple File) update topic add only desc & file_nm",
+              "timedOut": null,
+              "duration": 11442,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var self = this,\n    args = arguments;\nreturn new Promise(function (resolve, reject) {\n  var gen = fn.apply(self, args);\n  function _next(value) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value);\n  }\n  function _throw(err) {\n    asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err);\n  }\n  _next(undefined);\n});",
+              "err": {
+                "message": "Error: Cypress command timeout of '5000ms' exceeded.",
+                "estack": "Error: Cypress command timeout of '5000ms' exceeded.\n    at https://localhost:9000/__cypress/runner/cypress_runner.js:83597:25",
+                "diff": null
+              },
+              "uuid": "31db8431-7a95-42a0-9895-a10247f45de1",
+              "parentUUID": "53618191-428e-4d60-aea0-1c7f11aa54ca",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f08f0375-7052-4954-9bc2-7792615d209f"
+          ],
+          "failures": [
+            "3399da08-89f7-4bfb-a299-ee6d6d605e0a",
+            "9875e23a-68be-43da-857e-7b6603e3b575",
+            "f9adf812-1d1c-4996-9201-c3b91206b88e",
+            "cb737678-1708-4462-a41f-6305cad6411a",
+            "a0fa7b51-18d6-4719-a200-c8b49c50a5d0",
+            "b600f41c-3ef4-445d-9357-84cf294ca457",
+            "1e4161ac-e74b-42ad-a7b3-3b5960e440cb",
+            "66b2978f-f722-4b98-94e9-19ca4e5f9d8f",
+            "de39e1f1-8454-4a9f-9682-8e05ee61aea3",
+            "bf8922c2-abb5-4820-ae32-0b546fc4c616",
+            "f744dc76-ee7a-46f7-8902-cae6ffce05bc",
+            "455eb09c-ada2-4236-b3c1-5365d0574875",
+            "ee69f8fe-248f-4ed1-9b81-8289fa04c532",
+            "b426e349-b0cf-4928-ab9b-3c0374e7e3c9",
+            "7d307b5f-f511-417b-8174-beefa318ed38",
+            "31db8431-7a95-42a0-9895-a10247f45de1"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 172968,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.1.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "report",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "yyyymmdd_HHMMss"
+      },
+      "version": "5.1.0"
+    }
+  }
+}
