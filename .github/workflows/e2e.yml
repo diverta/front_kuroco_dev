@@ -35,12 +35,14 @@ jobs:
       - name: Run E2E
         run: npm run e2e:ci
 
-      - uses: actions/upload-artifact@v1
+      - name: Upload video artifact
+        uses: actions/upload-artifact@v1
         if: always()
         with:
           name: cypress-videos
           path: tests/e2e/videos
-      - uses: actions/upload-artifact@v1
+      - name: Upload report artifact
+        uses: actions/upload-artifact@v1
         if: always()
         with:
           name: mochawesome-report
@@ -57,7 +59,7 @@ jobs:
       # slack
       - name: Slack Notification on Success
         if: success()
-        uses: rtCamp/action-slack-notify@v2.0.2
+        uses: rtCamp/action-slack-notify@master
         env:
           SLACK_CHANNEL: ci
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
@@ -66,9 +68,8 @@ jobs:
           SLACK_MESSAGE: |
             *これはSlack通知の試験です!*
             please check the result at:
-            http://{GITHUB_ACCOUNT_NAME}.github.io/{PROJECT_NAME}
       - name: Slack Notification on Failure
-        uses: rtCamp/action-slack-notify@v2.0.2
+        uses: rtCamp/action-slack-notify@master
         if: failure()
         env:
           SLACK_CHANNEL: ci
@@ -78,8 +79,6 @@ jobs:
           SLACK_MESSAGE: |
             *これはSlack通知の試験です!*
             please check the result at:
-            http://{GITHUB_ACCOUNT_NAME}.github.io/{PROJECT_NAME}
-
 
   remove-old-artifacts:
     runs-on: ubuntu-latest
