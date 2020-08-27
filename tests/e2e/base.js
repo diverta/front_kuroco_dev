@@ -73,6 +73,7 @@ export function login(options = { email: 'test@example.com', password: 'qwer1234
     cy.get(queries.login.form.login).click();
     cy.get(queries.login.form.close).click();
     cy.contains(queries.login.status, 'LOGGEDIN');
+    console.log('LOGIN PASSED!!');
   }
 
   cy.visit('/');

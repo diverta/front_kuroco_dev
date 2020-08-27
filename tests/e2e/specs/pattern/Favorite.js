@@ -75,15 +75,20 @@ describe('Favorite pattern', () => {
 
   insertFavoriteWithoutRequiredTargetCols.forEach(target => {
     it('insert favorite without required ' + target + ' -> error', async () => {
-      login();
-      let errorResponse = {};
-      await insertFavoriteWithoutRequired({moduleId: topicsIdFavoriteTest, targetCol: target})
-      .then(res => console.log('!!RES!!', res)).catch(e => {
-        console.log('!!ERR!!', e);
-        errorResponse = JSON.parse(e.message);
-      })
-      expect(errorResponse.status).to.equal(400, target);
-      expect(errorResponse.body.errors[0]).to.include('Required property missing: ' + target);
+      try {
+        login();
+        let errorResponse = {};
+        await insertFavoriteWithoutRequired({moduleId: topicsIdFavoriteTest, targetCol: target})
+          .then(res => console.log('!!RES!!', res))
+          .catch(e => {
+            console.log('!!ERR!!', e);
+            errorResponse = JSON.parse(e.message);
+          });
+        expect(errorResponse.status).to.equal(400, target);
+        expect(errorResponse.body.errors[0]).to.include('Required property missing: ' + target);
+      } catch(e) {
+        console.log('ERROR!!', e);
+      }
     });
   });
 
