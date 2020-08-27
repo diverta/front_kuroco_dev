@@ -7,6 +7,7 @@ on:
 
 jobs:
   build:
+    timeout-minutes: 10
     runs-on: ubuntu-latest
 
     strategy:
@@ -45,3 +46,16 @@ jobs:
       #       E2E on Kuroco frontend-dev was all done.
       #       please check the result at:
       #       https://github.com/${{ env.GITHUB_REPOSITORY }}/actions/runs/${{ env.GITHUB_RUN_ID }}
+
+  remove-old-artifacts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+    - name: Remove old artifacts
+      uses: c-hive/gha-remove-artifacts@v1
+      with:
+        age: '1 day'
+        # Optional inputs
+        # skip-tags: true
+        skip-recent: 3

@@ -18,7 +18,3 @@ import './commands';
 Cypress.config({
   defaultCommandTimeout: 5000,
 });
-
-require('cypress-terminal-report/src/installLogsCollector')({
-  printLogs: 'always'
-});

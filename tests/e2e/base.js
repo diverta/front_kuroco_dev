@@ -63,7 +63,9 @@ export const queries = {
  * @param {*} options.email for customized login info as email user expected.
  * @param {*} options.password for customized login info as password user expected.
  */
-export function login(options = { email: 'test@example.com', password: 'qwer1234' }) {
+export function login(
+  options = { email: 'test@example.com', password: 'qwer1234' }
+) {
   function __login({ email, password }) {
     cy.contains(queries.login.status, 'ANONYMOUS');
     cy.get(queries.login.button).click();
@@ -98,32 +100,33 @@ export function logout() {
 
 /**
  * upload file
- * 
+ *
  * @param options.path upload file path.
  */
-export async function upload({path}) {
+export async function upload({ path }) {
   const dataCyFileId = 'data-upload-form-file-id';
   const dataCyFileNm = 'data-upload-form-file-nm';
 
-  cy.get(queries.upload.button).trigger('mouseover').click();
+  cy.get(queries.upload.button)
+    .trigger('mouseover')
+    .click();
   cy.get(queries.upload.form._);
   cy.get(queries.upload.file).attachFile(path);
   cy.get(`[data-cy=${dataCyFileId}]`).should('not.have.value', '');
 
   const fileId = await promisify(
-    cy.get(`[data-cy=${dataCyFileId}]`)
-      .invoke('val')
+    cy.get(`[data-cy=${dataCyFileId}]`).invoke('val')
   );
   const fileNm = await promisify(
-    cy.get(`[data-cy=${dataCyFileNm}]`)
-      .invoke('val')
+    cy.get(`[data-cy=${dataCyFileNm}]`).invoke('val')
   );
-  cy.get(queries.upload.form.close).trigger('mouseover').click();
+  cy.get(queries.upload.form.close)
+    .trigger('mouseover')
+    .click();
   return {
     fileId: fileId,
     fileNm: fileNm,
   };
-
 }
 
 /**
@@ -160,15 +163,16 @@ export async function executeRequest({
     .eq(indexOfApis)
     .trigger('mouseover')
     .click()
+    .get(`[data-cy=button-clear-all]`)
+    .click({ force: true }) // clears textarea
     .get(queries.codeBlock)
     .click({ force: true })
-    .type(`{cmd}A{del}`) // clears textarea
     .invoke('val', requestBody)
     .trigger('change', { force: true })
     .get(queries.apiInfos.request)
     .click();
 
-  cy.get(queries.responseBlock.isError, {timeout: timeout}).then(elms => {
+  cy.get(queries.responseBlock.isError, { timeout: timeout }).then(elms => {
     if (/true/.test(elms[0].innerText)) {
       return cy.get(queries.responseBlock.response).then(elms => {
         cy.writeFile(
@@ -233,31 +237,33 @@ export function formatDate(format = 'date', date = new Date()) {
     throw new Error(`the format ${format} is unexpected value.`);
   }
 
-  const o = ((date) => {
+  const o = (date => {
     const d = new Date(date);
 
     // 2020-01-01
-    const ymd = d.toISOString().substr(0,10)
+    const ymd = d.toISOString().substr(0, 10);
 
     // 01:01
-    const hm = [
-      zeroPadding(d.getHours()),
-      zeroPadding(d.getMinutes()),
-    ].join(':');
+    const hm = [zeroPadding(d.getHours()), zeroPadding(d.getMinutes())].join(
+      ':'
+    );
 
     // +0900
-    const timezone = (new Date()).toTimeString().split('GMT')[1].replace(/ .*/, '')
+    const timezone = new Date()
+      .toTimeString()
+      .split('GMT')[1]
+      .replace(/ .*/, '');
 
     return {
       date: `${ymd}`,
       datetime: `${ymd} ${hm} ${timezone}`,
-    }
+    };
   })(date);
 
   return o[format];
 
   function zeroPadding(value) {
-    return ('0' + `${value}`).slice(-2)
+    return ('0' + `${value}`).slice(-2);
   }
 }
 

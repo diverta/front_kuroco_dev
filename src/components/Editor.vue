@@ -69,6 +69,16 @@
         >
           <v-icon>mdi-undo</v-icon>
         </v-btn>
+        <v-btn
+          class="my-2 mr-2"
+          small
+          icon
+          color="white"
+          @click="handleOnClickDelete"
+          data-cy="button-clear-all"
+        >
+          <v-icon>mdi-delete</v-icon>
+        </v-btn>
       </div>
       <div class="d-flex justify-end">
         <v-btn
@@ -248,6 +258,10 @@ export default Vue.extend({
     },
     handleOnClickUndo() {
       this.codeDescription = this.editHistory.pop() || '';
+    },
+    handleOnClickDelete() {
+      this.editHistory.push('');
+      this.codeDescription = '';
     },
     handleOnClickDownload() {
       let anchor = document.createElement('a');
