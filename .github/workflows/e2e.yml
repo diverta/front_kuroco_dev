@@ -25,6 +25,12 @@ jobs:
       - name: Run E2E
         run: npm run e2e:ci
 
+      - uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: cypress-videos
+          path: tests/e2e/videos
+
       # - name: Slack notification
       #   env:
       #     SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
