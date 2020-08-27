@@ -59,7 +59,7 @@ jobs:
       - name: Extract result
         shell: bash
         run: |
-          echo ::set-env name=E2E_RESULT::$(jq -r '.stats | [ .passes, .tests ] | join("/")' mochawesome-report/mochawesome.json)
+          echo ::set-env name=E2E_RESULT::$(jq -r '.stats | [ (.passes|tostring), (.tests|tostring) ] | join("/")' mochawesome-report/mochawesome.json)
 
       # slack
       - name: Slack Notification on Success
