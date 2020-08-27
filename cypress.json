@@ -4,12 +4,11 @@
   "video": true,
   "reporter": "mochawesome",
   "reporterOptions": {
-    "reporterEnabled": "mochawesome",
-    "mochawesomeReporterOptions": {
-      "quite": true,
-      "overwrite": true,
-      "html": false,
-      "json": true
-    }
+    "reportDir": "report",
+    "quite": true,
+    "overwrite": false,
+    "html": false,
+    "json": true,
+    "timestamp": "yyyymmdd_HHMMss"
   }
 }

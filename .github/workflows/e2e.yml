@@ -45,21 +45,23 @@ jobs:
         uses: actions/upload-artifact@v1
         if: always()
         with:
-          name: mochawesome-report
-          path: mochawesome-report
+          name: report
+          path: report
 
       - name: Deploy report page
         uses: peaceiris/actions-gh-pages@v3
+        if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./mochawesome-report
+          publish_dir: ./report
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
 
       - name: Extract result
         shell: bash
+        if: always()
         run: |
-          echo ::set-env name=E2E_RESULT::$(jq -r '.stats | [ (.passes|tostring), (.tests|tostring) ] | join("/")' mochawesome-report/mochawesome.json)
+          echo ::set-env name=E2E_RESULT::$(jq -r '.stats | [ (.passes|tostring), (.tests|tostring) ] | join("/")' report/report.json)
 
       # slack
       - name: Slack Notification on Success
