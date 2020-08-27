@@ -75,7 +75,7 @@ jobs:
           SLACK_MESSAGE: |
             ${{ env.E2E_RESULT }}
             please check the result at:
-            https://diverta.github.io/front_kuroco_dev/mochawesome.html
+            https://diverta.github.io/front_kuroco_dev/report.html
       - name: Slack Notification on Failure
         uses: rtCamp/action-slack-notify@master
         if: failure()
@@ -87,7 +87,7 @@ jobs:
           SLACK_MESSAGE: |
             ${{ env.E2E_RESULT }}
             please check the result at:
-            https://diverta.github.io/front_kuroco_dev/mochawesome.html
+            https://diverta.github.io/front_kuroco_dev/report.html
 
   remove-old-artifacts:
     runs-on: ubuntu-latest
