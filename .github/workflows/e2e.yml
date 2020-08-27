@@ -20,6 +20,15 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Install Dependencies
         run: npm install
 
@@ -34,23 +43,41 @@ jobs:
       - uses: actions/upload-artifact@v1
         if: always()
         with:
-          name: report
+          name: mochawesome-report
           path: mochawesome-report
 
-      # - name: Slack notification
-      #   env:
-      #     SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-      #     SLACK_USERNAME: E2E Kuroco
-      #     SLACK_CHANNEL: team-testcase
-      #     SLACK_AVATAR: repository
-      #   uses: Ilshidur/action-slack@master
-      #   with:
-      #     status: ${{ env.WORKFLOW_CONCLUSION }}
-      #     args: |
-      #       *これはSlack通知の試験です!*
-      #       E2E on Kuroco frontend-dev was all done.
-      #       please check the result at:
-      #       https://github.com/${{ env.GITHUB_REPOSITORY }}/actions/runs/${{ env.GITHUB_RUN_ID }}
+      - name: Deploy report page
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./mochawesome-report
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+
+      # slack
+      - name: Slack Notification on Success
+        if: success()
+        uses: rtCamp/action-slack-notify@v2.0.2
+        env:
+          SLACK_CHANNEL: ci
+          SLACK_TITLE: 'Test Success :rocket:'
+          SLACK_COLOR: good
+          SLACK_MESSAGE: |
+            *これはSlack通知の試験です!*
+            please check the result at:
+            http://{GITHUB_ACCOUNT_NAME}.github.io/{PROJECT_NAME}
+      - name: Slack Notification on Failure
+        uses: rtCamp/action-slack-notify@v2.0.2
+        if: failure()
+        env:
+          SLACK_CHANNEL: ci
+          SLACK_TITLE: 'Test Failure :boom'
+          SLACK_COLOR: danger
+          SLACK_MESSAGE: |
+            *これはSlack通知の試験です!*
+            please check the result at:
+            http://{GITHUB_ACCOUNT_NAME}.github.io/{PROJECT_NAME}
+
 
   remove-old-artifacts:
     runs-on: ubuntu-latest
