@@ -82,7 +82,7 @@ jobs:
         env:
           SLACK_CHANNEL: notice-kuroco_e2e_test
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_TITLE: 'Test Failure :boom'
+          SLACK_TITLE: 'Test Failure :boom:'
           SLACK_COLOR: danger
           SLACK_MESSAGE: |
             ${{ env.E2E_RESULT }}
