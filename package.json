@@ -32,6 +32,7 @@
     "@vue/test-utils": "1.0.4",
     "cypress-file-upload": "^4.0.7",
     "cypress-promise": "^1.1.0",
+    "cypress-terminal-report": "^1.4.2",
     "jest": "^26.4.1",
     "kuroco-sdk": "^0.1.25",
     "mocha": "^8.1.1",
