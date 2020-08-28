@@ -1,8 +1,8 @@
 name: E2E
 
 on:
-  schedule:
-    - cron: '00 15 * * *' # => equals '00 00 * * *' in JST.
+  # schedule:
+  #   - cron: '00 15 * * *' # => equals '00 00 * * *' in JST.
   workflow_dispatch:
 
 jobs:
