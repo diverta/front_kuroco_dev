@@ -67,7 +67,7 @@ export declare namespace FavoritesService {
             /**
              * Module type
              */
-            module_type: string;
+            module_type: ('group' | 'menu' | 'comment' | 'inquiry' | 'login' | 'login_history' | 'member' | 'staticcontents' | 'site' | 'topics' | 'memberregist' | 'batch' | 'mailtemplateedit' | 'relation' | 'csvtable' | 'approvalflow' | 'api_googleanalytics' | 'onetime' | 'magazine' | 'tag' | 'api_webpush' | 'rcms_api' | 'firebase' | 'trigger' | 'ec' | 'rcms');
             /**
              * module_id
              */
@@ -87,7 +87,7 @@ export declare namespace FavoritesService {
             /**
              * Module type
              */
-            module_type: string;
+            module_type: ('group' | 'menu' | 'comment' | 'inquiry' | 'login' | 'login_history' | 'member' | 'staticcontents' | 'site' | 'topics' | 'memberregist' | 'batch' | 'mailtemplateedit' | 'relation' | 'csvtable' | 'approvalflow' | 'api_googleanalytics' | 'onetime' | 'magazine' | 'tag' | 'api_webpush' | 'rcms_api' | 'firebase' | 'trigger' | 'ec' | 'rcms');
             /**
              * module_id
              */

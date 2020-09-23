@@ -18,7 +18,7 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 var __importStar = (this && this.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
     __setModuleDefault(result, mod);
     return result;
 };
@@ -395,7 +395,7 @@ exports.infos = [
         auth: null,
         description: `
         export interface postAuthenticationServiceRcmsApi1MePwReminderRequest {
-            requestBody: { email: string } | { token: string ,temp_pwd: string ,password: string  },
+            requestBody: { email: string } | { token: string ,temp_pwd: string ,login_pwd: string  },
             outputFormat?: string,
             lang?: string,
             charset?: string,

@@ -4,10 +4,10 @@ import * as MembersService from '../services/MembersService';
 import * as CommentsService from '../services/CommentsService';
 import * as FavoritesService from '../services/FavoritesService';
 import * as InquiriesService from '../services/InquiriesService';
+import * as EcService from '../services/EcService';
 import * as FilesService from '../services/FilesService';
 import * as TagsService from '../services/TagsService';
 import * as TablesService from '../services/TablesService';
-import * as AsynchronousProcessingService from '../services/AsynchronousProcessingService';
 import * as ApiService from '../services/ApiService';
 export declare const ApiInfos: ({
     path: string;
@@ -66,15 +66,6 @@ export declare const ApiInfos: ({
 } | {
     path: string;
     httpMethod: string;
-    class: typeof TopicsService.TopicsService;
-    className: string;
-    method: typeof TopicsService.TopicsService.postTopicsServiceRcmsApi1TopicsMultipleInsert;
-    methodName: string;
-    auth: null;
-    description: string;
-} | {
-    path: string;
-    httpMethod: string;
     class: typeof MembersService.MembersService;
     className: string;
     method: typeof MembersService.MembersService.getMembersServiceRcmsApi1Members;
@@ -96,15 +87,6 @@ export declare const ApiInfos: ({
     class: typeof MembersService.MembersService;
     className: string;
     method: typeof MembersService.MembersService.postMembersServiceRcmsApi1MembersInsert;
-    methodName: string;
-    auth: null;
-    description: string;
-} | {
-    path: string;
-    httpMethod: string;
-    class: typeof MembersService.MembersService;
-    className: string;
-    method: typeof MembersService.MembersService.postMembersServiceRcmsApi1MembersUpdate;
     methodName: string;
     auth: null;
     description: string;
@@ -156,6 +138,69 @@ export declare const ApiInfos: ({
 } | {
     path: string;
     httpMethod: string;
+    class: typeof EcService.EcService;
+    className: string;
+    method: typeof EcService.EcService.getEcServiceRcmsApi1EcProducts;
+    methodName: string;
+    auth: null;
+    description: string;
+} | {
+    path: string;
+    httpMethod: string;
+    class: typeof EcService.EcService;
+    className: string;
+    method: typeof EcService.EcService.getEcServiceRcmsApi1EcProductsProductId;
+    methodName: string;
+    auth: null;
+    description: string;
+} | {
+    path: string;
+    httpMethod: string;
+    class: typeof EcService.EcService;
+    className: string;
+    method: typeof EcService.EcService.getEcServiceRcmsApi1EcCartEcCartId;
+    methodName: string;
+    auth: null;
+    description: string;
+} | {
+    path: string;
+    httpMethod: string;
+    class: typeof EcService.EcService;
+    className: string;
+    method: typeof EcService.EcService.postEcServiceRcmsApi1EcCartAdd;
+    methodName: string;
+    auth: null;
+    description: string;
+} | {
+    path: string;
+    httpMethod: string;
+    class: typeof EcService.EcService;
+    className: string;
+    method: typeof EcService.EcService.postEcServiceRcmsApi1EcOrderTotal;
+    methodName: string;
+    auth: null;
+    description: string;
+} | {
+    path: string;
+    httpMethod: string;
+    class: typeof EcService.EcService;
+    className: string;
+    method: typeof EcService.EcService.getEcServiceRcmsApi1EcPayments;
+    methodName: string;
+    auth: null;
+    description: string;
+} | {
+    path: string;
+    httpMethod: string;
+    class: typeof EcService.EcService;
+    className: string;
+    method: typeof EcService.EcService.getEcServiceRcmsApi1EcPaymentsEcPaymentId;
+    methodName: string;
+    auth: null;
+    description: string;
+} | {
+    path: string;
+    httpMethod: string;
     class: typeof FilesService.FilesService;
     className: string;
     method: typeof FilesService.FilesService.postFilesServiceRcmsApi1FilesUpload;
@@ -194,16 +239,7 @@ export declare const ApiInfos: ({
     httpMethod: string;
     class: typeof TablesService.TablesService;
     className: string;
-    method: typeof TablesService.TablesService.getTablesServiceRcmsApi1TablesSimple;
-    methodName: string;
-    auth: null;
-    description: string;
-} | {
-    path: string;
-    httpMethod: string;
-    class: typeof AsynchronousProcessingService.AsynchronousProcessingService;
-    className: string;
-    method: typeof AsynchronousProcessingService.AsynchronousProcessingService.postAsynchronousProcessingServiceRcmsApi1Batch;
+    method: typeof TablesService.TablesService.getTablesServiceRcmsApi1Tables1;
     methodName: string;
     auth: null;
     description: string;

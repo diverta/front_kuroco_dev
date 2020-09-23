@@ -150,75 +150,67 @@ export declare namespace MembersService {
     interface postMembersServiceRcmsApi1MembersInsertRequest {
         requestBody: {
             /**
-             * Email
-             */
-            email: string;
-            /**
-             * Login ID
-             */
-            login_id?: string;
-            /**
-             * Password
-             */
-            login_pwd: string;
-            /**
-             * Nickname
-             */
-            nickname: string;
-            /**
-             * Family name
+             * name1
              */
             name1?: string;
             /**
-             * Given name
+             * name2
              */
             name2?: string;
             /**
-             * Sex
+             * nickname
              */
-            sex?: ('m' | 'f' | 'e');
+            nickname?: string;
             /**
-             * Date of birth
+             * email
              */
-            birth?: string;
+            email?: string;
             /**
-             * Image1
+             * zip_code
              */
-            member_photo?: {
-                /**
-                 * File ID returned by File Upload API
-                 */
-                file_id?: string;
-                /**
-                 * File name
-                 */
-                file_nm?: string;
-                /**
-                 * Description
-                 */
-                desc?: string;
-                extension?: ('jpg' | 'gif' | 'png');
-            };
+            zip_code?: string;
             /**
-             * Text
+             * tdfk_cd
              */
-            text: string;
+            tdfk_cd?: ('01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16' | '17' | '18' | '19' | '20' | '21' | '22' | '23' | '24' | '25' | '26' | '27' | '28' | '29' | '30' | '31' | '32' | '33' | '34' | '35' | '36' | '37' | '38' | '39' | '40' | '41' | '42' | '43' | '44' | '45' | '46' | '47' | '99');
             /**
-             * Textarea
+             * address1
+             */
+            address1?: string;
+            /**
+             * address2
+             */
+            address2?: string;
+            /**
+             * address3
+             */
+            address3?: string;
+            /**
+             * tel
+             */
+            tel?: string;
+            /**
+             * email_send_ng_flg
+             */
+            email_send_ng_flg?: (0 | 1);
+            /**
+             * tel_send_ng_flg
+             */
+            tel_send_ng_flg?: (0 | 1);
+            /**
+             * login_pwd
+             */
+            login_pwd?: string;
+            /**
+             * textarea
              */
             textarea?: string;
             /**
-             * Radio
-             * * 1 => radioOption1
-             * * 2 => radioOption2
-             * * 3 => radioOption3
+             * text
              */
-            radio?: {
-                key: string;
-                label: string;
-            } | '' | '1' | '2' | '3';
+            text?: string;
             /**
-             * Selectbox
+             * selectbox
              * * 1 => selectBoxOption1
              * * 2 => selectBoxOption2
              * * 3 => selectBoxOption3
@@ -228,22 +220,24 @@ export declare namespace MembersService {
                 label: string;
             } | '' | '1' | '2' | '3';
             /**
-             * Checkbox
-             * * 1 => checkboxOption1
-             * * 2 => checkboxOption2
-             * * 3 => checkboxOption3
+             * relation
              */
-            checkbox?: Array<{
+            relation?: {
+                module_type: string;
+                module_id: number;
+            } | number;
+            /**
+             * radio
+             * * 1 => radioOption1
+             * * 2 => radioOption2
+             * * 3 => radioOption3
+             */
+            radio?: {
                 key: string;
                 label: string;
-            } | '1' | '2' | '3'>;
+            } | '' | '1' | '2' | '3';
             /**
-             * Date
-             */
-            date?: string;
-            relation?: number;
-            /**
-             * File
+             * file
              */
             file?: {
                 /**
@@ -260,6 +254,20 @@ export declare namespace MembersService {
                 desc?: string;
             };
             /**
+             * date
+             */
+            date?: string | string;
+            /**
+             * checkbox
+             * * 1 => checkboxOption1
+             * * 2 => checkboxOption2
+             * * 3 => checkboxOption3
+             */
+            checkbox?: Array<{
+                key: string;
+                label: string;
+            } | '1' | '2' | '3'>;
+            /**
              * /label/open_flg
              */
             open_flg?: (0 | 1);
@@ -271,6 +279,7 @@ export declare namespace MembersService {
              * Validate
              */
             validate_only?: boolean;
+            auto_login?: number;
         };
         outputFormat?: string;
         lang?: string;
@@ -284,75 +293,67 @@ export declare namespace MembersService {
              */
             member_id: number;
             /**
-             * Email
-             */
-            email?: string;
-            /**
-             * Login ID
-             */
-            login_id?: string;
-            /**
-             * Password
-             */
-            login_pwd?: string;
-            /**
-             * Nickname
-             */
-            nickname?: string;
-            /**
-             * Family name
+             * name1
              */
             name1?: string;
             /**
-             * Given name
+             * name2
              */
             name2?: string;
             /**
-             * Sex
+             * nickname
              */
-            sex?: ('m' | 'f' | 'e');
+            nickname?: string;
             /**
-             * Date of birth
+             * email
              */
-            birth?: string;
+            email?: string;
             /**
-             * Image1
+             * zip_code
              */
-            member_photo?: {
-                /**
-                 * File ID returned by File Upload API
-                 */
-                file_id?: string;
-                /**
-                 * File name
-                 */
-                file_nm?: string;
-                /**
-                 * Description
-                 */
-                desc?: string;
-                extension?: ('jpg' | 'gif' | 'png');
-            };
+            zip_code?: string;
             /**
-             * Text
+             * tdfk_cd
              */
-            text?: string;
+            tdfk_cd?: ('01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16' | '17' | '18' | '19' | '20' | '21' | '22' | '23' | '24' | '25' | '26' | '27' | '28' | '29' | '30' | '31' | '32' | '33' | '34' | '35' | '36' | '37' | '38' | '39' | '40' | '41' | '42' | '43' | '44' | '45' | '46' | '47' | '99');
             /**
-             * Textarea
+             * address1
+             */
+            address1?: string;
+            /**
+             * address2
+             */
+            address2?: string;
+            /**
+             * address3
+             */
+            address3?: string;
+            /**
+             * tel
+             */
+            tel?: string;
+            /**
+             * email_send_ng_flg
+             */
+            email_send_ng_flg?: (0 | 1);
+            /**
+             * tel_send_ng_flg
+             */
+            tel_send_ng_flg?: (0 | 1);
+            /**
+             * login_pwd
+             */
+            login_pwd?: string;
+            /**
+             * textarea
              */
             textarea?: string;
             /**
-             * Radio
-             * * 1 => radioOption1
-             * * 2 => radioOption2
-             * * 3 => radioOption3
+             * text
              */
-            radio?: {
-                key: string;
-                label: string;
-            } | '' | '1' | '2' | '3';
+            text?: string;
             /**
-             * Selectbox
+             * selectbox
              * * 1 => selectBoxOption1
              * * 2 => selectBoxOption2
              * * 3 => selectBoxOption3
@@ -362,22 +363,24 @@ export declare namespace MembersService {
                 label: string;
             } | '' | '1' | '2' | '3';
             /**
-             * Checkbox
-             * * 1 => checkboxOption1
-             * * 2 => checkboxOption2
-             * * 3 => checkboxOption3
+             * relation
              */
-            checkbox?: Array<{
+            relation?: {
+                module_type: string;
+                module_id: number;
+            } | number;
+            /**
+             * radio
+             * * 1 => radioOption1
+             * * 2 => radioOption2
+             * * 3 => radioOption3
+             */
+            radio?: {
                 key: string;
                 label: string;
-            } | '1' | '2' | '3'>;
+            } | '' | '1' | '2' | '3';
             /**
-             * Date
-             */
-            date?: string;
-            relation?: number;
-            /**
-             * File
+             * file
              */
             file?: {
                 /**
@@ -393,6 +396,20 @@ export declare namespace MembersService {
                  */
                 desc?: string;
             };
+            /**
+             * date
+             */
+            date?: string | string;
+            /**
+             * checkbox
+             * * 1 => checkboxOption1
+             * * 2 => checkboxOption2
+             * * 3 => checkboxOption3
+             */
+            checkbox?: Array<{
+                key: string;
+                label: string;
+            } | '1' | '2' | '3'>;
             /**
              * /label/group_id
              */
@@ -409,6 +426,7 @@ export declare namespace MembersService {
              * Validate
              */
             validate_only?: boolean;
+            auto_login?: number;
         };
         outputFormat?: string;
         lang?: string;
@@ -430,75 +448,67 @@ export declare namespace MembersService {
     interface postMembersServiceRcmsApi1MeUpdateRequest {
         requestBody: {
             /**
-             * Email
-             */
-            email?: string;
-            /**
-             * Login ID
-             */
-            login_id?: string;
-            /**
-             * Password
-             */
-            login_pwd?: string;
-            /**
-             * Nickname
-             */
-            nickname?: string;
-            /**
-             * Family name
+             * name1
              */
             name1?: string;
             /**
-             * Given name
+             * name2
              */
             name2?: string;
             /**
-             * Sex
+             * nickname
              */
-            sex?: ('m' | 'f' | 'e');
+            nickname?: string;
             /**
-             * Date of birth
+             * email
              */
-            birth?: string;
+            email?: string;
             /**
-             * Image1
+             * zip_code
              */
-            member_photo?: {
-                /**
-                 * File ID returned by File Upload API
-                 */
-                file_id?: string;
-                /**
-                 * File name
-                 */
-                file_nm?: string;
-                /**
-                 * Description
-                 */
-                desc?: string;
-                extension?: ('jpg' | 'gif' | 'png');
-            };
+            zip_code?: string;
             /**
-             * Text
+             * tdfk_cd
              */
-            text?: string;
+            tdfk_cd?: ('01' | '02' | '03' | '04' | '05' | '06' | '07' | '08' | '09' | '10' | '11' | '12' | '13' | '14' | '15' | '16' | '17' | '18' | '19' | '20' | '21' | '22' | '23' | '24' | '25' | '26' | '27' | '28' | '29' | '30' | '31' | '32' | '33' | '34' | '35' | '36' | '37' | '38' | '39' | '40' | '41' | '42' | '43' | '44' | '45' | '46' | '47' | '99');
             /**
-             * Textarea
+             * address1
+             */
+            address1?: string;
+            /**
+             * address2
+             */
+            address2?: string;
+            /**
+             * address3
+             */
+            address3?: string;
+            /**
+             * tel
+             */
+            tel?: string;
+            /**
+             * email_send_ng_flg
+             */
+            email_send_ng_flg?: (0 | 1);
+            /**
+             * tel_send_ng_flg
+             */
+            tel_send_ng_flg?: (0 | 1);
+            /**
+             * login_pwd
+             */
+            login_pwd?: string;
+            /**
+             * textarea
              */
             textarea?: string;
             /**
-             * Radio
-             * * 1 => radioOption1
-             * * 2 => radioOption2
-             * * 3 => radioOption3
+             * text
              */
-            radio?: {
-                key: string;
-                label: string;
-            } | '' | '1' | '2' | '3';
+            text?: string;
             /**
-             * Selectbox
+             * selectbox
              * * 1 => selectBoxOption1
              * * 2 => selectBoxOption2
              * * 3 => selectBoxOption3
@@ -508,22 +518,24 @@ export declare namespace MembersService {
                 label: string;
             } | '' | '1' | '2' | '3';
             /**
-             * Checkbox
-             * * 1 => checkboxOption1
-             * * 2 => checkboxOption2
-             * * 3 => checkboxOption3
+             * relation
              */
-            checkbox?: Array<{
+            relation?: {
+                module_type: string;
+                module_id: number;
+            } | number;
+            /**
+             * radio
+             * * 1 => radioOption1
+             * * 2 => radioOption2
+             * * 3 => radioOption3
+             */
+            radio?: {
                 key: string;
                 label: string;
-            } | '1' | '2' | '3'>;
+            } | '' | '1' | '2' | '3';
             /**
-             * Date
-             */
-            date?: string;
-            relation?: number;
-            /**
-             * File
+             * file
              */
             file?: {
                 /**
@@ -540,6 +552,20 @@ export declare namespace MembersService {
                 desc?: string;
             };
             /**
+             * date
+             */
+            date?: string | string;
+            /**
+             * checkbox
+             * * 1 => checkboxOption1
+             * * 2 => checkboxOption2
+             * * 3 => checkboxOption3
+             */
+            checkbox?: Array<{
+                key: string;
+                label: string;
+            } | '1' | '2' | '3'>;
+            /**
              * /label/group_id
              */
             group_id?: (2);
@@ -555,6 +581,7 @@ export declare namespace MembersService {
              * Validate
              */
             validate_only?: boolean;
+            auto_login?: number;
         };
         outputFormat?: string;
         lang?: string;
@@ -593,15 +620,6 @@ export declare const infos: ({
     class: typeof MembersService;
     className: string;
     method: typeof MembersService.postMembersServiceRcmsApi1MembersInsert;
-    methodName: string;
-    auth: null;
-    description: string;
-} | {
-    path: string;
-    httpMethod: string;
-    class: typeof MembersService;
-    className: string;
-    method: typeof MembersService.postMembersServiceRcmsApi1MembersUpdate;
     methodName: string;
     auth: null;
     description: string;

@@ -142,7 +142,7 @@ export declare namespace AuthenticationService {
         } | {
             token: string;
             temp_pwd: string;
-            password: string;
+            login_pwd: string;
         };
         outputFormat?: string;
         lang?: string;

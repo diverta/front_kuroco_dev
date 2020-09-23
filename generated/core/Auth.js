@@ -55,10 +55,10 @@ class Auth {
                 const res = yield exports.SpecialOperations.token(param);
                 const { access_token, refresh_token } = res.body;
                 if (access_token) {
-                    LocalStorage_1.LocalStorage.setAccessToken(access_token);
+                    LocalStorage_1.LocalStorage.setAccessToken(access_token.value);
                 }
                 if (refresh_token) {
-                    LocalStorage_1.LocalStorage.setRefreshToken(refresh_token);
+                    LocalStorage_1.LocalStorage.setRefreshToken(refresh_token.value);
                 }
                 return res;
             }

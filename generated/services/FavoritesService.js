@@ -18,7 +18,7 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 var __importStar = (this && this.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
     __setModuleDefault(result, mod);
     return result;
 };
@@ -213,7 +213,7 @@ exports.infos = [
                 /**
                  * Module type
                  */
-                module_type: string,
+                module_type: ('group' | 'menu' | 'comment' | 'inquiry' | 'login' | 'login_history' | 'member' | 'staticcontents' | 'site' | 'topics' | 'memberregist' | 'batch' | 'mailtemplateedit' | 'relation' | 'csvtable' | 'approvalflow' | 'api_googleanalytics' | 'onetime' | 'magazine' | 'tag' | 'api_webpush' | 'rcms_api' | 'firebase' | 'trigger' | 'ec' | 'rcms'),
                 /**
                  * module_id
                  */
@@ -244,7 +244,7 @@ exports.infos = [
                 /**
                  * Module type
                  */
-                module_type: string,
+                module_type: ('group' | 'menu' | 'comment' | 'inquiry' | 'login' | 'login_history' | 'member' | 'staticcontents' | 'site' | 'topics' | 'memberregist' | 'batch' | 'mailtemplateedit' | 'relation' | 'csvtable' | 'approvalflow' | 'api_googleanalytics' | 'onetime' | 'magazine' | 'tag' | 'api_webpush' | 'rcms_api' | 'firebase' | 'trigger' | 'ec' | 'rcms'),
                 /**
                  * module_id
                  */

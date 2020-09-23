@@ -32,14 +32,19 @@ export declare class InquiriesService {
      * ### **InquiryMessage::list (v1)**
      *
      *
-     * ## Controller parameters
-     *
-     * > **id** `1`
-     *
+     * @param inquiryId Inquiry form ID
      * @param outputFormat Format (json|xml|csv)
      * @param lang Language
      * @param charset Charset
-     * @param order Set the sort order. Available param {0}
+     * @param sCategory Category
+     * @param sStatus Status
+     * @param keyword Keyword
+     * @param pageId Page ID
+     * @param perPage Display number per page
+     * @param fromDt Reception Date
+     * @param toDt Reception Date
+     * @param fromModule From module
+     * @param fromId With ID
      * @result any
      * @throws ApiError
      */
@@ -95,14 +100,31 @@ export declare namespace InquiriesService {
     }
     type getInquiriesServiceRcmsApi1InquiryFormsInquiryIdResponse = any;
     interface getInquiriesServiceRcmsApi1Inquiry1MessagesRequest {
+        inquiryId: number;
         outputFormat?: string;
         lang?: string;
         charset?: string;
-        order?: string;
+        sCategory?: number;
+        sStatus?: number;
+        keyword?: string;
+        pageId?: number;
+        perPage?: string;
+        fromDt?: string;
+        toDt?: string;
+        fromModule?: string;
+        fromId?: number;
     }
     type getInquiriesServiceRcmsApi1Inquiry1MessagesResponse = any;
     interface postInquiriesServiceRcmsApi1Inquiry1MessagesSendRequest {
         requestBody: {
+            /**
+             * With ID
+             */
+            from_id?: number;
+            /**
+             * From module
+             */
+            from_module?: string;
             /**
              * Name
              */
@@ -162,7 +184,7 @@ export declare namespace InquiriesService {
             /**
              * DateTime
              */
-            ext_06?: string | {
+            ext_06?: string | string | {
                 y: number;
                 m: number;
                 d: number;
@@ -204,7 +226,7 @@ export declare namespace InquiriesService {
             /**
              * Date
              */
-            ext_10?: string | {
+            ext_10?: string | string | {
                 y: number;
                 m: number;
                 d: number;
@@ -222,6 +244,14 @@ export declare namespace InquiriesService {
     interface postInquiriesServiceRcmsApi1Inquiry1MessagesUpdateRequest {
         inquiryBnId: string;
         requestBody: {
+            /**
+             * With ID
+             */
+            from_id?: number;
+            /**
+             * From module
+             */
+            from_module?: string;
             /**
              * Name
              */
@@ -281,7 +311,7 @@ export declare namespace InquiriesService {
             /**
              * DateTime
              */
-            ext_06?: string | {
+            ext_06?: string | string | {
                 y: number;
                 m: number;
                 d: number;
@@ -323,7 +353,7 @@ export declare namespace InquiriesService {
             /**
              * Date
              */
-            ext_10?: string | {
+            ext_10?: string | string | {
                 y: number;
                 m: number;
                 d: number;

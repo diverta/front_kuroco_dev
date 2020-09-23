@@ -18,7 +18,7 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 var __importStar = (this && this.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
     __setModuleDefault(result, mod);
     return result;
 };
@@ -118,14 +118,19 @@ class InquiriesService {
      * ### **InquiryMessage::list (v1)**
      *
      *
-     * ## Controller parameters
-     *
-     * > **id** `1`
-     *
+     * @param inquiryId Inquiry form ID
      * @param outputFormat Format (json|xml|csv)
      * @param lang Language
      * @param charset Charset
-     * @param order Set the sort order. Available param {0}
+     * @param sCategory Category
+     * @param sStatus Status
+     * @param keyword Keyword
+     * @param pageId Page ID
+     * @param perPage Display number per page
+     * @param fromDt Reception Date
+     * @param toDt Reception Date
+     * @param fromModule From module
+     * @param fromId With ID
      * @result any
      * @throws ApiError
      */
@@ -140,10 +145,19 @@ class InquiriesService {
                     method: 'get',
                     path: `/rcms-api/1/inquiry1/messages`,
                     query: {
+                        'inquiry_id': requestParam.inquiryId,
                         '_output_format': requestParam.outputFormat,
                         '_lang': requestParam.lang,
                         '_charset': requestParam.charset,
-                        'order': requestParam.order,
+                        's_category': requestParam.sCategory,
+                        's_status': requestParam.sStatus,
+                        'keyword': requestParam.keyword,
+                        'pageID': requestParam.pageId,
+                        'per_page': requestParam.perPage,
+                        'from_dt': requestParam.fromDt,
+                        'to_dt': requestParam.toDt,
+                        'from_module': requestParam.fromModule,
+                        'from_id': requestParam.fromId,
                     },
                 });
             });
@@ -296,10 +310,19 @@ exports.infos = [
         auth: null,
         description: `
         export interface getInquiriesServiceRcmsApi1Inquiry1MessagesRequest {
+            inquiryId: number,
             outputFormat?: string,
             lang?: string,
             charset?: string,
-            order?: string,
+            sCategory?: number,
+            sStatus?: number,
+            keyword?: string,
+            pageId?: number,
+            perPage?: string,
+            fromDt?: string,
+            toDt?: string,
+            fromModule?: string,
+            fromId?: number,
         };
         export type getInquiriesServiceRcmsApi1Inquiry1MessagesResponse = any;
         `,
@@ -315,6 +338,14 @@ exports.infos = [
         description: `
         export interface postInquiriesServiceRcmsApi1Inquiry1MessagesSendRequest {
             requestBody: {
+                /**
+                 * With ID
+                 */
+                from_id?: number,
+                /**
+                 * From module
+                 */
+                from_module?: string,
                 /**
                  * Name
                  */
@@ -365,7 +396,7 @@ exports.infos = [
                 /**
                  * DateTime
                  */
-                ext_06?: string | { y: number ,m: number ,d: number ,h: number ,mm: number  },
+                ext_06?: string | string | { y: number ,m: number ,d: number ,h: number ,mm: number  },
                 ext_07?: {
                     /**
                      * File ID returned by File Upload API
@@ -401,7 +432,7 @@ exports.infos = [
                 /**
                  * Date
                  */
-                ext_10?: string | { y: number ,m: number ,d: number  },
+                ext_10?: string | string | { y: number ,m: number ,d: number  },
                 /**
                  * Validate
                  */
@@ -426,6 +457,14 @@ exports.infos = [
         export interface postInquiriesServiceRcmsApi1Inquiry1MessagesUpdateRequest {
             inquiryBnId: string,
             requestBody: {
+                /**
+                 * With ID
+                 */
+                from_id?: number,
+                /**
+                 * From module
+                 */
+                from_module?: string,
                 /**
                  * Name
                  */
@@ -476,7 +515,7 @@ exports.infos = [
                 /**
                  * DateTime
                  */
-                ext_06?: string | { y: number ,m: number ,d: number ,h: number ,mm: number  },
+                ext_06?: string | string | { y: number ,m: number ,d: number ,h: number ,mm: number  },
                 ext_07?: {
                     /**
                      * File ID returned by File Upload API
@@ -512,7 +551,7 @@ exports.infos = [
                 /**
                  * Date
                  */
-                ext_10?: string | { y: number ,m: number ,d: number  },
+                ext_10?: string | string | { y: number ,m: number ,d: number  },
                 /**
                  * Validate
                  */

@@ -18,7 +18,7 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 var __importStar = (this && this.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
     __setModuleDefault(result, mod);
     return result;
 };
@@ -30,10 +30,10 @@ const MembersService = __importStar(require("../services/MembersService"));
 const CommentsService = __importStar(require("../services/CommentsService"));
 const FavoritesService = __importStar(require("../services/FavoritesService"));
 const InquiriesService = __importStar(require("../services/InquiriesService"));
+const EcService = __importStar(require("../services/EcService"));
 const FilesService = __importStar(require("../services/FilesService"));
 const TagsService = __importStar(require("../services/TagsService"));
 const TablesService = __importStar(require("../services/TablesService"));
-const AsynchronousProcessingService = __importStar(require("../services/AsynchronousProcessingService"));
 const ApiService = __importStar(require("../services/ApiService"));
 exports.ApiInfos = [
     ...AuthenticationService.infos,
@@ -42,9 +42,9 @@ exports.ApiInfos = [
     ...CommentsService.infos,
     ...FavoritesService.infos,
     ...InquiriesService.infos,
+    ...EcService.infos,
     ...FilesService.infos,
     ...TagsService.infos,
     ...TablesService.infos,
-    ...AsynchronousProcessingService.infos,
     ...ApiService.infos,
 ];
