@@ -72,9 +72,13 @@ describe('Favorite', () => {
       if ( favorites.list.length === 0) {
         break;
       }
-      await favorites.list.forEach(row => {
-        deleteFavorite({ moduleType: row.module_type, moduleId: row.module_id});
-      });
+      /*
+       * なんか順に削除する処理がうまく動かない上に、
+       * 削除されないことも結構あるので要調査
+       */
+      for (let row of favorites.list) {
+        await deleteFavorite({ moduleType: row.module_type, moduleId: row.module_id});
+      }
     };
     // get favorites of test members
     expect(
