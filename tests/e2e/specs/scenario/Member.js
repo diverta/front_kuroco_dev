@@ -50,7 +50,7 @@ const insertExt = {
   date: '2020-06-01',
   relation: {
     'module_type': 'topics',
-    'module_id': 15
+    'module_id': 444
   },
   // file: {
   //   file_id: 'file.png',
@@ -68,13 +68,6 @@ const postInsertMember = ({ memberPhoto, file }) => {
       nickname: 'TestMember',
       name1: 'Test',
       name2: 'Member',
-      sex: 'm',
-      birth: '1990-01-01',
-      member_photo: {
-        file_id: memberPhoto.fileId,
-        file_nm: memberPhoto.fileNm,
-        desc: 'InsertMemberPhoto',
-      },
       text: insertExt.text,
       textarea: insertExt.textarea,
       radio: insertExt.radio,
@@ -87,7 +80,6 @@ const postInsertMember = ({ memberPhoto, file }) => {
         file_nm: file.fileNm,
         desc: 'InsertFile',
       },
-      open_flg: 1,
       login_ok_flg: 1,
       validate_only: false,
     },
@@ -111,7 +103,7 @@ const updateExt = {
   date: '2020-06-02',
   relation: {
     'module_type': 'topics',
-    'module_id': 20
+    'module_id': 445
   },
   // file: {
   //   file_id: 'file.png',
@@ -130,13 +122,6 @@ const postUpdateMember = ({ memberId, memberPhoto, file }) => {
       nickname: 'テストメンバー',
       name1: 'テスト',
       name2: 'メンバー',
-      sex: 'f',
-      birth: '1990-01-01',
-      member_photo: {
-        file_id: memberPhoto.fileId,
-        file_nm: memberPhoto.fileNm,
-        desc: 'UpdateMemberPhoto',
-      },
       text: updateExt.text,
       textarea: updateExt.textarea,
       radio: updateExt.radio,
@@ -149,7 +134,6 @@ const postUpdateMember = ({ memberId, memberPhoto, file }) => {
         file_nm: file.fileNm,
         desc: 'UpdateFile',
       },
-      open_flg: 1,
       login_ok_flg: 0,
       validate_only: false,
     },
@@ -246,7 +230,7 @@ describe('Member', () => {
 
     Object.keys(insertExt).forEach(key => {
       // if (key === 'date' || key === 'relation') return;
-      expect(insertedMember.details[key]).to.deep.equal(insertExt[key]);
+      expect(insertedMember.details[key], key).to.deep.equal(insertExt[key]);
     });
     expect(insertedMember.details.image_exist).to.be.true;
     expect(insertedMember.details.image_url, 'image_url').to.not.empty;
