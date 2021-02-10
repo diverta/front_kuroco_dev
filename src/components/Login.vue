@@ -104,11 +104,19 @@ export default Vue.extend({
       this.updateLoggedInStatus(false);
     },
     handleOnClickLogin(): void {
-      Auth.login({
-        requestBody: { email: this.email, password: this.password },
-      }).then(() => {
-        this.updateLoggedInStatus(true);
-      });
+      if (this.email === '' && this.password === '') {
+        Auth.createToken({
+          requestBody: {}
+        }).then(() => {
+          this.updateLoggedInStatus(true);
+        });
+      } else {
+        Auth.login({
+          requestBody: { email: this.email, password: this.password },
+        }).then(() => {
+          this.updateLoggedInStatus(true);
+        });
+      }
     },
     handleOnClickSamlLogin(e: Event) {
       e.stopPropagation();
