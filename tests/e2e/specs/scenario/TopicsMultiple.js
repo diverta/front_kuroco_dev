@@ -6,41 +6,41 @@
 import { executeRequest, formatDate, login, upload } from '../../base';
 
 const getTopicsMultiple = () => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.getTopicsServiceRcmsApi1TopicsMultipleRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.getContentServiceRcmsApi1TopicsMultipleRequest} */
   const requestData = {
     lang: 'en',
   };
   return executeRequest({
     cy,
-    query: 'TopicsService get multiple',
+    query: 'ContentService get multiple',
     indexOfApis: 0,
     requestData,
   });
 };
 
 const getTopicsMultipleByIds = ({ topicsIds }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.getTopicsServiceRcmsApi1TopicsMultipleRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.getContentServiceRcmsApi1TopicsMultipleRequest} */
   const requestData = {
     id: topicsIds,
     lang: 'en',
   };
   return executeRequest({
     cy,
-    query: 'TopicsService get multiple',
+    query: 'ContentService get multiple',
     indexOfApis: 0,
     requestData,
   });
 };
 
 const getTopicMultiple = ({ topicsId }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.getTopicsServiceRcmsApi1TopicsMultipleTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.getContentServiceRcmsApi1TopicsMultipleTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     lang: 'en',
   };
   return executeRequest({
     cy,
-    query: 'TopicsService get multiple id',
+    query: 'ContentService get multiple id',
     requestData,
   });
 };
@@ -118,7 +118,7 @@ const insertMultipleExt = {
   ext_col_14: ['text1:0', 'text1:1', 'text1:2'],
 };
 const postInsertTopicMultiple = ({ files, images }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.postTopicsServiceRcmsApi1TopicsMultipleInsertRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleInsertRequest} */
   const requestData = {
     requestBody: {
       subject: 'Inserted',
@@ -126,10 +126,8 @@ const postInsertTopicMultiple = ({ files, images }) => {
       ymd: formatDate('date'),
       open_type: 'open',
       topics_flg: 1,
-      season: 1,
       contents: 'SampleValue',
       regular_flg: 0,
-      link_flg: 0,
       ext_col_01: insertMultipleExt.ext_col_01,
       ext_col_02: insertMultipleExt.ext_col_02,
       ext_col_03: insertMultipleExt.ext_col_03,
@@ -163,7 +161,7 @@ const postInsertTopicMultiple = ({ files, images }) => {
   };
   return executeRequest({
     cy,
-    query: 'TopicsService post multiple insert',
+    query: 'ContentService post multiple insert',
     requestData,
     timeout: 15000,
   });
@@ -242,7 +240,7 @@ const updateMultipleExt = {
   ext_col_14: ['text2:0', 'text2:1', 'text2:2'],
 };
 const postUpdateTopicMultiple = ({ topicsId, files, images }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.postTopicsServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -251,10 +249,8 @@ const postUpdateTopicMultiple = ({ topicsId, files, images }) => {
       ymd: formatDate('date'),
       open_type: 'open',
       topics_flg: 1,
-      season: 1,
       contents: 'SampleValue',
       regular_flg: 0,
-      link_flg: 0,
       ext_col_01: updateMultipleExt.ext_col_01,
       ext_col_02: updateMultipleExt.ext_col_02,
       ext_col_03: updateMultipleExt.ext_col_03,
@@ -288,21 +284,21 @@ const postUpdateTopicMultiple = ({ topicsId, files, images }) => {
   };
   return executeRequest({
     cy,
-    query: 'TopicsService post multiple update',
+    query: 'ContentService post multiple update',
     requestData,
     timeout: 30000,
   });
 };
 
 const postDeleteTopicMultiple = ({ topicsId }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.postTopicsServiceRcmsApi1TopicsMultipleDeleteTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleDeleteTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     lang: 'en',
   };
   return executeRequest({
     cy,
-    query: 'TopicsService post multiple delete',
+    query: 'ContentService post multiple delete',
     requestData,
   });
 };

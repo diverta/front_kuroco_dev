@@ -10,7 +10,7 @@ const execLogin = () => {
   const requestData = {
     requestBody: {
       email: 'test',
-      password: 'qwer1234',
+      password: 'test1234',
     },
   };
   return executeRequest({

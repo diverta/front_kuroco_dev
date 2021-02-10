@@ -6,41 +6,41 @@
 import { executeRequest, formatDate, login, upload } from '../../base';
 
 const getTopics = () => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.getTopicsServiceRcmsApi1Topics1Request} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.getContentServiceRcmsApi1Topics1Request} */
   const requestData = {
     lang: 'en',
   };
   return executeRequest({
     cy,
-    query: 'TopicsService get topics1',
+    query: 'ContentService get topics1',
     indexOfApis: 1,
     requestData,
   });
 };
 
 const getTopicsByIds = ({ topicsIds }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.getTopicsServiceRcmsApi1Topics1Request} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.getContentServiceRcmsApi1Topics1Request} */
   const requestData = {
     id: topicsIds,
     lang: 'en',
   };
   return executeRequest({
     cy,
-    query: 'TopicsService get topics1',
+    query: 'ContentService get topics1',
     indexOfApis: 1,
     requestData,
   });
 };
 
 const getTopic = ({ topicsId }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.getTopicsServiceRcmsApi1Topics1TopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.getContentServiceRcmsApi1Topics1TopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     lang: 'en',
   };
   return executeRequest({
     cy,
-    query: 'TopicsService get topics1 id',
+    query: 'ContentService get topics1 id',
     requestData,
   });
 };
@@ -72,7 +72,7 @@ const insertExt = {
   ext_col_14: 'text1',
 };
 const postInsertTopic = ({ file, image }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.postTopicsServiceRcmsApi1Topics1InsertRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1Topics1InsertRequest} */
   const requestData = {
     requestBody: {
       subject: 'Inserted',
@@ -80,10 +80,8 @@ const postInsertTopic = ({ file, image }) => {
       ymd: formatDate('date'),
       open_type: 'open',
       topics_flg: 1,
-      season: 1,
       contents: 'SampleValue',
       regular_flg: 0,
-      link_flg: 0,
       ext_col_01: insertExt.ext_col_01,
       ext_col_02: insertExt.ext_col_02,
       ext_col_03: insertExt.ext_col_03,
@@ -113,7 +111,7 @@ const postInsertTopic = ({ file, image }) => {
   };
   return executeRequest({
     cy,
-    query: 'TopicsService post topics1 insert',
+    query: 'ContentService post topics1 insert',
     requestData,
     timeout: 15000,
   });
@@ -146,7 +144,7 @@ const updateExt = {
   ext_col_14: 'text2',
 };
 const postUpdateTopic = ({ topicsId, file, image }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.postTopicsServiceRcmsApi1Topics1UpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1Topics1UpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -155,10 +153,8 @@ const postUpdateTopic = ({ topicsId, file, image }) => {
       ymd: formatDate('date'),
       open_type: 'open',
       topics_flg: 1,
-      season: 1,
       contents: 'SampleValue',
       regular_flg: 0,
-      link_flg: 0,
       ext_col_01: updateExt.ext_col_01,
       ext_col_02: updateExt.ext_col_02,
       ext_col_03: updateExt.ext_col_03,
@@ -188,21 +184,21 @@ const postUpdateTopic = ({ topicsId, file, image }) => {
   };
   return executeRequest({
     cy,
-    query: 'TopicsService post topics1 update',
+    query: 'ContentService post topics1 update',
     requestData,
     timeout: 15000,
   });
 };
 
 const postDeleteTopic = ({ topicsId }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.postTopicsServiceRcmsApi1Topics1DeleteTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1Topics1DeleteTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     lang: 'en',
   };
   return executeRequest({
     cy,
-    query: 'TopicsService post topics1 delete',
+    query: 'ContentService post topics1 delete',
     requestData,
   });
 };
