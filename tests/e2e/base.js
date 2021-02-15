@@ -70,8 +70,12 @@ export function login(
     cy.contains(queries.login.status, 'ANONYMOUS');
     cy.get(queries.login.button).click();
     cy.get(queries.login.form._);
-    cy.get(queries.login.form.email).type(email);
-    cy.get(queries.login.form.password).type(password);
+    if (email != '') {
+      cy.get(queries.login.form.email).type(email);
+    }
+    if (password != '') {
+      cy.get(queries.login.form.password).type(password);
+    }
     cy.get(queries.login.form.login).click();
     cy.get(queries.login.form.close).click();
     cy.contains(queries.login.status, 'LOGGEDIN');
