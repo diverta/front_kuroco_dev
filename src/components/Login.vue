@@ -3,7 +3,7 @@
     <template v-slot:activator="{ on }">
       <v-row
         class="flex-column ma-0 pa-0 mr-4"
-        style="max-width: 80px; min-width: 80px"
+        style="max-width: 120px; min-width: 120px"
       >
         <div class="d-flex ma-0 pa-0 justify-space-around">
           <v-btn
@@ -101,20 +101,20 @@ export default Vue.extend({
       AuthenticationService.postAuthenticationServiceRcmsApi1AuthLogout({});
       LocalStorage.setAccessToken('');
       LocalStorage.setRefreshToken('');
-      this.updateLoggedInStatus(false);
+      this.updateLoggedInStatus([false]);
     },
     handleOnClickLogin(): void {
       if (this.email === '' && this.password === '') {
         Auth.createToken({
           requestBody: {}
         }).then(() => {
-          this.updateLoggedInStatus(true);
+          this.updateLoggedInStatus([true, true]);
         });
       } else {
         Auth.login({
           requestBody: { email: this.email, password: this.password },
         }).then(() => {
-          this.updateLoggedInStatus(true);
+          this.updateLoggedInStatus([true]);
         });
       }
     },

@@ -69,7 +69,7 @@ export default Vue.extend({
   name: 'Uploader',
   watch: {
     loggedIn(loggedIn) {
-      loggedIn ? this.mountUploader() : this.uploader = null;
+      loggedIn && !this.anonymous ? this.mountUploader() : this.uploader = null;
     }
   },
   data() {
@@ -85,6 +85,7 @@ export default Vue.extend({
   computed: {
     ...mapState([
       'loggedIn',
+      'anonymous',
     ])
   },
   methods: {
