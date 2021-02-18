@@ -78,10 +78,10 @@ export function login(
     }
     cy.get(queries.login.form.login).click();
     cy.get(queries.login.form.close).click();
-    if (email != '' || password != '') {
-      cy.contains(queries.login.status, 'LOGGEDIN');
-    } else {
+    if (email == '' && password == '') {
       cy.contains(queries.login.status, 'ANONYMOUS');
+    } else {
+      cy.contains(queries.login.status, 'LOGGEDIN');
     }
     console.log('LOGIN PASSED!!');
   }

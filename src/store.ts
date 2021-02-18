@@ -65,7 +65,7 @@ const store = new Store<IStore>({
       state.response = response;
       state.isResponseErrorOccured = isResponseErrorOccured;
     },
-    setLoggedInStatus(state, [loggedIn, anonymous]) {
+    setLoggedInStatus(state, {loggedIn, anonymous}) {
       state.loggedIn = loggedIn;
       state.anonymous = anonymous;
     },
@@ -89,8 +89,8 @@ const store = new Store<IStore>({
     clearResponse(context) {
       context.commit('setResponse', [null, false]);
     },
-    updateLoggedInStatus(context, [loggedIn, anonymous = false]) {
-      context.commit('setLoggedInStatus', [loggedIn, anonymous]);
+    updateLoggedInStatus(context, {loggedIn, anonymous = false}) {
+      context.commit('setLoggedInStatus', {loggedIn, anonymous});
     },
   },
 });

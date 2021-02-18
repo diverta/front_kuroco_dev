@@ -101,20 +101,20 @@ export default Vue.extend({
       AuthenticationService.postAuthenticationServiceRcmsApi1AuthLogout({});
       LocalStorage.setAccessToken('');
       LocalStorage.setRefreshToken('');
-      this.updateLoggedInStatus([false]);
+      this.updateLoggedInStatus({loggedIn: false});
     },
     handleOnClickLogin(): void {
       if (this.email === '' && this.password === '') {
         Auth.createToken({
           requestBody: {}
         }).then(() => {
-          this.updateLoggedInStatus([true, true]);
+          this.updateLoggedInStatus({loggedIn: true, anonymous: true});
         });
       } else {
         Auth.login({
           requestBody: { email: this.email, password: this.password },
         }).then(() => {
-          this.updateLoggedInStatus([true]);
+          this.updateLoggedInStatus({loggedIn: true});
         });
       }
     },
