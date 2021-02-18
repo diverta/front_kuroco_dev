@@ -119,7 +119,7 @@ const testCommentScenario = async () => {
     if(key=='name') return;
     expect(insertedComment[key], key).to.equal(postInsertCommentData[key]);
   });
-  expect(insertedComment['member_id'], 'member_id').to.not.equal(0);
+  expect(insertedComment['member_id'], 'member_id').to.equal(0);
 
   
   // post update comment
@@ -133,7 +133,7 @@ const testCommentScenario = async () => {
   Object.keys(postUpdateCommentData).forEach(key => {
     expect(updatedComment[key], key).to.equal(postUpdateCommentData[key]);
   });
-  expect(updatedComment['member_id'], 'member_id').to.not.equal(0);
+  expect(updatedComment['member_id'], 'member_id').to.equal(0);
 
   // post delete comment
   await postDeleteComment({ commentId: addedId });
@@ -152,9 +152,8 @@ const topicsIdCommentTest = 45;
 
 describe('Comment', () => {
 
-
   it(`
-      login ->
+      no login ->
       get comments ->
       post insert comment ->
       get comments including inserted one ->
@@ -164,7 +163,7 @@ describe('Comment', () => {
       get comments not including deleted one
 
   `, async () => {
-    login();
+    login({ email: '', password: '' });
     await testCommentScenario();
     // logout();
   });

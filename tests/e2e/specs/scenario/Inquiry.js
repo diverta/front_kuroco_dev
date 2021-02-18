@@ -150,7 +150,6 @@ const fixtures = {
 };
 
 describe('Inquiry', () => {
-  /* なんか "Additional properties not allowed: body" とか出てバグってるので要調査
   it(`
       get messages ->
       get forms ->
@@ -236,5 +235,4 @@ describe('Inquiry', () => {
     expect(updatedMessage.ext_10, 'ext_10').to.equal('2020-04-24');
 
   });
-  */
 });
