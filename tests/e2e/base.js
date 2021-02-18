@@ -67,14 +67,22 @@ export function login(
   options = { email: 'test@example.com', password: 'qwer1234' }
 ) {
   function __login({ email, password }) {
-    cy.contains(queries.login.status, 'ANONYMOUS');
+    cy.contains(queries.login.status, 'UNAUTHENTICATED');
     cy.get(queries.login.button).click();
     cy.get(queries.login.form._);
-    cy.get(queries.login.form.email).type(email);
-    cy.get(queries.login.form.password).type(password);
+    if (email != '') {
+      cy.get(queries.login.form.email).type(email);
+    }
+    if (password != '') {
+      cy.get(queries.login.form.password).type(password);
+    }
     cy.get(queries.login.form.login).click();
     cy.get(queries.login.form.close).click();
-    cy.contains(queries.login.status, 'LOGGEDIN');
+    if (email == '' && password == '') {
+      cy.contains(queries.login.status, 'ANONYMOUS');
+    } else {
+      cy.contains(queries.login.status, 'LOGGEDIN');
+    }
     console.log('LOGIN PASSED!!');
   }
 
@@ -91,7 +99,7 @@ export function logout() {
     cy.get(queries.login.form._);
     cy.get(queries.login.form.logout).click();
     cy.get(queries.login.form.close).click();
-    cy.contains(queries.login.status, 'ANONYMOUS');
+    cy.contains(queries.login.status, 'UNAUTHENTICATED');
   }
 
   cy.visit('/');
