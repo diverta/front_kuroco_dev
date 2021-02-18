@@ -58,7 +58,7 @@ const insertExt = {
   //   desc: 'File',
   // },
 };
-const postInsertMember = ({ memberPhoto, file }) => {
+const postInsertMember = ({ file }) => {
   /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersInsertRequest} */
   const requestData = {
     requestBody: {
@@ -111,7 +111,7 @@ const updateExt = {
   //   desc: 'File',
   // },
 };
-const postUpdateMember = ({ memberId, memberPhoto, file }) => {
+const postUpdateMember = ({ memberId, file }) => {
   /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersUpdateRequest} */
   const requestData = {
     requestBody: {
@@ -214,9 +214,8 @@ describe('Member', () => {
     await getMember({ memberId: members.list[0].member_id });
 
     // post insert member
-    const insertMemberPhoto = await upload({ path: fixtures.rcms });
     const insertFile = await upload({ path: fixtures.diverta });
-    const insertRes = await postInsertMember({ memberPhoto: insertMemberPhoto, file: insertFile });
+    const insertRes = await postInsertMember({ file: insertFile });
     const addedId = insertRes.id;
     // get members including updated one
     expect(
@@ -232,21 +231,14 @@ describe('Member', () => {
       // if (key === 'date' || key === 'relation') return;
       expect(insertedMember.details[key], key).to.deep.equal(insertExt[key]);
     });
-    expect(insertedMember.details.image_exist).to.be.true;
-    expect(insertedMember.details.image_url, 'image_url').to.not.empty;
-    // expect(insertedMember.details.member_photo).to.exist;
-    // expect(insertedMember.details.member_photo.file_id).to.not.empty;
-    // expect(insertedMember.details.member_photo.file_nm).to.equal(fixtures.rcms);
-    // expect(insertedMember.details.member_photo.desc).to.equal('InsertMemberPhoto');
     expect(insertedMember.details.file, 'file').to.exist;
     expect(insertedMember.details.file.id, 'file.id').to.not.empty;
     expect(insertedMember.details.file.url, 'file.url').to.not.empty;
     expect(insertedMember.details.file.desc, 'file.desc').to.equal('InsertFile');
 
     // post update inserted member
-    const updateMemberPhoto = await upload({ path: fixtures.diverta });
     const updateFile = await upload({ path: fixtures.rcms });
-    const updateRes = await postUpdateMember({ memberId: addedId, memberPhoto: updateMemberPhoto, file: updateFile });
+    const updateRes = await postUpdateMember({ memberId: addedId, file: updateFile });
     // get members including updated one
     expect(
       (await getMembersByIds({memberIds: [addedId]}))
@@ -261,12 +253,6 @@ describe('Member', () => {
       // if (key === 'date' || key === 'relation') return;
       expect(updatedMember.details[key], key).to.deep.equal(updateExt[key]);
     });
-    expect(updatedMember.details.image_exist).to.be.true;
-    expect(updatedMember.details.image_url, 'image_url').to.not.empty;
-    // expect(updatedMember.details.member_photo).to.exist;
-    // expect(updatedMember.details.member_photo.file_id).to.not.empty;
-    // expect(updatedMember.details.member_photo.file_nm).to.equal(fixtures.diverta);
-    // expect(updatedMember.details.member_photo.desc).to.equal('UpdateMemberPhoto');
     expect(updatedMember.details.file, 'file').to.exist;
     expect(updatedMember.details.file.id, 'file,id').to.not.empty;
     expect(updatedMember.details.file.url, 'file,url').to.not.empty;
@@ -303,9 +289,8 @@ describe('Member', () => {
     login();
 
     // post insert member
-    const insertMemberPhoto = await upload({ path: fixtures.rcms });
     const insertFile = await upload({ path: fixtures.diverta });
-    const insertRes = await postInsertMember({ memberPhoto: insertMemberPhoto, file: insertFile });
+    const insertRes = await postInsertMember({ file: insertFile });
     const addedId = insertRes.id;
 
     // get member by ID of inserted one
