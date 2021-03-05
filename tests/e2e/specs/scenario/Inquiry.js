@@ -35,6 +35,89 @@ const getFormById = ({ inquiryId }) => {
     requestData,
   });
 };
+
+const requestBodySendExt11 = [
+  {
+    "ROW": {
+      "key": "col1",
+      "label": "COLUMN_1"
+    },
+    "COL": {
+      "key": "row1",
+      "label": "ROW_1"
+    }
+  },
+  {
+    "ROW": {
+      "key": "col2",
+      "label": "COLUMN_2"
+    },
+    "COL": {
+      "key": "row2",
+      "label": "ROW_2"
+    }
+  },
+  {
+    "ROW": {
+      "key": "col3",
+      "label": "COLUMN_3"
+    },
+    "COL": {
+      "key": "row3",
+      "label": "ROW_3"
+    }
+  },
+];
+const requestBodySendExt12 = [
+  {
+    "ROW": {
+      "key": "col1",
+      "label": "COLUMN_1"
+    },
+    "COL": [
+      {
+        "key": "row1",
+        "label": "ROW_1"
+      }
+    ]
+  },
+  {
+    "ROW": {
+      "key": "col2",
+      "label": "COLUMN_2"
+    },
+    "COL": [
+      {
+        "key": "row1",
+        "label": "ROW_1"
+      },
+      {
+        "key": "row2",
+        "label": "ROW_2"
+      },
+    ]
+  },
+  {
+    "ROW": {
+      "key": "col3",
+      "label": "COLUMN_3"
+    },
+    "COL": [
+      {
+        "key": "row1",
+        "label": "ROW_1"
+      },
+      {
+        "key": "row2",
+        "label": "ROW_2"
+      },
+      {
+        "key": "row3",
+        "label": "ROW_3"
+      }
+    ]
+  },
+];
 const sendMessage = ({ file }) => {
   /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.postInquiriesServiceRcmsApi1Inquiry1MessagesSendRequest} */
   const requestData = {
@@ -78,6 +161,8 @@ const sendMessage = ({ file }) => {
         text: 'Text1',
       },
       ext_10: '2020-04-23',
+      ext_11: requestBodySendExt11,
+      ext_12: requestBodySendExt12,
       validate_only: false,
     },
   };
@@ -88,15 +173,82 @@ const sendMessage = ({ file }) => {
     timeout: 15000,
   });
 };
+
+const requestBodyUpdateExt11 = [
+  {
+    "ROW": {
+      "key": "col1",
+      "label": "COLUMN_1"
+    },
+    "COL": {
+      "key": "row3",
+      "label": "ROW_3"
+    }
+  },
+  {
+    "ROW": {
+      "key": "col2",
+      "label": "COLUMN_2"
+    },
+    "COL": {}
+  },
+  {
+    "ROW": {
+      "key": "col3",
+      "label": "COLUMN_3"
+    },
+    "COL": {
+      "key": "row2",
+      "label": "ROW_2"
+    }
+  },
+];
+const requestBodyUpdateExt12 = [
+  {
+    "ROW": {
+      "key": "col1",
+      "label": "COLUMN_1"
+    },
+    "COL": [
+      {
+        "key": "row2",
+        "label": "ROW_2"
+      },
+      {
+        "key": "row3",
+        "label": "ROW_3"
+      }
+    ]
+  },
+  {
+    "ROW": {
+      "key": "col2",
+      "label": "COLUMN_2"
+    },
+    "COL": []
+  },
+  {
+    "ROW": {
+      "key": "col3",
+      "label": "COLUMN_3"
+    },
+    "COL": [
+      {
+        "key": "row2",
+        "label": "ROW_2"
+      }
+    ]
+  },
+];
 const updateMessage = ({ inquiryBnId, file }) => {
   /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.postInquiriesServiceRcmsApi1Inquiry1MessagesUpdateInquiryBnIdRequest} */
   const requestData = {
     inquiryBnId,
     requestBody: {
-      name: 'My Name',
-      from_mail: 'email@example.com',
+      name: 'Name2',
+      from_mail: 'email2@example.com',
       body: 'テストメッセージ2',
-      inquiry_category_id: 1,
+      inquiry_category_id: 3,
       ext_01: 'string2',
       ext_02: 'string2',
       ext_03: {
@@ -132,6 +284,8 @@ const updateMessage = ({ inquiryBnId, file }) => {
         text: 'Text2',
       },
       ext_10: '2020-04-24',
+      ext_11: requestBodyUpdateExt11,
+      ext_12: requestBodyUpdateExt12,
       validate_only: false,
     },
   };
@@ -206,6 +360,8 @@ describe('Inquiry', () => {
     expect(sentMessage.ext_09.options, 'ext_09.options').to.equal('1');
     expect(sentMessage.ext_09.text, 'ext_09.text').to.equal('Text1');
     expect(sentMessage.ext_10, 'ext_10').to.equal('2020-04-23');
+    expect(sentMessage.ext_11, 'ext_11').to.deep.equal(requestBodySendExt11);
+    expect(sentMessage.ext_12, 'ext_12').to.deep.equal(requestBodySendExt12);
 
     const updateFile = fixtures.rcms;
     const updateFileData = await upload({ path: updateFile });
@@ -213,9 +369,9 @@ describe('Inquiry', () => {
     const updatedMessage = await getMessageBy(addedId);
     expect(updatedMessage).to.exist;
     expect(updatedMessage.name, 'name').to.equal('My Name');
-    expect(updatedMessage.from_mail, 'from_mail').to.equal('email@example.com');
+    expect(updatedMessage.from_mail, 'from_mail').to.equal('email2@example.com');
     expect(updatedMessage.body, 'body').to.equal('テストメッセージ2');
-    expect(updatedMessage.inquiry_category_id, 'inquiry_category_id').to.equal(1);
+    expect(updatedMessage.inquiry_category_id, 'inquiry_category_id').to.equal(3);
     expect(updatedMessage.ext_01, 'ext_01').to.equal('string2');
     expect(updatedMessage.ext_02, 'ext_02').to.equal('string2');
     expect(updatedMessage.ext_03.key, 'ext_03.key').to.equal('2');
@@ -233,6 +389,8 @@ describe('Inquiry', () => {
     expect(updatedMessage.ext_09.options, 'ext_09.options').to.equal('2');
     expect(updatedMessage.ext_09.text, 'ext_09.text').to.equal('Text2');
     expect(updatedMessage.ext_10, 'ext_10').to.equal('2020-04-24');
+    expect(updatedMessage.ext_11, 'ext_11').to.deep.equal(requestBodyUpdateExt11);
+    expect(updatedMessage.ext_12, 'ext_12').to.deep.equal(requestBodyUpdateExt12);
 
   });
 });
