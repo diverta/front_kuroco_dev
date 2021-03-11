@@ -10,6 +10,8 @@ const hasLoginEndpoint = loginApis.length > 0;
 
 const requiresAuth = !!OpenAPI.SECURITY['Token-Auth'];
 
+import { testMember } from '../../base';
+
 // logger
 (() => {
   console.group('AUTHENTICATION INFO');
@@ -45,8 +47,8 @@ const requiresAuth = !!OpenAPI.SECURITY['Token-Auth'];
 const execLogin = () => {
   const requestData = {
     requestBody: {
-      email: 'test',
-      password: 'qwer1234',
+      email: testMember.email,
+      password: testMember.password,
     },
   };
   return executeRequest({
@@ -73,7 +75,7 @@ const execApis = () => {
   const requestData = {};
   return executeRequest({
     cy,
-    query: 'apis',
+    query: 'get apis',
     requestData,
   });
 };
@@ -128,8 +130,8 @@ describe('Authentication pattern.', () => {
       const { access_token, refresh_token } = await execToken({
         grant_token: res.grant_token,
       });
-      LocalStorage.setAccessToken(access_token);
-      LocalStorage.setRefreshToken(refresh_token);
+      LocalStorage.setAccessToken(access_token.value);
+      LocalStorage.setRefreshToken(refresh_token.value);
 
       let error;
       await execConfirmingAPIs().catch(() => (error = true));
@@ -142,7 +144,7 @@ describe('Authentication pattern.', () => {
     it('should not be 401: requests token -> apis.', async () => {
       cy.visit('/');
       const { access_token } = await execToken();
-      Auth.setAccessToken(access_token);
+      Auth.setAccessToken(access_token.value);
 
       let error;
       await execConfirmingAPIs().catch(() => (error = true));
