@@ -2,6 +2,11 @@ const path = require('path');
 import promisify from 'cypress-promise';
 import 'cypress-file-upload';
 
+export const testMember = {
+  email: Cypress.env('TEST_EMAIL'),
+  password: Cypress.env('TEST_PASSWORD'),
+};
+
 function decode(content) {
   return content
     .replace(/\\n/g, '\\n')
@@ -64,7 +69,7 @@ export const queries = {
  * @param {*} options.password for customized login info as password user expected.
  */
 export function login(
-  options = { email: 'test@example.com', password: 'qwer1234' }
+  options = { email: testMember.email, password: testMember.password }
 ) {
   function __login({ email, password }) {
     cy.contains(queries.login.status, 'UNAUTHENTICATED');
