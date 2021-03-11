@@ -7,12 +7,14 @@ import { ApiInfos } from './../../../../generated/core/ApiInfo';
 const loginApis = ApiInfos.filter(info => info.auth === 'LOGIN')
 const hasLoginEndpoint = loginApis.length > 0;
 
+import { testMember } from '../../base';
+
 // This test is only for token based system & has Login feature.
 if (OpenAPI.SECURITY['Token-Auth'] && hasLoginEndpoint) {
   describe('using Auth module with Token based system & has Login feature.', () => {
     it('should not be 401: requests login -> token -> apis.', async () => {
       await Auth.login({
-        requestBody: { email: 'test', password: 'qwer1234' },
+        requestBody: { email: testMember.email, password: testMember.password },
       });
       await ApiService.getApiServiceRcmsApi1Apis({});
 
@@ -22,9 +24,9 @@ if (OpenAPI.SECURITY['Token-Auth'] && hasLoginEndpoint) {
       );
       expect(error).to.not.be.true;
     });
-    it.only('should recover access_token automatically and retry request when a request is 401.', async () => {
+    it('should recover access_token automatically and retry request when a request is 401.', async () => {
       await Auth.login({
-        requestBody: { email: 'test', password: 'qwer1234' },
+        requestBody: { email: testMember.email, password: testMember.password },
       });
       await ApiService.getApiServiceRcmsApi1Apis({});
       LocalStorage.setAccessToken('INVALID_VALUE');
@@ -37,7 +39,7 @@ if (OpenAPI.SECURITY['Token-Auth'] && hasLoginEndpoint) {
     });
     it('should refresh_token is unrelated when access_token is valid.', async () => {
       await Auth.login({
-        requestBody: { email: 'test', password: 'qwer1234' },
+        requestBody: { email: testMember.email, password: testMember.password },
       });
       await ApiService.getApiServiceRcmsApi1Apis({});
       LocalStorage.setRefreshToken('INVALID_VALUE');
@@ -50,7 +52,7 @@ if (OpenAPI.SECURITY['Token-Auth'] && hasLoginEndpoint) {
     });
     it('should return error if both of access_token and refresh_token are invalid.', async () => {
       await Auth.login({
-        requestBody: { email: 'test', password: 'qwer1234' },
+        requestBody: { email: testMember.email, password: testMember.password },
       });
       await ApiService.getApiServiceRcmsApi1Apis({});
       LocalStorage.setAccessToken('INVALID_VALUE');
