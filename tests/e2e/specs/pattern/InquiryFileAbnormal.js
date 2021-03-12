@@ -47,6 +47,7 @@ describe('Inquiry pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
+    // TODO topicsでは400だが、ここでは422が返ってくる
     expect(errorResponse.status).to.equal(400);
 
   });
@@ -79,7 +80,7 @@ describe('Inquiry pattern (File)', () => {
       errorResponse = JSON.parse(e.message);
     });
     expect(errorResponse.status).to.equal(400);
-    expect(errorResponse.body.errors[0]).to.include('Additional properties not allowed: test_key');
+    expect(errorResponse.body.errors[0].message).to.include('Additional properties not allowed: test_key');
   });
 
   it(`send message with empty file_id`, async () => {
@@ -106,6 +107,7 @@ describe('Inquiry pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
+    // TODO topicsでは400だが、ここでは422が返ってくる
     expect(errorResponse.status).to.equal(400);
   });
 
@@ -120,7 +122,7 @@ describe('Inquiry pattern (File)', () => {
       errorResponse = JSON.parse(e.message);
     });
     expect(errorResponse.status).to.equal(400);
-    expect(errorResponse.body.errors[0]).to.include('null');
+    expect(errorResponse.body.errors[0].message).to.include('null');
   });
 
   it(`send message with no extension`, async () => {
@@ -134,6 +136,7 @@ describe('Inquiry pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
+    // TODO topicsでは400だが、ここでは422が返ってくる
     expect(errorResponse.status).to.equal(400);
   });
 
