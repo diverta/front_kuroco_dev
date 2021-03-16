@@ -40,10 +40,92 @@ const LocalStorage_1 = require("../core/LocalStorage");
 class ApiService {
     /**
      *
+     * ### **Api::bulk (v1)**
+     *
+     *
+     * @param requestBody
+     * @param outputFormat Format (json|xml|csv|zip)
+     * @param lang Language
+     * @param charset Charset
+     * @param async Asynchronous execution (true|false)
+     * @result any
+     * @throws ApiError
+     */
+    static postApiServiceRcmsApi1Bulk(requestParam) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const shouldHookToken = Object.keys({
+                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+            }).length > 0;
+            const request = () => __awaiter(this, void 0, void 0, function* () {
+                return yield request_1.request({
+                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${LocalStorage_1.LocalStorage.getAccessToken()}` } : {},
+                    method: 'post',
+                    path: `/rcms-api/1/bulk`,
+                    query: {
+                        '_output_format': requestParam.outputFormat,
+                        '_lang': requestParam.lang,
+                        '_charset': requestParam.charset,
+                        '_async': requestParam.async,
+                    },
+                    body: requestParam.requestBody,
+                });
+            });
+            let result = yield request();
+            if (shouldHookToken && !result.ok && result.status === 401) {
+                result = yield Promise.resolve().then(() => __importStar(require('../core/Auth'))).then(({ Auth }) => Auth.retryRequest(request, result));
+            }
+            ApiError_1.catchGenericError(result);
+            return result;
+        });
+    }
+    /**
+     *
+     * ### **Api::request_api_post (v1)**
+     *
+     *
+     * ## Controller parameters
+     *
+     * > **name** `chkhash`
+     *
+     * @param requestBody
+     * @param outputFormat Format (json|xml|csv|zip)
+     * @param lang Language
+     * @param charset Charset
+     * @result any
+     * @throws ApiError
+     */
+    static postApiServiceRcmsApi1Chkhash(requestParam) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const shouldHookToken = Object.keys({
+                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+            }).length > 0;
+            const request = () => __awaiter(this, void 0, void 0, function* () {
+                return yield request_1.request({
+                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${LocalStorage_1.LocalStorage.getAccessToken()}` } : {},
+                    method: 'post',
+                    path: `/rcms-api/1/chkhash`,
+                    query: {
+                        '_output_format': requestParam.outputFormat,
+                        '_lang': requestParam.lang,
+                        '_charset': requestParam.charset,
+                    },
+                    body: requestParam.requestBody,
+                });
+            });
+            let result = yield request();
+            if (shouldHookToken && !result.ok && result.status === 401) {
+                result = yield Promise.resolve().then(() => __importStar(require('../core/Auth'))).then(({ Auth }) => Auth.retryRequest(request, result));
+            }
+            ApiError_1.catchGenericError(result);
+            return result;
+        });
+    }
+    /**
+     *
      * ### **Api::list (v1)**
      *
      *
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -74,80 +156,6 @@ class ApiService {
             return result;
         });
     }
-    /**
-     *
-     * ### **Api::openapi_data (v1)**
-     *
-     *
-     * @param apiId API ID
-     * @param outputFormat Format (json|xml|csv)
-     * @param lang Language
-     * @param charset Charset
-     * @result any
-     * @throws ApiError
-     */
-    static getApiServiceRcmsApi1Openapi(requestParam) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const shouldHookToken = Object.keys({
-                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
-            }).length > 0;
-            const request = () => __awaiter(this, void 0, void 0, function* () {
-                return yield request_1.request({
-                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${LocalStorage_1.LocalStorage.getAccessToken()}` } : {},
-                    method: 'get',
-                    path: `/rcms-api/1/openapi`,
-                    query: {
-                        'api_id': requestParam.apiId,
-                        '_output_format': requestParam.outputFormat,
-                        '_lang': requestParam.lang,
-                        '_charset': requestParam.charset,
-                    },
-                });
-            });
-            let result = yield request();
-            if (shouldHookToken && !result.ok && result.status === 401) {
-                result = yield Promise.resolve().then(() => __importStar(require('../core/Auth'))).then(({ Auth }) => Auth.retryRequest(request, result));
-            }
-            ApiError_1.catchGenericError(result);
-            return result;
-        });
-    }
-    /**
-     *
-     * ### **Api::request_api (v1)**
-     *
-     *
-     * @param outputFormat Format (json|xml|csv)
-     * @param lang Language
-     * @param charset Charset
-     * @result any
-     * @throws ApiError
-     */
-    static getApiServiceRcmsApi1Request(requestParam) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const shouldHookToken = Object.keys({
-                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
-            }).length > 0;
-            const request = () => __awaiter(this, void 0, void 0, function* () {
-                return yield request_1.request({
-                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${LocalStorage_1.LocalStorage.getAccessToken()}` } : {},
-                    method: 'get',
-                    path: `/rcms-api/1/request`,
-                    query: {
-                        '_output_format': requestParam.outputFormat,
-                        '_lang': requestParam.lang,
-                        '_charset': requestParam.charset,
-                    },
-                });
-            });
-            let result = yield request();
-            if (shouldHookToken && !result.ok && result.status === 401) {
-                result = yield Promise.resolve().then(() => __importStar(require('../core/Auth'))).then(({ Auth }) => Auth.retryRequest(request, result));
-            }
-            ApiError_1.catchGenericError(result);
-            return result;
-        });
-    }
 }
 exports.ApiService = ApiService;
 (function (ApiService) {
@@ -156,6 +164,58 @@ exports.ApiService = ApiService;
     ;
 })(ApiService = exports.ApiService || (exports.ApiService = {}));
 exports.infos = [
+    {
+        path: '/rcms-api/1/bulk',
+        httpMethod: 'post',
+        class: ApiService,
+        className: 'ApiService',
+        method: ApiService.postApiServiceRcmsApi1Bulk,
+        methodName: 'postApiServiceRcmsApi1Bulk',
+        auth: null,
+        description: `
+        export interface postApiServiceRcmsApi1BulkRequest {
+            requestBody: {
+                /**
+                 * Endpoint description
+                 */
+                endpoint_list?: Array<{
+                    /**
+                     * Endpoint URI
+                     */
+                    uri?: string,
+                    method?: ('get' | 'post'),
+                    headers?: Array<string>,
+                    direct?: boolean,
+                    filename?: string,
+                    body?: any,
+                }>,
+            },
+            outputFormat?: string,
+            lang?: string,
+            charset?: string,
+            async?: string,
+        };
+        export type postApiServiceRcmsApi1BulkResponse = any;
+        `,
+    },
+    {
+        path: '/rcms-api/1/chkhash',
+        httpMethod: 'post',
+        class: ApiService,
+        className: 'ApiService',
+        method: ApiService.postApiServiceRcmsApi1Chkhash,
+        methodName: 'postApiServiceRcmsApi1Chkhash',
+        auth: null,
+        description: `
+        export interface postApiServiceRcmsApi1ChkhashRequest {
+            requestBody: any,
+            outputFormat?: string,
+            lang?: string,
+            charset?: string,
+        };
+        export type postApiServiceRcmsApi1ChkhashResponse = any;
+        `,
+    },
     {
         path: '/rcms-api/1/apis',
         httpMethod: 'get',
@@ -171,41 +231,6 @@ exports.infos = [
             charset?: string,
         };
         export type getApiServiceRcmsApi1ApisResponse = any;
-        `,
-    },
-    {
-        path: '/rcms-api/1/openapi',
-        httpMethod: 'get',
-        class: ApiService,
-        className: 'ApiService',
-        method: ApiService.getApiServiceRcmsApi1Openapi,
-        methodName: 'getApiServiceRcmsApi1Openapi',
-        auth: null,
-        description: `
-        export interface getApiServiceRcmsApi1OpenapiRequest {
-            apiId: number,
-            outputFormat?: string,
-            lang?: string,
-            charset?: string,
-        };
-        export type getApiServiceRcmsApi1OpenapiResponse = any;
-        `,
-    },
-    {
-        path: '/rcms-api/1/request',
-        httpMethod: 'get',
-        class: ApiService,
-        className: 'ApiService',
-        method: ApiService.getApiServiceRcmsApi1Request,
-        methodName: 'getApiServiceRcmsApi1Request',
-        auth: null,
-        description: `
-        export interface getApiServiceRcmsApi1RequestRequest {
-            outputFormat?: string,
-            lang?: string,
-            charset?: string,
-        };
-        export type getApiServiceRcmsApi1RequestResponse = any;
         `,
     },
 ];

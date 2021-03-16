@@ -1,13 +1,14 @@
 import * as AuthenticationService from '../services/AuthenticationService';
-import * as TopicsService from '../services/TopicsService';
+import * as ContentService from '../services/ContentService';
 import * as MembersService from '../services/MembersService';
-import * as CommentsService from '../services/CommentsService';
+import * as ActivityService from '../services/ActivityService';
 import * as FavoritesService from '../services/FavoritesService';
 import * as InquiriesService from '../services/InquiriesService';
 import * as EcService from '../services/EcService';
 import * as FilesService from '../services/FilesService';
 import * as TagsService from '../services/TagsService';
 import * as TablesService from '../services/TablesService';
+import * as AsynchronousProcessingService from '../services/AsynchronousProcessingService';
 import * as ApiService from '../services/ApiService';
 export declare const ApiInfos: ({
     path: string;
@@ -39,27 +40,36 @@ export declare const ApiInfos: ({
 } | {
     path: string;
     httpMethod: string;
-    class: typeof TopicsService.TopicsService;
+    class: typeof ContentService.ContentService;
     className: string;
-    method: typeof TopicsService.TopicsService.getTopicsServiceRcmsApi1Topics1TopicsId;
+    method: typeof ContentService.ContentService.getContentServiceRcmsApi1Topics1TopicsId;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof TopicsService.TopicsService;
+    class: typeof ContentService.ContentService;
     className: string;
-    method: typeof TopicsService.TopicsService.getTopicsServiceRcmsApi1Topics1;
+    method: typeof ContentService.ContentService.getContentServiceRcmsApi1Topics1;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof TopicsService.TopicsService;
+    class: typeof ContentService.ContentService;
     className: string;
-    method: typeof TopicsService.TopicsService.postTopicsServiceRcmsApi1Topics1Insert;
+    method: typeof ContentService.ContentService.postContentServiceRcmsApi1Topics1Insert;
+    methodName: string;
+    auth: null;
+    description: string;
+} | {
+    path: string;
+    httpMethod: string;
+    class: typeof ContentService.ContentService;
+    className: string;
+    method: typeof ContentService.ContentService.postContentServiceRcmsApi1TopicsMultipleInsert;
     methodName: string;
     auth: null;
     description: string;
@@ -93,18 +103,45 @@ export declare const ApiInfos: ({
 } | {
     path: string;
     httpMethod: string;
-    class: typeof CommentsService.CommentsService;
+    class: typeof MembersService.MembersService;
     className: string;
-    method: typeof CommentsService.CommentsService.getCommentsServiceRcmsApi1TopicsComments;
+    method: typeof MembersService.MembersService.getMembersServiceRcmsApi1MemberCustomSearch;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof CommentsService.CommentsService;
+    class: typeof MembersService.MembersService;
     className: string;
-    method: typeof CommentsService.CommentsService.postCommentsServiceRcmsApi1TopicsCommentsInsert;
+    method: typeof MembersService.MembersService.getMembersServiceRcmsApi1MemberCustomSearchCustomSearchId;
+    methodName: string;
+    auth: null;
+    description: string;
+} | {
+    path: string;
+    httpMethod: string;
+    class: typeof ActivityService.ActivityService;
+    className: string;
+    method: typeof ActivityService.ActivityService.getActivityServiceRcmsApi1TopicsComments;
+    methodName: string;
+    auth: null;
+    description: string;
+} | {
+    path: string;
+    httpMethod: string;
+    class: typeof ActivityService.ActivityService;
+    className: string;
+    method: typeof ActivityService.ActivityService.postActivityServiceRcmsApi1TopicsCommentsInsert;
+    methodName: string;
+    auth: null;
+    description: string;
+} | {
+    path: string;
+    httpMethod: string;
+    class: typeof ActivityService.ActivityService;
+    className: string;
+    method: typeof ActivityService.ActivityService.postActivityServiceRcmsApi1TopicsCommentsUpdateCommentId;
     methodName: string;
     auth: null;
     description: string;
@@ -132,6 +169,60 @@ export declare const ApiInfos: ({
     class: typeof InquiriesService.InquiriesService;
     className: string;
     method: typeof InquiriesService.InquiriesService.getInquiriesServiceRcmsApi1InquiryForms;
+    methodName: string;
+    auth: null;
+    description: string;
+} | {
+    path: string;
+    httpMethod: string;
+    class: typeof InquiriesService.InquiriesService;
+    className: string;
+    method: typeof InquiriesService.InquiriesService.getInquiriesServiceRcmsApi1InquiryFormsInquiryId;
+    methodName: string;
+    auth: null;
+    description: string;
+} | {
+    path: string;
+    httpMethod: string;
+    class: typeof InquiriesService.InquiriesService;
+    className: string;
+    method: typeof InquiriesService.InquiriesService.postInquiriesServiceRcmsApi1Inquiry1MessagesSend;
+    methodName: string;
+    auth: null;
+    description: string;
+} | {
+    path: string;
+    httpMethod: string;
+    class: typeof InquiriesService.InquiriesService;
+    className: string;
+    method: typeof InquiriesService.InquiriesService.postInquiriesServiceRcmsApi1Inquiry1MessagesUpdateInquiryBnId;
+    methodName: string;
+    auth: null;
+    description: string;
+} | {
+    path: string;
+    httpMethod: string;
+    class: typeof InquiriesService.InquiriesService;
+    className: string;
+    method: typeof InquiriesService.InquiriesService.postInquiriesServiceRcmsApi1InquiryFormsInsert;
+    methodName: string;
+    auth: null;
+    description: string;
+} | {
+    path: string;
+    httpMethod: string;
+    class: typeof InquiriesService.InquiriesService;
+    className: string;
+    method: typeof InquiriesService.InquiriesService.postInquiriesServiceRcmsApi1InquiryFormsUpdateInquiryId;
+    methodName: string;
+    auth: null;
+    description: string;
+} | {
+    path: string;
+    httpMethod: string;
+    class: typeof InquiriesService.InquiriesService;
+    className: string;
+    method: typeof InquiriesService.InquiriesService.postInquiriesServiceRcmsApi1Form7Send;
     methodName: string;
     auth: null;
     description: string;
@@ -246,9 +337,18 @@ export declare const ApiInfos: ({
 } | {
     path: string;
     httpMethod: string;
+    class: typeof AsynchronousProcessingService.AsynchronousProcessingService;
+    className: string;
+    method: typeof AsynchronousProcessingService.AsynchronousProcessingService.getAsynchronousProcessingServiceRcmsApi1CheckBatch;
+    methodName: string;
+    auth: null;
+    description: string;
+} | {
+    path: string;
+    httpMethod: string;
     class: typeof ApiService.ApiService;
     className: string;
-    method: typeof ApiService.ApiService.getApiServiceRcmsApi1Apis;
+    method: typeof ApiService.ApiService.postApiServiceRcmsApi1Bulk;
     methodName: string;
     auth: null;
     description: string;

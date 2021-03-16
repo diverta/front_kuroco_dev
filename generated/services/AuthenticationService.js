@@ -44,7 +44,7 @@ class AuthenticationService {
      *
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -79,7 +79,7 @@ class AuthenticationService {
      * ### **Login::logout (v1)**
      *
      *
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -120,7 +120,7 @@ class AuthenticationService {
      * > **use_refresh_token** `true`
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -156,7 +156,7 @@ class AuthenticationService {
      *
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -194,7 +194,7 @@ class AuthenticationService {
      *
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -231,7 +231,7 @@ class AuthenticationService {
      * ### **Login::profile (v1)**
      *
      *
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -267,7 +267,7 @@ class AuthenticationService {
      * ### **Login::firebaseToken (v1)**
      *
      *
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any

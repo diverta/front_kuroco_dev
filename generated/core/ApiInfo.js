@@ -25,26 +25,28 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ApiInfos = void 0;
 const AuthenticationService = __importStar(require("../services/AuthenticationService"));
-const TopicsService = __importStar(require("../services/TopicsService"));
+const ContentService = __importStar(require("../services/ContentService"));
 const MembersService = __importStar(require("../services/MembersService"));
-const CommentsService = __importStar(require("../services/CommentsService"));
+const ActivityService = __importStar(require("../services/ActivityService"));
 const FavoritesService = __importStar(require("../services/FavoritesService"));
 const InquiriesService = __importStar(require("../services/InquiriesService"));
 const EcService = __importStar(require("../services/EcService"));
 const FilesService = __importStar(require("../services/FilesService"));
 const TagsService = __importStar(require("../services/TagsService"));
 const TablesService = __importStar(require("../services/TablesService"));
+const AsynchronousProcessingService = __importStar(require("../services/AsynchronousProcessingService"));
 const ApiService = __importStar(require("../services/ApiService"));
 exports.ApiInfos = [
     ...AuthenticationService.infos,
-    ...TopicsService.infos,
+    ...ContentService.infos,
     ...MembersService.infos,
-    ...CommentsService.infos,
+    ...ActivityService.infos,
     ...FavoritesService.infos,
     ...InquiriesService.infos,
     ...EcService.infos,
     ...FilesService.infos,
     ...TagsService.infos,
     ...TablesService.infos,
+    ...AsynchronousProcessingService.infos,
     ...ApiService.infos,
 ];

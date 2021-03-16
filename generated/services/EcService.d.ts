@@ -5,14 +5,16 @@ export declare class EcService {
      * ### **ECProduct::list (v1)**
      *
      *
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @param cnt Number of products per page
      * @param pageId Page ID
+     * @param filter Filter query
      * @param topicsId Topic ID
      * @param topicsGroupId Topics group ID
      * @param productId Product ID to be displayed, all of the items of interest if there is no setting
+     * @param myOrderFlg
      * @param ymdSortChange
      * @param topicsKeyword Keyword
      * @param topicsKeywordCond Change the way of narrowing down by keyword (Default: AND)
@@ -29,7 +31,7 @@ export declare class EcService {
      *
      *
      * @param productId
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -42,9 +44,11 @@ export declare class EcService {
      *
      *
      * @param ecCartId
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
+     * @param zipCode
+     * @param tdfkCd
      * @result any
      * @throws ApiError
      */
@@ -55,7 +59,7 @@ export declare class EcService {
      *
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -68,7 +72,7 @@ export declare class EcService {
      *
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -81,7 +85,7 @@ export declare class EcService {
      *
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -93,11 +97,11 @@ export declare class EcService {
      * ### **ECPayment::list (v1)**
      *
      *
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @param ecCartId
-     * @param serialCode Serial Code
+     * @param serialCode Coupon Code
      * @param usePoint
      * @result any
      * @throws ApiError
@@ -109,7 +113,7 @@ export declare class EcService {
      *
      *
      * @param ecPaymentId
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -122,7 +126,7 @@ export declare class EcService {
      *
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -137,9 +141,11 @@ export declare namespace EcService {
         charset?: string;
         cnt?: number;
         pageId?: number;
+        filter?: string;
         topicsId?: number;
         topicsGroupId?: number;
         productId?: Array<number>;
+        myOrderFlg?: number;
         ymdSortChange?: string;
         topicsKeyword?: string;
         topicsKeywordCond?: string;
@@ -160,6 +166,8 @@ export declare namespace EcService {
         outputFormat?: string;
         lang?: string;
         charset?: string;
+        zipCode?: string;
+        tdfkCd?: string;
     }
     type getEcServiceRcmsApi1EcCartEcCartIdResponse = any;
     interface postEcServiceRcmsApi1EcCartAddRequest {
@@ -218,6 +226,7 @@ export declare namespace EcService {
              * カートID
              */
             ec_cart_id?: number;
+            order_products?: any;
             /**
              * Product ID
              */
@@ -239,7 +248,7 @@ export declare namespace EcService {
                  */
                 point?: number;
                 /**
-                 * Serial Code
+                 * Coupon Code
                  */
                 serial_code?: string;
             };
@@ -284,6 +293,7 @@ export declare namespace EcService {
              * カートID
              */
             ec_cart_id?: number;
+            order_products?: any;
             /**
              * Product ID
              */
@@ -305,7 +315,7 @@ export declare namespace EcService {
                  */
                 point?: number;
                 /**
-                 * Serial Code
+                 * Coupon Code
                  */
                 serial_code?: string;
             };
@@ -411,6 +421,7 @@ export declare namespace EcService {
              * Token
              */
             card_token?: string;
+            order_note?: string;
             /**
              * Validate
              */

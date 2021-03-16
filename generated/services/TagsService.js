@@ -43,7 +43,7 @@ class TagsService {
      * ### **Tag::list (v1)**
      *
      *
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @param order Set the sort order. Available param {0}
@@ -51,7 +51,7 @@ class TagsService {
      * @param id Tag IDs that you would like to display
      * @param categoryId ID of the tag category to be displayed. (Default: All)
      * @param groupBy Grouping List by (module_id|category)
-     * @param groupAs Grouping List as (array|object)
+     * @param type Grouping List as (array|object)
      * @result any
      * @throws ApiError
      */
@@ -74,7 +74,7 @@ class TagsService {
                         'id[]': requestParam.id,
                         'category_id[]': requestParam.categoryId,
                         'groupBy': requestParam.groupBy,
-                        'groupAs': requestParam.groupAs,
+                        'type': requestParam.type,
                     },
                 });
             });
@@ -92,7 +92,7 @@ class TagsService {
      *
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -130,7 +130,7 @@ class TagsService {
      *
      *
      * @param tagId
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -187,7 +187,7 @@ exports.infos = [
             id?: Array<number>,
             categoryId?: Array<number>,
             groupBy?: string,
-            groupAs?: string,
+            type?: string,
         };
         export type getTagsServiceRcmsApi1TagsResponse = any;
         `,

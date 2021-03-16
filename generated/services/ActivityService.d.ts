@@ -1,5 +1,5 @@
 import { Result } from '../core/Result';
-export declare class CommentsService {
+export declare class ActivityService {
     /**
      *
      * ### **Comment::list (v1)**
@@ -10,7 +10,7 @@ export declare class CommentsService {
      * > **module_type** `topics`
      *
      * @param moduleId モジュールID
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @param newOrderFlg To the display the newest use 1. Default: 0
@@ -19,11 +19,12 @@ export declare class CommentsService {
      * @param fromDate Posted Date
      * @param toDate Posted Date
      * @param groupBy Grouping List by (module_id)
-     * @param groupAs Grouping List as (array or object)
+     * @param type Grouping List as (array or object)
+     * @param memberId Member ID
      * @result any
      * @throws ApiError
      */
-    static getCommentsServiceRcmsApi1TopicsComments(requestParam: CommentsService.getCommentsServiceRcmsApi1TopicsCommentsRequest): Promise<Result<any>>;
+    static getActivityServiceRcmsApi1TopicsComments(requestParam: ActivityService.getActivityServiceRcmsApi1TopicsCommentsRequest): Promise<Result<any>>;
     /**
      *
      * ### **Comment::insert (v1)**
@@ -34,13 +35,13 @@ export declare class CommentsService {
      * > **use_module_type** `topics`
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
      * @throws ApiError
      */
-    static postCommentsServiceRcmsApi1TopicsCommentsInsert(requestParam: CommentsService.postCommentsServiceRcmsApi1TopicsCommentsInsertRequest): Promise<Result<any>>;
+    static postActivityServiceRcmsApi1TopicsCommentsInsert(requestParam: ActivityService.postActivityServiceRcmsApi1TopicsCommentsInsertRequest): Promise<Result<any>>;
     /**
      *
      * ### **Comment::update (v1)**
@@ -50,14 +51,15 @@ export declare class CommentsService {
      *
      * > **use_module_type** `topics`
      *
+     * @param commentId
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
      * @throws ApiError
      */
-    static postCommentsServiceRcmsApi1TopicsCommentsUpdate(requestParam: CommentsService.postCommentsServiceRcmsApi1TopicsCommentsUpdateRequest): Promise<Result<any>>;
+    static postActivityServiceRcmsApi1TopicsCommentsUpdateCommentId(requestParam: ActivityService.postActivityServiceRcmsApi1TopicsCommentsUpdateCommentIdRequest): Promise<Result<any>>;
     /**
      *
      * ### **Comment::delete (v1)**
@@ -67,17 +69,18 @@ export declare class CommentsService {
      *
      * > **use_module_type** `topics`
      *
+     * @param commentId
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
      * @throws ApiError
      */
-    static postCommentsServiceRcmsApi1TopicsCommentsDelete(requestParam: CommentsService.postCommentsServiceRcmsApi1TopicsCommentsDeleteRequest): Promise<Result<any>>;
+    static postActivityServiceRcmsApi1TopicsCommentsDeleteCommentId(requestParam: ActivityService.postActivityServiceRcmsApi1TopicsCommentsDeleteCommentIdRequest): Promise<Result<any>>;
 }
-export declare namespace CommentsService {
-    interface getCommentsServiceRcmsApi1TopicsCommentsRequest {
+export declare namespace ActivityService {
+    interface getActivityServiceRcmsApi1TopicsCommentsRequest {
         moduleId: Array<number>;
         outputFormat?: string;
         lang?: string;
@@ -88,10 +91,11 @@ export declare namespace CommentsService {
         fromDate?: string;
         toDate?: string;
         groupBy?: string;
-        groupAs?: string;
+        type?: string;
+        memberId?: Array<number>;
     }
-    type getCommentsServiceRcmsApi1TopicsCommentsResponse = any;
-    interface postCommentsServiceRcmsApi1TopicsCommentsInsertRequest {
+    type getActivityServiceRcmsApi1TopicsCommentsResponse = any;
+    interface postActivityServiceRcmsApi1TopicsCommentsInsertRequest {
         requestBody: {
             /**
              * モジュールID
@@ -110,7 +114,7 @@ export declare namespace CommentsService {
              */
             url?: string;
             /**
-             * Comments
+             * Activity
              */
             note: string;
             /**
@@ -126,21 +130,18 @@ export declare namespace CommentsService {
         lang?: string;
         charset?: string;
     }
-    type postCommentsServiceRcmsApi1TopicsCommentsInsertResponse = any;
-    interface postCommentsServiceRcmsApi1TopicsCommentsUpdateRequest {
+    type postActivityServiceRcmsApi1TopicsCommentsInsertResponse = any;
+    interface postActivityServiceRcmsApi1TopicsCommentsUpdateCommentIdRequest {
+        commentId: number;
         requestBody: {
-            /**
-             * コメントID
-             */
-            comment_id: number;
             /**
              * モジュールID
              */
-            module_id: number;
+            module_id?: number;
             /**
              * Name
              */
-            name: string;
+            name?: string;
             /**
              * Mail
              */
@@ -150,9 +151,9 @@ export declare namespace CommentsService {
              */
             url?: string;
             /**
-             * Comments
+             * Activity
              */
-            note: string;
+            note?: string;
             /**
              * Rating
              */
@@ -166,13 +167,10 @@ export declare namespace CommentsService {
         lang?: string;
         charset?: string;
     }
-    type postCommentsServiceRcmsApi1TopicsCommentsUpdateResponse = any;
-    interface postCommentsServiceRcmsApi1TopicsCommentsDeleteRequest {
+    type postActivityServiceRcmsApi1TopicsCommentsUpdateCommentIdResponse = any;
+    interface postActivityServiceRcmsApi1TopicsCommentsDeleteCommentIdRequest {
+        commentId: number;
         requestBody: {
-            /**
-             * コメントID
-             */
-            comment_id: number;
             /**
              * 削除キー
              */
@@ -182,25 +180,34 @@ export declare namespace CommentsService {
         lang?: string;
         charset?: string;
     }
-    type postCommentsServiceRcmsApi1TopicsCommentsDeleteResponse = any;
+    type postActivityServiceRcmsApi1TopicsCommentsDeleteCommentIdResponse = any;
 }
 export declare const infos: ({
     path: string;
     httpMethod: string;
-    class: typeof CommentsService;
+    class: typeof ActivityService;
     className: string;
-    method: typeof CommentsService.getCommentsServiceRcmsApi1TopicsComments;
+    method: typeof ActivityService.getActivityServiceRcmsApi1TopicsComments;
     methodName: string;
     auth: null;
     description: string;
 } | {
     path: string;
     httpMethod: string;
-    class: typeof CommentsService;
+    class: typeof ActivityService;
     className: string;
-    method: typeof CommentsService.postCommentsServiceRcmsApi1TopicsCommentsInsert;
+    method: typeof ActivityService.postActivityServiceRcmsApi1TopicsCommentsInsert;
+    methodName: string;
+    auth: null;
+    description: string;
+} | {
+    path: string;
+    httpMethod: string;
+    class: typeof ActivityService;
+    className: string;
+    method: typeof ActivityService.postActivityServiceRcmsApi1TopicsCommentsUpdateCommentId;
     methodName: string;
     auth: null;
     description: string;
 })[];
-//# sourceMappingURL=CommentsService.d.ts.map
+//# sourceMappingURL=ActivityService.d.ts.map

@@ -9,7 +9,7 @@ export declare class TablesService {
      *
      * > **csvtable_id** `1`
      *
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @param keyIdx Key index (0|1|2|3|4)
@@ -17,7 +17,7 @@ export declare class TablesService {
      * @param multiple Multiple(0|1)
      * @param outputAs Output List As (array|object)
      * @param groupBy Grouping List By (id|parentValue|parentLabel|childValue|childLabel)
-     * @param groupAs Grouping List As (array|object)
+     * @param type Grouping List As (array|object)
      * @result any
      * @throws ApiError
      */
@@ -31,7 +31,7 @@ export declare class TablesService {
      *
      * > **csvtable_id** `5`
      *
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @param keyIdx Key index (0|1|2|3)
@@ -39,7 +39,7 @@ export declare class TablesService {
      * @param multiple Multiple(0|1)
      * @param outputAs Output List As (array|object)
      * @param groupBy Grouping List By (|||)
-     * @param groupAs Grouping List As (array|object)
+     * @param type Grouping List As (array|object)
      * @result any
      * @throws ApiError
      */
@@ -57,13 +57,13 @@ export declare class TablesService {
      *
      * > **value_idx** `2`
      *
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @param multiple Multiple(0|1)
      * @param outputAs Output List As (array|object)
      * @param groupBy Grouping List By (id|parentValue|parentLabel|childValue|childLabel)
-     * @param groupAs Grouping List As (array|object)
+     * @param type Grouping List As (array|object)
      * @result any
      * @throws ApiError
      */
@@ -79,7 +79,7 @@ export declare namespace TablesService {
         multiple?: number;
         outputAs?: string;
         groupBy?: string;
-        groupAs?: string;
+        type?: string;
     }
     type getTablesServiceRcmsApi1Tables1Response = any;
     interface getTablesServiceRcmsApi1TablesInvalidRequest {
@@ -91,7 +91,7 @@ export declare namespace TablesService {
         multiple?: number;
         outputAs?: string;
         groupBy?: string;
-        groupAs?: string;
+        type?: string;
     }
     type getTablesServiceRcmsApi1TablesInvalidResponse = any;
     interface getTablesServiceRcmsApi1Tables1Key1Value2Request {
@@ -101,7 +101,7 @@ export declare namespace TablesService {
         multiple?: number;
         outputAs?: string;
         groupBy?: string;
-        groupAs?: string;
+        type?: string;
     }
     type getTablesServiceRcmsApi1Tables1Key1Value2Response = any;
 }

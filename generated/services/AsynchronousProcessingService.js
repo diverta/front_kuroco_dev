@@ -32,25 +32,25 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.infos = exports.FilesService = void 0;
+exports.infos = exports.AsynchronousProcessingService = void 0;
 const ApiError_1 = require("../core/ApiError");
 const request_1 = require("../core/request");
 const OpenAPI_1 = require("../core/OpenAPI");
 const LocalStorage_1 = require("../core/LocalStorage");
-class FilesService {
+class AsynchronousProcessingService {
     /**
      *
-     * ### **Files::upload (v1)**
+     * ### **Batch::check_batch (v1)**
      *
      *
+     * @param batchId Batch Id
      * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
-     * @param requestBody
      * @result any
      * @throws ApiError
      */
-    static postFilesServiceRcmsApi1FilesUpload(requestParam) {
+    static getAsynchronousProcessingServiceRcmsApi1CheckBatch(requestParam) {
         return __awaiter(this, void 0, void 0, function* () {
             const shouldHookToken = Object.keys({
                 'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
@@ -58,14 +58,14 @@ class FilesService {
             const request = () => __awaiter(this, void 0, void 0, function* () {
                 return yield request_1.request({
                     headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${LocalStorage_1.LocalStorage.getAccessToken()}` } : {},
-                    method: 'post',
-                    path: `/rcms-api/1/files/upload`,
+                    method: 'get',
+                    path: `/rcms-api/1/check-batch`,
                     query: {
+                        'batch_id': requestParam.batchId,
                         '_output_format': requestParam.outputFormat,
                         '_lang': requestParam.lang,
                         '_charset': requestParam.charset,
                     },
-                    body: requestParam.requestBody,
                 });
             });
             let result = yield request();
@@ -77,27 +77,27 @@ class FilesService {
         });
     }
 }
-exports.FilesService = FilesService;
-(function (FilesService) {
+exports.AsynchronousProcessingService = AsynchronousProcessingService;
+(function (AsynchronousProcessingService) {
     ;
-})(FilesService = exports.FilesService || (exports.FilesService = {}));
+})(AsynchronousProcessingService = exports.AsynchronousProcessingService || (exports.AsynchronousProcessingService = {}));
 exports.infos = [
     {
-        path: '/rcms-api/1/files/upload',
-        httpMethod: 'post',
-        class: FilesService,
-        className: 'FilesService',
-        method: FilesService.postFilesServiceRcmsApi1FilesUpload,
-        methodName: 'postFilesServiceRcmsApi1FilesUpload',
+        path: '/rcms-api/1/check-batch',
+        httpMethod: 'get',
+        class: AsynchronousProcessingService,
+        className: 'AsynchronousProcessingService',
+        method: AsynchronousProcessingService.getAsynchronousProcessingServiceRcmsApi1CheckBatch,
+        methodName: 'getAsynchronousProcessingServiceRcmsApi1CheckBatch',
         auth: null,
         description: `
-        export interface postFilesServiceRcmsApi1FilesUploadRequest {
+        export interface getAsynchronousProcessingServiceRcmsApi1CheckBatchRequest {
+            batchId: number,
             outputFormat?: string,
             lang?: string,
             charset?: string,
-            requestBody?: any,
         };
-        export type postFilesServiceRcmsApi1FilesUploadResponse = any;
+        export type getAsynchronousProcessingServiceRcmsApi1CheckBatchResponse = any;
         `,
     },
 ];

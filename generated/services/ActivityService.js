@@ -32,12 +32,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.infos = exports.CommentsService = void 0;
+exports.infos = exports.ActivityService = void 0;
 const ApiError_1 = require("../core/ApiError");
 const request_1 = require("../core/request");
 const OpenAPI_1 = require("../core/OpenAPI");
 const LocalStorage_1 = require("../core/LocalStorage");
-class CommentsService {
+class ActivityService {
     /**
      *
      * ### **Comment::list (v1)**
@@ -48,7 +48,7 @@ class CommentsService {
      * > **module_type** `topics`
      *
      * @param moduleId モジュールID
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @param newOrderFlg To the display the newest use 1. Default: 0
@@ -57,11 +57,12 @@ class CommentsService {
      * @param fromDate Posted Date
      * @param toDate Posted Date
      * @param groupBy Grouping List by (module_id)
-     * @param groupAs Grouping List as (array or object)
+     * @param type Grouping List as (array or object)
+     * @param memberId Member ID
      * @result any
      * @throws ApiError
      */
-    static getCommentsServiceRcmsApi1TopicsComments(requestParam) {
+    static getActivityServiceRcmsApi1TopicsComments(requestParam) {
         return __awaiter(this, void 0, void 0, function* () {
             const shouldHookToken = Object.keys({
                 'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
@@ -82,7 +83,8 @@ class CommentsService {
                         'from_date': requestParam.fromDate,
                         'to_date': requestParam.toDate,
                         'groupBy': requestParam.groupBy,
-                        'groupAs': requestParam.groupAs,
+                        'type': requestParam.type,
+                        'member_id[]': requestParam.memberId,
                     },
                 });
             });
@@ -104,13 +106,13 @@ class CommentsService {
      * > **use_module_type** `topics`
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
      * @throws ApiError
      */
-    static postCommentsServiceRcmsApi1TopicsCommentsInsert(requestParam) {
+    static postActivityServiceRcmsApi1TopicsCommentsInsert(requestParam) {
         return __awaiter(this, void 0, void 0, function* () {
             const shouldHookToken = Object.keys({
                 'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
@@ -145,14 +147,15 @@ class CommentsService {
      *
      * > **use_module_type** `topics`
      *
+     * @param commentId
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
      * @throws ApiError
      */
-    static postCommentsServiceRcmsApi1TopicsCommentsUpdate(requestParam) {
+    static postActivityServiceRcmsApi1TopicsCommentsUpdateCommentId(requestParam) {
         return __awaiter(this, void 0, void 0, function* () {
             const shouldHookToken = Object.keys({
                 'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
@@ -161,7 +164,7 @@ class CommentsService {
                 return yield request_1.request({
                     headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${LocalStorage_1.LocalStorage.getAccessToken()}` } : {},
                     method: 'post',
-                    path: `/rcms-api/1/topics/comments/update`,
+                    path: `/rcms-api/1/topics/comments/update/${requestParam.commentId}`,
                     query: {
                         '_output_format': requestParam.outputFormat,
                         '_lang': requestParam.lang,
@@ -187,14 +190,15 @@ class CommentsService {
      *
      * > **use_module_type** `topics`
      *
+     * @param commentId
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
      * @throws ApiError
      */
-    static postCommentsServiceRcmsApi1TopicsCommentsDelete(requestParam) {
+    static postActivityServiceRcmsApi1TopicsCommentsDeleteCommentId(requestParam) {
         return __awaiter(this, void 0, void 0, function* () {
             const shouldHookToken = Object.keys({
                 'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
@@ -203,7 +207,7 @@ class CommentsService {
                 return yield request_1.request({
                     headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${LocalStorage_1.LocalStorage.getAccessToken()}` } : {},
                     method: 'post',
-                    path: `/rcms-api/1/topics/comments/delete`,
+                    path: `/rcms-api/1/topics/comments/delete/${requestParam.commentId}`,
                     query: {
                         '_output_format': requestParam.outputFormat,
                         '_lang': requestParam.lang,
@@ -221,24 +225,24 @@ class CommentsService {
         });
     }
 }
-exports.CommentsService = CommentsService;
-(function (CommentsService) {
+exports.ActivityService = ActivityService;
+(function (ActivityService) {
     ;
     ;
     ;
     ;
-})(CommentsService = exports.CommentsService || (exports.CommentsService = {}));
+})(ActivityService = exports.ActivityService || (exports.ActivityService = {}));
 exports.infos = [
     {
         path: '/rcms-api/1/topics/comments',
         httpMethod: 'get',
-        class: CommentsService,
-        className: 'CommentsService',
-        method: CommentsService.getCommentsServiceRcmsApi1TopicsComments,
-        methodName: 'getCommentsServiceRcmsApi1TopicsComments',
+        class: ActivityService,
+        className: 'ActivityService',
+        method: ActivityService.getActivityServiceRcmsApi1TopicsComments,
+        methodName: 'getActivityServiceRcmsApi1TopicsComments',
         auth: null,
         description: `
-        export interface getCommentsServiceRcmsApi1TopicsCommentsRequest {
+        export interface getActivityServiceRcmsApi1TopicsCommentsRequest {
             moduleId: Array<number>,
             outputFormat?: string,
             lang?: string,
@@ -249,21 +253,22 @@ exports.infos = [
             fromDate?: string,
             toDate?: string,
             groupBy?: string,
-            groupAs?: string,
+            type?: string,
+            memberId?: Array<number>,
         };
-        export type getCommentsServiceRcmsApi1TopicsCommentsResponse = any;
+        export type getActivityServiceRcmsApi1TopicsCommentsResponse = any;
         `,
     },
     {
         path: '/rcms-api/1/topics/comments/insert',
         httpMethod: 'post',
-        class: CommentsService,
-        className: 'CommentsService',
-        method: CommentsService.postCommentsServiceRcmsApi1TopicsCommentsInsert,
-        methodName: 'postCommentsServiceRcmsApi1TopicsCommentsInsert',
+        class: ActivityService,
+        className: 'ActivityService',
+        method: ActivityService.postActivityServiceRcmsApi1TopicsCommentsInsert,
+        methodName: 'postActivityServiceRcmsApi1TopicsCommentsInsert',
         auth: null,
         description: `
-        export interface postCommentsServiceRcmsApi1TopicsCommentsInsertRequest {
+        export interface postActivityServiceRcmsApi1TopicsCommentsInsertRequest {
             requestBody: {
                 /**
                  * モジュールID
@@ -282,7 +287,7 @@ exports.infos = [
                  */
                 url?: string,
                 /**
-                 * Comments
+                 * Activity
                  */
                 note: string,
                 /**
@@ -298,32 +303,29 @@ exports.infos = [
             lang?: string,
             charset?: string,
         };
-        export type postCommentsServiceRcmsApi1TopicsCommentsInsertResponse = any;
+        export type postActivityServiceRcmsApi1TopicsCommentsInsertResponse = any;
         `,
     },
     {
-        path: '/rcms-api/1/topics/comments/update',
+        path: '/rcms-api/1/topics/comments/update/${requestParam.commentId}',
         httpMethod: 'post',
-        class: CommentsService,
-        className: 'CommentsService',
-        method: CommentsService.postCommentsServiceRcmsApi1TopicsCommentsUpdate,
-        methodName: 'postCommentsServiceRcmsApi1TopicsCommentsUpdate',
+        class: ActivityService,
+        className: 'ActivityService',
+        method: ActivityService.postActivityServiceRcmsApi1TopicsCommentsUpdateCommentId,
+        methodName: 'postActivityServiceRcmsApi1TopicsCommentsUpdateCommentId',
         auth: null,
         description: `
-        export interface postCommentsServiceRcmsApi1TopicsCommentsUpdateRequest {
+        export interface postActivityServiceRcmsApi1TopicsCommentsUpdateCommentIdRequest {
+            commentId: number,
             requestBody: {
-                /**
-                 * コメントID
-                 */
-                comment_id: number,
                 /**
                  * モジュールID
                  */
-                module_id: number,
+                module_id?: number,
                 /**
                  * Name
                  */
-                name: string,
+                name?: string,
                 /**
                  * Mail
                  */
@@ -333,9 +335,9 @@ exports.infos = [
                  */
                 url?: string,
                 /**
-                 * Comments
+                 * Activity
                  */
-                note: string,
+                note?: string,
                 /**
                  * Rating
                  */
@@ -349,24 +351,21 @@ exports.infos = [
             lang?: string,
             charset?: string,
         };
-        export type postCommentsServiceRcmsApi1TopicsCommentsUpdateResponse = any;
+        export type postActivityServiceRcmsApi1TopicsCommentsUpdateCommentIdResponse = any;
         `,
     },
     {
-        path: '/rcms-api/1/topics/comments/delete',
+        path: '/rcms-api/1/topics/comments/delete/${requestParam.commentId}',
         httpMethod: 'post',
-        class: CommentsService,
-        className: 'CommentsService',
-        method: CommentsService.postCommentsServiceRcmsApi1TopicsCommentsDelete,
-        methodName: 'postCommentsServiceRcmsApi1TopicsCommentsDelete',
+        class: ActivityService,
+        className: 'ActivityService',
+        method: ActivityService.postActivityServiceRcmsApi1TopicsCommentsDeleteCommentId,
+        methodName: 'postActivityServiceRcmsApi1TopicsCommentsDeleteCommentId',
         auth: null,
         description: `
-        export interface postCommentsServiceRcmsApi1TopicsCommentsDeleteRequest {
+        export interface postActivityServiceRcmsApi1TopicsCommentsDeleteCommentIdRequest {
+            commentId: number,
             requestBody: {
-                /**
-                 * コメントID
-                 */
-                comment_id: number,
                 /**
                  * 削除キー
                  */
@@ -376,7 +375,7 @@ exports.infos = [
             lang?: string,
             charset?: string,
         };
-        export type postCommentsServiceRcmsApi1TopicsCommentsDeleteResponse = any;
+        export type postActivityServiceRcmsApi1TopicsCommentsDeleteCommentIdResponse = any;
         `,
     },
 ];

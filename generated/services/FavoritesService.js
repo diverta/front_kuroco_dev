@@ -43,7 +43,7 @@ class FavoritesService {
      * ### **Favorite::list (v1)**
      *
      *
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @param cnt Display number per page
@@ -51,9 +51,8 @@ class FavoritesService {
      * @param moduleId
      * @param moduleType Module type
      * @param memberId Member ID
-     * @param rcmsid rcmsid
      * @param groupBy Grouping List by (module_id)
-     * @param groupAs Grouping List as (array or object)
+     * @param type Grouping List as (array or object)
      * @result any
      * @throws ApiError
      */
@@ -76,9 +75,8 @@ class FavoritesService {
                         'module_id[]': requestParam.moduleId,
                         'module_type[]': requestParam.moduleType,
                         'member_id[]': requestParam.memberId,
-                        'rcmsid[]': requestParam.rcmsid,
                         'groupBy': requestParam.groupBy,
-                        'groupAs': requestParam.groupAs,
+                        'type': requestParam.type,
                     },
                 });
             });
@@ -96,7 +94,7 @@ class FavoritesService {
      *
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -134,7 +132,7 @@ class FavoritesService {
      *
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -192,9 +190,8 @@ exports.infos = [
             moduleId?: Array<number>,
             moduleType?: Array<string>,
             memberId?: Array<number>,
-            rcmsid?: Array<string>,
             groupBy?: string,
-            groupAs?: string,
+            type?: string,
         };
         export type getFavoritesServiceRcmsApi1FavoritesResponse = any;
         `,
@@ -222,6 +219,10 @@ exports.infos = [
                  * ページシステム名
                  */
                 page_sysnm?: string,
+                /**
+                 * アクション種別
+                 */
+                action_type?: number,
             },
             outputFormat?: string,
             lang?: string,
@@ -253,6 +254,10 @@ exports.infos = [
                  * ページシステム名
                  */
                 page_sysnm?: string,
+                /**
+                 * アクション種別
+                 */
+                action_type?: number,
             },
             outputFormat?: string,
             lang?: string,

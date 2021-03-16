@@ -5,7 +5,7 @@ export declare class TagsService {
      * ### **Tag::list (v1)**
      *
      *
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @param order Set the sort order. Available param {0}
@@ -13,7 +13,7 @@ export declare class TagsService {
      * @param id Tag IDs that you would like to display
      * @param categoryId ID of the tag category to be displayed. (Default: All)
      * @param groupBy Grouping List by (module_id|category)
-     * @param groupAs Grouping List as (array|object)
+     * @param type Grouping List as (array|object)
      * @result any
      * @throws ApiError
      */
@@ -24,7 +24,7 @@ export declare class TagsService {
      *
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -37,7 +37,7 @@ export declare class TagsService {
      *
      *
      * @param tagId
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -55,7 +55,7 @@ export declare namespace TagsService {
         id?: Array<number>;
         categoryId?: Array<number>;
         groupBy?: string;
-        groupAs?: string;
+        type?: string;
     }
     type getTagsServiceRcmsApi1TagsResponse = any;
     interface postTagsServiceRcmsApi1TagsInsertRequest {

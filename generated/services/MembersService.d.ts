@@ -5,18 +5,18 @@ export declare class MembersService {
      * ### **Member::list (v1)**
      *
      *
-     * @param outputFormat Format (json|xml|csv)
+     * ## Controller parameters
+     *
+     * > **filter_request_allow_list** `:ALL`
+     *
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @param id Member ID
      * @param cnt Number of topics per page
      * @param pageId Page ID
-     * @param sName Member search
-     * @param sEmail Member search
-     * @param sTel Member search
-     * @param sAddress Member search
-     * @param sTdfkCd Member search
      * @param groupId Member search
+     * @param filter Filter query
      * @result any
      * @throws ApiError
      */
@@ -27,7 +27,7 @@ export declare class MembersService {
      *
      *
      * @param memberId
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -41,10 +41,10 @@ export declare class MembersService {
      *
      * ## Controller parameters
      *
-     * > **default_group_id** `2`
+     * > **default_group_id** `101`
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -58,10 +58,10 @@ export declare class MembersService {
      *
      * ## Controller parameters
      *
-     * > **allowed_group_ids** `2`
+     * > **allowed_group_ids** `101`
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -75,10 +75,10 @@ export declare class MembersService {
      *
      * ## Controller parameters
      *
-     * > **allowed_group_ids** `2`
+     * > **allowed_group_ids** `101`
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -94,10 +94,10 @@ export declare class MembersService {
      *
      * > **self_only** `true`
      *
-     * > **allowed_group_ids** `2`
+     * > **allowed_group_ids** `3`
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -113,16 +113,101 @@ export declare class MembersService {
      *
      * > **self_only** `true`
      *
-     * > **allowed_group_ids** `2`
+     * > **allowed_group_ids** `101`
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
      * @throws ApiError
      */
     static postMembersServiceRcmsApi1MeDelete(requestParam: MembersService.postMembersServiceRcmsApi1MeDeleteRequest): Promise<Result<any>>;
+    /**
+     *
+     * ### **MemberCustomSearch::list (v1)**
+     *
+     *
+     * @param outputFormat Format (json|xml|csv|zip)
+     * @param lang Language
+     * @param charset Charset
+     * @param cnt Number of topics per page
+     * @param pageId Page ID
+     * @param shareType Shared
+     * @param customSearchId メンバー検索条件ID
+     * @result any
+     * @throws ApiError
+     */
+    static getMembersServiceRcmsApi1MemberCustomSearch(requestParam: MembersService.getMembersServiceRcmsApi1MemberCustomSearchRequest): Promise<Result<any>>;
+    /**
+     *
+     * ### **MemberCustomSearch::details (v1)**
+     *
+     *
+     * @param customSearchId
+     * @param outputFormat Format (json|xml|csv|zip)
+     * @param lang Language
+     * @param charset Charset
+     * @result any
+     * @throws ApiError
+     */
+    static getMembersServiceRcmsApi1MemberCustomSearchCustomSearchId(requestParam: MembersService.getMembersServiceRcmsApi1MemberCustomSearchCustomSearchIdRequest): Promise<Result<any>>;
+    /**
+     *
+     * ### **MemberCustomSearch::insert (v1)**
+     *
+     *
+     * ## Controller parameters
+     *
+     * > **member_allow_list** `:ALL`
+     *
+     * > **inquiry_allow_list** `:ALL`
+     *
+     * > **ec_allow_list** `:ALL`
+     *
+     * @param requestBody
+     * @param outputFormat Format (json|xml|csv|zip)
+     * @param lang Language
+     * @param charset Charset
+     * @result any
+     * @throws ApiError
+     */
+    static postMembersServiceRcmsApi1MemberCustomSearchInsert(requestParam: MembersService.postMembersServiceRcmsApi1MemberCustomSearchInsertRequest): Promise<Result<any>>;
+    /**
+     *
+     * ### **MemberCustomSearch::update (v1)**
+     *
+     *
+     * ## Controller parameters
+     *
+     * > **member_allow_list** `:ALL`
+     *
+     * > **inquiry_allow_list** `:ALL`
+     *
+     * > **ec_allow_list** `:ALL`
+     *
+     * @param customSearchId
+     * @param requestBody
+     * @param outputFormat Format (json|xml|csv|zip)
+     * @param lang Language
+     * @param charset Charset
+     * @result any
+     * @throws ApiError
+     */
+    static postMembersServiceRcmsApi1MemberCustomSearchUpdateCustomSearchId(requestParam: MembersService.postMembersServiceRcmsApi1MemberCustomSearchUpdateCustomSearchIdRequest): Promise<Result<any>>;
+    /**
+     *
+     * ### **MemberCustomSearch::delete (v1)**
+     *
+     *
+     * @param customSearchId
+     * @param outputFormat Format (json|xml|csv|zip)
+     * @param lang Language
+     * @param charset Charset
+     * @result any
+     * @throws ApiError
+     */
+    static postMembersServiceRcmsApi1MemberCustomSearchDeleteCustomSearchId(requestParam: MembersService.postMembersServiceRcmsApi1MemberCustomSearchDeleteCustomSearchIdRequest): Promise<Result<any>>;
 }
 export declare namespace MembersService {
     interface getMembersServiceRcmsApi1MembersRequest {
@@ -132,12 +217,8 @@ export declare namespace MembersService {
         id?: Array<number>;
         cnt?: number;
         pageId?: number;
-        sName?: string;
-        sEmail?: string;
-        sTel?: string;
-        sAddress?: string;
-        sTdfkCd?: string;
-        groupId?: number;
+        groupId?: Array<number>;
+        filter?: string;
     }
     type getMembersServiceRcmsApi1MembersResponse = any;
     interface getMembersServiceRcmsApi1MembersMemberIdRequest {
@@ -202,13 +283,17 @@ export declare namespace MembersService {
              */
             login_pwd?: string;
             /**
-             * textarea
+             * login_id
              */
-            textarea?: string;
+            login_id?: string;
             /**
              * text
              */
             text?: string;
+            /**
+             * textarea
+             */
+            textarea?: string;
             /**
              * selectbox
              * * 1 => selectBoxOption1
@@ -220,13 +305,6 @@ export declare namespace MembersService {
                 label: string;
             } | '' | '1' | '2' | '3';
             /**
-             * relation
-             */
-            relation?: {
-                module_type: string;
-                module_id: number;
-            } | number;
-            /**
              * radio
              * * 1 => radioOption1
              * * 2 => radioOption2
@@ -236,6 +314,27 @@ export declare namespace MembersService {
                 key: string;
                 label: string;
             } | '' | '1' | '2' | '3';
+            /**
+             * checkbox
+             * * 1 => checkboxOption1
+             * * 2 => checkboxOption2
+             * * 3 => checkboxOption3
+             */
+            checkbox?: Array<{
+                key: string;
+                label: string;
+            } | '1' | '2' | '3'>;
+            /**
+             * date
+             */
+            date?: string | string;
+            /**
+             * relation
+             */
+            relation?: {
+                module_type: string;
+                module_id: number;
+            } | number;
             /**
              * file
              */
@@ -254,24 +353,6 @@ export declare namespace MembersService {
                 desc?: string;
             };
             /**
-             * date
-             */
-            date?: string | string;
-            /**
-             * checkbox
-             * * 1 => checkboxOption1
-             * * 2 => checkboxOption2
-             * * 3 => checkboxOption3
-             */
-            checkbox?: Array<{
-                key: string;
-                label: string;
-            } | '1' | '2' | '3'>;
-            /**
-             * /label/open_flg
-             */
-            open_flg?: (0 | 1);
-            /**
              * /label/login_ok_flg
              */
             login_ok_flg?: (0 | 1);
@@ -280,6 +361,22 @@ export declare namespace MembersService {
              */
             validate_only?: boolean;
             auto_login?: number;
+            /**
+             * タグID
+             * * 2 => Test Tag
+             * * 5 => TestTag1591861768981
+             * * 6 => TestTag1591861909598
+             * * 7 => TestTag1591863012273
+             * * 8 => TestTag1591865519222
+             * * 9 => TestTag1591865750748
+             * * 10 => TestTag1591867928030
+             * * 11 => TestTag1591868223421
+             * * 12 => TestTag1591869955411
+             * * 13 => TestTag1591871407217
+             * * 14 => TestTag1591871878143
+             * * 15 => Ja
+             */
+            tag_id?: Array<(2 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15)>;
         };
         outputFormat?: string;
         lang?: string;
@@ -288,6 +385,10 @@ export declare namespace MembersService {
     type postMembersServiceRcmsApi1MembersInsertResponse = any;
     interface postMembersServiceRcmsApi1MembersUpdateRequest {
         requestBody: {
+            /**
+             * /label/current_password
+             */
+            current_password?: string;
             /**
              * /label/member_id
              */
@@ -345,13 +446,17 @@ export declare namespace MembersService {
              */
             login_pwd?: string;
             /**
-             * textarea
+             * login_id
              */
-            textarea?: string;
+            login_id?: string;
             /**
              * text
              */
             text?: string;
+            /**
+             * textarea
+             */
+            textarea?: string;
             /**
              * selectbox
              * * 1 => selectBoxOption1
@@ -363,13 +468,6 @@ export declare namespace MembersService {
                 label: string;
             } | '' | '1' | '2' | '3';
             /**
-             * relation
-             */
-            relation?: {
-                module_type: string;
-                module_id: number;
-            } | number;
-            /**
              * radio
              * * 1 => radioOption1
              * * 2 => radioOption2
@@ -379,6 +477,27 @@ export declare namespace MembersService {
                 key: string;
                 label: string;
             } | '' | '1' | '2' | '3';
+            /**
+             * checkbox
+             * * 1 => checkboxOption1
+             * * 2 => checkboxOption2
+             * * 3 => checkboxOption3
+             */
+            checkbox?: Array<{
+                key: string;
+                label: string;
+            } | '1' | '2' | '3'>;
+            /**
+             * date
+             */
+            date?: string | string;
+            /**
+             * relation
+             */
+            relation?: {
+                module_type: string;
+                module_id: number;
+            } | number;
             /**
              * file
              */
@@ -397,27 +516,9 @@ export declare namespace MembersService {
                 desc?: string;
             };
             /**
-             * date
-             */
-            date?: string | string;
-            /**
-             * checkbox
-             * * 1 => checkboxOption1
-             * * 2 => checkboxOption2
-             * * 3 => checkboxOption3
-             */
-            checkbox?: Array<{
-                key: string;
-                label: string;
-            } | '1' | '2' | '3'>;
-            /**
              * /label/group_id
              */
-            group_id?: (2);
-            /**
-             * /label/open_flg
-             */
-            open_flg?: (0 | 1);
+            group_id?: (101);
             /**
              * /label/login_ok_flg
              */
@@ -427,6 +528,22 @@ export declare namespace MembersService {
              */
             validate_only?: boolean;
             auto_login?: number;
+            /**
+             * タグID
+             * * 2 => Test Tag
+             * * 5 => TestTag1591861768981
+             * * 6 => TestTag1591861909598
+             * * 7 => TestTag1591863012273
+             * * 8 => TestTag1591865519222
+             * * 9 => TestTag1591865750748
+             * * 10 => TestTag1591867928030
+             * * 11 => TestTag1591868223421
+             * * 12 => TestTag1591869955411
+             * * 13 => TestTag1591871407217
+             * * 14 => TestTag1591871878143
+             * * 15 => Ja
+             */
+            tag_id?: Array<(2 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15)>;
         };
         outputFormat?: string;
         lang?: string;
@@ -448,6 +565,10 @@ export declare namespace MembersService {
     interface postMembersServiceRcmsApi1MeUpdateRequest {
         requestBody: {
             /**
+             * /label/current_password
+             */
+            current_password?: string;
+            /**
              * name1
              */
             name1?: string;
@@ -500,13 +621,17 @@ export declare namespace MembersService {
              */
             login_pwd?: string;
             /**
-             * textarea
+             * login_id
              */
-            textarea?: string;
+            login_id?: string;
             /**
              * text
              */
             text?: string;
+            /**
+             * textarea
+             */
+            textarea?: string;
             /**
              * selectbox
              * * 1 => selectBoxOption1
@@ -518,13 +643,6 @@ export declare namespace MembersService {
                 label: string;
             } | '' | '1' | '2' | '3';
             /**
-             * relation
-             */
-            relation?: {
-                module_type: string;
-                module_id: number;
-            } | number;
-            /**
              * radio
              * * 1 => radioOption1
              * * 2 => radioOption2
@@ -534,6 +652,27 @@ export declare namespace MembersService {
                 key: string;
                 label: string;
             } | '' | '1' | '2' | '3';
+            /**
+             * checkbox
+             * * 1 => checkboxOption1
+             * * 2 => checkboxOption2
+             * * 3 => checkboxOption3
+             */
+            checkbox?: Array<{
+                key: string;
+                label: string;
+            } | '1' | '2' | '3'>;
+            /**
+             * date
+             */
+            date?: string | string;
+            /**
+             * relation
+             */
+            relation?: {
+                module_type: string;
+                module_id: number;
+            } | number;
             /**
              * file
              */
@@ -552,27 +691,9 @@ export declare namespace MembersService {
                 desc?: string;
             };
             /**
-             * date
-             */
-            date?: string | string;
-            /**
-             * checkbox
-             * * 1 => checkboxOption1
-             * * 2 => checkboxOption2
-             * * 3 => checkboxOption3
-             */
-            checkbox?: Array<{
-                key: string;
-                label: string;
-            } | '1' | '2' | '3'>;
-            /**
              * /label/group_id
              */
-            group_id?: (2);
-            /**
-             * /label/open_flg
-             */
-            open_flg?: (0 | 1);
+            group_id?: (3);
             /**
              * /label/login_ok_flg
              */
@@ -582,6 +703,22 @@ export declare namespace MembersService {
              */
             validate_only?: boolean;
             auto_login?: number;
+            /**
+             * タグID
+             * * 2 => Test Tag
+             * * 5 => TestTag1591861768981
+             * * 6 => TestTag1591861909598
+             * * 7 => TestTag1591863012273
+             * * 8 => TestTag1591865519222
+             * * 9 => TestTag1591865750748
+             * * 10 => TestTag1591867928030
+             * * 11 => TestTag1591868223421
+             * * 12 => TestTag1591869955411
+             * * 13 => TestTag1591871407217
+             * * 14 => TestTag1591871878143
+             * * 15 => Ja
+             */
+            tag_id?: Array<(2 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15)>;
         };
         outputFormat?: string;
         lang?: string;
@@ -595,6 +732,159 @@ export declare namespace MembersService {
         charset?: string;
     }
     type postMembersServiceRcmsApi1MeDeleteResponse = any;
+    interface getMembersServiceRcmsApi1MemberCustomSearchRequest {
+        outputFormat?: string;
+        lang?: string;
+        charset?: string;
+        cnt?: number;
+        pageId?: number;
+        shareType?: number;
+        customSearchId?: Array<number>;
+    }
+    type getMembersServiceRcmsApi1MemberCustomSearchResponse = any;
+    interface getMembersServiceRcmsApi1MemberCustomSearchCustomSearchIdRequest {
+        customSearchId: number;
+        outputFormat?: string;
+        lang?: string;
+        charset?: string;
+    }
+    type getMembersServiceRcmsApi1MemberCustomSearchCustomSearchIdResponse = any;
+    interface postMembersServiceRcmsApi1MemberCustomSearchInsertRequest {
+        requestBody: {
+            search_nm: string;
+            share_type: string;
+            auth_flg: string;
+            memo: string;
+            search_conditions: any;
+            staticcontents_search_params: any;
+            member_search_condition: string | {
+                name: string;
+                node: any;
+            } | {
+                filter: string;
+                filter_node: any;
+            };
+            inquiry_search_condition: string | {
+                name: string;
+                node: any;
+            } | {
+                filter: string;
+                filter_node: any;
+            };
+            ec_search_condition: string | {
+                name: string;
+                node: any;
+            } | {
+                filter: string;
+                filter_node: any;
+            };
+        } | {
+            search_nm: string;
+            share_type: string;
+            group_ids: string;
+            auth_flg: string;
+            memo: string;
+            search_conditions: any;
+            staticcontents_search_params: any;
+            member_search_condition: string | {
+                name: string;
+                node: any;
+            } | {
+                filter: string;
+                filter_node: any;
+            };
+            inquiry_search_condition: string | {
+                name: string;
+                node: any;
+            } | {
+                filter: string;
+                filter_node: any;
+            };
+            ec_search_condition: string | {
+                name: string;
+                node: any;
+            } | {
+                filter: string;
+                filter_node: any;
+            };
+        };
+        outputFormat?: string;
+        lang?: string;
+        charset?: string;
+    }
+    type postMembersServiceRcmsApi1MemberCustomSearchInsertResponse = any;
+    interface postMembersServiceRcmsApi1MemberCustomSearchUpdateCustomSearchIdRequest {
+        customSearchId: number;
+        requestBody: {
+            search_nm: string;
+            share_type: string;
+            auth_flg: string;
+            memo: string;
+            search_conditions: any;
+            staticcontents_search_params: any;
+            member_search_condition: string | {
+                name: string;
+                node: any;
+            } | {
+                filter: string;
+                filter_node: any;
+            };
+            inquiry_search_condition: string | {
+                name: string;
+                node: any;
+            } | {
+                filter: string;
+                filter_node: any;
+            };
+            ec_search_condition: string | {
+                name: string;
+                node: any;
+            } | {
+                filter: string;
+                filter_node: any;
+            };
+        } | {
+            search_nm: string;
+            share_type: string;
+            group_ids: string;
+            auth_flg: string;
+            memo: string;
+            search_conditions: any;
+            staticcontents_search_params: any;
+            member_search_condition: string | {
+                name: string;
+                node: any;
+            } | {
+                filter: string;
+                filter_node: any;
+            };
+            inquiry_search_condition: string | {
+                name: string;
+                node: any;
+            } | {
+                filter: string;
+                filter_node: any;
+            };
+            ec_search_condition: string | {
+                name: string;
+                node: any;
+            } | {
+                filter: string;
+                filter_node: any;
+            };
+        };
+        outputFormat?: string;
+        lang?: string;
+        charset?: string;
+    }
+    type postMembersServiceRcmsApi1MemberCustomSearchUpdateCustomSearchIdResponse = any;
+    interface postMembersServiceRcmsApi1MemberCustomSearchDeleteCustomSearchIdRequest {
+        customSearchId: number;
+        outputFormat?: string;
+        lang?: string;
+        charset?: string;
+    }
+    type postMembersServiceRcmsApi1MemberCustomSearchDeleteCustomSearchIdResponse = any;
 }
 export declare const infos: ({
     path: string;
@@ -620,6 +910,24 @@ export declare const infos: ({
     class: typeof MembersService;
     className: string;
     method: typeof MembersService.postMembersServiceRcmsApi1MembersInsert;
+    methodName: string;
+    auth: null;
+    description: string;
+} | {
+    path: string;
+    httpMethod: string;
+    class: typeof MembersService;
+    className: string;
+    method: typeof MembersService.getMembersServiceRcmsApi1MemberCustomSearch;
+    methodName: string;
+    auth: null;
+    description: string;
+} | {
+    path: string;
+    httpMethod: string;
+    class: typeof MembersService;
+    className: string;
+    method: typeof MembersService.getMembersServiceRcmsApi1MemberCustomSearchCustomSearchId;
     methodName: string;
     auth: null;
     description: string;

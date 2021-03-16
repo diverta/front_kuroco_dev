@@ -43,18 +43,18 @@ class MembersService {
      * ### **Member::list (v1)**
      *
      *
-     * @param outputFormat Format (json|xml|csv)
+     * ## Controller parameters
+     *
+     * > **filter_request_allow_list** `:ALL`
+     *
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @param id Member ID
      * @param cnt Number of topics per page
      * @param pageId Page ID
-     * @param sName Member search
-     * @param sEmail Member search
-     * @param sTel Member search
-     * @param sAddress Member search
-     * @param sTdfkCd Member search
      * @param groupId Member search
+     * @param filter Filter query
      * @result any
      * @throws ApiError
      */
@@ -75,12 +75,8 @@ class MembersService {
                         'id[]': requestParam.id,
                         'cnt': requestParam.cnt,
                         'pageID': requestParam.pageId,
-                        's_name': requestParam.sName,
-                        's_email': requestParam.sEmail,
-                        's_tel': requestParam.sTel,
-                        's_address': requestParam.sAddress,
-                        's_tdfk_cd': requestParam.sTdfkCd,
-                        'group_id': requestParam.groupId,
+                        'group_id[]': requestParam.groupId,
+                        'filter': requestParam.filter,
                     },
                 });
             });
@@ -98,7 +94,7 @@ class MembersService {
      *
      *
      * @param memberId
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -136,10 +132,10 @@ class MembersService {
      *
      * ## Controller parameters
      *
-     * > **default_group_id** `2`
+     * > **default_group_id** `101`
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -178,10 +174,10 @@ class MembersService {
      *
      * ## Controller parameters
      *
-     * > **allowed_group_ids** `2`
+     * > **allowed_group_ids** `101`
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -220,10 +216,10 @@ class MembersService {
      *
      * ## Controller parameters
      *
-     * > **allowed_group_ids** `2`
+     * > **allowed_group_ids** `101`
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -264,10 +260,10 @@ class MembersService {
      *
      * > **self_only** `true`
      *
-     * > **allowed_group_ids** `2`
+     * > **allowed_group_ids** `3`
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -308,10 +304,10 @@ class MembersService {
      *
      * > **self_only** `true`
      *
-     * > **allowed_group_ids** `2`
+     * > **allowed_group_ids** `101`
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -343,9 +339,225 @@ class MembersService {
             return result;
         });
     }
+    /**
+     *
+     * ### **MemberCustomSearch::list (v1)**
+     *
+     *
+     * @param outputFormat Format (json|xml|csv|zip)
+     * @param lang Language
+     * @param charset Charset
+     * @param cnt Number of topics per page
+     * @param pageId Page ID
+     * @param shareType Shared
+     * @param customSearchId メンバー検索条件ID
+     * @result any
+     * @throws ApiError
+     */
+    static getMembersServiceRcmsApi1MemberCustomSearch(requestParam) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const shouldHookToken = Object.keys({
+                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+            }).length > 0;
+            const request = () => __awaiter(this, void 0, void 0, function* () {
+                return yield request_1.request({
+                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${LocalStorage_1.LocalStorage.getAccessToken()}` } : {},
+                    method: 'get',
+                    path: `/rcms-api/1/member/custom_search`,
+                    query: {
+                        '_output_format': requestParam.outputFormat,
+                        '_lang': requestParam.lang,
+                        '_charset': requestParam.charset,
+                        'cnt': requestParam.cnt,
+                        'pageID': requestParam.pageId,
+                        'share_type': requestParam.shareType,
+                        'custom_search_id[]': requestParam.customSearchId,
+                    },
+                });
+            });
+            let result = yield request();
+            if (shouldHookToken && !result.ok && result.status === 401) {
+                result = yield Promise.resolve().then(() => __importStar(require('../core/Auth'))).then(({ Auth }) => Auth.retryRequest(request, result));
+            }
+            ApiError_1.catchGenericError(result);
+            return result;
+        });
+    }
+    /**
+     *
+     * ### **MemberCustomSearch::details (v1)**
+     *
+     *
+     * @param customSearchId
+     * @param outputFormat Format (json|xml|csv|zip)
+     * @param lang Language
+     * @param charset Charset
+     * @result any
+     * @throws ApiError
+     */
+    static getMembersServiceRcmsApi1MemberCustomSearchCustomSearchId(requestParam) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const shouldHookToken = Object.keys({
+                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+            }).length > 0;
+            const request = () => __awaiter(this, void 0, void 0, function* () {
+                return yield request_1.request({
+                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${LocalStorage_1.LocalStorage.getAccessToken()}` } : {},
+                    method: 'get',
+                    path: `/rcms-api/1/member/custom_search/${requestParam.customSearchId}`,
+                    query: {
+                        '_output_format': requestParam.outputFormat,
+                        '_lang': requestParam.lang,
+                        '_charset': requestParam.charset,
+                    },
+                });
+            });
+            let result = yield request();
+            if (shouldHookToken && !result.ok && result.status === 401) {
+                result = yield Promise.resolve().then(() => __importStar(require('../core/Auth'))).then(({ Auth }) => Auth.retryRequest(request, result));
+            }
+            ApiError_1.catchGenericError(result);
+            return result;
+        });
+    }
+    /**
+     *
+     * ### **MemberCustomSearch::insert (v1)**
+     *
+     *
+     * ## Controller parameters
+     *
+     * > **member_allow_list** `:ALL`
+     *
+     * > **inquiry_allow_list** `:ALL`
+     *
+     * > **ec_allow_list** `:ALL`
+     *
+     * @param requestBody
+     * @param outputFormat Format (json|xml|csv|zip)
+     * @param lang Language
+     * @param charset Charset
+     * @result any
+     * @throws ApiError
+     */
+    static postMembersServiceRcmsApi1MemberCustomSearchInsert(requestParam) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const shouldHookToken = Object.keys({
+                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+            }).length > 0;
+            const request = () => __awaiter(this, void 0, void 0, function* () {
+                return yield request_1.request({
+                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${LocalStorage_1.LocalStorage.getAccessToken()}` } : {},
+                    method: 'post',
+                    path: `/rcms-api/1/member/custom_search/insert`,
+                    query: {
+                        '_output_format': requestParam.outputFormat,
+                        '_lang': requestParam.lang,
+                        '_charset': requestParam.charset,
+                    },
+                    body: requestParam.requestBody,
+                });
+            });
+            let result = yield request();
+            if (shouldHookToken && !result.ok && result.status === 401) {
+                result = yield Promise.resolve().then(() => __importStar(require('../core/Auth'))).then(({ Auth }) => Auth.retryRequest(request, result));
+            }
+            ApiError_1.catchGenericError(result);
+            return result;
+        });
+    }
+    /**
+     *
+     * ### **MemberCustomSearch::update (v1)**
+     *
+     *
+     * ## Controller parameters
+     *
+     * > **member_allow_list** `:ALL`
+     *
+     * > **inquiry_allow_list** `:ALL`
+     *
+     * > **ec_allow_list** `:ALL`
+     *
+     * @param customSearchId
+     * @param requestBody
+     * @param outputFormat Format (json|xml|csv|zip)
+     * @param lang Language
+     * @param charset Charset
+     * @result any
+     * @throws ApiError
+     */
+    static postMembersServiceRcmsApi1MemberCustomSearchUpdateCustomSearchId(requestParam) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const shouldHookToken = Object.keys({
+                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+            }).length > 0;
+            const request = () => __awaiter(this, void 0, void 0, function* () {
+                return yield request_1.request({
+                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${LocalStorage_1.LocalStorage.getAccessToken()}` } : {},
+                    method: 'post',
+                    path: `/rcms-api/1/member/custom_search/update/${requestParam.customSearchId}`,
+                    query: {
+                        '_output_format': requestParam.outputFormat,
+                        '_lang': requestParam.lang,
+                        '_charset': requestParam.charset,
+                    },
+                    body: requestParam.requestBody,
+                });
+            });
+            let result = yield request();
+            if (shouldHookToken && !result.ok && result.status === 401) {
+                result = yield Promise.resolve().then(() => __importStar(require('../core/Auth'))).then(({ Auth }) => Auth.retryRequest(request, result));
+            }
+            ApiError_1.catchGenericError(result);
+            return result;
+        });
+    }
+    /**
+     *
+     * ### **MemberCustomSearch::delete (v1)**
+     *
+     *
+     * @param customSearchId
+     * @param outputFormat Format (json|xml|csv|zip)
+     * @param lang Language
+     * @param charset Charset
+     * @result any
+     * @throws ApiError
+     */
+    static postMembersServiceRcmsApi1MemberCustomSearchDeleteCustomSearchId(requestParam) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const shouldHookToken = Object.keys({
+                'Token-Auth': OpenAPI_1.OpenAPI.SECURITY['Token-Auth'],
+            }).length > 0;
+            const request = () => __awaiter(this, void 0, void 0, function* () {
+                return yield request_1.request({
+                    headers: shouldHookToken ? { [OpenAPI_1.OpenAPI.SECURITY['Token-Auth'].name]: `${LocalStorage_1.LocalStorage.getAccessToken()}` } : {},
+                    method: 'post',
+                    path: `/rcms-api/1/member/custom_search/delete/${requestParam.customSearchId}`,
+                    query: {
+                        '_output_format': requestParam.outputFormat,
+                        '_lang': requestParam.lang,
+                        '_charset': requestParam.charset,
+                    },
+                });
+            });
+            let result = yield request();
+            if (shouldHookToken && !result.ok && result.status === 401) {
+                result = yield Promise.resolve().then(() => __importStar(require('../core/Auth'))).then(({ Auth }) => Auth.retryRequest(request, result));
+            }
+            ApiError_1.catchGenericError(result);
+            return result;
+        });
+    }
 }
 exports.MembersService = MembersService;
 (function (MembersService) {
+    ;
+    ;
+    ;
+    ;
+    ;
     ;
     ;
     ;
@@ -371,12 +583,8 @@ exports.infos = [
             id?: Array<number>,
             cnt?: number,
             pageId?: number,
-            sName?: string,
-            sEmail?: string,
-            sTel?: string,
-            sAddress?: string,
-            sTdfkCd?: string,
-            groupId?: number,
+            groupId?: Array<number>,
+            filter?: string,
         };
         export type getMembersServiceRcmsApi1MembersResponse = any;
         `,
@@ -463,13 +671,17 @@ exports.infos = [
                  */
                 login_pwd?: string,
                 /**
-                 * textarea
+                 * login_id
                  */
-                textarea?: string,
+                login_id?: string,
                 /**
                  * text
                  */
                 text?: string,
+                /**
+                 * textarea
+                 */
+                textarea?: string,
                 /**
                  * selectbox
                  * * 1 => selectBoxOption1
@@ -478,16 +690,27 @@ exports.infos = [
                  */
                 selectbox?: { key: string ,label: string  } | '' | '1' | '2' | '3',
                 /**
-                 * relation
-                 */
-                relation?: { module_type: string ,module_id: number  } | number,
-                /**
                  * radio
                  * * 1 => radioOption1
                  * * 2 => radioOption2
                  * * 3 => radioOption3
                  */
                 radio?: { key: string ,label: string  } | '' | '1' | '2' | '3',
+                /**
+                 * checkbox
+                 * * 1 => checkboxOption1
+                 * * 2 => checkboxOption2
+                 * * 3 => checkboxOption3
+                 */
+                checkbox?: Array<{ key: string ,label: string  } | '1' | '2' | '3'>,
+                /**
+                 * date
+                 */
+                date?: string | string,
+                /**
+                 * relation
+                 */
+                relation?: { module_type: string ,module_id: number  } | number,
                 /**
                  * file
                  */
@@ -506,21 +729,6 @@ exports.infos = [
                     desc?: string,
                 },
                 /**
-                 * date
-                 */
-                date?: string | string,
-                /**
-                 * checkbox
-                 * * 1 => checkboxOption1
-                 * * 2 => checkboxOption2
-                 * * 3 => checkboxOption3
-                 */
-                checkbox?: Array<{ key: string ,label: string  } | '1' | '2' | '3'>,
-                /**
-                 * /label/open_flg
-                 */
-                open_flg?: (0 | 1),
-                /**
                  * /label/login_ok_flg
                  */
                 login_ok_flg?: (0 | 1),
@@ -529,6 +737,22 @@ exports.infos = [
                  */
                 validate_only?: boolean,
                 auto_login?: number,
+                /**
+                 * タグID
+                 * * 2 => Test Tag
+                 * * 5 => TestTag1591861768981
+                 * * 6 => TestTag1591861909598
+                 * * 7 => TestTag1591863012273
+                 * * 8 => TestTag1591865519222
+                 * * 9 => TestTag1591865750748
+                 * * 10 => TestTag1591867928030
+                 * * 11 => TestTag1591868223421
+                 * * 12 => TestTag1591869955411
+                 * * 13 => TestTag1591871407217
+                 * * 14 => TestTag1591871878143
+                 * * 15 => Ja
+                 */
+                tag_id?: Array<(2 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15)>,
             },
             outputFormat?: string,
             lang?: string,
@@ -548,6 +772,10 @@ exports.infos = [
         description: `
         export interface postMembersServiceRcmsApi1MembersUpdateRequest {
             requestBody: {
+                /**
+                 * /label/current_password
+                 */
+                current_password?: string,
                 /**
                  * /label/member_id
                  */
@@ -605,13 +833,17 @@ exports.infos = [
                  */
                 login_pwd?: string,
                 /**
-                 * textarea
+                 * login_id
                  */
-                textarea?: string,
+                login_id?: string,
                 /**
                  * text
                  */
                 text?: string,
+                /**
+                 * textarea
+                 */
+                textarea?: string,
                 /**
                  * selectbox
                  * * 1 => selectBoxOption1
@@ -620,16 +852,27 @@ exports.infos = [
                  */
                 selectbox?: { key: string ,label: string  } | '' | '1' | '2' | '3',
                 /**
-                 * relation
-                 */
-                relation?: { module_type: string ,module_id: number  } | number,
-                /**
                  * radio
                  * * 1 => radioOption1
                  * * 2 => radioOption2
                  * * 3 => radioOption3
                  */
                 radio?: { key: string ,label: string  } | '' | '1' | '2' | '3',
+                /**
+                 * checkbox
+                 * * 1 => checkboxOption1
+                 * * 2 => checkboxOption2
+                 * * 3 => checkboxOption3
+                 */
+                checkbox?: Array<{ key: string ,label: string  } | '1' | '2' | '3'>,
+                /**
+                 * date
+                 */
+                date?: string | string,
+                /**
+                 * relation
+                 */
+                relation?: { module_type: string ,module_id: number  } | number,
                 /**
                  * file
                  */
@@ -648,24 +891,9 @@ exports.infos = [
                     desc?: string,
                 },
                 /**
-                 * date
-                 */
-                date?: string | string,
-                /**
-                 * checkbox
-                 * * 1 => checkboxOption1
-                 * * 2 => checkboxOption2
-                 * * 3 => checkboxOption3
-                 */
-                checkbox?: Array<{ key: string ,label: string  } | '1' | '2' | '3'>,
-                /**
                  * /label/group_id
                  */
-                group_id?: (2),
-                /**
-                 * /label/open_flg
-                 */
-                open_flg?: (0 | 1),
+                group_id?: (101),
                 /**
                  * /label/login_ok_flg
                  */
@@ -675,6 +903,22 @@ exports.infos = [
                  */
                 validate_only?: boolean,
                 auto_login?: number,
+                /**
+                 * タグID
+                 * * 2 => Test Tag
+                 * * 5 => TestTag1591861768981
+                 * * 6 => TestTag1591861909598
+                 * * 7 => TestTag1591863012273
+                 * * 8 => TestTag1591865519222
+                 * * 9 => TestTag1591865750748
+                 * * 10 => TestTag1591867928030
+                 * * 11 => TestTag1591868223421
+                 * * 12 => TestTag1591869955411
+                 * * 13 => TestTag1591871407217
+                 * * 14 => TestTag1591871878143
+                 * * 15 => Ja
+                 */
+                tag_id?: Array<(2 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15)>,
             },
             outputFormat?: string,
             lang?: string,
@@ -718,6 +962,10 @@ exports.infos = [
         export interface postMembersServiceRcmsApi1MeUpdateRequest {
             requestBody: {
                 /**
+                 * /label/current_password
+                 */
+                current_password?: string,
+                /**
                  * name1
                  */
                 name1?: string,
@@ -770,13 +1018,17 @@ exports.infos = [
                  */
                 login_pwd?: string,
                 /**
-                 * textarea
+                 * login_id
                  */
-                textarea?: string,
+                login_id?: string,
                 /**
                  * text
                  */
                 text?: string,
+                /**
+                 * textarea
+                 */
+                textarea?: string,
                 /**
                  * selectbox
                  * * 1 => selectBoxOption1
@@ -785,16 +1037,27 @@ exports.infos = [
                  */
                 selectbox?: { key: string ,label: string  } | '' | '1' | '2' | '3',
                 /**
-                 * relation
-                 */
-                relation?: { module_type: string ,module_id: number  } | number,
-                /**
                  * radio
                  * * 1 => radioOption1
                  * * 2 => radioOption2
                  * * 3 => radioOption3
                  */
                 radio?: { key: string ,label: string  } | '' | '1' | '2' | '3',
+                /**
+                 * checkbox
+                 * * 1 => checkboxOption1
+                 * * 2 => checkboxOption2
+                 * * 3 => checkboxOption3
+                 */
+                checkbox?: Array<{ key: string ,label: string  } | '1' | '2' | '3'>,
+                /**
+                 * date
+                 */
+                date?: string | string,
+                /**
+                 * relation
+                 */
+                relation?: { module_type: string ,module_id: number  } | number,
                 /**
                  * file
                  */
@@ -813,24 +1076,9 @@ exports.infos = [
                     desc?: string,
                 },
                 /**
-                 * date
-                 */
-                date?: string | string,
-                /**
-                 * checkbox
-                 * * 1 => checkboxOption1
-                 * * 2 => checkboxOption2
-                 * * 3 => checkboxOption3
-                 */
-                checkbox?: Array<{ key: string ,label: string  } | '1' | '2' | '3'>,
-                /**
                  * /label/group_id
                  */
-                group_id?: (2),
-                /**
-                 * /label/open_flg
-                 */
-                open_flg?: (0 | 1),
+                group_id?: (3),
                 /**
                  * /label/login_ok_flg
                  */
@@ -840,6 +1088,22 @@ exports.infos = [
                  */
                 validate_only?: boolean,
                 auto_login?: number,
+                /**
+                 * タグID
+                 * * 2 => Test Tag
+                 * * 5 => TestTag1591861768981
+                 * * 6 => TestTag1591861909598
+                 * * 7 => TestTag1591863012273
+                 * * 8 => TestTag1591865519222
+                 * * 9 => TestTag1591865750748
+                 * * 10 => TestTag1591867928030
+                 * * 11 => TestTag1591868223421
+                 * * 12 => TestTag1591869955411
+                 * * 13 => TestTag1591871407217
+                 * * 14 => TestTag1591871878143
+                 * * 15 => Ja
+                 */
+                tag_id?: Array<(2 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15)>,
             },
             outputFormat?: string,
             lang?: string,
@@ -864,6 +1128,100 @@ exports.infos = [
             charset?: string,
         };
         export type postMembersServiceRcmsApi1MeDeleteResponse = any;
+        `,
+    },
+    {
+        path: '/rcms-api/1/member/custom_search',
+        httpMethod: 'get',
+        class: MembersService,
+        className: 'MembersService',
+        method: MembersService.getMembersServiceRcmsApi1MemberCustomSearch,
+        methodName: 'getMembersServiceRcmsApi1MemberCustomSearch',
+        auth: null,
+        description: `
+        export interface getMembersServiceRcmsApi1MemberCustomSearchRequest {
+            outputFormat?: string,
+            lang?: string,
+            charset?: string,
+            cnt?: number,
+            pageId?: number,
+            shareType?: number,
+            customSearchId?: Array<number>,
+        };
+        export type getMembersServiceRcmsApi1MemberCustomSearchResponse = any;
+        `,
+    },
+    {
+        path: '/rcms-api/1/member/custom_search/${requestParam.customSearchId}',
+        httpMethod: 'get',
+        class: MembersService,
+        className: 'MembersService',
+        method: MembersService.getMembersServiceRcmsApi1MemberCustomSearchCustomSearchId,
+        methodName: 'getMembersServiceRcmsApi1MemberCustomSearchCustomSearchId',
+        auth: null,
+        description: `
+        export interface getMembersServiceRcmsApi1MemberCustomSearchCustomSearchIdRequest {
+            customSearchId: number,
+            outputFormat?: string,
+            lang?: string,
+            charset?: string,
+        };
+        export type getMembersServiceRcmsApi1MemberCustomSearchCustomSearchIdResponse = any;
+        `,
+    },
+    {
+        path: '/rcms-api/1/member/custom_search/insert',
+        httpMethod: 'post',
+        class: MembersService,
+        className: 'MembersService',
+        method: MembersService.postMembersServiceRcmsApi1MemberCustomSearchInsert,
+        methodName: 'postMembersServiceRcmsApi1MemberCustomSearchInsert',
+        auth: null,
+        description: `
+        export interface postMembersServiceRcmsApi1MemberCustomSearchInsertRequest {
+            requestBody: { search_nm: string ,share_type: string ,auth_flg: string ,memo: string ,search_conditions: any ,staticcontents_search_params: any ,member_search_condition: string | { name: string ,node: any  } | { filter: string ,filter_node: any  } ,inquiry_search_condition: string | { name: string ,node: any  } | { filter: string ,filter_node: any  } ,ec_search_condition: string | { name: string ,node: any  } | { filter: string ,filter_node: any  }  } | { search_nm: string ,share_type: string ,group_ids: string ,auth_flg: string ,memo: string ,search_conditions: any ,staticcontents_search_params: any ,member_search_condition: string | { name: string ,node: any  } | { filter: string ,filter_node: any  } ,inquiry_search_condition: string | { name: string ,node: any  } | { filter: string ,filter_node: any  } ,ec_search_condition: string | { name: string ,node: any  } | { filter: string ,filter_node: any  }  },
+            outputFormat?: string,
+            lang?: string,
+            charset?: string,
+        };
+        export type postMembersServiceRcmsApi1MemberCustomSearchInsertResponse = any;
+        `,
+    },
+    {
+        path: '/rcms-api/1/member/custom_search/update/${requestParam.customSearchId}',
+        httpMethod: 'post',
+        class: MembersService,
+        className: 'MembersService',
+        method: MembersService.postMembersServiceRcmsApi1MemberCustomSearchUpdateCustomSearchId,
+        methodName: 'postMembersServiceRcmsApi1MemberCustomSearchUpdateCustomSearchId',
+        auth: null,
+        description: `
+        export interface postMembersServiceRcmsApi1MemberCustomSearchUpdateCustomSearchIdRequest {
+            customSearchId: number,
+            requestBody: { search_nm: string ,share_type: string ,auth_flg: string ,memo: string ,search_conditions: any ,staticcontents_search_params: any ,member_search_condition: string | { name: string ,node: any  } | { filter: string ,filter_node: any  } ,inquiry_search_condition: string | { name: string ,node: any  } | { filter: string ,filter_node: any  } ,ec_search_condition: string | { name: string ,node: any  } | { filter: string ,filter_node: any  }  } | { search_nm: string ,share_type: string ,group_ids: string ,auth_flg: string ,memo: string ,search_conditions: any ,staticcontents_search_params: any ,member_search_condition: string | { name: string ,node: any  } | { filter: string ,filter_node: any  } ,inquiry_search_condition: string | { name: string ,node: any  } | { filter: string ,filter_node: any  } ,ec_search_condition: string | { name: string ,node: any  } | { filter: string ,filter_node: any  }  },
+            outputFormat?: string,
+            lang?: string,
+            charset?: string,
+        };
+        export type postMembersServiceRcmsApi1MemberCustomSearchUpdateCustomSearchIdResponse = any;
+        `,
+    },
+    {
+        path: '/rcms-api/1/member/custom_search/delete/${requestParam.customSearchId}',
+        httpMethod: 'post',
+        class: MembersService,
+        className: 'MembersService',
+        method: MembersService.postMembersServiceRcmsApi1MemberCustomSearchDeleteCustomSearchId,
+        methodName: 'postMembersServiceRcmsApi1MemberCustomSearchDeleteCustomSearchId',
+        auth: null,
+        description: `
+        export interface postMembersServiceRcmsApi1MemberCustomSearchDeleteCustomSearchIdRequest {
+            customSearchId: number,
+            outputFormat?: string,
+            lang?: string,
+            charset?: string,
+        };
+        export type postMembersServiceRcmsApi1MemberCustomSearchDeleteCustomSearchIdResponse = any;
         `,
     },
 ];

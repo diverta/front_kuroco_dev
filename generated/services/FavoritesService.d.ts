@@ -5,7 +5,7 @@ export declare class FavoritesService {
      * ### **Favorite::list (v1)**
      *
      *
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @param cnt Display number per page
@@ -13,9 +13,8 @@ export declare class FavoritesService {
      * @param moduleId
      * @param moduleType Module type
      * @param memberId Member ID
-     * @param rcmsid rcmsid
      * @param groupBy Grouping List by (module_id)
-     * @param groupAs Grouping List as (array or object)
+     * @param type Grouping List as (array or object)
      * @result any
      * @throws ApiError
      */
@@ -26,7 +25,7 @@ export declare class FavoritesService {
      *
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -39,7 +38,7 @@ export declare class FavoritesService {
      *
      *
      * @param requestBody
-     * @param outputFormat Format (json|xml|csv)
+     * @param outputFormat Format (json|xml|csv|zip)
      * @param lang Language
      * @param charset Charset
      * @result any
@@ -57,9 +56,8 @@ export declare namespace FavoritesService {
         moduleId?: Array<number>;
         moduleType?: Array<string>;
         memberId?: Array<number>;
-        rcmsid?: Array<string>;
         groupBy?: string;
-        groupAs?: string;
+        type?: string;
     }
     type getFavoritesServiceRcmsApi1FavoritesResponse = any;
     interface postFavoritesServiceRcmsApi1FavoritesInsertRequest {
@@ -76,6 +74,10 @@ export declare namespace FavoritesService {
              * ページシステム名
              */
             page_sysnm?: string;
+            /**
+             * アクション種別
+             */
+            action_type?: number;
         };
         outputFormat?: string;
         lang?: string;
@@ -96,6 +98,10 @@ export declare namespace FavoritesService {
              * ページシステム名
              */
             page_sysnm?: string;
+            /**
+             * アクション種別
+             */
+            action_type?: number;
         };
         outputFormat?: string;
         lang?: string;
