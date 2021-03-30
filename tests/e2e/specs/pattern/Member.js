@@ -44,7 +44,6 @@ const postInsertMemberShortExt = () => {
       selectbox: '1',
       checkbox: ['1', '3'],
       relation: 15,
-      open_flg: 1,
       login_ok_flg: 0,
       validate_only: false,
     },
@@ -66,8 +65,6 @@ const postInsertMember = () => {
       nickname: 'TestMember',
       name1: 'Test',
       name2: 'Member',
-      sex: 'm',
-      birth: '1990-01-01',
       // member_photo: {
       //     file_id: 'test.png',
       //     file_nm: 'test',
@@ -91,7 +88,6 @@ const postInsertMember = () => {
       //   file_nm: 'file',
       //   desc: 'File',
       // },
-      open_flg: 1,
       login_ok_flg: 0,
       validate_only: false,
     },
@@ -109,7 +105,7 @@ const postInsertMemberWithoutRequired = ({ targetCol }) => {
     requestBody: {
       email: 'email+' + Date.now() + '@example.com',
       login_pwd: 'qwer1234',
-      nickname: 'TestMember',
+      name1: 'TestMember',
       text: 'string',
       validate_only: false,
     },
@@ -126,8 +122,6 @@ const postInsertMemberMalformedTargetCols = [
   'email',
   'login_pwd',
   'nickname',
-  'sex',
-  'birth',
   'radio',
   'selectbox',
   'checkbox',
@@ -141,8 +135,6 @@ const postInsertMemberMalformed = ({ targetCol }) => {
       email: 'email+' + Date.now() + '@example.com',
       login_pwd: 'qwer1234',
       nickname: 'TestMember',
-      sex: 'm',
-      birth: '1990-01-01',
       text: 'string',
       radio: {key: '1', label: 'radioOption1'},
       selectbox: {key: '1',label: 'selectBoxOption1'},
@@ -160,7 +152,6 @@ const postInsertMemberMalformed = ({ targetCol }) => {
       //   file_nm: 'file',
       //   desc: 'File',
       // },
-      open_flg: 1,
       login_ok_flg: 0,
       validate_only: false,
     },
@@ -175,10 +166,6 @@ const postInsertMemberMalformed = ({ targetCol }) => {
     case 'nickname':
       requestData.requestBody.nickname = ['abcd'];
       break;
-    case 'sex':
-      requestData.requestBody.sex = 'x';
-      break;
-    case 'birth':
     case 'radio':
     case 'selectbox':
     case 'checkbox':
@@ -202,10 +189,8 @@ const postUpdateMemberEmpty = ({ memberId }) => {
     requestBody: {
       member_id: memberId,
       login_id: '',
-      name1: '',
+      nickname: '',
       name2: '',
-      sex: '',
-      birth: '',
       // member_photo: {},
       textarea: '',
       radio: {},// '',
@@ -357,9 +342,6 @@ describe('Member pattern', () => {
     expect(insertedMember.details.login_id).to.not.be.empty;
     expect(insertedMember.details.name1).to.not.be.empty;
     expect(insertedMember.details.name2).to.not.be.empty;
-    expect(insertedMember.details.sex).to.not.be.empty;
-    expect(insertedMember.details.birth).to.not.be.empty;
-    // expect(insertedMember.details.member_photo).to.not.be.empty;
     expect(insertedMember.details.textarea).to.not.be.empty;
     expect(insertedMember.details.radio).to.not.be.empty;
     expect(insertedMember.details.radio.key).to.not.be.empty;
@@ -379,15 +361,11 @@ describe('Member pattern', () => {
     const updatedMember = await getMember({ memberId: addedId });
 
     expect(updatedMember.details.login_id, 'login_id').to.be.empty;
-    expect(updatedMember.details.name1, 'name1').to.be.empty;
+    expect(updatedMember.details.nickname, 'nickname').to.be.empty;
     expect(updatedMember.details.name2, 'name2').to.be.empty;
-    expect(updatedMember.details.sex, 'sex').to.be.empty;
-    expect(updatedMember.details.birth, 'birth').to.be.empty;
-    // expect(updatedMember.details.member_photo, 'member_photo').to.be.empty;
     expect(updatedMember.details.textarea, 'textarea').to.be.empty;
-    // 'radio' and 'selectbox' currently return {key: '', label: null}
-    // expect(updatedMember.details.radio, 'radio').to.be.empty;
-    // expect(updatedMember.details.selectbox, 'seelctbox').to.be.empty;
+    expect(updatedMember.details.radio, 'radio').to.be.empty;
+    expect(updatedMember.details.selectbox, 'selectbox').to.be.empty;
     expect(updatedMember.details.checkbox, 'checkbox').to.be.empty;
     expect(updatedMember.details.date, 'date').to.be.empty;
     expect(updatedMember.details.relation, 'relation').to.be.empty;
@@ -400,7 +378,7 @@ describe('Member pattern', () => {
     await postUpdateMe().catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(await errorResponse.status).to.equal(403);
+    expect(await errorResponse.status).to.equal(401);
 
   });
 
@@ -409,10 +387,10 @@ describe('Member pattern', () => {
     await postDeleteMe().catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(await errorResponse.status).to.equal(403);
+    expect(await errorResponse.status).to.equal(401);
   });
 
-  const targets = ['email', 'login_pwd', 'nickname', 'text'];
+  const targets = ['email', 'login_pwd', 'name1', 'text'];
   targets.forEach(target => {
     it('post insert member without required ' + target + ' -> error', async () => {
       login();
@@ -421,7 +399,9 @@ describe('Member pattern', () => {
         errorResponse = JSON.parse(e.message);
       });
       expect(errorResponse.status).to.equal(400, target);
-      expect(errorResponse.body.errors[0]).to.include('Required property missing: ' + target);
+      expect(errorResponse.body.errors[0].code).to.equal('required');
+      expect(errorResponse.body.errors[0].message).to.equal('Required property missing');
+      expect(errorResponse.body.errors[0].field).to.equal(target);
     });
   });
 
@@ -432,8 +412,9 @@ describe('Member pattern', () => {
       await postInsertMemberMalformed({ targetCol: target }).catch(e => {
         errorResponse = JSON.parse(e.message);
       });
-      expect(errorResponse.status).to.equal(400);
-      expect(errorResponse.body.errors[0]).to.include('properties:'+target, target);
+      expect(errorResponse.status).to.equal(400, target);
+      expect(errorResponse.body.errors[0].code).to.equal('invalid');
+      expect(errorResponse.body.errors[0].field).to.equal(target);
     });
   });
 

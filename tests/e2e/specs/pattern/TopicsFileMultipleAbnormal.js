@@ -6,21 +6,21 @@
 import { executeRequest, formatDate, login, upload, getFileNm } from '../../base';
 
 const getTopicMultiple = ({ topicsId }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.getTopicsServiceRcmsApi1TopicsMultipleTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.getContentServiceRcmsApi1TopicsMultipleTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     lang: 'en',
   };
   return executeRequest({
     cy,
-    query: 'TopicsService get topics multiple id',
+    query: 'ContentService get topics multiple id',
     requestData,
     timeout: 15000,
   });
 };
 
 const postInsertTopicMultiple = ({ files }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.postTopicsServiceRcmsApi1TopicsMultipleInsertRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleInsertRequest} */
   const requestData = {
     requestBody: {
       subject: 'File Test',
@@ -35,14 +35,14 @@ const postInsertTopicMultiple = ({ files }) => {
   };
   return executeRequest({
     cy,
-    query: 'TopicsService post topics multiple insert',
+    query: 'ContentService post topics multiple insert',
     requestData,
     timeout: 15000,
   });
 };
 
 const postInsertTopicMultipleImage = ({ files }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.postTopicsServiceRcmsApi1TopicsMultipleInsertRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleInsertRequest} */
   const requestData = {
     requestBody: {
       subject: 'File Test',
@@ -57,14 +57,14 @@ const postInsertTopicMultipleImage = ({ files }) => {
   };
   return executeRequest({
     cy,
-    query: 'TopicsService post topics multiple insert',
+    query: 'ContentService post topics multiple insert',
     requestData,
     timeout: 15000,
   });
 };
 
 const postUpdateTopicMultiple = ({ topicsId, files }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.postTopicsServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -75,14 +75,14 @@ const postUpdateTopicMultiple = ({ topicsId, files }) => {
   };
   return executeRequest({
     cy,
-    query: 'TopicsService post topics multiple update',
+    query: 'ContentService post topics multiple update',
     requestData,
     timeout: 15000,
   });
 };
 
 const postUpdateTopicMultipleImage = ({ topicsId, files }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.postTopicsServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -93,7 +93,7 @@ const postUpdateTopicMultipleImage = ({ topicsId, files }) => {
   };
   return executeRequest({
     cy,
-    query: 'TopicsService post topics multiple update',
+    query: 'ContentService post topics multiple update',
     requestData,
     timeout: 15000,
   });
@@ -151,7 +151,7 @@ describe('Topics pattern (Multiple File)', () => {
       errorResponse = JSON.parse(e.message);
     });
     expect(errorResponse.status).to.equal(400);
-    expect(errorResponse.body.errors[0]).to.include('Additional properties not allowed: test_key');
+    expect(errorResponse.body.errors[0].message).to.include('Additional properties not allowed: test_key');
   });
 
   it(`insert topic with empty values`, async () => {
@@ -192,7 +192,7 @@ describe('Topics pattern (Multiple File)', () => {
       errorResponse = JSON.parse(e.message);
     });
     expect(errorResponse.status).to.equal(400);
-    expect(errorResponse.body.errors[0]).to.include('null');
+    expect(errorResponse.body.errors[0].message).to.include('null');
   });
 
   it(`insert topic with no extension`, async () => {
@@ -236,7 +236,7 @@ describe('Topics pattern (Multiple File)', () => {
     ]}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
   });
 
   it(`insert topic set image to not image file`, async () => {
@@ -258,8 +258,8 @@ describe('Topics pattern (Multiple File)', () => {
     ]}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
-    expect(errorResponse.body.errors[0]).to.include('The extension is invalid');
+    expect(errorResponse.status).to.equal(400);
+    expect(errorResponse.body.errors[0].message).to.include('The extension is invalid');
   });
 
   it(`insert topic with no extension image`, async () => {
@@ -303,8 +303,8 @@ describe('Topics pattern (Multiple File)', () => {
     ]}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
-    expect(errorResponse.body.errors[0]).to.include('The extension is invalid');
+    expect(errorResponse.status).to.equal(400);
+    expect(errorResponse.body.errors[0].message).to.include('The extension is invalid');
   });
 
   it(`insert topic with wrong extension in image file_nm (pdf -> png)`, async () => {
@@ -326,7 +326,7 @@ describe('Topics pattern (Multiple File)', () => {
     ]}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
   });
 
   it(`update topic with the same id`, async () => {

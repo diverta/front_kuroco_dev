@@ -7,7 +7,7 @@ import { executeRequest, formatDate, login, upload, getFileNm } from '../../base
 
 
 const postInsertTopic = ({ file }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.postTopicsServiceRcmsApi1Topics1InsertRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1Topics1InsertRequest} */
   const requestData = {
     requestBody: {
       subject: 'File Test',
@@ -22,14 +22,14 @@ const postInsertTopic = ({ file }) => {
   };
   return executeRequest({
     cy,
-    query: 'TopicsService post topics1 insert',
+    query: 'ContentService post topics1 insert',
     requestData,
     timeout: 15000,
   });
 };
 
 const postInsertTopicImage = ({ file }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.postTopicsServiceRcmsApi1Topics1InsertRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1Topics1InsertRequest} */
   const requestData = {
     requestBody: {
       subject: 'File Test',
@@ -44,7 +44,7 @@ const postInsertTopicImage = ({ file }) => {
   };
   return executeRequest({
     cy,
-    query: 'TopicsService post topics1 insert',
+    query: 'ContentService post topics1 insert',
     requestData,
     timeout: 15000,
   });
@@ -87,7 +87,7 @@ describe('Topics pattern (File)', () => {
       errorResponse = JSON.parse(e.message);
     });
     expect(errorResponse.status).to.equal(400);
-    expect(errorResponse.body.errors[0]).to.include('Additional properties not allowed: test_key');
+    expect(errorResponse.body.errors[0].message).to.include('Additional properties not allowed: test_key');
   });
 
   it(`insert topic with empty values`, async () => {
@@ -114,7 +114,7 @@ describe('Topics pattern (File)', () => {
       errorResponse = JSON.parse(e.message);
     });
     expect(errorResponse.status).to.equal(400);
-    expect(errorResponse.body.errors[0]).to.include('null');
+    expect(errorResponse.body.errors[0].message).to.include('null');
   });
 
   it(`insert topic with no extension`, async () => {
@@ -156,8 +156,8 @@ describe('Topics pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
-    expect(errorResponse.body.errors[0]).to.include('The extension is invalid');
+    expect(errorResponse.status).to.equal(400);
+    expect(errorResponse.body.errors[0].message).to.include('The extension is invalid');
   });
 
   it(`insert topic with no extension image`, async () => {
@@ -185,8 +185,8 @@ describe('Topics pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
-    expect(errorResponse.body.errors[0]).to.include('The extension is invalid');
+    expect(errorResponse.status).to.equal(400);
+    expect(errorResponse.body.errors[0].message).to.include('The extension is invalid');
   });
 
   it(`insert topic with wrong extension in image file_nm (pdf -> png)`, async () => {
@@ -200,7 +200,7 @@ describe('Topics pattern (File)', () => {
     }}).catch(e => {
       errorResponse = JSON.parse(e.message);
     });
-    expect(errorResponse.status).to.equal(422);
+    expect(errorResponse.status).to.equal(400);
   });
 
 

@@ -96,7 +96,9 @@ describe('Comment pattern', () => {
       errorResponse = JSON.parse(e.message);
     })
     expect(errorResponse.status).to.equal(400, 'tag_nm');
-    expect(errorResponse.body.errors[0]).to.include('Required property missing: tag_nm');
+    expect(errorResponse.body.errors[0].code).to.equal('required');
+    expect(errorResponse.body.errors[0].message).to.equal('Required property missing');
+    expect(errorResponse.body.errors[0].field).to.equal('tag_nm');
   });
 
   postInsertTagMalformedTargetCols.forEach(target => {
@@ -107,7 +109,8 @@ describe('Comment pattern', () => {
         errorResponse = JSON.parse(e.message);
       });
       expect(errorResponse.status).to.equal(400);
-      expect(errorResponse.body.errors[0]).to.include('properties:'+target, target);
+      expect(errorResponse.body.errors[0].code).to.equal('invalid');
+      expect(errorResponse.body.errors[0].field).to.equal(target);
     });
   });
 

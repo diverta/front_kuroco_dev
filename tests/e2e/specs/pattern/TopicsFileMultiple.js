@@ -8,20 +8,20 @@ const path = require('path');
 
 
 const getTopicMultiple = ({ topicsId }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.getTopicsServiceRcmsApi1TopicsMultipleTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.getContentServiceRcmsApi1TopicsMultipleTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     lang: 'en',
   };
   return executeRequest({
     cy,
-    query: 'TopicsService get topics multiple id',
+    query: 'ContentService get topics multiple id',
     requestData,
   });
 };
 
 const postInsertTopicMultiple = ({ files = [] }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.postTopicsServiceRcmsApi1TopicsMultipleInsertRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleInsertRequest} */
   const requestData = {
     requestBody: {
       subject: 'File Test',
@@ -42,14 +42,14 @@ const postInsertTopicMultiple = ({ files = [] }) => {
   };
   return executeRequest({
     cy,
-    query: 'TopicsService post topics multiple insert',
+    query: 'ContentService post topics multiple insert',
     requestData,
     timeout: 15000,
   });
 };
 
 const postUpdateTopicMultiple = ({ topicsId, files = [] }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.postTopicsServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -66,14 +66,14 @@ const postUpdateTopicMultiple = ({ topicsId, files = [] }) => {
   };
   return executeRequest({
     cy,
-    query: 'TopicsService post topics multiple update',
+    query: 'ContentService post topics multiple update',
     requestData,
     timeout: 15000,
   });
 };
 
 const postUpdateTopicMultipleDesc = ({ topicsId, ids }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.postTopicsServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -89,14 +89,14 @@ const postUpdateTopicMultipleDesc = ({ topicsId, ids }) => {
   };
   return executeRequest({
     cy,
-    query: 'TopicsService post topics multiple update',
+    query: 'ContentService post topics multiple update',
     requestData,
     timeout: 15000,
   });
 };
 
 const postUpdateTopicMultipleDescNm = ({ topicsId, files }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.postTopicsServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -113,14 +113,14 @@ const postUpdateTopicMultipleDescNm = ({ topicsId, files }) => {
   };
   return executeRequest({
     cy,
-    query: 'TopicsService post topics multiple update',
+    query: 'ContentService post topics multiple update',
     requestData,
     timeout: 15000,
   });
 };
 
 const postUpdateTopicMultipleRearrangement = ({ topicsId, ids }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.postTopicsServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -135,14 +135,14 @@ const postUpdateTopicMultipleRearrangement = ({ topicsId, ids }) => {
   };
   return executeRequest({
     cy,
-    query: 'TopicsService post topics multiple update',
+    query: 'ContentService post topics multiple update',
     requestData,
     timeout: 15000,
   });
 };
 
 const postUpdateTopicMultipleAddFile = ({ topicsId, ids, insertFile, insertIndex }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.postTopicsServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -162,14 +162,14 @@ const postUpdateTopicMultipleAddFile = ({ topicsId, ids, insertFile, insertIndex
   });
   return executeRequest({
     cy,
-    query: 'TopicsService post topics multiple update',
+    query: 'ContentService post topics multiple update',
     requestData,
     timeout: 15000,
   });
 };
 
 const postUpdateTopicMultipleDeleteFile = ({ topicsId, ids, deleteIndex }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.postTopicsServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -185,14 +185,14 @@ const postUpdateTopicMultipleDeleteFile = ({ topicsId, ids, deleteIndex }) => {
   requestData.requestBody.ext_col_11.splice(deleteIndex, 1);
   return executeRequest({
     cy,
-    query: 'TopicsService post topics multiple update',
+    query: 'ContentService post topics multiple update',
     requestData,
     timeout: 15000,
   });
 };
 
 const postUpdateTopicMultipleDeleteAllFile = ({ topicsId }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.postTopicsServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -203,21 +203,21 @@ const postUpdateTopicMultipleDeleteAllFile = ({ topicsId }) => {
   };
   return executeRequest({
     cy,
-    query: 'TopicsService post topics multiple update',
+    query: 'ContentService post topics multiple update',
     requestData,
     timeout: 15000,
   });
 };
 
 const postDeleteTopicMultiple = ({ topicsId }) => {
-  /** @type {import('../../../../generated/services/TopicsService').TopicsService.postTopicsServiceRcmsApi1TopicsMultipleDeleteTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleDeleteTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     lang: 'en',
   };
   return executeRequest({
     cy,
-    query: 'TopicsService post topics multiple delete',
+    query: 'ContentService post topics multiple delete',
     requestData,
   });
 };

@@ -143,7 +143,9 @@ describe('Inquiry', () => {
         errorResponse = JSON.parse(e.message);
       })
       expect(errorResponse.status).to.equal(400, target);
-      expect(errorResponse.body.errors[0]).to.include('Required property missing: ' + target);
+      expect(errorResponse.body.errors[0].code).to.equal('required');
+      expect(errorResponse.body.errors[0].message).to.equal('Required property missing');
+      expect(errorResponse.body.errors[0].field).to.equal(target);
     });
   })
 
@@ -155,7 +157,8 @@ describe('Inquiry', () => {
         errorResponse = JSON.parse(e.message);
       });
       expect(errorResponse.status).to.equal(400);
-      expect(errorResponse.body.errors[0]).to.include('properties:'+target, target);
+      expect(errorResponse.body.errors[0].code).to.equal('invalid');
+      expect(errorResponse.body.errors[0].field).to.equal(target);
     });
   });
 
