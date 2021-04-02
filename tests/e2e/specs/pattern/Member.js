@@ -211,7 +211,7 @@ const postUpdateMemberEmpty = ({ memberId }) => {
 };
 
 const postUpdateMemberNoChange = ({ memberId }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MemberCustomSearchUpdateCustomSearchIdRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersUpdateMemberIdResponse} */
   const requestData = {
     memberId: memberId,
     requestBody: {
