@@ -112,10 +112,10 @@ const updateExt = {
   // },
 };
 const postUpdateMember = ({ memberId, file }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersUpdateRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersUpdateMemberIdRequest} */
   const requestData = {
+    memberId: memberId,
     requestBody: {
-      member_id: memberId,
       email: 'email+' + Date.now() + '@example.com',
       login_id: Date.now() + 'U',
       login_pwd: 'qwer1234',
@@ -147,10 +147,10 @@ const postUpdateMember = ({ memberId, file }) => {
   });
 };
 const postDeleteMember = ({ memberId }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersDeleteRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersDeleteMemberIdRequest} */
   const requestData = {
+    memberId: memberId,
     requestBody: {
-      member_id: memberId,
     },
   };
   return executeRequest({
