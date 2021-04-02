@@ -3,12 +3,27 @@
 
 // https://docs.cypress.io/api/introduction/api.html
 
-import { executeRequest, login } from '../../base';
+import { executeRequest, login, profile } from '../../base';
 
 const getFavorites = ({ memberId }) => {
   /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.getFavoritesServiceRcmsApi1FavoritesRequest} */
   const requestData = {
     memberId: memberId,
+    lang: 'en',
+  };
+  return executeRequest({
+    cy,
+    query: 'favorite get',
+    requestData,
+  });
+};
+
+const getFavoritesByModuleId = ({ memberId, moduleType = 'topics', moduleId }) => {
+  /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.getFavoritesServiceRcmsApi1FavoritesRequest} */
+  const requestData = {
+    memberId: memberId,
+    moduleType: [moduleType],
+    moduleId: moduleId,
     lang: 'en',
   };
   return executeRequest({
@@ -34,12 +49,11 @@ const insertFavorite = ({ moduleType = 'topics', moduleId }) => {
   });
 };
 
-const deleteFavorite = ({ moduleType = 'topics', moduleId }) => {
-  /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.postFavoritesServiceRcmsApi1FavoritesDeleteRequest} */
+const deleteFavorite = ({ favoriteId }) => {
+  /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.postFavoritesServiceRcmsApi1FavoritesDeleteFavoriteIdRequest} */
   const requestData = {
+    favoriteId: favoriteId,
     requestBody: {
-      module_type: moduleType,
-      module_id: moduleId,
     },
     lang: 'en',
   };
@@ -52,8 +66,6 @@ const deleteFavorite = ({ moduleType = 'topics', moduleId }) => {
 
 // topics for Favorite Test
 const topicsIdFavoriteTest = 44;
-// member_id of default test member
-const defaultMemberId = 9;
 
 describe('Favorite', () => {
 
@@ -66,37 +78,41 @@ describe('Favorite', () => {
       get favorites not including deleted one
   `, async () => {
     login();
+    const memberId = (await profile()).member_id;
+
     // delete all favorites of test member
-    while (true) {
-      const favorites = await getFavorites({ memberId: defaultMemberId });
-      if ( favorites.list.length === 0) {
-        break;
-      }
-      /*
-       * なんか順に削除する処理がうまく動かない上に、
-       * 削除されないことも結構あるので要調査
-       */
-      for (let row of favorites.list) {
-        await deleteFavorite({ moduleType: row.module_type, moduleId: row.module_id});
-      }
-    };
+    // while (true) {
+    //   const favorites = await getFavorites({ memberId: memberId });
+    //   if ( favorites.list.length === 0) {
+    //     break;
+    //   }
+    //   /*
+    //    * なんか順に削除する処理がうまく動かない上に、
+    //    * 削除されないことも結構あるので要調査
+    //    */
+    //   for (let row of favorites.list) {
+    //     await deleteFavorite({ favoriteId: row.favorite_id });
+    //   }
+    // };
+
     // get favorites of test members
     expect(
-      (await getFavorites({ memberId: defaultMemberId })).list
+      (await getFavorites({ memberId: memberId })).list
     ).to.empty;
+
     // insert favorite
-    await insertFavorite({ moduleId: topicsIdFavoriteTest });
+    const insertRes = await insertFavorite({ moduleType: 'topics', moduleId: topicsIdFavoriteTest });
+    const addedId = insertRes.id;
     // get favorites including inserted one
-    expect(
-      (await getFavorites({memberId: defaultMemberId}))
+    const insertedFavorite = (await getFavoritesByModuleId({ memberId: memberId, moduleType: 'topics', moduleId: topicsIdFavoriteTest }))
         .list
-        .find(row => row.module_id === topicsIdFavoriteTest)
-    ).to.exist;
+        .find(row => row.module_id === topicsIdFavoriteTest);
+    expect(insertedFavorite).to.exist;
     // delete favorites
-    await deleteFavorite({ moduleId: topicsIdFavoriteTest });
+    await deleteFavorite({ favoriteId: insertedFavorite.favorite_id });
     // get favorites not including deleted one
     expect(
-      (await getFavorites({memberId: defaultMemberId}))
+      (await getFavorites({memberId: memberId}))
         .list
         .find(row => row.module_id === topicsIdFavoriteTest)
     ).to.not.exist;

@@ -44,10 +44,10 @@ const postInsertMember = ({ file }) => {
 };
 
 const postUpdateMember = ({ memberId, file }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersUpdateRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersUpdateMemberIdRequest} */
   const requestData = {
+    memberId: memberId,
     requestBody: {
-      member_id: memberId,
       file: {
         file_id: file.fileId,
         file_nm: file.fileNm,
@@ -67,10 +67,10 @@ const postUpdateMember = ({ memberId, file }) => {
 };
 
 const postUpdateMemberDesc = ({ memberId }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersUpdateRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersUpdateMemberIdRequest} */
   const requestData = {
+    memberId: memberId,
     requestBody: {
-      member_id: memberId,
       file: {
         desc: 'desc',
       },
@@ -88,10 +88,10 @@ const postUpdateMemberDesc = ({ memberId }) => {
 };
 
 const postUpdateMemberDeleteFile = ({ memberId }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersUpdateRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersUpdateMemberIdRequest} */
   const requestData = {
+    memberId: memberId,
     requestBody: {
-      member_id: memberId,
       file: {},
       login_ok_flg: 0,
       validate_only: false,
@@ -107,10 +107,10 @@ const postUpdateMemberDeleteFile = ({ memberId }) => {
 };
 
 const postDeleteMember = ({ memberId }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersDeleteRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersDeleteMemberIdRequest} */
   const requestData = {
+    memberId: memberId,
     requestBody: {
-      member_id: memberId,
     },
   };
   return executeRequest({

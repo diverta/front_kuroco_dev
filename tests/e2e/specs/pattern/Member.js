@@ -184,10 +184,10 @@ const postInsertMemberMalformed = ({ targetCol }) => {
 };
 
 const postUpdateMemberEmpty = ({ memberId }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersUpdateRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersUpdateMemberIdRequest} */
   const requestData = {
+    memberId: memberId,
     requestBody: {
-      member_id: memberId,
       login_id: '',
       nickname: '',
       name2: '',
@@ -211,10 +211,10 @@ const postUpdateMemberEmpty = ({ memberId }) => {
 };
 
 const postUpdateMemberNoChange = ({ memberId }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersUpdateRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersUpdateMemberIdRequest} */
   const requestData = {
+    memberId: memberId,
     requestBody: {
-      member_id: memberId,
       validate_only: false,
     },
   };
@@ -227,10 +227,10 @@ const postUpdateMemberNoChange = ({ memberId }) => {
 };
 
 const postDeleteMember = ({ memberId }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersDeleteRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersDeleteMemberIdRequest} */
   const requestData = {
+    memberId: memberId,
     requestBody: {
-      member_id: memberId,
     },
   };
   return executeRequest({

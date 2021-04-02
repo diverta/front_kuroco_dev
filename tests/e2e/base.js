@@ -112,6 +112,17 @@ export function logout() {
 }
 
 /**
+ * get profile
+ */
+export function profile() {
+  return executeRequest({
+    cy,
+    query: 'AuthenticationService me profile',
+    requestData: {},
+  });
+}
+
+/**
  * upload file
  *
  * @param options.path upload file path.
