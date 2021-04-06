@@ -6,7 +6,7 @@
 import { executeRequest, login } from '../../base';
 
 const getMember = ({ memberId }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.getMembersServiceRcmsApi1MembersMemberIdRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.getRcmsApi1MembersMemberIdRequest} */
   const requestData = {
     memberId,
   };
@@ -30,7 +30,7 @@ const shortExt = {
   },
 };
 const postInsertMemberShortExt = () => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersInsertRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postRcmsApi1MembersInsertRequest} */
   const requestData = {
     requestBody: {
       email: 'email+' + Date.now() + '@example.com',
@@ -56,7 +56,7 @@ const postInsertMemberShortExt = () => {
 };
 
 const postInsertMember = () => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersInsertRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postRcmsApi1MembersInsertRequest} */
   const requestData = {
     requestBody: {
       email: 'email+' + Date.now() + '@example.com',
@@ -100,7 +100,7 @@ const postInsertMember = () => {
 };
 
 const postInsertMemberWithoutRequired = ({ targetCol }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersInsertRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postRcmsApi1MembersInsertRequest} */
   let requestData = {
     requestBody: {
       email: 'email+' + Date.now() + '@example.com',
@@ -129,7 +129,7 @@ const postInsertMemberMalformedTargetCols = [
   'relation'
 ];
 const postInsertMemberMalformed = ({ targetCol }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersInsertRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postRcmsApi1MembersInsertRequest} */
   const requestData = {
     requestBody: {
       email: 'email+' + Date.now() + '@example.com',
@@ -184,7 +184,7 @@ const postInsertMemberMalformed = ({ targetCol }) => {
 };
 
 const postUpdateMemberEmpty = ({ memberId }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersUpdateMemberIdRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postRcmsApi1MembersUpdateMemberIdRequest} */
   const requestData = {
     memberId: memberId,
     requestBody: {
@@ -211,7 +211,7 @@ const postUpdateMemberEmpty = ({ memberId }) => {
 };
 
 const postUpdateMemberNoChange = ({ memberId }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersUpdateMemberIdRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postRcmsApi1MembersUpdateMemberIdRequest} */
   const requestData = {
     memberId: memberId,
     requestBody: {
@@ -227,7 +227,7 @@ const postUpdateMemberNoChange = ({ memberId }) => {
 };
 
 const postDeleteMember = ({ memberId }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersDeleteMemberIdRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postRcmsApi1MembersDeleteMemberIdRequest} */
   const requestData = {
     memberId: memberId,
     requestBody: {
@@ -242,7 +242,7 @@ const postDeleteMember = ({ memberId }) => {
 };
 
 const postUpdateMe = () => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MeUpdateRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postRcmsApi1MeUpdateRequest} */
   const requestData = {
     requestBody: {
       text: 'me/update',
@@ -256,7 +256,7 @@ const postUpdateMe = () => {
   });
 };
 const postDeleteMe = () => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MeDeleteRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postRcmsApi1MeDeleteRequest} */
   const requestData = {
     requestBody: {
     },

@@ -16,10 +16,10 @@ if (OpenAPI.SECURITY['Token-Auth'] && hasLoginEndpoint) {
       await Auth.login({
         requestBody: { email: testMember.email, password: testMember.password },
       });
-      await ApiService.getApiServiceRcmsApi1Apis({});
+      await ApiService.getRcmsApi1Apis({});
 
       let error;
-      await ApiService.getApiServiceRcmsApi1Apis({}).catch(
+      await ApiService.getRcmsApi1Apis({}).catch(
         () => (error = true)
       );
       expect(error).to.not.be.true;
@@ -28,11 +28,11 @@ if (OpenAPI.SECURITY['Token-Auth'] && hasLoginEndpoint) {
       await Auth.login({
         requestBody: { email: testMember.email, password: testMember.password },
       });
-      await ApiService.getApiServiceRcmsApi1Apis({});
+      await ApiService.getRcmsApi1Apis({});
       LocalStorage.setAccessToken('INVALID_VALUE');
 
       let error;
-      await ApiService.getApiServiceRcmsApi1Apis({}).catch(
+      await ApiService.getRcmsApi1Apis({}).catch(
         () => (error = true)
       );
       expect(error).to.not.be.true;
@@ -41,11 +41,11 @@ if (OpenAPI.SECURITY['Token-Auth'] && hasLoginEndpoint) {
       await Auth.login({
         requestBody: { email: testMember.email, password: testMember.password },
       });
-      await ApiService.getApiServiceRcmsApi1Apis({});
+      await ApiService.getRcmsApi1Apis({});
       LocalStorage.setRefreshToken('INVALID_VALUE');
 
       let error;
-      await ApiService.getApiServiceRcmsApi1Apis({}).catch(
+      await ApiService.getRcmsApi1Apis({}).catch(
         () => (error = true)
       );
       expect(error).to.not.be.true;
@@ -54,12 +54,12 @@ if (OpenAPI.SECURITY['Token-Auth'] && hasLoginEndpoint) {
       await Auth.login({
         requestBody: { email: testMember.email, password: testMember.password },
       });
-      await ApiService.getApiServiceRcmsApi1Apis({});
+      await ApiService.getRcmsApi1Apis({});
       LocalStorage.setAccessToken('INVALID_VALUE');
       LocalStorage.setRefreshToken('INVALID_VALUE');
 
       let error;
-      await ApiService.getApiServiceRcmsApi1Apis({}).catch(
+      await ApiService.getRcmsApi1Apis({}).catch(
         () => (error = true)
       );
       expect(error).to.be.true;

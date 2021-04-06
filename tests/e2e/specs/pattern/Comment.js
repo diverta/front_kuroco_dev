@@ -11,7 +11,7 @@ const postInsertCommentWithoutRequiredTargetCols = [
   'note',
 ];
 const postInsertCommentWithoutRequired = ({ topicsId, targetCol }) => {
-  /** @type {import('../../../../generated/services/ActivityService').ActivityService.postActivityServiceRcmsApi1TopicsCommentsInsertRequest} */
+  /** @type {import('../../../../generated/services/ActivityService').ActivityService.postRcmsApi1TopicsCommentsInsertRequest} */
   const requestData = {
     requestBody: {
       module_id: topicsId,
@@ -38,7 +38,7 @@ const postInsertCommentMalformedTargetCols = [
   'delkey'
 ];
 const postInsertCommentMalformed = ({ topicsId, targetCol }) => {
-  /** @type {import('../../../../generated/services/ActivityService').ActivityService.postActivityServiceRcmsApi1TopicsCommentsInsertRequest} */
+  /** @type {import('../../../../generated/services/ActivityService').ActivityService.postRcmsApi1TopicsCommentsInsertRequest} */
   const requestData = {
     requestBody: {
       module_id: topicsId,

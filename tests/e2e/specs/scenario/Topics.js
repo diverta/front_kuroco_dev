@@ -6,7 +6,7 @@
 import { executeRequest, formatDate, login, upload } from '../../base';
 
 const getTopics = () => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.getContentServiceRcmsApi1Topics1Request} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.getRcmsApi1Topics1Request} */
   const requestData = {
     lang: 'en',
   };
@@ -19,7 +19,7 @@ const getTopics = () => {
 };
 
 const getTopicsByIds = ({ topicsIds }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.getContentServiceRcmsApi1Topics1Request} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.getRcmsApi1Topics1Request} */
   const requestData = {
     id: topicsIds,
     lang: 'en',
@@ -33,7 +33,7 @@ const getTopicsByIds = ({ topicsIds }) => {
 };
 
 const getTopic = ({ topicsId }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.getContentServiceRcmsApi1Topics1TopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.getRcmsApi1Topics1TopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     lang: 'en',
@@ -72,7 +72,7 @@ const insertExt = {
   ext_col_14: 'text1',
 };
 const postInsertTopic = ({ file, image }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1Topics1InsertRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1Topics1InsertRequest} */
   const requestData = {
     requestBody: {
       subject: 'Inserted',
@@ -144,7 +144,7 @@ const updateExt = {
   ext_col_14: 'text2',
 };
 const postUpdateTopic = ({ topicsId, file, image }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1Topics1UpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1Topics1UpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -191,7 +191,7 @@ const postUpdateTopic = ({ topicsId, file, image }) => {
 };
 
 const postDeleteTopic = ({ topicsId }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1Topics1DeleteTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1Topics1DeleteTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     lang: 'en',

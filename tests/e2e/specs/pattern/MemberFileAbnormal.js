@@ -6,7 +6,7 @@
 import { executeRequest, login, upload } from '../../base';
 
 const getMember = ({ memberId }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.getMembersServiceRcmsApi1MembersMemberIdRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.getRcmsApi1MembersMemberIdRequest} */
   const requestData = {
     memberId,
   };
@@ -18,7 +18,7 @@ const getMember = ({ memberId }) => {
 };
 
 const postInsertMemberFile = ({ file }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersInsertRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postRcmsApi1MembersInsertRequest} */
   const requestData = {
     requestBody: {
       email: 'email+' + Date.now() + '@example.com',

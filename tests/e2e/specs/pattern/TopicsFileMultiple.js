@@ -8,7 +8,7 @@ const path = require('path');
 
 
 const getTopicMultiple = ({ topicsId }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.getContentServiceRcmsApi1TopicsMultipleTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.getRcmsApi1TopicsMultipleTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     lang: 'en',
@@ -21,7 +21,7 @@ const getTopicMultiple = ({ topicsId }) => {
 };
 
 const postInsertTopicMultiple = ({ files = [] }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleInsertRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1TopicsMultipleInsertRequest} */
   const requestData = {
     requestBody: {
       subject: 'File Test',
@@ -49,7 +49,7 @@ const postInsertTopicMultiple = ({ files = [] }) => {
 };
 
 const postUpdateTopicMultiple = ({ topicsId, files = [] }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -73,7 +73,7 @@ const postUpdateTopicMultiple = ({ topicsId, files = [] }) => {
 };
 
 const postUpdateTopicMultipleDesc = ({ topicsId, ids }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -96,7 +96,7 @@ const postUpdateTopicMultipleDesc = ({ topicsId, ids }) => {
 };
 
 const postUpdateTopicMultipleDescNm = ({ topicsId, files }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -120,7 +120,7 @@ const postUpdateTopicMultipleDescNm = ({ topicsId, files }) => {
 };
 
 const postUpdateTopicMultipleRearrangement = ({ topicsId, ids }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -142,7 +142,7 @@ const postUpdateTopicMultipleRearrangement = ({ topicsId, ids }) => {
 };
 
 const postUpdateTopicMultipleAddFile = ({ topicsId, ids, insertFile, insertIndex }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -169,7 +169,7 @@ const postUpdateTopicMultipleAddFile = ({ topicsId, ids, insertFile, insertIndex
 };
 
 const postUpdateTopicMultipleDeleteFile = ({ topicsId, ids, deleteIndex }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -192,7 +192,7 @@ const postUpdateTopicMultipleDeleteFile = ({ topicsId, ids, deleteIndex }) => {
 };
 
 const postUpdateTopicMultipleDeleteAllFile = ({ topicsId }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -210,7 +210,7 @@ const postUpdateTopicMultipleDeleteAllFile = ({ topicsId }) => {
 };
 
 const postDeleteTopicMultiple = ({ topicsId }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleDeleteTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1TopicsMultipleDeleteTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     lang: 'en',

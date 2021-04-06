@@ -6,7 +6,7 @@
 import { executeRequest, login, profile } from '../../base';
 
 const getFavorites = ({ memberId }) => {
-  /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.getFavoritesServiceRcmsApi1FavoritesRequest} */
+  /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.getRcmsApi1FavoritesRequest} */
   const requestData = {
     memberId: memberId,
     lang: 'en',
@@ -19,7 +19,7 @@ const getFavorites = ({ memberId }) => {
 };
 
 const getFavoritesByModuleId = ({ memberId, moduleType = 'topics', moduleId }) => {
-  /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.getFavoritesServiceRcmsApi1FavoritesRequest} */
+  /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.getRcmsApi1FavoritesRequest} */
   const requestData = {
     memberId: memberId,
     moduleType: [moduleType],
@@ -34,7 +34,7 @@ const getFavoritesByModuleId = ({ memberId, moduleType = 'topics', moduleId }) =
 };
 
 const insertFavorite = ({ moduleType = 'topics', moduleId }) => {
-  /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.postFavoritesServiceRcmsApi1FavoritesInsertRequest} */
+  /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.postRcmsApi1FavoritesInsertRequest} */
   const requestData = {
     requestBody: {
       module_type: moduleType,
@@ -50,7 +50,7 @@ const insertFavorite = ({ moduleType = 'topics', moduleId }) => {
 };
 
 const deleteFavoriteByFavoriteId = ({ favoriteId }) => {
-  /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.postFavoritesServiceRcmsApi1FavoritesDeleteFavoriteIdRequest} */
+  /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.postRcmsApi1FavoritesDeleteFavoriteIdRequest} */
   const requestData = {
     favoriteId: favoriteId,
     requestBody: {
@@ -65,7 +65,7 @@ const deleteFavoriteByFavoriteId = ({ favoriteId }) => {
 };
 
 const deleteFavoriteByModuleId = ({ moduleType = 'topics', moduleId }) => {
-  /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.postFavoritesServiceRcmsApi1FavoritesDeleteBodyRequest} */
+  /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.postRcmsApi1FavoritesDeleteBodyRequest} */
   const requestData = {
     requestBody: {
       module_type: moduleType,
