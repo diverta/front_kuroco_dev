@@ -7,7 +7,7 @@ import { executeRequest, formatDate, login, upload, getFileNm } from '../../base
 const path = require('path');
 
 const getTopic = ({ topicsId }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.getContentServiceRcmsApi1Topics1TopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.getRcmsApi1Topics1TopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     lang: 'en',
@@ -20,7 +20,7 @@ const getTopic = ({ topicsId }) => {
 };
 
 const postInsertTopic = ({ file }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1Topics1InsertRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1Topics1InsertRequest} */
   const requestData = {
     requestBody: {
       subject: 'File Test',
@@ -46,7 +46,7 @@ const postInsertTopic = ({ file }) => {
 };
 
 const postUpdateTopic = ({ topicsId, file }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1Topics1UpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1Topics1UpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -68,7 +68,7 @@ const postUpdateTopic = ({ topicsId, file }) => {
 };
 
 const postUpdateTopicDesc = ({ topicsId }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1Topics1UpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1Topics1UpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -87,7 +87,7 @@ const postUpdateTopicDesc = ({ topicsId }) => {
 };
 
 const postUpdateTopicDescNm = ({ topicsId, fileNm }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1Topics1UpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1Topics1UpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -107,7 +107,7 @@ const postUpdateTopicDescNm = ({ topicsId, fileNm }) => {
 };
 
 const postUpdateTopicDeleteFile = ({ topicsId }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1Topics1UpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1Topics1UpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -124,7 +124,7 @@ const postUpdateTopicDeleteFile = ({ topicsId }) => {
 };
 
 const postDeleteTopic = ({ topicsId }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1Topics1DeleteTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1Topics1DeleteTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     lang: 'en',

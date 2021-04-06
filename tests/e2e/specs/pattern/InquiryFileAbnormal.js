@@ -6,7 +6,7 @@
 import { executeRequest, login, upload } from '../../base';
 
 const sendMessage = ({ file }) => {
-  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.postInquiriesServiceRcmsApi1Inquiry1MessagesSendRequest} */
+  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.postRcmsApi1Inquiry1MessagesSendRequest} */
   const requestData = {
     requestBody: {
       name: 'File Test',

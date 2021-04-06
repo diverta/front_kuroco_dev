@@ -6,7 +6,7 @@
 import { executeRequest, login } from '../../base';
 
 const getTags = () => {
-  /** @type {import('../../../../generated/services/TagsService').TagsService.getTagsServiceRcmsApi1TagsRequest} */
+  /** @type {import('../../../../generated/services/TagsService').TagsService.getRcmsApi1TagsRequest} */
   const requestData = {
     lang: 'en',
   };
@@ -18,7 +18,7 @@ const getTags = () => {
 };
 
 const getTagsByIds = ({ tagIds }) => {
-  /** @type {import('../../../../generated/services/TagsService').TagsService.getTagsServiceRcmsApi1TagsRequest} */
+  /** @type {import('../../../../generated/services/TagsService').TagsService.getRcmsApi1TagsRequest} */
   const requestData = {
     id: tagIds,
     lang: 'en',
@@ -43,7 +43,7 @@ const postInsertTagData = {
   ext_col_10: 'ext_10',
 };
 const postInsertTag = () => {
-  /** @type {import('../../../../generated/services/TagsService').TagsService.postTagsServiceRcmsApi1TagsInsertRequest} */
+  /** @type {import('../../../../generated/services/TagsService').TagsService.postRcmsApi1TagsInsertRequest} */
   const requestData = {
     requestBody: {
       tag_nm: 'TestTag' + Date.now(),
@@ -71,7 +71,7 @@ const postInsertTag = () => {
 }
 
 const postDeleteTag = ({ tagId }) => {
-  /** @type {import('../../../../generated/services/TagsService').TagsService.postTagsServiceRcmsApi1TagsDeleteTagIdRequest} */
+  /** @type {import('../../../../generated/services/TagsService').TagsService.postRcmsApi1TagsDeleteTagIdRequest} */
   const requestData = {
     tagId: tagId,
   };

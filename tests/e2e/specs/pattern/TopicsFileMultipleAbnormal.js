@@ -6,7 +6,7 @@
 import { executeRequest, formatDate, login, upload, getFileNm } from '../../base';
 
 const getTopicMultiple = ({ topicsId }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.getContentServiceRcmsApi1TopicsMultipleTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.getRcmsApi1TopicsMultipleTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     lang: 'en',
@@ -20,7 +20,7 @@ const getTopicMultiple = ({ topicsId }) => {
 };
 
 const postInsertTopicMultiple = ({ files }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleInsertRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1TopicsMultipleInsertRequest} */
   const requestData = {
     requestBody: {
       subject: 'File Test',
@@ -42,7 +42,7 @@ const postInsertTopicMultiple = ({ files }) => {
 };
 
 const postInsertTopicMultipleImage = ({ files }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleInsertRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1TopicsMultipleInsertRequest} */
   const requestData = {
     requestBody: {
       subject: 'File Test',
@@ -64,7 +64,7 @@ const postInsertTopicMultipleImage = ({ files }) => {
 };
 
 const postUpdateTopicMultiple = ({ topicsId, files }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {
@@ -82,7 +82,7 @@ const postUpdateTopicMultiple = ({ topicsId, files }) => {
 };
 
 const postUpdateTopicMultipleImage = ({ topicsId, files }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1TopicsMultipleUpdateTopicsIdRequest} */
   const requestData = {
     topicsId: topicsId,
     requestBody: {

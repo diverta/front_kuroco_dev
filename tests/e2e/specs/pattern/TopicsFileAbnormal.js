@@ -7,7 +7,7 @@ import { executeRequest, formatDate, login, upload, getFileNm } from '../../base
 
 
 const postInsertTopic = ({ file }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1Topics1InsertRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1Topics1InsertRequest} */
   const requestData = {
     requestBody: {
       subject: 'File Test',
@@ -29,7 +29,7 @@ const postInsertTopic = ({ file }) => {
 };
 
 const postInsertTopicImage = ({ file }) => {
-  /** @type {import('../../../../generated/services/ContentService').ContentService.postContentServiceRcmsApi1Topics1InsertRequest} */
+  /** @type {import('../../../../generated/services/ContentService').ContentService.postRcmsApi1Topics1InsertRequest} */
   const requestData = {
     requestBody: {
       subject: 'File Test',

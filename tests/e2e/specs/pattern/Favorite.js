@@ -11,7 +11,7 @@ const insertFavoriteWithoutRequired = ({
   moduleId,
   targetCol,
 }) => {
-  /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.postFavoritesServiceRcmsApi1FavoritesInsertRequest} */
+  /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.postRcmsApi1FavoritesInsertRequest} */
   const requestData = {
     requestBody: {
       module_type: moduleType,
@@ -33,7 +33,7 @@ const insertFavoriteMailformedTargetCols = [
   'page_sysnm',
 ];
 const insertFavoriteMailformed = ({ moduleId, targetCol }) => {
-  /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.postFavoritesServiceRcmsApi1FavoritesInsertRequest} */
+  /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.postRcmsApi1FavoritesInsertRequest} */
   const requestData = {
     requestBody: {
       module_type: 'topics',
@@ -51,7 +51,7 @@ const insertFavoriteMailformed = ({ moduleId, targetCol }) => {
 };
 
 const insertFavoriteIllegalModule = ({ moduleId }) => {
-  /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.postFavoritesServiceRcmsApi1FavoritesInsertRequest} */
+  /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.postRcmsApi1FavoritesInsertRequest} */
   const requestData = {
     requestBody: {
       module_type: 'no_such_module',

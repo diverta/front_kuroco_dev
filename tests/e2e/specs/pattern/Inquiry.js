@@ -6,7 +6,7 @@
 import { executeRequest, login, logout } from '../../base';
 
 const getMessages = () => {
-  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.getInquiriesServiceRcmsApi1Inquiry1MessagesRequest} */
+  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.getRcmsApi1Inquiry1MessagesRequest} */
   const requestData = {};
   return executeRequest({
     cy,
@@ -21,7 +21,7 @@ const sendMessageWithoutRequiredTargetCols = [
   'ext_04',
 ];
 const sendMessageWithoutRequired = ({ targetCol }) => {
-  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.postInquiriesServiceRcmsApi1Inquiry1MessagesSendRequest} */
+  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.postRcmsApi1Inquiry1MessagesSendRequest} */
   const requestData = {
     requestBody: {
       name: 'Inquiry Test',
@@ -62,7 +62,7 @@ const sendMessageMalformedTargetCols = [
 
 ];
 const sendMessageMalformed = ({ targetCol }) => {
-  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.postInquiriesServiceRcmsApi1Inquiry1MessagesSendRequest} */
+  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.postRcmsApi1Inquiry1MessagesSendRequest} */
   const requestData = {
     requestBody: {
       name: 'Inquiry Test',

@@ -6,7 +6,7 @@
 import { executeRequest, login, logout, upload } from '../../base';
 
 const getMembers = () => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.getMembersServiceRcmsApi1MembersRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.getRcmsApi1MembersRequest} */
   const requestData = {};
   return executeRequest({
     cy,
@@ -16,7 +16,7 @@ const getMembers = () => {
   });
 };
 const getMembersByIds = ({ memberIds }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.getMembersServiceRcmsApi1MembersRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.getRcmsApi1MembersRequest} */
   const requestData = {
     id: memberIds,
   };
@@ -28,7 +28,7 @@ const getMembersByIds = ({ memberIds }) => {
   });
 };
 const getMember = ({ memberId }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.getMembersServiceRcmsApi1MembersMemberIdRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.getRcmsApi1MembersMemberIdRequest} */
   const requestData = {
     memberId,
   };
@@ -59,7 +59,7 @@ const insertExt = {
   // },
 };
 const postInsertMember = ({ file }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersInsertRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postRcmsApi1MembersInsertRequest} */
   const requestData = {
     requestBody: {
       email: 'email+' + Date.now() + '@example.com',
@@ -112,7 +112,7 @@ const updateExt = {
   // },
 };
 const postUpdateMember = ({ memberId, file }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersUpdateMemberIdRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postRcmsApi1MembersUpdateMemberIdRequest} */
   const requestData = {
     memberId: memberId,
     requestBody: {
@@ -147,7 +147,7 @@ const postUpdateMember = ({ memberId, file }) => {
   });
 };
 const postDeleteMember = ({ memberId }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersDeleteMemberIdRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postRcmsApi1MembersDeleteMemberIdRequest} */
   const requestData = {
     memberId: memberId,
     requestBody: {
@@ -162,7 +162,7 @@ const postDeleteMember = ({ memberId }) => {
 };
 
 const postUpdateMe = () => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MeUpdateRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postRcmsApi1MeUpdateRequest} */
   const requestData = {
     requestBody: {
       text: 'me/update',
@@ -176,7 +176,7 @@ const postUpdateMe = () => {
   });
 };
 const postDeleteMe = () => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MeDeleteRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postRcmsApi1MeDeleteRequest} */
   const requestData = {
     requestBody: {
     },

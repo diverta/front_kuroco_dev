@@ -7,7 +7,7 @@ import { executeRequest, login, upload, getFileNm } from '../../base';
 const path = require('path');
 
 const getMember = ({ memberId }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.getMembersServiceRcmsApi1MembersMemberIdRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.getRcmsApi1MembersMemberIdRequest} */
   const requestData = {
     memberId,
   };
@@ -19,7 +19,7 @@ const getMember = ({ memberId }) => {
 };
 
 const postInsertMember = ({ file }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersInsertRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postRcmsApi1MembersInsertRequest} */
   const requestData = {
     requestBody: {
       email: 'email+' + Date.now() + '@example.com',
@@ -44,7 +44,7 @@ const postInsertMember = ({ file }) => {
 };
 
 const postUpdateMember = ({ memberId, file }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersUpdateMemberIdRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postRcmsApi1MembersUpdateMemberIdRequest} */
   const requestData = {
     memberId: memberId,
     requestBody: {
@@ -67,7 +67,7 @@ const postUpdateMember = ({ memberId, file }) => {
 };
 
 const postUpdateMemberDesc = ({ memberId }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersUpdateMemberIdRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postRcmsApi1MembersUpdateMemberIdRequest} */
   const requestData = {
     memberId: memberId,
     requestBody: {
@@ -88,7 +88,7 @@ const postUpdateMemberDesc = ({ memberId }) => {
 };
 
 const postUpdateMemberDeleteFile = ({ memberId }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersUpdateMemberIdRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postRcmsApi1MembersUpdateMemberIdRequest} */
   const requestData = {
     memberId: memberId,
     requestBody: {
@@ -107,7 +107,7 @@ const postUpdateMemberDeleteFile = ({ memberId }) => {
 };
 
 const postDeleteMember = ({ memberId }) => {
-  /** @type {import('../../../../generated/services/MembersService').MembersService.postMembersServiceRcmsApi1MembersDeleteMemberIdRequest} */
+  /** @type {import('../../../../generated/services/MembersService').MembersService.postRcmsApi1MembersDeleteMemberIdRequest} */
   const requestData = {
     memberId: memberId,
     requestBody: {

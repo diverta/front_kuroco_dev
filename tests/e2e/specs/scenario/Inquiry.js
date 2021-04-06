@@ -6,7 +6,7 @@
 import { executeRequest, login, upload } from '../../base';
 
 const getMessages = () => {
-  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.getInquiriesServiceRcmsApi1Inquiry1MessagesRequest} */
+  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.getRcmsApi1Inquiry1MessagesRequest} */
   const requestData = {};
   return executeRequest({
     cy,
@@ -16,7 +16,7 @@ const getMessages = () => {
   });
 };
 const getForms = () => {
-  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.getInquiriesServiceRcmsApi1InquiryFormsRequest} */
+  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.getRcmsApi1InquiryFormsRequest} */
   const requestData = {};
   return executeRequest({
     cy,
@@ -25,7 +25,7 @@ const getForms = () => {
   });
 };
 const getFormById = ({ inquiryId }) => {
-  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.getInquiriesServiceRcmsApi1InquiryFormsInquiryIdRequest} */
+  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.getRcmsApi1InquiryFormsInquiryIdRequest} */
   const requestData = {
     inquiryId,
   };
@@ -36,7 +36,7 @@ const getFormById = ({ inquiryId }) => {
   });
 };
 const sendMessage = ({ file }) => {
-  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.postInquiriesServiceRcmsApi1Inquiry1MessagesSendRequest} */
+  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.postRcmsApi1Inquiry1MessagesSendRequest} */
   const requestData = {
     requestBody: {
       name: 'John Doe',
@@ -89,7 +89,7 @@ const sendMessage = ({ file }) => {
   });
 };
 const updateMessage = ({ inquiryBnId, file }) => {
-  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.postInquiriesServiceRcmsApi1Inquiry1MessagesUpdateInquiryBnIdRequest} */
+  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.postRcmsApi1Inquiry1MessagesUpdateInquiryBnIdRequest} */
   const requestData = {
     inquiryBnId,
     requestBody: {

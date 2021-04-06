@@ -6,7 +6,7 @@
 import { executeRequest, login } from '../../base';
 
 const postInsertTagWithoutTagName = () => {
-  /** @type {import('../../../../generated/services/TagsService').TagsService.postTagsServiceRcmsApi1TagsInsertRequest} */
+  /** @type {import('../../../../generated/services/TagsService').TagsService.postRcmsApi1TagsInsertRequest} */
   const requestData = {
     requestBody: {
       //tag_nm: 'TestTag' + Date.now(),
@@ -37,7 +37,7 @@ const postInsertTagMalformedTargetCols = [
   'ext_col_10',
 ];
 const postInsertTagMalformed = ({ targetCol }) => {
-  /** @type {import('../../../../generated/services/TagsService').TagsService.postTagsServiceRcmsApi1TagsInsertRequest} */
+  /** @type {import('../../../../generated/services/TagsService').TagsService.postRcmsApi1TagsInsertRequest} */
   const requestData = {
     requestBody: {
       tag_nm: 'TestTag' + Date.now(),

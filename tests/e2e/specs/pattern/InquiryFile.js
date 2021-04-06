@@ -7,7 +7,7 @@ import { executeRequest, formatDate, login, upload, getFileNm } from '../../base
 const path = require('path');
 
 const getMessageById = ({ inquiryBnId }) => {
-  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.getInquiriesServiceRcmsApi1Inquiry1MessagesRequest} */
+  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.getRcmsApi1Inquiry1MessagesRequest} */
   const requestData = {};
   return executeRequest({
     cy,
@@ -21,7 +21,7 @@ const getMessageById = ({ inquiryBnId }) => {
 };
 
 const sendMessage = ({ file }) => {
-  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.postInquiriesServiceRcmsApi1Inquiry1MessagesSendRequest} */
+  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.postRcmsApi1Inquiry1MessagesSendRequest} */
   const requestData = {
     requestBody: {
       name: 'File Test',
@@ -46,7 +46,7 @@ const sendMessage = ({ file }) => {
 };
 
 const updateMessage = ({ inquiryBnId, file }) => {
-  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.postInquiriesServiceRcmsApi1Inquiry1MessagesUpdateInquiryBnIdRequest} */
+  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.postRcmsApi1Inquiry1MessagesUpdateInquiryBnIdRequest} */
   const requestData = {
     inquiryBnId: inquiryBnId,
     requestBody: {
@@ -66,7 +66,7 @@ const updateMessage = ({ inquiryBnId, file }) => {
 };
 
 const updateMessageDesc = ({ inquiryBnId }) => {
-  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.postInquiriesServiceRcmsApi1Inquiry1MessagesUpdateInquiryBnIdRequest} */
+  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.postRcmsApi1Inquiry1MessagesUpdateInquiryBnIdRequest} */
   const requestData = {
     inquiryBnId: inquiryBnId,
     requestBody: {
@@ -84,7 +84,7 @@ const updateMessageDesc = ({ inquiryBnId }) => {
 };
 
 const updateMessageDeleteFile = ({ inquiryBnId }) => {
-  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.postInquiriesServiceRcmsApi1Inquiry1MessagesUpdateInquiryBnIdRequest} */
+  /** @type {import('../../../../generated/services/InquiriesService').InquiriesService.postRcmsApi1Inquiry1MessagesUpdateInquiryBnIdRequest} */
   const requestData = {
     inquiryBnId: inquiryBnId,
     requestBody: {

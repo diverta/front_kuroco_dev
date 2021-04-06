@@ -6,7 +6,7 @@
 import { executeRequest, login, logout } from '../../base';
 
 const getComments = ({ topicsId }) => {
-  /** @type {import('../../../../generated/services/ActivityService').ActivityService.getActivityServiceRcmsApi1TopicsCommentsRequest} */
+  /** @type {import('../../../../generated/services/ActivityService').ActivityService.getRcmsApi1TopicsCommentsRequest} */
   const requestData = {
     moduleId: topicsId,
     newOrderFlg: 0,
@@ -27,7 +27,7 @@ const postInsertCommentData = {
   rating: 5,
 };
 const postInsertComment = ({ topicsId }) => {
-  /** @type {import('../../../../generated/services/ActivityService').ActivityService.postActivityServiceRcmsApi1TopicsCommentsInsertRequest} */
+  /** @type {import('../../../../generated/services/ActivityService').ActivityService.postRcmsApi1TopicsCommentsInsertRequest} */
   const requestData = {
     requestBody: {
       module_id: topicsId,
@@ -55,7 +55,7 @@ const postUpdateCommentData = {
   rating: 1,
 };
 const postUpdateComment = ({ commentId, topicsId }) => {
-  /** @type {import('../../../../generated/services/ActivityService').ActivityService.postActivityServiceRcmsApi1TopicsCommentsUpdateCommentIdRequest} */
+  /** @type {import('../../../../generated/services/ActivityService').ActivityService.postRcmsApi1TopicsCommentsUpdateCommentIdRequest} */
   const requestData = {
     commentId: commentId,
     requestBody: {
@@ -77,7 +77,7 @@ const postUpdateComment = ({ commentId, topicsId }) => {
 }
 
 const postDeleteComment = ({ commentId }) => {
-  /** @type {import('../../../../generated/services/ActivityService').ActivityService.postActivityServiceRcmsApi1TopicsCommentsDeleteCommentIdRequest} */
+  /** @type {import('../../../../generated/services/ActivityService').ActivityService.postRcmsApi1TopicsCommentsDeleteCommentIdRequest} */
   const requestData = {
     commentId: commentId,
     requestBody: {
