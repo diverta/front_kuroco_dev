@@ -49,7 +49,7 @@ const insertFavorite = ({ moduleType = 'topics', moduleId }) => {
   });
 };
 
-const deleteFavorite = ({ favoriteId }) => {
+const deleteFavoriteByFavoriteId = ({ favoriteId }) => {
   /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.postFavoritesServiceRcmsApi1FavoritesDeleteFavoriteIdRequest} */
   const requestData = {
     favoriteId: favoriteId,
@@ -59,10 +59,28 @@ const deleteFavorite = ({ favoriteId }) => {
   };
   return executeRequest({
     cy,
-    query: 'favorite delete',
+    query: 'favorite delete id',
     requestData,
   });
 };
+
+const deleteFavoriteByModuleId = ({ moduleType = 'topics', moduleId }) => {
+  /** @type {import('../../../../generated/services/FavoritesService').FavoritesService.postFavoritesServiceRcmsApi1FavoritesDeleteBodyRequest} */
+  const requestData = {
+    requestBody: {
+      module_type: moduleType,
+      module_id: moduleId,
+    },
+    lang: 'en',
+  };
+  return executeRequest({
+    cy,
+    query: 'favorite delete body',
+    requestData,
+  });
+};
+
+
 
 // topics for Favorite Test
 const topicsIdFavoriteTest = 44;
@@ -74,7 +92,11 @@ describe('Favorite', () => {
       get favorites of test members ->
       insert favorite ->
       get favorites including inserted one ->
-      delete favorites ->
+      delete favorite by favorite_id ->
+      get favorites not including deleted one
+      insert favorite ->
+      get favorites including inserted one ->
+      delete favorite by module_id ->
       get favorites not including deleted one
   `, async () => {
     login();
@@ -95,6 +117,8 @@ describe('Favorite', () => {
     //   }
     // };
 
+    await deleteFavoriteByModuleId({ moduleType: 'topics', moduleId: topicsIdFavoriteTest });
+    
     // get favorites of test members
     expect(
       (await getFavorites({ memberId: memberId })).list
@@ -106,10 +130,28 @@ describe('Favorite', () => {
     // get favorites including inserted one
     const insertedFavorite = (await getFavoritesByModuleId({ memberId: memberId, moduleType: 'topics', moduleId: topicsIdFavoriteTest }))
         .list
-        .find(row => row.module_id === topicsIdFavoriteTest);
+        .find(row => row.favorite_id === addedId);
     expect(insertedFavorite).to.exist;
-    // delete favorites
-    await deleteFavorite({ favoriteId: insertedFavorite.favorite_id });
+    // delete favorite by favorite_id
+    await deleteFavoriteByFavoriteId({ favoriteId: insertedFavorite.favorite_id });
+    // get favorites not including deleted one
+    expect(
+      (await getFavorites({memberId: memberId}))
+        .list
+        .find(row => row.favorite_id === addedId)
+    ).to.not.exist;
+
+
+    // insert favorite
+    await insertFavorite({ moduleType: 'topics', moduleId: topicsIdFavoriteTest });
+    // get favorites including inserted one
+    expect(
+      (await getFavoritesByModuleId({ memberId: memberId, moduleType: 'topics', moduleId: topicsIdFavoriteTest }))
+        .list
+        .find(row => row.module_id === topicsIdFavoriteTest)
+    ).to.exist;
+    // delete favorite by favorite_id
+    await deleteFavoriteByModuleId({ moduleType: 'topics', moduleId: topicsIdFavoriteTest });
     // get favorites not including deleted one
     expect(
       (await getFavorites({memberId: memberId}))
